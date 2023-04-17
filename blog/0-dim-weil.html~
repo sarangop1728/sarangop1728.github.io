@@ -1,0 +1,520 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2023-04-17 Mon 13:59 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Zeta functions and the Weil conjectures</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="[[http://www.math.emory.edu/~sarang2/][Santiago Arango-Piñeros]]" />
+<link rel="stylesheet" type="text/css" href="style.css" />
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Zeta functions and the Weil conjectures</h1>
+<p>
+<i>Why bother learning about Schemes?</i> This is an important question to ask yourself before battling Hartshorne and Vakil. There are several answers to this question, each one depending on your own interests and mathematical inclinations. Understanding (the statement, and then the proof of) the Weil conjectures is one of my own answers. 
+</p>
+
+<p>
+In this note I will talk about the Weil conjectures, and sketch a proof of the baby case of zero dimensional varieties (this is Exercise 3.1 in Poonen's notes <a href="https://math.mit.edu/~poonen/papers/curves.pdf">Curves.pdf</a>). I use the language of schemes, but mastering scheme theory is not necessary to understand the spirit of this note. Learn about <a href="https://en.wikipedia.org/wiki/Spectrum_of_a_ring">the spectrum of a ring</a> and the Zariski topology (Chapter 1 of Atiyah-MacDonald has great exercises) and come back; you will be able to calculate zeta functions of interesting rings!
+</p>
+
+<div class="org-src-container">
+<pre class="src src-org">Of course, all errors (mathematical and literary) are my fault. 
+Please email me with your suggestions and corrections.
+</pre>
+</div>
+
+
+<div id="outline-container-org1e948cd" class="outline-4">
+<h4 id="org1e948cd">References</h4>
+<div class="outline-text-4" id="text-org1e948cd">
+<p>
+This expository note is based on several wonderful references that I cite bellow. If you liked this post, you will love the following:
+</p>
+</div>
+<ul class="org-ul">
+<li><a id="orgd59e248"></a>Oort, Frans. <i><a href="http://www.nieuwarchief.nl/serie5/pdf/naw5-2014-15-3-211.pdf">The Weil conjectures</a></i>. NAW 5/15 nr. 3 September, 2014.<br /></li>
+<li><a id="org1f42d15"></a>Poonen, Bjorn. <i>"<a href="https://math.mit.edu/~poonen/papers/curves.pdf">Lectures on rational points on curves.</a>"</i> University of California, Berkeley (2006).<br /></li>
+<li><a id="org362e798"></a>Poonen, Bjorn. <i>Rational points on varieties</i>. Vol. 186. American Mathematical Soc., 2017.<br /></li>
+<li><a id="orgd8950f8"></a>Serre, Jean-Pierre. <i>"Zeta and L functions."</i> Arithmetical Algebraic Geometry, Proc. of a Conference held at Purdue Univ., Dec. 5-7, 1963. Harper and Row, 1965.<br /></li>
+</ul>
+</div>
+
+
+<div id="outline-container-org6eb0b7a" class="outline-2">
+<h2 id="org6eb0b7a">The zeta function</h2>
+<div class="outline-text-2" id="text-org6eb0b7a">
+<p>
+Let \(X\) be a scheme of <a href="https://stacks.math.columbia.edu/tag/01T0">finite type</a> over \(\mathbf{Z}\). For every closed point \(P \in X\), the residue field
+</p>
+\begin{equation}
+ \kappa(P) := \mathcal{O}_P/\mathfrak{m}_P
+\end{equation}
+<p>
+is a finite field.
+</p>
+
+<p>
+To see why this is the case, choose an affine open neighborhood \(\mathrm{Spec} \, A\) of \(P\) such that the corresponding ring map \(\mathbf{Z} \to A\) gives \(A\) the structure of a finitely generated abelian group. After composing with the natural projection \(A \to A/P \cong \kappa(P)\), we get a map \(\varphi: \mathbf{Z} \to \kappa(P)\). Consider the kernel of this homomorphism:
+</p>
+
+<ul class="org-ul">
+<li>If \(\varphi\) is injective, then \(\mathbf{Z} \subset \mathbf{Q} \subseteq \kappa(P)\). Since \(\kappa(P)\) is of finite type over both \(\mathbf{Z}\) and \(\mathbf{Q}\), the <a href="https://stacks.math.columbia.edu/tag/00IS">Artin-Tate lemma</a> would imply that the rational numbers are a finitely generated abelian group; a contradiction.</li>
+<li>Let \(k := \mathbf{Z}/\ker{\varphi}\). Since \(\kappa(P)\) is finitely generated as a \(k\)-algebra, <a href="https://stacks.math.columbia.edu/tag/00FS">Hilbert's Nullstellensatz</a> tells us that \(\kappa(P)\) is also finitely generated as a \(k\)-vector space. Since \(k\) is a finite field, we conclude that \(\kappa(P)\) is also a finite field.</li>
+</ul>
+
+<p>
+We define the <b>norm</b> of a closed point \(P \in X\) to be the size of it's residue field:
+</p>
+\begin{equation}
+ NP : = \# \kappa(P).
+\end{equation}
+
+<p>
+The <b>zeta function</b> of \(X\) is defined as
+</p>
+\begin{equation}
+ \zeta(X,s) := \zeta_X(s) := \prod_P \left( 1 - NP^{-s} \right)^{-1},
+\end{equation}
+<p>
+where the product ranges over all <i>closed</i> points \(P\) in \(X\) and \(s\) denotes a complex variable. The interested reader can check that this possibly infinite (but always countable) product converges when the real part of \(s\) is strictly greater than the dimension of \(X\).
+</p>
+
+<p>
+Before looking at some enlightening examples, we deduce two important properties from the definition.
+</p>
+</div>
+
+<div id="outline-container-orgdf5cd36" class="outline-3">
+<h3 id="orgdf5cd36">Two properties</h3>
+<div class="outline-text-3" id="text-orgdf5cd36">
+<p>
+Denote by \(\overline{X}\) the set of closed points of \(X\). It is clear from the definition that \(\zeta_X(s)\) depends only on \(\overline{X}\).
+</p>
+
+<div id="rmk:closed-points" class="remark">
+<p>
+Recall that when \(X\) is a variety over a field \(k\), we have that the set of closed points \(\bar{X}\) corresponds to the absolute Galois group \(G_k := \mathrm{Gal}(\bar{k}/k)\)-orbits of \(X(\bar{k})\). 
+</p>
+
+</div>
+
+<ul class="org-ul">
+<li><b>( Property 1 )</b> If \(X_{\text{red}}\) is the <a href="https://stacks.math.columbia.edu/tag/01IZ">reduction</a> of \(X\), then \(\zeta(X_{\text{red}}, s) = \zeta(X,s)\).</li>
+
+<li><b>( Property 2 )</b> Suppose we can write the set of closed points as a disjoint union \(\overline{X} = \bigsqcup_i \overline{X}_i\) of the set of closed points of some subschemes \(X_i\). Then \(\zeta(X, s) = \prod_i \zeta(X_i, s)\).</li>
+</ul>
+
+<p>
+Property 1 follows from the fact that a scheme and its reduction have the same set of closed points. Property 2 follows directly from the definition of the zeta function as a product.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org944328b" class="outline-3">
+<h3 id="org944328b">Some examples</h3>
+<div class="outline-text-3" id="text-org944328b">
+<ul class="org-ul">
+<li>Let \(X = \mathrm{Spec} \, \mathbf{F}_{q^n}\) be the spectrum of a finite field. Since we have a unique closed point of norm \(q^n\), we have that</li>
+</ul>
+\begin{equation}
+ \zeta(\mathrm{Spec} \, \mathbf{F}_{q^n}, s) = \dfrac{1}{1-q^{-ns}} .
+\end{equation}
+<ul class="org-ul">
+<li>When \(X = \mathrm{Spec} \, \mathbf{Z}\), the zeta function \(\zeta_X(s)\) is the <a href="https://en.wikipedia.org/wiki/Riemann_zeta_function">Riemann zeta fucntion</a>. Indeed, since \(\overline{X} = \bigsqcup_p \overline{ \mathrm{Spec} \, \mathbf{F}_{p}}\), Property 2 yields</li>
+</ul>
+\begin{equation}
+  \zeta(\mathrm{Spec} \, \mathbf{Z}, s) = \prod_p \left(\dfrac{1}{1-p^{-s}}\right) .
+\end{equation}
+<ul class="org-ul">
+<li>More generally, if \(X\) is the spectrum of the ring of integers of a number field, then \(\zeta(X,s)\) is the <a href="https://en.wikipedia.org/wiki/Dedekind_zeta_function">Dedekind zeta function</a>.</li>
+<li>When \(X = \mathbf{A}^1_{\mathbf{F}_q} = \mathrm{Spec} \, \mathbf{F}_{q}[t]\) is the affine line over \(\mathbf{F}_{q}\), the closed points are in bijective correspondence with the monic irreducible polynomials in \(\mathbf{F}_{q}[t]\). Using the fact that this ring is a unique factorization domain (and justifying uniform convergence), we can rewrite</li>
+</ul>
+\begin{align}
+ \zeta(\mathbf{A}^1_{\mathbf{F}_q}, s) =& \, 1 + \sum_{d=1}^\infty (\# \text{ of monic polynomials of degree } d \text{ in }  \mathbf{F}_{q}[t])/q^{ds} \notag \\
+=& \, 1 + \dfrac{q}{q^s} +  \dfrac{q^2}{q^{2s}} + \dfrac{q^3}{q^{3s}} + \dots = \dfrac{1}{1-q^{1-s}} .
+\end{align} 
+<ul class="org-ul">
+<li>When \(X = \mathbf{P}^1_{\mathbf{F}_q} = \mathrm{Proj} \, \mathbf{F}_{q}[t]\) is the projective line over \(\mathbf{F}_{q}\), writing \(\mathbf{P}^1_{\mathbf{F}_q} =  \mathbf{A}^1_{\mathbf{F}_q} \sqcup \infty\), we have</li>
+</ul>
+\begin{equation}
+  \zeta(\mathbf{P}^1_{\mathbf{F}_q}, s) = \left( \dfrac{1}{1-q^{1-s}}\right)\left( \dfrac{1}{1-q^{-s}}\right) .
+\end{equation}
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgc422b1c" class="outline-2">
+<h2 id="orgc422b1c">Varieties over finite fields</h2>
+<div class="outline-text-2" id="text-orgc422b1c">
+<p>
+A <b>variety</b> over a field \(k\) is a <a href="https://stacks.math.columbia.edu/tag/01KH">separated</a> scheme of finite type over \(k\). Given a prime power \(q\), we will consider varieties over the finite field \(k = \mathbf{F}_q\). From this point forward, \(X\) will denote a variety over \( k\). 
+</p>
+
+<p>
+The first observation is that varieties over finite fields are of finite type over \(\mathbf{Z}\). This follows from the fact that the morphism \(\mathrm{Spec} \, \mathbf{F}_q \to \mathrm{Spec} \, \mathbf{Z}\) is of finite type, and the composition of morphisms of finite type is also of finite type.
+</p>
+
+<p>
+The second observation is that for every closed point \(P\) in \(X\), the norm of \(P\) is of the form \(NP = q^{\deg(P)}\), where the degree of a point is  \(\deg(P) := [\kappa(P): k]\). Thus, it makes sense to rewrite the zeta function in terms of the variable \(T := q^{-s}\). 
+</p>
+\begin{equation}
+\label{eq:zeta}
+ Z(X, T) := \prod_P \left( 1 - T^{\deg P}\right)^{-1}.
+\end{equation}
+
+
+<div id="prop:exponential-zeta" btit="(Exponential form)" class="proposition">
+<p>
+Let \(X\) be a variety over \(\mathbf{F}_q\). Then, \(Z(X, 0) = 1\) and
+</p>
+\begin{equation}
+\label{eq:exponential}
+Z(X,T) = \exp \left( \sum_{r=1}^\infty \# X(\mathbf{F}_{q^r})\dfrac{T^r}{r} \right) .
+\end{equation}
+
+</div>
+
+<div class="proof" id="orgfe4ce02">
+<p>
+First, denote by \(N_d\) the number of closed points \(P \in X(\bar{\mathbf{F}}_q)\) of degree \(\deg P = d\). We can rewrite Equation \((\ref{eq:zeta})\) as
+</p>
+\begin{equation}
+  \label{eq:Nd}
+  Z(X,T) = \prod_{d = 1}^\infty \left(1-T^{d}\right)^{-N_d}.	
+\end{equation}
+
+<p>
+Recalling that a closed point of degree \(d\) is the same thing as size \(d\) orbit the absolute Galois group of \(\mathbf{F}_q\) acting on \(X(\bar{\mathbf{F}}_q)\), we see that \(X(\mathbf{F}_{q^r})\) is the disjoint union of all orbits of size \(d\), over all \(d | r\), and we get
+\[
+\#X(\mathbf{F}_{q^r}) = \sum_{d|r} d\cdot N_d .
+\]
+Plugging this into the logarithm of the right-hand-side of Equation \((\ref{eq:exponential})\), we get
+</p>
+\begin{align*}
+\sum_{r=1}^\infty \# X(\mathbf{F}_{q^r}) \dfrac{T^r}{r} =& \, \sum_{r=1}^\infty \left(\sum_{d|r}\dfrac{d\cdot N_d}{r}\right)T^r \\
+=& \, \sum_{d=1} N_d \sum_{m=1}^\infty \dfrac{T^{dm}}{m} \\
+=& \, \sum_{d=1} -N_d \log (1-T^d) = \log \prod_{d=1}^\infty \left(1-T^d\right)^{-N_d},
+\end{align*}
+<p>
+and the result follows from Equation \((\ref{eq:Nd})\).
+</p>
+
+</div>
+</div>
+
+<div id="outline-container-org94b0413" class="outline-3">
+<h3 id="org94b0413">Projective space</h3>
+<div class="outline-text-3" id="text-org94b0413">
+<p>
+Let's compute the zeta function of higher-dimensional projective space using point counts. We know that for every positive integer \(r\), we can describe the \(\mathbf{F}_{q^r}\)-points of projective space as lines through the origin on a \((n+1)\)-dimensional vector space over \(k\), so that \( \mathbf{P}^n_{k}(\mathbf{F}_{q^r}) \cong (\mathbf{F}_{q^r}^{n+1}-\{\vec{0}\})/\mathbf{F}_{q^r}^\times \) so that
+\[\# \mathbf{P}^n_{k}(\mathbf{F}_{q^r}) = \frac{(q^{r})^{n+1} - 1}{q^r - 1 } = 1 + q^r + q^{2r} + \cdots + q^{rn}. \]
+Plugging in this point-count into the Exponential form of the zeta function we obtain
+</p>
+\begin{equation}
+ Z(\mathbf{P}^n_k, T ) = \dfrac{1}{(1-T)\cdots (1-q^nT)}.
+\end{equation}
+</div>
+</div>
+
+
+<div id="outline-container-org148b44d" class="outline-3">
+<h3 id="org148b44d"><a id="org0b98d10"></a> Zero dimensional varieties</h3>
+<div class="outline-text-3" id="text-org148b44d">
+<p>
+A locally noetherian scheme of dimension 0 is a disjoint union of spectra of Artinian local rings (see <a href="https://stacks.math.columbia.edu/tag/0AAX">this lemma</a>). In particular, zero dimensional varieties over \(k\) are a finite disjoint union of local Artinian \(k\)-algebras. For example, 
+</p>
+
+\begin{equation}
+ X = \mathrm{Spec} \, \mathbf{F}_2[t]/(t^2),
+\end{equation}
+<p>
+is a (non-reduced) zero-dimensional \(\mathbf{F}_2\)-variety. By Property 1, to calculate the zeta function of \(X\) we only need to consider the reduction \(X_{\mathrm{red}} = \mathrm{Spec} \, \mathbf{F}_2\). 
+</p>
+
+<div id="lemma:points-of-point" btit="(Points over finite fields)" class="lemma">
+<p>
+Let \(X = \mathrm{Spec} \, \mathbf{F}_{q^d}\) as a \(k\)-scheme. Then, for every positive integer \(r\)
+</p>
+\begin{equation}
+\label{eq:points-points}
+\# X(\mathrm{Spec} \, \mathbf{F}_{q^r}) = 
+\begin{cases}
+d, & \text{ if } d | r, \\
+0, & \text{ otherwise}.
+\end{cases}
+\end{equation}
+
+</div>
+
+<div class="proof" id="orgeed9936">
+<p>
+We have that
+\[
+X(\mathbf{F}_{q^r}) := \mathrm{Mor}_{k}(\mathrm{Spec} \, \mathbf{F}_{q^r}, \mathrm{Spec} \, \mathbf{F}_{q^d}) = \mathrm{Hom}_k( \mathbf{F}_{q^d}, \mathbf{F}_{q^r}) .
+\]
+From the theory of finite fields, we know that \(\mathbf{F}_{q^d}\) embedds into \(\mathbf{F}_{q^r}\) if and only if \(d\) divides \(r\). Furthermore, given one such embedding, we can obtain all the others by composition with the elements of \(\mathrm{Gal}(\mathbf{F}_{q^d}/\mathbf{F}_{q})\); a cyclic group of order \(d\).
+</p>
+
+</div>
+
+<p>
+Plugging in this point-count into the Exponential form of the zeta function we obtain
+</p>
+\begin{equation}
+ Z(\mathrm{Spec} \, \mathbf{F}_{q^d}, T ) = \dfrac{1}{1-T^d}.
+\end{equation}
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org1a94d21" class="outline-2">
+<h2 id="org1a94d21">The Weil conjectures</h2>
+<div class="outline-text-2" id="text-org1a94d21">
+<p>
+You might have noticed that in all of our examples of varieties over finite fields, the zeta function turns out to be a rational function with rational coefficients. This is the first of four remarkable conjectures proposed by <a href="https://en.wikipedia.org/wiki/Andr%C3%A9_Weil">André Weil</a>.
+</p>
+
+<div id="thm:weil-conjectures" btit="(Weil conjectures)" class="theorem">
+<p>
+Let \(X\) be a variety over \(\mathbf{F}_q\).
+</p>
+
+<p>
+<b>(Rationality)</b> \(Z_X(T)\) is the Taylor series of a rational function
+</p>
+\begin{equation*}
+ \dfrac{(1-\beta_1T)\cdots(1-\beta_sT)}{(1-\alpha_1T)\cdots(1-\alpha_rT)} \in \mathbf{Q}(T).
+\end{equation*}
+<p>
+<b>(Riemann hypothesis)</b> If \(X\) is smooth and projective of dimension \(d\), then 
+</p>
+\begin{equation*}
+ Z_X(T) = \dfrac{P_1(T)P_3(T)\cdots P_{2d-1}(T)}{P_0(T)P_2(T)\cdots P_{2d}(T)},
+\end{equation*}
+<p>
+where each \(P_i(T) \in 1 + T\mathbf{Z}[T]\) factors over \(\mathbf{C}\) as
+</p>
+\begin{equation*}
+ P_i(T) = \prod_{j = 1}^{b_i}(1-\alpha_{ij}T),
+\end{equation*}
+<p>
+and the roots satisfy \(|\alpha_{ij}| = q^{i/2}\).
+</p>
+
+<p>
+<b>(Functional equation)</b> In addition, for \(X\) smooth and projective of dimension \(d\)
+</p>
+\begin{equation}
+Z_X\left(\frac{1}{q^dT}\right) = \pm q^{d\chi/2}T^\chi Z_X(T) ,
+\end{equation}
+<p>
+where \(\chi = b_0 - b_1 + b_2 - \cdots + b_{2d}\) is the Euler characteristic of \(X\). If \(X\) is geometrically irreducible, then \(P_0(T) = (1-T)\) and \(P_{2d}(T) = 1 - q^dT\).
+</p>
+
+<p>
+<b>(Singular Cohomology)</b> Suppose \(K\) is a number field. Fix an embedding \(K \hookrightarrow \mathbf{C}\). Let \(X\) be a smooth projective variety of dimension \(d\) over \(K\). Let \(\mathfrak{p}\) be a prime of \(K\) for which \(X\) has good reduction. Then, each \(b_i = b_i(X_\mathfrak{p})\) equals the rank of the singular cohomology group \(H^i(X(\mathbf{C}), \mathbf{Z})\).
+</p>
+
+</div>
+
+<p>
+The connection with singular cohomology is especially surprising; it hints a relation between the topology of complex manifolds and the number of solutions to polynomial equations over finite fields. For example, if \(X\) is a nice genus \(g\) curve defined over the rationals, the set \(X(\mathbf{C})\) of complex points is a compact Riemann surface (a donut with \(g\) holes) whose Betti numbers are
+</p>
+\begin{align}
+ h^0(X(\mathbf{C}), \mathbf{Z}) =  1, \quad h^1(X(\mathbf{C}), \mathbf{Z}) =  2g, \quad h^2(X(\mathbf{C}), \mathbf{Z}) =  1. \notag
+\end{align} 
+<p>
+Furthermore, if \(p\) is a prime of good reduction (reducing the coefficients of the equation defining \(X\) \(\mathrm{mod} \, p\) gives a nice curve \(X_p\) defined over \(\mathbf{F}_p\)), then we have that 
+</p>
+\begin{equation*}
+ Z(X_p, T) = \dfrac{P_1(X_p, T)}{(1-T)(1-pT)},
+\end{equation*}
+<p>
+where
+</p>
+\begin{align}
+ \deg (1-T) = 1, \quad \deg P_1(X_p, T) =  2g, \quad \deg (1-pT) = 1. \notag
+\end{align} 
+
+<p>
+Taking the elliptic curve (genus \(g=1\)) \(E\) with affine equation \(y^2 + y = x^3 - x\), LMFDB label <a href="https://www.lmfdb.org/EllipticCurve/Q/37/a/1">37.a1</a>, and discriminant \(37\). We can use <a href="https://www.sagemath.org/">SageMath</a> to plot the real points as follows:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="linenr">1: </span><span style="font-weight: bold; font-style: italic;">E</span> = EllipticCurve(QQ, [0,0,1,-1,0])
+<span class="linenr">2: </span>E.plot(color=<span style="font-style: italic;">'magenta'</span>, frame=<span style="font-weight: bold; text-decoration: underline;">True</span>)
+</pre>
+</div>
+
+<figure>
+   <img src="e.png" alt="e" width="650" height="500">
+   <figcaption> Real points of <i>E</i>. </figcaption>
+</figure>
+
+
+<p>
+Reducing modulo the prime \(1013\) we get the elliptic curve \(y^2 + y = x^3 + 1012x\). We plot the set of solutions in \(\mathbf{F}_{1013}\) (and count them) as follows:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="linenr">1: </span><span style="font-weight: bold; font-style: italic;">E_1013</span> = EllipticCurve(GF(1013), [0,0,1,-1,0])
+<span class="linenr">2: </span>E_1013.cardinality()
+<span class="linenr">3: </span>E_1013.plot(color=<span style="font-style: italic;">'magenta'</span>, axes=<span style="font-weight: bold; text-decoration: underline;">False</span>, frame=<span style="font-weight: bold; text-decoration: underline;">True</span>)
+</pre>
+</div>
+
+<figure>
+   <img src="emod1013.png" alt="emod1013" width="650" height="500">
+   <figcaption> The 978 points of <i>E</i> over the field with 1013 elements. </figcaption>
+</figure>
+
+<p>
+The Weil conjectures tell us that this graph (or more precisely the sequence \(\#E(\mathbf{F}_{1013^n})\) for \(n = 1, 2, 3, \dots\)) somehow knows that the complex points of the elliptic curve \(E(\mathbf{C})\) form a torus. 
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="linenr">1: </span><span style="font-weight: bold;">from</span> sage.plot.plot3d.shapes <span style="font-weight: bold;">import</span> Torus
+<span class="linenr">2: </span>Torus(1, .3, color=<span style="font-style: italic;">'magenta'</span>, opacity=.4, frame=<span style="font-weight: bold; text-decoration: underline;">False</span>)
+</pre>
+</div>
+
+<figure>
+   <img src="torus.png" alt="torus" width="650" height="500">
+   <figcaption> Complex points of <i>E</i>. </figcaption>
+</figure>
+</div>
+
+<div id="outline-container-orgd31a383" class="outline-3">
+<h3 id="orgd31a383">Brief history of the proof</h3>
+<div class="outline-text-3" id="text-orgd31a383">
+<p>
+<a href="https://en.wikipedia.org/wiki/Friedrich_Karl_Schmidt">F.K. Schmidt</a> proved these statements for curves, except for the Riemann hypothesis, which was proved by <a href="https://en.wikipedia.org/wiki/Helmut_Hasse">Helmut Hasse</a> in the case of elliptic curves and by <a href="https://en.wikipedia.org/wiki/Andr%C3%A9_Weil">André Weil</a> for general curves. Weil also proved his conjectures in the case of abelian varieties.
+</p>
+
+<p>
+Weil secretly proposed an explanation based on the <a href="https://en.wikipedia.org/wiki/Lefschetz_fixed-point_theorem">Lefschetz fixed-point theorem</a>. If \(M\) is a \(d\)-dimensional compact real manifold, and \(f: M\to M\) is a <i>reasonable map</i>, then the induced maps on singular cohomology \(f^*\colon H^i(M,\mathbf{Q}) \to H^i(M,\mathbf{Q})\) satisfy 
+</p>
+\begin{equation}
+ \# \, \text{of fixed points of } f = \sum_{i=0}^d (-1)^i \mathrm{Tr}\left( f^*|_{H^i(M,\mathbf{Q})}\right).
+\end{equation}
+
+<p>
+For a variety \(X\) defined over \(k = \mathbf{F}_q\), we have the \(q\)-relative Frobenius \(F: X\to X\). The number \(\# X(\mathbf{F}_{q^n})\) equals the number of fixed points of the \(n\)-th iteration \(F^n\) of the Frobenius endomorphism. This led Weil to suspect that \(\#X(\mathbf{F}_{q^n})\) should be computable as a similar alternating sum of the trace of \(F^n\) acting on some conjectural cohomology groups that would act like singular cohomology, but defined also for algebraic varieties in positive characteristic. (I read somewhere (don't remember where) that Weil predicted the Betti numbers of complex Grassmannians using his conjectures, before topologists could calculate them!)
+</p>
+
+<p>
+The Rationality part of the conjectures was proved by <a href="https://en.wikipedia.org/wiki/Bernard_Dwork">Bernard Dwork</a> using \(p\)-adic methods. 
+</p>
+
+<p>
+Finally, <a href="https://en.wikipedia.org/wiki/%C3%89tale_cohomology">étale cohomology</a> was developed by <a href="https://en.wikipedia.org/wiki/Michael_Artin">Michael Artin</a>, <a href="https://en.wikipedia.org/wiki/Alexander_Grothendieck">Alexander Grothendieck</a> and others to serve as the conjectural cohomology theory that Weil was looking for. In particular, they proved the Grothendieck-Lefschetz trace formula
+</p>
+\begin{equation}
+ \# X(\mathbf{F}_{q}) = \sum_{i=0}^d (-1)^i \mathrm{Tr}\left( F^*|_{H_{et}^i(\bar{X},\mathbf{Q}_\ell)}\right),
+\end{equation}
+<p>
+which allowed them to prove all the conjectures except for the Riemann hypothesis. 
+</p>
+
+<p>
+The Riemann hypothesis part was famously proved by <a href="https://en.wikipedia.org/wiki/Pierre_Deligne">Pierre Deligne</a>, again using étale cohomology. To find references, take a look at the bibliography in <a href="http://www.nieuwarchief.nl/serie5/pdf/naw5-2014-15-3-211.pdf">Oort's article</a> celebrating Deligne's Abel Prize.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orga302135" class="outline-2">
+<h2 id="orga302135">A proof in dimension 0</h2>
+<div class="outline-text-2" id="text-orga302135">
+<p>
+As we discussed in <a href="#org0b98d10">the section above</a>, it is enough to prove the conjectures for a point \(X = \mathrm{Spec}\, \mathbf{F}_{q^d}\), as an \(\mathbf{F_q}\)-variety. Note that \(X\) is smooth, projective, and irreducible (but not geometrically irreducible). We know that \(Z(X, T) = P_0(T)^{-1} = (1-T^d)^{-1}\) and the <i>Rationality</i> is clear. The polynomial \(P_0(T)\) factors over the complex numbers as
+</p>
+\begin{equation*}
+ P_0(T) = \prod_{j=0}^d (1 - \zeta^j T), \quad \alpha_{0,j} := \zeta^j,
+\end{equation*}
+<p>
+where \(\zeta\) is some primitive \(d\)-th root of unity. We have that \(\chi = b_0 = d\) and the roots satisfy \(|\alpha_{0,j}| = q^{0/2} = 1\) for every \(j\), so \(X\) also satisfies the <i>Riemann hypothesis</i>. The <i>Functional equation</i> is checked directly:
+</p>
+\begin{align*}
+ Z(X, 1/T) = \dfrac{1}{1 - T^{-d}} = \dfrac{T^d}{T^d-1} =-T^d Z(X,T) .
+\end{align*}
+
+<p>
+To verify the <i>Singular cohomology</i> part if the conjectures, let \(K\supseteq \mathbf{Q}\) be an algebraic number field, and let \(X\) be a smooth projective variety of dimension zero over \(K\). Thus, \(X = \mathrm{Spec} \, L\) where \(L \supseteq K\) is a finite field extension, say of degree \(n\). 
+</p>
+
+<div id="def:R-model" btit="(Integral Model)" class="definition">
+<p>
+Let \(R\) be an integral domain with field of fractions \(K\). Let \(X\) be a \(K\)-scheme. An \(R\)-<b>model</b> for \(X\) is an \(R\)-scheme \(\mathsf{X}\) equiped with a \(K\)-isomorphism \(\mathsf{X}\times_R K \cong X\).
+</p>
+
+</div>
+
+<div id="def:good-red" btit="(Good reduction)" class="definition">
+<p>
+Let \(R\) be an Dedekind domain with field of fractions \(K\). Let \(\mathfrak{p}\) be a prime of \(K\). A smooth proper \(K\)-variety \(X\) has <b>good reduction at</b> \(\mathfrak{p}\), if \(X\) admits a smooth proper \(R_{\mathfrak{p}}\)-model. We say that \(X\) has <b>good reduction</b> if it has good reduction at every prime.
+</p>
+
+</div>
+
+<p>
+We note that \(X = \mathrm{Spec} \, L\) has good reduction for the primes of \(K\) that are unramified on \(L\). Indeed, since \(L\supseteq K\) is a finite extension, we see that \(X \to \mathrm{Spec} \, K\) is smooth and proper. For any prime unramified prime \(\mathfrak{p}\) of \(K\), consider the \(\mathcal{O}_{K,\mathfrak{p}}\)-scheme \(\mathsf{X} := \mathrm{Spec} \, \mathcal{O}_{L,\mathfrak{p}}\). The morphism \(\mathsf{X} \to \mathrm{Spec} \, \mathcal{O}_{K,\mathfrak{p}}\) proper since its given by an integral extension of rings. The fact that \(\mathfrak{p}\) is unramified implies that it is also smooth (of relative dimension zero), via the <a href="https://kconrad.math.uconn.edu/blurbs/gradnumthy/dedekindf.pdf">Dedekind-Kummer</a> theorem. Furthermore, since
+</p>
+\begin{equation*}
+ \mathcal{O}_{L,\mathfrak{p}} \otimes_{\mathcal{O}_{K,\mathfrak{p}}} K \cong \left( \mathcal{O}_{L} \otimes_{\mathcal{O}_{K}} K \right)_{\mathfrak{p}} \cong L_\mathfrak{p} = L,
+\end{equation*} 
+<p>
+we have that \(\mathsf{X}\) is an \(\mathcal{O}_{K,\mathfrak{p}}\)-model of \(X\).
+</p>
+
+<p>
+One the topology side, we have that the complex points \(X(\mathbf{C})\) are in bijective correspondence with the finite set of embeddings \(\mathrm{Hom}_K(L, \mathbf{C})\). In particular, \(X(\mathbf{C})\) has \(n = [L:K]\) elements, and 
+</p>
+\begin{equation}
+ h^0(X(\mathbf{C}), \mathbf{Z}) = n.
+\end{equation}
+<p>
+On the arithmetic side, we have that \(X_\mathfrak{p} = \mathrm{Spec} \, \mathcal{O}_L/\mathfrak{p}\mathcal{O}_L\) is the special fiber of \(\mathsf{X} = \mathrm{Spec} \, \mathcal{O}_{L,\mathfrak{p}} \to \mathrm{Spec} \, \mathcal{O}_{K,\mathfrak{p}}\). Looking at the factorization \(\mathfrak{p}\mathcal{O}_L = \mathfrak{q}_1\dots \mathfrak{q}_g\), we see that \(X_\mathfrak{p}\) is a disjoint union of \(g\) points, corresponding to the finite fields \(\mathcal{O}_L/\mathfrak{q}_i\), which are degree \(f_i\) extensions of \(\mathcal{O}_K/\mathfrak{p}\). The fundamental identity from algebraic number theory implies that
+</p>
+\begin{equation}
+\deg P_0(X_\mathfrak{p},T) = f_1 + \cdots +  f_g = n .
+\end{equation}
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Date: 2022-06-07 Tue 00:00</p>
+<p class="author">Author: <a href="http://www.math.emory.edu/~sarang2/">Santiago Arango-Piñeros</a></p>
+<p class="date">Created: 2023-04-17 Mon 13:59</p>
+<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.2 (<a href="https://orgmode.org">Org</a> mode 9.4.4)</p>
+</div>
+</body>
+</html>

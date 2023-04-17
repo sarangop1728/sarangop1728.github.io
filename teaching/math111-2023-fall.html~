@@ -1,0 +1,472 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2023-04-17 Mon 13:59 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Math 111 - Fall 2022</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Santiago Arango-Piñeros" />
+<link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<body>
+<div id="content">
+<h1 class="title">Math 111 - Fall 2022</h1>
+<p>
+This is the official website of Section 3 of Calculus 1 taught by <a href="../index.html">Santiago Arango-Piñeros</a> in the fall of 2022, at Emory University.
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left"><b>Lecture Room</b></td>
+<td class="org-left">MSC</td>
+</tr>
+
+<tr>
+<td class="org-left"><b>Lecture Time</b></td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left"><b>Office</b></td>
+<td class="org-left">MSC W431</td>
+</tr>
+
+<tr>
+<td class="org-left"><b>Email</b></td>
+<td class="org-left"><a href="mailto:santiago.arango@emory.edu">santiago.arango@emory.edu</a></td>
+</tr>
+
+<tr>
+<td class="org-left"><b>Office Hours</b></td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left"><b>Text</b></td>
+<td class="org-left">Stewart, James. Single Variable Calculus: Early Transcendentals. 8e.</td>
+</tr>
+
+<tr>
+<td class="org-left"><b>ISBN</b></td>
+<td class="org-left">978-1-305-27033-6</td>
+</tr>
+
+<tr>
+<td class="org-left"><b>Final Exam</b></td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+
+<div id="outline-container-orgc61161c" class="outline-2">
+<h2 id="orgc61161c">Solutions to exams</h2>
+</div>
+
+
+<div id="outline-container-org1a95d3d" class="outline-2">
+<h2 id="org1a95d3d">About this course</h2>
+<div class="outline-text-2" id="text-org1a95d3d">
+<p>
+In this course <a href="https://www.ams.org/publications/journals/notices/201610/rnoti-p1164.pdf">everybody counts</a>:
+</p>
+<ol class="org-ol">
+<li>Mathematical potential is distributed equally among different groups, irrespective of geographic, demographic, and economic boundaries.</li>
+<li>Everyone can have joyful, meaningful, and empowering mathematical experiences.</li>
+<li>Mathematics is a powerful, malleable tool that can be shaped and used differently by various communities to serve their needs.</li>
+<li>Every student deserves to be treated with dignity and respect.</li>
+</ol>
+</div>
+
+<div id="outline-container-orgc07c875" class="outline-3">
+<h3 id="orgc07c875">Some advice</h3>
+<div class="outline-text-3" id="text-orgc07c875">
+<ul class="org-ul">
+<li><b>The recipe for succes</b> in this class is simple to state and hard to accomplish: try all the <a href="#orgdc0e3a9">recommended problems</a> and make sure you understand them. If you do this, I can guarantee you will get an A.</li>
+<li><b>Talk to your classmates!</b> Math is more fun when we share our understanding and confusions. No need to suffer in silence.</li>
+<li>Paraphrasing Galileo: "<i>You can not teach a person anything, you can only help them find it within themselves.</i>" In particular, <b>math can't be learned by just sitting in the lectures</b>; you need to engage with the material and understand things in your own way.</li>
+<li><b>Organize your schedule.</b> Dedicate 1-2 hours each day during the week (rest on weekends) to work on the problems. Before the exams, write down a brief summary of the main concepts and make sure to review your solutions of the corresponding problems.</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org125db51" class="outline-2">
+<h2 id="org125db51">Syllabus</h2>
+<div class="outline-text-2" id="text-org125db51">
+</div>
+</div>
+
+<div id="outline-container-org2c7bf98" class="outline-2">
+<h2 id="org2c7bf98">Schedule</h2>
+<div class="outline-text-2" id="text-org2c7bf98">
+</div>
+
+<div id="outline-container-org0fa5131" class="outline-3">
+<h3 id="org0fa5131">In-class problems and lecture notes</h3>
+<div class="outline-text-3" id="text-org0fa5131">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left"><b>Lecture</b></td>
+<td class="org-left"><b>Date</b></td>
+<td class="org-left"><b>In class problems</b></td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="https://www.dropbox.com/s/bgzhta0te01kfr6/L1.pdf?dl=0">1</a></td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left"><b>2.1:</b> 1, 3.  <b>2.2:</b> 1, 4, 6.</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="https://www.dropbox.com/s/3hat9yprb9e8eju/L2.pdf?dl=0">2</a></td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left"><b>2.3:</b> 2, 11, 13, 21.</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="https://www.dropbox.com/s/pk8088dg2l0kjrz/L3.pdf?dl=0">3</a></td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left"><b>2.5:</b> 1, 2, 10, 20, 26, 36.   <b>2.6:</b> 2, 3, 10, 19, 37.</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="https://www.dropbox.com/s/cw2j59tiy8lzb7u/L4.pdf?dl=0">4</a></td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left"><b>2.7:</b> 1, 2, 3, 5, 31.</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="https://www.dropbox.com/s/tiaouozsjn9yvhu/L5.pdf?dl=0">5</a></td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left"><b>2.8:</b> 1, 4, 5, 6.</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="https://www.dropbox.com/s/whamjilxv5k4lsj/L6.pdf?dl=0">6</a></td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left"><b>3.1:</b> 8, 14, 18, 19.  <b>3.2:</b> 12, 13, 22, 28,</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="https://www.dropbox.com/s/y3d68od466p8eyw/L7.pdf?dl=0">7</a></td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left"><b>3.10:</b> 3, 13, 23, 26, 28.</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="https://www.dropbox.com/s/r0kh30ml2o54akm/L8.pdf?dl=0">8</a></td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left"><b>4.1:</b> 2, 3, 5, 6, 48, 61. <b>4.3:</b> 16, 20.</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="https://www.dropbox.com/s/j7bg32ohqucyp38/L9.pdf?dl=0">9</a></td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left"><b>4.7:</b> 1, 2, 3, 4.</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="https://www.dropbox.com/s/16nxqi1onm89zs5/L10.pdf?dl=0">10</a></td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left"><b>3.3:</b> 1, 6, 8, 40.</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="https://www.dropbox.com/s/nvscy8zbu66ve9o/L11.pdf?dl=0">11</a></td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left"><b>3.4:</b> 1, 8, 10, 18, 44.</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="https://notability.com/n/2A9QnFasp~DeqQJjUM_kKD">12</a></td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left"><b>3.5:</b> 1, 2, 4, 11.</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="https://www.dropbox.com/s/2174ij4rc3tpx1w/L13.pdf?dl=0">13</a></td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left"><b>3.6:</b> 2, 4, 7, 8.</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="https://www.dropbox.com/s/qbjybh5hckcupj7/L14.pdf?dl=0">14</a></td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left"><b>3.9:</b> 1, 14.</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="https://www.dropbox.com/s/ffdydq2xbffz7mh/L15.pdf?dl=0">15</a></td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left"><b>4.4:</b> 1, 16, 49, 56, 58.</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="https://www.dropbox.com/s/enwakayo3mtavgf/L16.pdf?dl=0">16</a></td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left"><b>4.2:</b> 2, 3, 5.  <b>4.5:</b> 1, 30.</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="https://www.dropbox.com/s/x3hi9e3wwdzx674/L17.pdf?dl=0">17</a></td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left"><b>4.8:</b> 1, 2, 3, 22, 62.  <b>4.7:</b> 1, 29.</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="https://www.dropbox.com/s/nl4vrb0u76do41m/L18.pdf?dl=0">18</a></td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left"><b>5.1:</b> 2, 4, 7.</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="https://www.dropbox.com/s/k7v6fp7pjdnq3td/L19.pdf?dl=0">19</a></td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left"><b>5.2:</b> 1, 2, 6, 37.</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="https://www.dropbox.com/s/09s80b176nk9558/L20.pdf?dl=0">20</a></td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left"><b>5.3:</b> 1, 6, 7, 40, 61.</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="https://www.dropbox.com/s/j0ucsroxp2rkyae/L21.pdf?dl=0">21</a></td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left"><b>5.5:</b> 1, 6, 13, 44, 54, 60.</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="https://www.dropbox.com/s/umfg53nymeebj2n/L22.pdf?dl=0">22</a></td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left"><b>6.1:</b> 1, 2, 6, 12.</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="https://www.dropbox.com/s/mpppj5lp8b3rot2/L23.pdf?dl=0">23</a></td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left"><b>6.2:</b> 2, 4, 5.</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="https://www.dropbox.com/s/dyi4a3ffm5y5ex2/L24.pdf?dl=0">24</a></td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left"><b>6.3:</b> 2, 5, 45.</td>
+</tr>
+
+<tr>
+<td class="org-left">25</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">Closing topics.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+<div id="outline-container-orgf90dfc3" class="outline-3">
+<h3 id="orgf90dfc3"><a id="orgdc0e3a9"></a> Recommended problems</h3>
+<div class="outline-text-3" id="text-orgf90dfc3">
+<p>
+Here are some additional recommended problems from the book. You don't have to do them all to get an A, but if you understand them all you will definitely get an A. If you want more challenging problems, let me know and I will hook you up with some fun stuff.
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-right"><b>Section</b></td>
+<td class="org-left">Problems</td>
+</tr>
+
+<tr>
+<td class="org-right">2.1</td>
+<td class="org-left">1, 2, 5, 7.</td>
+</tr>
+
+<tr>
+<td class="org-right">2.2</td>
+<td class="org-left">4-9, 31-43.</td>
+</tr>
+
+<tr>
+<td class="org-right">2.3</td>
+<td class="org-left">1-9, 11-32, 48-50.</td>
+</tr>
+
+<tr>
+<td class="org-right">2.5</td>
+<td class="org-left">11-14, 17-32, 41-43, 53-56.</td>
+</tr>
+
+<tr>
+<td class="org-right">2.6</td>
+<td class="org-left">3, 4, 15-42.</td>
+</tr>
+
+<tr>
+<td class="org-right">2.7</td>
+<td class="org-left">3, 5-8, 13, 15, 17, 20-22, 31-44, 59, 60.</td>
+</tr>
+
+<tr>
+<td class="org-right">2.8</td>
+<td class="org-left">3-11, 21-31, 47-54.</td>
+</tr>
+
+<tr>
+<td class="org-right">3.1</td>
+<td class="org-left">3-38.</td>
+</tr>
+
+<tr>
+<td class="org-right">3.2</td>
+<td class="org-left">3-32.</td>
+</tr>
+
+<tr>
+<td class="org-right">3.3</td>
+<td class="org-left">1-16, 21-24, 39-50.</td>
+</tr>
+
+<tr>
+<td class="org-right">3.4</td>
+<td class="org-left">1-54.</td>
+</tr>
+
+<tr>
+<td class="org-right">3.5</td>
+<td class="org-left">1-20, 25-32, 35-40, 49-60.</td>
+</tr>
+
+<tr>
+<td class="org-right">3.6</td>
+<td class="org-left">2-34, 39-50.</td>
+</tr>
+
+<tr>
+<td class="org-right">3.7</td>
+<td class="org-left">1-4, 7-10, 31, 32</td>
+</tr>
+
+<tr>
+<td class="org-right">3.8</td>
+<td class="org-left">1-6, 8-11, 18-20</td>
+</tr>
+
+<tr>
+<td class="org-right">3.10</td>
+<td class="org-left">TBD</td>
+</tr>
+
+<tr>
+<td class="org-right">4.1</td>
+<td class="org-left">29-44, 47-62.</td>
+</tr>
+
+<tr>
+<td class="org-right">4.2</td>
+<td class="org-left">1-17, 19-22.</td>
+</tr>
+
+<tr>
+<td class="org-right">4.3</td>
+<td class="org-left">9-21, 37-56.</td>
+</tr>
+
+<tr>
+<td class="org-right">4.4</td>
+<td class="org-left">8-27, 30-68.</td>
+</tr>
+
+<tr>
+<td class="org-right">4.5</td>
+<td class="org-left">1-54.</td>
+</tr>
+
+<tr>
+<td class="org-right">4.7</td>
+<td class="org-left">2-8, 11-19, 21-23, 34-40, 48, 50.</td>
+</tr>
+
+<tr>
+<td class="org-right">4.9</td>
+<td class="org-left">1-18, 20-43, 45-48, 59-64.</td>
+</tr>
+
+<tr>
+<td class="org-right">5.1</td>
+<td class="org-left">1-8, 21-25.</td>
+</tr>
+
+<tr>
+<td class="org-right">5.2</td>
+<td class="org-left">17-25, 33-40, 47-50, 55-58.</td>
+</tr>
+
+<tr>
+<td class="org-right">5.3</td>
+<td class="org-left">5-37, 39-44, 59-63.</td>
+</tr>
+
+<tr>
+<td class="org-right">5.4</td>
+<td class="org-left">1-12, 14-18, 21-39, 41, 42, 43.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org00c99e5" class="outline-2">
+<h2 id="org00c99e5">Resources</h2>
+<div class="outline-text-2" id="text-org00c99e5">
+<p>
+Here are some interesting resources to complement the course materials. 
+</p>
+<ul class="org-ul">
+<li><a href="https://www.khanacademy.org/math/ap-calculus-ab">Khan Academy</a> calculus module. The videos are great!</li>
+<li><a href="https://www.desmos.com/calculator">Desmos</a> graphic calculator.</li>
+<li><a href="https://www.wolframalpha.com/">WolframAlpha</a>.</li>
+<li><a href="https://ocw.mit.edu/courses/18-01-calculus-i-single-variable-calculus-fall-2020/">MIT OpenCourseware</a> Calculus 1: Single Variable Calculus.</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Santiago Arango-Piñeros</p>
+<p class="date">Created: 2023-04-17 Mon 13:59</p>
+<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.2 (<a href="https://orgmode.org">Org</a> mode 9.4.4)</p>
+</div>
+</body>
+</html>

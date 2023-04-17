@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2023-04-17 Mon 14:10 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Supersingular Elliptic Curves</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Santiago Arango-Piñeros" />
+<link rel="stylesheet" type="text/css" href="style.css" />
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Supersingular Elliptic Curves</h1>
+
+<div id="outline-container-org09bcdeb" class="outline-2">
+<h2 id="org09bcdeb">Supersingularity</h2>
+</div>
+<div id="outline-container-orge198ccf" class="outline-2">
+<h2 id="orge198ccf">Characteristic 2</h2>
+<div class="outline-text-2" id="text-orge198ccf">
+<p>
+In characteristic \(2\), an elliptic curve is supersingular if and only if it's \(j\) invariant is zero. One way of proving this is to use the fact that supersingular elliptic curves in characteristic \(p\) have \(j\)-invariant in \(\mathbf{F}_{p^2}\) and trivial \(p\)-torsion. This can be checked in MAGMA by calculating the \(2\)-torsion subscheme for each possible \(j \in \mathbf{F}_4\).
+</p>
+
+<div class="org-src-container">
+<pre class="src src-org">&gt; K := GF(4);
+&gt; for j in K do TorsionSubgroupScheme(EllipticCurveFromjInvariant(j),2);
+end for;
+Subgroup scheme of Elliptic Curve defined by y^2 + y = x^3 over GF(2^2)
+defined by 1
+Subgroup scheme of Elliptic Curve defined by y^2 + x*y = x^3 + 1 over
+GF(2^2) defined by x^2
+Subgroup scheme of Elliptic Curve defined by y^2 + x*y = x^3 + K.1^2 over
+GF(2^2) defined by x^2
+Subgroup scheme of Elliptic Curve defined by y^2 + x*y = x^3 + K.1 over
+GF(2^2) defined by x^2
+</pre>
+</div>
+
+<p>
+This allows us to conclude that over \(\bar{\mathbf{F}}_2\), all supersingular elliptic curves are isomorphic to \(y^2 +  y = x^3\).  
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Santiago Arango-Piñeros</p>
+<p class="date">Created: 2023-04-17 Mon 14:10</p>
+<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.2 (<a href="https://orgmode.org">Org</a> mode 9.4.4)</p>
+</div>
+</body>
+</html>
