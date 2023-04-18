@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-04-17 Mon 14:10 -->
+<!-- 2023-04-18 Tue 08:52 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>A conjecture of Lang</title>
@@ -75,9 +75,9 @@ ax^n + by^m,\quad cx^ny^m + d.
 The proofs were found independently and communicated privately to Lang. Ihara proved a special case, and Serre and Tate gave very similar proofs. For the original source, check out <a href="https://link.springer.com/article/10.1007/BF02410091">Lang's paper</a>.
 </p>
 
-<div id="outline-container-orgd891436" class="outline-2">
-<h2 id="orgd891436">Split tori</h2>
-<div class="outline-text-2" id="text-orgd891436">
+<div id="outline-container-org3002b0a" class="outline-2">
+<h2 id="org3002b0a">Split tori</h2>
+<div class="outline-text-2" id="text-org3002b0a">
 <p>
 Before discussing the proof of Serre and Tate, lets recall some generalities about the multiplicative group \(\mathbf{G}_m\) and its powers.
 </p>
@@ -120,7 +120,7 @@ Suppose that \(X \subset T = \mathbf{G}_m^n\) is a non-empty irreducible \(\over
 
 </div>
 
-<div class="proof" id="org2637bbd">
+<div class="proof" id="orge6383fc">
 <p>
 We consider the case of curves. \(X\) is given by an irreducible polynomial \(f(x,y)\), and since \([N]X \subset X\), we see that \(f(\theta x, \eta y)\) divides \(f(x^N, y^N)\) for all \(N\)-th roots of unity \(\theta, \eta\). Since \(\deg f(x^N, y^N) = (\deg f(x,y))N\) and \((\theta, \eta)\) varies in a set of more than \(N\) elements, we conclude that \(X\) is invariant by at least \(N\) multiplicative translations \((x,y) \mapsto (\theta x, \eta y)\), where \((\theta, \eta)\) has order dividing \(N\). Since \(m\)-fold composition of \([N]\) corresponds to \([N^m]\), we see that \([N^m]X \subset X\), and we can run the same argument for every \([N^m]\) where \(m\) is a positive integer. We deduce that \(X\) is translation invariant by an infinite set of torsion points \(\Sigma\), and furthermore, it will be translation invariant by the Zariski closure of \(\Sigma\). This closure must contain a curve \(Z\), and \(Z\cdot X \subset X\), so that \(X\) must be a translate of \(Z\). From this, we see that \(Z\cdot Z \subset \tau Z\) for some root of unity \(\tau\), and the conclusion follows.
 </p>
@@ -129,9 +129,9 @@ We consider the case of curves. \(X\) is given by an irreducible polynomial \(f(
 </div>
 </div>
 
-<div id="outline-container-org9860891" class="outline-2">
-<h2 id="org9860891">The proof of Serre and Tate</h2>
-<div class="outline-text-2" id="text-org9860891">
+<div id="outline-container-org89d957e" class="outline-2">
+<h2 id="org89d957e">The proof of Serre and Tate</h2>
+<div class="outline-text-2" id="text-org89d957e">
 <p>
 We can restate Lang's conjecture in geometric terms as follows.
 </p>
@@ -148,9 +148,9 @@ If \(G \subset \mathbf{G}_m^2\) is a one-dimensional subgroup, then it is given 
 </p>
 </div>
 
-<div id="outline-container-orgc01cb3b" class="outline-3">
-<h3 id="orgc01cb3b">First observation</h3>
-<div class="outline-text-3" id="text-orgc01cb3b">
+<div id="outline-container-orgdac72e1" class="outline-3">
+<h3 id="orgdac72e1">First observation</h3>
+<div class="outline-text-3" id="text-orgdac72e1">
 <p>
 Even though our curve is apriori defined over the complex numbers, <b>the condition that it vanishes on infinitely many roots of unity actually forces the curve to have coefficients in some cyclotomic field!</b> The argument goes as follows:
 </p>
@@ -165,9 +165,9 @@ Let's call \(k = \mathbf{Q}(\zeta_m)\) the cyclotomic number field over which ou
 </div>
 </div>
 
-<div id="outline-container-orgd03e9f0" class="outline-3">
-<h3 id="orgd03e9f0">The final step</h3>
-<div class="outline-text-3" id="text-orgd03e9f0">
+<div id="outline-container-orgf581187" class="outline-3">
+<h3 id="orgf581187">The final step</h3>
+<div class="outline-text-3" id="text-orgf581187">
 <p>
 Let \(\boldsymbol{\zeta}=(\theta. \eta)\) be a torsion point on \(X\), say of order \(n\). Let \(N\) be a positive integer coprime to \(n\), and let \(\sigma \in \mathrm{Gal}(\mathbf{Q}(\boldsymbol{\zeta})/\mathbf{Q})\) be an automorphism with \(\sigma \boldsymbol{\zeta} = \boldsymbol{\zeta}^N\). Choosing \(N\) such that in addition \(N \equiv 1 \, (\mathrm{mod} \, m)\), \(\sigma\) can be extended to a field automorphism of \(k(\boldsymbol{\zeta})/k\). This implies that \(\boldsymbol{\zeta}^N \in X\), and \(X \cap [N]X\) contains every conjugate of \(\boldsymbol{\zeta}\). If \(X\) and \([N]X\) don't have a common component, Bezout's theorem tells us that the number of points in the intersection does not excede the product of the degrees of the curves. We then have the following inequalities:
 </p>
@@ -183,9 +183,9 @@ By Dirichlet's theorem of primes in arithmetic progressions, for \(n\) large eno
 </div>
 
 
-<div id="outline-container-org65dc20f" class="outline-2">
-<h2 id="org65dc20f">References</h2>
-<div class="outline-text-2" id="text-org65dc20f">
+<div id="outline-container-org8cbec1a" class="outline-2">
+<h2 id="org8cbec1a">References</h2>
+<div class="outline-text-2" id="text-org8cbec1a">
 <p>
 I wrote this blog post in preparation for a talk at our reading seminar in preparation for the Arizona Winter School 2023. 
 </p>
@@ -199,7 +199,7 @@ I wrote this blog post in preparation for a talk at our reading seminar in prepa
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: <a href="http://www.math.emory.edu/~sarang2/">Santiago Arango-Piñeros</a></p>
-<p class="date">Created: 2023-04-17 Mon 14:10</p>
+<p class="date">Created: 2023-04-18 Tue 08:52</p>
 <p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.2 (<a href="https://orgmode.org">Org</a> mode 9.4.4)</p>
 </div>
 </body>

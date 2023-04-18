@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-04-17 Mon 13:59 -->
+<!-- 2023-04-18 Tue 08:51 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Santiago Arango-Piñeros</title>
@@ -23,21 +23,21 @@
 </colgroup>
 <tbody>
 <tr>
-<td class="org-left">• <a href="../index.html"><b>Home</b></a> • <a href="../research/research.html"><b>Research</b></a> • <a href="../teaching/teaching.html"><b>Teaching</b></a> • <a href="../notes/notes.html"><b>Notes</b></a> • <b>Talks</b> • <a href="../links/links.html"><b>Links</b></a> • <b><a href="https://www.dropbox.com/s/4p29sziryd8gexr/CV.pdf?dl=0">CV</a></b> •</td>
+<td class="org-left">• <a href="../index.html"><b>Home</b></a> • <a href="../research/research.html"><b>Research</b></a> • <a href="../teaching/teaching.html"><b>Teaching</b></a> • <a href="../notes/notes.html"><b>Notes</b></a> • <b>Talks</b> • <a href="../links/links.html"><b>Links</b></a> • <a href="../CV.pdf"><b>CV</b></a> •</td>
 </tr>
 </tbody>
 </table>
 </div>
-<div id="outline-container-orgbb6463b" class="outline-2">
-<h2 id="orgbb6463b">Talks</h2>
-<div class="outline-text-2" id="text-orgbb6463b">
+<div id="outline-container-org60b0281" class="outline-2">
+<h2 id="org60b0281">Talks</h2>
+<div class="outline-text-2" id="text-org60b0281">
 <p>
 If you attended one of my talks, please fill <a href="https://docs.google.com/forms/d/e/1FAIpQLSd0YDe_f3dXzYK9479f0mDednGQDdkx-b5xKJuStQalB4ivew/viewform?usp=sf_link">this form</a> with any feedback you might have to help me become a better speaker!
 </p>
 
 <ul class="org-ul">
 <li class="on"><code>[X]</code> <b>AMS Central Sectional:</b> Special session on Arithmetic Statistics. Cincinnati.</li>
-<li class="on"><code>[X]</code> <b>Algebra, Geometry, and Number Theory Seminar</b>, University of South Carolina.</li>
+<li class="on"><code>[X]</code> <b>Algebra, Geometry, and Number Theory Seminar.</b> University of South Carolina.</li>
 </ul>
 
 <hr>
@@ -46,7 +46,7 @@ If you attended one of my talks, please fill <a href="https://docs.google.com/fo
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Santiago Arango-Piñeros</p>
-<p class="date">Created: 2023-04-17 Mon 13:59</p>
+<p class="date">Created: 2023-04-18 Tue 08:51</p>
 <p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.2 (<a href="https://orgmode.org">Org</a> mode 9.4.4)</p>
 </div>
 </body>
