@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-04-18 Tue 08:51 -->
+<!-- 2023-05-12 Fri 19:15 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Santiago Arango-Piñeros</title>
@@ -23,7 +23,7 @@
 </colgroup>
 <tbody>
 <tr>
-<td class="org-left">• <a href="../index.html"><b>Home</b></a> • <a href="../research/research.html"><b>Research</b></a> • <a href="../teaching/teaching.html"><b>Teaching</b></a> • <a href="../notes/notes.html"><b>Notes</b></a> • <a href="../talks/talks.html"><b>Talks</b></a> • <b>Links</b> • *<a href="../CV.pdf">CV</a> * •</td>
+<td class="org-left">• <a href="../index.html"><b>Home</b></a> • <a href="../research/research.html"><b>Research</b></a> • <a href="../teaching/teaching.html"><b>Teaching</b></a> • <a href="../notes/notes.html"><b>Notes</b></a> • <a href="../talks/talks.html"><b>Talks</b></a> • <b>Links</b> • <a href="../data/data.html"><b>Data</b></a> • <a href="../CV.pdf"><b>CV</b></a> •</td>
 </tr>
 </tbody>
 </table>
@@ -40,9 +40,9 @@ I believe that <a href="https://www.ams.org/publications/journals/notices/201610
 </ol>
 
 
-<div id="outline-container-orgddfb073" class="outline-2">
-<h2 id="orgddfb073">Advice</h2>
-<div class="outline-text-2" id="text-orgddfb073">
+<div id="outline-container-org22a11fa" class="outline-2">
+<h2 id="org22a11fa">Advice</h2>
+<div class="outline-text-2" id="text-org22a11fa">
 <p>
 This is a list of websites/articles I revisit frequently.
 </p>
@@ -56,9 +56,9 @@ This is a list of websites/articles I revisit frequently.
 </div>
 </div>
 
-<div id="outline-container-org5f74cb9" class="outline-2">
-<h2 id="org5f74cb9">Arithmetic statistics resources</h2>
-<div class="outline-text-2" id="text-org5f74cb9">
+<div id="outline-container-orga72592f" class="outline-2">
+<h2 id="orga72592f">Arithmetic statistics resources</h2>
+<div class="outline-text-2" id="text-orga72592f">
 <ul class="org-ul">
 <li>Arithmetic statistics at the <a href="https://swc-math.github.io/aws/2014/index.html">2014 AWS</a>.
 <ul class="org-ul">
@@ -72,9 +72,9 @@ This is a list of websites/articles I revisit frequently.
 </div>
 </div>
 
-<div id="outline-container-orgb72bce2" class="outline-2">
-<h2 id="orgb72bce2">Past activities</h2>
-<div class="outline-text-2" id="text-orgb72bce2">
+<div id="outline-container-org61391b9" class="outline-2">
+<h2 id="org61391b9">Past activities</h2>
+<div class="outline-text-2" id="text-org61391b9">
 <ul class="org-ul">
 <li class="on"><code>[X]</code> <a href="../juice/juice.html">JUICE</a>; Just an Unlikely Intersections Colloquium at Emory. (Co-organized with Roberto Hernández, Fall 2022)</li>
 <li class="on"><code>[X]</code> I started learning about <a href="https://www.math.emory.edu/~dzb/teaching/788Fall2022/">stacks</a>; here are my <a href="../notes/stacks_notes.html">handwritten notes</a>. (Fall of 2022)</li>
@@ -93,7 +93,7 @@ This is a list of websites/articles I revisit frequently.
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Santiago Arango-Piñeros</p>
-<p class="date">Created: 2023-04-18 Tue 08:51</p>
+<p class="date">Created: 2023-05-12 Fri 19:15</p>
 <p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.2 (<a href="https://orgmode.org">Org</a> mode 9.4.4)</p>
 </div>
 </body>

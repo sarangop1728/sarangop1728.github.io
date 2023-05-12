@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-04-18 Tue 08:51 -->
+<!-- 2023-05-12 Fri 19:14 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Supersingular Elliptic Curves</title>
@@ -37,12 +37,12 @@
 <div id="content">
 <h1 class="title">Supersingular Elliptic Curves</h1>
 
-<div id="outline-container-orgb92ca9d" class="outline-2">
-<h2 id="orgb92ca9d">Supersingularity</h2>
+<div id="outline-container-org8599efd" class="outline-2">
+<h2 id="org8599efd">Supersingularity</h2>
 </div>
-<div id="outline-container-org2053b40" class="outline-2">
-<h2 id="org2053b40">Characteristic 2</h2>
-<div class="outline-text-2" id="text-org2053b40">
+<div id="outline-container-orgd7742a2" class="outline-2">
+<h2 id="orgd7742a2">Characteristic 2</h2>
+<div class="outline-text-2" id="text-orgd7742a2">
 <p>
 In characteristic \(2\), an elliptic curve is supersingular if and only if it's \(j\) invariant is zero. One way of proving this is to use the fact that supersingular elliptic curves in characteristic \(p\) have \(j\)-invariant in \(\mathbf{F}_{p^2}\) and trivial \(p\)-torsion. This can be checked in MAGMA by calculating the \(2\)-torsion subscheme for each possible \(j \in \mathbf{F}_4\).
 </p>
@@ -70,7 +70,7 @@ This allows us to conclude that over \(\bar{\mathbf{F}}_2\), all supersingular e
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Santiago Arango-Piñeros</p>
-<p class="date">Created: 2023-04-18 Tue 08:51</p>
+<p class="date">Created: 2023-05-12 Fri 19:14</p>
 <p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.2 (<a href="https://orgmode.org">Org</a> mode 9.4.4)</p>
 </div>
 </body>

@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-04-18 Tue 08:51 -->
+<!-- 2023-05-12 Fri 19:15 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Group schemes</title>
@@ -15,38 +15,38 @@
 <div id="content">
 <h1 class="title">Group schemes</h1>
 
-<div id="outline-container-org59e2e60" class="outline-2">
-<h2 id="org59e2e60">Group objects in categories</h2>
+<div id="outline-container-org4d590f2" class="outline-2">
+<h2 id="org4d590f2">Group objects in categories</h2>
 </div>
 
-<div id="outline-container-org15c8e86" class="outline-2">
-<h2 id="org15c8e86">Yoneda more practical definition</h2>
+<div id="outline-container-orgd47ba35" class="outline-2">
+<h2 id="orgd47ba35">Yoneda more practical definition</h2>
 </div>
 
-<div id="outline-container-org3e60860" class="outline-2">
-<h2 id="org3e60860">Group schemes via FOP</h2>
-<div class="outline-text-2" id="text-org3e60860">
+<div id="outline-container-orge519816" class="outline-2">
+<h2 id="orge519816">Group schemes via FOP</h2>
+<div class="outline-text-2" id="text-orge519816">
 </div>
-<div id="outline-container-org424849d" class="outline-3">
-<h3 id="org424849d">Definitions and Examples</h3>
-</div>
-
-<div id="outline-container-org08665f3" class="outline-3">
-<h3 id="org08665f3">Elementary properties</h3>
+<div id="outline-container-org665e2a0" class="outline-3">
+<h3 id="org665e2a0">Definitions and Examples</h3>
 </div>
 
-<div id="outline-container-orgff01548" class="outline-3">
-<h3 id="orgff01548">Cartier duality</h3>
+<div id="outline-container-orgf729026" class="outline-3">
+<h3 id="orgf729026">Elementary properties</h3>
 </div>
 
-<div id="outline-container-org5b049ce" class="outline-3">
-<h3 id="org5b049ce">The component group</h3>
+<div id="outline-container-orgd7895a5" class="outline-3">
+<h3 id="orgd7895a5">Cartier duality</h3>
+</div>
+
+<div id="outline-container-org11c2175" class="outline-3">
+<h3 id="org11c2175">The component group</h3>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Santiago Arango-Piñeros</p>
-<p class="date">Created: 2023-04-18 Tue 08:51</p>
+<p class="date">Created: 2023-05-12 Fri 19:15</p>
 <p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.2 (<a href="https://orgmode.org">Org</a> mode 9.4.4)</p>
 </div>
 </body>

@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-04-18 Tue 08:51 -->
+<!-- 2023-05-12 Fri 19:15 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Math 111 - Fall 2022</title>
@@ -69,14 +69,14 @@ This is the official website of Section 3 of Calculus 1 taught by <a href="../in
 </tbody>
 </table>
 
-<div id="outline-container-org494294b" class="outline-2">
-<h2 id="org494294b">Solutions to exams</h2>
+<div id="outline-container-org9b1ffee" class="outline-2">
+<h2 id="org9b1ffee">Solutions to exams</h2>
 </div>
 
 
-<div id="outline-container-orgac19b61" class="outline-2">
-<h2 id="orgac19b61">About this course</h2>
-<div class="outline-text-2" id="text-orgac19b61">
+<div id="outline-container-org1cf3864" class="outline-2">
+<h2 id="org1cf3864">About this course</h2>
+<div class="outline-text-2" id="text-org1cf3864">
 <p>
 In this course <a href="https://www.ams.org/publications/journals/notices/201610/rnoti-p1164.pdf">everybody counts</a>:
 </p>
@@ -88,11 +88,11 @@ In this course <a href="https://www.ams.org/publications/journals/notices/201610
 </ol>
 </div>
 
-<div id="outline-container-org0ea52f7" class="outline-3">
-<h3 id="org0ea52f7">Some advice</h3>
-<div class="outline-text-3" id="text-org0ea52f7">
+<div id="outline-container-orgb308ace" class="outline-3">
+<h3 id="orgb308ace">Some advice</h3>
+<div class="outline-text-3" id="text-orgb308ace">
 <ul class="org-ul">
-<li><b>The recipe for succes</b> in this class is simple to state and hard to accomplish: try all the <a href="#org5946d41">recommended problems</a> and make sure you understand them. If you do this, I can guarantee you will get an A.</li>
+<li><b>The recipe for succes</b> in this class is simple to state and hard to accomplish: try all the <a href="#org70b27f6">recommended problems</a> and make sure you understand them. If you do this, I can guarantee you will get an A.</li>
 <li><b>Talk to your classmates!</b> Math is more fun when we share our understanding and confusions. No need to suffer in silence.</li>
 <li>Paraphrasing Galileo: "<i>You can not teach a person anything, you can only help them find it within themselves.</i>" In particular, <b>math can't be learned by just sitting in the lectures</b>; you need to engage with the material and understand things in your own way.</li>
 <li><b>Organize your schedule.</b> Dedicate 1-2 hours each day during the week (rest on weekends) to work on the problems. Before the exams, write down a brief summary of the main concepts and make sure to review your solutions of the corresponding problems.</li>
@@ -101,20 +101,20 @@ In this course <a href="https://www.ams.org/publications/journals/notices/201610
 </div>
 </div>
 
-<div id="outline-container-orgca5f730" class="outline-2">
-<h2 id="orgca5f730">Syllabus</h2>
-<div class="outline-text-2" id="text-orgca5f730">
+<div id="outline-container-org96bdac9" class="outline-2">
+<h2 id="org96bdac9">Syllabus</h2>
+<div class="outline-text-2" id="text-org96bdac9">
 </div>
 </div>
 
-<div id="outline-container-orgb52f02c" class="outline-2">
-<h2 id="orgb52f02c">Schedule</h2>
-<div class="outline-text-2" id="text-orgb52f02c">
+<div id="outline-container-org09b42e4" class="outline-2">
+<h2 id="org09b42e4">Schedule</h2>
+<div class="outline-text-2" id="text-org09b42e4">
 </div>
 
-<div id="outline-container-org104ad14" class="outline-3">
-<h3 id="org104ad14">In-class problems and lecture notes</h3>
-<div class="outline-text-3" id="text-org104ad14">
+<div id="outline-container-org9d6b0c1" class="outline-3">
+<h3 id="org9d6b0c1">In-class problems and lecture notes</h3>
+<div class="outline-text-3" id="text-org9d6b0c1">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -287,9 +287,9 @@ In this course <a href="https://www.ams.org/publications/journals/notices/201610
 </div>
 
 
-<div id="outline-container-org2b5b7a7" class="outline-3">
-<h3 id="org2b5b7a7"><a id="org5946d41"></a> Recommended problems</h3>
-<div class="outline-text-3" id="text-org2b5b7a7">
+<div id="outline-container-orga78387a" class="outline-3">
+<h3 id="orga78387a"><a id="org70b27f6"></a> Recommended problems</h3>
+<div class="outline-text-3" id="text-orga78387a">
 <p>
 Here are some additional recommended problems from the book. You don't have to do them all to get an A, but if you understand them all you will definitely get an A. If you want more challenging problems, let me know and I will hook you up with some fun stuff.
 </p>
@@ -448,9 +448,9 @@ Here are some additional recommended problems from the book. You don't have to d
 </div>
 </div>
 
-<div id="outline-container-org09b0b53" class="outline-2">
-<h2 id="org09b0b53">Resources</h2>
-<div class="outline-text-2" id="text-org09b0b53">
+<div id="outline-container-org374f8be" class="outline-2">
+<h2 id="org374f8be">Resources</h2>
+<div class="outline-text-2" id="text-org374f8be">
 <p>
 Here are some interesting resources to complement the course materials. 
 </p>
@@ -465,7 +465,7 @@ Here are some interesting resources to complement the course materials.
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Santiago Arango-Piñeros</p>
-<p class="date">Created: 2023-04-18 Tue 08:51</p>
+<p class="date">Created: 2023-05-12 Fri 19:15</p>
 <p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.2 (<a href="https://orgmode.org">Org</a> mode 9.4.4)</p>
 </div>
 </body>
