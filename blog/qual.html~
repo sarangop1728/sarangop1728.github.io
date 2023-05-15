@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-05-12 Fri 19:14 -->
+<!-- 2023-05-12 Fri 19:18 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>My qualifying exam</title>
@@ -46,9 +46,9 @@ Please email me with your suggestions and corrections.
 </pre>
 </div>
 
-<div id="outline-container-orgcb30046" class="outline-2">
-<h2 id="orgcb30046">The exam</h2>
-<div class="outline-text-2" id="text-orgcb30046">
+<div id="outline-container-org6cf4924" class="outline-2">
+<h2 id="org6cf4924">The exam</h2>
+<div class="outline-text-2" id="text-org6cf4924">
 <p>
 At least for DZB students, the drill is to agree on a syllabus covering the <a href="http://www.math.emory.edu/~dzb/adviceArithmeticGeometry.html">core material of algebraic geometry</a>, and take a ~1.5 hour oral exam with a committee of professors of your choosing. My examiners where David Zureick-Brown (DZB) and Brooke Ullery (BU). 
 </p>
@@ -63,22 +63,22 @@ It seems to me that the point of the exam is (1) studying for it, and (2) making
 </div>
 </div>
 
-<div id="outline-container-org291c2a7" class="outline-2">
-<h2 id="org291c2a7">My syllabus</h2>
-<div class="outline-text-2" id="text-org291c2a7">
+<div id="outline-container-orga801286" class="outline-2">
+<h2 id="orga801286">My syllabus</h2>
+<div class="outline-text-2" id="text-orga801286">
 <p>
 I wanted <a href="./syllabus.pdf">my syllabus</a> to contain all the topics of my advisor's qualifying exam syllabus. This coincides with what DZB considers to be the <a href="http://www.math.emory.edu/~dzb/adviceArithmeticGeometry.html">core material of algebraic geometry and algebraic number theory</a>.
 </p>
 </div>
 </div>
 
-<div id="outline-container-org229310c" class="outline-2">
-<h2 id="org229310c">My questions</h2>
-<div class="outline-text-2" id="text-org229310c">
+<div id="outline-container-org18af376" class="outline-2">
+<h2 id="org18af376">My questions</h2>
+<div class="outline-text-2" id="text-org18af376">
 </div>
-<div id="outline-container-org232329f" class="outline-3">
-<h3 id="org232329f">Algebraic Geometry</h3>
-<div class="outline-text-3" id="text-org232329f">
+<div id="outline-container-org3f07f92" class="outline-3">
+<h3 id="org3f07f92">Algebraic Geometry</h3>
+<div class="outline-text-3" id="text-org3f07f92">
 <ol class="org-ol">
 <li>(DZB) <b>Show that a morphism of sheaves (of sets) is surjective if and only if the induced morphism of stalks is surjective for every point.</b> 
 <ul class="org-ul">
@@ -133,9 +133,9 @@ I wanted <a href="./syllabus.pdf">my syllabus</a> to contain all the topics of m
 </div>
 </div>
 
-<div id="outline-container-org913a5fc" class="outline-3">
-<h3 id="org913a5fc">Number Theory</h3>
-<div class="outline-text-3" id="text-org913a5fc">
+<div id="outline-container-org6d270fa" class="outline-3">
+<h3 id="org6d270fa">Number Theory</h3>
+<div class="outline-text-3" id="text-org6d270fa">
 <p>
 DZB asked all the number theory questions.
 </p>
@@ -171,9 +171,9 @@ DZB asked all the number theory questions.
 </div>
 
 
-<div id="outline-container-orgea44c01" class="outline-2">
-<h2 id="orgea44c01">Some advice</h2>
-<div class="outline-text-2" id="text-orgea44c01">
+<div id="outline-container-org4dc8275" class="outline-2">
+<h2 id="org4dc8275">Some advice</h2>
+<div class="outline-text-2" id="text-org4dc8275">
 <p>
 Everybody's approach to learning is different. Mine is to write things down until they make sense, and then working on lots of problems. 
 </p>
@@ -212,7 +212,7 @@ Everybody's approach to learning is different. Mine is to write things down unti
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: <a href="http://www.math.emory.edu/~sarang2/">Santiago Arango-Piñeros</a></p>
-<p class="date">Created: 2023-05-12 Fri 19:14</p>
+<p class="date">Created: 2023-05-12 Fri 19:18</p>
 <p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.2 (<a href="https://orgmode.org">Org</a> mode 9.4.4)</p>
 </div>
 </body>

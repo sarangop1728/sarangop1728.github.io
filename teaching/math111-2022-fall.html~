@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-05-12 Fri 19:15 -->
+<!-- 2023-05-12 Fri 19:18 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Math 111 - Fall 2022</title>
@@ -69,9 +69,9 @@ This is the official website of Section 3 of Calculus 1 taught by <a href="../in
 </tbody>
 </table>
 
-<div id="outline-container-org556463b" class="outline-2">
-<h2 id="org556463b">Solutions to exams</h2>
-<div class="outline-text-2" id="text-org556463b">
+<div id="outline-container-org20eceef" class="outline-2">
+<h2 id="org20eceef">Solutions to exams</h2>
+<div class="outline-text-2" id="text-org20eceef">
 <ul class="org-ul">
 <li><a href="https://www.dropbox.com/s/kjxce0ds7xf79qg/Math111_Test1_solution.pdf?dl=0">Test 1</a></li>
 <li><a href="https://www.dropbox.com/s/0805dk4etbhn296/solution_Test2.pdf?dl=0">Test 2</a></li>
@@ -80,9 +80,9 @@ This is the official website of Section 3 of Calculus 1 taught by <a href="../in
 </div>
 </div>
 
-<div id="outline-container-orgad2e6f0" class="outline-2">
-<h2 id="orgad2e6f0">About this course</h2>
-<div class="outline-text-2" id="text-orgad2e6f0">
+<div id="outline-container-orgd80419e" class="outline-2">
+<h2 id="orgd80419e">About this course</h2>
+<div class="outline-text-2" id="text-orgd80419e">
 <p>
 In this course <a href="https://www.ams.org/publications/journals/notices/201610/rnoti-p1164.pdf">everybody counts</a>:
 </p>
@@ -94,11 +94,11 @@ In this course <a href="https://www.ams.org/publications/journals/notices/201610
 </ol>
 </div>
 
-<div id="outline-container-org1c2fea8" class="outline-3">
-<h3 id="org1c2fea8">Some advice</h3>
-<div class="outline-text-3" id="text-org1c2fea8">
+<div id="outline-container-org80bbf4e" class="outline-3">
+<h3 id="org80bbf4e">Some advice</h3>
+<div class="outline-text-3" id="text-org80bbf4e">
 <ul class="org-ul">
-<li><b>The recipe for succes</b> in this class is simple to state and hard to accomplish: try all the <a href="#org2a78dbd">recommended problems</a> and make sure you understand them. If you do this, I can guarantee you will get an A.</li>
+<li><b>The recipe for succes</b> in this class is simple to state and hard to accomplish: try all the <a href="#org0c009fe">recommended problems</a> and make sure you understand them. If you do this, I can guarantee you will get an A.</li>
 <li><b>Talk to your classmates!</b> Math is more fun when we share our understanding and confusions. No need to suffer in silence.</li>
 <li>Paraphrasing Galileo: "<i>You can not teach a person anything, you can only help them find it within themselves.</i>" In particular, <b>math can't be learned by just sitting in the lectures</b>; you need to engage with the material and understand things in your own way.</li>
 <li><b>Organize your schedule.</b> Dedicate 1-2 hours each day during the week (rest on weekends) to work on the problems. Before the exams, write down a brief summary of the main concepts and make sure to review your solutions of the corresponding problems.</li>
@@ -107,26 +107,26 @@ In this course <a href="https://www.ams.org/publications/journals/notices/201610
 </div>
 </div>
 
-<div id="outline-container-org887fa4e" class="outline-2">
-<h2 id="org887fa4e">Syllabus</h2>
-<div class="outline-text-2" id="text-org887fa4e">
+<div id="outline-container-orgd86720d" class="outline-2">
+<h2 id="orgd86720d">Syllabus</h2>
+<div class="outline-text-2" id="text-orgd86720d">
 <ul class="org-ul">
 <li>Follow <a href="https://www.dropbox.com/s/zqd5dl6d5s8458i/math111-2022-fall-syllabus.pdf?dl=0">this link</a> for the syllabus.</li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org62712e9" class="outline-2">
-<h2 id="org62712e9">Schedule</h2>
-<div class="outline-text-2" id="text-org62712e9">
+<div id="outline-container-orgb1ae884" class="outline-2">
+<h2 id="orgb1ae884">Schedule</h2>
+<div class="outline-text-2" id="text-orgb1ae884">
 <ul class="org-ul">
 <li>Follow <a href="https://www.dropbox.com/s/bjwtaao81gbfrt3/schedule.pdf?dl=0">this link</a> for a PDF document with the class schedule.</li>
 </ul>
 </div>
 
-<div id="outline-container-orgb34d682" class="outline-3">
-<h3 id="orgb34d682">In-class problems and lecture notes</h3>
-<div class="outline-text-3" id="text-orgb34d682">
+<div id="outline-container-org10d180a" class="outline-3">
+<h3 id="org10d180a">In-class problems and lecture notes</h3>
+<div class="outline-text-3" id="text-org10d180a">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -298,9 +298,9 @@ In this course <a href="https://www.ams.org/publications/journals/notices/201610
 </div>
 </div>
 
-<div id="outline-container-orgde5b969" class="outline-3">
-<h3 id="orgde5b969"><a id="org2a78dbd"></a> Recommended problems</h3>
-<div class="outline-text-3" id="text-orgde5b969">
+<div id="outline-container-org4e6ad0d" class="outline-3">
+<h3 id="org4e6ad0d"><a id="org0c009fe"></a> Recommended problems</h3>
+<div class="outline-text-3" id="text-org4e6ad0d">
 <p>
 Here are some additional recommended problems from the book. You don't have to do them all to get an A, but if you understand them all you will definitely get an A. If you want more challenging problems, let me know and I will hook you up with some fun stuff.
 </p>
@@ -459,9 +459,9 @@ Here are some additional recommended problems from the book. You don't have to d
 </div>
 </div>
 
-<div id="outline-container-org2057736" class="outline-2">
-<h2 id="org2057736">Resources</h2>
-<div class="outline-text-2" id="text-org2057736">
+<div id="outline-container-org250e951" class="outline-2">
+<h2 id="org250e951">Resources</h2>
+<div class="outline-text-2" id="text-org250e951">
 <p>
 Here are some interesting resources to complement the course materials. 
 </p>
@@ -476,7 +476,7 @@ Here are some interesting resources to complement the course materials.
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Santiago Arango-Piñeros</p>
-<p class="date">Created: 2023-05-12 Fri 19:15</p>
+<p class="date">Created: 2023-05-12 Fri 19:18</p>
 <p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.2 (<a href="https://orgmode.org">Org</a> mode 9.4.4)</p>
 </div>
 </body>

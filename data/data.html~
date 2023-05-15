@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-05-12 Fri 19:15 -->
+<!-- 2023-05-12 Fri 19:18 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Santiago Arango-Piñeros</title>
@@ -51,27 +51,31 @@
 </table>
 </div>
 
-<div id="outline-container-org0cb9d2d" class="outline-2">
-<h2 id="org0cb9d2d"><i>q</i>-Frobenius distributions</h2>
-<div class="outline-text-2" id="text-org0cb9d2d">
+<div id="outline-container-orgd790737" class="outline-2">
+<h2 id="orgd790737"><i>q</i>-Frobenius distributions</h2>
+<div class="outline-text-2" id="text-orgd790737">
 <p>
-Here is some graphical data of distrubutions of the sequences of normalized traces of the powers of Frobenius for abelian surfaces defined over \(\mathbf{F}_2\).
+Here is some graphical data of the distrubutions of the sequences of normalized traces of the powers of Frobenius for abelian surfaces defined over \(\mathbf{F}_2\).
 </p>
 </div>
-<div id="outline-container-org34b9112" class="outline-3">
-<h3 id="org34b9112">Abelian surfaces over the field with two elements</h3>
-<div class="outline-text-3" id="text-org34b9112">
+<div id="outline-container-org09ad8eb" class="outline-3">
+<h3 id="org09ad8eb">Abelian surfaces over the field with two elements</h3>
+<div class="outline-text-3" id="text-org09ad8eb">
 <p>
 There are 35 isogeny classes of abelian surfaces over \(\mathbf{F}_2\). For each isogeny class \(A\), we consider the Frobenius polynomial \(P_A(T)\) with complex roots \(\alpha_1, \alpha_2, \alpha_3, \alpha_4\). Here we plot the frequency histograms for the sequence 
 </p>
 \begin{equation*}
     x_r = \frac{\alpha_1^r + \alpha_2^r + \alpha_3^r + \alpha_4^r}{2^{r/2}} \in [-4,4], \text{ for } r \geq 1.
 \end{equation*} 
+<p>
+The vertical axis has been suitably scaled, with the height of the uniform distribution, \(1/8\), indicated by a gray line.
+</p>
 </div>
 
-<div id="outline-container-orgc18480f" class="outline-4">
-<h4 id="orgc18480f">Angle rank 0 (supersingular)</h4>
-<div class="outline-text-4" id="text-orgc18480f">
+
+<div id="outline-container-org6c3d00e" class="outline-4">
+<h4 id="org6c3d00e">Angle rank 0 (supersingular)</h4>
+<div class="outline-text-4" id="text-org6c3d00e">
 <ul class="org-ul">
 <li><p>
 Isogeny class <a href="https://www.lmfdb.org/Variety/Abelian/Fq/2/2/e_i">2.2.e_i</a>.
@@ -152,9 +156,9 @@ Isogeny class <a href="https://www.lmfdb.org/Variety/Abelian/Fq/2/2/ae_i">2.2.ae
 </div>
 </div>
 
-<div id="outline-container-org5deb291" class="outline-4">
-<h4 id="org5deb291">Angle rank 1</h4>
-<div class="outline-text-4" id="text-org5deb291">
+<div id="outline-container-org5f73831" class="outline-4">
+<h4 id="org5f73831">Angle rank 1</h4>
+<div class="outline-text-4" id="text-org5f73831">
 <ul class="org-ul">
 <li><p>
 Isogeny class <a href="https://www.lmfdb.org/Variety/Abelian/Fq/2/2/d_g">2.2.d_g</a>.
@@ -271,9 +275,9 @@ Isogeny class <a href="https://www.lmfdb.org/Variety/Abelian/Fq/2/2/ad_f">2.2.ad
 </div>
 </div>
 
-<div id="outline-container-org57edef3" class="outline-4">
-<h4 id="org57edef3">Angle rank 2</h4>
-<div class="outline-text-4" id="text-org57edef3">
+<div id="outline-container-orgf053d05" class="outline-4">
+<h4 id="orgf053d05">Angle rank 2</h4>
+<div class="outline-text-4" id="text-orgf053d05">
 <ul class="org-ul">
 <li><p>
 Isogeny class <a href="https://www.lmfdb.org/Variety/Abelian/Fq/2/2/c_d">2.2.c_d</a>.
@@ -345,7 +349,7 @@ Isogeny class <a href="https://www.lmfdb.org/Variety/Abelian/Fq/2/2/ac_d">2.2.ac
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Santiago Arango-Piñeros</p>
-<p class="date">Created: 2023-05-12 Fri 19:15</p>
+<p class="date">Created: 2023-05-12 Fri 19:18</p>
 <p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.2 (<a href="https://orgmode.org">Org</a> mode 9.4.4)</p>
 </div>
 </body>

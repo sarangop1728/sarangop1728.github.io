@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-05-12 Fri 19:15 -->
+<!-- 2023-05-12 Fri 19:18 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>JUICE</title>
@@ -28,9 +28,9 @@ Welcome to <b>JUICE</b>: Just an Unlikely Intersections Colloquium at Emory. Thi
 </figure>
 
 
-<div id="outline-container-orgf7d6f3a" class="outline-2">
-<h2 id="orgf7d6f3a">Talks</h2>
-<div class="outline-text-2" id="text-orgf7d6f3a">
+<div id="outline-container-org8b619e8" class="outline-2">
+<h2 id="org8b619e8">Talks</h2>
+<div class="outline-text-2" id="text-org8b619e8">
 <p>
 We will meet every two weeks, starting September 14. Here is a tentiative list of speakers and topics.
 </p>
@@ -59,21 +59,21 @@ We will meet every two weeks, starting September 14. Here is a tentiative list o
 <td class="org-left">09/14</td>
 <td class="org-left">Santi</td>
 <td class="org-left">Lang's conjecture and UI</td>
-<td class="org-left">Chapter 1 <a href="#orgce8b0bd">(Zan)</a>,<a href="#org07b4013">(L)</a></td>
+<td class="org-left">Chapter 1 <a href="#orgd489ba2">(Zan)</a>,<a href="#org0216ec1">(L)</a></td>
 </tr>
 
 <tr>
 <td class="org-left">09/28</td>
 <td class="org-left">Robert</td>
 <td class="org-left">Introduction to heights</td>
-<td class="org-left">Part B <a href="#org3807dd7">(H-S)</a></td>
+<td class="org-left">Part B <a href="#orgc926bab">(H-S)</a></td>
 </tr>
 
 <tr>
 <td class="org-left">10/12</td>
 <td class="org-left">Mike</td>
 <td class="org-left">UI in elliptic surfaces</td>
-<td class="org-left">Chapter 3 <a href="#orgce8b0bd">(Zan)</a></td>
+<td class="org-left">Chapter 3 <a href="#orgd489ba2">(Zan)</a></td>
 </tr>
 
 <tr>
@@ -87,7 +87,7 @@ We will meet every two weeks, starting September 14. Here is a tentiative list o
 <td class="org-left">11/9</td>
 <td class="org-left">Chris</td>
 <td class="org-left">The André–Oort conjecture</td>
-<td class="org-left">Chapter 4 <a href="#orgce8b0bd">(Zan)</a></td>
+<td class="org-left">Chapter 4 <a href="#orgd489ba2">(Zan)</a></td>
 </tr>
 
 <tr>
@@ -101,22 +101,22 @@ We will meet every two weeks, starting September 14. Here is a tentiative list o
 </div>
 </div>
 
-<div id="outline-container-org1b07bcc" class="outline-2">
-<h2 id="org1b07bcc">References</h2>
-<div class="outline-text-2" id="text-org1b07bcc">
+<div id="outline-container-org91f00f6" class="outline-2">
+<h2 id="org91f00f6">References</h2>
+<div class="outline-text-2" id="text-org91f00f6">
 <ul class="org-ul">
-<li><a id="orga43e954"></a> [B-DeM] Baker, Matthew, and DeMarco, Laura. "<i><a href="https://people.math.harvard.edu/~demarco/preperiodic.pdf">Preperiodic points and unlikely intersections</a></i>." Duke Mathematical Journal 159.1 (2011): 1-29.</li>
-<li><a id="org3807dd7"></a> Hindry, Marc, and Silverman, Joseph H. <i>Diophantine geometry: an introduction.</i> Vol. 201. Springer Science &amp; Business Media, 2013.</li>
-<li><a id="org07b4013"></a> Lang, Serge. "<i><a href="https://link.springer.com/article/10.1007/BF02410091">Division points on curves</a></i>" Annali di Matematica Pura ed Applicata 70.1 (1965): 229-234.</li>
-<li><a id="org956b1d4"></a> Silverman, Joseph H. <i>Advanced topics in the arithmetic of elliptic curves.</i> Vol. 151. Springer Science &amp; Business Media, 1994.</li>
-<li><a id="orgce8b0bd"></a> Zannier, Umberto. "<i>Some Problems of Unlikely Intersections in Arithmetic and Geometry.</i>" Princeton University Press, 2012.</li>
+<li><a id="orgaa964fc"></a> [B-DeM] Baker, Matthew, and DeMarco, Laura. "<i><a href="https://people.math.harvard.edu/~demarco/preperiodic.pdf">Preperiodic points and unlikely intersections</a></i>." Duke Mathematical Journal 159.1 (2011): 1-29.</li>
+<li><a id="orgc926bab"></a> Hindry, Marc, and Silverman, Joseph H. <i>Diophantine geometry: an introduction.</i> Vol. 201. Springer Science &amp; Business Media, 2013.</li>
+<li><a id="org0216ec1"></a> Lang, Serge. "<i><a href="https://link.springer.com/article/10.1007/BF02410091">Division points on curves</a></i>" Annali di Matematica Pura ed Applicata 70.1 (1965): 229-234.</li>
+<li><a id="org55437cd"></a> Silverman, Joseph H. <i>Advanced topics in the arithmetic of elliptic curves.</i> Vol. 151. Springer Science &amp; Business Media, 1994.</li>
+<li><a id="orgd489ba2"></a> Zannier, Umberto. "<i>Some Problems of Unlikely Intersections in Arithmetic and Geometry.</i>" Princeton University Press, 2012.</li>
 </ul>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Santiago Arango-Piñeros</p>
-<p class="date">Created: 2023-05-12 Fri 19:15</p>
+<p class="date">Created: 2023-05-12 Fri 19:18</p>
 <p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.2 (<a href="https://orgmode.org">Org</a> mode 9.4.4)</p>
 </div>
 </body>
