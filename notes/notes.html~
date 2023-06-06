@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-05-12 Fri 19:18 -->
+<!-- 2023-06-06 Tue 06:35 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Santiago Arango-Piñeros</title>
@@ -29,9 +29,9 @@
 </table>
 </div>
 
-<div id="outline-container-orgca0945b" class="outline-2">
-<h2 id="orgca0945b">Handwritten notes</h2>
-<div class="outline-text-2" id="text-orgca0945b">
+<div id="outline-container-orgf22ec67" class="outline-2">
+<h2 id="orgf22ec67">Handwritten notes</h2>
+<div class="outline-text-2" id="text-orgf22ec67">
 <ul class="org-ul">
 <li><a href="./stacks_notes.html">Stacks</a>.</li>
 </ul>
@@ -42,7 +42,7 @@
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Santiago Arango-Piñeros</p>
-<p class="date">Created: 2023-05-12 Fri 19:18</p>
+<p class="date">Created: 2023-06-06 Tue 06:35</p>
 <p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.2 (<a href="https://orgmode.org">Org</a> mode 9.4.4)</p>
 </div>
 </body>

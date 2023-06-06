@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-05-12 Fri 19:18 -->
+<!-- 2023-06-06 Tue 06:35 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Santiago Arango-Piñeros</title>
@@ -30,9 +30,9 @@
 </div>
 
 
-<div id="outline-container-orgbf5f61c" class="outline-2">
-<h2 id="orgbf5f61c">About Me</h2>
-<div class="outline-text-2" id="text-orgbf5f61c">
+<div id="outline-container-orga16dcc2" class="outline-2">
+<h2 id="orga16dcc2">About Me</h2>
+<div class="outline-text-2" id="text-orga16dcc2">
 <p>
 I am a third-year Ph.D. candidate at <a href="http://www.math.emory.edu/home/">Emory University's</a> Department of Mathematics in Atlanta. My advisor is <a href="http://www.mathcs.emory.edu/~dzb/">David Zureick-Brown</a>. I earned my M.S. from <a href="https://impa.br/">IMPA</a> in Rio de Janeiro and my B.S. from <a href="https://uniandes.edu.co/en">Universidad de los Andes</a> in Bogotá.
 </p>
@@ -40,9 +40,9 @@ I am a third-year Ph.D. candidate at <a href="http://www.math.emory.edu/home/">E
 </div>
 
 
-<div id="outline-container-org3f33df6" class="outline-2">
-<h2 id="org3f33df6">Coordinates</h2>
-<div class="outline-text-2" id="text-org3f33df6">
+<div id="outline-container-org29a8c1f" class="outline-2">
+<h2 id="org29a8c1f">Coordinates</h2>
+<div class="outline-text-2" id="text-org29a8c1f">
 <ul class="org-ul">
 <li><b>Office</b>: MSC 431.</li>
 <li><b>Permanent email</b>: <a href="mailto:santiago.arango.pineros@gmail.com">santiago.arango.pineros@gmail.com</a></li>
@@ -62,7 +62,7 @@ I am a third-year Ph.D. candidate at <a href="http://www.math.emory.edu/home/">E
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Santiago Arango-Piñeros</p>
-<p class="date">Created: 2023-05-12 Fri 19:18</p>
+<p class="date">Created: 2023-06-06 Tue 06:35</p>
 <p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.2 (<a href="https://orgmode.org">Org</a> mode 9.4.4)</p>
 </div>
 </body>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2023-06-06 Tue 06:35 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>&lrm;</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Santiago Arango" />
+<link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<body>
+<div id="content">
+<div id="outline-container-org1e5b2d2" class="outline-2">
+<h2 id="org1e5b2d2">Abelian Varieties</h2>
+</div>
+<div id="outline-container-orgfeaa71b" class="outline-2">
+<h2 id="orgfeaa71b">Topics</h2>
+<div class="outline-text-2" id="text-orgfeaa71b">
+</div>
+<div id="outline-container-orgd42e931" class="outline-3">
+<h3 id="orgd42e931">Geometry</h3>
+<div class="outline-text-3" id="text-orgd42e931">
+</div>
+<div id="outline-container-orgd73176b" class="outline-4">
+<h4 id="orgd73176b">Definitions and basic properties</h4>
+</div>
+<div id="outline-container-org9de3d5a" class="outline-4">
+<h4 id="org9de3d5a">Over the complex numbers</h4>
+</div>
+<div id="outline-container-org1b16acc" class="outline-4">
+<h4 id="org1b16acc">Rational maps into AVs</h4>
+</div>
+<div id="outline-container-org27b2b39" class="outline-4">
+<h4 id="org27b2b39">Theorem of the cube</h4>
+</div>
+<div id="outline-container-org01f1788" class="outline-4">
+<h4 id="org01f1788">AVs are projective</h4>
+</div>
+<div id="outline-container-orgb1eabf4" class="outline-4">
+<h4 id="orgb1eabf4">Isogenies</h4>
+</div>
+<div id="outline-container-orgb1e701a" class="outline-4">
+<h4 id="orgb1e701a">Dual AV and the dual exact sequence</h4>
+</div>
+<div id="outline-container-orgbc4f4d4" class="outline-4">
+<h4 id="orgbc4f4d4">Endomorphisms</h4>
+</div>
+<div id="outline-container-orgb8a63a5" class="outline-4">
+<h4 id="orgb8a63a5">Polarizations and invertible sheaves</h4>
+</div>
+<div id="outline-container-orgd7eb40a" class="outline-4">
+<h4 id="orgd7eb40a">Etale cohomology of AVs</h4>
+</div>
+<div id="outline-container-org5b43dbe" class="outline-4">
+<h4 id="org5b43dbe">Weil pairings</h4>
+</div>
+<div id="outline-container-orgd5d5e46" class="outline-4">
+<h4 id="orgd5d5e46">The Rosati involution</h4>
+</div>
+<div id="outline-container-org446fe22" class="outline-4">
+<h4 id="org446fe22">Geometric finiteness theorems</h4>
+</div>
+<div id="outline-container-orga5da77c" class="outline-4">
+<h4 id="orga5da77c">Families</h4>
+</div>
+<div id="outline-container-org699b330" class="outline-4">
+<h4 id="org699b330">Neron models and semistable reduction</h4>
+</div>
+</div>
+<div id="outline-container-org59f7065" class="outline-3">
+<h3 id="org59f7065">Arithmetic</h3>
+<div class="outline-text-3" id="text-org59f7065">
+</div>
+<div id="outline-container-org7718b19" class="outline-4">
+<h4 id="org7718b19">Zeta functions</h4>
+</div>
+<div id="outline-container-org3611ec2" class="outline-4">
+<h4 id="org3611ec2">AVs over finite fields</h4>
+</div>
+<div id="outline-container-org12cfd71" class="outline-4">
+<h4 id="org12cfd71">AVs with complex multiplication</h4>
+</div>
+</div>
+<div id="outline-container-org78e6233" class="outline-3">
+<h3 id="org78e6233">Jacobians</h3>
+</div>
+<div id="outline-container-orga223dec" class="outline-3">
+<h3 id="orga223dec">Finiteness theorems</h3>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Santiago Arango</p>
+<p class="date">Created: 2023-06-06 Tue 06:35</p>
+<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.2 (<a href="https://orgmode.org">Org</a> mode 9.4.4)</p>
+</div>
+</body>
+</html>

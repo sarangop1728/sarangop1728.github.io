@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-05-12 Fri 19:18 -->
+<!-- 2023-06-06 Tue 06:35 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Stacks Notes</title>
@@ -40,14 +40,14 @@ Here are my handwritten notes for the <a href="https://www.math.emory.edu/~dzb/t
 <li><a href="https://www.dropbox.com/s/kz5db7i2q6v8kv4/Lecture%2019.pdf?dl=0">More descent</a></li>
 <li><a href="https://www.dropbox.com/s/ud12k85okjgr9x2/Lecture%2020.pdf?dl=0">2-categories</a></li>
 <li><a href="https://www.dropbox.com/s/d310ujudcal5293/Lecture%2021.pdf?dl=0">Fibered categories</a></li>
-<li>Stacks</li>
+<li><a href="https://www.dropbox.com/s/hn73ishkhz1mler/Lecture%2022.pdf?dl=0">Stacks</a></li>
 <li>Algebraic stacks</li>
 <li>Stackification and quotient stacks</li>
 </ol>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Santiago Arango-Piñeros</p>
-<p class="date">Created: 2023-05-12 Fri 19:18</p>
+<p class="date">Created: 2023-06-06 Tue 06:35</p>
 <p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.2 (<a href="https://orgmode.org">Org</a> mode 9.4.4)</p>
 </div>
 </body>

@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-05-12 Fri 19:18 -->
+<!-- 2023-06-06 Tue 06:35 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Zeta functions and the Weil conjectures</title>
@@ -51,25 +51,25 @@ Please email me with your suggestions and corrections.
 </div>
 
 
-<div id="outline-container-org545af02" class="outline-4">
-<h4 id="org545af02">References</h4>
-<div class="outline-text-4" id="text-org545af02">
+<div id="outline-container-org92dbcc7" class="outline-4">
+<h4 id="org92dbcc7">References</h4>
+<div class="outline-text-4" id="text-org92dbcc7">
 <p>
 This expository note is based on several wonderful references that I cite bellow. If you liked this post, you will love the following:
 </p>
 </div>
 <ul class="org-ul">
-<li><a id="org6389bc1"></a>Oort, Frans. <i><a href="http://www.nieuwarchief.nl/serie5/pdf/naw5-2014-15-3-211.pdf">The Weil conjectures</a></i>. NAW 5/15 nr. 3 September, 2014.<br /></li>
-<li><a id="orga1ae0f2"></a>Poonen, Bjorn. <i>"<a href="https://math.mit.edu/~poonen/papers/curves.pdf">Lectures on rational points on curves.</a>"</i> University of California, Berkeley (2006).<br /></li>
-<li><a id="orgba8f512"></a>Poonen, Bjorn. <i>Rational points on varieties</i>. Vol. 186. American Mathematical Soc., 2017.<br /></li>
-<li><a id="org81abc01"></a>Serre, Jean-Pierre. <i>"Zeta and L functions."</i> Arithmetical Algebraic Geometry, Proc. of a Conference held at Purdue Univ., Dec. 5-7, 1963. Harper and Row, 1965.<br /></li>
+<li><a id="orgc7a12a7"></a>Oort, Frans. <i><a href="http://www.nieuwarchief.nl/serie5/pdf/naw5-2014-15-3-211.pdf">The Weil conjectures</a></i>. NAW 5/15 nr. 3 September, 2014.<br /></li>
+<li><a id="org61a4ec0"></a>Poonen, Bjorn. <i>"<a href="https://math.mit.edu/~poonen/papers/curves.pdf">Lectures on rational points on curves.</a>"</i> University of California, Berkeley (2006).<br /></li>
+<li><a id="org2157e8a"></a>Poonen, Bjorn. <i>Rational points on varieties</i>. Vol. 186. American Mathematical Soc., 2017.<br /></li>
+<li><a id="orgb82e65d"></a>Serre, Jean-Pierre. <i>"Zeta and L functions."</i> Arithmetical Algebraic Geometry, Proc. of a Conference held at Purdue Univ., Dec. 5-7, 1963. Harper and Row, 1965.<br /></li>
 </ul>
 </div>
 
 
-<div id="outline-container-org40f45ca" class="outline-2">
-<h2 id="org40f45ca">The zeta function</h2>
-<div class="outline-text-2" id="text-org40f45ca">
+<div id="outline-container-orgd0ee727" class="outline-2">
+<h2 id="orgd0ee727">The zeta function</h2>
+<div class="outline-text-2" id="text-orgd0ee727">
 <p>
 Let \(X\) be a scheme of <a href="https://stacks.math.columbia.edu/tag/01T0">finite type</a> over \(\mathbf{Z}\). For every closed point \(P \in X\), the residue field
 </p>
@@ -111,9 +111,9 @@ Before looking at some enlightening examples, we deduce two important properties
 </p>
 </div>
 
-<div id="outline-container-orgdc349dd" class="outline-3">
-<h3 id="orgdc349dd">Two properties</h3>
-<div class="outline-text-3" id="text-orgdc349dd">
+<div id="outline-container-orgc0ead8c" class="outline-3">
+<h3 id="orgc0ead8c">Two properties</h3>
+<div class="outline-text-3" id="text-orgc0ead8c">
 <p>
 Denote by \(\overline{X}\) the set of closed points of \(X\). It is clear from the definition that \(\zeta_X(s)\) depends only on \(\overline{X}\).
 </p>
@@ -137,9 +137,9 @@ Property 1 follows from the fact that a scheme and its reduction have the same s
 </div>
 </div>
 
-<div id="outline-container-orgdba7132" class="outline-3">
-<h3 id="orgdba7132">Some examples</h3>
-<div class="outline-text-3" id="text-orgdba7132">
+<div id="outline-container-org6fc5058" class="outline-3">
+<h3 id="org6fc5058">Some examples</h3>
+<div class="outline-text-3" id="text-org6fc5058">
 <ul class="org-ul">
 <li>Let \(X = \mathrm{Spec} \, \mathbf{F}_{q^n}\) be the spectrum of a finite field. Since we have a unique closed point of norm \(q^n\), we have that</li>
 </ul>
@@ -170,9 +170,9 @@ Property 1 follows from the fact that a scheme and its reduction have the same s
 </div>
 </div>
 
-<div id="outline-container-org69ae6b9" class="outline-2">
-<h2 id="org69ae6b9">Varieties over finite fields</h2>
-<div class="outline-text-2" id="text-org69ae6b9">
+<div id="outline-container-org4389706" class="outline-2">
+<h2 id="org4389706">Varieties over finite fields</h2>
+<div class="outline-text-2" id="text-org4389706">
 <p>
 A <b>variety</b> over a field \(k\) is a <a href="https://stacks.math.columbia.edu/tag/01KH">separated</a> scheme of finite type over \(k\). Given a prime power \(q\), we will consider varieties over the finite field \(k = \mathbf{F}_q\). From this point forward, \(X\) will denote a variety over \( k\). 
 </p>
@@ -201,7 +201,7 @@ Z(X,T) = \exp \left( \sum_{r=1}^\infty \# X(\mathbf{F}_{q^r})\dfrac{T^r}{r} \rig
 
 </div>
 
-<div class="proof" id="orgb8e5275">
+<div class="proof" id="org56795ac">
 <p>
 First, denote by \(N_d\) the number of closed points \(P \in X(\bar{\mathbf{F}}_q)\) of degree \(\deg P = d\). We can rewrite Equation \((\ref{eq:zeta})\) as
 </p>
@@ -229,9 +229,9 @@ and the result follows from Equation \((\ref{eq:Nd})\).
 </div>
 </div>
 
-<div id="outline-container-orga82a7c3" class="outline-3">
-<h3 id="orga82a7c3">Projective space</h3>
-<div class="outline-text-3" id="text-orga82a7c3">
+<div id="outline-container-org7c956bf" class="outline-3">
+<h3 id="org7c956bf">Projective space</h3>
+<div class="outline-text-3" id="text-org7c956bf">
 <p>
 Let's compute the zeta function of higher-dimensional projective space using point counts. We know that for every positive integer \(r\), we can describe the \(\mathbf{F}_{q^r}\)-points of projective space as lines through the origin on a \((n+1)\)-dimensional vector space over \(k\), so that \( \mathbf{P}^n_{k}(\mathbf{F}_{q^r}) \cong (\mathbf{F}_{q^r}^{n+1}-\{\vec{0}\})/\mathbf{F}_{q^r}^\times \) so that
 \[\# \mathbf{P}^n_{k}(\mathbf{F}_{q^r}) = \frac{(q^{r})^{n+1} - 1}{q^r - 1 } = 1 + q^r + q^{2r} + \cdots + q^{rn}. \]
@@ -244,9 +244,9 @@ Plugging in this point-count into the Exponential form of the zeta function we o
 </div>
 
 
-<div id="outline-container-org0eff6b0" class="outline-3">
-<h3 id="org0eff6b0"><a id="orgc8caffb"></a> Zero dimensional varieties</h3>
-<div class="outline-text-3" id="text-org0eff6b0">
+<div id="outline-container-org80fcf22" class="outline-3">
+<h3 id="org80fcf22"><a id="org26f493a"></a> Zero dimensional varieties</h3>
+<div class="outline-text-3" id="text-org80fcf22">
 <p>
 A locally noetherian scheme of dimension 0 is a disjoint union of spectra of Artinian local rings (see <a href="https://stacks.math.columbia.edu/tag/0AAX">this lemma</a>). In particular, zero dimensional varieties over \(k\) are a finite disjoint union of local Artinian \(k\)-algebras. For example, 
 </p>
@@ -273,7 +273,7 @@ d, & \text{ if } d | r, \\
 
 </div>
 
-<div class="proof" id="orgb2e5a4e">
+<div class="proof" id="orgcab2796">
 <p>
 We have that
 \[
@@ -295,9 +295,9 @@ Plugging in this point-count into the Exponential form of the zeta function we o
 </div>
 
 
-<div id="outline-container-org84e4e36" class="outline-2">
-<h2 id="org84e4e36">The Weil conjectures</h2>
-<div class="outline-text-2" id="text-org84e4e36">
+<div id="outline-container-orgb93ca48" class="outline-2">
+<h2 id="orgb93ca48">The Weil conjectures</h2>
+<div class="outline-text-2" id="text-orgb93ca48">
 <p>
 You might have noticed that in all of our examples of varieties over finite fields, the zeta function turns out to be a rational function with rational coefficients. This is the first of four remarkable conjectures proposed by <a href="https://en.wikipedia.org/wiki/Andr%C3%A9_Weil">André Weil</a>.
 </p>
@@ -412,9 +412,9 @@ The Weil conjectures tell us that this graph (or more precisely the sequence \(\
 </figure>
 </div>
 
-<div id="outline-container-org0baa503" class="outline-3">
-<h3 id="org0baa503">Brief history of the proof</h3>
-<div class="outline-text-3" id="text-org0baa503">
+<div id="outline-container-org9047d99" class="outline-3">
+<h3 id="org9047d99">Brief history of the proof</h3>
+<div class="outline-text-3" id="text-org9047d99">
 <p>
 <a href="https://en.wikipedia.org/wiki/Friedrich_Karl_Schmidt">F.K. Schmidt</a> proved these statements for curves, except for the Riemann hypothesis, which was proved by <a href="https://en.wikipedia.org/wiki/Helmut_Hasse">Helmut Hasse</a> in the case of elliptic curves and by <a href="https://en.wikipedia.org/wiki/Andr%C3%A9_Weil">André Weil</a> for general curves. Weil also proved his conjectures in the case of abelian varieties.
 </p>
@@ -451,11 +451,11 @@ The Riemann hypothesis part was famously proved by <a href="https://en.wikipedia
 </div>
 </div>
 
-<div id="outline-container-orgc506c15" class="outline-2">
-<h2 id="orgc506c15">A proof in dimension 0</h2>
-<div class="outline-text-2" id="text-orgc506c15">
+<div id="outline-container-org0f8bbc7" class="outline-2">
+<h2 id="org0f8bbc7">A proof in dimension 0</h2>
+<div class="outline-text-2" id="text-org0f8bbc7">
 <p>
-As we discussed in <a href="#orgc8caffb">the section above</a>, it is enough to prove the conjectures for a point \(X = \mathrm{Spec}\, \mathbf{F}_{q^d}\), as an \(\mathbf{F_q}\)-variety. Note that \(X\) is smooth, projective, and irreducible (but not geometrically irreducible). We know that \(Z(X, T) = P_0(T)^{-1} = (1-T^d)^{-1}\) and the <i>Rationality</i> is clear. The polynomial \(P_0(T)\) factors over the complex numbers as
+As we discussed in <a href="#org26f493a">the section above</a>, it is enough to prove the conjectures for a point \(X = \mathrm{Spec}\, \mathbf{F}_{q^d}\), as an \(\mathbf{F_q}\)-variety. Note that \(X\) is smooth, projective, and irreducible (but not geometrically irreducible). We know that \(Z(X, T) = P_0(T)^{-1} = (1-T^d)^{-1}\) and the <i>Rationality</i> is clear. The polynomial \(P_0(T)\) factors over the complex numbers as
 </p>
 \begin{equation*}
  P_0(T) = \prod_{j=0}^d (1 - \zeta^j T), \quad \alpha_{0,j} := \zeta^j,
@@ -513,7 +513,7 @@ On the arithmetic side, we have that \(X_\mathfrak{p} = \mathrm{Spec} \, \mathca
 <div id="postamble" class="status">
 <p class="date">Date: 2022-06-07 Tue 00:00</p>
 <p class="author">Author: <a href="http://www.math.emory.edu/~sarang2/">Santiago Arango-Piñeros</a></p>
-<p class="date">Created: 2023-05-12 Fri 19:18</p>
+<p class="date">Created: 2023-06-06 Tue 06:35</p>
 <p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.2 (<a href="https://orgmode.org">Org</a> mode 9.4.4)</p>
 </div>
 </body>
