@@ -1,0 +1,10 @@
+.ref-container {
+  display: grid;
+  grid-template-columns: 6fr 1fr;
+  gap: 10px;
+}
+.paper-image {
+  flex-shrink: 0;
+  min-width: 100%;
+  min-height: 100%
+}
