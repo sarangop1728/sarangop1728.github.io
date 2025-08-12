@@ -1,54 +1,20 @@
 #+TITLE: Math 411 - Fall 2025
-#+AUTHOR: Santiago Arango Piñeros
+#+AUTHOR: Santiago Arango-Piñeros
 #+EMAIL: sarangopiner@umass.edu
 #+OPTIONS: toc:t
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../../style.css">
 
+
 * Coordinates
 ** Instructor
-[[https://sarangop1728.github.io/][Santiago Arango Piñeros]] (he/him/his).
-My office is LGRT 1111, and you can contact me by email at:
+[[https://sarangop1728.github.io/][Santiago Arango-Piñeros]] (he/him/his).
+My office is LGRT 1238, and you can contact me via email at:
 + ~sarangopiner@umass.edu~.
 ** Office hours
-+ Between 1 PM to 3 PM on Tuesdays and Thursdays. (Location TBD)
-+ If the above time is not convenient, send me an email.
-
-* Philosophy
-** Learning is the student's responsibility
-Paraphrasing Galileo:
-#+BEGIN_QUOTE
-``You cannot teach a person *anything*; you can only help
-them find it within themselves.''
-#+END_QUOTE
-We are all here to _understand_. My job as a
-more experienced learner is to assist you on your journey. But you have to
-invest time and effort to actually learn.
-** Doing hard things
-This is hard work, and it will be frustrating at times. In my opinion, the
-reward is well worth the investment, as it is often the case with challenging
-endeavors. In the words of JFK:
-#+BEGIN_QUOTE
-``We choose to go to the Moon in this decade and do the other things, not
-because they are easy, but because they are hard; because that goal will serve
-to organize and measure the best of our energies and skills, because that
-challenge is one that we are willing to accept, one we are unwilling to
-postpone, and one we intend to win, and the others, too.''
-#+END_QUOTE
-
-** Everyone belongs in this classroom
-We will subscribe to [[https://www.ams.org/publications/journals/notices/201610/rnoti-p1164.pdf][Federico's axioms]].
-
-+ *Axiom 1.* Mathematical potential is equally present in different groups,
-  irrespective of geographic, demographic, and economic boundaries.
-
-+ *Axiom 2.* Everyone can have joyful, meaningful, and empowering mathematical
-  experiences.
-
-+ *Axiom 3.* Mathematics is a powerful, malleable tool that can be shaped and
-  used differently by various communities to serve their needs.
-
-+ *Axiom 4.* Every student deserves to be treated with dignity and respect.
-
++ Between 1:30 PM and 3:30 PM on Tuesdays.
++ Between 1:30 PM and 2:30 PM on and Thursdays.
++ If the times above are not convenient, send me an email.
+  
 * Course description
 The focus of the course will be on studying /groups/. These are algebraic
 structures that capture the notion of symmetry. Groups are ubiquitous in all
@@ -82,9 +48,21 @@ and development of careful mathematical reasoning and writing.
 6. To learn what it means for a group to act on a set as well as the
    natural actions of each of the fundamental examples.
 
-** Homework (~35 points~)
-Homework assignments must be submitted through Canvas by ~11:59 PM~ on the due
-date. Each problem set contains 5 problems, and each problem is worth ~1 point~.
+** Homework (~300 points~)
+Homework assignments must be submitted through Gradescope by ~11:59 PM~ on the
+due date. Each problem set contains 5 problems, and each problem is worth ~10
+points~. This means that there is a ~50 points~ bonus on the homework. *Late
+homework will not be graded.*
+
+Collaboration with other students is highly encouraged! Nevertheless, every
+student must write down their own solutions.
+
+The use of professional academic typing software, such as [[https://typst.app/][Typst]] or
+[[https://www.latex-project.org/][LaTeX]] (for example, via a free account at [[https://www.overleaf.com][Overleaf]]), is highly recommended
+but not required. However, if the grader finds the writing difficult to read,
+they reserve the right not to grade that particular answer.
+
+
 + ~PSET1~: Some examples of groups (~pdf~)(~tex~) <2025-09-11>.
 + ~PSET2~: Basic properties of groups (~pdf~)(~tex~) <2025-09-25>.
 + ~PSET3~: Lagrange's theorem (~pdf~)(~tex~) <2025-10-07>. 
@@ -93,42 +71,69 @@ date. Each problem set contains 5 problems, and each problem is worth ~1 point~.
 + ~PSET6~: Symmetries of regular polyhedra (~pdf~)(~tex~) <2025-11-18>.
 + ~PSET7~: Group actions (~pdf~)(~tex~) <2025-12-09>.
 
-** Exams (~72 points~)
-There will be three exams. Each exam will have 6 questions. Each question will
-be worth ~4 points~.
+** Exams (~300 points~)
+There will be three midterm exams. Each exam will have 5 questions. Each question will
+be worth ~20 points~.
 + ~EXAM1~: Lectures 1-7. <2025-09-25 Thu>
 + ~EXAM2~: Lectures 8-14. <2025-11-06 Thu>
 + ~EXAM3~: Lectures 18-22. <2025-12-09 Tue>
 Question one will ask you to define a concept. Question two will ask you to
 prove a result (of reasonable difficulty) from the assigned reading. Questions
 3, 4, and 5 will be random problems related to the topics of the lectures.
-** Final exam
-The final exam is not a final exam. Instead, it is an opportunity for you to
-learn from your mistakes. For each one of the homework problems or exam
-questions that you previously got wrong, you will have the chance to:
-1. Explain what was your mistake.
-2. Write down a correct solution to the problem/question.
-If you successfully do this, you will earn the points for that problem/question.
-Note that you may not present a problem that you did not turn in before. Keep
-in mind that taking the final exam is optional, and students with a perfect
-score (~107 points~) have no reason to take it.
+** ``Mistakes were made'' essay (~100 points~)
+This is a *handwritten* essay, due on the day of the final exam. It must include
+at least five mathematical mistakes the student made during the course, either
+in a homework assignment, a previous test, or during self-study, along with a
+thorough explanation of each error and its correction. The essay will be graded
+on the mathematical accuracy of each correction: the complete correction of
+each mistake will be worth ~20 points~.
 
-Some remarks:
-+ It is likely that you won't have time to solve more than 8 questions during
-  the final exam.
-+ Since one exam question is worth four times one homework problem, it makes
-  sense to prioritize the former.
+** Final exam (~300 points~)
+The final exam will consist on six random problems related to the topics of the
+lectures. Each problem will be worth ~50 points~. The emphasis will be on the
+topics of lectures 1-14 and 18-22.
+
 ** Grades
-The grade of the class will be calculated by adding the total number of points
-obtained after the final exam.
-| *Grade*  | A          | A$-$      | B$+$      | B         | B$-$      |
-|----------+------------+-----------+-----------+-----------+-----------|
-| ~points~ | $\geq 100$ | $\geq 95$ | $\geq 90$ | $\geq 85$ | $\geq 80$ |
+The perfect final grade is ~1000 points~. The alphabetical grade of the class
+will be calculated as follows:
++ ~Homework grade = min(300, PSET1 + ... + PSET7)~.
++ ~Exams grade = EXAM1 + EXAM2 + EXAM3 + ESSAY + FINAL~
++ ~Final grade = Homework grade + Exams grade~.
+| *Grade*  | A            | A$-$        | B$+$        | B           | B$-$        |
+|----------+--------------+-------------+-------------+-------------+-------------|
+| /        | <            |             |             |             |             |
+| ~points~ | $[860,1000]$ | $[830,860)$ | $[780,830)$ | $[740,780)$ | $[690,740)$ |
 
 
-| *Grade*  | C$+$      | C        | C$-$     | D$+$      | D         | F      |
-|----------+-----------+----------+----------+-----------+-----------+--------|
-| ~points~ | $\geq 75$ | $\geq70$ | $\geq65$ | $\geq 60$ | $\geq 55$ | $< 55$ |
+| *Grade*  | C$+$        | C           | C$-$        | D$+$        | D           | F         |
+|----------+-------------+-------------+-------------+-------------+-------------+-----------|
+| /        | <           |             |             |             |             |           |
+| ~points~ | $[650,690)$ | $[610,650)$ | $[560,610)$ | $[520,560)$ | $[480,520)$ | $[0,480)$ |
+
+** Administrative Details
+- Add/drop only through SPIRE.
+- I do not keep a waiting list, and the mathematics department staff will not
+  handle these matters.
+- Final exams are kept by the mathematics department. Copies are available upon request.
+
+*** Class Etiquette
+- Class attendance is not mandatory. If you come to class, please refrain from
+  texting or calls during lectures.
+- Arrive on time; if you arrive late, try to minimize your disruption.
+- Laptops/tablets are allowed during the lectures, provided that you do not
+  disrupt your fellow classmates and the lectures.
+
+*** Religious Observance
+Notify in writing within the first two weeks if you will miss an exam for
+religious reasons.
+
+*** Drops, Withdrawals, and Incompletes
+- Last day to drop with no record: Mon Sept 11
+- Last day to drop with W: Tue Oct 31
+- Incompletes only for compelling reasons, passing work, and likely completion
+
+*** Make-up Exam Procedure
+See: http://people.math.umass.edu/~siman/makeup.html
 
 * Topics and schedule
 It is the student's responsibility to read the material before the lecture.
@@ -139,6 +144,7 @@ questions, and working on examples.
 |------------------+---------------------------------------+-----------|
 | Date             | Lecture                               |   Reading |
 |------------------+---------------------------------------+-----------|
+| /                | <                                     |         < |
 | <2025-09-02 Tue> | 1. What is symmetry?                  | 1.1 - 1.7 |
 | <2025-09-04 Thu> | 2. Examples of groups                 | 1.1 - 1.7 |
 | <2025-09-09 Tue> | 3. Abstract groups: first results     | 1.10, 2.1 |
@@ -170,6 +176,41 @@ questions, and working on examples.
 | <2025-12-09 Tue> | *Exam 3*                              |           |
 |------------------+---------------------------------------+-----------|
 
+* Philosophy
+** Learning is the student's responsibility
+Paraphrasing Galileo:
+#+BEGIN_QUOTE
+``You cannot teach a person *anything*; you can only help
+them find it within themselves.''
+#+END_QUOTE
+We are all here to _understand_. My job as a more experienced learner is to
+assist you on your journey. But you are responsible for investing the time and
+effort necessary to learn.
+** Doing hard things
+This is hard work, and it will be frustrating at times. In my opinion, the
+reward is well worth the investment, as it is often the case with challenging
+endeavors. In the words of JFK:
+#+BEGIN_QUOTE
+``We choose to go to the Moon in this decade and do the other things, not
+because they are easy, but because they are hard; because that goal will serve
+to organize and measure the best of our energies and skills, because that
+challenge is one that we are willing to accept, one we are unwilling to
+postpone, and one we intend to win, and the others, too.''
+#+END_QUOTE
+
+** Everyone belongs in this classroom
+We will subscribe to [[https://www.ams.org/publications/journals/notices/201610/rnoti-p1164.pdf][Federico's axioms]].
+
++ *Axiom 1.* Mathematical potential is equally present in different groups,
+  irrespective of geographic, demographic, and economic boundaries.
+
++ *Axiom 2.* Everyone can have joyful, meaningful, and empowering mathematical
+  experiences.
+
++ *Axiom 3.* Mathematics is a powerful, malleable tool that can be shaped and
+  used differently by various communities to serve their needs.
+
++ *Axiom 4.* Every student deserves to be treated with dignity and respect.
 
 * Accommodation Statement
 

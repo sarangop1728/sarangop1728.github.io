@@ -1,0 +1,152 @@
+#+TITLE: Math 411: Introduction to Algebra (Algebra I)
+#+AUTHOR: Santiago Arango-Piñeros
+#+DATE: Fall 2025
+#+OPTIONS: toc:nil
+
+* Course Information
+
+|---------+------+----------|
+| Section | Time | Location |
+|---------+------+----------|
+|         |      |          |
+|         |      |          |
+|---------+------+----------|
+
+Requests for special arrangements require *advanced approval* and *at least two weeks of notice*.  
+Contact me if you have further questions, and pay attention to the Make-up Exams Policy!
+
+* Course Description
+Math 411 is the first part of a two-semester undergraduate abstract algebra
+course. The focus of the course will be on studying /groups/. These are algebraic
+structures that capture the notion of symmetry. Groups are ubiquitous in all
+areas of mathematics (and the world around us). If you commit to this class,
+you will master the essential concepts of group theory by the end of the
+course.
+** Prerequisites
+*MATH 235* and either *CMPSCI 250* or *MATH 300*. In other words, we will need some
+important concepts from linear algebra, and there will be an emphasis on proofs
+and development of careful mathematical reasoning and writing.
+
+** Main goals
+- Survey the basic results and techniques in group theory.
+- Explore key concrete examples and applications.
+- Develop proof skills.
+
+There will be three mid-term exams plus a final exam. Regular problem sets will
+cover the theoretical part of the course.
+
+My job as your instructor is to provide a framework and guide you in learning
+the concepts and methods that comprise the material of the course. Most
+learning will take place outside the classroom. Read the textbook carefully and
+slowly before the lectures, working through examples and filling in omitted
+steps. This is a challenging course with many new concepts and techniques.
+
+** Learning objectives
+
+1. To learn the fundamental examples of groups: finitely generated abelian
+   groups, dihedral groups, symmetric and alternating groups, and matrix
+   groups.
+2. To learn the axiomatic definition of a group and how to use it to prove
+   basic properties.
+3. To learn the concepts of subgroups, cosets, quotients, and how to combine
+   these to derive Lagrange’s theorem.
+4. To learn the concepts of homomorphisms and isomorphisms and Noether's
+   isomorphism theorems.
+5. To understand the structure theorem of finitely generated abelian groups in
+   terms of the Smith normal form of a matrix with integer coefficients.
+6. To learn what it means for a group to act on a set as well as the
+   natural actions of each of the fundamental examples.
+   
+** Textbook
++ *Algebra: Abstract and Concrete* by /Frederick M. Goodman/. The book is
+  freely available for download at the [[https://homepage.divms.uiowa.edu/~goodman/algebrabook.dir/algebrabook.html][author's web-site]].
++ As a complement of the textbook, we will use some of [[https://kconrad.math.uconn.edu/blurbs/][Keith Conrad's blurbs]] on
+  group theory.
+
+* Contact Information
+- Office: Lederle Graduate Research Tower, Room 1238
+- Email: [[mailto:sarangopiner@umass.edu][sarangopiner@umass.edu]]
+
+* Grading Policy
+- Midterm #1: Thu Oct 5, 7--8:30pm, Room TBA
+- Midterm #2: Thu Nov 9, 7--8:30pm, Room TBA
+- Final Exam: Fri Dec 15, 10:30am--12:30pm, LGRT 204
+- Homework: 30% of grade
+  - Lowest exam score counts 20%
+  - Other two exams count 25% each
+
+** Grading scale (no rounding)
+
+|-------+----------|
+| Grade | Range    |
+|-------+----------|
+| A     | [86,100] |
+| A-    | [83,86)  |
+| B+    | [78,83)  |
+| B     | [74,78)  |
+| B-    | [69,74)  |
+| C+    | [65,69)  |
+| C     | [61,65)  |
+| C-    | [56,61)  |
+| D+    | [52,56)  |
+| D     | [48,52)  |
+| F     | [0,48)   |
+|-------+----------|
+
+** Homework (~300 points~)
+Homework assignments must be submitted through Gradescope by ~11:59 PM~ on the due
+date. Each problem set contains 5 problems, and each problem is worth ~1 point~.
++ ~PSET1~: Some examples of groups (~pdf~)(~tex~) <2025-09-11>.
++ ~PSET2~: Basic properties of groups (~pdf~)(~tex~) <2025-09-25>.
++ ~PSET3~: Lagrange's theorem (~pdf~)(~tex~) <2025-10-07>. 
++ ~PSET4~: The isomorphism theorems (~pdf~)(~tex~) <2025-10-16>.
++ ~PSET5~: Finitely generated abelian groups (~pdf~)(~tex~) <2025-11-06>.
++ ~PSET6~: Symmetries of regular polyhedra (~pdf~)(~tex~) <2025-11-18>.
++ ~PSET7~: Group actions (~pdf~)(~tex~) <2025-12-09>.
+
+** Homework Policy
+- Due Wednesdays at 10am via Gradescope
+- No late homework
+- Lowest two homework grades dropped
+- Collaboration allowed, but write-ups must be individual
+- Using online solutions (Chegg, ChatGPT, etc.) is cheating
+- Homework is for practice; exams may contain different problems
+
+** Exams (~72 points~)
+There will be three exams. Each exam will have 6 questions. Each question will
+be worth ~4 points~.
++ ~EXAM1~: Lectures 1-7. <2025-09-25 Thu>
++ ~EXAM2~: Lectures 8-14. <2025-11-06 Thu>
++ ~EXAM3~: Lectures 18-22. <2025-12-09 Tue>
+
+
+* Administrative Details
+- Add/drop only via SPIRE
+- No waiting list
+- Final exams kept by Math Dept; copies available upon request
+
+* Class Etiquette
+- No texting/calls during lectures except in emergencies
+- Arrive on time; if late, take the nearest seat
+- Laptops/tablets allowed if not disruptive; not allowed during exams
+
+* Religious Observance
+Notify in writing within first two weeks if you will miss class or an exam for religious reasons.
+
+* Drops, Withdrawals, and Incompletes
+- Last day to drop with no record: Mon Sept 11
+- Last day to drop with W: Tue Oct 31
+- Incompletes only for compelling reasons, passing work, and likely completion
+
+* Make-up Exam Procedure
+See: http://people.math.umass.edu/~siman/makeup.html
+
+* Accommodation Statement
+UMass Amherst provides equal opportunity for all students.  
+Contact Disability Services and notify instructor within first two weeks if accommodations are needed.
+
+* Academic Honesty
+Academic honesty is required.  
+Dishonesty includes cheating, fabrication, plagiarism, and facilitation.  
+Sanctions may be imposed.  
+Ignorance is not an excuse.
