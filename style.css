@@ -1,3 +1,104 @@
+a,
+a:hover,
+a:link,
+a:visited,
+a:active {
+    color: #4682B4;
+    text-decoration: none;
+}
+
+a.journal {
+    color: #FF9800;
+}
+
+a.code {
+    color: #20B2AA;
+}
+
+a.mr {
+    color: #000080;
+}
+
+a.arxiv {
+    color: #DC143C;
+}
+
+hr.sbreak {
+    height: 3px;
+    margin: 0;
+    visibility: hidden;
+}
+
+hr.bbreak {
+    height: 6px;
+    margin: 0;
+    visibility: hidden;
+}
+
+body {
+    font-family: Menlo;
+    font-size: 1.6em;
+    color: #34495e;
+    background-color: #f8f9f9;
+    margin: 50px;
+}
+
+ol {
+    padding-left: 2em;
+}
+
+ul {
+    padding-left: 1em;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 1em;
+}
+
+table,
+th,
+td {
+    border: 1px solid black;
+}
+
+th,
+td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+.container {
+    display: flex;
+    align-items: flex-start;
+}
+
+.image {
+    margin-right: 20px;
+}
+
+.image img {
+    border: 5px solid #34495e;
+    border-radius: 8px;
+}
+
+.info {
+    max-width: 1000px;
+}
+
+.info h1 {
+    margin: 0;
+}
+
+.info p {
+    margin: 5px 0;
+}
+
 .ref-container {
   display: grid;
   grid-template-columns: 6fr 1fr;
