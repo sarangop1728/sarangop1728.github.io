@@ -1,4 +1,5 @@
 #+TITLE: Math 411 - Fall 2025
+#+SUBTITLE: (Introduction to Abstract Algebra 1)
 #+AUTHOR: Santiago Arango-Piñeros
 #+EMAIL: sarangopiner@umass.edu
 #+OPTIONS: toc:t
@@ -10,9 +11,17 @@
 [[https://sarangop1728.github.io/][Santiago Arango-Piñeros]] (he/him/his).
 My office is LGRT 1238, and you can contact me via email at:
 + ~sarangopiner@umass.edu~.
+** Lectures
+|----------------+-------+---------------------+----------|
+| Section        | Days  | Time                | Place    |
+|----------------+-------+---------------------+----------|
+| 01-LEC (64725) | Tu-Th | 8:30 AM - 9:45 AM   | LGRT 177 |
+| 02-LEC (64726) | Tu-Th | 10:00 AM - 11:15 AM | LGRT 206 |
+|----------------+-------+---------------------+----------|
+
 ** Office hours
-+ Between 1:30 PM and 3:30 PM on Tuesdays.
-+ Between 1:30 PM and 2:30 PM on and Thursdays.
++ Between 1:00 PM and 3:30 PM on Tuesdays.
++ Between 1:00 PM and 2:15 PM on Thursdays.
 + If the times above are not convenient, send me an email.
   
 * Course description
@@ -22,9 +31,9 @@ areas of mathematics (and the world around us). If you commit to this class,
 you will master the essential concepts of group theory by the end of the
 course.
 ** Prerequisites
-*MATH 235* and either *CMPSCI 250* or *MATH 300*. In other words, we will need some
-important concepts from linear algebra, and there will be an emphasis on proofs
-and development of careful mathematical reasoning and writing.
+*MATH 235* and either *CMPSCI 250* or *MATH 300*. In other words, we will need
+some important concepts from linear algebra, and there will be an emphasis on
+proofs and development of careful mathematical reasoning and writing.
 
 ** Textbook
 + */Algebra: Abstract and Concrete/* by Frederick M. Goodman. The book is
@@ -81,17 +90,17 @@ Question one will ask you to define a concept. Question two will ask you to
 prove a result (of reasonable difficulty) from the assigned reading. Questions
 3, 4, and 5 will be random problems related to the topics of the lectures.
 ** ``Mistakes were made'' essay (~100 points~)
-This is a *handwritten* essay, due on the day of the final exam. It must include
-at least five mathematical mistakes the student made during the course, either
-in a homework assignment, a previous test, or during self-study, along with a
-thorough explanation of each error and its correction. The essay will be graded
+This is a *handwritten* essay, due on the day of the final exam. It must
+include at least five _mathematical_ mistakes the student made during the
+course, either in a homework assignment, a previous test, or during self-study,
+along with a thorough explanation of its correction. The essay will be graded
 on the mathematical accuracy of each correction: the complete correction of
 each mistake will be worth ~20 points~.
 
 ** Final exam (~300 points~)
 The final exam will consist on six random problems related to the topics of the
 lectures. Each problem will be worth ~50 points~. The emphasis will be on the
-topics of lectures 1-14 and 18-22.
+topics of lectures 1-14 and 18-22. 
 
 ** Grades
 The perfect final grade is ~1000 points~. The alphabetical grade of the class
@@ -110,31 +119,6 @@ will be calculated as follows:
 | /        | <           |             |             |             |             |           |
 | ~points~ | $[650,690)$ | $[610,650)$ | $[560,610)$ | $[520,560)$ | $[480,520)$ | $[0,480)$ |
 
-** Administrative Details
-- Add/drop only through SPIRE.
-- I do not keep a waiting list, and the mathematics department staff will not
-  handle these matters.
-- Final exams are kept by the mathematics department. Copies are available upon request.
-
-*** Class Etiquette
-- Class attendance is not mandatory. If you come to class, please refrain from
-  texting or calls during lectures.
-- Arrive on time; if you arrive late, try to minimize your disruption.
-- Laptops/tablets are allowed during the lectures, provided that you do not
-  disrupt your fellow classmates and the lectures.
-
-*** Religious Observance
-Notify in writing within the first two weeks if you will miss an exam for
-religious reasons.
-
-*** Drops, Withdrawals, and Incompletes
-- Last day to drop with no record: Mon Sept 11
-- Last day to drop with W: Tue Oct 31
-- Incompletes only for compelling reasons, passing work, and likely completion
-
-*** Make-up Exam Procedure
-See: http://people.math.umass.edu/~siman/makeup.html
-
 * Topics and schedule
 It is the student's responsibility to read the material before the lecture.
 During the lectures, we will focus on reviewing the key concepts, answering
@@ -145,7 +129,7 @@ questions, and working on examples.
 | Date             | Lecture                               |   Reading |
 |------------------+---------------------------------------+-----------|
 | /                | <                                     |         < |
-| <2025-09-02 Tue> | 1. What is symmetry?                  | 1.1 - 1.7 |
+| <2025-09-02 Tue> | 1. [[https://www.dropbox.com/scl/fi/p1wxilymw0vyhqvnk3z0a/Lecture-1.pdf?rlkey=wz6pvevnvakryws6uz4t8jsgx&dl=0][What is symmetry?]]                  | 1.1 - 1.7 |
 | <2025-09-04 Thu> | 2. Examples of groups                 | 1.1 - 1.7 |
 | <2025-09-09 Tue> | 3. Abstract groups: first results     | 1.10, 2.1 |
 | <2025-09-11 Thu> | 4. Subgroups and cyclic groups        |       2.2 |
@@ -212,34 +196,163 @@ We will subscribe to [[https://www.ams.org/publications/journals/notices/201610/
 
 + *Axiom 4.* Every student deserves to be treated with dignity and respect.
 
-* Accommodation Statement
+* Administrative details
+- Add/drop only through SPIRE.
+- I do not keep a waiting list, and the mathematics department staff will not
+  handle these matters.
+- Final exams are kept by the mathematics department. Copies are available upon
+  request.
+** Drops, withdrawals, and incompletes
+- Last day to add or drop with no record: <2025-09-08 Mon>.
+- Last day to drop with W: <2025-10-28 Tue>.
+- See the [[https://www.umass.edu/registrar/academic-calendar][academic calendar]] for other important dates.
+- Incomplete grades are warranted only if a student is passing the course at the
+  time of the request and if the course requirements can be completed by the
+  end of the following semester. Read more [[https://www.umass.edu/natural-sciences/advising/petitions-and-forms/incomplete-grade-form][here]].
 
+** Make-up exam policy
+You must take the regular exam unless you qualify for an official make-up exam
+approved by me, following the official make-up request procedure. Make sure you
+read and understand the make-up exam procedure.
+
++ *Final exam conflict:* If you need a make-up exam due to a final exam
+  schedule conflict, you must submit documentation from the Registrar's Office
+  or other supporting documents at least two weeks before the scheduled exams.
+  No exceptions will be made. No later than one week before the exam, you must
+  submit a written request to me that includes: your name and UMass Amherst
+  Student ID number, your section number, and the reason for requesting the
+  make-up exam. You can request make-up exams through your SPIRE account: in
+  SPIRE, go to Student Home > Final Exam Conflict.
+
++ *Religious observance:* If you must miss an exam due to religious observance,
+  you must contact me within two weeks of the beginning of the semester.
+
++ *Medical reasons:* If you will be absent from an exam due to medical reasons,
+  you must notify me at least one week in advance of the exam. If you have a
+  medical emergency, you must notify me as soon as possible. In either case,
+  you may need to provide documentation. You do not need to disclose personal
+  details of your condition, but you must provide enough information to allow
+  the absence to be excused.
+
++ *Other circumstances:* It is impossible to anticipate all possible
+  situations. In the event of an exceptional circumstance not covered above,
+  you must contact me and explain the problem. You must be prepared to provide
+  a written statement if necessary. I will evaluate the reasons you provide and
+  make a decision.
+
++ Note that there is *no re-taking of exams* in this course. If you are sick
+  and take the exam anyway, you cannot re-take the exam later for a better
+  grade. Regardless of the situation, if you do not feel you can take the exam
+  on the scheduled date, you must inform me as soon as possible.
+  
++ Make-up exams will *not* be given to accommodate travel plans.
+
++ I will ensure that taking a make-up exam does not represent any technical
+  advantage. In particular, the questions will be completely different from
+  those on the main exam.
+
+
+** Class attendance poicy
+By UMass policy, students are expected to attend all regularly scheduled
+classes at the University for which they are registered. When planning for the
+tests and homework, I will assume that you have been following my lectures.
+That being said, I will not enforce or grade for attendance. If you are not
+able to attend to one of the lectures, make sure you read the notes for that
+day and talk to other students to check if you missed anything important.
+
+** Class etiquette
+- I expect you to be present and refrain from using your phone.
+- Arrive on time. If you arrive late, try to minimize your disruption.
+- Laptops and tablets are allowed during the lectures, provided that you do not
+  disrupt your fellow classmates and the lectures.
+
+** Academic dishonesty 
+
+Academic dishonesty includes but is not limited to: 
+- *Cheating:* intentional use, and/or attempted use of trickery, artifice,
+  deception, breach of confidence, fraud and/or misrepresentation of one's
+  academic work.
+- *Fabrication:* intentional and unauthorized falsification and/or invention of
+  any information or citation in any academic exercise.
+- *Plagiarism:* knowingly representing the words or ideas of another as one's
+  own work in any academic exercise. This includes submitting without citation,
+  in whole or in part, prewritten term papers of another or the research of
+  another, including but not limited to commercial vendors who sell or
+  distribute such materials.
+- *Facilitating dishonesty:* knowingly helping or attempting to help another
+  commit an act of academic dishonesty, including substituting for another in
+  an examination, or allowing others to represent as their own one's papers,
+  reports, or academic works.
+
+Formal definitions of academic dishonesty, examples of various forms of
+dishonesty, and the procedures which faculty must follow to penalize dishonesty
+are detailed on the [[https://www.umass.edu/studentsuccess/academic-integrity][Academic Honesty website]]. Appeals must be filed within ten
+days of notification by the Academic Honesty Office that a formal charge has
+been filed by an instructor that suspects dishonesty. Contact the Academic
+Honesty Office for more information on the process. The [[https://www.umass.edu/ombuds/][Ombuds Office]] is also
+available to support individuals engaging with the Academic Honesty process.
+The [[https://www.umass.edu/provost/][Provost’s Office]] is where appeals are processed and filed.
+
+* Required statements
+** Academic honesty statement
+Since the integrity of the academic enterprise of any institution of higher
+education requires honesty in scholarship and research, academic honesty is
+required of all students at the University of Massachusetts Amherst. Academic
+dishonesty is prohibited in all programs of the University. Academic dishonesty
+includes but is not limited to: cheating, fabrication, plagiarism, and
+facilitating dishonesty. Appropriate sanctions may be imposed on any student
+who has committed an act of academic dishonesty. Instructors should take
+reasonable steps to address academic misconduct. Any person who has reason to
+believe that a student has committed academic dishonesty should bring such
+information to the attention of the appropriate course instructor as soon as
+possible. Instances of academic dishonesty not related to a specific course
+should be brought to the attention of the appropriate department Head or Chair.
+Since students are expected to be familiar with this policy and the commonly
+accepted standards of academic integrity, ignorance of such standards is not
+normally sufficient evidence of lack of intent
+(http://www.umass.edu/dean_students/codeofconduct/acadhonesty/).
+
+** Academic integrity statement
+UMass Amherst is strongly committed to academic integrity, which is defined as
+completing all academic work without cheating, lying, stealing, or receiving
+unauthorized assistance from any other person, or using any source of
+information not appropriately authorized or attributed. As a community, we hold
+each other accountable and support each other’s knowledge and understanding of
+academic integrity. Academic dishonesty is prohibited in all programs of the
+University and includes but is not limited to: Cheating, fabrication,
+plagiarism, lying, and facilitating dishonesty, via analogue and digital means.
+Sanctions may be imposed on any student who has committed or participated in an
+academic integrity infraction. Any person who has reason to believe that a
+student has committed an academic integrity infraction should bring such
+information to the attention of the appropriate course instructor as soon as
+possible. All students at the University of Massachusetts Amherst have read and
+acknowledged the Commitment to Academic Integrity and are knowingly responsible
+for completing all work with integrity and in accordance with the policy:
+(https://www.umass.edu/senate/book/academic-regulations-academic-integrity-policy).
+
+** Accommodation statement
 The University of Massachusetts Amherst is committed to providing an equal
 educational opportunity for all students. If you have a documented physical,
 psychological, or learning disability on file with Disability Services (DS),
 you may be eligible for reasonable academic accommodations to help you succeed
 in this course. If you have a documented disability that requires an
 accommodation, please notify me within the first two weeks of the semester so
-that we may make appropriate arrangements.
+that we may make appropriate arrangements. For further information, please
+visit Disability Services (https://www.umass.edu/disability/).
 
-* Academic Honesty Statement
-
-The Academic Honesty Policy was established to ensure that the learning
-environment at the university is honest and fair. The policy is designed to
-provide faculty and students with options for handling incidents.
-
-Academic dishonesty includes but is not limited to:
-
-- *Cheating* — intentional use or attempted use of trickery or deception in one’s academic work
-- *Fabrication* — intentional falsification and/or invention of any information or citation
-- *Plagiarism* — knowingly representing the words or ideas of another as one’s own work
-- *Facilitating dishonesty* — knowingly helping or attempting to help another commit an act of academic dishonesty
-
-The Academic Honesty Board handles all cases of academic dishonesty on campus.
-Formal definitions of academic dishonesty, examples of various forms of
-dishonesty, and the procedures which faculty must follow to penalize dishonesty
-are contained in the Academic Honesty Policy. There are two main pathways for
-resolving cases where dishonesty is suspected: the informal resolution and the
-formal charge. Both these paths require that the faculty member first inform
-the student of the concern and offer a meeting. For more information:
-http://www.umass.edu/honesty/.
+** Title IX statement
+In accordance with Title IX of the Education Amendments of 1972 that prohibits
+gender-based discrimination in educational settings that receive federal funds,
+the University of Massachusetts Amherst is committed to providing a safe
+learning environment for all students, free from all forms of discrimination,
+including sexual assault, sexual harassment, domestic violence, dating
+violence, stalking, and retaliation. This includes interactions in person or
+online through digital platforms and social media. Title IX also protects
+against discrimination on the basis of pregnancy, childbirth, false pregnancy,
+miscarriage, abortion, or related conditions, including recovery. There are
+resources here on campus to support you. A summary of the available Title IX
+resources (confidential and non-confidential) can be found at the following
+link: https://www.umass.edu/titleix/resources. You do not need to make a formal
+report to access them. If you need immediate support, you are not alone. Free
+and confidential support is available 24 hours a day / 7 days a week / 365 days
+a year at the SASA Hotline 413-545-0800.
