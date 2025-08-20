@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-08-11 Mon 14:03 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Computing the Pythagorean constant in ~Magma~</title>
+<meta name="author" content="Santiago Arango-Piñeros" />
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" href="../style.css" />
+<script>
+  window.MathJax = { tex: { ams: { multlineWidth: '85%' }, tags: 'ams',
+    tagSide: 'right', tagIndent: '.8em' }, chtml: { scale: 1.0, displayAlign:
+    'center', displayIndent: '0em' }, svg: { scale: 1.0, displayAlign:
+    'center', displayIndent: '0em' }, output: { font: 'mathjax-modern',
+    displayOverflow: 'overflow' } };
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">Computing the Pythagorean constant in <code>Magma</code></h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org9bcdba1">1. <code>IncreaseCount</code> procedure</a></li>
+<li><a href="#org72b7e89">2. <code>LoopOverRationals</code> procedure</a></li>
+<li><a href="#org9598aad">3. Counting</a></li>
+<li><a href="#org904296f">4. Densities</a></li>
+</ul>
+</div>
+</div>
+<p>
+We consider the degree four Galois Belyi map \(\phi\colon
+\mathbb{P}^1 \to \mathbb{P}^1\) given by \(\phi(s:t) = ((s^2 - t^2)^2 :
+(s^2-t^2)^2)\), defined over \(\mathbb{Q}\).
+Recall that
+</p>
+
+\begin{equation}
+    N_\phi(h) = \# \left\{P \in \mathbb{P}^1(\mathbb{Q}) :
+\mathrm{Ht}(\phi(P))\leq h\right\} \sim \delta(\phi)\cdot h^{1/2}.
+\end{equation}
+
+
+<p>
+We approximate the constant \(\delta(\phi)\) by computing \(N_\phi(h)/h^{1/2}\) for
+large values of \(h\). Our theorem claims that \(\delta(\phi) = \frac{4}{\pi}\).
+</p>
+
+<div id="outline-container-org9bcdba1" class="outline-2">
+<h2 id="org9bcdba1"><span class="section-number-2">1.</span> <code>IncreaseCount</code> procedure</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+A short function that asks if \(s \equiv t \mod 2\).
+</p>
+<div class="org-src-container">
+<pre class="src src-m">EqualParity := func&lt;s,t | (s-t) mod 2 eq 0&gt;;
+</pre>
+</div>
+
+<p>
+This is \(\max\left\{|s^2-t^2|^2, |s^2+t^2|^2 \right\} = (s^2+t^2)^2\). We call
+it naive because it differs from the actual height \(\mathrm{Ht}(\phi(s:t))\), possibly, by a factor of
+four.
+</p>
+<div class="org-src-container">
+<pre class="src src-m">naiveHt := func&lt;s,t | (s^2 + t^2)^2&gt;;
+</pre>
+</div>
+
+<p>
+This is the height \(\phi^*\mathrm{Ht}(s:t) = \mathrm{Ht}(\phi(s:t))\).
+</p>
+<div class="org-src-container">
+<pre class="src src-m">phiHt := function(s,t)
+    if EqualParity(s,t) then
+        return naiveHt(s,t)/4;
+    else
+        return naiveHt(s,t);
+    end if;
+end function;
+</pre>
+</div>
+
+<p>
+This procedure increases the count of a variable <code>N</code> that will keep track of
+the number of rational points \(P = (s:t)\) with \(\mathrm{Ht}(\phi(P)) \leq h\).
+</p>
+<div class="org-src-container">
+<pre class="src src-m">IncreaseCount := procedure(~N, s, t, h)
+    if phiHt(s,t) le h then
+        N +:= 1;
+    end if;
+end procedure;
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org72b7e89" class="outline-2">
+<h2 id="org72b7e89"><span class="section-number-2">2.</span> <code>LoopOverRationals</code> procedure</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+We create a procedure that loops over \[\mathbb{P}^1(\mathbb{Q}) \cong \{(s,t)
+\in \mathbb{Z}^2 - \{(0,0)\} : t \geq 0, \gcd(s,t) = 1 \}\] of height
+\(\mathrm{Ht}(s,t) = \max\{|s|,t\} \leq H\) (where \(H\) depends on \(h\)) and
+performs an action that is passed as an argument. In this case, the intended
+action is the procedure <code>IncreaseCount</code> defined above.
+</p>
+
+<p>
+Note that \(\mathrm{Ht}(\phi(s:t)) \leq h\) implies that \((s^2+t^2)^2 \leq 4h\).
+If \(H = \max(|s|,|t|)\), then \(H^4 \leq (s^2 + t^2)^2 \leq 4h\), so it is enough
+to loop over points with height \(H = \mathrm{Ht}(s:t) = \max(|s|,|t|)\) bounded
+by \((4h)^{1/4}\). We conveniently choose \(h = 2^{4n-2}\) for different values of
+\(n\), so that \(H \leq 2^n\).
+</p>
+<div class="org-src-container">
+<pre class="src src-m">procedure LoopOverRationals(~N,h,action : debugging:=false)
+    // H = Ht(s;t) = 1
+    action(~N,0,1,h);  // 0
+    action(~N,1,0,h);  // infty
+    action(~N,1,1,h);  // 1
+    action(~N,-1,1,h); // -1
+
+    // H = Ht(s;t) &gt; 1
+    H := 2;
+    Q := RationalField();
+    stop := (4*h)^(1/4);
+
+    if debugging then
+        Sprintf("While H &lt;= %o", stop);
+    end if;
+
+    while H le stop do
+
+    if debugging then
+        Sprintf("H = %o", H);
+    end if;
+
+        for r in {Q!(H/d) : d in [1..H-1] | Gcd(H,d) eq 1} do
+            for e in [-1,1] do
+                if debugging then
+                    Sprintf("r = %o, with height = %o", e*r, phiHt(Numerator(e*r),Denominator(e*r)));
+                    Sprintf("r = %o, with height = %o", e*r, phiHt(Numerator(e/r),Denominator(e/r)));
+                end if;
+                action(~N,Numerator(e*r),Denominator(e*r),h);
+                action(~N,Numerator(e/r),Denominator(e/r),h);
+            end for;
+        end for;
+        H +:= 1;
+    end while;
+end procedure;
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org9598aad" class="outline-2">
+<h2 id="org9598aad"><span class="section-number-2">3.</span> Counting</h2>
+<div class="outline-text-2" id="text-3">
+<div class="org-src-container">
+<pre class="src src-m">N_phi := function(h)
+    N := 0; 
+    LoopOverRationals(~N, h, IncreaseCount);
+    return N;
+end function;
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-m">pi := Pi(RealField(53));
+close_to_one := func&lt;h | (N_phi(h)/Sqrt(h))*pi/4&gt;;
+</pre>
+</div>
+
+<p>
+We can run the following code to generate some data:
+</p>
+<div class="org-src-container">
+<pre class="src src-m">for n in [1..12] do
+    h := 2^(4*n-2);
+    Sprintf("| %o | %o | %o |", n, h, close_to_one(h));
+end for;
+</pre>
+</div>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right">\(n\)</th>
+<th scope="col" class="org-right">\(h = 2^{4n-2}\)</th>
+<th scope="col" class="org-right">\(\frac{N_\phi(h)}{h^{1/2}}\cdot\frac{\pi}{4}\)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">1</td>
+<td class="org-right">4</td>
+<td class="org-right">1.57079632679489661923132169164</td>
+</tr>
+
+<tr>
+<td class="org-right">2</td>
+<td class="org-right">64</td>
+<td class="org-right">1.17809724509617246442349126873</td>
+</tr>
+
+<tr>
+<td class="org-right">3</td>
+<td class="org-right">1024</td>
+<td class="org-right">1.07992247467149142572153366300</td>
+</tr>
+
+<tr>
+<td class="org-right">4</td>
+<td class="org-right">16384</td>
+<td class="org-right">1.00629139685298064669506545871</td>
+</tr>
+
+<tr>
+<td class="org-right">5</td>
+<td class="org-right">262144</td>
+<td class="org-right">1.02469916630760834145168250978</td>
+</tr>
+
+<tr>
+<td class="org-right">6</td>
+<td class="org-right">4194304</td>
+<td class="org-right">1.00475741606509500546534737112</td>
+</tr>
+
+<tr>
+<td class="org-right">7</td>
+<td class="org-right">67108864</td>
+<td class="org-right">1.00207294968629513331334071784</td>
+</tr>
+
+<tr>
+<td class="org-right">8</td>
+<td class="org-right">1073741824</td>
+<td class="org-right">0.999676104705223818891906205977</td>
+</tr>
+
+<tr>
+<td class="org-right">9</td>
+<td class="org-right">17179869184</td>
+<td class="org-right">1.00037118974973450007412221442</td>
+</tr>
+
+<tr>
+<td class="org-right">10</td>
+<td class="org-right">274877906944</td>
+<td class="org-right">0.999969718215405054908531933680</td>
+</tr>
+
+<tr>
+<td class="org-right">11</td>
+<td class="org-right">4398046511104</td>
+<td class="org-right">1.00003413342427134648360798619</td>
+</tr>
+
+<tr>
+<td class="org-right">12</td>
+<td class="org-right">70368744177664</td>
+<td class="org-right">0.999992563144130890874111231371</td>
+</tr>
+
+<tr>
+<td class="org-right">13</td>
+<td class="org-right">1125899906842624</td>
+<td class="org-right">1.00000389198173673575868129293</td>
+</tr>
+
+<tr>
+<td class="org-right">14</td>
+<td class="org-right">18014398509481984</td>
+<td class="org-right">1.00000180878639185932329547583</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="outline-container-org904296f" class="outline-2">
+<h2 id="org904296f"><span class="section-number-2">4.</span> Densities</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+We obtain a numerical approximation for the density \(\delta_1 = 2/3\), using
+that \(\delta_1 = \lim_{h\to \infty} \delta_1(h)\), where
+</p>
+\begin{equation}
+    \delta_1(h) = \dfrac{\#\{(s,t) \in\mathbb{P}^1(\mathbb{Q}) : s \not\equiv t \mod 2, \, \mathrm{Ht}(s,t) \leq h\}}{\#\{(s,t) \in
+\mathbb{P}^1(\mathbb{Q}) : \mathrm{Ht}(s,t) \leq h\}}
+\end{equation}
+
+<p>
+We already have a procedure that loops over rationals, so let's use it to
+calculate the densities.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-m">numeratorDelta1 := procedure(~N, s, t, h)
+    if not EqualParity(s,t) then
+        if Max(Abs(s),Abs(t)) le h then
+            N +:= 1;
+        end if;
+    end if;
+end procedure;
+
+denominatorDelta1 := procedure(~N, s, t, h)
+    if Max(Abs(s),Abs(t)) le h then
+        N +:= 1;
+    end if;
+end procedure;
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-m">delta1 := function(h)
+    Num := 0;
+    Den := 0;
+    R := RealField(53);
+    LoopOverRationals(~Num, h, numeratorDelta1);
+    LoopOverRationals(~Den, h, denominatorDelta1);
+    return R!(Num/Den);
+end function;
+</pre>
+</div>
+
+<p>
+Running the following code, we see the limit approaching \(0.6666...\).
+</p>
+<div class="org-src-container">
+<pre class="src src-m">for n in [10*m : m in [2,3,4,5]] do
+    h := 2^n;
+    Sprintf("| %o | %o | %o |",n,h,delta1(h));
+end for;  
+</pre>
+</div>
+
+<div class="org-center">
+<p>
+
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right">\(n\)</th>
+<th scope="col" class="org-right">\(h = 2^n\)</th>
+<th scope="col" class="org-right">\(\delta_1(h)\)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">20</td>
+<td class="org-right">1048576</td>
+<td class="org-right">0.66321656050955414012738853503184713375796178343949045</td>
+</tr>
+
+<tr>
+<td class="org-right">30</td>
+<td class="org-right">1073741824</td>
+<td class="org-right">0.66836274313214357329055544415480248646480850210547423</td>
+</tr>
+
+<tr>
+<td class="org-right">40</td>
+<td class="org-right">1099511627776</td>
+<td class="org-right">0.66685612415449696293113991213353695440163314967716444</td>
+</tr>
+
+<tr>
+<td class="org-right">50</td>
+<td class="org-right">1125899906842624</td>
+<td class="org-right">0.66668015416430369956096602179925996036587308550648699</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Santiago Arango-Piñeros</p>
+<p class="date">Created: 2025-08-11 Mon 14:03</p>
+</div>
+</body>
+</html>
