@@ -1,0 +1,206 @@
+#+Author: [[../index.org][Santiago Arango-Piñeros]]
+#+EMAIL: santiago.arango.pineros@gmail.com
+#+TITLE: Computing the Pythagorean constant in ~Magma~
+
+#+PROPERTY: header-args :tangle yes
+#+OPTIONS: toc: t
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../org-css.css"/>
+
+We consider the degree four Galois Belyi map $\phi\colon
+\mathbb{P}^1 \to \mathbb{P}^1$ given by $\phi(s:t) = ((s^2 - t^2)^2 :
+(s^2-t^2)^2)$, defined over $\mathbb{Q}$.
+Recall that
+
+\begin{equation}
+    N_\phi(h) = \# \left\{P \in \mathbb{P}^1(\mathbb{Q}) :
+\mathrm{Ht}(\phi(P))\leq h\right\} \sim \delta(\phi)\cdot h^{1/2}.
+\end{equation}
+
+
+We approximate the constant $\delta(\phi)$ by computing $N_\phi(h)/h^{1/2}$ for
+large values of $h$. Our theorem claims that $\delta(\phi) = \frac{4}{\pi}$.
+
+* ~IncreaseCount~ procedure
+A short function that asks if $s \equiv t \mod 2$.
+#+begin_src m
+EqualParity := func<s,t | (s-t) mod 2 eq 0>;
+#+end_src
+
+This is $\max\left\{|s^2-t^2|^2, |s^2+t^2|^2 \right\} = (s^2+t^2)^2$. We call
+it naive because it differs from the actual height $\mathrm{Ht}(\phi(s:t))$, possibly, by a factor of
+four.
+#+begin_src m
+naiveHt := func<s,t | (s^2 + t^2)^2>;
+#+end_src
+
+This is the height $\phi^*\mathrm{Ht}(s:t) = \mathrm{Ht}(\phi(s:t))$.
+#+begin_src m
+phiHt := function(s,t)
+    if EqualParity(s,t) then
+        return naiveHt(s,t)/4;
+    else
+        return naiveHt(s,t);
+    end if;
+end function;
+#+end_src
+
+This procedure increases the count of a variable ~N~ that will keep track of
+the number of rational points $P = (s:t)$ with $\mathrm{Ht}(\phi(P)) \leq h$.
+#+begin_src m
+IncreaseCount := procedure(~N, s, t, h)
+    if phiHt(s,t) le h then
+        N +:= 1;
+    end if;
+end procedure;
+#+end_src
+
+* ~LoopOverRationals~ procedure
+
+We create a procedure that loops over \[\mathbb{P}^1(\mathbb{Q}) \cong \{(s,t)
+\in \mathbb{Z}^2 - \{(0,0)\} : t \geq 0, \gcd(s,t) = 1 \}\] of height
+$\mathrm{Ht}(s,t) = \max\{|s|,t\} \leq H$ (where $H$ depends on $h$) and
+performs an action that is passed as an argument. In this case, the intended
+action is the procedure ~IncreaseCount~ defined above.
+
+Note that $\mathrm{Ht}(\phi(s:t)) \leq h$ implies that $(s^2+t^2)^2 \leq 4h$.
+If $H = \max(|s|,|t|)$, then $H^4 \leq (s^2 + t^2)^2 \leq 4h$, so it is enough
+to loop over points with height $H = \mathrm{Ht}(s:t) = \max(|s|,|t|)$ bounded
+by $(4h)^{1/4}$. We conveniently choose $h = 2^{4n-2}$ for different values of
+$n$, so that $H \leq 2^n$.
+#+begin_src m
+procedure LoopOverRationals(~N,h,action : debugging:=false)
+    // H = Ht(s;t) = 1
+    action(~N,0,1,h);  // 0
+    action(~N,1,0,h);  // infty
+    action(~N,1,1,h);  // 1
+    action(~N,-1,1,h); // -1
+
+    // H = Ht(s;t) > 1
+    H := 2;
+    Q := RationalField();
+    stop := (4*h)^(1/4);
+
+    if debugging then
+        Sprintf("While H <= %o", stop);
+    end if;
+
+    while H le stop do
+
+    if debugging then
+        Sprintf("H = %o", H);
+    end if;
+
+        for r in {Q!(H/d) : d in [1..H-1] | Gcd(H,d) eq 1} do
+            for e in [-1,1] do
+                if debugging then
+                    Sprintf("r = %o, with height = %o", e*r, phiHt(Numerator(e*r),Denominator(e*r)));
+                    Sprintf("r = %o, with height = %o", e*r, phiHt(Numerator(e/r),Denominator(e/r)));
+                end if;
+                action(~N,Numerator(e*r),Denominator(e*r),h);
+                action(~N,Numerator(e/r),Denominator(e/r),h);
+            end for;
+        end for;
+        H +:= 1;
+    end while;
+end procedure;
+#+end_src
+
+* Counting
+
+#+begin_src m
+N_phi := function(h)
+    N := 0; 
+    LoopOverRationals(~N, h, IncreaseCount);
+    return N;
+end function;
+#+end_src
+
+#+begin_src m
+pi := Pi(RealField(53));
+close_to_one := func<h | (N_phi(h)/Sqrt(h))*pi/4>;
+#+end_src
+
+We can run the following code to generate some data:
+#+begin_src m :tangle no
+for n in [1..12] do
+    h := 2^(4*n-2);
+    Sprintf("| %o | %o | %o |", n, h, close_to_one(h));
+end for;
+#+end_src
+
+|-----+-------------------+-----------------------------------------------|
+|   / |                 < |                                             < |
+| $n$ |    $h = 2^{4n-2}$ | $\frac{N_\phi(h)}{h^{1/2}}\cdot\frac{\pi}{4}$ |
+|-----+-------------------+-----------------------------------------------|
+|   1 |                 4 |               1.57079632679489661923132169164 |
+|   2 |                64 |               1.17809724509617246442349126873 |
+|   3 |              1024 |               1.07992247467149142572153366300 |
+|   4 |             16384 |               1.00629139685298064669506545871 |
+|   5 |            262144 |               1.02469916630760834145168250978 |
+|   6 |           4194304 |               1.00475741606509500546534737112 |
+|   7 |          67108864 |               1.00207294968629513331334071784 |
+|   8 |        1073741824 |              0.999676104705223818891906205977 |
+|   9 |       17179869184 |               1.00037118974973450007412221442 |
+|  10 |      274877906944 |              0.999969718215405054908531933680 |
+|  11 |     4398046511104 |               1.00003413342427134648360798619 |
+|  12 |    70368744177664 |              0.999992563144130890874111231371 |
+|  13 |  1125899906842624 |               1.00000389198173673575868129293 |
+|  14 | 18014398509481984 |               1.00000180878639185932329547583 |
+|-----+-------------------+-----------------------------------------------|
+
+* Densities
+We obtain a numerical approximation for the density $\delta_1 = 2/3$, using
+that $\delta_1 = \lim_{h\to \infty} \delta_1(h)$, where
+\begin{equation}
+    \delta_1(h) = \dfrac{\#\{(s,t) \in\mathbb{P}^1(\mathbb{Q}) : s \not\equiv t \mod 2, \, \mathrm{Ht}(s,t) \leq h\}}{\#\{(s,t) \in
+\mathbb{P}^1(\mathbb{Q}) : \mathrm{Ht}(s,t) \leq h\}}
+\end{equation}
+
+We already have a procedure that loops over rationals, so let's use it to
+calculate the densities.
+
+#+begin_src m
+numeratorDelta1 := procedure(~N, s, t, h)
+    if not EqualParity(s,t) then
+        if Max(Abs(s),Abs(t)) le h then
+            N +:= 1;
+        end if;
+    end if;
+end procedure;
+
+denominatorDelta1 := procedure(~N, s, t, h)
+    if Max(Abs(s),Abs(t)) le h then
+        N +:= 1;
+    end if;
+end procedure;
+#+end_src
+
+#+begin_src m
+delta1 := function(h)
+    Num := 0;
+    Den := 0;
+    R := RealField(53);
+    LoopOverRationals(~Num, h, numeratorDelta1);
+    LoopOverRationals(~Den, h, denominatorDelta1);
+    return R!(Num/Den);
+end function;
+#+end_src
+
+Running the following code, we see the limit approaching \(0.6666...\).
+#+begin_src m :tangle no
+for n in [10*m : m in [2,3,4,5]] do
+    h := 2^n;
+    Sprintf("| %o | %o | %o |",n,h,delta1(h));
+end for;  
+#+end_src
+
+
+|-----+------------------+---------------------------------------------------------|
+|   / |                < |                                                       < |
+| $n$ |        $h = 2^n$ |                                           $\delta_1(h)$ |
+|-----+------------------+---------------------------------------------------------|
+|  20 |          1048576 | 0.66321656050955414012738853503184713375796178343949045 |
+|  30 |       1073741824 | 0.66836274313214357329055544415480248646480850210547423 |
+|  40 |    1099511627776 | 0.66685612415449696293113991213353695440163314967716444 |
+|  50 | 1125899906842624 | 0.66668015416430369956096602179925996036587308550648699 |
+|-----+------------------+---------------------------------------------------------|

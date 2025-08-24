@@ -1,107 +1,307 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-  <meta content="text/html"; charset="UTF-8"; http-equiv="content-type">
-  <link rel="stylesheet" href="style.css" />
-  <link rel="shortcut icon" type="image/x-icon" href="images/umass-favicon.ico">
-  <title>Santiago Arango-Pineros</title>
+<!-- 2025-08-24 Sun 13:59 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Santiago Arango-Piñeros</title>
+<meta name="author" content="Santiago Arango-Piñeros" />
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<link rel="stylesheet" type="text/css" href="org-css.css"/>
 </head>
 <body>
-    <div class="container">
-        <div class="image">
-            <a href="images/santi_shot.jpg">
-                <img src="images/santi_shot.jpg" height="400" alt="Santiago Arango-Piñeros">
-            </a>
-        </div>
-        <div class="info">
-          <h1>Santiago Arango-Piñeros</h1>
-          <p>  &nbsp; </p>
-          <p>(he/him/his)</p>
-          <p>  &nbsp; </p>
-          <p> I am a Visiting Assistant Professor (postdoc)
-            at <a href="https://www.umass.edu/mathematics-statistics/">UMass Amherst</a>.
-          </p>
-          <p> &nbsp; </p>
-          <p>I earned my PhD in 2025 under the supervision
-            of <a href="https://dmzb.github.io/">David Zureick-Brown</a>
-            and <a href="https://math.dartmouth.edu/~jvoight/">John Voight</a>.
-            My research interests lie broadly in number theory and arithmetic
-            geometry.
-          </p>
-          <p>  &nbsp; </p>
-          <p>
-            Here is my <a href="documents/Santiago_Arango_Pineros_CV.pdf"
-            title="CV">CV</a>.
-          </p>
-        </div>
-    </div>
-    <hr color="#4682B4">
-    <h3>Coordinates</h3>
-    <ul>
-      <li><em>santiago.arango.pineros@gmail.com</em>
-      <li><em>sarangopiner@umass.edu</em>
-      <li><em><s>santiago.arango@emory.edu</s></em>
-      <li>
-        Here are
-        my <a href="https://arxiv.org/search/math?searchtype=author&query=Arango-Pi%C3%B1eros%2C+S"
-              class="arxiv">arXiv
-          papers</a>, <a href="https://mathscinet.ams.org/mathscinet/MRAuthorID/1392812"
-                         class="mr">MathSciNet profile</a>,
-        and <a href="https://github.com/sarangop1728" class="code">GitHub profile</a>.
-    </ul>
-
-<!-- <hr color="#4682B4"> -->
-
-<!-- <h3>Activities</h3> -->
-<!-- <ul> -->
-<!--   <li> I am organizing <a href="https://sarangop1728.github.io/eants">Emory's -->
-<!--       algebra and number theory seminar</a>. -->
-<!-- </ul> -->
-
-<hr color="#4682B4">
-<h3>Teaching</h3>
+<div id="content" class="content">
+<h1 class="title">Santiago Arango-Piñeros
+<br />
+<span class="subtitle">Academic Homepage</span>
+</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
 <ul>
-  <li> <a href="https://sarangop1728.github.io/teaching/411-fall-25/411-fall-25.html">MATH
-  411: Introduction to Abstract Algebra 1</a>
+<li><a href="#org87405ed">1. Coordinates</a></li>
+<li><a href="#org65d09e3">2. Teaching</a></li>
+<li><a href="#org5fd7d95">3. Research articles</a></li>
 </ul>
+</div>
+</div>
 
-<hr color="#4682B4">
+<div id="org9e388c4" class="figure">
+<p><img src="./images/santi_shot.jpg" alt="santi_shot.jpg" align="left" border="solid" width="200px" />
+</p>
+</div>
 
-<h3>Research Articles</h3>
+<p>
+I am a mathematician interested in Number Theory and Arithmetic
+Geometry. My pronouns are He/Him/His.
+</p>
+
+<p>
+I earned my PhD in 2025 under the supervision of <a href="https://dmzb.github.io/">David Zureick-Brown</a> and <a href="https://jvoight.github.io/">John
+Voight</a>.
+</p>
+
+<p>
+Currently, I am Visiting Assistant Professor (postdoc) at <a href="https://www.umass.edu/mathematics-statistics/">UMASS Amherst</a>.
+</p>
+
+<p>
+Here is my <a href="./documents/Santiago_Arango_Pineros_CV.pdf">CV</a>.
+</p>
+
+<p>
+ <br> 
+</p>
+
+
+<div id="outline-container-org87405ed" class="outline-2">
+<h2 id="org87405ed"><span class="section-number-2">1.</span> Coordinates</h2>
+<div class="outline-text-2" id="text-1">
+<ul class="org-ul">
+<li><code>santiago.arango.pineros@gmail.com</code></li>
+<li><code>sarangopiner@umass.edu</code></li>
+<li><del><code>santiago.arango@emory.edu</code></del></li>
+<li>Here are my <a
+  href="https://arxiv.org/search/math?searchtype=author&query=Arango-Pi%C3%B1eros%2C+S"
+  class="arxiv">arXiv papers</a>,  <a
+  href="https://mathscinet.ams.org/mathscinet/MRAuthorID/1392812"
+  class="mr">MathSciNet profile</a>, and  <a
+  href="https://github.com/sarangop1728" class="code">GitHub profile</a>.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org65d09e3" class="outline-2">
+<h2 id="org65d09e3"><span class="section-number-2">2.</span> Teaching</h2>
+<div class="outline-text-2" id="text-2">
+<ul class="org-ul">
+<li><a href="./teaching/411-fall-25/411-fall-25.html">MATH 411: Introduction to Abstract Algebra 1</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org5fd7d95" class="outline-2">
+<h2 id="org5fd7d95"><span class="section-number-2">3.</span> Research articles</h2>
+<div class="outline-text-2" id="text-3">
 <ol reversed>
   <div class="ref-container">
     <div>
-        <li><u>Counting primitive integral solutions to spherical generalized Fermat
-            equations</u>.<br>
+        <li><b>Counting primitive integral solutions to spherical generalized Fermat
+            equations</b>.<br>
           (<a href="https://arxiv.org/abs/2508.13093"
-            class="arXiv">2508.13093</a>, <a href="misc/computations.html">Magma experiment</a>)
+            class="arxiv">2508.13093</a>, <a href="misc/computations.html" class="code">Magma experiment</a>)
     </div>
     <div class="paper-image">
       <a href="images/UZ_50.png"><img src="images/UZ_50.png" height="100"
     width="120" style="border:2px solid #4682B4;border-radius:8px"></a>
     </div>
     <div>
-      <li><u>Fermat descent</u>. </br>
-(<a href="https://arxiv.org/abs/2508.13059" class="arXiv">2508.13059</a>)
+      <li><b>Fermat descent</b>. </br>
+(<a href="https://arxiv.org/abs/2508.13059" class="arxiv">2508.13059</a>)
     </div>
     <div class="paper-image">
       <a href="images/belyi-fiber.png"><img src="images/belyi-fiber.png" height="100"
     width="120" style="border:2px solid #4682B4;border-radius:8px"></a>
     </div>
        <div>
-        <li><u>Galois groups of simple abelian varieties over finite fields
-            and exceptional Tate classes</u>, </br> with Sam Frengley and
+        <li><b>Galois groups of simple abelian varieties over finite fields
+            and exceptional Tate classes</b>, </br> with Sam Frengley and
             Sameera Vemulapalli. <br>
-(<a href="http://arxiv.org/abs/2505.09589" class="arXiv">2505.09589</a>, <a href="https://github.com/SamFrengley/exceptional-tate-classes" class="code">code</a>)
+(<a href="http://arxiv.org/abs/2505.09589" class="arxiv">2505.09589</a>, <a href="https://github.com/SamFrengley/exceptional-tate-classes" class="code">code</a>)
     </div>
     <div class="paper-image">
       <a href="images/np.png"><img src="images/np.png" height="100"
     width="120" style="border:2px solid #4682B4;border-radius:8px"></a>
     </div>
        <div>
-        <li><u>Counting 5-isogenies of elliptic curves over the
-rationals</u>, </br> with Changho Han, Oana Padurariu, and Sun Woo Park. <br>
-(<a href="http://arxiv.org/abs/2504.07750" class="arXiv">2504.07750</a>, <a href="https://github.com/sarangop1728/counting-5-isogenies"
+        <li><b>Counting 5-isogenies of elliptic curves over the
+rationals</b>, </br> with Changho Han, Oana Padurariu, and Sun Woo Park. <br>
+(<a href="http://arxiv.org/abs/2504.07750" class="arxiv">2504.07750</a>, <a href="https://github.com/sarangop1728/counting-5-isogenies"
           class="code">code</a>)
     </div>
     <div class="paper-image">
@@ -110,14 +310,14 @@ rationals</u>, </br> with Changho Han, Oana Padurariu, and Sun Woo Park. <br>
     </div>
     
        <div>
-        <li><u>Bounds for the relative class number problem for
-function fields</u>, </br> with  María Chara, Asimina S. Hamakiotes,
+        <li><b>Bounds for the relative class number problem for
+function fields</b>, </br> with  María Chara, Asimina S. Hamakiotes,
           Kiran S. Kedlaya, and Gustavo Rama. <br>
           <a href="https://www.sciencedirect.com/science/article/pii/S0022314X25001751?via%3Dihub"
         class="journal">Journal of Number Theory</a> <b>278</b> (2026),
         977-1010. <br>
         (<a href="https://www.sciencedirect.com/science/article/pii/S0022314X25001751?via%3Dihub">DOI</a>, <a href="https://arxiv.org/abs/2412.12467"
-        class="arXiv">2412.12467</a>, <a href="https://github.com/sarangop1728/twice-class-number"
+        class="arxiv">2412.12467</a>, <a href="https://github.com/sarangop1728/twice-class-number"
         class="code">code</a>)
     </div>
     <div class="paper-image">
@@ -125,9 +325,9 @@ function fields</u>, </br> with  María Chara, Asimina S. Hamakiotes,
     width="120" style="border:2px solid #4682B4;border-radius:8px"></a>
     </div>
     <div>
-      <li><u>Galois groups of low dimensional abelian varieties over finite
-          fields</u>, </br> with Sam Frengley and Sameera Vemulapalli.</li>
-      (<a href="https://arxiv.org/abs/2412.03358" class="arXiv">2412.03358</a>, <a href="https://github.com/sarangop1728/Galois-Frob-Polys"
+      <li><b>Galois groups of low dimensional abelian varieties over finite
+          fields</b>, </br> with Sam Frengley and Sameera Vemulapalli.</li>
+      (<a href="https://arxiv.org/abs/2412.03358" class="arxiv">2412.03358</a>, <a href="https://github.com/sarangop1728/Galois-Frob-Polys"
           class="code">code</a>)
     </div>
     <div class="paper-image">
@@ -135,12 +335,12 @@ function fields</u>, </br> with  María Chara, Asimina S. Hamakiotes,
     width="120" style="border:2px solid #4682B4;border-radius:8px"></a>
     </div>
     <div>
-    <li><u>Frobenius distributions of low dimensional abelian varieties over
-        finite fields</u>, </br>with Deewang Bhamidipati and Soumya Sankar.</li>
+    <li><b>Frobenius distributions of low dimensional abelian varieties over
+        finite fields</b>, </br>with Deewang Bhamidipati and Soumya Sankar.</li>
     <a href="https://academic.oup.com/imrn/article-abstract/2024/16/11989/7708716?utm_source=etoc&utm_campaign=imrn&utm_medium=email"
         class="journal">International Mathematics Research Notices</a> <b>2024</b>
         (2024), no. 16, 11989-12020. <br>
-        (<a href="https://arxiv.org/abs/2306.02237" class="arXiv">2306.02237</a>, <a href="https://github.com/sarangop1728/Frobenius-distributions-AVs-Fq"
+        (<a href="https://arxiv.org/abs/2306.02237" class="arxiv">2306.02237</a>, <a href="https://github.com/sarangop1728/Frobenius-distributions-AVs-Fq"
     class="code">code</a>)
   </div>
   <div class="paper-image">
@@ -148,7 +348,7 @@ function fields</u>, </br> with  María Chara, Asimina S. Hamakiotes,
     width="120" style="border:2px solid #4682B4;border-radius:8px"></a>
   </div>
   <div>
-    <li> <u>Mertens' theorem for Chebotarev sets</u>, </br>with Daniel Keliher and
+    <li> <b>Mertens' theorem for Chebotarev sets</b>, </br>with Daniel Keliher and
         Chris
         Keyes. </li> <a href="https://www.worldscientific.com/doi/10.1142/S1793042122500932"
         class="journal">International Journal of Number Theory</a> <b>18</b>
@@ -161,7 +361,7 @@ function fields</u>, </br> with  María Chara, Asimina S. Hamakiotes,
     <a href="images/mertens.png"><img src="images/mertens.png" height="100" width="120" style="border:2px solid #4682B4;border-radius:8px"></a>
   </div>
   <div>
-    <li> <u>The global field Euler function</u>, </br>with Juan Diego
+    <li> <b>The global field Euler function</b>, </br>with Juan Diego
     Rojas. </li> <a href="https://link.springer.com/article/10.1007/s40687-020-00218-3"
     class="journal">Research in the Mathematical Sciences</a> <b>7</b> (2020),
     no. 3, Paper No. 19, 21 pp. <br> (<a href="https://mathscinet.ams.org/mathscinet/relay-station?mr=4123394" class="mr">MR 4123394</a>, <a href="https://arxiv.org/abs/2005.04521" class="arxiv">2005.04521</a>)
@@ -171,53 +371,13 @@ function fields</u>, </br> with  María Chara, Asimina S. Hamakiotes,
   </div>
 </div>
 </ol>
-
-
-<hr color="#4682B4">
-
-<!-- <h3>Teaching and Mentoring</h3> -->
-<!-- <ul> -->
-<!--   <li><em>Instructor of record</em> for Math 111: Calculus 1, at Emory -->
-<!--     University. (Fall 2022 and 2023) -->
-<!--     <ul> -->
-<!--       <li> Here is a <a href="sample-test.pdf" title="sample test">sample -->
-<!--         test</a> (with my solution) that I helped design. -->
-<!--       <li> Here is a <a href="sample-notes.pdf" title="sample notes">sample of -->
-<!--       the personal notes</a> I wrote to prepare for my lectures. I shared these -->
-<!--       with my students as well. -->
-<!--     </ul> -->
-<!--   <li>I was a <em>Study Group Leader</em> at the <a href=https://swc-math.github.io/aws/2024/index.html>Arizona Winter School 2024</a>. -->
-<!--   <li>I was a <em>Problem Set Leader</em> at the -->
-<!--   <a href=https://swc-math.github.io/aws/2024/2024PAWS.html>Preliminary Arizona -->
-<!--     Winter School</a> course on Abelian varieties over finite fields. -->
-<!--   <ul> -->
-<!--     <li> Here are the problem sets I helped -->
-<!--     create: <a href="https://swc-math.github.io/aws/2024/PAWSDembele/2023PAWSDembeleProblems0.pdf" -->
-<!--     title="PSET0">PSET0</a>, <a href="https://swc-math.github.io/aws/2024/PAWSDembele/2023PAWSDembeleProblems1.pdf" -->
-<!--     title="PSET1">PSET1</a>, <a href="https://swc-math.github.io/aws/2024/PAWSDembele/2023PAWSDembeleProblems1.pdf" -->
-<!--     title="PSET2">PSET2</a>, <a href="https://swc-math.github.io/aws/2024/PAWSDembele/2023PAWSDembeleProblems2.pdf" -->
-<!--     title="PSET3">PSET3</a>, <a href="https://swc-math.github.io/aws/2024/PAWSDembele/2023PAWSDembeleProblems3.pdf" -->
-<!--     title="PSET4">PSET4</a>, <a href="https://swc-math.github.io/aws/2024/PAWSDembele/2023PAWSDembeleProblems4.pdf" -->
-<!--     title="PSET1">PSET4</a>, <a href="https://swc-math.github.io/aws/2024/PAWSDembele/2023PAWSDembeleProblems5.pdf" -->
-<!--     title="PSET5">PSET5</a>, <a href="https://swc-math.github.io/aws/2024/PAWSDembele/2023PAWSDembeleProblems6.pdf" -->
-<!--     title="PSET6">PSET6</a> -->
-<!--   </ul> -->
-<!--   <li><a href="https://sites.google.com/view/twoples/home?authuser=0">TWOPLES</a> directed reading program. -->
-<!--     <ul> -->
-<!--       <li>Fall 2023: I mentored Sergio Maciel. We read about sheaf cohomology, mainly following Vakil's book and Hartshorne. -->
-<!--       <li>Fall 2020: I mentored Leonardo Méndez and Camilo Martinez. We read about algebraic number theory, following <a href=https://www.jmilne.org/math/CourseNotes/ANT.pdf>Milne's notes</a>. -->
-<!--     </ul> -->
-<!--   <li>Here is -->
-<!--   a <a href="https://cdn.prod.website-files.com/5f3e96827894c2ff19996e36/65058ac8c53c26b6031b08b3_Sep%2025_Arango_Poster.pdf">note</a> -->
-<!--   that LATHISMS wrote about me for Hispanic Heritage Month. -->
-<!-- </ul> -->
-
-<!-- <hr color="#4682B4"> -->
-<!--   <a href="https://www.digits.net" target="_blank"> -->
-<!--     <img src="https://counter.digits.net/?counter={c3280afe-fde2-c0a4-d152-4b370bca7006}&template=simple&background=4682B4" -->
-<!--      alt="Hit Counter by Digits" border="0" /> <font size="-2"> (hits since -->
-<!--      August/03/2024)</font> -->
-<!--   </a> -->
-
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Santiago Arango-Piñeros</p>
+<p class="date">Created: 2025-08-24 Sun 13:59</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
 </body>
 </html>

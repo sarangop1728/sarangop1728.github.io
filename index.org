@@ -1,0 +1,146 @@
+#+TITLE: Santiago Arango-Piñeros
+#+SUBTITLE: Academic Homepage
+#+AUTHOR: Santiago Arango-Piñeros
+#+EMAIL: santiago.arango.pineros@gmail.com
+#+OPTIONS: toc: t
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="org-css.css"/>
+
+
+#+ATTR_HTML: :width 200px
+#+ATTR_HTML: :border solid
+#+ATTR_HTML: :align left
+[[./images/santi_shot.jpg]]
+
+I am a mathematician interested in Number Theory and Arithmetic
+Geometry. My pronouns are He/Him/His.
+
+I earned my PhD in 2025 under the supervision of [[https://dmzb.github.io/][David Zureick-Brown]] and [[https://jvoight.github.io/][John
+Voight]].
+
+Currently, I am Visiting Assistant Professor (postdoc) at [[https://www.umass.edu/mathematics-statistics/][UMASS Amherst]].
+
+Here is my [[./documents/Santiago_Arango_Pineros_CV.pdf][CV]].
+
+@@html: <br> @@
+
+
+* Coordinates
++ ~santiago.arango.pineros@gmail.com~
++ ~sarangopiner@umass.edu~
++ +~santiago.arango@emory.edu~+
++ Here are my @@html:<a
+  href="https://arxiv.org/search/math?searchtype=author&query=Arango-Pi%C3%B1eros%2C+S"
+  class="arxiv">arXiv papers</a>@@, @@html: <a
+  href="https://mathscinet.ams.org/mathscinet/MRAuthorID/1392812"
+  class="mr">MathSciNet profile</a>@@, and @@html: <a
+  href="https://github.com/sarangop1728" class="code">GitHub profile</a>@@.
+
+* Teaching
++ [[./teaching/411-fall-25/411-fall-25.org][MATH 411: Introduction to Abstract Algebra 1]]
+* Research articles
+#+begin_export html
+<ol reversed>
+  <div class="ref-container">
+    <div>
+        <li><b>Counting primitive integral solutions to spherical generalized Fermat
+            equations</b>.<br>
+          (<a href="https://arxiv.org/abs/2508.13093"
+            class="arxiv">2508.13093</a>, <a href="misc/computations.html" class="code">Magma experiment</a>)
+    </div>
+    <div class="paper-image">
+      <a href="images/UZ_50.png"><img src="images/UZ_50.png" height="100"
+    width="120" style="border:2px solid #4682B4;border-radius:8px"></a>
+    </div>
+    <div>
+      <li><b>Fermat descent</b>. </br>
+(<a href="https://arxiv.org/abs/2508.13059" class="arxiv">2508.13059</a>)
+    </div>
+    <div class="paper-image">
+      <a href="images/belyi-fiber.png"><img src="images/belyi-fiber.png" height="100"
+    width="120" style="border:2px solid #4682B4;border-radius:8px"></a>
+    </div>
+       <div>
+        <li><b>Galois groups of simple abelian varieties over finite fields
+            and exceptional Tate classes</b>, </br> with Sam Frengley and
+            Sameera Vemulapalli. <br>
+(<a href="http://arxiv.org/abs/2505.09589" class="arxiv">2505.09589</a>, <a href="https://github.com/SamFrengley/exceptional-tate-classes" class="code">code</a>)
+    </div>
+    <div class="paper-image">
+      <a href="images/np.png"><img src="images/np.png" height="100"
+    width="120" style="border:2px solid #4682B4;border-radius:8px"></a>
+    </div>
+       <div>
+        <li><b>Counting 5-isogenies of elliptic curves over the
+rationals</b>, </br> with Changho Han, Oana Padurariu, and Sun Woo Park. <br>
+(<a href="http://arxiv.org/abs/2504.07750" class="arxiv">2504.07750</a>, <a href="https://github.com/sarangop1728/counting-5-isogenies"
+          class="code">code</a>)
+    </div>
+    <div class="paper-image">
+      <a href="images/bowtie.jpeg"><img src="images/bowtie.jpeg" height="100"
+    width="120" style="border:2px solid #4682B4;border-radius:8px"></a>
+    </div>
+    
+       <div>
+        <li><b>Bounds for the relative class number problem for
+function fields</b>, </br> with  María Chara, Asimina S. Hamakiotes,
+          Kiran S. Kedlaya, and Gustavo Rama. <br>
+          <a href="https://www.sciencedirect.com/science/article/pii/S0022314X25001751?via%3Dihub"
+        class="journal">Journal of Number Theory</a> <b>278</b> (2026),
+        977-1010. <br>
+        (<a href="https://www.sciencedirect.com/science/article/pii/S0022314X25001751?via%3Dihub">DOI</a>, <a href="https://arxiv.org/abs/2412.12467"
+        class="arxiv">2412.12467</a>, <a href="https://github.com/sarangop1728/twice-class-number"
+        class="code">code</a>)
+    </div>
+    <div class="paper-image">
+      <a href="images/oaxaca.png"><img src="images/oaxaca.png" height="100"
+    width="120" style="border:2px solid #4682B4;border-radius:8px"></a>
+    </div>
+    <div>
+      <li><b>Galois groups of low dimensional abelian varieties over finite
+          fields</b>, </br> with Sam Frengley and Sameera Vemulapalli.</li>
+      (<a href="https://arxiv.org/abs/2412.03358" class="arxiv">2412.03358</a>, <a href="https://github.com/sarangop1728/Galois-Frob-Polys"
+          class="code">code</a>)
+    </div>
+    <div class="paper-image">
+      <a href="images/W6.png"><img src="images/W6.png" height="100"
+    width="120" style="border:2px solid #4682B4;border-radius:8px"></a>
+    </div>
+    <div>
+    <li><b>Frobenius distributions of low dimensional abelian varieties over
+        finite fields</b>, </br>with Deewang Bhamidipati and Soumya Sankar.</li>
+    <a href="https://academic.oup.com/imrn/article-abstract/2024/16/11989/7708716?utm_source=etoc&utm_campaign=imrn&utm_medium=email"
+        class="journal">International Mathematics Research Notices</a> <b>2024</b>
+        (2024), no. 16, 11989-12020. <br>
+        (<a href="https://arxiv.org/abs/2306.02237" class="arxiv">2306.02237</a>, <a href="https://github.com/sarangop1728/Frobenius-distributions-AVs-Fq"
+    class="code">code</a>)
+  </div>
+  <div class="paper-image">
+    <a href="images/3.4.ab_ad_m.gif"><img src="images/3.4.ab_ad_m.gif" height="100"
+    width="120" style="border:2px solid #4682B4;border-radius:8px"></a>
+  </div>
+  <div>
+    <li> <b>Mertens' theorem for Chebotarev sets</b>, </br>with Daniel Keliher and
+        Chris
+        Keyes. </li> <a href="https://www.worldscientific.com/doi/10.1142/S1793042122500932"
+        class="journal">International Journal of Number Theory</a> <b>18</b>
+        (2022), no. 8, 1823-1842. <br>
+        (<a href="https://mathscinet.ams.org/mathscinet/relay-station?mr=mr=4439576"
+        class="mr">MR 4439576</a>, <a href="https://arxiv.org/abs/2103.14747"
+        class="arxiv">2103.14747</a>)
+  </div>
+  <div class="paper-image">
+    <a href="images/mertens.png"><img src="images/mertens.png" height="100" width="120" style="border:2px solid #4682B4;border-radius:8px"></a>
+  </div>
+  <div>
+    <li> <b>The global field Euler function</b>, </br>with Juan Diego
+    Rojas. </li> <a href="https://link.springer.com/article/10.1007/s40687-020-00218-3"
+    class="journal">Research in the Mathematical Sciences</a> <b>7</b> (2020),
+    no. 3, Paper No. 19, 21 pp. <br> (<a href="https://mathscinet.ams.org/mathscinet/relay-station?mr=4123394" class="mr">MR 4123394</a>, <a href="https://arxiv.org/abs/2005.04521" class="arxiv">2005.04521</a>)
+  </div>
+  <div class="paper-image">
+    <a href="images/euler.png"><img src="images/euler.png" height="100" width="120" style="border:2px solid #4682B4;border-radius:8px"></a>
+  </div>
+</div>
+</ol>
+#+end_export
+

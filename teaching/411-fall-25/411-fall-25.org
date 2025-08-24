@@ -1,18 +1,19 @@
 #+TITLE: Math 411 - Fall 2025
-#+SUBTITLE: (Introduction to Abstract Algebra 1)
+#+SUBTITLE: Introduction to Abstract Algebra 1
 #+AUTHOR: Santiago Arango-Piñeros
 #+EMAIL: sarangopiner@umass.edu
-#+OPTIONS: toc:t
-#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../../style.css">
-
+#+OPTIONS: toc: t
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../../org-css.css"/>
 
 * Coordinates
 ** Instructor
 [[https://sarangop1728.github.io/][Santiago Arango-Piñeros]] (he/him/his).
 My office is LGRT 1238, and you can contact me via email at:
 + ~sarangopiner@umass.edu~.
+
 ** Lectures
 |----------------+-------+---------------------+----------|
+| /              | <     | <                   | <        |
 | Section        | Days  | Time                | Place    |
 |----------------+-------+---------------------+----------|
 | 01-LEC (64725) | Tu-Th | 8:30 AM - 9:45 AM   | LGRT 177 |
@@ -95,7 +96,7 @@ include at least:
 + three _mathematical_ mistakes you (the *student*) made during the course
   (either in a homework assignment, a previous test, or during self-study), and
 + two mathematical mistakes your favorite AI made when prompted with some group
-  theory questions;
+  theory question;
 
 along with thorough explanations of the nature of the errors and their
 corrections. The essay will be graded on the mathematical accuracy of each
