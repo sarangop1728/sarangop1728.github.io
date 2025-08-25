@@ -3,8 +3,9 @@
 #+TITLE: Computing the Pythagorean constant in ~Magma~
 
 #+PROPERTY: header-args :tangle yes
-#+OPTIONS: toc: t
+#+OPTIONS: toc:t num:nil
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../org-css.css"/>
+#+HTML_HEAD:  <link rel="shortcut icon" type="image/x-icon" href="../images/umass-favicon.ico">
 
 We consider the degree four Galois Belyi map $\phi\colon
 \mathbb{P}^1 \to \mathbb{P}^1$ given by $\phi(s:t) = ((s^2 - t^2)^2 :

@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-08-24 Sun 13:56 -->
+<!-- 2025-08-24 Sun 20:46 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Computing the Pythagorean constant in ~Magma~</title>
@@ -194,6 +194,7 @@
   .org-svg { }
 </style>
 <link rel="stylesheet" type="text/css" href="../org-css.css"/>
+<link rel="shortcut icon" type="image/x-icon" href="../images/umass-favicon.ico">
 <script>
   window.MathJax = {
     tex: {
@@ -234,10 +235,10 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orge975bea">1. <code>IncreaseCount</code> procedure</a></li>
-<li><a href="#orgccda1f9">2. <code>LoopOverRationals</code> procedure</a></li>
-<li><a href="#orgb2e6556">3. Counting</a></li>
-<li><a href="#org7d4727f">4. Densities</a></li>
+<li><a href="#orgeef95b5"><code>IncreaseCount</code> procedure</a></li>
+<li><a href="#orge056559"><code>LoopOverRationals</code> procedure</a></li>
+<li><a href="#org0dea329">Counting</a></li>
+<li><a href="#org72d804c">Densities</a></li>
 </ul>
 </div>
 </div>
@@ -259,9 +260,9 @@ We approximate the constant \(\delta(\phi)\) by computing \(N_\phi(h)/h^{1/2}\) 
 large values of \(h\). Our theorem claims that \(\delta(\phi) = \frac{4}{\pi}\).
 </p>
 
-<div id="outline-container-orge975bea" class="outline-2">
-<h2 id="orge975bea"><span class="section-number-2">1.</span> <code>IncreaseCount</code> procedure</h2>
-<div class="outline-text-2" id="text-1">
+<div id="outline-container-orgeef95b5" class="outline-2">
+<h2 id="orgeef95b5"><code>IncreaseCount</code> procedure</h2>
+<div class="outline-text-2" id="text-orgeef95b5">
 <p>
 A short function that asks if \(s \equiv t \mod 2\).
 </p>
@@ -309,9 +310,9 @@ end procedure;
 </div>
 </div>
 
-<div id="outline-container-orgccda1f9" class="outline-2">
-<h2 id="orgccda1f9"><span class="section-number-2">2.</span> <code>LoopOverRationals</code> procedure</h2>
-<div class="outline-text-2" id="text-2">
+<div id="outline-container-orge056559" class="outline-2">
+<h2 id="orge056559"><code>LoopOverRationals</code> procedure</h2>
+<div class="outline-text-2" id="text-orge056559">
 <p>
 We create a procedure that loops over \[\mathbb{P}^1(\mathbb{Q}) \cong \{(s,t)
 \in \mathbb{Z}^2 - \{(0,0)\} : t \geq 0, \gcd(s,t) = 1 \}\] of height
@@ -368,9 +369,9 @@ end procedure;
 </div>
 </div>
 
-<div id="outline-container-orgb2e6556" class="outline-2">
-<h2 id="orgb2e6556"><span class="section-number-2">3.</span> Counting</h2>
-<div class="outline-text-2" id="text-3">
+<div id="outline-container-org0dea329" class="outline-2">
+<h2 id="org0dea329">Counting</h2>
+<div class="outline-text-2" id="text-org0dea329">
 <div class="org-src-container">
 <pre class="src src-m">N_phi := function(h)
     N := 0; 
@@ -507,9 +508,9 @@ end for;
 </div>
 </div>
 
-<div id="outline-container-org7d4727f" class="outline-2">
-<h2 id="org7d4727f"><span class="section-number-2">4.</span> Densities</h2>
-<div class="outline-text-2" id="text-4">
+<div id="outline-container-org72d804c" class="outline-2">
+<h2 id="org72d804c">Densities</h2>
+<div class="outline-text-2" id="text-org72d804c">
 <p>
 We obtain a numerical approximation for the density \(\delta_1 = 2/3\), using
 that \(\delta_1 = \lim_{h\to \infty} \delta_1(h)\), where
@@ -617,7 +618,7 @@ end for;
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: <a href="../index.html">Santiago Arango-Piñeros</a></p>
-<p class="date">Created: 2025-08-24 Sun 13:56</p>
+<p class="date">Created: 2025-08-24 Sun 20:46</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

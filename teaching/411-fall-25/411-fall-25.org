@@ -2,8 +2,9 @@
 #+SUBTITLE: Introduction to Abstract Algebra 1
 #+AUTHOR: Santiago Arango-Piñeros
 #+EMAIL: sarangopiner@umass.edu
-#+OPTIONS: toc: t
+#+OPTIONS: toc:t num:nil
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../../org-css.css"/>
+#+HTML_HEAD:  <link rel="shortcut icon" type="image/x-icon" href="../../images/umass-favicon.ico">
 
 * Coordinates
 ** Instructor

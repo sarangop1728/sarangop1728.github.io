@@ -2,12 +2,11 @@
 #+SUBTITLE: Academic Homepage
 #+AUTHOR: Santiago Arango-Piñeros
 #+EMAIL: santiago.arango.pineros@gmail.com
-#+OPTIONS: toc: t
+#+OPTIONS: toc:t num:nil
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="org-css.css"/>
-
+#+HTML_HEAD:  <link rel="shortcut icon" type="image/x-icon" href="images/umass-favicon.ico">
 
 #+ATTR_HTML: :width 200px
-#+ATTR_HTML: :border solid
 #+ATTR_HTML: :align left
 [[./images/santi_shot.jpg]]
 
