@@ -134,42 +134,45 @@ During the lectures, we will focus on reviewing the key concepts, answering
 questions, and working on examples.
 
 
-|------------------+---------------------------------------+------------------|
-| Date             | Lecture                               |          Reading |
-|------------------+---------------------------------------+------------------|
-| /                | <                                     |                < |
-| <2025-09-02 Tue> | 1. [[https://www.dropbox.com/scl/fi/p1wxilymw0vyhqvnk3z0a/Lecture-1.pdf?rlkey=wz6pvevnvakryws6uz4t8jsgx&dl=0][What is symmetry?]]                  | 1.1 - 1.7, [[https://kconrad.math.uconn.edu/blurbs/grouptheory/whygroups.pdf][blurb]] |
-| <2025-09-04 Thu> | 2. Examples of groups                 |        1.1 - 1.7 |
-| <2025-09-09 Tue> | 3. Abstract groups: first results     |        1.10, 2.1 |
-| <2025-09-11 Thu> | 4. Subgroups and cyclic groups        |              2.2 |
-| <2025-09-16 Tue> | 5. Dihedral groups                    |              2.3 |
-| <2025-09-18 Thu> | 6. Homomorphisms and isomorphisms     |              2.4 |
-| <2025-09-23 Tue> | 7. The sign of a permutation          |            [[https://kconrad.math.uconn.edu/blurbs/grouptheory/sign.pdf][Blurb]] |
-| <2025-09-25 Thu> | *Exam 1*                              |                  |
-| <2025-09-30 Tue> | 8. Cosets                             |              2.5 |
-| <2025-10-02 Thu> | 9. Lagrange's theorem                 |              2.5 |
-| <2025-10-07 Tue> | 10. [[https://en.wikipedia.org/wiki/Emmy_Noether][Noether's]] isomorphism theorems    |              2.7 |
-| <2025-10-09 Thu> | 11. Direct products                   |              3.1 |
-| <2025-10-14 Tue> | 12. Semidirect products               |              3.2 |
-| <2025-10-16 Thu> | 13. Linear algebra over the integers  |              3.5 |
-| <2025-10-21 Tue> | 14. Finitely generated abelian groups |              3.6 |
-| <2025-10-23 Thu> | 15. Rotations of regular polyhedra    |              4.1 |
-| <2025-10-28 Tue> | 16. The Dodecahedron and Icosahedron  |              4.2 |
-| <2025-10-30 Thu> | 17. Reflections                       |              4.3 |
-| <2025-11-04 Tue> | *No class* (election day)             |                  |
-| <2025-11-06 Thu> | *Exam 2*                              |                  |
-| <2025-11-11 Tue> | *No class* (veterans day)             |                  |
-| <2025-11-13 Thu> | 18. Group actions                     |              5.1 |
-| <2025-11-18 Tue> | 19. Counting orbits                   |              5.2 |
-| <2025-11-20 Thu> | 20. Symmetries of groups              |              5.3 |
-| <2025-11-25 Tue> | 21. Group actions and group structure |              5.4 |
-| <2025-11-27 Thu> | *No class* (thanksgiving)             |                  |
-| <2025-12-02 Tue> | 22. The Sylow theorems                |            [[https://kconrad.math.uconn.edu/blurbs/grouptheory/sylowpf.pdf][Blurb]] |
-| <2025-12-04 Thu> | 23. Questions?                        |                  |
-| <2025-12-09 Tue> | *Exam 3*                              |                  |
-|------------------+---------------------------------------+------------------|
+|------------------+------------------------------------------------------------------------------------+------------------|
+| Date             | Lecture                                                                            |          Reading |
+|------------------+------------------------------------------------------------------------------------+------------------|
+| /                | <                                                                                  |                < |
+| <2025-09-02 Tue> | 1. [[https://www.dropbox.com/scl/fi/p1wxilymw0vyhqvnk3z0a/Lecture-1.pdf?rlkey=wz6pvevnvakryws6uz4t8jsgx&st=oihmxpsu&dl=0][What is symmetry?]]                                                               | 1.1 - 1.7, [[https://kconrad.math.uconn.edu/blurbs/grouptheory/whygroups.pdf][blurb]] |
+| <2025-09-04 Thu> | 2. [[https://www.dropbox.com/scl/fi/ye5ewjg4w53js9i9nnlqp/Lecture-2.pdf?rlkey=en0vp8k0mxcdldak8rpebqe5w&st=q1vmzgj1&dl=0][Examples of groups]]                                                              |        1.1 - 1.7 |
+| <2025-09-09 Tue> | 3. Abstract groups: first results                                                  |        1.10, 2.1 |
+| <2025-09-11 Thu> | 4. Subgroups and cyclic groups                                                     |              2.2 |
+| <2025-09-16 Tue> | 5. Dihedral groups                                                                 |              2.3 |
+| <2025-09-18 Thu> | 6. Homomorphisms and isomorphisms                                                  |              2.4 |
+| <2025-09-23 Tue> | 7. The sign of a permutation                                                       |            [[https://kconrad.math.uconn.edu/blurbs/grouptheory/sign.pdf][Blurb]] |
+| <2025-09-25 Thu> | *Exam 1*                                                                           |                  |
+| <2025-09-30 Tue> | 8. Cosets                                                                          |              2.5 |
+| <2025-10-02 Thu> | 9. Lagrange's theorem                                                              |              2.5 |
+| <2025-10-07 Tue> | 10. [[https://en.wikipedia.org/wiki/Emmy_Noether][Noether's]] isomorphism theorems |              2.7 |
+| <2025-10-09 Thu> | 11. Direct products                                                                |              3.1 |
+| <2025-10-14 Tue> | 12. Semidirect products                                                            |              3.2 |
+| <2025-10-16 Thu> | 13. Linear algebra over the integers                                               |              3.5 |
+| <2025-10-21 Tue> | 14. Finitely generated abelian groups                                              |              3.6 |
+| <2025-10-23 Thu> | 15. Rotations of regular polyhedra                                                 |              4.1 |
+| <2025-10-28 Tue> | 16. The Dodecahedron and Icosahedron                                               |              4.2 |
+| <2025-10-30 Thu> | 17. Reflections                                                                    |              4.3 |
+| <2025-11-04 Tue> | *No class* (election day)                                                          |                  |
+| <2025-11-06 Thu> | *Exam 2*                                                                           |                  |
+| <2025-11-11 Tue> | *No class* (veterans day)                                                          |                  |
+| <2025-11-13 Thu> | 18. Group actions                                                                  |              5.1 |
+| <2025-11-18 Tue> | 19. Counting orbits                                                                |              5.2 |
+| <2025-11-20 Thu> | 20. Symmetries of groups                                                           |              5.3 |
+| <2025-11-25 Tue> | 21. Group actions and group structure                                              |              5.4 |
+| <2025-11-27 Thu> | *No class* (thanksgiving)                                                          |                  |
+| <2025-12-02 Tue> | 22. The Sylow theorems                                                             |            [[https://kconrad.math.uconn.edu/blurbs/grouptheory/sylowpf.pdf][Blurb]] |
+| <2025-12-04 Thu> | 23. Questions?                                                                     |                  |
+| <2025-12-09 Tue> | *Exam 3*                                                                           |                  |
+|------------------+------------------------------------------------------------------------------------+------------------|
 
 * Philosophy
+** Adopt a growth mindset
+  Your effort and attitude determine your abilities. Embrace challenges and
+  failure as an oportunity to grow. Find inspiration in other people's success.
 ** Learning is the student's responsibility
 Paraphrasing Galileo:
 #+BEGIN_QUOTE

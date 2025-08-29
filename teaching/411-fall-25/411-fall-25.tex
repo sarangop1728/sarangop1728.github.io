@@ -1,4 +1,4 @@
-% Created 2025-08-12 Tue 17:12
+% Created 2025-08-29 Fri 10:42
 % Intended LaTeX compiler: pdflatex
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
@@ -15,7 +15,7 @@
 \author{Santiago Arango-Piñeros}
 \date{\today}
 \title{Math 411 - Fall 2025\\\medskip
-\large (Introduction to Abstract Algebra 1)}
+\large Introduction to Abstract Algebra 1}
 \hypersetup{
  pdfauthor={Santiago Arango-Piñeros},
  pdftitle={Math 411 - Fall 2025},
@@ -29,21 +29,20 @@
 \tableofcontents
 
 
-
-\section{Coordinates}
-\label{sec:org66c243d}
-\subsection{Instructor}
-\label{sec:org18afe59}
+\section*{Coordinates}
+\label{sec:org5b4f823}
+\subsection*{Instructor}
+\label{sec:org6cba718}
 \href{https://sarangop1728.github.io/}{Santiago Arango-Piñeros} (he/him/his).
 My office is LGRT 1238, and you can contact me via email at:
 \begin{itemize}
 \item \texttt{sarangopiner@umass.edu}.
 \end{itemize}
 
-\subsection{Lectures}
-\label{sec:org50c5e5a}
+\subsection*{Lectures}
+\label{sec:org76a5a90}
 \begin{center}
-\begin{tabular}{llll}
+\begin{tabular}{l|l|l|l}
 \hline
 Section & Days & Time & Place\\[0pt]
 \hline
@@ -53,29 +52,29 @@ Section & Days & Time & Place\\[0pt]
 \end{tabular}
 \end{center}
 
-\subsection{Office hours}
-\label{sec:org9b5c8c9}
+\subsection*{Office hours}
+\label{sec:org529b9de}
 \begin{itemize}
 \item Between 1:00 PM and 3:30 PM on Tuesdays.
-\item Between 1:00 PM and 2:15 PM on and Thursdays.
+\item Between 1:00 PM and 2:15 PM on Thursdays.
 \item If the times above are not convenient, send me an email.
 \end{itemize}
 
-\section{Course description}
-\label{sec:org169af84}
+\section*{Course description}
+\label{sec:orgdde4100}
 The focus of the course will be on studying \emph{groups}. These are algebraic
 structures that capture the notion of symmetry. Groups are ubiquitous in all
 areas of mathematics (and the world around us). If you commit to this class,
 you will master the essential concepts of group theory by the end of the
 course.
-\subsection{Prerequisites}
-\label{sec:orgf456c22}
-\textbf{MATH 235} and either \textbf{CMPSCI 250} or \textbf{MATH 300}. In other words, we will need some
-important concepts from linear algebra, and there will be an emphasis on proofs
-and development of careful mathematical reasoning and writing.
+\subsection*{Prerequisites}
+\label{sec:org1b93b3b}
+\textbf{MATH 235} and either \textbf{CMPSCI 250} or \textbf{MATH 300}. In other words, we will need
+some important concepts from linear algebra, and there will be an emphasis on
+proofs and development of careful mathematical reasoning and writing.
 
-\subsection{Textbook}
-\label{sec:org1549feb}
+\subsection*{Textbook}
+\label{sec:org99c3462}
 \begin{itemize}
 \item \textbf{\emph{Algebra: Abstract and Concrete}} by Frederick M. Goodman. The book is
 freely available for download at the \href{https://homepage.divms.uiowa.edu/\~goodman/algebrabook.dir/algebrabook.html}{author's web-site}.
@@ -83,8 +82,8 @@ freely available for download at the \href{https://homepage.divms.uiowa.edu/\~go
 group theory.
 \end{itemize}
 
-\subsection{Learning objectives}
-\label{sec:org0aeb825}
+\subsection*{Learning objectives}
+\label{sec:org5a70151}
 
 \begin{enumerate}
 \item To learn the fundamental examples of groups: finitely generated abelian
@@ -102,8 +101,8 @@ terms of the Smith normal form of a matrix with integer coefficients.
 natural actions of each of the fundamental examples.
 \end{enumerate}
 
-\subsection{Homework (\texttt{300 points})}
-\label{sec:org69fe62a}
+\subsection*{Homework (\texttt{300 points})}
+\label{sec:org35dbb06}
 Homework assignments must be submitted through Gradescope by \texttt{11:59 PM} on the
 due date. Each problem set contains 5 problems, and each problem is worth \texttt{10
 points}. This means that there is a \texttt{50 points} bonus on the homework. \textbf{Late
@@ -128,8 +127,8 @@ they reserve the right not to grade that particular answer.
 \item \texttt{PSET7}: Group actions (\texttt{pdf})(\texttt{tex}) \textit{<2025-12-09 Tue>}.
 \end{itemize}
 
-\subsection{Exams (\texttt{300 points})}
-\label{sec:orgc8386eb}
+\subsection*{Exams (\texttt{300 points})}
+\label{sec:orgfcb88f2}
 There will be three midterm exams. Each exam will have 5 questions. Each question will
 be worth \texttt{20 points}.
 \begin{itemize}
@@ -140,23 +139,32 @@ be worth \texttt{20 points}.
 Question one will ask you to define a concept. Question two will ask you to
 prove a result (of reasonable difficulty) from the assigned reading. Questions
 3, 4, and 5 will be random problems related to the topics of the lectures.
-\subsection{``Mistakes were made'' essay (\texttt{100 points})}
-\label{sec:org8cb0a5b}
-This is a \textbf{handwritten} essay, due on the day of the final exam. It must include
-at least five mathematical mistakes the student made during the course, either
-in a homework assignment, a previous test, or during self-study, along with a
-thorough explanation of each error and its correction. The essay will be graded
-on the mathematical accuracy of each correction: the complete correction of
-each mistake will be worth \texttt{20 points}.
+\subsection*{``Mistakes were made'' essay (\texttt{100 points})}
+\label{sec:org36bcff4}
+This is a \textbf{handwritten} essay, due on the day of the final exam. It must
+include at least:
+\begin{itemize}
+\item three \uline{mathematical} mistakes you (the \textbf{student}) made during the course
+(either in a homework assignment, a previous test, or during self-study), and
+\item two mathematical mistakes your favorite AI made when prompted with some group
+theory question;
+\end{itemize}
 
-\subsection{Final exam (\texttt{300 points})}
-\label{sec:orga8f3e7a}
+along with thorough explanations of the nature of the errors and their
+corrections. The essay will be graded on the mathematical accuracy of each
+explanation: an accurate description of each mistake, together with a complete
+correction, will be worth \texttt{20 points}.
+
+
+
+\subsection*{Final exam (\texttt{300 points})}
+\label{sec:org13eae6a}
 The final exam will consist on six random problems related to the topics of the
 lectures. Each problem will be worth \texttt{50 points}. The emphasis will be on the
-topics of lectures 1-14 and 18-22.
+topics of lectures 1-14 and 18-22. 
 
-\subsection{Grades}
-\label{sec:orgcbd460e}
+\subsection*{Grades}
+\label{sec:org9fbb415}
 The perfect final grade is \texttt{1000 points}. The alphabetical grade of the class
 will be calculated as follows:
 \begin{itemize}
@@ -181,8 +189,8 @@ will be calculated as follows:
 \end{tabular}
 \end{center}
 
-\section{Topics and schedule}
-\label{sec:orgbbef39e}
+\section*{Topics and schedule}
+\label{sec:org81bce6a}
 It is the student's responsibility to read the material before the lecture.
 During the lectures, we will focus on reviewing the key concepts, answering
 questions, and working on examples.
@@ -193,7 +201,7 @@ questions, and working on examples.
 \hline
 Date & Lecture & Reading\\[0pt]
 \hline
-\textit{<2025-09-02 Tue>} & 1. What is symmetry? & 1.1 - 1.7\\[0pt]
+\textit{<2025-09-02 Tue>} & 1. What is symmetry? & 1.1 - 1.7, \href{https://kconrad.math.uconn.edu/blurbs/grouptheory/whygroups.pdf}{blurb}\\[0pt]
 \textit{<2025-09-04 Thu>} & 2. Examples of groups & 1.1 - 1.7\\[0pt]
 \textit{<2025-09-09 Tue>} & 3. Abstract groups: first results & 1.10, 2.1\\[0pt]
 \textit{<2025-09-11 Thu>} & 4. Subgroups and cyclic groups & 2.2\\[0pt]
@@ -226,10 +234,14 @@ Date & Lecture & Reading\\[0pt]
 \end{tabular}
 \end{center}
 
-\section{Philosophy}
-\label{sec:org40fc5f1}
-\subsection{Learning is the student's responsibility}
-\label{sec:org106b85a}
+\section*{Philosophy}
+\label{sec:org58e32e5}
+\subsection*{Adopt a growth mindset}
+\label{sec:orgfd2a254}
+Your effort and attitude determine your abilities. Embrace challenges and
+failure as an oportunity to grow. Find inspiration in other people's success.
+\subsection*{Learning is the student's responsibility}
+\label{sec:orga9c72ec}
 Paraphrasing Galileo:
 \begin{quote}
 ``You cannot teach a person \textbf{anything}; you can only help
@@ -238,8 +250,8 @@ them find it within themselves.''
 We are all here to \uline{understand}. My job as a more experienced learner is to
 assist you on your journey. But you are responsible for investing the time and
 effort necessary to learn.
-\subsection{Doing hard things}
-\label{sec:org6386c11}
+\subsection*{Doing hard things}
+\label{sec:orge351021}
 This is hard work, and it will be frustrating at times. In my opinion, the
 reward is well worth the investment, as it is often the case with challenging
 endeavors. In the words of JFK:
@@ -251,8 +263,8 @@ challenge is one that we are willing to accept, one we are unwilling to
 postpone, and one we intend to win, and the others, too.''
 \end{quote}
 
-\subsection{Everyone belongs in this classroom}
-\label{sec:org998fa30}
+\subsection*{Everyone belongs in this classroom}
+\label{sec:org2b21d3c}
 We will subscribe to \href{https://www.ams.org/publications/journals/notices/201610/rnoti-p1164.pdf}{Federico's axioms}.
 
 \begin{itemize}
@@ -268,26 +280,17 @@ used differently by various communities to serve their needs.
 \item \textbf{Axiom 4.} Every student deserves to be treated with dignity and respect.
 \end{itemize}
 
-\section{Administrative details}
-\label{sec:org2f87aa5}
+\section*{Administrative details}
+\label{sec:orgdebc805}
 \begin{itemize}
 \item Add/drop only through SPIRE.
 \item I do not keep a waiting list, and the mathematics department staff will not
 handle these matters.
-\item Final exams are kept by the mathematics department. Copies are available upon request.
+\item Final exams are kept by the mathematics department. Copies are available upon
+request.
 \end{itemize}
-\subsection{Class etiquette}
-\label{sec:orgd7f6f6b}
-\begin{itemize}
-\item Class attendance is \textbf{not} mandatory. If you come to class, please be present
-and refrain from using your phone.
-\item Arrive on time. If you arrive late, try to minimize your disruption.
-\item Laptops and tablets are allowed during the lectures, provided that you do not
-disrupt your fellow classmates and the lectures.
-\end{itemize}
-
-\subsection{Drops, withdrawals, and incompletes}
-\label{sec:org796e2ad}
+\subsection*{Drops, withdrawals, and incompletes}
+\label{sec:org6fa24c4}
 \begin{itemize}
 \item Last day to add or drop with no record: \textit{<2025-09-08 Mon>}.
 \item Last day to drop with W: \textit{<2025-10-28 Tue>}.
@@ -297,8 +300,8 @@ time of the request and if the course requirements can be completed by the
 end of the following semester. Read more \href{https://www.umass.edu/natural-sciences/advising/petitions-and-forms/incomplete-grade-form}{here}.
 \end{itemize}
 
-\subsection{Make-up exam policy}
-\label{sec:org42f44c0}
+\subsection*{Make-up exam policy}
+\label{sec:org799e3be}
 You must take the regular exam unless you qualify for an official make-up exam
 approved by me, following the official make-up request procedure. Make sure you
 read and understand the make-up exam procedure.
@@ -342,40 +345,120 @@ those on the main exam.
 \end{itemize}
 
 
+\subsection*{Class attendance policy}
+\label{sec:org8a3450d}
+By UMass policy, students are expected to attend all regularly scheduled
+classes at the University for which they are registered. When planning for the
+tests and homework, I will assume that you have been following my lectures.
+That being said, I will not enforce or grade for attendance. If you are not
+able to attend to one of the lectures, make sure you read the notes for that
+day and talk to other students to check if you missed anything important.
 
-\subsection{Accommodation statement}
-\label{sec:org83131ed}
+\subsection*{Class etiquette}
+\label{sec:org99331b1}
+\begin{itemize}
+\item I expect you to be present and refrain from using your phone.
+\item Arrive on time. If you arrive late, try to minimize your disruption.
+\item Laptops and tablets are allowed during the lectures, provided that you do not
+disrupt your fellow classmates and the lectures.
+\end{itemize}
 
+\subsection*{Academic dishonesty}
+\label{sec:org3feab8d}
+
+Academic dishonesty includes but is not limited to: 
+\begin{itemize}
+\item \textbf{Cheating:} intentional use, and/or attempted use of trickery, artifice,
+deception, breach of confidence, fraud and/or misrepresentation of one's
+academic work.
+\item \textbf{Fabrication:} intentional and unauthorized falsification and/or invention of
+any information or citation in any academic exercise.
+\item \textbf{Plagiarism:} knowingly representing the words or ideas of another as one's
+own work in any academic exercise. This includes submitting without citation,
+in whole or in part, prewritten term papers of another or the research of
+another, including but not limited to commercial vendors who sell or
+distribute such materials.
+\item \textbf{Facilitating dishonesty:} knowingly helping or attempting to help another
+commit an act of academic dishonesty, including substituting for another in
+an examination, or allowing others to represent as their own one's papers,
+reports, or academic works.
+\end{itemize}
+
+Formal definitions of academic dishonesty, examples of various forms of
+dishonesty, and the procedures which faculty must follow to penalize dishonesty
+are detailed on the \href{https://www.umass.edu/studentsuccess/academic-integrity}{Academic Honesty website}. Appeals must be filed within ten
+days of notification by the Academic Honesty Office that a formal charge has
+been filed by an instructor that suspects dishonesty. Contact the Academic
+Honesty Office for more information on the process. The \href{https://www.umass.edu/ombuds/}{Ombuds Office} is also
+available to support individuals engaging with the Academic Honesty process.
+The \href{https://www.umass.edu/provost/}{Provost’s Office} is where appeals are processed and filed.
+
+\section*{Required statements}
+\label{sec:orga5a6c57}
+\subsection*{Academic honesty statement}
+\label{sec:org46986a4}
+Since the integrity of the academic enterprise of any institution of higher
+education requires honesty in scholarship and research, academic honesty is
+required of all students at the University of Massachusetts Amherst. Academic
+dishonesty is prohibited in all programs of the University. Academic dishonesty
+includes but is not limited to: cheating, fabrication, plagiarism, and
+facilitating dishonesty. Appropriate sanctions may be imposed on any student
+who has committed an act of academic dishonesty. Instructors should take
+reasonable steps to address academic misconduct. Any person who has reason to
+believe that a student has committed academic dishonesty should bring such
+information to the attention of the appropriate course instructor as soon as
+possible. Instances of academic dishonesty not related to a specific course
+should be brought to the attention of the appropriate department Head or Chair.
+Since students are expected to be familiar with this policy and the commonly
+accepted standards of academic integrity, ignorance of such standards is not
+normally sufficient evidence of lack of intent
+(\url{http://www.umass.edu/dean\_students/codeofconduct/acadhonesty/}).
+
+\subsection*{Academic integrity statement}
+\label{sec:org72ebc6e}
+UMass Amherst is strongly committed to academic integrity, which is defined as
+completing all academic work without cheating, lying, stealing, or receiving
+unauthorized assistance from any other person, or using any source of
+information not appropriately authorized or attributed. As a community, we hold
+each other accountable and support each other’s knowledge and understanding of
+academic integrity. Academic dishonesty is prohibited in all programs of the
+University and includes but is not limited to: Cheating, fabrication,
+plagiarism, lying, and facilitating dishonesty, via analogue and digital means.
+Sanctions may be imposed on any student who has committed or participated in an
+academic integrity infraction. Any person who has reason to believe that a
+student has committed an academic integrity infraction should bring such
+information to the attention of the appropriate course instructor as soon as
+possible. All students at the University of Massachusetts Amherst have read and
+acknowledged the Commitment to Academic Integrity and are knowingly responsible
+for completing all work with integrity and in accordance with the policy:
+(\url{https://www.umass.edu/senate/book/academic-regulations-academic-integrity-policy}).
+
+\subsection*{Accommodation statement}
+\label{sec:orgfea4b90}
 The University of Massachusetts Amherst is committed to providing an equal
 educational opportunity for all students. If you have a documented physical,
 psychological, or learning disability on file with Disability Services (DS),
 you may be eligible for reasonable academic accommodations to help you succeed
 in this course. If you have a documented disability that requires an
 accommodation, please notify me within the first two weeks of the semester so
-that we may make appropriate arrangements.
+that we may make appropriate arrangements. For further information, please
+visit Disability Services (\url{https://www.umass.edu/disability/}).
 
-\subsection{Academic honesty statement}
-\label{sec:org8c5c59f}
-
-The Academic Honesty Policy was established to ensure that the learning
-environment at the university is honest and fair. The policy is designed to
-provide faculty and students with options for handling incidents.
-
-Academic dishonesty includes but is not limited to:
-
-\begin{itemize}
-\item \textbf{Cheating} — intentional use or attempted use of trickery or deception in one’s academic work
-\item \textbf{Fabrication} — intentional falsification and/or invention of any information or citation
-\item \textbf{Plagiarism} — knowingly representing the words or ideas of another as one’s own work
-\item \textbf{Facilitating dishonesty} — knowingly helping or attempting to help another commit an act of academic dishonesty
-\end{itemize}
-
-The Academic Honesty Board handles all cases of academic dishonesty on campus.
-Formal definitions of academic dishonesty, examples of various forms of
-dishonesty, and the procedures which faculty must follow to penalize dishonesty
-are contained in the Academic Honesty Policy. There are two main pathways for
-resolving cases where dishonesty is suspected: the informal resolution and the
-formal charge. Both these paths require that the faculty member first inform
-the student of the concern and offer a meeting. For more information:
-\url{http://www.umass.edu/honesty/}.
+\subsection*{Title IX statement}
+\label{sec:orge09d472}
+In accordance with Title IX of the Education Amendments of 1972 that prohibits
+gender-based discrimination in educational settings that receive federal funds,
+the University of Massachusetts Amherst is committed to providing a safe
+learning environment for all students, free from all forms of discrimination,
+including sexual assault, sexual harassment, domestic violence, dating
+violence, stalking, and retaliation. This includes interactions in person or
+online through digital platforms and social media. Title IX also protects
+against discrimination on the basis of pregnancy, childbirth, false pregnancy,
+miscarriage, abortion, or related conditions, including recovery. There are
+resources here on campus to support you. A summary of the available Title IX
+resources (confidential and non-confidential) can be found at the following
+link: \url{https://www.umass.edu/titleix/resources}. You do not need to make a formal
+report to access them. If you need immediate support, you are not alone. Free
+and confidential support is available 24 hours a day / 7 days a week / 365 days
+a year at the SASA Hotline 413-545-0800.
 \end{document}
