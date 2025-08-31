@@ -1,14 +1,14 @@
 #+TITLE: Santiago Arango-Piñeros
-#+SUBTITLE: Academic Homepage
+#+SUBTITLE: Academic Website
 #+AUTHOR: Santiago Arango-Piñeros
 #+EMAIL: santiago.arango.pineros@gmail.com
 #+OPTIONS: toc:t num:nil
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="org-css.css"/>
 #+HTML_HEAD:  <link rel="shortcut icon" type="image/x-icon" href="images/umass-favicon.ico">
 
-#+ATTR_HTML: :width 200px
-#+ATTR_HTML: :align left
-[[./images/santi_shot.jpg]]
+#+ATTR_HTML: :width 300px
+#+ATTR_HTML: :align right
+[[./images/santi-website.jpg]]
 
 I am a mathematician interested in Number Theory and Arithmetic
 Geometry. My pronouns are He/Him/His.
@@ -16,7 +16,7 @@ Geometry. My pronouns are He/Him/His.
 I earned my PhD in 2025 under the supervision of [[https://dmzb.github.io/][David Zureick-Brown]] and [[https://jvoight.github.io/][John
 Voight]].
 
-Currently, I am Visiting Assistant Professor (postdoc) at [[https://www.umass.edu/mathematics-statistics/][UMASS Amherst]].
+Currently, I am Visiting Assistant Professor (postdoc) at [[https://www.umass.edu/mathematics-statistics/][UMass Amherst]].
 
 Here is my [[./documents/Santiago_Arango_Pineros_CV.pdf][CV]].
 
@@ -24,6 +24,7 @@ Here is my [[./documents/Santiago_Arango_Pineros_CV.pdf][CV]].
 
 
 * Coordinates
++ My office is in *LGRT 1238*.
 + ~santiago.arango.pineros@gmail.com~
 + ~sarangopiner@umass.edu~
 + +~santiago.arango@emory.edu~+
@@ -36,6 +37,9 @@ Here is my [[./documents/Santiago_Arango_Pineros_CV.pdf][CV]].
 
 * Teaching
 + [[./teaching/411-fall-25/411-fall-25.org][MATH 411: Introduction to Abstract Algebra 1]]
+
+* Service
++ I am co-organizing the [[https://dmzb.github.io/FCNTS.html][Five College Number Theory Seminar]] with [[https://dmzb.github.io/][David Zureick-Brown]].
 * Research articles
 #+begin_export html
 <ol reversed>
