@@ -24,7 +24,7 @@ Here is my [[./documents/Santiago_Arango_Pineros_CV.pdf][CV]].
 
 
 * Coordinates
-+ My office is in *LGRT 1238*.
++ My office is *LGRT 1238*.
 + ~santiago.arango.pineros@gmail.com~
 + ~sarangopiner@umass.edu~
 + +~santiago.arango@emory.edu~+
