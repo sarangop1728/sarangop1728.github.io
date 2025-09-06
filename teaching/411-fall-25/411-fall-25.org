@@ -77,7 +77,8 @@ but not required. However, if the grader finds the writing difficult to read,
 they reserve the right not to grade that particular answer.
 
 + ~PSET1~: Some examples of groups ([[https://www.dropbox.com/scl/fi/b5i8ayu0mxpzt1sbj5l27/pset1.pdf?rlkey=o3916firn5vuidmhinecvd0ho&dl=0][~pdf~]])([[https://www.dropbox.com/scl/fi/0uub9l5u6pso216iesn1o/pset1.tex?rlkey=cc1g4p7ltbzmbpzx6nofferut&dl=0][~tex~]]) <2025-09-11>.
-+ ~PSET2~: Basic properties of groups (~pdf~)(~tex~) <2025-09-25>.
++ ~PSET2~: Basic properties of groups
+  ([[https://www.dropbox.com/scl/fi/l7nq6825mdd7g55jijv24/pset2.pdf?rlkey=dl6i8wy7metiw6m0myawpsq9b&dl=0][~pdf~]])([[https://www.dropbox.com/scl/fi/9pbho8nj3yjmbprpnz5pj/pset2.tex?rlkey=ssvvl8vv68bml2qvbn2bv43ve&dl=0][~tex~]]) <2025-09-25>.
 + ~PSET3~: Lagrange's theorem (~pdf~)(~tex~) <2025-10-07>. 
 + ~PSET4~: The isomorphism theorems (~pdf~)(~tex~) <2025-10-16>.
 + ~PSET5~: Finitely generated abelian groups (~pdf~)(~tex~) <2025-11-06>.
@@ -141,8 +142,8 @@ questions, and working on examples.
 | /                | <                                     |                < |
 | <2025-09-02 Tue> | 1. [[https://www.dropbox.com/scl/fi/p1wxilymw0vyhqvnk3z0a/Lecture-1.pdf?rlkey=wz6pvevnvakryws6uz4t8jsgx&st=oihmxpsu&dl=0][What is symmetry?]]                  | 1.1 - 1.7, [[https://kconrad.math.uconn.edu/blurbs/grouptheory/whygroups.pdf][Blurb]] |
 | <2025-09-04 Thu> | 2. [[https://www.dropbox.com/scl/fi/ye5ewjg4w53js9i9nnlqp/Lecture-2.pdf?rlkey=en0vp8k0mxcdldak8rpebqe5w&st=q1vmzgj1&dl=0][Examples of groups]]                 |        1.1 - 1.7 |
-| <2025-09-09 Tue> | 3. Abstract groups: first results     |        1.10, 2.1 |
-| <2025-09-11 Thu> | 4. Subgroups and cyclic groups        |              2.2 |
+| <2025-09-09 Tue> | 3. [[https://www.dropbox.com/scl/fi/5fn0wkb6ejtsk79mqsjpc/Lecture-3.pdf?rlkey=2v43ltzmasna2gk3lyqmmoulk&dl=0][Abstract groups: first results]]     |        1.10, 2.1 |
+| <2025-09-11 Thu> | 4. [[https://www.dropbox.com/scl/fi/17ji5counqyvroky0zxh7/Lecture-4.pdf?rlkey=ihh68st77av0gy3322151n05e&dl=0][Subgroups and cyclic groups]]        |              2.2 |
 | <2025-09-16 Tue> | 5. Dihedral groups                    |              2.3 |
 | <2025-09-18 Thu> | 6. Homomorphisms and isomorphisms     |              2.4 |
 | <2025-09-23 Tue> | 7. The sign of a permutation          |            [[https://kconrad.math.uconn.edu/blurbs/grouptheory/sign.pdf][Blurb]] |
