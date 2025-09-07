@@ -52,7 +52,7 @@ Here is my [[./documents/Santiago_Arango_Pineros_CV.pdf][CV]].
     </div>
      <div class="paper-image">
         <a href="images/UZ_50.png">
-        <img src="images/UZ_50.png" alt="Fermat triples" class="responsive-img">
+        <img src="images/UZ_50.png" alt="Fermat triples">
         </a>
     </div>
     
@@ -62,7 +62,7 @@ Here is my [[./documents/Santiago_Arango_Pineros_CV.pdf][CV]].
     </div>
     <div class="paper-image">
         <a href="images/belyi-fiber.png">
-        <img src="images/belyi-fiber.png" alt="belti-stack" class="responsive-img">
+        <img src="images/belyi-fiber.png" alt="belti-stack">
         </a>
     </div>
        <div>
@@ -73,7 +73,7 @@ Here is my [[./documents/Santiago_Arango_Pineros_CV.pdf][CV]].
     </div>
     <div class="paper-image">
         <a href="images/np.png">
-        <img src="images/np.png" alt="Newton polygon" class="responsive-img">
+        <img src="images/np.png" alt="Newton polygon">
         </a>
     </div>
     
@@ -85,7 +85,7 @@ rationals</b>, </br> with Changho Han, Oana Padurariu, and Sun Woo Park. <br>
     </div>
     <div class="paper-image">
         <a href="images/bowtie.jpeg">
-        <img src="images/bowtie.jpeg" alt="Bowtie image" class="responsive-img">
+        <img src="images/bowtie.jpeg" alt="Bowtie image">
         </a>
     </div>
 
@@ -103,7 +103,7 @@ function fields</b>, </br> with  Mar&iacute;a Chara, Asimina S. Hamakiotes,
     </div>
     <div class="paper-image">
         <a href="images/oaxaca.png">
-        <img src="images/oaxaca.png" alt="Positive graph" class="responsive-img">
+        <img src="images/oaxaca.png" alt="Positive graph">
         </a>
     </div>
     
@@ -115,7 +115,7 @@ function fields</b>, </br> with  Mar&iacute;a Chara, Asimina S. Hamakiotes,
     </div>
      <div class="paper-image">
         <a href="images/W6.png">
-        <img src="images/W6.png" alt="W6 mobile" class="responsive-img">
+        <img src="images/W6.png" alt="W6 mobile">
         </a>
     </div>
     
@@ -130,7 +130,7 @@ function fields</b>, </br> with  Mar&iacute;a Chara, Asimina S. Hamakiotes,
   </div>
     <div class="paper-image">
         <a href="images/3.4.ab_ad_m.gif">
-        <img src="images/3.4.ab_ad_m.gif" alt="Batman gif" class="responsive-img">
+        <img src="images/3.4.ab_ad_m.gif" alt="Batman gif">
         </a>
     </div>
   
@@ -146,7 +146,7 @@ function fields</b>, </br> with  Mar&iacute;a Chara, Asimina S. Hamakiotes,
   </div>
      <div class="paper-image">
         <a href="images/mertens.png">
-        <img src="images/mertens.png" alt="Table summary" class="responsive-img">
+        <img src="images/mertens.png" alt="Table summary">
         </a>
     </div>
   
@@ -158,7 +158,7 @@ function fields</b>, </br> with  Mar&iacute;a Chara, Asimina S. Hamakiotes,
   </div>
   <div class="paper-image">
       <a href="images/euler.png">
-          <img src="images/euler.png" alt="Graph euler function" class="responsive-img">
+          <img src="images/euler.png" alt="Graph euler function">
       </a>
   </div>
 </div>
