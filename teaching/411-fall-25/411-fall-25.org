@@ -76,14 +76,15 @@ The use of professional academic typing software, such as [[https://typst.app/][
 but not required. However, if the grader finds the writing difficult to read,
 they reserve the right not to grade that particular answer.
 
-+ ~PSET1~: Some examples of groups ([[https://www.dropbox.com/scl/fi/b5i8ayu0mxpzt1sbj5l27/pset1.pdf?rlkey=o3916firn5vuidmhinecvd0ho&dl=0][~pdf~]])([[https://www.dropbox.com/scl/fi/0uub9l5u6pso216iesn1o/pset1.tex?rlkey=cc1g4p7ltbzmbpzx6nofferut&dl=0][~tex~]]) <2025-09-11>.
++ ~PSET1~: Some examples of groups ([[https://www.dropbox.com/scl/fi/b5i8ayu0mxpzt1sbj5l27/pset1.pdf?rlkey=o3916firn5vuidmhinecvd0ho&dl=0][~pdf~]])([[https://www.dropbox.com/scl/fi/0uub9l5u6pso216iesn1o/pset1.tex?rlkey=cc1g4p7ltbzmbpzx6nofferut&dl=0][~tex~]]) +<2025-09-11>+
+  <2025-09-13 Sat 23:59>.
 + ~PSET2~: Basic properties of groups
-  ([[https://www.dropbox.com/scl/fi/l7nq6825mdd7g55jijv24/pset2.pdf?rlkey=dl6i8wy7metiw6m0myawpsq9b&dl=0][~pdf~]])([[https://www.dropbox.com/scl/fi/9pbho8nj3yjmbprpnz5pj/pset2.tex?rlkey=ssvvl8vv68bml2qvbn2bv43ve&dl=0][~tex~]]) <2025-09-25>.
-+ ~PSET3~: Lagrange's theorem (~pdf~)(~tex~) <2025-10-07>. 
-+ ~PSET4~: The isomorphism theorems (~pdf~)(~tex~) <2025-10-16>.
-+ ~PSET5~: Finitely generated abelian groups (~pdf~)(~tex~) <2025-11-06>.
-+ ~PSET6~: Symmetries of regular polyhedra (~pdf~)(~tex~) <2025-11-18>.
-+ ~PSET7~: Group actions (~pdf~)(~tex~) <2025-12-09>.
+  ([[https://www.dropbox.com/scl/fi/l7nq6825mdd7g55jijv24/pset2.pdf?rlkey=dl6i8wy7metiw6m0myawpsq9b&dl=0][~pdf~]])([[https://www.dropbox.com/scl/fi/9pbho8nj3yjmbprpnz5pj/pset2.tex?rlkey=ssvvl8vv68bml2qvbn2bv43ve&dl=0][~tex~]]) <2025-09-25 Thu 23:59>.
++ ~PSET3~: Lagrange's theorem (~pdf~)(~tex~) <2025-10-07 Tue 23:59>. 
++ ~PSET4~: The isomorphism theorems (~pdf~)(~tex~) <2025-10-16 Thu 23:59>.
++ ~PSET5~: Finitely generated abelian groups (~pdf~)(~tex~) <2025-11-06 Thu 23:59>.
++ ~PSET6~: Symmetries of regular polyhedra (~pdf~)(~tex~) <2025-11-18 Tue 23:59>.
++ ~PSET7~: Group actions (~pdf~)(~tex~) <2025-12-09 Tue 23:59>.
 
 ** Exams (~300 points~)
 There will be three midterm exams. Each exam will have 5 questions. Each question will
