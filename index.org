@@ -41,13 +41,14 @@ Here is my [[./documents/Santiago_Arango_Pineros_CV.pdf][CV]].
 * Service
 + I am co-organizing the [[https://dmzb.github.io/FCNTS.html][Five College Number Theory Seminar]] with [[https://dmzb.github.io/][David Zureick-Brown]].
 * Research articles
+The =pdf= versions are uptaded more frequently.
 #+begin_export html
 <ol reversed>
   <div class="ref-container">
     <div>
         <li><b>Counting primitive integral solutions to spherical generalized Fermat
             equations</b>.<br>
-          (<a href="https://arxiv.org/abs/2508.13093"
+          (<a href="documents/counting-primitive-sols-v2.pdf">pdf</a>, <a href="https://arxiv.org/abs/2508.13093"
             class="arxiv">2508.13093</a>, <a href="misc/computations.html" class="code">Magma experiment</a>)
     </div>
      <div class="paper-image">
