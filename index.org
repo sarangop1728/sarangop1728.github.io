@@ -41,7 +41,7 @@ Here is my [[./documents/Santiago_Arango_Pineros_CV.pdf][CV]].
 * Service
 + I am co-organizing the [[https://dmzb.github.io/FCNTS.html][Five College Number Theory Seminar]] with [[https://dmzb.github.io/][David Zureick-Brown]].
 * Research articles
-The =pdf= versions are uptaded more frequently.
+The =pdf= versions are updated more frequently.
 #+begin_export html
 <ol reversed>
   <div class="ref-container">
