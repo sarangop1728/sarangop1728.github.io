@@ -161,7 +161,7 @@ questions, and working on examples.
 | <2025-09-11 Thu> | 4. [[https://www.dropbox.com/scl/fi/17ji5counqyvroky0zxh7/Lecture-4.pdf?rlkey=ihh68st77av0gy3322151n05e&dl=0][Subgroups and cyclic groups]]        |              2.2 |
 | <2025-09-16 Tue> | 5. [[https://www.dropbox.com/scl/fi/utckf9w72zu37yaec6f8c/Lecture-5.pdf?rlkey=fe58spmzyrto2y4xmrhr1lbh3&dl=0][Dihedral groups]]                    |              2.3 |
 | <2025-09-18 Thu> | 6. [[https://www.dropbox.com/scl/fi/c4bwzgfb771pt55lv5r7k/Lecture-6.pdf?rlkey=66e9htb7zs3mo0avx0w6bcezy&dl=0][Homomorphisms and isomorphisms]]     |              2.4 |
-| <2025-09-23 Tue> | 7. The sign of a permutation          |            [[https://kconrad.math.uconn.edu/blurbs/grouptheory/sign.pdf][Blurb]] |
+| <2025-09-23 Tue> | 7. [[https://www.dropbox.com/scl/fi/4z4br5snua92kfmkyyqha/Lecture-7.pdf?rlkey=red8npkhxxxf51qcykp1rudpy&dl=0][The sign of a permutation]]          |            [[https://kconrad.math.uconn.edu/blurbs/grouptheory/sign.pdf][Blurb]] |
 | <2025-09-25 Thu> | *Exam 1*                              |                  |
 | <2025-09-30 Tue> | 8. Cosets                             |              2.5 |
 | <2025-10-02 Thu> | 9. Lagrange's theorem                 |              2.5 |
