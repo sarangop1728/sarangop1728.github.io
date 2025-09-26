@@ -103,7 +103,7 @@ they reserve the right not to grade that particular answer.
 ** Exams (~300 points~)
 There will be three midterm exams. Each exam will have 5 questions. Each question will
 be worth ~20 points~.
-+ ~EXAM1~: Lectures 1-7. <2025-09-25 Thu>
++ ~EXAM1~: Lectures 1-7. ([[https://www.dropbox.com/scl/fi/bmsjqie8nzscj5b07s4ai/exam1v1-solution.pdf?rlkey=v8d697jjlb8mlwwdts8n79lnb&dl=0][solution]]) <2025-09-25 Thu>
 + ~EXAM2~: Lectures 8-14. <2025-11-06 Thu>
 + ~EXAM3~: Lectures 18-22. <2025-12-09 Tue>
 Question one will ask you to define a concept. Question two will ask you to
