@@ -164,7 +164,7 @@ questions, and working on examples.
 | <2025-09-25 Thu> | *Exam 1*                              |                  |
 | <2025-09-30 Tue> | 8. [[https://www.dropbox.com/scl/fi/c49t3qqjya7v7pc29tazj/Lecture-8.pdf?rlkey=5qmji57c31u5npkxthnpqr0ya&dl=0][Cosets]]                             |              2.5 |
 | <2025-10-02 Thu> | 9. [[https://www.dropbox.com/scl/fi/oxt143yka9abuh63wmpfd/Lecture-9.pdf?rlkey=iw757fm7u5t6e1jr5u2xlqy6h&dl=0][Lagrange's theorem]]                 |              2.5 |
-| <2025-10-07 Tue> | 10. [[https://en.wikipedia.org/wiki/Emmy_Noether][Noether's]] isomorphism theorems    |              2.7 |
+| <2025-10-07 Tue> | 10. [[https://www.dropbox.com/scl/fi/5umx9xqjvzhxw28wvecpl/Lecture-10.pdf?rlkey=7o83fhinujrhqwrodnnmg0mco&dl=0][Noether's isomorphism theorems]]    |              2.7 |
 | <2025-10-09 Thu> | 11. Direct products                   |              3.1 |
 | <2025-10-14 Tue> | 12. Semidirect products               |              3.2 |
 | <2025-10-16 Thu> | 13. Linear algebra over the integers  |              3.5 |
