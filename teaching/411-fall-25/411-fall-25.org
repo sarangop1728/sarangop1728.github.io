@@ -93,8 +93,8 @@ they reserve the right not to grade that particular answer.
 
 + ~PSET1~: Some examples of groups ([[https://www.dropbox.com/scl/fi/b5i8ayu0mxpzt1sbj5l27/pset1.pdf?rlkey=o3916firn5vuidmhinecvd0ho&dl=0][~pdf~]])([[https://www.dropbox.com/scl/fi/0uub9l5u6pso216iesn1o/pset1.tex?rlkey=cc1g4p7ltbzmbpzx6nofferut&dl=0][~tex~]])([[https://www.dropbox.com/scl/fi/tk00ud7mduyy1zio5baix/pset1-sol.pdf?rlkey=7a0c70e0lifhmiz1zot4e54ef&dl=0][~solution~]]) <2025-09-13 Sat 23:59>.
 + ~PSET2~: Basic properties of groups ([[https://www.dropbox.com/scl/fi/l7nq6825mdd7g55jijv24/pset2.pdf?rlkey=dl6i8wy7metiw6m0myawpsq9b&dl=0][~pdf~]])([[https://www.dropbox.com/scl/fi/9pbho8nj3yjmbprpnz5pj/pset2.tex?rlkey=ssvvl8vv68bml2qvbn2bv43ve&dl=0][~tex~]])([[https://www.dropbox.com/scl/fi/w8gnepiciawc0u15tot9o/pset2-sol.pdf?rlkey=oyc8uhdop12k3z8gnmcpm5ach&dl=0][~solution~]]) <2025-09-30 Tue 23:59>.
-+ ~PSET3~: Cosets and Lagrange's theorem ([[https://www.dropbox.com/scl/fi/6pcxfv9io7z6kwu4apih3/pset3.pdf?rlkey=fmnd6uq9wkjuj71gml2th5uci&dl=0][~pdf~]])([[https://www.dropbox.com/scl/fi/osekgzpbd5bnvgmqi78rk/pset3.tex?rlkey=cutmmdo3iger3k7rpdo5gyv5o&dl=0][~tex~]]) <2025-10-14 Tue 23:59>. 
-+ ~PSET4~: The isomorphism theorems (~pdf~)(~tex~) <2025-10-28 Tue 23:59>.
++ ~PSET3~: Cosets and Lagrange's theorem ([[https://www.dropbox.com/scl/fi/6pcxfv9io7z6kwu4apih3/pset3.pdf?rlkey=fmnd6uq9wkjuj71gml2th5uci&dl=0][~pdf~]])([[https://www.dropbox.com/scl/fi/osekgzpbd5bnvgmqi78rk/pset3.tex?rlkey=cutmmdo3iger3k7rpdo5gyv5o&dl=0][~tex~]])([[https://www.dropbox.com/scl/fi/ckmq30wut1053i5znaxkq/pset3-sol.pdf?rlkey=ptov92gbrgq5sdg5ol8519sg7&dl=0][~solution~]]) <2025-10-14 Tue 23:59>. 
++ ~PSET4~: The isomorphism theorems ([[https://www.dropbox.com/scl/fi/9atils9ndqw21s3l7587o/pset4.pdf?rlkey=cv7um1y5hsaglv7flr62bbk6h&dl=0][~pdf~]])([[https://www.dropbox.com/scl/fi/nxv95mjncgqwkenhqqn2p/pset4.tex?rlkey=a20rit6emx9y17rzyql4xqx4p&dl=0][~tex~]]) <2025-10-28 Tue 23:59>.
 + ~PSET5~: Finitely generated abelian groups (~pdf~)(~tex~) <2025-11-11 Tue 23:59>.
 + ~PSET6~: Symmetries of regular polyhedra (~pdf~)(~tex~)  <2025-11-25 Tue 23:59>.
 + ~PSET7~: Group actions (~pdf~)(~tex~) <2025-12-11 Thu 23:59>.
