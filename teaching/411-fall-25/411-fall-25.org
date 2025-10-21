@@ -167,8 +167,8 @@ questions, and working on examples.
 | <2025-10-07 Tue> | 10. [[https://www.dropbox.com/scl/fi/5umx9xqjvzhxw28wvecpl/Lecture-10.pdf?rlkey=7o83fhinujrhqwrodnnmg0mco&dl=0][Noether's isomorphism theorems]]    |              2.7 |
 | <2025-10-09 Thu> | 11. [[https://www.dropbox.com/scl/fi/yogahfmerlrevbc65y30r/Lecture-11.pdf?rlkey=w71u05arfw3kzyqiehc1ufx7d&dl=0][Direct products]]                   |              3.1 |
 | <2025-10-14 Tue> | 12. [[https://www.dropbox.com/scl/fi/zekcw3zkkquwxs1zs8rlm/Lecture-12.pdf?rlkey=ooh7llneiqrcpf6reai4xdqc8&dl=0][Semidirect products]]               |              3.2 |
-| <2025-10-16 Thu> | 13. Linear algebra over the integers  |              3.5 |
-| <2025-10-21 Tue> | 14. Finitely generated abelian groups |              3.6 |
+| <2025-10-16 Thu> | 13. [[https://www.dropbox.com/scl/fi/jhwp7l0ykhttzsk74jsiq/Lecture-13.pdf?rlkey=89ua250me6pwwy68oqcl830t8&dl=0][Linear algebra over the integers]]  |              3.5 |
+| <2025-10-21 Tue> | 14. [[https://www.dropbox.com/scl/fi/fsajexd86jw6dg0bhtoyk/Lecture-14.pdf?rlkey=ihw92clet9umsnutu9reqh7qm&dl=0][Finitely generated abelian groups]] |              3.6 |
 | <2025-10-23 Thu> | 15. Rotations of regular polyhedra    |              4.1 |
 | <2025-10-28 Tue> | 16. The Dodecahedron and Icosahedron  |              4.2 |
 | <2025-10-30 Thu> | 17. Reflections                       |              4.3 |
