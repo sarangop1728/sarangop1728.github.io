@@ -170,7 +170,7 @@ questions, and working on examples.
 | <2025-10-16 Thu> | 13. [[https://www.dropbox.com/scl/fi/jhwp7l0ykhttzsk74jsiq/Lecture-13.pdf?rlkey=89ua250me6pwwy68oqcl830t8&dl=0][Linear algebra over the integers]]        |              3.5 |
 | <2025-10-21 Tue> | 14. [[https://www.dropbox.com/scl/fi/fsajexd86jw6dg0bhtoyk/Lecture-14.pdf?rlkey=ihw92clet9umsnutu9reqh7qm&dl=0][Finitely generated abelian groups]]       |              3.6 |
 | <2025-10-23 Thu> | 15. Rotations of a regular tetrahedron      |  ([[https://www.dropbox.com/scl/fi/gy44wbckbd064eibj9e8c/tetrahedron.pdf?rlkey=j22oslokpj2idz4al92t1u7gi&dl=0][worksheet]]) 4.1 |
-| <2025-10-28 Tue> | 16. Rotations of a cube/octahedron          |              4.1 |
+| <2025-10-28 Tue> | 16. Rotations of a cube/octahedron          |  ([[https://www.dropbox.com/scl/fi/6cs6e1dhghmaxsyyf1pil/cube.pdf?rlkey=ovt7cljawzqkbab5nacy5ywig&dl=0][worksheet]]) 4.1 |
 | <2025-10-30 Thu> | 17. Rotations of a dodecahedron/icosahedron |              4.2 |
 | <2025-11-04 Tue> | *No class* (election day)                   |                  |
 | <2025-11-06 Thu> | *Exam 2*                                    |                  |
