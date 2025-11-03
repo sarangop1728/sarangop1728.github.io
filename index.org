@@ -6,7 +6,7 @@
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="org-css.css"/>
 #+HTML_HEAD:  <link rel="shortcut icon" type="image/x-icon" href="images/umass-favicon.ico">
 
-#+ATTR_HTML: :width 300px
+#+ATTR_HTML: :width 200px
 #+ATTR_HTML: :align right
 [[./images/santi-website.jpg]]
 
