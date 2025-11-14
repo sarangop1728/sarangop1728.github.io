@@ -175,7 +175,7 @@ questions, and working on examples.
 | <2025-11-04 Tue> | *No class* (election day)                   |                  |
 | <2025-11-06 Thu> | *Exam 2*                                    |                  |
 | <2025-11-11 Tue> | *No class* (veterans day)                   |                  |
-| <2025-11-13 Thu> | 18. Group actions                           |              5.1 |
+| <2025-11-13 Thu> | 18. [[https://www.dropbox.com/scl/fi/5qe7hwh5bejcstqb8wihe/Lecture-18.pdf?rlkey=vggwpqmhxmvyfyq5adlhdykk0&dl=0][Group actions]]                           |              5.1 |
 | <2025-11-18 Tue> | 19. Counting orbits                         |              5.2 |
 | <2025-11-20 Thu> | 20. Symmetries of groups                    |              5.3 |
 | <2025-11-25 Tue> | 21. Group actions and group structure       |              5.4 |
