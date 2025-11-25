@@ -1,4 +1,4 @@
-#+DATE: 2025-11-23
+#+DATE: 2025-11-24
 #+TITLE: Math 411 - Fall 2025
 #+SUBTITLE: Introduction to Abstract Algebra 1
 #+AUTHOR: Santiago Arango-Piñeros
@@ -188,7 +188,7 @@ questions, and working on examples.
 | <2025-11-13 Thu> | 18. [[https://www.dropbox.com/scl/fi/5qe7hwh5bejcstqb8wihe/Lecture-18.pdf?rlkey=vggwpqmhxmvyfyq5adlhdykk0&dl=0][Group actions]]                           |              5.1 |
 | <2025-11-18 Tue> | 19. [[https://www.dropbox.com/scl/fi/5e0ct4ph7dcczk7dbdblx/Lecture-19.pdf?rlkey=ai8rn33avfbgkxzsaq0udtfq7&dl=0][Counting orbits]]                         |              5.2 |
 | <2025-11-20 Thu> | 20. [[https://www.dropbox.com/scl/fi/b1lgkyzgax41va73m8dcy/Lecture-20.pdf?rlkey=2wntwn600iv1rs23altpxdm88&dl=0][Symmetries of groups]]                    |              5.3 |
-| <2025-11-25 Tue> | 21. Group actions and group structure       |              5.4 |
+| <2025-11-25 Tue> | 21. [[https://www.dropbox.com/scl/fi/t8plgi2v2iy9i1xb38pco/Lecture-21.pdf?rlkey=swne53r5vpy94gxow1zqolqy8&dl=0][Group actions and group structure]]       |              5.4 |
 | <2025-11-27 Thu> | *No class* (thanksgiving)                   |                  |
 | <2025-12-02 Tue> | 22. The Sylow theorems                      |            [[https://kconrad.math.uconn.edu/blurbs/grouptheory/sylowpf.pdf][Blurb]] |
 | <2025-12-04 Thu> | 23. Questions?                              |                  |
