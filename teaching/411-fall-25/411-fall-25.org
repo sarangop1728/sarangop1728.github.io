@@ -190,7 +190,7 @@ questions, and working on examples.
 | <2025-11-20 Thu> | 20. [[https://www.dropbox.com/scl/fi/b1lgkyzgax41va73m8dcy/Lecture-20.pdf?rlkey=2wntwn600iv1rs23altpxdm88&dl=0][Symmetries of groups]]                    |              5.3 |
 | <2025-11-25 Tue> | 21. [[https://www.dropbox.com/scl/fi/t8plgi2v2iy9i1xb38pco/Lecture-21.pdf?rlkey=swne53r5vpy94gxow1zqolqy8&dl=0][Group actions and group structure]]       |              5.4 |
 | <2025-11-27 Thu> | *No class* (thanksgiving)                   |                  |
-| <2025-12-02 Tue> | 22. The Sylow theorems                      |            [[https://kconrad.math.uconn.edu/blurbs/grouptheory/sylowpf.pdf][Blurb]] |
+| <2025-12-02 Tue> | 22. [[https://www.dropbox.com/scl/fi/0ddmxygvvazgl782oa15k/Lecture-22.pdf?rlkey=dj2lcga3vura3i3xkumsxwdis&dl=0][The Sylow theorems]]                      |            [[https://kconrad.math.uconn.edu/blurbs/grouptheory/sylowpf.pdf][Blurb]] |
 | <2025-12-04 Thu> | 23. Questions?                              |                  |
 | <2025-12-09 Tue> | *Exam 3*                                    |                  |
 |------------------+---------------------------------------------+------------------|
