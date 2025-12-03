@@ -105,7 +105,7 @@ There will be three midterm exams. Each exam will have 5 questions. Each questio
 be worth ~20 points~.
 + ~EXAM1~: Lectures 1-7. ([[https://www.dropbox.com/scl/fi/bmsjqie8nzscj5b07s4ai/exam1v1-solution.pdf?rlkey=v8d697jjlb8mlwwdts8n79lnb&dl=0][~solution~]]) <2025-09-25 Thu>
 + ~EXAM2~: Lectures 8-14. ([[https://www.dropbox.com/scl/fi/5gb03xwz97le21rkcysv0/exam2-study-guide.pdf?rlkey=0txhznskivow9l99755skhj31&dl=0][~study guide~]])([[https://www.dropbox.com/scl/fi/79293wsslz9r96gonyxwq/exam2v1-solution.pdf?rlkey=6ajttyodqfv0oo82xw5pkomg9&dl=0][~solution~]]) <2025-11-06 Thu>
-+ ~EXAM3~: Lectures 18-22. <2025-12-09 Tue>
++ ~EXAM3~: Lectures 18-22. ([[https://www.dropbox.com/scl/fi/5i511wrwrvh798fp3ckzt/exam3-study-guide.pdf?rlkey=5pd8q87dq39vbacmgzojmke83&dl=0][~study guide~]]) <2025-12-09 Tue>
 Question one will ask you to define a concept. Question two will ask you to
 prove a result (of reasonable difficulty) from the assigned reading. Questions
 3, 4, and 5 will be random problems related to the topics of the lectures.
