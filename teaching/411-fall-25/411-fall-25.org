@@ -1,4 +1,4 @@
-#+DATE: 2025-11-24
+#+DATE: 2025-12-07
 #+TITLE: Math 411 - Fall 2025
 #+SUBTITLE: Introduction to Abstract Algebra 1
 #+AUTHOR: Santiago Arango-Piñeros
@@ -98,7 +98,7 @@ they reserve the right not to grade that particular answer.
 + ~PSET4~: The isomorphism theorems ([[https://www.dropbox.com/scl/fi/9atils9ndqw21s3l7587o/pset4.pdf?rlkey=cv7um1y5hsaglv7flr62bbk6h&dl=0][~pdf~]])([[https://www.dropbox.com/scl/fi/nxv95mjncgqwkenhqqn2p/pset4.tex?rlkey=a20rit6emx9y17rzyql4xqx4p&dl=0][~tex~]])([[https://www.dropbox.com/scl/fi/sgdczk12d46izmkkfzwjh/pset4-sols.pdf?rlkey=c0odim1sg1e9v6ewfh4ichq05&dl=0][~solution~]]) <2025-10-28 Tue 23:59>.
 + ~PSET5~: Finitely generated abelian groups ([[https://www.dropbox.com/scl/fi/zsmx20359f3wn9ocltht2/pset5.pdf?rlkey=0xzhhwz4u9mvpbedxtbgk9pek&dl=0][~pdf~]])([[https://www.dropbox.com/scl/fi/rivahjrgxjb05kug4agzo/pset5.tex?rlkey=tyvmc8z913g07zr8d0yvht025&dl=0][~tex~]])([[https://www.dropbox.com/scl/fi/ktmbf9l4gdd9xqmgt3eo4/pset5-solution.pdf?rlkey=wtd2a22nwb6utenbunx70ypek&dl=0][~solution~]]) <2025-11-11 Tue 23:59>.
 + ~PSET6~: There are five platonic solids ([[https://www.dropbox.com/scl/fi/prmupd2ayxv83e0w2z3ah/pset6.pdf?rlkey=kyt9hlpdfna3u47h4u5n39t4o&dl=0][~pdf~]])([[https://www.dropbox.com/scl/fi/qbdk5rmwdew4kqxs8mhcx/pset6.tex?rlkey=wxsgh53dyiw591fglda560h1y&dl=0][~tex~]])([[https://www.dropbox.com/scl/fi/yrtvcbafzsg0fqj3oydxe/pset6-solution.pdf?rlkey=txi8b45n6jylny4m0r1326nvw&dl=0][~solution~]])  <2025-11-25 Tue 23:59>.
-+ ~PSET7~: Group actions ([[https://www.dropbox.com/scl/fi/mymle21llvar01wsf9bj7/pset7.pdf?rlkey=e2c1nfuyy4ucscdwq118kafgk&dl=0][~pdf~]])([[https://www.dropbox.com/scl/fi/ni9imixeqz88h952jullo/pset7.tex?rlkey=28bxu2l0zgwggo5ju169p1m8o&dl=0][~tex~]]) <2025-12-11 Thu 23:59>.
++ ~PSET7~: Group actions ([[https://www.dropbox.com/scl/fi/mymle21llvar01wsf9bj7/pset7.pdf?rlkey=e2c1nfuyy4ucscdwq118kafgk&dl=0][~pdf~]])([[https://www.dropbox.com/scl/fi/ni9imixeqz88h952jullo/pset7.tex?rlkey=28bxu2l0zgwggo5ju169p1m8o&dl=0][~tex~]])([[https://www.dropbox.com/scl/fi/wne9dzusuftiqwhsilkfw/pset7-solution.pdf?rlkey=vklqneqnf07tpoibrlvc2t1xx&dl=0][~solution~]]) <2025-12-11 Thu 23:59>.
 
 ** Exams (~300 points~)
 There will be three midterm exams. Each exam will have 5 questions. Each question will
