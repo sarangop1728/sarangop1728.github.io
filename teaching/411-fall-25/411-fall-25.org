@@ -100,7 +100,7 @@ they reserve the right not to grade that particular answer.
 + ~PSET6~: There are five platonic solids ([[https://www.dropbox.com/scl/fi/prmupd2ayxv83e0w2z3ah/pset6.pdf?rlkey=kyt9hlpdfna3u47h4u5n39t4o&dl=0][~pdf~]])([[https://www.dropbox.com/scl/fi/qbdk5rmwdew4kqxs8mhcx/pset6.tex?rlkey=wxsgh53dyiw591fglda560h1y&dl=0][~tex~]])([[https://www.dropbox.com/scl/fi/yrtvcbafzsg0fqj3oydxe/pset6-solution.pdf?rlkey=txi8b45n6jylny4m0r1326nvw&dl=0][~solution~]])  <2025-11-25 Tue 23:59>.
 + ~PSET7~: Group actions ([[https://www.dropbox.com/scl/fi/mymle21llvar01wsf9bj7/pset7.pdf?rlkey=e2c1nfuyy4ucscdwq118kafgk&dl=0][~pdf~]])([[https://www.dropbox.com/scl/fi/ni9imixeqz88h952jullo/pset7.tex?rlkey=28bxu2l0zgwggo5ju169p1m8o&dl=0][~tex~]])([[https://www.dropbox.com/scl/fi/wne9dzusuftiqwhsilkfw/pset7-solution.pdf?rlkey=vklqneqnf07tpoibrlvc2t1xx&dl=0][~solution~]]) <2025-12-11 Thu 23:59>.
 
-** Exams (~300 points~)
+** Midterm exams (~300 points~)
 There will be three midterm exams. Each exam will have 5 questions. Each question will
 be worth ~20 points~.
 + ~EXAM1~: Lectures 1-7. ([[https://www.dropbox.com/scl/fi/bmsjqie8nzscj5b07s4ai/exam1v1-solution.pdf?rlkey=v8d697jjlb8mlwwdts8n79lnb&dl=0][~solution~]]) <2025-09-25 Thu>
@@ -132,9 +132,9 @@ following rubirc:
 
 
 ** Final exam (~300 points~)
-The final exam will consist on six random problems related to the topics of the
-lectures. Each problem will be worth ~50 points~. The emphasis will be on the
-topics of lectures 1-14 and 18-22. 
+The ~FINAL EXAM~ will be held at LGRT-123 on <2025-12-15 Mon> at 10:30 AM. It
+will consist of four questions, each one worth ~75 points~. See this [[https://www.dropbox.com/scl/fi/y1g8nqb9o247gm7xyjsla/final-study-guide.pdf?rlkey=bpxesaegkvc4eb1kjwqraqf58&dl=0][study
+guide]] for more information.
 
 ** Grades
 The perfect final grade is ~1000 points~. The alphabetical grade of the class
