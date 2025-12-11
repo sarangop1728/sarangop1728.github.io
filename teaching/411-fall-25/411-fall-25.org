@@ -110,25 +110,31 @@ Question one will ask you to define a concept. Question two will ask you to
 prove a result (of reasonable difficulty) from the assigned reading. Questions
 3, 4, and 5 will be random problems related to the topics of the lectures.
 ** ``Mistakes were made'' essay (~100 points~)
+
 This is a *handwritten* essay, due on the day of the final exam. It must
 include exactly:
-+ One _mathematical_ mistake you (the *student*) made during the course
-  (either in a homework assignment, a previous test, or during self-study).
-+ One mathematical mistake your favorite AI made when prompted with some group
-  theory question. If you haven't used AI during the course, well done! Now,
-  try ticking it into making a mistake for the sake of this assignment.
-+ A conclussion paragraph that analizes the nature of your mistakes, and
-  compares it with the nature of the mistakes of the large language model.
+
+(1) One mathematical mistake you (the student) made during the course (either
+in a homework assignment, a previous test, or during self-study).
+
+(2) One mathematical mistake your favorite AI made when prompted with some
+group theory question. If you haven't used AI during the course, well done!
+Now, try ticking it into making a mistake for the sake of this assignment.
+    
+(3) A conclusion paragraph that analyzes the nature of your mistakes, and
+compares it with the nature of the mistakes of the large language model.
 
 The essay must contain a thorough explanation of the nature of the errors and
 their corrections. More precisely, the essay will be graded with respect to the
-following rubirc:
+following rubric:
+
 + Includes a clear introduction to the context of each mistake, with carefully
   chosen notation. (~10 points~ per mistake, ~20 points~ total.)
 + Includes a correct and complete correction of each mistake. (~30 points~ per
   mistake, ~60 points~ total.)
 + Includes a sensible conclusion paragraph comparing the nature of both
   mistakes. (~20 points~.)
+
 
 
 ** Final exam (~300 points~)
