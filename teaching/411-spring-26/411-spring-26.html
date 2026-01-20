@@ -1,0 +1,1281 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2026-01-20 Tue 11:32 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Math 411 - Spring 2026</title>
+<meta name="author" content="Santiago Arango-Piñeros" />
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<link rel="stylesheet" type="text/css" href="../../org-css.css"/>
+<link rel="shortcut icon" type="image/x-icon" href="../../images/umass-favicon.ico">
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">Math 411 - Spring 2026
+<br />
+<span class="subtitle">Introduction to Abstract Algebra 1</span>
+</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org263bffc">Coordinates</a>
+<ul>
+<li><a href="#orgbfae187">Instructor</a></li>
+<li><a href="#org9e60a1d">Teaching Assistant</a></li>
+<li><a href="#orgfbcb376">Grader</a></li>
+<li><a href="#org7fc6d8f">Lectures</a></li>
+<li><a href="#org1a1b306">Office hours</a></li>
+</ul>
+</li>
+<li><a href="#orgd65a0fa">Course description</a>
+<ul>
+<li><a href="#org12ce7de">Prerequisites</a></li>
+<li><a href="#org9417902">Textbook</a></li>
+<li><a href="#org021f3ee">Learning objectives</a></li>
+<li><a href="#org8bb81c6">Homework</a></li>
+<li><a href="#orgd6165e9">Midterm exams (<code>800 points</code>)</a></li>
+<li><a href="#org085f0ba">Final exam (<code>200 points</code>)</a></li>
+</ul>
+</li>
+<li><a href="#org60b5e34">Grades</a>
+<ul>
+<li><a href="#org113f277">Mistakes were made policy</a>
+<ul>
+<li><a href="#org250dc51">Prerequisite: submit a summary</a></li>
+<li><a href="#org4199b9c">Submitting corrections</a></li>
+<li><a href="#org9ac8b58">Grading corrections</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org03d4cf0">Topics and schedule</a></li>
+<li><a href="#orgd8b8317">Group theory links</a></li>
+<li><a href="#org42fd48a">Philosophy</a>
+<ul>
+<li><a href="#org7b67aaa">Adopt a growth mindset</a></li>
+<li><a href="#org663a7cd">Learning is the student's responsibility</a></li>
+<li><a href="#org9e4c913">Doing hard things</a></li>
+<li><a href="#org5c531ae">Everyone belongs in this classroom</a></li>
+</ul>
+</li>
+<li><a href="#org19d2c17">Administrative details</a>
+<ul>
+<li><a href="#org16a0102">Drops, withdrawals, and incompletes</a></li>
+<li><a href="#org62f55f8">Make-up exam policy</a></li>
+<li><a href="#orged700b5">Class attendance policy</a></li>
+<li><a href="#orga31c11d">Class etiquette</a></li>
+<li><a href="#org654275f">Academic dishonesty</a></li>
+</ul>
+</li>
+<li><a href="#orgcd87c16">Required statements</a>
+<ul>
+<li><a href="#org4268235">Academic honesty statement</a></li>
+<li><a href="#orge802cd4">Academic integrity statement</a></li>
+<li><a href="#org0c9d389">Accommodation statement</a></li>
+<li><a href="#org96298bf">Title IX statement</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org263bffc" class="outline-2">
+<h2 id="org263bffc">Coordinates</h2>
+<div class="outline-text-2" id="text-org263bffc">
+</div>
+<div id="outline-container-orgbfae187" class="outline-3">
+<h3 id="orgbfae187">Instructor</h3>
+<div class="outline-text-3" id="text-orgbfae187">
+<p>
+<a href="https://sarangop1728.github.io/">Santiago Arango-Piñeros</a>, Ph.D. (He/His).
+</p>
+
+<p>
+My office is in <b>LGRT 1238</b>, and you can contact me via email at:
+</p>
+<ul class="org-ul">
+<li><code>sarangopiner@umass.edu</code>.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org9e60a1d" class="outline-3">
+<h3 id="org9e60a1d">Teaching Assistant</h3>
+<div class="outline-text-3" id="text-org9e60a1d">
+<ul class="org-ul">
+<li>TBD</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgfbcb376" class="outline-3">
+<h3 id="orgfbcb376">Grader</h3>
+<div class="outline-text-3" id="text-orgfbcb376">
+<ul class="org-ul">
+<li>TBD</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org7fc6d8f" class="outline-3">
+<h3 id="org7fc6d8f">Lectures</h3>
+<div class="outline-text-3" id="text-org7fc6d8f">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+</colgroup>
+
+<colgroup>
+<col  class="org-left" />
+</colgroup>
+
+<colgroup>
+<col  class="org-left" />
+</colgroup>
+
+<colgroup>
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Section</th>
+<th scope="col" class="org-left">Days</th>
+<th scope="col" class="org-left">Time</th>
+<th scope="col" class="org-left">Place</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">02-LEC (80294)</td>
+<td class="org-left">Mo, We</td>
+<td class="org-left">4:00 PM - 5:15 PM</td>
+<td class="org-left">LGRT 171</td>
+</tr>
+
+<tr>
+<td class="org-left">03-LEC (85426)</td>
+<td class="org-left">Mo, We</td>
+<td class="org-left">5:30 PM - 6:45 PM</td>
+<td class="org-left">LGRT 171</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="outline-container-org1a1b306" class="outline-3">
+<h3 id="org1a1b306">Office hours</h3>
+<div class="outline-text-3" id="text-org1a1b306">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+</colgroup>
+
+<colgroup>
+<col  class="org-left" />
+</colgroup>
+
+<colgroup>
+<col  class="org-left" />
+</colgroup>
+
+<colgroup>
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Days</th>
+<th scope="col" class="org-left">Time</th>
+<th scope="col" class="org-left">Place</th>
+<th scope="col" class="org-left">By</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Mo, We</td>
+<td class="org-left">3:00 PM - 3:50 PM</td>
+<td class="org-left">LGRT 1238</td>
+<td class="org-left">Santiago</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+If the times above are not convenient, or if you would like to discuss a
+private matter, send me an email.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgd65a0fa" class="outline-2">
+<h2 id="orgd65a0fa">Course description</h2>
+<div class="outline-text-2" id="text-orgd65a0fa">
+<p>
+The focus of the course will be on studying <i>groups</i>. These are algebraic
+structures that capture the notion of symmetry. Groups are ubiquitous in all
+areas of mathematics and the world around us (see <a href="#orgd8b8317">these links</a>). If you commit
+to this class, you will master the essential concepts of group theory outlined
+in the <a href="#org021f3ee">learning objectives</a> by the end of the course.
+</p>
+</div>
+<div id="outline-container-org12ce7de" class="outline-3">
+<h3 id="org12ce7de">Prerequisites</h3>
+<div class="outline-text-3" id="text-org12ce7de">
+<p>
+<b>MATH 235</b> and either <b>CMPSCI 250</b> or <b>MATH 300</b>. In other words, we will need
+some important concepts from linear algebra, and there will be an emphasis on
+proofs and development of precise mathematical reasoning and writing.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org9417902" class="outline-3">
+<h3 id="org9417902">Textbook</h3>
+<div class="outline-text-3" id="text-org9417902">
+<ul class="org-ul">
+<li><b><i>Algebra: Abstract and Concrete</i></b> by Frederick M. Goodman. The book is
+freely available for download at the <a href="https://homepage.divms.uiowa.edu/~goodman/algebrabook.dir/algebrabook.html">author's website</a>.</li>
+<li>As a complement of the textbook, we will use some of <a href="https://kconrad.math.uconn.edu/blurbs/">Keith Conrad's blurbs</a> on
+group theory.</li>
+<li>Every textbook has strengths and weaknesses. You might find it useful to
+complement your reading with the following resources:
+<ul class="org-ul">
+<li>Aluffi, <a href="https://bookstore.ams.org/gsm-104"><i>Algebra: Chapter 0</i></a>.</li>
+<li>Dummit and Foote, <a href="https://books.google.com.co/books/about/Abstract_Algebra.html?id=KJDBQgAACAAJ&amp;redir_esc=y"><i>Abstract Algebra</i></a>.</li>
+<li>Macauley, <a href="https://www.math.clemson.edu/~macaule/visualalgebra.html"><i>Visual Algebra</i></a>.</li>
+<li>Terras, <a href="https://books.google.com.co/books/about/Abstract_Algebra_with_Applications.html?id=znWIDwAAQBAJ&amp;redir_esc=y"><i>Abstract Algebra with Applications</i></a>.</li>
+<li>Rotman, <a href="https://books.google.com.co/books/about/A_First_Course_in_Abstract_Algebra.html?id=ctEZAQAAIAAJ&amp;redir_esc=y"><i>A First Course in Abstract Algebra</i></a>.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org021f3ee" class="outline-3">
+<h3 id="org021f3ee">Learning objectives</h3>
+<div class="outline-text-3" id="text-org021f3ee">
+<ol class="org-ol">
+<li>To learn the fundamental examples of groups. In this class, these are:
+<ul class="org-ul">
+<li>The finitely generated abelian groups. In particular, the cyclic groups
+\(\mathbb{Z}\), and \(\mathbb{Z}/n\mathbb{Z}\).</li>
+<li>The dihedral groups \( D_{n}. \)</li>
+<li>The symmetric group \( S_{n}. \)</li>
+<li>The alternating group \( A_{n}. \)</li>
+<li>The matrix groups \(\mathrm{SO}_2(\mathbb{R}), \mathrm{SO}_3(\mathbb{R}),
+     \mathrm{GL}_2(R)\), and \(\mathrm{SL}_2(R)\) for \( R = \mathbb{Z}/n\mathbb{Z}, \mathbb{R} \).</li>
+<li>The affine groups \( \mathrm{Aff}_2(R) \) for \( R =
+     \mathbb{Z}/n\mathbb{Z}, \mathbb{R} \).</li>
+</ul></li>
+
+<li>To learn the axiomatic definition of a group and how to use it to prove
+basic properties.</li>
+<li>To learn the concepts of subgroups, cosets, quotients, and how to combine
+these to derive Lagrange’s theorem.</li>
+<li>To learn the concepts of homomorphisms and isomorphisms and Noether's
+isomorphism theorems.</li>
+<li>To understand the structure theorem of finitely generated abelian groups in
+terms of the Smith normal form of a matrix with integer coefficients.</li>
+<li>To learn what it means for a group to act on a set as well as the
+natural actions of each of the fundamental examples.</li>
+<li>To understand how to use the Sylow theorems.</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-org8bb81c6" class="outline-3">
+<h3 id="org8bb81c6">Homework</h3>
+<div class="outline-text-3" id="text-org8bb81c6">
+<p>
+Homework assignments are a key component of this class. Even though they won't
+be graded, the midterm exams will be based on the homework problems. <span class="underline">It is in
+your best interest to invest considerable time thinking about the homework
+problems.</span>
+</p>
+
+<p>
+Collaboration with other students is highly encouraged! Come to office hours to
+work on problems with other students.
+</p>
+
+<ul class="org-ul">
+<li><code>PSET0</code>: Back to basics</li>
+<li><code>PSET1</code>: Some examples of groups</li>
+<li><code>PSET2</code>: Basic properties of groups</li>
+<li><code>PSET3</code>: Cosets and Lagrange's theorem</li>
+<li><code>PSET4</code>: The isomorphism theorems</li>
+<li><code>PSET5</code>: Direct and semidirect producs</li>
+<li><code>PSET6</code>: Finitely generated abelian groups</li>
+<li><code>PSET7</code>: Group actions and the Sylow theorems</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgd6165e9" class="outline-3">
+<h3 id="orgd6165e9">Midterm exams (<code>800 points</code>)</h3>
+<div class="outline-text-3" id="text-orgd6165e9">
+<p>
+There will be four midterm exams, each one worth <code>200 points</code>. Each exam will
+have 5 questions, each one worth <code>40 points</code>. <b>Question 1</b> will ask you to
+define a concept or state an important theorem. <b>Question 2</b> will ask you to
+prove a result (of reasonable difficulty) from the corresponding lectures.
+<b>Questions 3</b> will consist of five <i>True</i> or <i>False</i> questions, no
+justification needed. <b>Question 4</b> will ask you to perform a computation, and
+<b>Question 5</b> will be a new problem closely related to the corresponding
+<code>PSETs</code>.
+</p>
+
+<ul class="org-ul">
+<li><code>EXAM1</code>: Based on lectures 1-5 and <code>PSETs</code> 0, 1, 2. <span class="timestamp-wrapper"><span class="timestamp">&lt;2026-02-25 Wed&gt;</span></span></li>
+<li><code>EXAM2</code>: Based on lectures 6-10 and <code>PSETs</code> 0, 3, 4. <span class="timestamp-wrapper"><span class="timestamp">&lt;2026-03-25 Wed&gt;</span></span></li>
+<li><code>EXAM3</code>: Based on lectures 11-15 and <code>PSETs</code> 0, 5, 6. <span class="timestamp-wrapper"><span class="timestamp">&lt;2026-04-15 Wed&gt;</span></span></li>
+<li><code>EXAM4</code>: Based on lectures 16-20 and <code>PSETs</code> 0, 7. <span class="timestamp-wrapper"><span class="timestamp">&lt;2026-05-06 Wed&gt;</span></span></li>
+</ul>
+
+<p>
+See the <a href="#org113f277">``Mistakes were made'' policy</a> below.
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org085f0ba" class="outline-3">
+<h3 id="org085f0ba">Final exam (<code>200 points</code>)</h3>
+<div class="outline-text-3" id="text-org085f0ba">
+<p>
+The <code>FINAL EXAM</code> will be held at LGRT-??? on ??? at ???. This exam evaluates
+the contents of all lectures and all <code>PSETs</code>. It will consist of four
+questions, each one worth <code>50 points</code>.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org60b5e34" class="outline-2">
+<h2 id="org60b5e34">Grades</h2>
+<div class="outline-text-2" id="text-org60b5e34">
+<p>
+The perfect final grade is <code>1000 points</code>. The alphabetical grade of the class
+will be calculated as the sum of the grades in all five exams.
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+</colgroup>
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left"><b>Grade</b></th>
+<th scope="col" class="org-left">A</th>
+<th scope="col" class="org-left">A\(-\)</th>
+<th scope="col" class="org-left">B\(+\)</th>
+<th scope="col" class="org-left">B</th>
+<th scope="col" class="org-left">B\(-\)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left"><code>points</code></td>
+<td class="org-left">\([930,1000]\)</td>
+<td class="org-left">\([900,930)\)</td>
+<td class="org-left">\([870,900)\)</td>
+<td class="org-left">\([830,870)\)</td>
+<td class="org-left">\([800,830)\)</td>
+</tr>
+</tbody>
+</table>
+
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+</colgroup>
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left"><b>Grade</b></th>
+<th scope="col" class="org-left">C\(+\)</th>
+<th scope="col" class="org-left">C</th>
+<th scope="col" class="org-left">C\(-\)</th>
+<th scope="col" class="org-left">D\(+\)</th>
+<th scope="col" class="org-left">D</th>
+<th scope="col" class="org-left">F</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left"><code>points</code></td>
+<td class="org-left">\([770,800)\)</td>
+<td class="org-left">\([730,770)\)</td>
+<td class="org-left">\([700,730)\)</td>
+<td class="org-left">\([670,700)\)</td>
+<td class="org-left">\([600,670)\)</td>
+<td class="org-left">\([0,600)\)</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div id="outline-container-org113f277" class="outline-3">
+<h3 id="org113f277">Mistakes were made policy</h3>
+<div class="outline-text-3" id="text-org113f277">
+<p>
+With the intention of rewarding behaviors that promote learning, students may
+submit corrections to <code>EXAM1</code>, <code>EXAM2</code>, and <code>EXAM3</code> to <span class="underline">earn back up to 100% of
+the points attempted and lost</span>.
+</p>
+</div>
+
+<div id="outline-container-org250dc51" class="outline-4">
+<h4 id="org250dc51">Prerequisite: submit a summary</h4>
+<div class="outline-text-4" id="text-org250dc51">
+<p>
+To qualify to submit corrections, a student must submit a signed handwritten
+summary of the topics assessed on the corresponding exam. The summary must be
+uploaded to <b>Gradescope</b> before the scheduled exam.
+</p>
+<ul class="org-ul">
+<li>Students taking the exam at a different time, for whatever reason, must still
+submit their summaries before the original scheduled exam.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org4199b9c" class="outline-4">
+<h4 id="org4199b9c">Submitting corrections</h4>
+<div class="outline-text-4" id="text-org4199b9c">
+<p>
+Corrections are due exactly one week after the exam date and must be submitted
+through <b>Gradescope</b> before midnight.
+</p>
+
+<p>
+The correction for each problem must include the following.
+</p>
+
+<ol class="org-ol">
+<li>A complete explanation of your mistake.</li>
+<li>A complete explanation of a correct solution.</li>
+<li>A discussion of what you can do to prevent making this type of mistake again
+in the future.</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-org9ac8b58" class="outline-4">
+<h4 id="org9ac8b58">Grading corrections</h4>
+<div class="outline-text-4" id="text-org9ac8b58">
+<p>
+If the corrections comply with all the requirements listed above, they will be
+accepted and the score for the corresponding question on the exam will be
+adjusted.
+</p>
+
+<p>
+If the corrections fail to comply with <b>any</b> of the requirements listed above
+(e.g., no summary was presented, or one of items (1), (2), or (3) was not
+answered to the grader’s satisfaction), the corrections will be rejected and
+the score for the corresponding question on the exam will <b>not</b> be adjusted.
+</p>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org03d4cf0" class="outline-2">
+<h2 id="org03d4cf0">Topics and schedule</h2>
+<div class="outline-text-2" id="text-org03d4cf0">
+<p>
+It is the student's responsibility to read the material before the lecture.
+During the lectures, we will focus on reviewing the key concepts, answering
+questions, and working on examples.
+</p>
+
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+</colgroup>
+
+<colgroup>
+<col  class="org-left" />
+</colgroup>
+
+<colgroup>
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Date</th>
+<th scope="col" class="org-left">Lecture</th>
+<th scope="col" class="org-right">Reading</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left"><span class="timestamp-wrapper"><span class="timestamp">&lt;2026-02-02 Mon&gt;</span></span></td>
+<td class="org-left"><a href="https://www.dropbox.com/scl/fi/p1wxilymw0vyhqvnk3z0a/Lecture-1.pdf?rlkey=wz6pvevnvakryws6uz4t8jsgx&amp;st=oihmxpsu&amp;dl=0">1. What is symmetry?</a></td>
+<td class="org-right">1.1 - 1.7, <a href="https://kconrad.math.uconn.edu/blurbs/grouptheory/whygroups.pdf">Blurb</a></td>
+</tr>
+
+<tr>
+<td class="org-left"><span class="timestamp-wrapper"><span class="timestamp">&lt;2026-02-04 Wed&gt;</span></span></td>
+<td class="org-left"><a href="https://www.dropbox.com/scl/fi/ye5ewjg4w53js9i9nnlqp/Lecture-2.pdf?rlkey=en0vp8k0mxcdldak8rpebqe5w&amp;st=q1vmzgj1&amp;dl=0">2. Examples of groups</a></td>
+<td class="org-right">1.1 - 1.7</td>
+</tr>
+
+<tr>
+<td class="org-left"><span class="timestamp-wrapper"><span class="timestamp">&lt;2026-02-09 Mon&gt;</span></span></td>
+<td class="org-left"><a href="https://www.dropbox.com/scl/fi/5fn0wkb6ejtsk79mqsjpc/Lecture-3.pdf?rlkey=2v43ltzmasna2gk3lyqmmoulk&amp;dl=0">3. Abstract groups: first results</a></td>
+<td class="org-right">1.10, 2.1</td>
+</tr>
+
+<tr>
+<td class="org-left"><span class="timestamp-wrapper"><span class="timestamp">&lt;2026-02-11 Wed&gt;</span></span></td>
+<td class="org-left"><a href="https://www.dropbox.com/scl/fi/17ji5counqyvroky0zxh7/Lecture-4.pdf?rlkey=ihh68st77av0gy3322151n05e&amp;dl=0">4. Subgroups and cyclic groups</a></td>
+<td class="org-right">2.2</td>
+</tr>
+
+<tr>
+<td class="org-left"><span class="timestamp-wrapper"><span class="timestamp">&lt;2026-02-16 Mon&gt;</span></span></td>
+<td class="org-left"><b>No class</b> (Presidents' Day)</td>
+<td class="org-right">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left"><span class="timestamp-wrapper"><span class="timestamp">&lt;2026-02-18 Wed&gt;</span></span></td>
+<td class="org-left"><a href="https://www.dropbox.com/scl/fi/utckf9w72zu37yaec6f8c/Lecture-5.pdf?rlkey=fe58spmzyrto2y4xmrhr1lbh3&amp;dl=0">5. Dihedral groups</a></td>
+<td class="org-right">2.3</td>
+</tr>
+
+<tr>
+<td class="org-left"><span class="timestamp-wrapper"><span class="timestamp">&lt;2026-02-23 Mon&gt;</span></span></td>
+<td class="org-left"><a href="https://www.dropbox.com/scl/fi/c4bwzgfb771pt55lv5r7k/Lecture-6.pdf?rlkey=66e9htb7zs3mo0avx0w6bcezy&amp;dl=0">6. Homomorphisms and isomorphisms</a></td>
+<td class="org-right">2.4</td>
+</tr>
+
+<tr>
+<td class="org-left"><span class="timestamp-wrapper"><span class="timestamp">[2026-02-25 Wed]</span></span></td>
+<td class="org-left"><b>Exam 1</b> (Problems day)</td>
+<td class="org-right">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left"><span class="timestamp-wrapper"><span class="timestamp">&lt;2026-03-02 Mon&gt;</span></span></td>
+<td class="org-left"><a href="https://www.dropbox.com/scl/fi/4z4br5snua92kfmkyyqha/Lecture-7.pdf?rlkey=red8npkhxxxf51qcykp1rudpy&amp;dl=0">7. The sign of a permutation</a></td>
+<td class="org-right"><a href="https://kconrad.math.uconn.edu/blurbs/grouptheory/sign.pdf">Blurb</a></td>
+</tr>
+
+<tr>
+<td class="org-left"><span class="timestamp-wrapper"><span class="timestamp">&lt;2026-03-04 Wed&gt;</span></span></td>
+<td class="org-left"><a href="https://www.dropbox.com/scl/fi/c49t3qqjya7v7pc29tazj/Lecture-8.pdf?rlkey=5qmji57c31u5npkxthnpqr0ya&amp;dl=0">8. Cosets</a></td>
+<td class="org-right">2.5</td>
+</tr>
+
+<tr>
+<td class="org-left"><span class="timestamp-wrapper"><span class="timestamp">&lt;2026-03-09 Mon&gt;</span></span></td>
+<td class="org-left"><a href="https://www.dropbox.com/scl/fi/oxt143yka9abuh63wmpfd/Lecture-9.pdf?rlkey=iw757fm7u5t6e1jr5u2xlqy6h&amp;dl=0">9. Lagrange's theorem</a></td>
+<td class="org-right">2.5</td>
+</tr>
+
+<tr>
+<td class="org-left"><span class="timestamp-wrapper"><span class="timestamp">&lt;2026-03-11 Wed&gt;</span></span></td>
+<td class="org-left"><a href="https://www.dropbox.com/scl/fi/5umx9xqjvzhxw28wvecpl/Lecture-10.pdf?rlkey=7o83fhinujrhqwrodnnmg0mco&amp;dl=0">10. Noether's isomorphism theorems</a></td>
+<td class="org-right">2.7</td>
+</tr>
+
+<tr>
+<td class="org-left"><span class="timestamp-wrapper"><span class="timestamp">&lt;2026-03-16 Mon&gt;</span></span></td>
+<td class="org-left"><b>No class</b> (spring recess)</td>
+<td class="org-right">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left"><span class="timestamp-wrapper"><span class="timestamp">&lt;2026-03-18 Wed&gt;</span></span></td>
+<td class="org-left"><b>No class</b> (spring recess)</td>
+<td class="org-right">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left"><span class="timestamp-wrapper"><span class="timestamp">&lt;2026-03-23 Mon&gt;</span></span></td>
+<td class="org-left"><a href="https://www.dropbox.com/scl/fi/yogahfmerlrevbc65y30r/Lecture-11.pdf?rlkey=w71u05arfw3kzyqiehc1ufx7d&amp;dl=0">11. Direct products</a></td>
+<td class="org-right">3.1</td>
+</tr>
+
+<tr>
+<td class="org-left"><span class="timestamp-wrapper"><span class="timestamp">&lt;2026-03-25 Wed&gt;</span></span></td>
+<td class="org-left"><b>Exam 2</b> (Problems day)</td>
+<td class="org-right">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left"><span class="timestamp-wrapper"><span class="timestamp">&lt;2026-03-30 Mon&gt;</span></span></td>
+<td class="org-left"><a href="https://www.dropbox.com/scl/fi/zekcw3zkkquwxs1zs8rlm/Lecture-12.pdf?rlkey=ooh7llneiqrcpf6reai4xdqc8&amp;dl=0">12. Semidirect products</a></td>
+<td class="org-right">3.2</td>
+</tr>
+
+<tr>
+<td class="org-left"><span class="timestamp-wrapper"><span class="timestamp">&lt;2026-04-01 Wed&gt;</span></span></td>
+<td class="org-left"><a href="https://www.dropbox.com/scl/fi/jhwp7l0ykhttzsk74jsiq/Lecture-13.pdf?rlkey=89ua250me6pwwy68oqcl830t8&amp;dl=0">13. Linear algebra over the integers</a></td>
+<td class="org-right">3.5</td>
+</tr>
+
+<tr>
+<td class="org-left"><span class="timestamp-wrapper"><span class="timestamp">&lt;2026-04-06 Mon&gt;</span></span></td>
+<td class="org-left"><a href="https://www.dropbox.com/scl/fi/fsajexd86jw6dg0bhtoyk/Lecture-14.pdf?rlkey=ihw92clet9umsnutu9reqh7qm&amp;dl=0">14. Finitely generated abelian groups</a></td>
+<td class="org-right">3.6</td>
+</tr>
+
+<tr>
+<td class="org-left"><span class="timestamp-wrapper"><span class="timestamp">&lt;2026-04-08 Wed&gt;</span></span></td>
+<td class="org-left">15. Elementary divisors decomposition</td>
+<td class="org-right">3.6</td>
+</tr>
+
+<tr>
+<td class="org-left"><span class="timestamp-wrapper"><span class="timestamp">&lt;2026-04-13 Mon&gt;</span></span></td>
+<td class="org-left"><a href="https://www.dropbox.com/scl/fi/5qe7hwh5bejcstqb8wihe/Lecture-18.pdf?rlkey=vggwpqmhxmvyfyq5adlhdykk0&amp;dl=0">16. Group actions</a></td>
+<td class="org-right">5.1</td>
+</tr>
+
+<tr>
+<td class="org-left"><span class="timestamp-wrapper"><span class="timestamp">&lt;2026-04-15 Wed&gt;</span></span></td>
+<td class="org-left"><b>Exam 3</b> (Problems day)</td>
+<td class="org-right">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left"><span class="timestamp-wrapper"><span class="timestamp">&lt;2026-04-20 Mon&gt;</span></span></td>
+<td class="org-left"><b>No class</b> (Patriot's Day)</td>
+<td class="org-right">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left"><span class="timestamp-wrapper"><span class="timestamp">&lt;2026-04-22 Wed&gt;</span></span></td>
+<td class="org-left"><a href="https://www.dropbox.com/scl/fi/5e0ct4ph7dcczk7dbdblx/Lecture-19.pdf?rlkey=ai8rn33avfbgkxzsaq0udtfq7&amp;dl=0">17. Counting orbits</a></td>
+<td class="org-right">5.2</td>
+</tr>
+
+<tr>
+<td class="org-left"><span class="timestamp-wrapper"><span class="timestamp">&lt;2026-04-27 Mon&gt;</span></span></td>
+<td class="org-left"><a href="https://www.dropbox.com/scl/fi/b1lgkyzgax41va73m8dcy/Lecture-20.pdf?rlkey=2wntwn600iv1rs23altpxdm88&amp;dl=0">18. Symmetries of groups</a></td>
+<td class="org-right">5.3</td>
+</tr>
+
+<tr>
+<td class="org-left"><span class="timestamp-wrapper"><span class="timestamp">&lt;2026-04-29 Wed&gt;</span></span></td>
+<td class="org-left">19. <a href="https://www.dropbox.com/scl/fi/t8plgi2v2iy9i1xb38pco/Lecture-21.pdf?rlkey=swne53r5vpy94gxow1zqolqy8&amp;dl=0">Group actions and group structure</a></td>
+<td class="org-right">5.4</td>
+</tr>
+
+<tr>
+<td class="org-left"><span class="timestamp-wrapper"><span class="timestamp">&lt;2026-05-04 Mon&gt;</span></span></td>
+<td class="org-left">20. The Sylow theorems (proofs)</td>
+<td class="org-right"><a href="https://kconrad.math.uconn.edu/blurbs/grouptheory/sylowpf.pdf">Blurb</a></td>
+</tr>
+
+<tr>
+<td class="org-left"><span class="timestamp-wrapper"><span class="timestamp">&lt;2026-05-06 Wed&gt;</span></span></td>
+<td class="org-left"><b>Exam 4</b> (Problems day)</td>
+<td class="org-right">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="outline-container-orgd8b8317" class="outline-2">
+<h2 id="orgd8b8317">Group theory links</h2>
+<div class="outline-text-2" id="text-orgd8b8317">
+<p>
+Here are some interesting Wikipedia links to various topics (in math, culture,
+and science) related to group theory. I'd be happy to chat about these during
+office hours.
+</p>
+<ul class="org-ul">
+<li><a href="https://en.wikipedia.org/wiki/Rubik%27s_Cube_group">The Rubik’s Cube Group</a></li>
+<li><a href="https://en.wikipedia.org/wiki/15_puzzle">The 15-Puzzle</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Tower_of_Hanoi">The Towers of Hanoi</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Molecular_symmetry">Molecular Symmetry</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Islamic_geometric_patterns">Islamic Geometric Patterns</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Diffie%E2%80%93Hellman_key_exchange">The Diffie&#x2013;Hellman Key Exchange</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Binary_Golay_code">The binary Golay code</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Free_group">Free Groups</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Galois_theory">Galois theory</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Fundamental_group">The Fundamental Group</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Braid_group">Braids and Braid Groups</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Triangle_group">Triangle Groups</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Platonic_solid">Platonic Solids</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Elliptic_curve#The_group_law">Elliptic Curves</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Monster_group">The Monster Group</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org42fd48a" class="outline-2">
+<h2 id="org42fd48a">Philosophy</h2>
+<div class="outline-text-2" id="text-org42fd48a">
+</div>
+<div id="outline-container-org7b67aaa" class="outline-3">
+<h3 id="org7b67aaa">Adopt a growth mindset</h3>
+<div class="outline-text-3" id="text-org7b67aaa">
+<p>
+Your effort and attitude determine your abilities. Embrace challenges and
+failure as an oportunity to grow. Find inspiration in other people's success.
+</p>
+</div>
+</div>
+<div id="outline-container-org663a7cd" class="outline-3">
+<h3 id="org663a7cd">Learning is the student's responsibility</h3>
+<div class="outline-text-3" id="text-org663a7cd">
+<p>
+Paraphrasing Galileo:
+</p>
+<blockquote>
+<p>
+``You cannot teach a person <b>anything</b>; you can only help
+them find it within themselves.''
+</p>
+</blockquote>
+<p>
+We are all here to <span class="underline">understand</span>. My job as a more experienced learner is to
+assist you on your journey. But you are responsible for investing the time and
+effort necessary to learn.
+</p>
+</div>
+</div>
+<div id="outline-container-org9e4c913" class="outline-3">
+<h3 id="org9e4c913">Doing hard things</h3>
+<div class="outline-text-3" id="text-org9e4c913">
+<p>
+This is hard work, and it will be frustrating at times. In my opinion, the
+reward is well worth the investment, as it is often the case with challenging
+endeavors. In the words of JFK:
+</p>
+<blockquote>
+<p>
+``We choose to go to the Moon in this decade and do the other things, not
+because they are easy, but because they are hard; because that goal will serve
+to organize and measure the best of our energies and skills, because that
+challenge is one that we are willing to accept, one we are unwilling to
+postpone, and one we intend to win, and the others, too.''
+</p>
+</blockquote>
+</div>
+</div>
+
+<div id="outline-container-org5c531ae" class="outline-3">
+<h3 id="org5c531ae">Everyone belongs in this classroom</h3>
+<div class="outline-text-3" id="text-org5c531ae">
+<p>
+We will subscribe to <a href="https://www.ams.org/publications/journals/notices/201610/rnoti-p1164.pdf">Federico's axioms</a>.
+</p>
+
+<ul class="org-ul">
+<li><b>Axiom 1.</b> Mathematical potential is equally present in different groups,
+irrespective of geographic, demographic, and economic boundaries.</li>
+
+<li><b>Axiom 2.</b> Everyone can have joyful, meaningful, and empowering mathematical
+experiences.</li>
+
+<li><b>Axiom 3.</b> Mathematics is a powerful, malleable tool that can be shaped and
+used differently by various communities to serve their needs.</li>
+
+<li><b>Axiom 4.</b> Every student deserves to be treated with dignity and respect.</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org19d2c17" class="outline-2">
+<h2 id="org19d2c17">Administrative details</h2>
+<div class="outline-text-2" id="text-org19d2c17">
+<ul class="org-ul">
+<li>Add/drop only through SPIRE.</li>
+<li>I do not keep a waiting list, and the mathematics department staff will not
+handle these matters.</li>
+<li>Final exams are kept by the mathematics department. Copies are available upon
+request.</li>
+</ul>
+</div>
+<div id="outline-container-org16a0102" class="outline-3">
+<h3 id="org16a0102">Drops, withdrawals, and incompletes</h3>
+<div class="outline-text-3" id="text-org16a0102">
+<ul class="org-ul">
+<li>Last day to add or drop with no record: <span class="timestamp-wrapper"><span class="timestamp">&lt;2025-09-08 Mon&gt;</span></span>.</li>
+<li>Last day to drop with W: <span class="timestamp-wrapper"><span class="timestamp">&lt;2025-10-28 Tue&gt;</span></span>.</li>
+<li>See the <a href="https://www.umass.edu/registrar/academic-calendar">academic calendar</a> for other important dates.</li>
+<li>Incomplete grades are warranted only if a student is passing the course at the
+time of the request and if the course requirements can be completed by the
+end of the following semester. Read more <a href="https://www.umass.edu/natural-sciences/advising/petitions-and-forms/incomplete-grade-form">here</a>.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org62f55f8" class="outline-3">
+<h3 id="org62f55f8">Make-up exam policy</h3>
+<div class="outline-text-3" id="text-org62f55f8">
+<p>
+You must take the regular exam unless you qualify for an official make-up exam
+approved by me, following the official make-up request procedure. Make sure you
+read and understand the make-up exam procedure.
+</p>
+
+<ul class="org-ul">
+<li><b>Final exam conflict:</b> If you need a make-up exam due to a final exam
+schedule conflict, you must submit documentation from the Registrar's Office
+or other supporting documents at least two weeks before the scheduled exams.
+No exceptions will be made. No later than one week before the exam, you must
+submit a written request to me that includes: your name and UMass Amherst
+Student ID number, your section number, and the reason for requesting the
+make-up exam. You can request make-up exams through your SPIRE account: in
+SPIRE, go to Student Home &gt; Final Exam Conflict.</li>
+
+<li><b>Religious observance:</b> If you must miss an exam due to religious observance,
+you must contact me within two weeks of the beginning of the semester.</li>
+
+<li><b>Medical reasons:</b> If you will be absent from an exam due to medical reasons,
+you must notify me at least one week in advance of the exam. If you have a
+medical emergency, you must notify me as soon as possible. In either case,
+you may need to provide documentation. You do not need to disclose personal
+details of your condition, but you must provide enough information to allow
+the absence to be excused.</li>
+
+<li><b>Other circumstances:</b> It is impossible to anticipate all possible
+situations. In the event of an exceptional circumstance not covered above,
+you must contact me and explain the problem. You must be prepared to provide
+a written statement if necessary. I will evaluate the reasons you provide and
+make a decision.</li>
+
+<li>Note that there is <b>no re-taking of exams</b> in this course. If you are sick
+and take the exam anyway, you cannot re-take the exam later for a better
+grade. Regardless of the situation, if you do not feel you can take the exam
+on the scheduled date, you must inform me as soon as possible.</li>
+
+<li>Make-up exams will <b>not</b> be given to accommodate travel plans.</li>
+
+<li>I will ensure that taking a make-up exam does not represent any technical
+advantage. In particular, the questions will be completely different from
+those on the main exam.</li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-orged700b5" class="outline-3">
+<h3 id="orged700b5">Class attendance policy</h3>
+<div class="outline-text-3" id="text-orged700b5">
+<p>
+By UMass policy, students are expected to attend all regularly scheduled
+classes at the University for which they are registered. When planning for the
+tests and homework, I will assume that you have been following my lectures.
+That being said, I will not enforce or grade for attendance. If you are not
+able to attend to one of the lectures, make sure you read the notes for that
+day and talk to other students to check if you missed anything important.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orga31c11d" class="outline-3">
+<h3 id="orga31c11d">Class etiquette</h3>
+<div class="outline-text-3" id="text-orga31c11d">
+<ul class="org-ul">
+<li>I expect you to be present and refrain from using your phone.</li>
+<li>Arrive on time. If you arrive late, try to minimize your disruption.</li>
+<li>Laptops and tablets are allowed during the lectures, provided that you do not
+disrupt your fellow classmates and the lectures.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org654275f" class="outline-3">
+<h3 id="org654275f">Academic dishonesty</h3>
+<div class="outline-text-3" id="text-org654275f">
+<p>
+Academic dishonesty includes but is not limited to: 
+</p>
+<ul class="org-ul">
+<li><b>Cheating:</b> intentional use, and/or attempted use of trickery, artifice,
+deception, breach of confidence, fraud and/or misrepresentation of one's
+academic work.</li>
+<li><b>Fabrication:</b> intentional and unauthorized falsification and/or invention of
+any information or citation in any academic exercise.</li>
+<li><b>Plagiarism:</b> knowingly representing the words or ideas of another as one's
+own work in any academic exercise. This includes submitting without citation,
+in whole or in part, prewritten term papers of another or the research of
+another, including but not limited to commercial vendors who sell or
+distribute such materials.</li>
+<li><b>Facilitating dishonesty:</b> knowingly helping or attempting to help another
+commit an act of academic dishonesty, including substituting for another in
+an examination, or allowing others to represent as their own one's papers,
+reports, or academic works.</li>
+</ul>
+
+<p>
+Formal definitions of academic dishonesty, examples of various forms of
+dishonesty, and the procedures which faculty must follow to penalize dishonesty
+are detailed on the <a href="https://www.umass.edu/studentsuccess/academic-integrity">Academic Honesty website</a>. Appeals must be filed within ten
+days of notification by the Academic Honesty Office that a formal charge has
+been filed by an instructor that suspects dishonesty. Contact the Academic
+Honesty Office for more information on the process. The <a href="https://www.umass.edu/ombuds/">Ombuds Office</a> is also
+available to support individuals engaging with the Academic Honesty process.
+The <a href="https://www.umass.edu/provost/">Provost’s Office</a> is where appeals are processed and filed.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgcd87c16" class="outline-2">
+<h2 id="orgcd87c16">Required statements</h2>
+<div class="outline-text-2" id="text-orgcd87c16">
+</div>
+<div id="outline-container-org4268235" class="outline-3">
+<h3 id="org4268235">Academic honesty statement</h3>
+<div class="outline-text-3" id="text-org4268235">
+<p>
+Since the integrity of the academic enterprise of any institution of higher
+education requires honesty in scholarship and research, academic honesty is
+required of all students at the University of Massachusetts Amherst. Academic
+dishonesty is prohibited in all programs of the University. Academic dishonesty
+includes but is not limited to: cheating, fabrication, plagiarism, and
+facilitating dishonesty. Appropriate sanctions may be imposed on any student
+who has committed an act of academic dishonesty. Instructors should take
+reasonable steps to address academic misconduct. Any person who has reason to
+believe that a student has committed academic dishonesty should bring such
+information to the attention of the appropriate course instructor as soon as
+possible. Instances of academic dishonesty not related to a specific course
+should be brought to the attention of the appropriate department Head or Chair.
+Since students are expected to be familiar with this policy and the commonly
+accepted standards of academic integrity, ignorance of such standards is not
+normally sufficient evidence of lack of intent
+(<a href="http://www.umass.edu/dean_students/codeofconduct/acadhonesty/">http://www.umass.edu/dean_students/codeofconduct/acadhonesty/</a>).
+</p>
+</div>
+</div>
+
+<div id="outline-container-orge802cd4" class="outline-3">
+<h3 id="orge802cd4">Academic integrity statement</h3>
+<div class="outline-text-3" id="text-orge802cd4">
+<p>
+UMass Amherst is strongly committed to academic integrity, which is defined as
+completing all academic work without cheating, lying, stealing, or receiving
+unauthorized assistance from any other person, or using any source of
+information not appropriately authorized or attributed. As a community, we hold
+each other accountable and support each other’s knowledge and understanding of
+academic integrity. Academic dishonesty is prohibited in all programs of the
+University and includes but is not limited to: Cheating, fabrication,
+plagiarism, lying, and facilitating dishonesty, via analogue and digital means.
+Sanctions may be imposed on any student who has committed or participated in an
+academic integrity infraction. Any person who has reason to believe that a
+student has committed an academic integrity infraction should bring such
+information to the attention of the appropriate course instructor as soon as
+possible. All students at the University of Massachusetts Amherst have read and
+acknowledged the Commitment to Academic Integrity and are knowingly responsible
+for completing all work with integrity and in accordance with the policy:
+(<a href="https://www.umass.edu/senate/book/academic-regulations-academic-integrity-policy">https://www.umass.edu/senate/book/academic-regulations-academic-integrity-policy</a>).
+</p>
+</div>
+</div>
+
+<div id="outline-container-org0c9d389" class="outline-3">
+<h3 id="org0c9d389">Accommodation statement</h3>
+<div class="outline-text-3" id="text-org0c9d389">
+<p>
+The University of Massachusetts Amherst is committed to providing an equal
+educational opportunity for all students. If you have a documented physical,
+psychological, or learning disability on file with Disability Services (DS),
+you may be eligible for reasonable academic accommodations to help you succeed
+in this course. If you have a documented disability that requires an
+accommodation, please notify me within the first two weeks of the semester so
+that we may make appropriate arrangements. For further information, please
+visit Disability Services (<a href="https://www.umass.edu/disability/">https://www.umass.edu/disability/</a>).
+</p>
+</div>
+</div>
+
+<div id="outline-container-org96298bf" class="outline-3">
+<h3 id="org96298bf">Title IX statement</h3>
+<div class="outline-text-3" id="text-org96298bf">
+<p>
+In accordance with Title IX of the Education Amendments of 1972 that prohibits
+gender-based discrimination in educational settings that receive federal funds,
+the University of Massachusetts Amherst is committed to providing a safe
+learning environment for all students, free from all forms of discrimination,
+including sexual assault, sexual harassment, domestic violence, dating
+violence, stalking, and retaliation. This includes interactions in person or
+online through digital platforms and social media. Title IX also protects
+against discrimination on the basis of pregnancy, childbirth, false pregnancy,
+miscarriage, abortion, or related conditions, including recovery. There are
+resources here on campus to support you. A summary of the available Title IX
+resources (confidential and non-confidential) can be found at the following
+link: <a href="https://www.umass.edu/titleix/resources">https://www.umass.edu/titleix/resources</a>. You do not need to make a formal
+report to access them. If you need immediate support, you are not alone. Free
+and confidential support is available 24 hours a day / 7 days a week / 365 days
+a year at the SASA Hotline 413-545-0800.
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Date: 2025-12-07</p>
+<p class="author">Author: Santiago Arango-Piñeros</p>
+<p class="date">Created: 2026-01-20 Tue 11:32</p>
+</div>
+</body>
+</html>
