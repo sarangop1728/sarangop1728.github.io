@@ -36,9 +36,9 @@ Here is my [[./documents/Santiago_Arango_Pineros_CV.pdf][CV]].
   href="https://github.com/sarangop1728" class="code">GitHub profile</a>@@.
 
 * Teaching
-** Current teaching (Spring 2026)
+** Current (Spring 2026)
 +  [[./teaching/411-spring-26/411-spring-26.org][MATH 411: Introduction to Abstract Algebra 1]]
-** Past teaching
+** Past
 + [[./teaching/411-fall-25/411-fall-25.org][MATH 411: Introduction to Abstract Algebra 1]]
 
 * Service
