@@ -1,4 +1,4 @@
-#+DATE: 2025-12-07
+
 #+TITLE: Math 411 - Spring 2026
 #+SUBTITLE: Introduction to Abstract Algebra 1
 #+AUTHOR: Santiago Arango-Piñeros
@@ -9,7 +9,7 @@
 
 * Coordinates
 ** Instructor
-[[https://sarangop1728.github.io/][Santiago Arango-Piñeros]], Ph.D. (He/His).
+[[https://sarangop1728.github.io/][Santiago Arango-Piñeros]], Ph.D. (He/Him).
 
 My office is in *LGRT 1238*, and you can contact me via email at:
 + ~sarangopiner@umass.edu~.
@@ -19,7 +19,7 @@ My office is in *LGRT 1238*, and you can contact me via email at:
 
 ** Grader
 + TBD
-
+  
 ** Lectures
 |----------------+--------+---------------------+----------|
 | /              | <      | <                   | <        |
@@ -35,7 +35,7 @@ My office is in *LGRT 1238*, and you can contact me via email at:
 | /      | <                 | <         | <        |
 | Days   | Time              | Place     | By       |
 |--------+-------------------+-----------+----------|
-| Mo, We | 3:00 PM - 3:50 PM | LGRT 1238 | Santiago |
+| Mo, We | 2:30 PM - 3:50 PM | LGRT 1238 | Santiago |
 |--------+-------------------+-----------+----------|
 
 If the times above are not convenient, or if you would like to discuss a
@@ -47,15 +47,16 @@ structures that capture the notion of symmetry. Groups are ubiquitous in all
 areas of mathematics and the world around us (see [[*Group theory links][these links]]). If you commit
 to this class, you will master the essential concepts of group theory outlined
 in the [[*Learning objectives][learning objectives]] by the end of the course.
+
 ** Prerequisites
 *MATH 235* and either *CMPSCI 250* or *MATH 300*. In other words, we will need
 some important concepts from linear algebra, and there will be an emphasis on
-proofs and development of precise mathematical reasoning and writing.
+proofs and the development of precise mathematical reasoning and writing.
 
 ** Textbook
 + */Algebra: Abstract and Concrete/* by Frederick M. Goodman. The book is
   freely available for download at the [[https://homepage.divms.uiowa.edu/~goodman/algebrabook.dir/algebrabook.html][author's website]].
-+ As a complement of the textbook, we will use some of [[https://kconrad.math.uconn.edu/blurbs/][Keith Conrad's blurbs]] on
++ As a complement to the textbook, we will use some of [[https://kconrad.math.uconn.edu/blurbs/][Keith Conrad's blurbs]] on
   group theory.
 + Every textbook has strengths and weaknesses. You might find it useful to
   complement your reading with the following resources:
@@ -69,7 +70,7 @@ proofs and development of precise mathematical reasoning and writing.
 
 1. To learn the fundamental examples of groups. In this class, these are:
    + The finitely generated abelian groups. In particular, the cyclic groups
-      \(\mathbb{Z}\), and \(\mathbb{Z}/n\mathbb{Z}\).  
+     \(\mathbb{Z}\), and \(\mathbb{Z}/n\mathbb{Z}\).  
    + The dihedral groups \( D_{n}. \)
    + The symmetric group \( S_{n}. \)
    + The alternating group \( A_{n}. \)
@@ -104,32 +105,37 @@ work on problems with other students.
 + ~PSET2~: Basic properties of groups 
 + ~PSET3~: Cosets and Lagrange's theorem 
 + ~PSET4~: The isomorphism theorems
-+ ~PSET5~: Direct and semidirect producs
++ ~PSET5~: Direct and semidirect products
 + ~PSET6~: Finitely generated abelian groups
 + ~PSET7~: Group actions and the Sylow theorems
 
-** Midterm exams (~800 points~)
-There will be four midterm exams, each one worth ~200 points~. Each exam will
+** Midterm exams (~600 points~)
+There will be three midterm exams, each one worth ~200 points~. Each exam will
 have 5 questions, each one worth ~40 points~. *Question 1* will ask you to
 define a concept or state an important theorem. *Question 2* will ask you to
 prove a result (of reasonable difficulty) from the corresponding lectures.
-*Questions 3* will consist of five /True/ or /False/ questions, no
+*Question 3* will consist of five /True/ or /False/ questions, with no
 justification needed. *Question 4* will ask you to perform a computation, and
 *Question 5* will be a new problem closely related to the corresponding
-~PSETs~.
+~PSETs~. The midterms will be held on Wednesday evenings.
 
-+ ~EXAM1~: Based on lectures 1-5 and ~PSETs~ 0, 1, 2. <2026-02-25 Wed>
-+ ~EXAM2~: Based on lectures 6-10 and ~PSETs~ 0, 3, 4. <2026-03-25 Wed>
-+ ~EXAM3~: Based on lectures 11-15 and ~PSETs~ 0, 5, 6. <2026-04-15 Wed>
-+ ~EXAM4~: Based on lectures 16-20 and ~PSETs~ 0, 7. <2026-05-06 Wed>
-
++ ~EXAM1~: Based on lectures 1–5 and ~PSETs~ 0, 1, 2. <2026-02-25 Wed 19:00>
++ ~EXAM2~: Based on lectures 6–10 and ~PSETs~ 0, 3, 4. <2026-03-25 Wed 19:00>
++ ~EXAM3~: Based on lectures 11–15 and ~PSETs~ 0, 5, 6. <2026-04-15 Wed 19:00>
+  
 See the [[*Mistakes were made policy][``Mistakes were made'' policy]] below.
 
-
 ** Final exam (~200 points~)
-The ~FINAL EXAM~ will be held at LGRT-??? on ??? at ???. This exam evaluates
-the contents of all lectures and all ~PSETs~. It will consist of four
+This exam evaluates the contents of all lectures and all ~PSETs~, with a
+special focus on lectures 16–20 and ~PSETs~ 0, 7. It will consist of four
 questions, each one worth ~50 points~.
+
+** Quizzes (~200 points~)
+Sometimes, there will be a 10-minute multiple-choice quiz at the end of
+a lecture. The quiz will be submitted through *Canvas*, and I will ask you to
+submit the answers through your phone, so please download the app and bring
+your phone to class. There will be no make-up quizzes, but the lowest 3 scores
+will be dropped.
 
 * Grades
 The perfect final grade is ~1000 points~. The alphabetical grade of the class
@@ -140,7 +146,6 @@ will be calculated as the sum of the grades in all five exams.
 | /        | <            |             |             |             |             |
 | ~points~ | $[930,1000]$ | $[900,930)$ | $[870,900)$ | $[830,870)$ | $[800,830)$ |
 
-
 | *Grade*  | C$+$        | C           | C$-$        | D$+$        | D           | F         |
 |----------+-------------+-------------+-------------+-------------+-------------+-----------|
 | /        | <           |             |             |             |             |           |
@@ -149,7 +154,7 @@ will be calculated as the sum of the grades in all five exams.
 ** Mistakes were made policy
 With the intention of rewarding behaviors that promote learning, students may
 submit corrections to ~EXAM1~, ~EXAM2~, and ~EXAM3~ to _earn back up to 100% of
-the points attempted and lost_.
+the points *attempted* and lost_.
 
 *** Prerequisite: submit a summary
 To qualify to submit corrections, a student must submit a signed handwritten
@@ -158,14 +163,15 @@ uploaded to *Gradescope* before the scheduled exam.
 + Students taking the exam at a different time, for whatever reason, must still
   submit their summaries before the original scheduled exam.
 
+
 *** Submitting corrections
-Corrections are due exactly one week after the exam date and must be submitted
+Corrections are due exactly two weeks after the exam date and must be submitted
 through *Gradescope* before midnight.
 
 The correction for each problem must include the following.
 
-1. A complete explanation of your mistake.
-2. A complete explanation of a correct solution.
+1. A complete and correct explanation of your mistake.
+2. A complete and correct  explanation of a solution.
 3. A discussion of what you can do to prevent making this type of mistake again
    in the future.
 
@@ -183,7 +189,6 @@ the score for the corresponding question on the exam will *not* be adjusted.
 It is the student's responsibility to read the material before the lecture.
 During the lectures, we will focus on reviewing the key concepts, answering
 questions, and working on examples.
-
 
 |------------------+---------------------------------------+------------------|
 | Date             | Lecture                               |          Reading |
@@ -216,7 +221,7 @@ questions, and working on examples.
 | <2026-04-27 Mon> | [[https://www.dropbox.com/scl/fi/b1lgkyzgax41va73m8dcy/Lecture-20.pdf?rlkey=2wntwn600iv1rs23altpxdm88&dl=0][18. Symmetries of groups]]              |              5.3 |
 | <2026-04-29 Wed> | 19. [[https://www.dropbox.com/scl/fi/t8plgi2v2iy9i1xb38pco/Lecture-21.pdf?rlkey=swne53r5vpy94gxow1zqolqy8&dl=0][Group actions and group structure]] |              5.4 |
 | <2026-05-04 Mon> | 20. The Sylow theorems (proofs)       |            [[https://kconrad.math.uconn.edu/blurbs/grouptheory/sylowpf.pdf][Blurb]] |
-| <2026-05-06 Wed> | *Exam 4* (Problems day)               |                  |
+| <2026-05-06 Wed> | 21. Problems day                      |                  |
 |------------------+---------------------------------------+------------------|
 
 * Group theory links
@@ -242,7 +247,8 @@ office hours.
 * Philosophy
 ** Adopt a growth mindset
   Your effort and attitude determine your abilities. Embrace challenges and
-  failure as an oportunity to grow. Find inspiration in other people's success.
+  failure as an opportunity to grow. Find inspiration in other people's success.
+
 ** Learning is the student's responsibility
 Paraphrasing Galileo:
 #+BEGIN_QUOTE
@@ -252,9 +258,10 @@ them find it within themselves.''
 We are all here to _understand_. My job as a more experienced learner is to
 assist you on your journey. But you are responsible for investing the time and
 effort necessary to learn.
+
 ** Doing hard things
 This is hard work, and it will be frustrating at times. In my opinion, the
-reward is well worth the investment, as it is often the case with challenging
+reward is well worth the investment, as is often the case with challenging
 endeavors. In the words of JFK:
 #+BEGIN_QUOTE
 ``We choose to go to the Moon in this decade and do the other things, not
@@ -284,6 +291,7 @@ We will subscribe to [[https://www.ams.org/publications/journals/notices/201610/
   handle these matters.
 - Final exams are kept by the mathematics department. Copies are available upon
   request.
+
 ** Drops, withdrawals, and incompletes
 - Last day to add or drop with no record: <2025-09-08 Mon>.
 - Last day to drop with W: <2025-10-28 Tue>.
@@ -333,26 +341,25 @@ read and understand the make-up exam procedure.
   advantage. In particular, the questions will be completely different from
   those on the main exam.
 
-
 ** Class attendance policy
 By UMass policy, students are expected to attend all regularly scheduled
 classes at the University for which they are registered. When planning for the
 tests and homework, I will assume that you have been following my lectures.
-That being said, I will not enforce or grade for attendance. If you are not
-able to attend to one of the lectures, make sure you read the notes for that
+That being said, I will not enforce or grade attendance. If you are not
+able to attend one of the lectures, make sure you read the notes for that
 day and talk to other students to check if you missed anything important.
 
 ** Class etiquette
 - I expect you to be present and refrain from using your phone.
 - Arrive on time. If you arrive late, try to minimize your disruption.
-- Laptops and tablets are allowed during the lectures, provided that you do not
-  disrupt your fellow classmates and the lectures.
+- Laptops and tablets are allowed during lectures, provided that you do not
+  disrupt your fellow classmates or the lecture.
 
 ** Academic dishonesty 
 
 Academic dishonesty includes but is not limited to: 
 - *Cheating:* intentional use, and/or attempted use of trickery, artifice,
-  deception, breach of confidence, fraud and/or misrepresentation of one's
+  deception, breach of confidence, fraud, and/or misrepresentation of one's
   academic work.
 - *Fabrication:* intentional and unauthorized falsification and/or invention of
   any information or citation in any academic exercise.
@@ -370,7 +377,7 @@ Formal definitions of academic dishonesty, examples of various forms of
 dishonesty, and the procedures which faculty must follow to penalize dishonesty
 are detailed on the [[https://www.umass.edu/studentsuccess/academic-integrity][Academic Honesty website]]. Appeals must be filed within ten
 days of notification by the Academic Honesty Office that a formal charge has
-been filed by an instructor that suspects dishonesty. Contact the Academic
+been filed by an instructor who suspects dishonesty. Contact the Academic
 Honesty Office for more information on the process. The [[https://www.umass.edu/ombuds/][Ombuds Office]] is also
 available to support individuals engaging with the Academic Honesty process.
 The [[https://www.umass.edu/provost/][Provost’s Office]] is where appeals are processed and filed.
@@ -388,7 +395,7 @@ reasonable steps to address academic misconduct. Any person who has reason to
 believe that a student has committed academic dishonesty should bring such
 information to the attention of the appropriate course instructor as soon as
 possible. Instances of academic dishonesty not related to a specific course
-should be brought to the attention of the appropriate department Head or Chair.
+should be brought to the attention of the appropriate department head or chair.
 Since students are expected to be familiar with this policy and the commonly
 accepted standards of academic integrity, ignorance of such standards is not
 normally sufficient evidence of lack of intent
@@ -401,7 +408,7 @@ unauthorized assistance from any other person, or using any source of
 information not appropriately authorized or attributed. As a community, we hold
 each other accountable and support each other’s knowledge and understanding of
 academic integrity. Academic dishonesty is prohibited in all programs of the
-University and includes but is not limited to: Cheating, fabrication,
+University and includes but is not limited to: cheating, fabrication,
 plagiarism, lying, and facilitating dishonesty, via analogue and digital means.
 Sanctions may be imposed on any student who has committed or participated in an
 academic integrity infraction. Any person who has reason to believe that a
@@ -432,7 +439,7 @@ violence, stalking, and retaliation. This includes interactions in person or
 online through digital platforms and social media. Title IX also protects
 against discrimination on the basis of pregnancy, childbirth, false pregnancy,
 miscarriage, abortion, or related conditions, including recovery. There are
-resources here on campus to support you. A summary of the available Title IX
+resources on campus to support you. A summary of the available Title IX
 resources (confidential and non-confidential) can be found at the following
 link: https://www.umass.edu/titleix/resources. You do not need to make a formal
 report to access them. If you need immediate support, you are not alone. Free
