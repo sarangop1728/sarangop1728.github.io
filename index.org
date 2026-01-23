@@ -41,9 +41,9 @@ Here is my [[./documents/Santiago_Arango_Pineros_CV.pdf][CV]].
 ** Past
 + [[./teaching/411-fall-25/411-fall-25.org][MATH 411: Introduction to Abstract Algebra 1 (Fall 2025)]]
 
-* Service
+* Number Theory Seminar
 + I am co-organizing the [[https://dmzb.github.io/FCNTS.github.io/][Five College Number Theory Seminar]] with [[https://dmzb.github.io/][David Zureick-Brown]].
-* Research articles
+* Research Articles
 The =pdf= versions are updated more frequently.
 #+begin_export html
 <ol reversed>
