@@ -100,7 +100,7 @@ problems._
 Collaboration with other students is highly encouraged! Come to office hours to
 work on problems with other students.
 
-+ ~PSET0~: Back to basics 
++ ~PSET0~: [[https://www.dropbox.com/scl/fi/9cq8i56k0c4l8zxx5vrtt/pset0.pdf?rlkey=g8g80z674b1ywms2kkcddybg4&dl=0][Back to basics]]
 + ~PSET1~: Some examples of groups 
 + ~PSET2~: Basic properties of groups 
 + ~PSET3~: Cosets and Lagrange's theorem 
