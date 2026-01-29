@@ -49,9 +49,19 @@ The =pdf= versions are updated more frequently.
 <ol reversed>
   <div class="ref-container">
     <div>
+      <li><b>Counting number fields of fixed degree by their smallest defining
+polynomial</b>, <br> with Fabian Gundlach, Robert J. Lemke Oliver, Kevin J.
+McGown, Will Sawin, Allechar Serrano López, Arul Shankar, and Ila Varma. <br>
+    </div>
+    <div class="paper-image">
+      <a href="images/flows.pdf">
+        <img src="images/flows.pdf" alt="Geodesic and horocycle flows">
+      </a>
+    </div>
+    <div>
       <li><b>Counting primitive integral solutions to spherical generalized
-          Fermat equations</b>.<br>
-          (<a href="documents/counting-primitive-sols-v2.pdf">pdf</a>, <a href="https://arxiv.org/abs/2508.13093"
+          Fermat equations</b>.<br> 
+          (<a href="https://www.dropbox.com/scl/fi/txbpvxgwl3ductzc9rl1h/main.pdf?rlkey=naq0xmgwr1qz9sk7o0tjr4t9i&dl=0">pdf</a>, <a href="https://arxiv.org/abs/2508.13093"
           class="arxiv">2508.13093</a>, <a href="misc/computations.html"
           class="code">Magma experiment</a>)
     </div>
@@ -62,8 +72,8 @@ The =pdf= versions are updated more frequently.
     </div>
     
     <div>
-      <li><b>Fermat descent</b>. </br>
-        (<a href="documents/fermat-descent-v3.pdf">pdf</a>, <a href="https://arxiv.org/abs/2508.13059"
+      <li><b>Fermat descent</b>. <br>
+        (<a href="https://www.dropbox.com/scl/fi/ofd830zhdhxpr1wqqmubw/main.pdf?rlkey=8t1grppugzbnnx74lmskz86zq&dl=0">pdf</a>, <a href="https://arxiv.org/abs/2508.13059"
         class="arxiv">2508.13059</a>)
     </div>
     <div class="paper-image">
@@ -73,7 +83,7 @@ The =pdf= versions are updated more frequently.
     </div>
     <div>
       <li><b>Galois groups of simple abelian varieties over finite fields and
-        exceptional Tate classes</b>, </br> with Sam Frengley and Sameera
+        exceptional Tate classes</b>, <br> with Sam Frengley and Sameera
         Vemulapalli. <br> (<a href="http://arxiv.org/abs/2505.09589"
         class="arxiv">2505.09589</a>, <a href="https://github.com/SamFrengley/exceptional-tate-classes"
         class="code">code</a>)
@@ -105,7 +115,9 @@ The =pdf= versions are updated more frequently.
         <a href="https://www.sciencedirect.com/science/article/pii/S0022314X25001751?via%3Dihub"
            class="journal">Journal of Number Theory</a> <b>278</b> (2026),
            977-1010. <br>
-           (<a href="https://www.sciencedirect.com/science/article/pii/S0022314X25001751?via%3Dihub">DOI</a>, <a href="https://arxiv.org/abs/2412.12467"
+           (<a
+href="https://www.sciencedirect.com/science/article/pii/S0022314X25001751?via%3Dihub">DOI</a>,
+<a href="https://mathscinet.ams.org/mathscinet/article?mr=4927618" class="mr">MR 4927618</a>, <a href="https://arxiv.org/abs/2412.12467"
            class="arxiv">2412.12467</a>, <a href="https://github.com/sarangop1728/twice-class-number"
            class="code">code</a>)
     </div>
