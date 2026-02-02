@@ -1,3 +1,4 @@
+:PROPERTIES:
 #+TITLE: Math 411 - Spring 2026
 #+SUBTITLE: Introduction to Abstract Algebra 1
 #+AUTHOR: Santiago Arango-Piñeros
@@ -5,6 +6,7 @@
 #+OPTIONS: toc:t num:nil
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../../org-css.css"/>
 #+HTML_HEAD:  <link rel="shortcut icon" type="image/x-icon" href="../../images/umass-favicon.ico">
+:END:
 
 * Coordinates
 ** Instructor
@@ -39,14 +41,13 @@ My office is in *LGRT 1238*, and you can contact me via email at:
 
 If the times above are not convenient, or if you would like to discuss a
 private matter, send me an email.
-  
+
 * Course description
 The focus of the course will be on studying /groups/. These are algebraic
 structures that capture the notion of symmetry. Groups are ubiquitous in all
 areas of mathematics and the world around us (see [[*Group theory links][these links]]). If you commit
 to this class, you will master the essential concepts of group theory outlined
 in the [[*Learning objectives][learning objectives]] by the end of the course.
-
 ** Prerequisites
 *MATH 235* and either *CMPSCI 250* or *MATH 300*. In other words, we will need
 some important concepts from linear algebra, and there will be an emphasis on
@@ -99,8 +100,8 @@ problems._
 Collaboration with other students is highly encouraged! Come to office hours to
 work on problems with other students.
 
-+ ~PSET0~: [[https://www.dropbox.com/scl/fi/9cq8i56k0c4l8zxx5vrtt/pset0.pdf?rlkey=g8g80z674b1ywms2kkcddybg4&dl=0][Back to basics]]
-+ ~PSET1~: [[https://www.dropbox.com/scl/fi/t1cjodyterp1oi2o4xy1r/pset1.pdf?rlkey=p1spc9zhe18088o06lj5nu0e4&dl=0][Some examples of groups]] 
++ ~PSET0~: Back to basics ([[https://www.dropbox.com/scl/fi/9cq8i56k0c4l8zxx5vrtt/pset0.pdf?rlkey=g8g80z674b1ywms2kkcddybg4&dl=0][~pdf~]])
++ ~PSET1~: Some examples of groups ([[https://www.dropbox.com/scl/fi/t1cjodyterp1oi2o4xy1r/pset1.pdf?rlkey=p1spc9zhe18088o06lj5nu0e4&dl=0][~pdf~]]) 
 + ~PSET2~: Basic properties of groups 
 + ~PSET3~: Cosets and Lagrange's theorem 
 + ~PSET4~: The isomorphism theorems
