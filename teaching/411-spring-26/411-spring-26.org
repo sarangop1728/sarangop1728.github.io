@@ -6,7 +6,6 @@
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../../org-css.css"/>
 #+HTML_HEAD:  <link rel="shortcut icon" type="image/x-icon" href="../../images/umass-favicon.ico">
 
-
 * Coordinates
 ** Instructor
 [[https://sarangop1728.github.io/][Santiago Arango-Piñeros]], Ph.D. (He/Him).
@@ -19,24 +18,24 @@ My office is in *LGRT 1238*, and you can contact me via email at:
 + Sam Silver (~samuelsilver@umass.edu~)
   
 ** Lectures
-|----------------+--------+---------------------+----------|
-| /              | <      | <                   | <        |
-| Section        | Days   | Time                | Place    |
-|----------------+--------+---------------------+----------|
-| 02-LEC (80294) | Mo, We | 4:00 PM - 5:15 PM   | LGRT 171 |
-| 03-LEC (85426) | Mo, We | 5:30 PM - 6:45 PM   | LGRT 171 |
-|----------------+--------+---------------------+----------|
+|----------------+--------+-------------------+----------|
+| /              | <      | <                 | <        |
+| Section        | Days   | Time              | Place    |
+|----------------+--------+-------------------+----------|
+| 02-LEC (80294) | Mo, We | 4:00 PM - 5:15 PM | LGRT 171 |
+| 03-LEC (85426) | Mo, We | 5:30 PM - 6:45 PM | LGRT 171 |
+|----------------+--------+-------------------+----------|
 
 ** Office hours
 
-|--------+-------------------+-----------+----------|
-| /      | <                 | <         | <        |
-| Days   | Time              | Place     | By       |
-|--------+-------------------+-----------+----------|
-| Mo, We | 3:00 PM - 3:50 PM | LGRT 1522 | Santiago |
-| ...    | ...               | ...       | Natalie  |
-| ...    | ...               | ...       | Sam      |
-|--------+-------------------+-----------+----------|
+|--------+-------------------+------------------------------+----------|
+| /      | <                 | <                            | <        |
+| Days   | Time              | Place                        | By       |
+|--------+-------------------+------------------------------+----------|
+| Mo, We | 3:00 PM - 3:50 PM | LGRT 1522                    | Santiago |
+| Fri    | 3:00 PM - 3:50 PM | Zoom (the link is in Canvas) | Santiago |
+|--------+-------------------+------------------------------+----------|
+
 
 If the times above are not convenient, or if you would like to discuss a
 private matter, send me an email.
@@ -69,7 +68,7 @@ proofs and the development of precise mathematical reasoning and writing.
 
 1. To learn the fundamental examples of groups. In this class, these are:
    + The finitely generated abelian groups. In particular, the cyclic groups
-     \(\mathbb{Z}\), and \(\mathbb{Z}/n\mathbb{Z}\).  
+     \(\mathbb{Z}\) and \(\mathbb{Z}/n\mathbb{Z}\).  
    + The dihedral groups \( D_{n}. \)
    + The symmetric group \( S_{n}. \)
    + The alternating group \( A_{n}. \)
@@ -122,7 +121,8 @@ justification needed. *Question 4* will ask you to perform a computation, and
   Room: ~LGRC A301~.
 + ~EXAM2~: Based on lectures 6–10 and ~PSETs~ 0, 3, 4. <2026-03-25 Wed 19:00>.
   Room: ~LGRC A301~.
-+ ~EXAM3~: Based on lectures 11–15 and ~PSETs~ 0, 5, 6. <2026-04-15 Wed 19:00>.
++ ~EXAM3~: Based on lectures 11–15 and ~PSETs~ 0, 5, 6.
+  <2026-04-15 Wed 19:00>. Room: ~GSMN 51~.
   
 See the [[*Mistakes were made policy][``Mistakes were made'' policy]] below.
 
@@ -172,7 +172,7 @@ through *Gradescope* before midnight.
 The correction for each problem must include the following.
 
 1. A complete and correct explanation of your mistake.
-2. A complete and correct  explanation of a solution.
+2. A complete and correct explanation of a solution.
 3. A discussion of what you can do to prevent making this type of mistake again
    in the future.
 
