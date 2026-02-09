@@ -1,9 +1,10 @@
 /* === Simplified Orgmode CSS (responsive version with collapsible TOC and specialized link colors) === */
 
+
 :root {
   --body-color: #34495e;
-  --heading-color: #0047AB;
-  --link-color: #4169E1;
+  --heading-color: black;
+  --link-color: #2a8ac0;
   --background: #f8f9f9;
 }
 
@@ -51,14 +52,22 @@ h2 {
 a { color: var(--link-color); text-decoration: none; }
 a:hover { text-decoration: underline; }
 
+
+
+
+
+
+
+ 
+
 /* Specialized link colors */
-a.journal { color: #FF9800; }
+a.journal { color: #fe935c; }
 a.journal:hover { color: var(--body-color); }
-a.code { color: #20B2AA; }
+a.code { color: #20c741; }
 a.code:hover { color: var(--body-color); }
 a.mr { color: #000080; }
 a.mr:hover { color: var(--body-color); }
-a.arxiv { color: #DC143C; }
+a.arxiv { color: #f46974; }
 a.arxiv:hover { color: var(--body-color); }
 
 /* === Tables === */

@@ -1,3 +1,4 @@
+#+DATE: 2026-02-08
 #+TITLE: Santiago Arango-Piñeros
 #+SUBTITLE: Academic Website
 #+AUTHOR: Santiago Arango-Piñeros
@@ -41,8 +42,14 @@ Here is my [[./documents/Santiago_Arango_Pineros_CV.pdf][CV]].
 ** Past
 + [[./teaching/411-fall-25/411-fall-25.org][MATH 411: Introduction to Abstract Algebra 1 (Fall 2025)]]
 
-* Number Theory Seminar
-+ I am co-organizing the [[https://dmzb.github.io/FCNTS.github.io/][Five College Number Theory Seminar]] with [[https://dmzb.github.io/][David Zureick-Brown]].
+* Organizing
++ I am co-organizing the [[https://dmzb.github.io/FCNTS.github.io/][Five College Number Theory Seminar]] with [[https://dmzb.github.io/][David
+  Zureick-Brown]].
++ I am co-organizing (together with Niven Achenjang and Sameera Vemulapalli) a
+  *special session* at the upcoming /AMS Eastern Sectional/ on March 28-29 at
+  Boston College. The title of the session is: [[https://www.ams.org/meetings/sectional/2331_program_ss6.html#title][Arithmetic Statistics of
+  Rational Points and Number Fields]].
+  
 * Research Articles
 The =pdf= versions are updated more frequently.
 #+begin_export html
