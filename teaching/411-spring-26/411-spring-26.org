@@ -1,3 +1,4 @@
+#+DATE: 2026-02-12
 #+TITLE: Math 411 - Spring 2026
 #+SUBTITLE: Introduction to Abstract Algebra 1
 #+AUTHOR: Santiago Arango-Piñeros
@@ -191,39 +192,40 @@ It is the student's responsibility to read the material before the lecture.
 During the lectures, we will focus on reviewing the key concepts, answering
 questions, and working on examples.
 
-|------------------+---------------------------------------+-------------------|
-| Date             | Lecture                               |           Reading |
-|------------------+---------------------------------------+-------------------|
-| /                | <                                     |                 < |
-| <2026-02-02 Mon> | [[https://www.dropbox.com/scl/fi/p1wxilymw0vyhqvnk3z0a/Lecture-1.pdf?rlkey=wz6pvevnvakryws6uz4t8jsgx&st=oihmxpsu&dl=0][1. What is symmetry?]]                  |  1.1 - 1.7, [[https://kconrad.math.uconn.edu/blurbs/grouptheory/whygroups.pdf][Blurb]] |
-| <2026-02-04 Wed> | [[https://www.dropbox.com/scl/fi/ye5ewjg4w53js9i9nnlqp/Lecture-2.pdf?rlkey=en0vp8k0mxcdldak8rpebqe5w&st=q1vmzgj1&dl=0][2. Examples of groups]]                 |         1.1 - 1.7 |
-| <2026-02-09 Mon> | [[https://www.dropbox.com/scl/fi/5fn0wkb6ejtsk79mqsjpc/Lecture-3.pdf?rlkey=2v43ltzmasna2gk3lyqmmoulk&dl=0][3. Abstract groups: first results]]     |         1.10, 2.1 |
-| <2026-02-11 Wed> | [[https://www.dropbox.com/scl/fi/17ji5counqyvroky0zxh7/Lecture-4.pdf?rlkey=ihh68st77av0gy3322151n05e&dl=0][4. Subgroups and cyclic groups]]        |               2.2 |
-| <2026-02-16 Mon> | *No class* (Presidents' Day)          |                   |
-| <2026-02-18 Wed> | [[https://www.dropbox.com/scl/fi/utckf9w72zu37yaec6f8c/Lecture-5.pdf?rlkey=fe58spmzyrto2y4xmrhr1lbh3&dl=0][5. Dihedral groups]]                    |               2.3 |
-| <2026-02-23 Mon> | [[https://www.dropbox.com/scl/fi/c4bwzgfb771pt55lv5r7k/Lecture-6.pdf?rlkey=66e9htb7zs3mo0avx0w6bcezy&dl=0][6. Homomorphisms and isomorphisms]]     |               2.4 |
-| <2026-02-25 Wed> | *Exam 1* (no class)                   | Room: ~LGRC A301~ |
-| <2026-03-02 Mon> | [[https://www.dropbox.com/scl/fi/4z4br5snua92kfmkyyqha/Lecture-7.pdf?rlkey=red8npkhxxxf51qcykp1rudpy&dl=0][7. The sign of a permutation]]          |             [[https://kconrad.math.uconn.edu/blurbs/grouptheory/sign.pdf][Blurb]] |
-| <2026-03-04 Wed> | [[https://www.dropbox.com/scl/fi/c49t3qqjya7v7pc29tazj/Lecture-8.pdf?rlkey=5qmji57c31u5npkxthnpqr0ya&dl=0][8. Cosets]]                             |               2.5 |
-| <2026-03-09 Mon> | [[https://www.dropbox.com/scl/fi/oxt143yka9abuh63wmpfd/Lecture-9.pdf?rlkey=iw757fm7u5t6e1jr5u2xlqy6h&dl=0][9. Lagrange's theorem]]                 |               2.5 |
-| <2026-03-11 Wed> | [[https://www.dropbox.com/scl/fi/5umx9xqjvzhxw28wvecpl/Lecture-10.pdf?rlkey=7o83fhinujrhqwrodnnmg0mco&dl=0][10. Noether's isomorphism theorems]]    |               2.7 |
-| <2026-03-16 Mon> | *No class* (spring recess)            |                   |
-| <2026-03-18 Wed> | *No class* (spring recess)            |                   |
-| <2026-03-23 Mon> | [[https://www.dropbox.com/scl/fi/yogahfmerlrevbc65y30r/Lecture-11.pdf?rlkey=w71u05arfw3kzyqiehc1ufx7d&dl=0][11. Direct products]]                   |               3.1 |
-| <2026-03-25 Wed> | *Exam 2* (no class)                   | Room: ~LGRC A301~ |
-| <2026-03-30 Mon> | [[https://www.dropbox.com/scl/fi/zekcw3zkkquwxs1zs8rlm/Lecture-12.pdf?rlkey=ooh7llneiqrcpf6reai4xdqc8&dl=0][12. Semidirect products]]               |               3.2 |
-| <2026-04-01 Wed> | [[https://www.dropbox.com/scl/fi/jhwp7l0ykhttzsk74jsiq/Lecture-13.pdf?rlkey=89ua250me6pwwy68oqcl830t8&dl=0][13. Linear algebra over the integers]]  |               3.5 |
-| <2026-04-06 Mon> | [[https://www.dropbox.com/scl/fi/fsajexd86jw6dg0bhtoyk/Lecture-14.pdf?rlkey=ihw92clet9umsnutu9reqh7qm&dl=0][14. Finitely generated abelian groups]] |               3.6 |
-| <2026-04-08 Wed> | 15. Elementary divisors decomposition |               3.6 |
-| <2026-04-13 Mon> | [[https://www.dropbox.com/scl/fi/5qe7hwh5bejcstqb8wihe/Lecture-18.pdf?rlkey=vggwpqmhxmvyfyq5adlhdykk0&dl=0][16. Group actions]]                     |               5.1 |
-| <2026-04-15 Wed> | *Exam 3* (no class)                   |   Room: ~GSMN 51~ |
-| <2026-04-20 Mon> | *No class* (Patriot's Day)            |                   |
-| <2026-04-22 Wed> | [[https://www.dropbox.com/scl/fi/5e0ct4ph7dcczk7dbdblx/Lecture-19.pdf?rlkey=ai8rn33avfbgkxzsaq0udtfq7&dl=0][17. Counting orbits]]                   |               5.2 |
-| <2026-04-27 Mon> | [[https://www.dropbox.com/scl/fi/b1lgkyzgax41va73m8dcy/Lecture-20.pdf?rlkey=2wntwn600iv1rs23altpxdm88&dl=0][18. Symmetries of groups]]              |               5.3 |
-| <2026-04-29 Wed> | 19. [[https://www.dropbox.com/scl/fi/t8plgi2v2iy9i1xb38pco/Lecture-21.pdf?rlkey=swne53r5vpy94gxow1zqolqy8&dl=0][Group actions and group structure]] |               5.4 |
-| <2026-05-04 Mon> | 20. The Sylow theorems (proofs)       |             [[https://kconrad.math.uconn.edu/blurbs/grouptheory/sylowpf.pdf][Blurb]] |
-| <2026-05-06 Wed> | 21. (Problems day, no office hours)   |                   |
-|------------------+---------------------------------------+-------------------|
+|------------------+--------------------------------------------------+-------------------|
+| Date             | Lecture                                          |           Reading |
+|------------------+--------------------------------------------------+-------------------|
+| /                | <                                                |                 < |
+| <2026-02-02 Mon> | [[https://www.dropbox.com/scl/fi/p1wxilymw0vyhqvnk3z0a/Lecture-1.pdf?rlkey=wz6pvevnvakryws6uz4t8jsgx&st=oihmxpsu&dl=0][1. What is symmetry?]]                             |  1.1 - 1.7, [[https://kconrad.math.uconn.edu/blurbs/grouptheory/whygroups.pdf][Blurb]] |
+| <2026-02-04 Wed> | [[https://www.dropbox.com/scl/fi/ye5ewjg4w53js9i9nnlqp/Lecture-2.pdf?rlkey=en0vp8k0mxcdldak8rpebqe5w&st=q1vmzgj1&dl=0][2. Examples of groups]]                            |         1.1 - 1.7 |
+| <2026-02-09 Mon> | [[https://www.dropbox.com/scl/fi/5fn0wkb6ejtsk79mqsjpc/Lecture-3.pdf?rlkey=2v43ltzmasna2gk3lyqmmoulk&dl=0][3. Abstract groups: first results]]                |         1.10, 2.1 |
+| <2026-02-11 Wed> | [[https://www.dropbox.com/scl/fi/17ji5counqyvroky0zxh7/Lecture-4.pdf?rlkey=ihh68st77av0gy3322151n05e&dl=0][4. Subgroups and cyclic groups]]                   |               2.2 |
+| <2026-02-16 Mon> | *No class* (Presidents' Day, moved to Thursday!) |                   |
+| <2026-02-18 Wed> | [[https://www.dropbox.com/scl/fi/utckf9w72zu37yaec6f8c/Lecture-5.pdf?rlkey=fe58spmzyrto2y4xmrhr1lbh3&dl=0][5. Dihedral groups]]                               |               2.3 |
+| <2026-02-19 Thu> | [[https://www.dropbox.com/scl/fi/c4bwzgfb771pt55lv5r7k/Lecture-6.pdf?rlkey=66e9htb7zs3mo0avx0w6bcezy&dl=0][6. Homomorphisms and isomorphisms]]                |               2.4 |
+| <2026-02-23 Mon> | [[https://www.dropbox.com/scl/fi/4z4br5snua92kfmkyyqha/Lecture-7.pdf?rlkey=red8npkhxxxf51qcykp1rudpy&dl=0][7. The sign of a permutation]]                     |             [[https://kconrad.math.uconn.edu/blurbs/grouptheory/sign.pdf][Blurb]] |
+| <2026-02-25 Wed> | *Exam 1* (no class)                              | Room: ~LGRC A301~ |
+| <2026-03-02 Mon> | [[https://www.dropbox.com/scl/fi/c49t3qqjya7v7pc29tazj/Lecture-8.pdf?rlkey=5qmji57c31u5npkxthnpqr0ya&dl=0][8. Cosets]]                                        |               2.5 |
+| <2026-03-04 Wed> | [[https://www.dropbox.com/scl/fi/oxt143yka9abuh63wmpfd/Lecture-9.pdf?rlkey=iw757fm7u5t6e1jr5u2xlqy6h&dl=0][9. Lagrange's theorem]]                            |               2.5 |
+| <2026-03-09 Mon> | [[https://www.dropbox.com/scl/fi/5umx9xqjvzhxw28wvecpl/Lecture-10.pdf?rlkey=7o83fhinujrhqwrodnnmg0mco&dl=0][10. Noether's first isomorphism theorem]]          |               2.7 |
+| <2026-03-11 Wed> | 11. Noether's other isomorphism theorems         |               2.7 |
+| <2026-03-16 Mon> | *No class* (spring recess)                       |                   |
+| <2026-03-18 Wed> | *No class* (spring recess)                       |                   |
+| <2026-03-23 Mon> | [[https://www.dropbox.com/scl/fi/yogahfmerlrevbc65y30r/Lecture-11.pdf?rlkey=w71u05arfw3kzyqiehc1ufx7d&dl=0][12. Direct products]]                              |               3.1 |
+| <2026-03-25 Wed> | *Exam 2* (no class)                              | Room: ~LGRC A301~ |
+| <2026-03-30 Mon> | [[https://www.dropbox.com/scl/fi/zekcw3zkkquwxs1zs8rlm/Lecture-12.pdf?rlkey=ooh7llneiqrcpf6reai4xdqc8&dl=0][13. Semidirect products]]                          |               3.2 |
+| <2026-04-01 Wed> | [[https://www.dropbox.com/scl/fi/jhwp7l0ykhttzsk74jsiq/Lecture-13.pdf?rlkey=89ua250me6pwwy68oqcl830t8&dl=0][14. Linear algebra over the integers]]             |               3.5 |
+| <2026-04-06 Mon> | [[https://www.dropbox.com/scl/fi/fsajexd86jw6dg0bhtoyk/Lecture-14.pdf?rlkey=ihw92clet9umsnutu9reqh7qm&dl=0][15. Finitely generated abelian groups]]            |               3.6 |
+| <2026-04-08 Wed> | 16. Elementary divisors decomposition            |               3.6 |
+| <2026-04-13 Mon> | [[https://www.dropbox.com/scl/fi/5qe7hwh5bejcstqb8wihe/Lecture-18.pdf?rlkey=vggwpqmhxmvyfyq5adlhdykk0&dl=0][17. Group actions]]                                |               5.1 |
+| <2026-04-15 Wed> | *Exam 3* (no class)                              |   Room: ~GSMN 51~ |
+| <2026-04-20 Mon> | *No class* (Patriot's Day)                       |                   |
+| <2026-04-22 Wed> | [[https://www.dropbox.com/scl/fi/5e0ct4ph7dcczk7dbdblx/Lecture-19.pdf?rlkey=ai8rn33avfbgkxzsaq0udtfq7&dl=0][18. Counting orbits]]                              |               5.2 |
+| <2026-04-27 Mon> | [[https://www.dropbox.com/scl/fi/b1lgkyzgax41va73m8dcy/Lecture-20.pdf?rlkey=2wntwn600iv1rs23altpxdm88&dl=0][19. Symmetries of groups]]                         |               5.3 |
+| <2026-04-29 Wed> | 20. [[https://www.dropbox.com/scl/fi/t8plgi2v2iy9i1xb38pco/Lecture-21.pdf?rlkey=swne53r5vpy94gxow1zqolqy8&dl=0][Group actions and group structure]]            |               5.4 |
+| <2026-05-04 Mon> | 21. The Sylow theorems (proofs)                  |             [[https://kconrad.math.uconn.edu/blurbs/grouptheory/sylowpf.pdf][Blurb]] |
+| <2026-05-06 Wed> | 22. (Problems day, no office hours)              |                   |
+|------------------+--------------------------------------------------+-------------------|
 
 * Group theory links
 Here are some interesting Wikipedia links to various topics (in math, culture,
