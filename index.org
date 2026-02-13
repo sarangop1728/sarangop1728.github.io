@@ -45,7 +45,7 @@ Here is my [[./documents/Santiago_Arango_Pineros_CV.pdf][CV]].
 * Organizing
 + I am co-organizing the [[https://dmzb.github.io/FCNTS.github.io/][Five College Number Theory Seminar]] with [[https://dmzb.github.io/][David
   Zureick-Brown]].
-+ I am co-organizing (together with Niven Achenjang and Sameera Vemulapalli) a
++ I am co-organizing (together with [[https://people.math.harvard.edu/~achenjang/][Niven Achenjang]] and[[https://web.math.princeton.edu/~sameerav/][ Sameera Vemulapalli]]) a
   *special session* at the upcoming /AMS Eastern Sectional/ on March 28-29 at
   Boston College. The title of the session is: [[https://www.ams.org/meetings/sectional/2331_program_ss6.html#title][Arithmetic Statistics of
   Rational Points and Number Fields]].
@@ -57,8 +57,12 @@ The =pdf= versions are updated more frequently.
   <div class="ref-container">
   <div>
   <li><b>Counting number fields of fixed degree by their smallest defining
-  polynomial</b>, <br> with Fabian Gundlach, Robert J. Lemke Oliver, Kevin J.
-  McGown, Will Sawin, Allechar Serrano López, Arul Shankar, and Ila Varma. <br>
+  polynomial</b>, <br> with <a href="https://fabiangundlach.org">Fabian
+  Gundlach</a>, <a href="https://lemkeoliver.github.io">Robert J. Lemke
+  Oliver</a>, <a href="https://kmcgown.yourweb.csuchico.edu">Kevin J.
+  McGown</a>, <a href="https://williamsawin.com">Will Sawin</a>, <a
+  href="https://www.allechar.org">Allechar Serrano López</a>, <a
+  href="https://www.math.utoronto.ca/ashankar/">Arul Shankar</a>, and <a href="https://www.math.utoronto.ca/~ila/">Ila Varma</a>. <br>
   (<a href="https://arxiv.org/abs/2602.06943" class="arxiv">2602.06943</a>)
   </div>
   <div class="paper-image">
@@ -91,8 +95,7 @@ The =pdf= versions are updated more frequently.
   </div>
   <div>
   <li><b>Galois groups of simple abelian varieties over finite fields and
-  exceptional Tate classes</b>, <br> with Sam Frengley and Sameera
-  Vemulapalli. <br> (<a href="http://arxiv.org/abs/2505.09589"
+  exceptional Tate classes</b>, <br> with <a href="https://samfrengley.github.io">Sam Frengley</a> and <a href="https://web.math.princeton.edu/~sameerav/">Sameera Vemulapalli</a>. <br> (<a href="http://arxiv.org/abs/2505.09589"
   class="arxiv">2505.09589</a>, <a href="https://github.com/SamFrengley/exceptional-tate-classes"
   class="code">code</a>)
   </div>
@@ -104,8 +107,11 @@ The =pdf= versions are updated more frequently.
   
   <div>
   <li><b>Counting 5-isogenies of elliptic curves over the
-  rationals</b>, </br> with Changho Han, Oana Padurariu, and Sun Woo
-  Park. <br> (<a href="http://arxiv.org/abs/2504.07750"
+  rationals</b>, </br> with <a
+  href="https://sites.google.com/view/changho-han/">Changho Han</a>, <a
+  href="https://sites.google.com/view/oanapadurariu/home">Oana Padurariu</a>, and
+  <a href="https://sites.google.com/wisc.edu/spark483">Sun Woo
+  Park</a>. <br> (<a href="http://arxiv.org/abs/2504.07750"
   class="arxiv">2504.07750</a>, <a href="https://github.com/sarangop1728/counting-5-isogenies"
   class="code">code</a>)
   </div>
@@ -118,8 +124,10 @@ The =pdf= versions are updated more frequently.
   
   <div>
   <li><b>Bounds for the relative class number problem for function
-  fields</b>, </br> with Mar&iacute;a Chara, Asimina S. Hamakiotes, Kiran
-  S. Kedlaya, and Gustavo Rama.</li> 
+  fields</b>, </br> with <a
+  href="https://sites.google.com/view/maria-chara/home">Mar&iacute;a Chara</a>,
+  <a href="https://asiminah.github.io">Asimina S. Hamakiotes</a>, <a href="https://kskedlaya.org">Kiran
+  S. Kedlaya</a>, and Gustavo Rama.</li> 
   <a href="https://www.sciencedirect.com/science/article/pii/S0022314X25001751?via%3Dihub"
   class="journal">Journal of Number Theory</a> <b>278</b> (2026),
   977-1010. <br>
@@ -137,7 +145,8 @@ The =pdf= versions are updated more frequently.
   
   <div>
   <li><b>Galois groups of low dimensional abelian varieties over finite
-  fields</b>, </br> with Sam Frengley and Sameera Vemulapalli.</li>
+  fields</b>, </br> with <a href="https://samfrengley.github.io">Sam Frengley</a> and 
+  <a href="https://web.math.princeton.edu/~sameerav/">Sameera Vemulapalli</a>.</li>
   To appear in <a class="journal">Transactions of the American
   Mathematical Society</a>.<br>
   (<a href="https://arxiv.org/abs/2412.03358"
@@ -152,8 +161,9 @@ The =pdf= versions are updated more frequently.
   
   <div>
   <li><b>Frobenius distributions of low dimensional abelian varieties over
-  finite fields</b>, </br>with Deewang Bhamidipati and Soumya
-  Sankar.</li>
+  finite fields</b>, </br>with <a href="https://bdeewang.com">Deewang
+  Bhamidipati</a> and <a href="https://sites.google.com/site/soumya3sankar/">Soumya
+  Sankar</a>.</li>
   <a href="https://academic.oup.com/imrn/article-abstract/2024/16/11989/7708716?utm_source=etoc&utm_campaign=imrn&utm_medium=email"
   class="journal">International Mathematics Research
   Notices</a> <b>2024</b> (2024), no. 16, 11989-12020. <br>
@@ -168,9 +178,9 @@ The =pdf= versions are updated more frequently.
   </div>
   
   <div>
-  <li> <b>Mertens' theorem for Chebotarev sets</b>, </br>with Daniel
-  Keliher and Chris
-  Keyes. </li> <a href="https://www.worldscientific.com/doi/10.1142/S1793042122500932"
+  <li> <b>Mertens' theorem for Chebotarev sets</b>, </br>with <a href="https://www.danielkeliher.com">Daniel
+  Keliher</a> and <a href="https://c-keyes.github.io">Chris
+  Keyes</a>. </li> <a href="https://www.worldscientific.com/doi/10.1142/S1793042122500932"
   class="journal">International Journal of Number Theory</a> <b>18</b>
   (2022), no. 8, 1823-1842. <br>
   (<a href="https://mathscinet.ams.org/mathscinet/relay-station?mr=mr=4439576"
