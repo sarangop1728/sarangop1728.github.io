@@ -67,7 +67,7 @@ The =pdf= versions are updated more frequently.
   </div>
   <div class="paper-image">
   <a href="images/flows.pdf">
-  <img src="images/flows.pdf" alt="Geodesic and horocycle flows">
+  <img src="images/flows.png" alt="Geodesic and horocycle flows">
   </a>
   </div>
   <div>
