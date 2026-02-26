@@ -118,11 +118,11 @@ justification needed. *Question 4* will ask you to perform a computation, and
 *Question 5* will be a new problem closely related to the corresponding
 ~PSETs~. The midterms will be held on Wednesday evenings.
 
-+ ~EXAM1~: Based on lectures 1–5 and ~PSETs~ 0, 1, 2. <2026-02-25 Wed 19:00>.
++ ~EXAM1~: Emphasis on lectures 1–7 and ~PSETs~ 0, 1, 2. <2026-02-25 Wed 19:00>.
+  Room: ~LGRC A301~. ([[https://www.dropbox.com/scl/fi/5idb8pu63uolnypv7mgof/exam1v1solution.pdf?rlkey=rpr12umksg62hd2d426a94zuo&dl=0][~solution~]])
++ ~EXAM2~: Emphasis on lectures 6–10 and ~PSETs~ 0, 3, 4. <2026-03-25 Wed 19:00>.
   Room: ~LGRC A301~.
-+ ~EXAM2~: Based on lectures 6–10 and ~PSETs~ 0, 3, 4. <2026-03-25 Wed 19:00>.
-  Room: ~LGRC A301~.
-+ ~EXAM3~: Based on lectures 11–15 and ~PSETs~ 0, 5, 6.
++ ~EXAM3~: Emphasis on lectures 11–15 and ~PSETs~ 0, 5, 6.
   <2026-04-15 Wed 19:00>. Room: ~GSMN 51~.
   
 See the [[*Mistakes were made policy][``Mistakes were made'' policy]] below.
