@@ -100,7 +100,7 @@ Collaboration with other students is highly encouraged! Come to office hours to
 work on problems with other students.
 
 + ~PSET0~: Back to basics ([[https://www.dropbox.com/scl/fi/9cq8i56k0c4l8zxx5vrtt/pset0.pdf?rlkey=g8g80z674b1ywms2kkcddybg4&dl=0][~pdf~]])
-+ ~PSET1~: Some examples of groups ([[https://www.dropbox.com/scl/fi/t1cjodyterp1oi2o4xy1r/pset1.pdf?rlkey=p1spc9zhe18088o06lj5nu0e4&dl=0][~pdf~]]) 
++ ~PSET1~: Some examples of groups ([[https://www.dropbox.com/scl/fi/t1cjodyterp1oi2o4xy1r/pset1.pdf?rlkey=p1spc9zhe18088o06lj5nu0e4&dl=0][~pdf~]])([[https://www.dropbox.com/scl/fi/c7bftc22bv2utfx8neqsc/pset1-sol.pdf?rlkey=1kfofy7f0njfstujkcjyckuc6&dl=0][~solution~]])
 + ~PSET2~: Basic properties of groups ([[https://www.dropbox.com/scl/fi/vmtjxwrqpgkuptwz8lywx/pset2.pdf?rlkey=nkuqr7ux74kakw2ffh57i7qax&dl=0][~pdf~]])
 + ~PSET3~: Cosets and Lagrange's theorem 
 + ~PSET4~: The isomorphism theorems
