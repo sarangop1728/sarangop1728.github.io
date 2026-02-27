@@ -101,9 +101,9 @@ work on problems with other students.
 
 + ~PSET0~: Back to basics ([[https://www.dropbox.com/scl/fi/9cq8i56k0c4l8zxx5vrtt/pset0.pdf?rlkey=g8g80z674b1ywms2kkcddybg4&dl=0][~pdf~]])
 + ~PSET1~: Some examples of groups ([[https://www.dropbox.com/scl/fi/t1cjodyterp1oi2o4xy1r/pset1.pdf?rlkey=p1spc9zhe18088o06lj5nu0e4&dl=0][~pdf~]])([[https://www.dropbox.com/scl/fi/c7bftc22bv2utfx8neqsc/pset1-sol.pdf?rlkey=1kfofy7f0njfstujkcjyckuc6&dl=0][~solution~]])
-+ ~PSET2~: Basic properties of groups ([[https://www.dropbox.com/scl/fi/vmtjxwrqpgkuptwz8lywx/pset2.pdf?rlkey=nkuqr7ux74kakw2ffh57i7qax&dl=0][~pdf~]])
-+ ~PSET3~: Cosets and Lagrange's theorem 
-+ ~PSET4~: The isomorphism theorems
++ ~PSET2~: Basic properties of groups ([[https://www.dropbox.com/scl/fi/vmtjxwrqpgkuptwz8lywx/pset2.pdf?rlkey=nkuqr7ux74kakw2ffh57i7qax&dl=0][~pdf~]])([[https://www.dropbox.com/scl/fi/zv651hjibk52ferk4sd7v/pset2-sol.pdf?rlkey=vgvuik1w9apj73wp7cbh26lsu&dl=0][~solution~]])
++ ~PSET3~: Cosets and Lagrange's theorem ([[https://www.dropbox.com/scl/fi/qq8t6s1cnw7cqcjg6hgdk/pset3.pdf?rlkey=opzttzka6v2it3tg3w5rgflnu&dl=0][~pdf~]])
++ ~PSET4~: The isomorphism theorems ([[https://www.dropbox.com/scl/fi/f3163uprv0fxm4thy72hk/pset4.pdf?rlkey=9b1peazeg6l131ohybogzuerc&dl=0][~pdf~]])
 + ~PSET5~: Direct and semidirect products
 + ~PSET6~: Finitely generated abelian groups
 + ~PSET7~: Group actions and the Sylow theorems
@@ -119,7 +119,7 @@ justification needed. *Question 4* will ask you to perform a computation, and
 ~PSETs~. The midterms will be held on Wednesday evenings.
 
 + ~EXAM1~: Emphasis on lectures 1–7 and ~PSETs~ 0, 1, 2. <2026-02-25 Wed 19:00>.
-  Room: ~LGRC A301~. ([[https://www.dropbox.com/scl/fi/5idb8pu63uolnypv7mgof/exam1v1solution.pdf?rlkey=rpr12umksg62hd2d426a94zuo&dl=0][~solution~]])
+  Room: ~LGRC A301~. ([[https://www.dropbox.com/scl/fi/yp9lm9chvao7up7ibavrg/exam1v1.tex?rlkey=8adqoqb0o051mh2kwacoaum74&dl=0][~tex~]])([[https://www.dropbox.com/scl/fi/5krvclvgsuhizuk3hv43o/exam1v1.pdf?rlkey=4wxi6vsdl4p6g5zs26nb1xb0z&dl=0][~pdf~]])([[https://www.dropbox.com/scl/fi/5idb8pu63uolnypv7mgof/exam1v1solution.pdf?rlkey=rpr12umksg62hd2d426a94zuo&dl=0][~solution~]])
 + ~EXAM2~: Emphasis on lectures 6–10 and ~PSETs~ 0, 3, 4. <2026-03-25 Wed 19:00>.
   Room: ~LGRC A301~.
 + ~EXAM3~: Emphasis on lectures 11–15 and ~PSETs~ 0, 5, 6.
@@ -157,7 +157,7 @@ following tables.
 ** Mistakes were made policy
 With the intention of rewarding behaviors that promote learning, students may
 submit corrections to ~EXAM1~, ~EXAM2~, and ~EXAM3~ to _earn back up to 80% of
-the points *attempted* and lost_.
+the points lost_.
 
 *** Prerequisite: submit a summary
 To qualify to submit corrections, a student must submit a signed handwritten
@@ -180,7 +180,9 @@ The correction for each problem must include the following.
 *** Grading corrections
 If the corrections comply with all the requirements listed above, they will be
 accepted and the score for the corresponding question on the exam will be
-adjusted.
+adjusted. If the grader of the correction deems your original answer a
+/reasonable attempt/, then you will get back 80% of the points. Otherwise, you
+will get back 50% of the points.
 
 If the corrections fail to comply with *any* of the requirements listed above
 (e.g., no summary was presented, or one of items (1), (2), or (3) was not
