@@ -14,7 +14,7 @@
 My office is in *LGRT 1238*, and you can contact me via email at:
 + ~sarangopiner@umass.edu~.
 
-** Graders
+** Teaching Assistants
 + Natalie Welling (~nwelling@umass.edu~)
 + Sam Silver (~samuelsilver@umass.edu~)
   
@@ -29,13 +29,16 @@ My office is in *LGRT 1238*, and you can contact me via email at:
 
 ** Office hours
 
-|--------+-------------------+-------------------+---------------------------|
-| /      | <                 | <                 | <                         |
-| Days   | Time              | Place             | By                        |
-|--------+-------------------+-------------------+---------------------------|
-| Mo, We | 3:00 PM - 3:50 PM | LGRT 1522         | Santiago                  |
-| Fri    | 2:00 PM - 3:50 PM | LGRT 1238 or Zoom | Santiago (by appointment) |
-|--------+-------------------+-------------------+---------------------------|
+If you are planning on coming to office hours, send me an email first letting
+me know.
+
+|--------+-------------------+-----------+-----------------|
+| /      | <                 | <         | <               |
+| Days   | Time              | Place     | By              |
+|--------+-------------------+-----------+-----------------|
+| Mo, We | 3:00 PM - 3:50 PM | LGRT 1238 | Santiago        |
+| Fri    | 2:00 PM - 3:50 PM | LGRT 1522 | Natalie and Sam |
+|--------+-------------------+-----------+-----------------|
 
 
 If the times above are not convenient, or if you would like to discuss a
