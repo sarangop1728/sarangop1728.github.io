@@ -122,9 +122,9 @@ justification needed. *Question 4* will ask you to perform a computation, and
 ~PSETs~. The midterms will be held on Wednesday evenings.
 
 + ~EXAM1~: Emphasis on lectures 1–7 and ~PSETs~ 0, 1, 2. <2026-02-25 Wed 19:00>.
-  Room: ~LGRC A301~. ([[https://www.dropbox.com/scl/fi/yp9lm9chvao7up7ibavrg/exam1v1.tex?rlkey=8adqoqb0o051mh2kwacoaum74&dl=0][~tex~]])([[https://www.dropbox.com/scl/fi/5krvclvgsuhizuk3hv43o/exam1v1.pdf?rlkey=4wxi6vsdl4p6g5zs26nb1xb0z&dl=0][~pdf~]])([[https://www.dropbox.com/scl/fi/5idb8pu63uolnypv7mgof/exam1v1solution.pdf?rlkey=rpr12umksg62hd2d426a94zuo&dl=0][~solution~]])
+  Room: ~LGRC A301~. ([[https://www.dropbox.com/scl/fi/5idb8pu63uolnypv7mgof/exam1v1solution.pdf?rlkey=rpr12umksg62hd2d426a94zuo&dl=0][~solution~]])
 + ~EXAM2~: Emphasis on lectures 6–10 and ~PSETs~ 0, 3, 4. <2026-03-25 Wed 19:00>.
-  Room: ~LGRC A301~.
+  Room: ~LGRC A301~. ([[https://www.dropbox.com/scl/fi/685wheuhivq2iiyaerdb1/solution-e2v2.pdf?rlkey=denrm1nqf6g2lj4wkf26i3xkd&dl=0][~solution~]])
 + ~EXAM3~: Emphasis on lectures 11–15 and ~PSETs~ 0, 5, 6.
   <2026-04-15 Wed 19:00>. Room: ~GSMN 51~.
   
