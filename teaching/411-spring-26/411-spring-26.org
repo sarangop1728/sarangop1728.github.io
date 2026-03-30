@@ -107,8 +107,8 @@ work on problems with other students.
 + ~PSET2~: Basic properties of groups ([[https://www.dropbox.com/scl/fi/vmtjxwrqpgkuptwz8lywx/pset2.pdf?rlkey=nkuqr7ux74kakw2ffh57i7qax&dl=0][~pdf~]])([[https://www.dropbox.com/scl/fi/zv651hjibk52ferk4sd7v/pset2-sol.pdf?rlkey=vgvuik1w9apj73wp7cbh26lsu&dl=0][~solution~]])
 + ~PSET3~: Cosets and Lagrange's theorem ([[https://www.dropbox.com/scl/fi/qq8t6s1cnw7cqcjg6hgdk/pset3.pdf?rlkey=opzttzka6v2it3tg3w5rgflnu&dl=0][~pdf~]])
 + ~PSET4~: The isomorphism theorems ([[https://www.dropbox.com/scl/fi/f3163uprv0fxm4thy72hk/pset4.pdf?rlkey=9b1peazeg6l131ohybogzuerc&dl=0][~pdf~]])
-+ ~PSET5~: Direct and semidirect products
-+ ~PSET6~: Finitely generated abelian groups
++ ~PSET5~: Direct and semidirect products ([[https://www.dropbox.com/scl/fi/wr5i7ci600fwxcuzdpjtb/pset5.pdf?rlkey=doky4q7bjl9gtmo03iu3774x1&dl=0][~pdf~]])
++ ~PSET6~: Finitely generated abelian groups ([[https://www.dropbox.com/scl/fi/2pyhr73z9d4z0ev9wcoj0/pset6.pdf?rlkey=hy2qxhe7d8ldtd8dplopfip2a&dl=0][pdf]])
 + ~PSET7~: Group actions and the Sylow theorems
 
 ** Midterm exams (~600 points~)

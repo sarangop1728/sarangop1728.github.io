@@ -43,7 +43,7 @@ Here is my [[./documents/Santiago_Arango_Pineros_CV.pdf][CV]].
 + [[./teaching/411-fall-25/411-fall-25.org][MATH 411: Introduction to Abstract Algebra 1 (Fall 2025)]]
 ** Future
 + MATH 714: Arithmetic of Elliptic Curves (Fall 2026)
-+ MATH 132: Calculus II
++ MATH 132: Calculus II (Fall 2026)
 
 * Organizing
 + I am co-organizing the [[https://dmzb.github.io/FCNTS.github.io/][Five College Number Theory Seminar]] with [[https://dmzb.github.io/][David
