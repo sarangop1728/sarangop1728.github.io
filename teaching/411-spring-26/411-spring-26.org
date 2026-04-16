@@ -126,14 +126,15 @@ justification needed. *Question 4* will ask you to perform a computation, and
 + ~EXAM2~: Emphasis on lectures 6–10 and ~PSETs~ 0, 3, 4. <2026-03-25 Wed 19:00>.
   Room: ~LGRC A301~. ([[https://www.dropbox.com/scl/fi/685wheuhivq2iiyaerdb1/solution-e2v2.pdf?rlkey=denrm1nqf6g2lj4wkf26i3xkd&dl=0][~solution~]])
 + ~EXAM3~: Emphasis on lectures 11–15 and ~PSETs~ 0, 5, 6.
-  <2026-04-15 Wed 19:00>. Room: ~GSMN 51~.
+  <2026-04-15 Wed 19:00>. Room: ~GSMN 51~. ([[https://www.dropbox.com/scl/fi/karhbg31bksh91n3iq76o/exam3v1-solution.pdf?rlkey=ng6wg3pnabgg40g20nzu22dfw&dl=0][~solution~]])
   
 See the [[*Mistakes were made policy][``Mistakes were made'' policy]] below.
 
 ** Final exam (~200 points~)
 This exam evaluates the contents of all lectures and all ~PSETs~, with a
-special focus on lectures 16–20 and ~PSETs~ 0, 7. It will consist of four
+special focus on lectures 17–20 and ~PSETs~ 0, 7. It will consist of four
 questions, each one worth ~50 points~.
++ ~FINAL~: <2026-05-12 Tue 8:00> AM. Room: ~LGRT 123~.
 
 ** Worksheets (~200 points~)
 Sometimes, there will be a graded in-class worksheet that evaluates your
