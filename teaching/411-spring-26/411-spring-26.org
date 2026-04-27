@@ -11,6 +11,7 @@
 ** Instructor
 [[https://sarangop1728.github.io/][Santiago Arango-Piñeros]], Ph.D. (He/Him).
 
+
 My office is in *LGRT 1238*, and you can contact me via email at:
 + ~sarangopiner@umass.edu~.
 
@@ -109,7 +110,7 @@ work on problems with other students.
 + ~PSET4~: The isomorphism theorems ([[https://www.dropbox.com/scl/fi/f3163uprv0fxm4thy72hk/pset4.pdf?rlkey=9b1peazeg6l131ohybogzuerc&dl=0][~pdf~]])([[https://www.dropbox.com/scl/fi/hee9mm14r98g89cv7lpaw/pset4-solution.pdf?rlkey=5pehee7boftvtxehidq8ahcag&dl=0][~solution~]])
 + ~PSET5~: Direct and semidirect products ([[https://www.dropbox.com/scl/fi/wr5i7ci600fwxcuzdpjtb/pset5.pdf?rlkey=doky4q7bjl9gtmo03iu3774x1&dl=0][~pdf~]])
 + ~PSET6~: Finitely generated abelian groups ([[https://www.dropbox.com/scl/fi/2pyhr73z9d4z0ev9wcoj0/pset6.pdf?rlkey=hy2qxhe7d8ldtd8dplopfip2a&dl=0][~pdf~]])
-+ ~PSET7~: Group actions and the Sylow theorems
++ ~PSET7~: Group actions and the Sylow theorems ([[https://www.dropbox.com/scl/fi/9j61gn6zdeohtkmzvr5sf/pset7.pdf?rlkey=tdc0c2wo3bhsw2u6d9llwr9jf&dl=0][~pdf~]])
 
 ** Midterm exams (~600 points~)
 There will be three midterm exams, each one worth ~200 points~. Each exam will

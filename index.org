@@ -114,7 +114,9 @@ The =pdf= versions are updated more frequently.
   href="https://sites.google.com/view/changho-han/">Changho Han</a>, <a
   href="https://sites.google.com/view/oanapadurariu/home">Oana Padurariu</a>, and
   <a href="https://sites.google.com/wisc.edu/spark483">Sun Woo
-  Park</a>. <br> (<a href="http://arxiv.org/abs/2504.07750"
+  Park</a>.
+  <br> To appear in the <a class="journal">Journal of the London Mathematical Society</a>.<br>
+  <a href="http://arxiv.org/abs/2504.07750"
   class="arxiv">2504.07750</a>, <a href="https://github.com/sarangop1728/counting-5-isogenies"
   class="code">code</a>)
   </div>
