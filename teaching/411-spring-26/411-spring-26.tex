@@ -1,0 +1,568 @@
+% Created 2026-05-25 Mon 06:38
+% Intended LaTeX compiler: pdflatex
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\author{Santiago Arango-Piñeros}
+\date{2026-02-12}
+\title{Math 411 - Spring 2026\\\medskip
+\large Introduction to Abstract Algebra 1}
+\hypersetup{
+ pdfauthor={Santiago Arango-Piñeros},
+ pdftitle={Math 411 - Spring 2026},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 29.4 (Org mode 9.6.15)}, 
+ pdflang={English}}
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+
+\section*{Coordinates}
+\label{sec:org0545789}
+\subsection*{Instructor}
+\label{sec:org7ea8ca7}
+\href{https://sarangop1728.github.io/}{Santiago Arango-Piñeros}, Ph.D. (He/Him).
+
+
+My office is in \textbf{LGRT 1238}, and you can contact me via email at:
+\begin{itemize}
+\item \texttt{sarangopiner@umass.edu}.
+\end{itemize}
+
+\subsection*{Teaching Assistants}
+\label{sec:orgcf889b9}
+\begin{itemize}
+\item Natalie Welling (\texttt{nwelling@umass.edu})
+\item Sam Silver (\texttt{samuelsilver@umass.edu})
+\end{itemize}
+
+\subsection*{Lectures}
+\label{sec:org45fc277}
+\begin{center}
+\begin{tabular}{l|l|l|l}
+\hline
+Section & Days & Time & Place\\[0pt]
+\hline
+02-LEC (80294) & Mo, We & 4:00 PM - 5:15 PM & LGRT 171\\[0pt]
+03-LEC (85426) & Mo, We & 5:30 PM - 6:45 PM & LGRT 171\\[0pt]
+\hline
+\end{tabular}
+\end{center}
+
+\subsection*{Office hours}
+\label{sec:org41a2627}
+
+If you are planning on coming to my office hours, I'd appreciate an email
+letting me know that you are planning to attend.
+
+\begin{center}
+\begin{tabular}{l|l|l|l}
+\hline
+Days & Time & Place & By\\[0pt]
+\hline
+Mo, We & 3:00 PM - 3:50 PM & LGRT 1238 & Santiago\\[0pt]
+Fri & 2:00 PM - 3:50 PM & LGRT 1522 & Natalie and Sam\\[0pt]
+\hline
+\end{tabular}
+\end{center}
+
+
+If the times above are not convenient, or if you would like to discuss a
+private matter, send me an email.
+
+\section*{Course description}
+\label{sec:org916bda7}
+The focus of the course will be on studying \emph{groups}. These are algebraic
+structures that capture the notion of symmetry. Groups are ubiquitous in all
+areas of mathematics and the world around us (see \hyperref[sec:org7bb381f]{these links}). If you commit
+to this class, you will master the essential concepts of group theory outlined
+in the \hyperref[sec:org2102cd8]{learning objectives} by the end of the course.
+\subsection*{Prerequisites}
+\label{sec:org278d2a4}
+\textbf{MATH 235} and either \textbf{CMPSCI 250} or \textbf{MATH 300}. In other words, we will need
+some important concepts from linear algebra, and there will be an emphasis on
+proofs and the development of precise mathematical reasoning and writing.
+
+\subsection*{Textbook}
+\label{sec:orgba38f80}
+\begin{itemize}
+\item \textbf{\emph{Algebra: Abstract and Concrete}} by Frederick M. Goodman. The book is
+freely available for download at the \href{https://homepage.divms.uiowa.edu/\~goodman/algebrabook.dir/algebrabook.html}{author's website}.
+\item As a complement to the textbook, we will use some of \href{https://kconrad.math.uconn.edu/blurbs/}{Keith Conrad's blurbs} on
+group theory.
+\item Every textbook has strengths and weaknesses. You might find it useful to
+complement your reading with the following resources:
+\begin{itemize}
+\item Aluffi, \href{https://bookstore.ams.org/gsm-104}{\emph{Algebra: Chapter 0}}.
+\item Dummit and Foote, \href{https://books.google.com.co/books/about/Abstract\_Algebra.html?id=KJDBQgAACAAJ\&redir\_esc=y}{\emph{Abstract Algebra}}.
+\item Macauley, \href{https://www.math.clemson.edu/\~macaule/visualalgebra.html}{\emph{Visual Algebra}}.
+\item Terras, \href{https://books.google.com.co/books/about/Abstract\_Algebra\_with\_Applications.html?id=znWIDwAAQBAJ\&redir\_esc=y}{\emph{Abstract Algebra with Applications}}.
+\item Rotman, \href{https://books.google.com.co/books/about/A\_First\_Course\_in\_Abstract\_Algebra.html?id=ctEZAQAAIAAJ\&redir\_esc=y}{\emph{A First Course in Abstract Algebra}}.
+\end{itemize}
+\end{itemize}
+
+\subsection*{Learning objectives}
+\label{sec:org2102cd8}
+
+\begin{enumerate}
+\item To learn the fundamental examples of groups. In this class, these are:
+\begin{itemize}
+\item The finitely generated abelian groups. In particular, the cyclic groups
+\(\mathbb{Z}\) and \(\mathbb{Z}/n\mathbb{Z}\).
+\item The dihedral groups \(D_{n}.\)
+\item The symmetric group \(S_{n}.\)
+\item The alternating group \(A_{n}.\)
+\item The matrix groups \(\mathrm{SO}_2(\mathbb{R}), \mathrm{SO}_3(\mathbb{R}),
+     \mathrm{GL}_2(R)\), and \(\mathrm{SL}_2(R)\) for \(R = \mathbb{Z}/n\mathbb{Z}, \mathbb{R}\).
+\item The affine groups \(\mathrm{Aff}_2(R)\) for \(R =
+     \mathbb{Z}/n\mathbb{Z}, \mathbb{R}\).
+\end{itemize}
+
+\item To learn the axiomatic definition of a group and how to use it to prove
+basic properties.
+\item To learn the concepts of subgroups, cosets, quotients, and how to combine
+these to derive Lagrange’s theorem.
+\item To learn the concepts of homomorphisms and isomorphisms and Noether's
+isomorphism theorems.
+\item To understand the structure theorem of finitely generated abelian groups in
+terms of the Smith normal form of a matrix with integer coefficients.
+\item To learn what it means for a group to act on a set as well as the
+natural actions of each of the fundamental examples.
+\item To understand how to use the Sylow theorems.
+\end{enumerate}
+
+\subsection*{Homework}
+\label{sec:org06b116b}
+Homework assignments are a key component of this class. Even though they won't
+be graded, the midterm exams will be based on the homework problems. \uline{It is in
+your best interest to invest considerable time thinking about the homework
+problems.}
+
+Collaboration with other students is highly encouraged! Come to office hours to
+work on problems with other students.
+
+\begin{itemize}
+\item \texttt{PSET0}: Back to basics (\href{https://www.dropbox.com/scl/fi/9cq8i56k0c4l8zxx5vrtt/pset0.pdf?rlkey=g8g80z674b1ywms2kkcddybg4\&dl=0}{\texttt{pdf}})
+\item \texttt{PSET1}: Some examples of groups (\href{https://www.dropbox.com/scl/fi/t1cjodyterp1oi2o4xy1r/pset1.pdf?rlkey=p1spc9zhe18088o06lj5nu0e4\&dl=0}{\texttt{pdf}})(\href{https://www.dropbox.com/scl/fi/c7bftc22bv2utfx8neqsc/pset1-sol.pdf?rlkey=1kfofy7f0njfstujkcjyckuc6\&dl=0}{\texttt{solution}})
+\item \texttt{PSET2}: Basic properties of groups (\href{https://www.dropbox.com/scl/fi/vmtjxwrqpgkuptwz8lywx/pset2.pdf?rlkey=nkuqr7ux74kakw2ffh57i7qax\&dl=0}{\texttt{pdf}})(\href{https://www.dropbox.com/scl/fi/zv651hjibk52ferk4sd7v/pset2-sol.pdf?rlkey=vgvuik1w9apj73wp7cbh26lsu\&dl=0}{\texttt{solution}})
+\item \texttt{PSET3}: Cosets and Lagrange's theorem (\href{https://www.dropbox.com/scl/fi/qq8t6s1cnw7cqcjg6hgdk/pset3.pdf?rlkey=opzttzka6v2it3tg3w5rgflnu\&dl=0}{\texttt{pdf}})(\href{https://www.dropbox.com/scl/fi/v56wvste1kscud3fols0d/pset3-solution.pdf?rlkey=9wj2ndb083zenxw0iv5vuwiw9\&dl=0}{\texttt{solution}})
+\item \texttt{PSET4}: The isomorphism theorems (\href{https://www.dropbox.com/scl/fi/f3163uprv0fxm4thy72hk/pset4.pdf?rlkey=9b1peazeg6l131ohybogzuerc\&dl=0}{\texttt{pdf}})(\href{https://www.dropbox.com/scl/fi/hee9mm14r98g89cv7lpaw/pset4-solution.pdf?rlkey=5pehee7boftvtxehidq8ahcag\&dl=0}{\texttt{solution}})
+\item \texttt{PSET5}: Direct and semidirect products (\href{https://www.dropbox.com/scl/fi/wr5i7ci600fwxcuzdpjtb/pset5.pdf?rlkey=doky4q7bjl9gtmo03iu3774x1\&dl=0}{\texttt{pdf}})
+\item \texttt{PSET6}: Finitely generated abelian groups (\href{https://www.dropbox.com/scl/fi/2pyhr73z9d4z0ev9wcoj0/pset6.pdf?rlkey=hy2qxhe7d8ldtd8dplopfip2a\&dl=0}{\texttt{pdf}})
+\item \texttt{PSET7}: Group actions and the Sylow theorems (\href{https://www.dropbox.com/scl/fi/9j61gn6zdeohtkmzvr5sf/pset7.pdf?rlkey=tdc0c2wo3bhsw2u6d9llwr9jf\&dl=0}{\texttt{pdf}})
+\end{itemize}
+
+\subsection*{Midterm exams (\texttt{600 points})}
+\label{sec:org3a54746}
+There will be three midterm exams, each one worth \texttt{200 points}. Each exam will
+have 5 questions, each one worth \texttt{40 points}. \textbf{Question 1} will ask you to
+define a concept or state an important theorem. \textbf{Question 2} will ask you to
+prove a result (of reasonable difficulty) from the corresponding lectures.
+\textbf{Question 3} will consist of five \emph{True} or \emph{False} questions, with no
+justification needed. \textbf{Question 4} will ask you to perform a computation, and
+\textbf{Question 5} will be a new problem closely related to the corresponding
+\texttt{PSETs}. The midterms will be held on Wednesday evenings.
+
+\begin{itemize}
+\item \texttt{EXAM1}: Emphasis on lectures 1–7 and \texttt{PSETs} 0, 1, 2. \textit{<2026-02-25 Wed 19:00>}.
+Room: \texttt{LGRC A301}. (\href{https://www.dropbox.com/scl/fi/5idb8pu63uolnypv7mgof/exam1v1solution.pdf?rlkey=rpr12umksg62hd2d426a94zuo\&dl=0}{\texttt{solution}})
+\item \texttt{EXAM2}: Emphasis on lectures 6–10 and \texttt{PSETs} 0, 3, 4. \textit{<2026-03-25 Wed 19:00>}.
+Room: \texttt{LGRC A301}. (\href{https://www.dropbox.com/scl/fi/685wheuhivq2iiyaerdb1/solution-e2v2.pdf?rlkey=denrm1nqf6g2lj4wkf26i3xkd\&dl=0}{\texttt{solution}})
+\item \texttt{EXAM3}: Emphasis on lectures 11–15 and \texttt{PSETs} 0, 5, 6.
+\textit{<2026-04-15 Wed 19:00>}. Room: \texttt{GSMN 51}. (\href{https://www.dropbox.com/scl/fi/karhbg31bksh91n3iq76o/exam3v1-solution.pdf?rlkey=ng6wg3pnabgg40g20nzu22dfw\&dl=0}{\texttt{solution}})
+\end{itemize}
+
+See the \hyperref[sec:org3afed50]{``Mistakes were made'' policy} below.
+
+\subsection*{Final exam (\texttt{200 points})}
+\label{sec:org3be0c72}
+This exam evaluates the contents of all lectures and all \texttt{PSETs}, with a
+special focus on lectures 17–20 and \texttt{PSETs} 0, 7. It will consist of four
+questions, each one worth \texttt{50 points}.
+\begin{itemize}
+\item \texttt{FINAL}: \textit{<2026-05-12 Tue 08:00> } AM. Room: \texttt{LGRT 123}.
+\end{itemize}
+
+\subsection*{Worksheets (\texttt{200 points})}
+\label{sec:orgb6a35bd}
+Sometimes, there will be a graded in-class worksheet that evaluates your
+understanding of the topics covered during the lecture. I will explain the
+solutions at the end of the class, and grade the worksheets only for
+completion. If you don't turn in your worksheet, you will get a score of zero.
+There are no make-up worksheets, but the 3 lowest scores will be dropped.
+
+\section*{Grades}
+\label{sec:orge9f43d9}
+The perfect final grade is \texttt{1000 points}. To compute your grade, add the scores
+obtained in your midterm exams, final exam, and worksheets, and consult the
+following tables.
+
+\begin{center}
+\begin{tabular}{l|lllll}
+\textbf{Grade} & A & A\(-\) & B\(+\) & B & B\(-\)\\[0pt]
+\hline
+\texttt{points} & \([930,1000]\) & \([900,930)\) & \([870,900)\) & \([830,870)\) & \([800,830)\)\\[0pt]
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tabular}{l|llllll}
+\textbf{Grade} & C\(+\) & C & C\(-\) & D\(+\) & D & F\\[0pt]
+\hline
+\texttt{points} & \([770,800)\) & \([730,770)\) & \([700,730)\) & \([670,700)\) & \([600,670)\) & \([0,600)\)\\[0pt]
+\end{tabular}
+\end{center}
+
+\subsection*{Mistakes were made policy}
+\label{sec:org3afed50}
+With the intention of rewarding behaviors that promote learning, students may
+submit corrections to \texttt{EXAM1}, \texttt{EXAM2}, and \texttt{EXAM3} to \uline{earn back up to 80\% of
+the points lost}.
+
+\subsubsection*{Prerequisite: submit a summary}
+\label{sec:orgc19dafe}
+To qualify to submit corrections, a student must submit a signed handwritten
+summary of the topics assessed on the corresponding exam. The summary must be
+uploaded to \textbf{Gradescope} before the scheduled exam.
+\begin{itemize}
+\item Students taking the exam at a different time, for whatever reason, must still
+submit their summaries before the original scheduled exam.
+\end{itemize}
+
+\subsubsection*{Submitting corrections}
+\label{sec:org31c1b1b}
+Corrections are due exactly two weeks after the exam date and must be submitted
+through \textbf{Gradescope} before midnight.
+
+The correction for each problem must include the following.
+
+\begin{enumerate}
+\item A complete and correct explanation of your mistake.
+\item A complete and correct explanation of a solution.
+\item A discussion of what you can do to prevent making this type of mistake again
+in the future.
+\end{enumerate}
+
+\subsubsection*{Grading corrections}
+\label{sec:orgc056562}
+If the corrections comply with all the requirements listed above, they will be
+accepted and the score for the corresponding question on the exam will be
+adjusted. If the grader of the correction deems your original answer a
+\emph{reasonable attempt}, then you will get back 80\% of the points. Otherwise, you
+will get back 50\% of the points.
+
+If the corrections fail to comply with \textbf{any} of the requirements listed above
+(e.g., no summary was presented, or one of items (1), (2), or (3) was not
+answered to the grader’s satisfaction), the corrections will be rejected and
+the score for the corresponding question on the exam will \textbf{not} be adjusted.
+
+\section*{Topics and schedule}
+\label{sec:orgd7528bb}
+It is the student's responsibility to read the material before the lecture.
+During the lectures, we will focus on reviewing the key concepts, answering
+questions, and working on examples.
+
+\begin{center}
+\begin{tabular}{l|l|r}
+\hline
+Date & Lecture & Reading\\[0pt]
+\hline
+\textit{<2026-02-02 Mon>} & \href{https://www.dropbox.com/scl/fi/p1wxilymw0vyhqvnk3z0a/Lecture-1.pdf?rlkey=wz6pvevnvakryws6uz4t8jsgx\&st=oihmxpsu\&dl=0}{1. What is symmetry?} & 1.1 - 1.7, \href{https://kconrad.math.uconn.edu/blurbs/grouptheory/whygroups.pdf}{Blurb}\\[0pt]
+\textit{<2026-02-04 Wed>} & \href{https://www.dropbox.com/scl/fi/ye5ewjg4w53js9i9nnlqp/Lecture-2.pdf?rlkey=en0vp8k0mxcdldak8rpebqe5w\&st=q1vmzgj1\&dl=0}{2. Examples of groups} & 1.1 - 1.7\\[0pt]
+\textit{<2026-02-09 Mon>} & \href{https://www.dropbox.com/scl/fi/5fn0wkb6ejtsk79mqsjpc/Lecture-3.pdf?rlkey=2v43ltzmasna2gk3lyqmmoulk\&dl=0}{3. Abstract groups: first results} & 1.10, 2.1\\[0pt]
+\textit{<2026-02-11 Wed>} & \href{https://www.dropbox.com/scl/fi/17ji5counqyvroky0zxh7/Lecture-4.pdf?rlkey=ihh68st77av0gy3322151n05e\&dl=0}{4. Subgroups and cyclic groups} & 2.2\\[0pt]
+\textit{<2026-02-16 Mon>} & \textbf{No class} (Presidents' Day, moved to Thursday!) & \\[0pt]
+\textit{<2026-02-18 Wed>} & \href{https://www.dropbox.com/scl/fi/utckf9w72zu37yaec6f8c/Lecture-5.pdf?rlkey=fe58spmzyrto2y4xmrhr1lbh3\&dl=0}{5. Dihedral groups} & 2.3\\[0pt]
+\textit{<2026-02-19 Thu>} & \href{https://www.dropbox.com/scl/fi/c4bwzgfb771pt55lv5r7k/Lecture-6.pdf?rlkey=66e9htb7zs3mo0avx0w6bcezy\&dl=0}{6. Homomorphisms and isomorphisms} & 2.4\\[0pt]
+\textit{<2026-02-23 Mon>} & \href{https://www.dropbox.com/scl/fi/4z4br5snua92kfmkyyqha/Lecture-7.pdf?rlkey=red8npkhxxxf51qcykp1rudpy\&dl=0}{7. The sign of a permutation} & \href{https://kconrad.math.uconn.edu/blurbs/grouptheory/sign.pdf}{Blurb}\\[0pt]
+\textit{<2026-02-25 Wed>} & \textbf{Exam 1} at 7:00 PM in \texttt{LGRC A301}. (No class) & \\[0pt]
+\textit{<2026-03-02 Mon>} & \href{https://www.dropbox.com/scl/fi/c49t3qqjya7v7pc29tazj/Lecture-8.pdf?rlkey=5qmji57c31u5npkxthnpqr0ya\&dl=0}{8. Cosets} & 2.5\\[0pt]
+\textit{<2026-03-04 Wed>} & \href{https://www.dropbox.com/scl/fi/oxt143yka9abuh63wmpfd/Lecture-9.pdf?rlkey=iw757fm7u5t6e1jr5u2xlqy6h\&dl=0}{9. Lagrange's theorem} & 2.5\\[0pt]
+\textit{<2026-03-09 Mon>} & \href{https://www.dropbox.com/scl/fi/5umx9xqjvzhxw28wvecpl/Lecture-10.pdf?rlkey=7o83fhinujrhqwrodnnmg0mco\&dl=0}{10. Noether's first isomorphism theorem} & 2.7\\[0pt]
+\textit{<2026-03-11 Wed>} & 11. Noether's other isomorphism theorems & 2.7\\[0pt]
+\textit{<2026-03-16 Mon>} & \textbf{No class} (spring recess) & \\[0pt]
+\textit{<2026-03-18 Wed>} & \textbf{No class} (spring recess) & \\[0pt]
+\textit{<2026-03-23 Mon>} & \href{https://www.dropbox.com/scl/fi/yogahfmerlrevbc65y30r/Lecture-11.pdf?rlkey=w71u05arfw3kzyqiehc1ufx7d\&dl=0}{12. Direct products} & 3.1\\[0pt]
+\textit{<2026-03-25 Wed>} & \textbf{Exam 2} at 7:00 PM in \texttt{LGRC A301}. (No class) & \\[0pt]
+\textit{<2026-03-30 Mon>} & \href{https://www.dropbox.com/scl/fi/jhwp7l0ykhttzsk74jsiq/Lecture-13.pdf?rlkey=89ua250me6pwwy68oqcl830t8\&dl=0}{13. Semidirect products} & 3.2\\[0pt]
+\textit{<2026-04-01 Wed>} & \href{https://www.dropbox.com/scl/fi/qi7ztpadgkzfiei306ep2/Lecture-14.pdf?rlkey=7gsry779qqv2hq7xdxn48ebsm\&dl=0}{14. Linear algebra over the integers} & 3.5\\[0pt]
+\textit{<2026-04-06 Mon>} & \href{https://www.dropbox.com/scl/fi/fsajexd86jw6dg0bhtoyk/Lecture-14.pdf?rlkey=ihw92clet9umsnutu9reqh7qm\&dl=0}{15. Finitely generated abelian groups} & 3.6\\[0pt]
+\textit{<2026-04-08 Wed>} & \href{https://www.dropbox.com/scl/fi/2zfxo0q6uf7v2pwq5xnqs/Lecture-16.pdf?rlkey=9c7xhkeiv50d3fnq67wz5tqtm\&dl=0}{16. Elementary divisors decomposition} & 3.6\\[0pt]
+\textit{<2026-04-13 Mon>} & (Problems day) & \\[0pt]
+\textit{<2026-04-15 Wed>} & \textbf{Exam 3} at 7:00 PM in \texttt{GSMN 51}. (No class) & \\[0pt]
+\textit{<2026-04-20 Mon>} & \textbf{No class} (Patriot's Day) & \\[0pt]
+\textit{<2026-04-22 Wed>} & \href{https://www.dropbox.com/scl/fi/5qe7hwh5bejcstqb8wihe/Lecture-18.pdf?rlkey=vggwpqmhxmvyfyq5adlhdykk0\&dl=0}{17. Group actions} & 5.1\\[0pt]
+\textit{<2026-04-24 Fri>} & \href{https://www.dropbox.com/scl/fi/5e0ct4ph7dcczk7dbdblx/Lecture-19.pdf?rlkey=ai8rn33avfbgkxzsaq0udtfq7\&dl=0}{18. Counting orbits} & 5.2\\[0pt]
+\textit{<2026-04-27 Mon>} & \href{https://www.dropbox.com/scl/fi/b1lgkyzgax41va73m8dcy/Lecture-20.pdf?rlkey=2wntwn600iv1rs23altpxdm88\&dl=0}{19. Symmetries of groups} & 5.3\\[0pt]
+\textit{<2026-04-29 Wed>} & \href{https://www.dropbox.com/scl/fi/t8plgi2v2iy9i1xb38pco/Lecture-21.pdf?rlkey=swne53r5vpy94gxow1zqolqy8\&dl=0}{20. Group actions and group structure} & 5.4\\[0pt]
+\textit{<2026-05-04 Mon>} & 21. The Sylow theorems (proofs) & \href{https://kconrad.math.uconn.edu/blurbs/grouptheory/sylowpf.pdf}{Blurb}\\[0pt]
+\textit{<2026-05-06 Wed>} & 22. (Problems day) & \\[0pt]
+\hline
+\end{tabular}
+\end{center}
+
+\section*{Group theory links}
+\label{sec:org7bb381f}
+Here are some interesting Wikipedia links to various topics (in math, culture,
+and science) related to group theory. I'd be happy to chat about these during
+office hours.
+\begin{itemize}
+\item \href{https://en.wikipedia.org/wiki/Rubik\%27s\_Cube\_group}{The Rubik’s Cube Group}
+\item \href{https://en.wikipedia.org/wiki/15\_puzzle}{The 15-Puzzle}
+\item \href{https://en.wikipedia.org/wiki/Tower\_of\_Hanoi}{The Towers of Hanoi}
+\item \href{https://en.wikipedia.org/wiki/Molecular\_symmetry}{Molecular Symmetry}
+\item \href{https://en.wikipedia.org/wiki/Islamic\_geometric\_patterns}{Islamic Geometric Patterns}
+\item \href{https://en.wikipedia.org/wiki/Diffie\%E2\%80\%93Hellman\_key\_exchange}{The Diffie--Hellman Key Exchange}
+\item \href{https://en.wikipedia.org/wiki/Binary\_Golay\_code}{The binary Golay code}
+\item \href{https://en.wikipedia.org/wiki/Free\_group}{Free Groups}
+\item \href{https://en.wikipedia.org/wiki/Galois\_theory}{Galois theory}
+\item \href{https://en.wikipedia.org/wiki/Fundamental\_group}{The Fundamental Group}
+\item \href{https://en.wikipedia.org/wiki/Braid\_group}{Braids and Braid Groups}
+\item \href{https://en.wikipedia.org/wiki/Triangle\_group}{Triangle Groups}
+\item \href{https://en.wikipedia.org/wiki/Platonic\_solid}{Platonic Solids}
+\item \href{https://en.wikipedia.org/wiki/Elliptic\_curve\#The\_group\_law}{Elliptic Curves}
+\item \href{https://en.wikipedia.org/wiki/Monster\_group}{The Monster Group}
+\end{itemize}
+
+\section*{Philosophy}
+\label{sec:org3796ae3}
+\subsection*{Adopt a growth mindset}
+\label{sec:org103280e}
+Your effort and attitude determine your abilities. Embrace challenges and
+failure as an opportunity to grow. Find inspiration in other people's success.
+
+\subsection*{Learning is the student's responsibility}
+\label{sec:org64bfe04}
+Paraphrasing Galileo:
+\begin{quote}
+``You cannot teach a person \textbf{anything}; you can only help
+them find it within themselves.''
+\end{quote}
+We are all here to \uline{understand}. My job as a more experienced learner is to
+assist you on your journey. But you are responsible for investing the time and
+effort necessary to learn.
+
+\subsection*{Doing hard things}
+\label{sec:orga33472a}
+This is hard work, and it will be frustrating at times. In my opinion, the
+reward is well worth the investment, as is often the case with challenging
+endeavors. In the words of JFK:
+\begin{quote}
+``We choose to go to the Moon in this decade and do the other things, not
+because they are easy, but because they are hard; because that goal will serve
+to organize and measure the best of our energies and skills, because that
+challenge is one that we are willing to accept, one we are unwilling to
+postpone, and one we intend to win, and the others, too.''
+\end{quote}
+
+\subsection*{Everyone belongs in this classroom}
+\label{sec:org2c28e79}
+We will subscribe to \href{https://www.ams.org/publications/journals/notices/201610/rnoti-p1164.pdf}{Federico's axioms}.
+
+\begin{itemize}
+\item \textbf{Axiom 1.} Mathematical potential is equally present in different groups,
+irrespective of geographic, demographic, and economic boundaries.
+
+\item \textbf{Axiom 2.} Everyone can have joyful, meaningful, and empowering mathematical
+experiences.
+
+\item \textbf{Axiom 3.} Mathematics is a powerful, malleable tool that can be shaped and
+used differently by various communities to serve their needs.
+
+\item \textbf{Axiom 4.} Every student deserves to be treated with dignity and respect.
+\end{itemize}
+
+\section*{Administrative details}
+\label{sec:org8c84445}
+\begin{itemize}
+\item Add/drop only through SPIRE.
+\item I do not keep a waiting list, and the mathematics department staff will not
+handle these matters.
+\item Final exams are kept by the mathematics department. Copies are available upon
+request.
+\end{itemize}
+
+\subsection*{Drops, withdrawals, and incompletes}
+\label{sec:org85495ec}
+\begin{itemize}
+\item Last day to add or drop with no record: \textit{<2026-02-04 Wed>}.
+\item Last day to drop with W: \textit{<2026-04-02 Thu>}.
+\item See the \href{https://www.umass.edu/registrar/academic-calendar}{academic calendar} for other important dates.
+\item Incomplete grades are warranted only if a student is passing the course at the
+time of the request and if the course requirements can be completed by the
+end of the following semester. Read more \href{https://www.umass.edu/natural-sciences/advising/petitions-and-forms/incomplete-grade-form}{here}.
+\end{itemize}
+
+\subsection*{Make-up exam policy}
+\label{sec:org1e50294}
+You must take the regular exam unless you qualify for an official make-up exam
+approved by me, following the official make-up request procedure. Make sure you
+read and understand the make-up exam procedure.
+
+\begin{itemize}
+\item \textbf{Final exam conflict:} If you need a make-up exam due to a final exam
+schedule conflict, you must submit documentation from the Registrar's Office
+or other supporting documents at least two weeks before the scheduled exams.
+No exceptions will be made. No later than one week before the exam, you must
+submit a written request to me that includes: your name and UMass Amherst
+Student ID number, your section number, and the reason for requesting the
+make-up exam. You can request make-up exams through your SPIRE account: in
+SPIRE, go to Student Home > Final Exam Conflict.
+
+\item \textbf{Religious observance:} If you must miss an exam due to religious observance,
+you must contact me within two weeks of the beginning of the semester.
+
+\item \textbf{Medical reasons:} If you will be absent from an exam due to medical reasons,
+you must notify me at least one week in advance of the exam. If you have a
+medical emergency, you must notify me as soon as possible. In either case,
+you may need to provide documentation. You do not need to disclose personal
+details of your condition, but you must provide enough information to allow
+the absence to be excused.
+
+\item \textbf{Other circumstances:} It is impossible to anticipate all possible
+situations. In the event of an exceptional circumstance not covered above,
+you must contact me and explain the problem. You must be prepared to provide
+a written statement if necessary. I will evaluate the reasons you provide and
+make a decision.
+
+\item Note that there is \textbf{no re-taking of exams} in this course. If you are sick
+and take the exam anyway, you cannot re-take the exam later for a better
+grade. Regardless of the situation, if you do not feel you can take the exam
+on the scheduled date, you must inform me as soon as possible.
+
+\item Make-up exams will \textbf{not} be given to accommodate travel plans.
+
+\item I will ensure that taking a make-up exam does not represent any technical
+advantage. In particular, the questions will be completely different from
+those on the main exam.
+\end{itemize}
+
+\subsection*{Class attendance policy}
+\label{sec:org3da35fd}
+By UMass policy, students are expected to attend all regularly scheduled
+classes at the University for which they are registered. When planning for the
+tests and homework, I will assume that you have been following my lectures.
+That being said, I will not enforce or grade attendance. If you are not
+able to attend one of the lectures, make sure you read the notes for that
+day and talk to other students to check if you missed anything important.
+
+\subsection*{Class etiquette}
+\label{sec:org256f103}
+\begin{itemize}
+\item I expect you to be present and refrain from using your phone.
+\item Arrive on time. If you arrive late, try to minimize your disruption.
+\item Laptops and tablets are allowed during lectures, provided that you do not
+disrupt your fellow classmates or the lecture.
+\end{itemize}
+
+\subsection*{Academic dishonesty}
+\label{sec:org0df2147}
+
+Academic dishonesty includes but is not limited to: 
+\begin{itemize}
+\item \textbf{Cheating:} intentional use, and/or attempted use of trickery, artifice,
+deception, breach of confidence, fraud, and/or misrepresentation of one's
+academic work.
+\item \textbf{Fabrication:} intentional and unauthorized falsification and/or invention of
+any information or citation in any academic exercise.
+\item \textbf{Plagiarism:} knowingly representing the words or ideas of another as one's
+own work in any academic exercise. This includes submitting without citation,
+in whole or in part, prewritten term papers of another or the research of
+another, including but not limited to commercial vendors who sell or
+distribute such materials.
+\item \textbf{Facilitating dishonesty:} knowingly helping or attempting to help another
+commit an act of academic dishonesty, including substituting for another in
+an examination, or allowing others to represent as their own one's papers,
+reports, or academic works.
+\end{itemize}
+
+Formal definitions of academic dishonesty, examples of various forms of
+dishonesty, and the procedures which faculty must follow to penalize dishonesty
+are detailed on the \href{https://www.umass.edu/studentsuccess/academic-integrity}{Academic Honesty website}. Appeals must be filed within ten
+days of notification by the Academic Honesty Office that a formal charge has
+been filed by an instructor who suspects dishonesty. Contact the Academic
+Honesty Office for more information on the process. The \href{https://www.umass.edu/ombuds/}{Ombuds Office} is also
+available to support individuals engaging with the Academic Honesty process.
+The \href{https://www.umass.edu/provost/}{Provost’s Office} is where appeals are processed and filed.
+
+\section*{Required statements}
+\label{sec:org02bb353}
+\subsection*{Academic honesty statement}
+\label{sec:org25f0635}
+Since the integrity of the academic enterprise of any institution of higher
+education requires honesty in scholarship and research, academic honesty is
+required of all students at the University of Massachusetts Amherst. Academic
+dishonesty is prohibited in all programs of the University. Academic dishonesty
+includes but is not limited to: cheating, fabrication, plagiarism, and
+facilitating dishonesty. Appropriate sanctions may be imposed on any student
+who has committed an act of academic dishonesty. Instructors should take
+reasonable steps to address academic misconduct. Any person who has reason to
+believe that a student has committed academic dishonesty should bring such
+information to the attention of the appropriate course instructor as soon as
+possible. Instances of academic dishonesty not related to a specific course
+should be brought to the attention of the appropriate department head or chair.
+Since students are expected to be familiar with this policy and the commonly
+accepted standards of academic integrity, ignorance of such standards is not
+normally sufficient evidence of lack of intent
+(\url{http://www.umass.edu/dean\_students/codeofconduct/acadhonesty/}).
+
+\subsection*{Academic integrity statement}
+\label{sec:orgd144d09}
+UMass Amherst is strongly committed to academic integrity, which is defined as
+completing all academic work without cheating, lying, stealing, or receiving
+unauthorized assistance from any other person, or using any source of
+information not appropriately authorized or attributed. As a community, we hold
+each other accountable and support each other’s knowledge and understanding of
+academic integrity. Academic dishonesty is prohibited in all programs of the
+University and includes but is not limited to: cheating, fabrication,
+plagiarism, lying, and facilitating dishonesty, via analogue and digital means.
+Sanctions may be imposed on any student who has committed or participated in an
+academic integrity infraction. Any person who has reason to believe that a
+student has committed an academic integrity infraction should bring such
+information to the attention of the appropriate course instructor as soon as
+possible. All students at the University of Massachusetts Amherst have read and
+acknowledged the Commitment to Academic Integrity and are knowingly responsible
+for completing all work with integrity and in accordance with the policy:
+(\url{https://www.umass.edu/senate/book/academic-regulations-academic-integrity-policy}).
+
+\subsection*{Accommodation statement}
+\label{sec:org90ab4eb}
+The University of Massachusetts Amherst is committed to providing an equal
+educational opportunity for all students. If you have a documented physical,
+psychological, or learning disability on file with Disability Services (DS),
+you may be eligible for reasonable academic accommodations to help you succeed
+in this course. If you have a documented disability that requires an
+accommodation, please notify me within the first two weeks of the semester so
+that we may make appropriate arrangements. For further information, please
+visit Disability Services (\url{https://www.umass.edu/disability/}).
+
+\subsection*{Title IX statement}
+\label{sec:orge7923ba}
+In accordance with Title IX of the Education Amendments of 1972 that prohibits
+gender-based discrimination in educational settings that receive federal funds,
+the University of Massachusetts Amherst is committed to providing a safe
+learning environment for all students, free from all forms of discrimination,
+including sexual assault, sexual harassment, domestic violence, dating
+violence, stalking, and retaliation. This includes interactions in person or
+online through digital platforms and social media. Title IX also protects
+against discrimination on the basis of pregnancy, childbirth, false pregnancy,
+miscarriage, abortion, or related conditions, including recovery. There are
+resources on campus to support you. A summary of the available Title IX
+resources (confidential and non-confidential) can be found at the following
+link: \url{https://www.umass.edu/titleix/resources}. You do not need to make a formal
+report to access them. If you need immediate support, you are not alone. Free
+and confidential support is available 24 hours a day / 7 days a week / 365 days
+a year at the SASA Hotline 413-545-0800.
+\end{document}
