@@ -116,8 +116,12 @@ The =pdf= versions are updated more frequently.
   href="https://sites.google.com/view/oanapadurariu/home">Oana Padurariu</a>, and
   <a href="https://sites.google.com/wisc.edu/spark483">Sun Woo
   Park</a>.
-  <br> To appear in the <a class="journal">Journal of the London Mathematical Society</a>.<br>
-  (<a href="http://arxiv.org/abs/2504.07750"
+  <br><a class="journal"
+href="https://londmathsoc.onlinelibrary.wiley.com/doi/10.1112/jlms.70572">Journal
+of the London Mathematical Society</a>, <b>113</b> (2026), no. 5, e70572. <br>
+  (<a
+href="https://londmathsoc.onlinelibrary.wiley.com/doi/10.1112/jlms.70572">DOI</a>,
+<a href="http://arxiv.org/abs/2504.07750"
   class="arxiv">2504.07750</a>, <a href="https://github.com/sarangop1728/counting-5-isogenies"
   class="code">code</a>)
   </div>
