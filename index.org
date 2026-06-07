@@ -221,3 +221,5 @@ href="https://londmathsoc.onlinelibrary.wiley.com/doi/10.1112/jlms.70572">DOI</a
  </ol>
 #+end_export
 
+* Invited talks
++ <2026-06-07 Sun> [[https://ctnt-summer.math.uconn.edu/conference-26/][Connecticut Summer School In Number Theory (CTNT)]]. ([[https://www.dropbox.com/scl/fi/77z9jyvqcr2cznhid7rb0/CTNT-2026.pdf?rlkey=nqetcd6om7jq1sxsmhb5nxna4&dl=0][Slides]])
