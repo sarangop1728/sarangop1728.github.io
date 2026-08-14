@@ -1,88 +1,340 @@
-/* === Simplified Orgmode CSS (responsive version with collapsible TOC and specialized link colors) === */
+/* ============================================================================
+   Orgmode CSS — mobile-first, dark-mode aware, LaTeX + code friendly.
+   The previous version is recoverable with: git show 6c9265f:org-css.css
 
+   IMPORTANT: Org inlines its own ~184-line default <style> block ABOVE this
+   file in every exported page. This sheet wins on equal specificity, but
+   anything not named here leaks through. Rules marked [OVERRIDE] exist
+   specifically to neutralise an Org default.
+   ========================================================================= */
+
+
+/* === 1. Tokens — light (default) ========================================= */
 
 :root {
-  --body-color: #34495e;
-  --heading-color: black;
-  --link-color: #2a8ac0;
-  --background: #f8f9f9;
+  /* Type */
+  --font-serif: Charter, "Bitstream Charter", "Sitka Text", Cambria, Georgia, serif;
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+               "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "SF Mono", Menlo, Consolas, "DejaVu Sans Mono", monospace;
+
+  /* Surfaces */
+  --bg-page: #ffffff;
+  --bg-card: #f8f9f9;
+  --bg-code: #f2f2f2;
+  --bg-toc: #ffffff;
+  --bg-th: #111318;
+
+  /* Ink */
+  --text: #34495e;
+  --text-muted: #6b7c8f;
+  --heading: #111318;
+  --text-th: #ffffff;
+
+  /* Lines */
+  --rule: #dddddd;
+  --border: #d0d7de;
+  --shadow: rgba(0, 0, 0, 0.1);
+  --shadow-strong: rgba(0, 0, 0, 0.15);
+
+  /* Links */
+  --link: #2a8ac0;
+  --link-journal: #fe935c;
+  --link-code: #20c741;
+  --link-mr: #000080;
+  --link-arxiv: #f46974;
+
+  /* Syntax highlighting (htmlize, css output type) */
+  --syn-keyword: #a626a4;
+  --syn-string: #50a14f;
+  --syn-comment: #8a9199;
+  --syn-function: #4078f2;
+  --syn-variable: #986801;
+  --syn-constant: #0184bc;
+  --syn-type: #c18401;
+  --syn-builtin: #b76b01;
+  --syn-preprocessor: #a626a4;
+  --syn-doc: #50a14f;
 }
 
-/* === Base styles === */
+
+/* === 2. Tokens — dark ==================================================== */
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-page: #14171c;
+    --bg-card: #1b1f26;
+    --bg-code: #12151b;
+    --bg-toc: #22272f;
+    --bg-th: #2d333b;
+
+    --text: #c9d1d9;
+    --text-muted: #8b949e;
+    --heading: #e8edf3;
+    --text-th: #e8edf3;
+
+    --rule: #30363d;
+    --border: #30363d;
+    --shadow: rgba(0, 0, 0, 0.5);
+    --shadow-strong: rgba(0, 0, 0, 0.65);
+
+    --link: #6bb8e8;
+    --link-journal: #ffab73;
+    --link-code: #56d364;
+    --link-mr: #8fa8ff;   /* #000080 is unreadable on a dark ground */
+    --link-arxiv: #ff8f96;
+
+    --syn-keyword: #c678dd;
+    --syn-string: #98c379;
+    --syn-comment: #7f8c98;
+    --syn-function: #61afef;
+    --syn-variable: #e5c07b;
+    --syn-constant: #56b6c2;
+    --syn-type: #e5c07b;
+    --syn-builtin: #d19a66;
+    --syn-preprocessor: #c678dd;
+    --syn-doc: #98c379;
+  }
+}
+
+
+/* === 3. Base ============================================================= */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  -webkit-text-size-adjust: 100%;   /* stop iOS inflating text in landscape */
+}
+
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  color: var(--body-color);
-  background-color: white;
+  font-family: var(--font-serif);
+  color: var(--text);
+  background-color: var(--bg-page);
   margin: 0;
   padding: 0;
   line-height: 1.6;
   font-size: 1rem;
 }
 
-/* === Main content container === */
+/* Long arXiv / ScienceDirect / Dropbox URLs must not force the page sideways
+   on a phone. Deliberately NOT applied to every <a>: the 714/411 pages have
+   inline math inside links (`Surjectivity of mod \(2^n\) representations`),
+   and `anywhere` would break MathJax's min-content sizing there. */
+p, li, dd, td, th { overflow-wrap: break-word; }
+.paper-meta a, #postamble a { overflow-wrap: anywhere; }
+
+
+/* === 4. Main content container =========================================== */
+
 #content {
-  background: var(--background);
+  background: var(--bg-card);
   border-radius: 12px;
   max-width: 900px;
-  margin: 2rem auto;
-  padding: 2rem;
+  /* was: margin 2rem auto (zero horizontal inset) + flat 2rem padding */
+  margin: clamp(0.75rem, 3vw, 2rem) auto;
+  padding: clamp(1rem, 4vw, 2rem);
   box-sizing: border-box;
-  border:solid;
+  /* was: `border: solid` → 3px of currentColor */
+  border: 1px solid var(--border);
 }
 
-/* === Titles === */
+
+/* === 5. Titles and headings ============================================== */
+
 .title {
+  font-family: var(--font-sans);
   font-size: clamp(1.5rem, 5vw, 3rem);
   line-height: 1.2;
   margin-top: 0;
-  color: var(--heading-color);
+  color: var(--heading);
 }
 
-/* === Headings === */
-h1, h2, h3, h4 {
-  color: var(--heading-color);
+.subtitle { color: var(--text-muted); }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-sans);
+  color: var(--heading);
   margin-top: 1.5em;
+  line-height: 1.25;
 }
+
 h2 {
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid var(--rule);
   padding-bottom: 0.3em;
 }
 
-/* === Links === */
-a { color: var(--link-color); text-decoration: none; }
+
+/* === 6. Links ============================================================ */
+
+a { color: var(--link); text-decoration: none; }
 a:hover { text-decoration: underline; }
 
-
-
-
-
-
-
- 
-
 /* Specialized link colors */
-a.journal { color: #fe935c; }
-a.journal:hover { color: var(--body-color); }
-a.code { color: #20c741; }
-a.code:hover { color: var(--body-color); }
-a.mr { color: #000080; }
-a.mr:hover { color: var(--body-color); }
-a.arxiv { color: #f46974; }
-a.arxiv:hover { color: var(--body-color); }
+a.journal { color: var(--link-journal); }
+a.code    { color: var(--link-code); }
+a.mr      { color: var(--link-mr); }
+a.arxiv   { color: var(--link-arxiv); }
 
-/* === Tables === */
-table { width: 100%; border-collapse: collapse; margin: 1em 0; border:solid;}
-th, td { border: 1px solid #ccc; padding: 0.5em; text-align: left; }
-th { background-color: var(--heading-color); color: white; }
+a.journal:hover,
+a.code:hover,
+a.mr:hover,
+a.arxiv:hover { color: var(--text); }
 
-/* === Code blocks === */
-pre, code { font-family: Menlo, monospace; background: #f2f2f2; border-radius: 6px; }
-pre { padding: 1em; overflow-x: auto; }
+/* Replaces the two dead selectors in v1 (Org emits no <details>/<summary>) */
+a:focus-visible,
+summary:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--link);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
 
-/* === Images === */
-img { max-width: 100%; height: auto; border-radius: 8px; border: 1px solid #ddd; }
 
-/* === Reference grid for papers === */
+/* === 7. Tables =========================================================== */
+
+/* Org emits presentational attributes on every table:
+   <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+   Those are presentation hints, so ordinary CSS beats them without re-exporting. */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1em 0;
+  border: 1px solid var(--border);
+  background: var(--bg-page);
+}
+
+th, td {
+  border: 1px solid var(--rule);
+  padding: 0.5em;
+  text-align: left;
+}
+
+th {
+  background-color: var(--bg-th);
+  color: var(--text-th);
+  font-family: var(--font-sans);
+}
+
+
+/* === 8. Code blocks ====================================================== */
+
+/* [OVERRIDE] Org default: pre { border:1px solid #e6e6e6; margin:1.2em; padding:8pt }
+   The 1.2em is a margin on ALL FOUR sides — it is the stray left indent on every
+   code block. Set on bare `pre` (not pre.src) so it also covers pre.example. */
+pre {
+  font-family: var(--font-mono);
+  background: var(--bg-code);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  margin: 1.25em 0;
+  padding: 1em;
+  line-height: 1.45;
+  tab-size: 2;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* [OVERRIDE] Org default: pre.src { position: relative; overflow: auto } at
+   specificity (0,1,1) — a bare `pre` selector cannot beat it, so scrolling has
+   to be re-stated here. overflow-y:hidden stops a spurious vertical scrollbar. */
+pre.src {
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+/* Org's default language-label list has no `src-m` entry, so every Magma block
+   in misc/computations.html currently shows a blank label on hover. */
+pre.src-m::before { content: 'Magma'; }
+
+pre.src::before {
+  color: var(--text-muted);
+  background-color: var(--bg-code);
+  font-family: var(--font-sans);
+  font-size: 0.75em;
+  border-radius: 4px;
+}
+
+/* Inline code */
+code {
+  font-family: var(--font-mono);
+  background: var(--bg-code);
+  border-radius: 4px;
+  padding: 0.15em 0.35em;
+  font-size: 0.9em;
+}
+
+/* ...but not code inside a pre (double background, double padding) */
+pre code {
+  background: none;
+  padding: 0;
+  border-radius: 0;
+  font-size: inherit;
+}
+
+
+/* === 9. Syntax highlighting ==============================================
+   Requires, in YOUR Emacs (not this repo):
+     M-x package-install RET htmlize RET
+     (setq org-html-htmlize-output-type 'css)
+   The default 'inline-css bakes literal colors into the HTML, which would
+   ignore this palette and break in dark mode.
+   Note: Magma (`m`) has no Emacs major mode, so those blocks stay plain.
+   ========================================================================= */
+
+.org-keyword            { color: var(--syn-keyword); }
+.org-string             { color: var(--syn-string); }
+.org-comment            { color: var(--syn-comment); font-style: italic; }
+.org-comment-delimiter  { color: var(--syn-comment); }
+.org-function-name      { color: var(--syn-function); }
+.org-variable-name      { color: var(--syn-variable); }
+.org-constant           { color: var(--syn-constant); }
+.org-type               { color: var(--syn-type); }
+.org-builtin            { color: var(--syn-builtin); }
+.org-preprocessor       { color: var(--syn-preprocessor); }
+.org-doc                { color: var(--syn-doc); }
+.org-negation-char      { color: var(--syn-keyword); }
+.org-rainbow-delimiters-depth-1,
+.org-rainbow-delimiters-depth-2,
+.org-rainbow-delimiters-depth-3 { color: inherit; }
+.linenr                 { color: var(--text-muted); }
+
+
+/* === 10. LaTeX / MathJax =================================================
+   MathJax injects its own <style> at RUNTIME, i.e. last in the cascade, so
+   these need the #content prefix (specificity 1,2,0) to win reliably.
+   CHTML inherits currentColor, so dark mode needs no extra math rules.
+   ========================================================================= */
+
+#content mjx-container { max-width: 100%; }
+
+#content mjx-container[display] {
+  overflow-x: auto;
+  overflow-y: hidden;
+  /* keeps the scrollbar off the descenders */
+  padding-block: 0.35em;
+}
+
+/* Math appears inside <th> and <a> on the 714/411 pages — make sure nothing
+   in §8 catches it. */
+th mjx-container,
+a mjx-container { background: none; }
+
+
+/* === 11. Images ========================================================== */
+
+img { max-width: 100%; height: auto; }
+
+/* v1 put a border + radius on EVERY image on the site, including the headshot */
+.paper-image img,
+.figure img {
+  border-radius: 8px;
+}
+
+.figure img { border: 1px solid var(--border); }
+
+
+/* === 12. Reference grid for papers ======================================= */
+
 .ref-container {
   display: grid;
   grid-template-columns: 6fr 1fr;
@@ -90,74 +342,91 @@ img { max-width: 100%; height: auto; border-radius: 8px; border: 1px solid #ddd;
   align-items: start;
   margin: 1.5rem 0;
 }
+
 .paper-image img {
   max-width: 160px;
   width: 100%;
   height: auto;
-  border: 2px solid var(--body-color);
-  border-radius: 8px;
+  border: 2px solid var(--border);
   display: block;
+  /* The thumbnails are white-background plots. A white mat in BOTH themes
+     reads as a deliberate card, instead of a blown-out rectangle in dark mode.
+     (filter: invert() is not an option — it destroys colored plot lines.) */
+  background: #ffffff;
+  padding: 4px;
 }
 
-/* === Hover-revealed Table of Contents === */
+.paper-list { padding-left: 1.5rem; }
+.paper-meta > b:first-child { color: var(--heading); }
+
+
+/* === 13. Table of Contents ===============================================
+   Org emits <div id="table-of-contents"><h2>…</h2><div id="text-table-of-contents">
+   — there is no <details>/<summary>, so v1's `details#table-of-contents summary:focus`
+   and `.toc-header:focus` rules could never match. Removed.
+   ========================================================================= */
+
 #table-of-contents {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
   position: sticky;
   top: 1rem;
-  background: white;
+  background: var(--bg-toc);
+  border: 1px solid var(--border);
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  box-shadow: 0 0 10px var(--shadow);
   padding: 0.5rem 1rem;
   margin-bottom: 2rem;
-  /* max-width: 260px; */
   transition: all 0.3s ease;
   overflow: hidden;
 }
 
-/* Keep only the title visible initially */
 #table-of-contents h2 {
+  font-family: var(--font-sans);
   margin: 0;
   text-align: center;
   border-bottom: none;
   font-size: 1rem;
   font-weight: 600;
-  color: var(--heading-color);
+  color: var(--heading);
   cursor: pointer;
 }
 
-/* Hide the actual list by default */
+/* Collapsed by default. max-height/opacity (not visibility:hidden) keeps the
+   links focusable, which is what makes :focus-within below work for keyboards. */
 #text-table-of-contents {
   max-height: 0;
-  overflow: scroll;
+  overflow: auto;   /* was `scroll` — avoids a permanent scrollbar gutter */
   opacity: 0;
   transition: max-height 0.3s ease, opacity 0.3s ease;
 }
 
-/* Reveal the list on hover */
-#table-of-contents:hover #text-table-of-contents {
-  max-height: 500px;   /* enough to show all items */
+#table-of-contents:hover #text-table-of-contents,
+#table-of-contents:focus-within #text-table-of-contents {
+  max-height: 500px;
   opacity: 1;
 }
 
-/* Make the container grow slightly on hover */
-#table-of-contents:hover {
-  box-shadow: 0 0 15px rgba(0,0,0,0.15);
+#table-of-contents:hover,
+#table-of-contents:focus-within {
+  box-shadow: 0 0 15px var(--shadow-strong);
   padding-bottom: 1rem;
 }
 
-/* Optional: add an arrow indicator to the heading */
-#table-of-contents h2::after {
-  /* content: "▾"; */
-  font-size: 0.9rem;
-  margin-left: 0.4em;
-  color: var(--link-color);
-  transition: transform 0.2s;
-}
-#table-of-contents:hover h2::after {
-  transform: rotate(180deg);
+
+/* === 14. Footer ========================================================== */
+
+#postamble {
+  font-size: 0.8rem;
+  text-align: center;
+  color: var(--text-muted);
+  margin: 2rem 0;
 }
 
-/* === Responsive adjustments === */
-@media (max-width: 900px) {
+
+/* === 15. Tablet ========================================================== */
+
+@media (max-width: 56rem) {
   #table-of-contents {
     position: static;
     max-width: none;
@@ -166,15 +435,72 @@ img { max-width: 100%; height: auto; border-radius: 8px; border: 1px solid #ddd;
 }
 
 
-/* === Footer === */
-#postamble {
-  font-size: 0.8rem;
-  text-align: center;
-  color: #777;
-  margin: 2rem 0;
+/* === 16. Phone =========================================================== */
+
+@media (max-width: 40rem) {
+
+  /* --- TOC: a hover-gated control has no touch equivalent. Show it. --- */
+  #text-table-of-contents {
+    max-height: none;
+    opacity: 1;
+    overflow: visible;
+    transition: none;
+  }
+  #table-of-contents { padding-bottom: 1rem; }
+  #table-of-contents h2 { cursor: default; }
+
+  /* --- Reclaim the ~40px browser default on every bullet --- */
+  ol, ul { padding-left: 1.25rem; }
+  .paper-list { padding-left: 1.15rem; }
+
+  /* --- Tables scroll inside their own box instead of dragging the page.
+         TRADEOFF: display:block means width:100% no longer applies, so tables
+         become shrink-to-fit. Org gives no wrapper element to scroll instead.
+         Width is left `auto`: `width: max-content` here interacts badly with
+     `border-collapse: collapse` on a display:block box (Safari drops the
+     collapsed borders and mis-sizes the scroll container). --- */
+  table {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* --- Code: fit more Magma before scrolling --- */
+  pre { font-size: 0.85em; padding: 0.75em; }
+
+  /* --- Papers stack: text over thumbnail --- */
+  .ref-container { grid-template-columns: 1fr; gap: 0.75rem; }
+  .paper-image img { max-width: 140px; margin-inline: auto; }
+
+  /* --- Headshot: Org emits
+         <div class="figure"><p><img align="right" width="200px"></p></div>
+         `align="right"` is a float hint; drop it and let Org's own
+         `.figure p { text-align: center }` centre the image. --- */
+  .figure { padding: 0; }
+  img[align="right"], img[align="left"] { float: none; }
 }
 
-/* Accessibility: focus outline for keyboard users */
-details#table-of-contents summary:focus,
-.toc-header:focus { outline: 3px solid rgba(26,117,149,0.15); outline-offset: 3px; }
 
+/* === 17. Motion / print ================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
+
+@media print {
+  #table-of-contents, #postamble { display: none; }
+  #content {
+    max-width: none;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: none;
+    box-shadow: none;
+  }
+  pre { white-space: pre-wrap; word-wrap: break-word; }
+  a { color: inherit; text-decoration: underline; }
+}
