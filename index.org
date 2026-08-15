@@ -9,7 +9,7 @@
 
 #+ATTR_HTML: :width 200px
 #+ATTR_HTML: :align right
-[[./images/santi-website.jpg]]
+[[./images/thumbs/santi-website.jpg]]
 
 I am a mathematician interested in Number Theory and Arithmetic
 Geometry. My pronouns are He/Him/His.
@@ -38,7 +38,7 @@ Here is my [[./documents/Santiago_Arango_Pineros_CV.pdf][CV]].
 
 * Teaching
 ** Present
-+ MATH 714: Arithmetic of Elliptic Curves (Fall 2026)
++ [[./teaching/714-fall-26/714-fall-26.org][MATH 714: Arithmetic of Elliptic Curves (Fall 2026)]]
 + MATH 132: Calculus II (Fall 2026)
 ** Past
 + [[./teaching/411-spring-26/411-spring-26.org][MATH 411: Introduction to Abstract Algebra 1 (Spring 2026)]]
@@ -54,172 +54,231 @@ Here is my [[./documents/Santiago_Arango_Pineros_CV.pdf][CV]].
   Points and Number Fields]].
   
 * Research Articles
-The =pdf= versions are updated more frequently.
-#+begin_export html
-<ol reversed>
-  <div class="ref-container">
-  <div>
-  <li><b>Counting number fields of fixed degree by their smallest defining
-  polynomial</b>, <br> with <a href="https://fabiangundlach.org">Fabian
-  Gundlach</a>, <a href="https://lemkeoliver.github.io">Robert J. Lemke
-  Oliver</a>, <a href="https://kmcgown.yourweb.csuchico.edu">Kevin J.
-  McGown</a>, <a href="https://williamsawin.com">Will Sawin</a>, <a
-  href="https://www.allechar.org">Allechar Serrano López</a>, <a
-  href="https://www.math.utoronto.ca/ashankar/">Arul Shankar</a>, and <a href="https://www.math.utoronto.ca/~ila/">Ila Varma</a>. <br>
-  (<a href="https://arxiv.org/abs/2602.06943" class="arxiv">2602.06943</a>)
-  </div>
-  <div class="paper-image">
-  <a href="images/flows.pdf">
-  <img src="images/flows.png" alt="Geodesic and horocycle flows">
-  </a>
-  </div>
-  <div>
-  <li><b>Counting primitive integral solutions to spherical generalized
-  Fermat equations</b>.<br> 
-  (<a href="https://arxiv.org/abs/2508.13093"
-  class="arxiv">2508.13093</a>, <a href="misc/computations.html"
-  class="code">Magma experiment</a>)
-   <br> To appear in the <a class="journal">Canadian Mathematical Bulletin</a>.<br>
-  </div>
-  <div class="paper-image">
-  <a href="images/UZ_50.png">
-  <img src="images/UZ_50.png" alt="Fermat triples">
-  </a>
-  </div>
-  
-  <div>
-  <li><b>Fermat descent</b>. <br>
-  (<a href="https://www.dropbox.com/scl/fi/ofd830zhdhxpr1wqqmubw/main.pdf?rlkey=8t1grppugzbnnx74lmskz86zq&dl=0">pdf</a>, <a href="https://arxiv.org/abs/2508.13059"
-  class="arxiv">2508.13059</a>)
-  </div>
-  <div class="paper-image">
-  <a href="images/belyi-fiber.png">
-  <img src="images/belyi-fiber.png" alt="belti-stack">
-  </a>
-  </div>
-  <div>
-  <li><b>Galois groups of simple abelian varieties over finite fields and
-  exceptional Tate classes</b>, <br> with <a href="https://samfrengley.github.io">Sam Frengley</a> and <a href="https://web.math.princeton.edu/~sameerav/">Sameera Vemulapalli</a>. <br> (<a href="http://arxiv.org/abs/2505.09589"
-  class="arxiv">2505.09589</a>, <a href="https://github.com/SamFrengley/exceptional-tate-classes"
-  class="code">code</a>)
-  </div>
-  <div class="paper-image">
-  <a href="images/np.png">
-  <img src="images/np.png" alt="Newton polygon">
-  </a>
-  </div>
-  
-  <div>
-  <li><b>Counting 5-isogenies of elliptic curves over the
-  rationals</b>, </br> with <a
-  href="https://sites.google.com/view/changho-han/">Changho Han</a>, <a
-  href="https://sites.google.com/view/oanapadurariu/home">Oana Padurariu</a>, and
-  <a href="https://sites.google.com/wisc.edu/spark483">Sun Woo
-  Park</a>.
-  <br><a class="journal"
-href="https://londmathsoc.onlinelibrary.wiley.com/doi/10.1112/jlms.70572">Journal
-of the London Mathematical Society</a>, <b>113</b> (2026), no. 5, e70572. <br>
-  (<a
-href="https://londmathsoc.onlinelibrary.wiley.com/doi/10.1112/jlms.70572">DOI</a>,
-<a href="http://arxiv.org/abs/2504.07750"
-  class="arxiv">2504.07750</a>, <a href="https://github.com/sarangop1728/counting-5-isogenies"
-  class="code">code</a>)
-  </div>
-  <div class="paper-image">
-  <a href="images/bowtie.jpeg">
-  <img src="images/bowtie.jpeg" alt="Bowtie image">
-  </a>
-  </div>
-  
-  
-  <div>
-  <li><b>Bounds for the relative class number problem for function
-  fields</b>, </br> with <a
-  href="https://sites.google.com/view/maria-chara/home">Mar&iacute;a Chara</a>,
-  <a href="https://asiminah.github.io">Asimina S. Hamakiotes</a>, <a href="https://kskedlaya.org">Kiran
-  S. Kedlaya</a>, and Gustavo Rama.</li> 
-  <a href="https://www.sciencedirect.com/science/article/pii/S0022314X25001751?via%3Dihub"
-  class="journal">Journal of Number Theory</a> <b>278</b> (2026),
-  977-1010. <br>
-  (<a
-  href="https://www.sciencedirect.com/science/article/pii/S0022314X25001751?via%3Dihub">DOI</a>,
-  <a href="https://mathscinet.ams.org/mathscinet/article?mr=4927618" class="mr">MR 4927618</a>, <a href="https://arxiv.org/abs/2412.12467"
-  class="arxiv">2412.12467</a>, <a href="https://github.com/sarangop1728/twice-class-number"
-  class="code">code</a>)
-  </div>
-  <div class="paper-image">
-  <a href="images/oaxaca.png">
-  <img src="images/oaxaca.png" alt="Positive graph">
-  </a>
-  </div>
-  
-  <div>
-  <li><b>Galois groups of low dimensional abelian varieties over finite
-  fields</b>, </br> with <a href="https://samfrengley.github.io">Sam Frengley</a> and 
-  <a href="https://web.math.princeton.edu/~sameerav/">Sameera Vemulapalli</a>.</li>
-  To appear in <a class="journal">Transactions of the American
-  Mathematical Society</a>.<br>
-  (<a href="https://arxiv.org/abs/2412.03358"
-  class="arxiv">2412.03358</a>, <a href="https://github.com/sarangop1728/Galois-Frob-Polys"
-  class="code">code</a>)
-  </div>
-  <div class="paper-image">
-  <a href="images/W6.png">
-  <img src="images/W6.png" alt="W6 mobile">
-  </a>
-  </div>
-  
-  <div>
-  <li><b>Frobenius distributions of low dimensional abelian varieties over
-  finite fields</b>, </br>with <a href="https://bdeewang.com">Deewang
-  Bhamidipati</a> and <a href="https://sites.google.com/site/soumya3sankar/">Soumya
-  Sankar</a>.</li>
-  <a href="https://academic.oup.com/imrn/article-abstract/2024/16/11989/7708716?utm_source=etoc&utm_campaign=imrn&utm_medium=email"
-  class="journal">International Mathematics Research
-  Notices</a> <b>2024</b> (2024), no. 16, 11989-12020. <br>
-  (<a href="https://arxiv.org/abs/2306.02237"
-  class="arxiv">2306.02237</a>, <a href="https://github.com/sarangop1728/Frobenius-distributions-AVs-Fq"
-  class="code">code</a>)
-  </div>
-  <div class="paper-image">
-  <a href="images/3.4.ab_ad_m.gif">
-  <img src="images/3.4.ab_ad_m.gif" alt="Batman gif">
-  </a>
-  </div>
-  
-  <div>
-  <li> <b>Mertens' theorem for Chebotarev sets</b>, </br>with <a href="https://www.danielkeliher.com">Daniel
-  Keliher</a> and <a href="https://c-keyes.github.io">Chris
-  Keyes</a>. </li> <a href="https://www.worldscientific.com/doi/10.1142/S1793042122500932"
-  class="journal">International Journal of Number Theory</a> <b>18</b>
-  (2022), no. 8, 1823-1842. <br>
-  (<a href="https://mathscinet.ams.org/mathscinet/relay-station?mr=mr=4439576"
-  class="mr">MR 4439576</a>, <a href="https://arxiv.org/abs/2103.14747"
-  class="arxiv">2103.14747</a>)
-  </div>
-  <div class="paper-image">
-  <a href="images/mertens.png">
-  <img src="images/mertens.png" alt="Table summary">
-  </a>
-  </div>
-  
-  <div>
-  <li> <b>The global field Euler function</b>, </br>with Juan Diego
-  Rojas. </li> <a href="https://link.springer.com/article/10.1007/s40687-020-00218-3"
-  class="journal">Research in the Mathematical Sciences</a> <b>7</b>
-  (2020), no. 3, Paper No. 19, 21 pp. <br>
-  (<a href="https://mathscinet.ams.org/mathscinet/relay-station?mr=4123394"
-  class="mr">MR 4123394</a>, <a href="https://arxiv.org/abs/2005.04521"
-  class="arxiv">2005.04521</a>)
-  </div>
-  <div class="paper-image">
-  <a href="images/euler.png">
-  <img src="images/euler.png" alt="Graph euler function">
-  </a>
-  </div>
-  </div>
- </ol>
-#+end_export
+
+#+begin_src emacs-lisp :exports results :results html :lexical yes
+;; ---------------------------------------------------------------------------
+;; Publication list. To add a paper, prepend one entry to `papers' below.
+;;
+;;   :title    string (required)
+;;   :authors  list of ("Name" . "url"), or a bare "Name" for no homepage.
+;;             Omit for solo papers.
+;;   :venue    (:prefix "To appear in" :name "..." :url "..."
+;;              :volume "..." :year "..." :number "..." :pages "...")
+;;             Omit entirely for a preprint. :url omitted => name is not a link.
+;;   :links    list of (pdf . URL) (doi . URL) (code . URL)
+;;                     (arxiv . "2504.07750")  <- bare id, URL is built
+;;                     (mr . "4927618")        <- bare id, URL is built
+;;                     (extra "Label" "url" "css-class")
+;;             Rendered in the order: pdf, doi, mr, arxiv, code, extra.
+;;   :image    (:src "images/x.png" :alt "..." :href "...")  :href defaults to :src
+;; ---------------------------------------------------------------------------
+(let* ((papers
+        '((:title "Counting number fields of fixed degree by their smallest defining polynomial"
+           :authors (("Fabian Gundlach" . "https://fabiangundlach.org")
+                     ("Robert J. Lemke Oliver" . "https://lemkeoliver.github.io")
+                     ("Kevin J. McGown" . "https://kmcgown.yourweb.csuchico.edu")
+                     ("Will Sawin" . "https://williamsawin.com")
+                     ("Allechar Serrano López" . "https://www.allechar.org")
+                     ("Arul Shankar" . "https://www.math.utoronto.ca/ashankar/")
+                     ("Ila Varma" . "https://www.math.utoronto.ca/~ila/"))
+           :links ((arxiv . "2602.06943"))
+           :image (:src "images/thumbs/flows.png" :alt "Geodesic and horocycle flows"
+                   :href "images/flows.pdf"))
+
+          (:title "Counting primitive integral solutions to spherical generalized Fermat equations"
+           :venue (:prefix "To appear in the" :name "Canadian Mathematical Bulletin")
+           :links ((arxiv . "2508.13093")
+                   (extra "Magma experiment" "misc/computations.html" "code"))
+           :image (:src "images/thumbs/UZ_50.png" :href "images/UZ_50.png" :alt "Fermat triples"))
+
+          (:title "Fermat descent"
+           :links ((pdf . "https://www.dropbox.com/scl/fi/ofd830zhdhxpr1wqqmubw/main.pdf?rlkey=8t1grppugzbnnx74lmskz86zq&dl=0")
+                   (arxiv . "2508.13059"))
+           :image (:src "images/thumbs/belyi-fiber.png" :href "images/belyi-fiber.png" :alt "Belyi fiber"))
+
+          (:title "Galois groups of simple abelian varieties over finite fields and exceptional Tate classes"
+           :authors (("Sam Frengley" . "https://samfrengley.github.io")
+                     ("Sameera Vemulapalli" . "https://web.math.princeton.edu/~sameerav/"))
+           :links ((arxiv . "2505.09589")
+                   (code . "https://github.com/SamFrengley/exceptional-tate-classes"))
+           :image (:src "images/thumbs/np.png" :href "images/np.png" :alt "Newton polygon"))
+
+          (:title "Counting 5-isogenies of elliptic curves over the rationals"
+           :authors (("Changho Han" . "https://sites.google.com/view/changho-han/")
+                     ("Oana Padurariu" . "https://sites.google.com/view/oanapadurariu/home")
+                     ("Sun Woo Park" . "https://sites.google.com/wisc.edu/spark483"))
+           :venue (:name "Journal of the London Mathematical Society"
+                   :url "https://londmathsoc.onlinelibrary.wiley.com/doi/10.1112/jlms.70572"
+                   :volume "113" :year "2026" :number "5" :pages "e70572")
+           :links ((doi . "https://londmathsoc.onlinelibrary.wiley.com/doi/10.1112/jlms.70572")
+                   (arxiv . "2504.07750")
+                   (code . "https://github.com/sarangop1728/counting-5-isogenies"))
+           :image (:src "images/thumbs/bowtie.jpg" :href "images/bowtie.jpeg" :alt "Bowtie"))
+
+          (:title "Bounds for the relative class number problem for function fields"
+           :authors (("María Chara" . "https://sites.google.com/view/maria-chara/home")
+                     ("Asimina S. Hamakiotes" . "https://asiminah.github.io")
+                     ("Kiran S. Kedlaya" . "https://kskedlaya.org")
+                     "Gustavo Rama")
+           :venue (:name "Journal of Number Theory"
+                   :url "https://www.sciencedirect.com/science/article/pii/S0022314X25001751?via%3Dihub"
+                   :volume "278" :year "2026" :pages "977-1010")
+           :links ((doi . "https://www.sciencedirect.com/science/article/pii/S0022314X25001751?via%3Dihub")
+                   (mr . "4927618")
+                   (arxiv . "2412.12467")
+                   (code . "https://github.com/sarangop1728/twice-class-number"))
+           :image (:src "images/thumbs/oaxaca.png" :href "images/oaxaca.png" :alt "Positive graph"))
+
+          (:title "Galois groups of low dimensional abelian varieties over finite fields"
+           :authors (("Sam Frengley" . "https://samfrengley.github.io")
+                     ("Sameera Vemulapalli" . "https://web.math.princeton.edu/~sameerav/"))
+           :venue (:prefix "To appear in"
+                   :name "Transactions of the American Mathematical Society")
+           :links ((arxiv . "2412.03358")
+                   (code . "https://github.com/sarangop1728/Galois-Frob-Polys"))
+           :image (:src "images/thumbs/W6.png" :href "images/W6.png" :alt "The W6 graph"))
+
+          (:title "Frobenius distributions of low dimensional abelian varieties over finite fields"
+           :authors (("Deewang Bhamidipati" . "https://bdeewang.com")
+                     ("Soumya Sankar" . "https://sites.google.com/site/soumya3sankar/"))
+           :venue (:name "International Mathematics Research Notices"
+                   :url "https://academic.oup.com/imrn/article-abstract/2024/16/11989/7708716"
+                   :volume "2024" :year "2024" :number "16" :pages "11989-12020")
+           :links ((arxiv . "2306.02237")
+                   (code . "https://github.com/sarangop1728/Frobenius-distributions-AVs-Fq"))
+           :image (:src "images/thumbs/3.4.ab_ad_m.gif" :href "images/3.4.ab_ad_m.gif" :alt "Frobenius distribution animation"))
+
+          (:title "Mertens' theorem for Chebotarev sets"
+           :authors (("Daniel Keliher" . "https://www.danielkeliher.com")
+                     ("Chris Keyes" . "https://c-keyes.github.io"))
+           :venue (:name "International Journal of Number Theory"
+                   :url "https://www.worldscientific.com/doi/10.1142/S1793042122500932"
+                   :volume "18" :year "2022" :number "8" :pages "1823-1842")
+           :links ((mr . "4439576")
+                   (arxiv . "2103.14747"))
+           :image (:src "images/thumbs/mertens.png" :href "images/mertens.png" :alt "Table summary"))
+
+          (:title "The global field Euler function"
+           :authors ("Juan Diego Rojas")
+           :venue (:name "Research in the Mathematical Sciences"
+                   :url "https://link.springer.com/article/10.1007/s40687-020-00218-3"
+                   :volume "7" :year "2020" :number "3" :pages "Paper No. 19, 21 pp.")
+           :links ((mr . "4123394")
+                   (arxiv . "2005.04521"))
+           :image (:src "images/thumbs/euler.png" :href "images/euler.png" :alt "Graph of the Euler function"))))
+
+       ;; --- helpers -------------------------------------------------------
+       (esc (lambda (s)          ; escape for an HTML attribute (XHTML-valid &amp;)
+              (replace-regexp-in-string
+               "\"" "&quot;"
+               (replace-regexp-in-string "&" "&amp;" (or s "")))))
+       (link (lambda (url label &optional class)
+               (format "<a href=\"%s\"%s>%s</a>"
+                       (funcall esc url)
+                       (if class (format " class=\"%s\"" class) "")
+                       label)))
+
+       ;; "A", "A and B", "A, B, and C"
+       (join (lambda (xs)
+               (pcase (length xs)
+                 (0 "")
+                 (1 (car xs))
+                 (2 (concat (nth 0 xs) " and " (nth 1 xs)))
+                 (_ (concat (mapconcat #'identity (butlast xs) ", ")
+                            ", and " (car (last xs)))))))
+
+       (authors-html
+        (lambda (as)
+          (when as
+            (concat "with "
+                    (funcall join
+                             (mapcar (lambda (a)
+                                       (if (consp a)
+                                           (funcall link (cdr a) (car a))
+                                         a))
+                                     as))
+                    "."))))
+
+       (venue-html
+        (lambda (v)
+          (when v
+            (let* ((name (plist-get v :name))
+                   (url (plist-get v :url))
+                   (prefix (plist-get v :prefix))
+                   (vol (plist-get v :volume))
+                   (year (plist-get v :year))
+                   (num (plist-get v :number))
+                   (pages (plist-get v :pages))
+                   (title (if url
+                              (funcall link url name "journal")
+                            (format "<a class=\"journal\">%s</a>" name)))
+                   (cite (concat (when vol (format " <b>%s</b>" vol))
+                                 (when year (format " (%s)" year))
+                                 (when num (format ", no. %s" num))
+                                 (when pages (format ", %s" pages)))))
+              ;; ":pages \"Paper No. 19, 21 pp.\"" already ends in a period
+              (concat (when prefix (concat prefix " ")) title cite
+                      (if (string-suffix-p "." cite) "" "."))))))
+
+       (links-html
+        (lambda (ls)
+          (let* ((get (lambda (k) (cdr (assq k ls))))
+                 (parts
+                  (delq nil
+                        (list
+                         (when (funcall get 'pdf)
+                           (funcall link (funcall get 'pdf) "pdf"))
+                         (when (funcall get 'doi)
+                           (funcall link (funcall get 'doi) "DOI"))
+                         (when (funcall get 'mr)
+                           (funcall link
+                                    (concat "https://mathscinet.ams.org/mathscinet/article?mr="
+                                            (funcall get 'mr))
+                                    (concat "MR " (funcall get 'mr)) "mr"))
+                         (when (funcall get 'arxiv)
+                           (funcall link
+                                    (concat "https://arxiv.org/abs/" (funcall get 'arxiv))
+                                    (funcall get 'arxiv) "arxiv"))
+                         (when (funcall get 'code)
+                           (funcall link (funcall get 'code) "code" "code"))))))
+            (dolist (e ls)
+              (when (eq (car-safe e) 'extra)
+                (setq parts (append parts
+                                    (list (funcall link (nth 2 e) (nth 1 e) (nth 3 e)))))))
+            (when parts
+              (concat "(" (mapconcat #'identity parts ", ") ")")))))
+
+       (image-html
+        (lambda (im)
+          (when im
+            (let* ((src (plist-get im :src))
+                   (href (or (plist-get im :href) src))
+                   (alt (or (plist-get im :alt) "")))
+              (format (concat "<div class=\"paper-image\">"
+                              "<a href=\"%s\"><img src=\"%s\" alt=\"%s\" loading=\"lazy\" /></a>"
+                              "</div>")
+                      (funcall esc href) (funcall esc src) (funcall esc alt))))))
+
+       (paper-html
+        (lambda (p)
+          (let* ((as (plist-get p :authors))
+                 ;; "Title, with A and B." vs. "Title." when solo
+                 (sep (if as "," "."))
+                 (lines (delq nil (list (funcall authors-html as)
+                                        (funcall venue-html (plist-get p :venue))
+                                        (funcall links-html (plist-get p :links))))))
+            (concat "<li class=\"paper\">\n<div class=\"ref-container\">\n"
+                    "<div class=\"paper-meta\">\n"
+                    (format "<b>%s</b>%s" (plist-get p :title) sep)
+                    (when lines (concat "<br />\n" (mapconcat #'identity lines "<br />\n")))
+                    "\n</div>\n"
+                    (or (funcall image-html (plist-get p :image)) "")
+                    "\n</div>\n</li>")))))
+
+  (concat "<ol reversed=\"reversed\" class=\"paper-list\">\n"
+          (mapconcat paper-html papers "\n")
+          "\n</ol>\n"))
+#+end_src
 
 * Invited talks
 + <2026-06-07 Sun> [[https://ctnt-summer.math.uconn.edu/conference-26/][Connecticut Summer School In Number Theory (CTNT)]]. ([[https://www.dropbox.com/scl/fi/77z9jyvqcr2cznhid7rb0/CTNT-2026.pdf?rlkey=nqetcd6om7jq1sxsmhb5nxna4&dl=0][Slides]], [[https://www.youtube.com/watch?v=o8txAY8i28E][video]])

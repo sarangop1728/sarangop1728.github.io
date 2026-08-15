@@ -1,10 +1,11 @@
-#+TITLE: Math 714 - Fall 2026
-#+SUBTITLE: Arithmetic of elliptic curves
+#+TITLE: Arithmetic of elliptic curves
+#+SUBTITLE: Math 714 - Fall 2026
 #+AUTHOR: Santiago Arango-Piñeros
 #+EMAIL: sarangopiner@umass.edu
-#+OPTIONS: toc:t num:nil
+#+OPTIONS: toc:1 num:nil
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../../org-css.css"/>
 #+HTML_HEAD:  <link rel="shortcut icon" type="image/x-icon" href="../../images/umass-favicon.ico">
+
 
 * Coordinates
 ** Instructor
@@ -15,8 +16,8 @@ My office is in *LGRT 1238*, and you can contact me via email at:
   
 ** Lectures
 |----------------+---------+---------------------+----------|
-| /              | <       | <                   | <        |
-| Section        | Days    | Time                | Place    |
+|      <c>       |   <c>   |         <c>         |   <c>    |
+|    Section     |  Days   |        Time         |  Place   |
 |----------------+---------+---------------------+----------|
 | 01-LEC (20397) | Tu, Thu | 10:00 AM - 11:15 AM | LGRT 206 |
 |----------------+---------+---------------------+----------|
@@ -26,134 +27,191 @@ My office is in *LGRT 1238*, and you can contact me via email at:
 TBD.
 
 * Course description
-This will be a first graduate course on the arithmetic of elliptic curves. We
-will:
-1. Study the role elliptic curves played elliptic curves in the proof of
-   Fermat's last theorem.
-2. Learn how to use the computer algebra system ~Magma~ to design experiments
-   in the context of the arithmetic of elliptic curves.
-3. Learn how to compute ``by hand" the rational points on a given elliptic
-   curve.
-   
+
+This will be a graduate course introducing the arithmetic of elliptic
+curves. My goal as an instructor is that, after taking this course, a dedicated
+student will:
+
+1. Be comfortable with the contents of Silverman's book: /[[https://www.math.brown.edu/johsilve/AECHome.html][The Arithmetic Of
+   Elliptic Curves]]/. (In particular, with Chapters 3, 5, 7, 8, 9, and 10.)
+2. Be ready to tackle a research problem in this subject.
+3. Know how to use the computer algebra system ~Magma~ to design experiments
+   that inform your research in this area.
+
+To accomplish these goals, the students will:
+1. Read the book in their own time, and solve as many problems as they possibly
+   can.
+2. Read a research paper and write a report about it.
+3. Use ~Magma~ to:
+   + Solve the computational problems in the book.
+   + Confirm relevant computations from their chosen research paper, and
+     include them in their reports.
+
+I will not repeat the contents of the assigned reading during the lectures.
+Instead, I will assume that everyone has read the material and has questions
+about the subjects. The time of the lecture will be spent emphasizing the
+subtle points, asking questions about the reading, and working through related
+examples in ~Magma~.
+We will use the remaining time to solve homework problems.
+
 ** Textbook
-We will use a combination of different sources, but mainly Milne's book.
-+ [Mil-21] J. S. Milne, [[https://www.jmilne.org/math/Books/EC2.pdf][Elliptic Curves]].
-+ [Sil-92] J. H. Silverman, The Arithmetic of Elliptic Curves. ([[https://www.math.brown.edu/johsilve/AEC/AECErrata.pdf][errata]])
+
++ ~[S]~ J. H. Silverman, /The Arithmetic of Elliptic Curves/, 2nd edition,
+  Graduate Texts in Mathematics 106, Springer, 2009. ([[https://www.math.brown.edu/johsilve/AEC/AECErrata.pdf][errata]])
+
+** Other references
+
+- Milne, [[https://www.jmilne.org/math/Books/EC2.pdf][/Elliptic Curves/]].
+- Diamond & Shurman, [[https://link.springer.com/book/10.1007/978-0-387-27226-9][/A first course in modular forms/]].
+- Poonen, [[https://math.mit.edu/~poonen/papers/curves.pdf][/Lectures on rational points on curves/]].
+- Poonen, [[https://bookstore.ams.org/gsm-186][/Rational points on varieties/]]. ([[https://math.mit.edu/~poonen/papers/Qpoints-errata.pdf][errata]])
+- Poonen, [[https://math.mit.edu/~poonen/papers/elliptic.pdf][/Elliptic curves/]]. 
+- Siksek, [[https://samirsiksek.github.io/siksek.github.io/modcurves2.pdf][/Explicit arithmetic of modular curves/]].
+- Silverman, [[https://link.springer.com/book/10.1007/978-1-4612-0851-8][/Advanced topics in the arithmetic of elliptic curves/]]. ([[https://www.math.brown.edu/johsilve/ATAEC/ATAECErrata.pdf][errata]])
+- Sutherland, [[https://math.mit.edu/classes/18.783/2017/lectures.html][MIT Math 18.783 - Elliptic Curves]].
+- ~LMFDB~, Elliptic curve database ([[https://www.lmfdb.org/EllipticCurve/Q/][Over \(\mathbb{Q}\)]], [[https://www.lmfdb.org/EllipticCurve/][over number fields]]).
+- ~Magma~, the [[https://magma.maths.usyd.edu.au/magma/handbook/][handbook]] and [[https://magma.maths.usyd.edu.au/calc/][calculator]].
+
+** Grades
+Your grade will be computed as a weighted average of the following work:
++ [[*Reading, participation, collaboration, and engagement][Reading, participation, collaboration, and engagement]] (~20%~)
++ [[*Homework][Homework]] (~42%~)
++ [[*Final Project][Final Project]] (~38%~)
+  
+I will have a /one-hour/ meeting with each student *before the end of classes*.
+For this meeting, the student will bring their *solved problems* and *research
+report*. We will talk about your homework solutions, and discuss
+possible future research directions based on your report.
++ You are responsible for scheduling this meeting with me (in person) before
+  <2026-12-16 Wed>.
+
+I will compute your grade as the weighted average \[
+0.20\cdot(\text{participation}) + 0.42\cdot(\text{homework}) +
+0.38\cdot(\text{final project}), \] of the number of points \( \in [0,100]\) in
+each category, and then use the following tables to convert it into a letter
+grade.
+
+| *Grade* |     A      |   A$-$    |   B$+$    |     B     |   B$-$    |
+|---------+------------+-----------+-----------+-----------+-----------|
+|   <c>   |    <c>     |    <c>    |    <c>    |    <c>    |    <c>    |
+| score   | $[93,100]$ | $[90,93)$ | $[87,90)$ | $[83,87)$ | $[80,83)$ |
+
+| *Grade* |   C$+$    |     C     |   C$-$    |   D$+$    |     D     |    F     |
+|---------+-----------+-----------+-----------+-----------+-----------+----------|
+|   <c>   |    <c>    |    <c>    |    <c>    |    <c>    |    <c>    |   <c>    |
+|  score  | $[77,80)$ | $[73,77)$ | $[70,73)$ | $[67,70)$ | $[60,67)$ | $[0,60)$ |
    
-** Homework (~500 points~)
-Homework assignments are a key component of this class, and they will count
-towards 50% of the final grade.
+* Schedule and reading
 
-* Grades
-The perfect final grade is ~1000 points~. To compute your grade, add the scores
-obtained in your midterm exams, final exam, and worksheets, and consult the
-following tables.
+Here is a weekly schedule of the topics we will cover. It is the student's
+responsibility to read *ahead* of the lecture, and to come prepared with
+questions.
 
-| *Grade*  | A            | A$-$        | B$+$        | B           | B$-$        |
-|----------+--------------+-------------+-------------+-------------+-------------|
-| /        | <            |             |             |             |             |
-| ~points~ | $[930,1000]$ | $[900,930)$ | $[870,900)$ | $[830,870)$ | $[800,830)$ |
+If you are lost in the weeds, read [[https://math.mit.edu/~poonen/papers/elliptic.pdf][this article]] to remind yourself of the big
+picture.
 
-| *Grade*  | C$+$        | C           | C$-$        | D$+$        | D           | F         |
-|----------+-------------+-------------+-------------+-------------+-------------+-----------|
-| /        | <           |             |             |             |             |           |
-| ~points~ | $[770,800)$ | $[730,770)$ | $[700,730)$ | $[670,700)$ | $[600,670)$ | $[0,600)$ |
+I will assume familiarity with Chapters I and II in ~[S]~. To complement some
+of the algebraic geometry background, I recommend Chapters I and II in
+[[https://math.mit.edu/~poonen/papers/curves.pdf][curves.pdf]].
 
-** Mistakes were made policy
-With the intention of rewarding behaviors that promote learning, students may
-submit corrections to ~EXAM1~, ~EXAM2~, and ~EXAM3~ to _earn back up to 80% of
-the points lost_.
+|-----+------------------+-----------------------------------------------------------+------------------------------|
+|     |       Date       | Topic                                                     | Reading                      |
+| <c> |       <c>        |                                                           |                              |
+|-----+------------------+-----------------------------------------------------------+------------------------------|
+|  1  | <2026-09-08 Tue> | Elliptic curves as Riemann surfaces                       | ([[https://link.springer.com/book/10.1007/978-0-387-27226-9][Diamond & Shurman]]) 1.3, 1.4 |
+|  2  | <2026-09-10 Thu> | General theory                                            | III.1, III.2, III.3, III.4   |
+|  3  | <2026-09-15 Tue> |                                                           | III.5, III.6, III.7          |
+|  4  | <2026-09-17 Thu> |                                                           | III.8, III.9, III.10         |
+|  5  | <2026-09-22 Tue> | Elliptic curves over finite fields                        | V.1, V.2                     |
+|  6  | <2026-09-24 Thu> |                                                           | V.3, V.4                     |
+|  7  | <2026-09-29 Tue> | Elliptic curves over local fields                         | VII.1, VII.2, VII.3          |
+|  8  | <2026-10-01 Thu> |                                                           | VII.4, VII.5                 |
+|  9  | <2026-10-06 Tue> |                                                           | VII.6, VII.7                 |
+| 10  | <2026-10-08 Thu> | Galois cohomology                                         | B.1, B.2, B.3 (appendix)     |
+| 11  | <2026-10-13 Tue> | The Mordell--Weil theorem                                 | VIII.1, VIII.2               |
+| 12  | <2026-10-15 Thu> |                                                           | VIII.3, VIII.4               |
+| 13  | <2026-10-20 Tue> |                                                           | VIII.5, VIII.6               |
+| 14  | <2026-10-22 Thu> |                                                           | VIII.7, VIII.8               |
+| 15  | <2026-10-27 Tue> |                                                           | VIII.9, VIII.10              |
+| 16  | <2026-10-29 Thu> |                                                           | VIII.11                      |
+|     | <2026-11-03 Tue> | @@html:<span style="color:red">@@No class@@html:</span>@@ | (Election Day)               |
+| 17  | <2026-11-05 Thu> | Integral points                                           | IX.1, IX.2, IX.3             |
+| 18  | <2026-11-10 Tue> |                                                           | IX.4, IX.6, IX.7             |
+| 19  | <2026-11-12 Thu> | Twisting, Selmer, and Ш                                   | X.1, X.2                     |
+| 20  | <2026-11-17 Tue> |                                                           | X.3, X.4                     |
+| 21  | <2026-11-19 Thu> |                                                           | X.5, X.6                     |
+|     | <2026-11-24 Tue> | @@html:<span style="color:red">@@No class@@html:</span>@@ | (Wednesday schedule)         |
+|     | <2026-11-26 Thu> | @@html:<span style="color:red">@@No class@@html:</span>@@ | (Thanksgiving)               |
+| 22  | <2026-12-01 Tue> | Complex multiplication                                    | C.11                         |
+| 23  | <2026-12-03 Thu> | The Tate curve                                            | C.14                         |
+| 24  | <2026-12-08 Tue> | The \(L\)-function and BSD                                | C.16                         |
+| 25  | <2026-12-10 Thu> | The Sato--Tate conjecture                                 | C.21                         |
+| 26  | <2026-12-15 Tue> | Intro to modular curves                                   | ([[https://samirsiksek.github.io/siksek.github.io/modcurves2.pdf][Siksek]]) Chapters 2, 3, 4.   |
+|-----+------------------+-----------------------------------------------------------+------------------------------|
 
-*** Prerequisite: submit a summary
-To qualify to submit corrections, a student must submit a signed handwritten
-summary of the topics assessed on the corresponding exam. The summary must be
-uploaded to *Gradescope* before the scheduled exam.
-+ Students taking the exam at a different time, for whatever reason, must still
-  submit their summaries before the original scheduled exam.
+* Reading, participation, collaboration, and engagement
 
-*** Submitting corrections
-Corrections are due exactly two weeks after the exam date and must be submitted
-through *Gradescope* before midnight.
+Passing or failing this component will ultimately be left to my judgement. I
+will decide that you passed if:
++ You attended at least 80% of the lectures.
++ You kept on schedule with the assigned reading.
++ You participated actively and consistently in the class discussions.
++ You interacted/collaborated with your colleagues in a respectful and
+  productive way.
++ I am convinced that your homework solutions reflect your own understanding.
++ I am convinced that your final project reflects your own understanding, and
+  was written by yourself.
 
-The correction for each problem must include the following.
+Failing this component means that you will also @@html:<span
+style="color:red">@@fail the course@@html:</span>@@, regardless of your
+homework and final project.
 
-1. A complete and correct explanation of your mistake.
-2. A complete and correct explanation of a solution.
-3. A discussion of what you can do to prevent making this type of mistake again
-   in the future.
+* Homework
 
-*** Grading corrections
-If the corrections comply with all the requirements listed above, they will be
-accepted and the score for the corresponding question on the exam will be
-adjusted. If the grader of the correction deems your original answer a
-/reasonable attempt/, then you will get back 80% of the points. Otherwise, you
-will get back 50% of the points.
+Every student enrolled in this class must solve (and type the solutions of)
 
-If the corrections fail to comply with *any* of the requirements listed above
-(e.g., no summary was presented, or one of items (1), (2), or (3) was not
-answered to the grader’s satisfaction), the corrections will be rejected and
-the score for the corresponding question on the exam will *not* be adjusted.
+\[42 = (-80538738812075974)^3 + (80435758145817515)^3 + (12602123297335631)^3 \]
 
-* Topics and schedule
-It is the student's responsibility to read the material before the lecture.
-During the lectures, we will focus on reviewing the key concepts, answering
-questions, and working on examples.
+problems of their choosing. I recommend choosing your favorite three
+problems each week, from the chapter in ~[S]~ that you are currently reading.
 
-|------------------+--------------------------------------------------+------------------|
-| Date             | Lecture                                          |          Reading |
-|------------------+--------------------------------------------------+------------------|
-| /                | <                                                |                < |
-| <2026-02-02 Mon> | [[https://www.dropbox.com/scl/fi/p1wxilymw0vyhqvnk3z0a/Lecture-1.pdf?rlkey=wz6pvevnvakryws6uz4t8jsgx&st=oihmxpsu&dl=0][1. What is symmetry?]]                             | 1.1 - 1.7, [[https://kconrad.math.uconn.edu/blurbs/grouptheory/whygroups.pdf][Blurb]] |
-| <2026-02-04 Wed> | [[https://www.dropbox.com/scl/fi/ye5ewjg4w53js9i9nnlqp/Lecture-2.pdf?rlkey=en0vp8k0mxcdldak8rpebqe5w&st=q1vmzgj1&dl=0][2. Examples of groups]]                            |        1.1 - 1.7 |
-| <2026-02-09 Mon> | [[https://www.dropbox.com/scl/fi/5fn0wkb6ejtsk79mqsjpc/Lecture-3.pdf?rlkey=2v43ltzmasna2gk3lyqmmoulk&dl=0][3. Abstract groups: first results]]                |        1.10, 2.1 |
-| <2026-02-11 Wed> | [[https://www.dropbox.com/scl/fi/17ji5counqyvroky0zxh7/Lecture-4.pdf?rlkey=ihh68st77av0gy3322151n05e&dl=0][4. Subgroups and cyclic groups]]                   |              2.2 |
-| <2026-02-16 Mon> | *No class* (Presidents' Day, moved to Thursday!) |                  |
-| <2026-02-18 Wed> | [[https://www.dropbox.com/scl/fi/utckf9w72zu37yaec6f8c/Lecture-5.pdf?rlkey=fe58spmzyrto2y4xmrhr1lbh3&dl=0][5. Dihedral groups]]                               |              2.3 |
-| <2026-02-19 Thu> | [[https://www.dropbox.com/scl/fi/c4bwzgfb771pt55lv5r7k/Lecture-6.pdf?rlkey=66e9htb7zs3mo0avx0w6bcezy&dl=0][6. Homomorphisms and isomorphisms]]                |              2.4 |
-| <2026-02-23 Mon> | [[https://www.dropbox.com/scl/fi/4z4br5snua92kfmkyyqha/Lecture-7.pdf?rlkey=red8npkhxxxf51qcykp1rudpy&dl=0][7. The sign of a permutation]]                     |            [[https://kconrad.math.uconn.edu/blurbs/grouptheory/sign.pdf][Blurb]] |
-| <2026-02-25 Wed> | *Exam 1* at 7:00 PM in ~LGRC A301~. (No class)   |                  |
-| <2026-03-02 Mon> | [[https://www.dropbox.com/scl/fi/c49t3qqjya7v7pc29tazj/Lecture-8.pdf?rlkey=5qmji57c31u5npkxthnpqr0ya&dl=0][8. Cosets]]                                        |              2.5 |
-| <2026-03-04 Wed> | [[https://www.dropbox.com/scl/fi/oxt143yka9abuh63wmpfd/Lecture-9.pdf?rlkey=iw757fm7u5t6e1jr5u2xlqy6h&dl=0][9. Lagrange's theorem]]                            |              2.5 |
-| <2026-03-09 Mon> | [[https://www.dropbox.com/scl/fi/5umx9xqjvzhxw28wvecpl/Lecture-10.pdf?rlkey=7o83fhinujrhqwrodnnmg0mco&dl=0][10. Noether's first isomorphism theorem]]          |              2.7 |
-| <2026-03-11 Wed> | 11. Noether's other isomorphism theorems         |              2.7 |
-| <2026-03-16 Mon> | *No class* (spring recess)                       |                  |
-| <2026-03-18 Wed> | *No class* (spring recess)                       |                  |
-| <2026-03-23 Mon> | [[https://www.dropbox.com/scl/fi/yogahfmerlrevbc65y30r/Lecture-11.pdf?rlkey=w71u05arfw3kzyqiehc1ufx7d&dl=0][12. Direct products]]                              |              3.1 |
-| <2026-03-25 Wed> | *Exam 2* at 7:00 PM in ~LGRC A301~. (No class)   |                  |
-| <2026-03-30 Mon> | [[https://www.dropbox.com/scl/fi/jhwp7l0ykhttzsk74jsiq/Lecture-13.pdf?rlkey=89ua250me6pwwy68oqcl830t8&dl=0][13. Semidirect products]]                          |              3.2 |
-| <2026-04-01 Wed> | [[https://www.dropbox.com/scl/fi/qi7ztpadgkzfiei306ep2/Lecture-14.pdf?rlkey=7gsry779qqv2hq7xdxn48ebsm&dl=0][14. Linear algebra over the integers]]             |              3.5 |
-| <2026-04-06 Mon> | [[https://www.dropbox.com/scl/fi/fsajexd86jw6dg0bhtoyk/Lecture-14.pdf?rlkey=ihw92clet9umsnutu9reqh7qm&dl=0][15. Finitely generated abelian groups]]            |              3.6 |
-| <2026-04-08 Wed> | [[https://www.dropbox.com/scl/fi/2zfxo0q6uf7v2pwq5xnqs/Lecture-16.pdf?rlkey=9c7xhkeiv50d3fnq67wz5tqtm&dl=0][16. Elementary divisors decomposition]]            |              3.6 |
-| <2026-04-13 Mon> | (Problems day)                                   |                  |
-| <2026-04-15 Wed> | *Exam 3* at 7:00 PM in ~GSMN 51~. (No class)     |                  |
-| <2026-04-20 Mon> | *No class* (Patriot's Day)                       |                  |
-| <2026-04-22 Wed> | [[https://www.dropbox.com/scl/fi/5qe7hwh5bejcstqb8wihe/Lecture-18.pdf?rlkey=vggwpqmhxmvyfyq5adlhdykk0&dl=0][17. Group actions]]                                |              5.1 |
-| <2026-04-24 Fri> | [[https://www.dropbox.com/scl/fi/5e0ct4ph7dcczk7dbdblx/Lecture-19.pdf?rlkey=ai8rn33avfbgkxzsaq0udtfq7&dl=0][18. Counting orbits]]                              |              5.2 |
-| <2026-04-27 Mon> | [[https://www.dropbox.com/scl/fi/b1lgkyzgax41va73m8dcy/Lecture-20.pdf?rlkey=2wntwn600iv1rs23altpxdm88&dl=0][19. Symmetries of groups]]                         |              5.3 |
-| <2026-04-29 Wed> | [[https://www.dropbox.com/scl/fi/t8plgi2v2iy9i1xb38pco/Lecture-21.pdf?rlkey=swne53r5vpy94gxow1zqolqy8&dl=0][20. Group actions and group structure]]            |              5.4 |
-| <2026-05-04 Mon> | 21. The Sylow theorems (proofs)                  |            [[https://kconrad.math.uconn.edu/blurbs/grouptheory/sylowpf.pdf][Blurb]] |
-| <2026-05-06 Wed> | 22. (Problems day)                               |                  |
-|------------------+--------------------------------------------------+------------------|
++ At least 10 of these problems should be solved using ~Magma~ in some crucial
+  way.
++ Collaboration is encouraged, but you [[https://www.twincities.com/2026/08/11/bret-stephens-im-begging-you-never-ever-write-with-ai/][must]] write your own solutions.
++ Resist the temptation of asking AI for a full solution. Try asking your
+  fellow students or me before doing this, or use the machine to coach you
+  towards a solution.
++ Your solutions are due on <2026-12-04 Fri 23:59> by email.
+  
+* Final Project
 
-* Group theory links
-Here are some interesting Wikipedia links to various topics (in math, culture,
-and science) related to group theory. I'd be happy to chat about these during
-office hours.
-+ [[https://en.wikipedia.org/wiki/Rubik%27s_Cube_group][The Rubik’s Cube Group]]
-+ [[https://en.wikipedia.org/wiki/15_puzzle][The 15-Puzzle]]
-+ [[https://en.wikipedia.org/wiki/Tower_of_Hanoi][The Towers of Hanoi]]
-+ [[https://en.wikipedia.org/wiki/Molecular_symmetry][Molecular Symmetry]]
-+ [[https://en.wikipedia.org/wiki/Islamic_geometric_patterns][Islamic Geometric Patterns]]
-+ [[https://en.wikipedia.org/wiki/Diffie%E2%80%93Hellman_key_exchange][The Diffie--Hellman Key Exchange]]
-+ [[https://en.wikipedia.org/wiki/Binary_Golay_code][The binary Golay code]]
-+ [[https://en.wikipedia.org/wiki/Free_group][Free Groups]]
-+ [[https://en.wikipedia.org/wiki/Galois_theory][Galois theory]]
-+ [[https://en.wikipedia.org/wiki/Fundamental_group][The Fundamental Group]]
-+ [[https://en.wikipedia.org/wiki/Braid_group][Braids and Braid Groups]]
-+ [[https://en.wikipedia.org/wiki/Triangle_group][Triangle Groups]]
-+ [[https://en.wikipedia.org/wiki/Platonic_solid][Platonic Solids]]
-+ [[https://en.wikipedia.org/wiki/Elliptic_curve#The_group_law][Elliptic Curves]]
-+ [[https://en.wikipedia.org/wiki/Monster_group][The Monster Group]]
+You will choose a research article on the arithmetic of elliptic curves to
+study throughout the semester. 
+
+I curated a list of [[* Suggested papers][suggested papers]], but if you have an article not on the
+list that you want to read, talk to me about it!
+
+Based on your reading of this article, you will write a *research report* that:
+1. Gives a brief explanation of the relevant objects under study. 
+2. Explains the results of the paper.
+3. Produces computational evidence that supports the results of the article.
+
+The research report is due on <2026-12-04 Fri 23:59> by email.
+
+
+** Suggested papers
++ Cremona & Sutherland, [[https://arxiv.org/pdf/0901.0120][On a theorem of Mestre and Schoof]].
++ Dokchitser & Dokchitser, [[https://arxiv.org/pdf/1104.5031][Surjectivity of mod \(2^n\) representations of elliptic curves]].
++ Lenstra, [[https://pages.cs.wisc.edu/~cs812-1/Lenstra1987.pdf][Factoring integers with elliptic curves]].
++ Klagsbrun & Lemke Oliver, [[https://lemkeoliver.github.io/papers/12-TamagawaTwoTorsion.pdf][The distribution of the Tamagawa ratio in the
+  family of elliptic curves with a two-torsion point]].
++ Sutherland, [[https://arxiv.org/pdf/1107.1140][Identifying supersingular elliptic curves]].
++ Schoof, [[https://reneschoof.github.io/ctpts.pdf][Elliptic curves over finite fields and the computation of square roots mod /p/]].
++ Schoof & Tzanakis, [[https://reneschoof.github.io/AA-schoof-tzanakis.pdf][Integral points on a modular curve of level 11]].
++ Wong, [[https://arxiv.org/pdf/math/0606405][Quadratic twists of pairs of elliptic curves]].
++ Wong, [[https://www.cambridge.org/core/journals/compositio-mathematica/article/on-the-density-of-elliptic-curves/DAFCBAD799FCADA01008C034CE85A176][On the density of elliptic curves]].
++ Zywina, [[https://davidzywina.github.io/papers/NoJumps.pdf][An elliptic surface with infinitely many fibers for which the rank does not jump]].
++ Zywina, [[https://davidzywina.github.io/papers/Rank2.pdf][There are infinitely many elliptic curves over the rationals of rank 2]].
 
 * Philosophy
 ** Adopt a growth mindset
@@ -197,68 +255,32 @@ We will subscribe to [[https://www.ams.org/publications/journals/notices/201610/
 + *Axiom 4.* Every student deserves to be treated with dignity and respect.
 
 * Administrative details
+
 - Add/drop only through SPIRE.
 - I do not keep a waiting list, and the mathematics department staff will not
   handle these matters.
-- Final exams are kept by the mathematics department. Copies are available upon
-  request.
 
 ** Drops, withdrawals, and incompletes
-- Last day to add or drop with no record: <2026-02-04 Wed>.
-- Last day to drop with W: <2026-04-02 Thu>.
+The dates below are the *graduate student* deadlines for Fall 2026.
+- Last day to add or drop with no record: <2026-09-21 Mon>.
+- Last day to drop with DR: <2026-11-04 Wed>.
 - See the [[https://www.umass.edu/registrar/academic-calendar][academic calendar]] for other important dates.
 - Incomplete grades are warranted only if a student is passing the course at the
   time of the request and if the course requirements can be completed by the
   end of the following semester. Read more [[https://www.umass.edu/natural-sciences/advising/petitions-and-forms/incomplete-grade-form][here]].
 
-** Make-up exam policy
-You must take the regular exam unless you qualify for an official make-up exam
-approved by me, following the official make-up request procedure. Make sure you
-read and understand the make-up exam procedure.
-
-+ *Final exam conflict:* If you need a make-up exam due to a final exam
-  schedule conflict, you must submit documentation from the Registrar's Office
-  or other supporting documents at least two weeks before the scheduled exams.
-  No exceptions will be made. No later than one week before the exam, you must
-  submit a written request to me that includes: your name and UMass Amherst
-  Student ID number, your section number, and the reason for requesting the
-  make-up exam. You can request make-up exams through your SPIRE account: in
-  SPIRE, go to Student Home > Final Exam Conflict.
-
-+ *Religious observance:* If you must miss an exam due to religious observance,
-  you must contact me within two weeks of the beginning of the semester.
-
-+ *Medical reasons:* If you will be absent from an exam due to medical reasons,
-  you must notify me at least one week in advance of the exam. If you have a
-  medical emergency, you must notify me as soon as possible. In either case,
-  you may need to provide documentation. You do not need to disclose personal
-  details of your condition, but you must provide enough information to allow
-  the absence to be excused.
-
-+ *Other circumstances:* It is impossible to anticipate all possible
-  situations. In the event of an exceptional circumstance not covered above,
-  you must contact me and explain the problem. You must be prepared to provide
-  a written statement if necessary. I will evaluate the reasons you provide and
-  make a decision.
-
-+ Note that there is *no re-taking of exams* in this course. If you are sick
-  and take the exam anyway, you cannot re-take the exam later for a better
-  grade. Regardless of the situation, if you do not feel you can take the exam
-  on the scheduled date, you must inform me as soon as possible.
-  
-+ Make-up exams will *not* be given to accommodate travel plans.
-
-+ I will ensure that taking a make-up exam does not represent any technical
-  advantage. In particular, the questions will be completely different from
-  those on the main exam.
-
 ** Class attendance policy
 By UMass policy, students are expected to attend all regularly scheduled
-classes at the University for which they are registered. When planning for the
-tests and homework, I will assume that you have been following my lectures.
-That being said, I will not enforce or grade attendance. If you are not
-able to attend one of the lectures, make sure you read the notes for that
-day and talk to other students to check if you missed anything important.
+classes at the University for which they are registered. This is a small,
+discussion-based graduate course: the lectures /are/ the course, and they do
+not work if you are not in the room. For this reason I do keep track of
+attendance, and attending at least ~80%~ of the lectures is one of the
+conditions for passing the [[*Reading, participation, collaboration, and engagement][participation component]].
+
+If you cannot attend a lecture, let me know in advance when possible, read the
+corresponding sections yourself, and talk to your classmates to check whether
+you missed anything important. If something in your life is making regular
+attendance difficult, come talk to me early rather than late.
 
 ** Class etiquette
 - I expect you to be present and refrain from using your phone.
@@ -356,3 +378,5 @@ link: https://www.umass.edu/titleix/resources. You do not need to make a formal
 report to access them. If you need immediate support, you are not alone. Free
 and confidential support is available 24 hours a day / 7 days a week / 365 days
 a year at the SASA Hotline 413-545-0800.
+
+
