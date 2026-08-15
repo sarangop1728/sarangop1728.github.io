@@ -86,7 +86,7 @@ Here is my [[./documents/Santiago_Arango_Pineros_CV.pdf][CV]].
                    :href "images/flows.pdf"))
 
           (:title "Counting primitive integral solutions to spherical generalized Fermat equations"
-           :venue (:prefix "To appear in the" :name "Canadian Mathematical Bulletin")
+           :venue (:name "Canadian Mathematical Bulletin" :url "https://www.cambridge.org/core/journals/canadian-mathematical-bulletin/article/counting-primitive-integral-solutions-to-spherical-generalized-fermat-equations/950F947E094297C8BFD4C50E78014050" :volume "FirstView" :year "2026")
            :links ((arxiv . "2508.13093")
                    (extra "Magma experiment" "misc/computations.html" "code"))
            :image (:src "images/thumbs/UZ_50.png" :href "images/UZ_50.png" :alt "Fermat triples"))
@@ -280,5 +280,5 @@ Here is my [[./documents/Santiago_Arango_Pineros_CV.pdf][CV]].
           "\n</ol>\n"))
 #+end_src
 
-* Invited talks
+* Some talks
 + <2026-06-07 Sun> [[https://ctnt-summer.math.uconn.edu/conference-26/][Connecticut Summer School In Number Theory (CTNT)]]. ([[https://www.dropbox.com/scl/fi/77z9jyvqcr2cznhid7rb0/CTNT-2026.pdf?rlkey=nqetcd6om7jq1sxsmhb5nxna4&dl=0][Slides]], [[https://www.youtube.com/watch?v=o8txAY8i28E][video]])
