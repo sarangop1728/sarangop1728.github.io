@@ -242,9 +242,19 @@ pre.src {
   overflow-y: hidden;
 }
 
-/* Org's default language-label list has no `src-m` entry, so every Magma block
-   in misc/computations.html currently shows a blank label on hover. */
-pre.src-m::before { content: 'Magma'; }
+/* --- Language label, no-JS fallback ------------------------------------
+   Org's own default style hides `pre.src::before` and reveals it on hover.
+   That is what a reader without org-code.js gets; the rules below only
+   restyle it.  Org's built-in name list (Python, Emacs Lisp, LaTeX, ...) has
+   no entry for Magma or Sage, so those two are supplied here.
+
+   Note the label lives inside `pre.src`, which is the horizontal scroller —
+   scroll a long line right and the label slides away with it.  That is the
+   reason org-code.js re-hangs the label outside the scroller when it runs;
+   see `.org-code-wrap[data-lang]` in §8b. */
+pre.src-m::before     { content: 'Magma'; }
+pre.src-magma::before { content: 'Magma'; }
+pre.src-sage::before  { content: 'Sage'; }
 
 pre.src::before {
   color: var(--text-muted);
@@ -272,13 +282,105 @@ pre code {
 }
 
 
+/* === 8b. Code block chrome (needs org-code.js) ===========================
+   org-code.js wraps every `pre.src` in a `.org-code-wrap`, tags it with
+   data-lang="Magma" (etc.), and appends a copy button.  Both sit in the
+   wrapper rather than inside the `<pre>`, for two independent reasons:
+
+     1. The `<pre>` is the horizontal scroller.  Anything absolutely
+        positioned inside it scrolls out of view on a long line.
+     2. Anything that IS inside the `<pre>` becomes part of its textContent,
+        so a `<span>Magma</span>` or a "Copy" button placed there would be
+        copied along with the code.
+
+   The label stays a ::before pseudo-element for reason 2 as well — pseudo
+   content is not in the DOM and cannot land in the clipboard.  Please do not
+   "simplify" either of these into a real element.
+
+   The wrapper holds only the `<pre>`, so the pre's vertical margin collapses
+   through it and `top: 0` is the top edge of the visible block.
+   ========================================================================= */
+
+.org-code-wrap { position: relative; }
+
+/* The JS label supersedes Org's hover-only one. */
+.org-code-wrap[data-lang] > pre.src::before { content: none; }
+
+.org-code-wrap[data-lang]::before {
+  content: attr(data-lang);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  padding: 0.25em 0.7em;
+  color: var(--text-muted);
+  font-family: var(--font-sans);
+  font-size: 0.72em;
+  letter-spacing: 0.03em;
+  border-right: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  border-radius: 6px 0 6px 0;
+  pointer-events: none;
+}
+
+/* Room for the label strip, so it never sits on the first line of code. */
+.org-code-wrap[data-lang] > pre.src { padding-top: 2.4em; }
+
+/* --- Copy button ------------------------------------------------------- */
+
+.org-copy-btn {
+  position: absolute;
+  top: 0.45em;
+  right: 0.45em;
+  z-index: 2;
+  padding: 0.25em 0.7em;
+  font-family: var(--font-sans);
+  font-size: 0.72em;
+  line-height: 1.5;
+  color: var(--text-muted);
+  background: var(--bg-code);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+/* Revealed on hover, like the LMFDB command panels — but also on keyboard
+   focus, otherwise the button is unreachable without a mouse. */
+.org-code-wrap:hover > .org-copy-btn,
+.org-copy-btn:focus-visible { opacity: 1; }
+
+.org-copy-btn:hover {
+  color: var(--text);
+  border-color: var(--text-muted);
+}
+
+.org-copy-btn.copied {
+  opacity: 1;
+  color: var(--syn-string);
+  border-color: var(--syn-string);
+}
+
+/* Touch devices have no hover state at all — keep it permanently visible. */
+@media (hover: none) {
+  .org-copy-btn { opacity: 1; }
+}
+
+
 /* === 9. Syntax highlighting ==============================================
-   Requires, in YOUR Emacs (not this repo):
-     M-x package-install RET htmlize RET
-     (setq org-html-htmlize-output-type 'css)
-   The default 'inline-css bakes literal colors into the HTML, which would
-   ignore this palette and break in dark mode.
-   Note: Magma (`m`) has no Emacs major mode, so those blocks stay plain.
+   Driven by htmlize with (setq org-html-htmlize-output-type 'css), both set
+   up in init.org under "Org Mode > HTML Export".  The default 'inline-css
+   would bake literal colors from whatever theme is loaded at export time
+   into the HTML, ignoring this palette and breaking dark mode.
+
+   Magma needs nothing special here: magma-mode fontifies with the standard
+   font-lock faces, so it yields the same .org-keyword / .org-string /
+   .org-type / .org-function-name classes as every other language.  Sage
+   likewise, via python-mode.
+
+   Classes not listed below (.org-operator, for one) simply inherit the body
+   text color — that is deliberate, not an omission.
    ========================================================================= */
 
 .org-keyword            { color: var(--syn-keyword); }
@@ -503,4 +605,5 @@ img { max-width: 100%; height: auto; }
   }
   pre { white-space: pre-wrap; word-wrap: break-word; }
   a { color: inherit; text-decoration: underline; }
+  .org-copy-btn { display: none; }
 }
