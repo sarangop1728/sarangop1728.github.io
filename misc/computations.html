@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2026-08-09 Sun 10:15 -->
+<!-- 2026-08-23 Sun 21:38 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Computing the Pythagorean constant in ~Magma~</title>
@@ -195,6 +195,7 @@
 </style>
 <link rel="stylesheet" type="text/css" href="../org-css.css"/>
 <link rel="shortcut icon" type="image/x-icon" href="../images/umass-favicon.ico">
+<script defer src="https://sarangop1728.github.io/org-code.js"></script>
 <script>
   window.MathJax = {
     tex: {
@@ -235,10 +236,10 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org8cadfda"><code>IncreaseCount</code> procedure</a></li>
-<li><a href="#org400d55e"><code>LoopOverRationals</code> procedure</a></li>
-<li><a href="#orga12dc94">Counting</a></li>
-<li><a href="#org1cd0403">Densities</a></li>
+<li><a href="#org3c6153f"><code>IncreaseCount</code> procedure</a></li>
+<li><a href="#orgf8c1861"><code>LoopOverRationals</code> procedure</a></li>
+<li><a href="#org111af3a">Counting</a></li>
+<li><a href="#orgd0ea73e">Densities</a></li>
 </ul>
 </div>
 </div>
@@ -260,14 +261,14 @@ We approximate the constant \(\delta(\phi)\) by computing \(N_\phi(h)/h^{1/2}\) 
 large values of \(h\). Our theorem claims that \(\delta(\phi) = \frac{4}{\pi}\).
 </p>
 
-<div id="outline-container-org8cadfda" class="outline-2">
-<h2 id="org8cadfda"><code>IncreaseCount</code> procedure</h2>
-<div class="outline-text-2" id="text-org8cadfda">
+<div id="outline-container-org3c6153f" class="outline-2">
+<h2 id="org3c6153f"><code>IncreaseCount</code> procedure</h2>
+<div class="outline-text-2" id="text-org3c6153f">
 <p>
 A short function that asks if \(s \equiv t \mod 2\).
 </p>
 <div class="org-src-container">
-<pre class="src src-m">EqualParity := func&lt;s,t | (s-t) mod 2 eq 0&gt;;
+<pre class="src src-m">EqualParity := <span class="org-builtin">func</span>&lt;s,t | (s-t) <span class="org-keyword">mod</span> 2 <span class="org-keyword">eq</span> 0&gt;;
 </pre>
 </div>
 
@@ -277,7 +278,7 @@ it naive because it differs from the actual height \(\mathrm{Ht}(\phi(s:t))\), p
 four.
 </p>
 <div class="org-src-container">
-<pre class="src src-m">naiveHt := func&lt;s,t | (s^2 + t^2)^2&gt;;
+<pre class="src src-m">naiveHt := <span class="org-builtin">func</span>&lt;s,t | (s^2 + t^2)^2&gt;;
 </pre>
 </div>
 
@@ -285,13 +286,13 @@ four.
 This is the height \(\phi^*\mathrm{Ht}(s:t) = \mathrm{Ht}(\phi(s:t))\).
 </p>
 <div class="org-src-container">
-<pre class="src src-m">phiHt := function(s,t)
-    if EqualParity(s,t) then
-        return naiveHt(s,t)/4;
-    else
-        return naiveHt(s,t);
-    end if;
-end function;
+<pre class="src src-m">phiHt := <span class="org-keyword">function</span>(s,t)
+    <span class="org-keyword">if</span> <span class="org-function-name">EqualParity</span>(s,t) <span class="org-keyword">then</span>
+        <span class="org-keyword">return</span> <span class="org-function-name">naiveHt</span>(s,t)/4;
+    <span class="org-keyword">else</span>
+        <span class="org-keyword">return</span> <span class="org-function-name">naiveHt</span>(s,t);
+    <span class="org-keyword">end</span> <span class="org-keyword">if</span>;
+<span class="org-keyword">end</span> <span class="org-keyword">function</span>;
 </pre>
 </div>
 
@@ -300,19 +301,19 @@ This procedure increases the count of a variable <code>N</code> that will keep t
 the number of rational points \(P = (s:t)\) with \(\mathrm{Ht}(\phi(P)) \leq h\).
 </p>
 <div class="org-src-container">
-<pre class="src src-m">IncreaseCount := procedure(~N, s, t, h)
-    if phiHt(s,t) le h then
+<pre class="src src-m">IncreaseCount := <span class="org-keyword">procedure</span>(~N, s, t, h)
+    <span class="org-keyword">if</span> <span class="org-function-name">phiHt</span>(s,t) <span class="org-keyword">le</span> h <span class="org-keyword">then</span>
         N +:= 1;
-    end if;
-end procedure;
+    <span class="org-keyword">end</span> <span class="org-keyword">if</span>;
+<span class="org-keyword">end</span> <span class="org-keyword">procedure</span>;
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org400d55e" class="outline-2">
-<h2 id="org400d55e"><code>LoopOverRationals</code> procedure</h2>
-<div class="outline-text-2" id="text-org400d55e">
+<div id="outline-container-orgf8c1861" class="outline-2">
+<h2 id="orgf8c1861"><code>LoopOverRationals</code> procedure</h2>
+<div class="outline-text-2" id="text-orgf8c1861">
 <p>
 We create a procedure that loops over \[\mathbb{P}^1(\mathbb{Q}) \cong \{(s,t)
 \in \mathbb{Z}^2 - \{(0,0)\} : t \geq 0, \gcd(s,t) = 1 \}\] of height
@@ -329,61 +330,61 @@ by \((4h)^{1/4}\). We conveniently choose \(h = 2^{4n-2}\) for different values 
 \(n\), so that \(H \leq 2^n\).
 </p>
 <div class="org-src-container">
-<pre class="src src-m">procedure LoopOverRationals(~N,h,action : debugging:=false)
-    // H = Ht(s;t) = 1
-    action(~N,0,1,h);  // 0
-    action(~N,1,0,h);  // infty
-    action(~N,1,1,h);  // 1
-    action(~N,-1,1,h); // -1
-
-    // H = Ht(s;t) &gt; 1
-    H := 2;
-    Q := RationalField();
+<pre class="src src-m"><span class="org-keyword">procedure</span> <span class="org-function-name">LoopOverRationals</span>(~N,h,action : debugging:=<span class="org-constant">false</span>)
+    <span class="org-comment">// H = Ht(s;t) = 1
+</span>    <span class="org-function-name">action</span>(~N,0,1,h);  <span class="org-comment">// 0
+</span>    <span class="org-function-name">action</span>(~N,1,0,h);  <span class="org-comment">// infty
+</span>    <span class="org-function-name">action</span>(~N,1,1,h);  <span class="org-comment">// 1
+</span>    <span class="org-function-name">action</span>(~N,-1,1,h); <span class="org-comment">// -1
+</span>
+    <span class="org-comment">// H = Ht(s;t) &gt; 1
+</span>    H := 2;
+    Q := <span class="org-function-name">RationalField</span>();
     stop := (4*h)^(1/4);
 
-    if debugging then
-        Sprintf("While H &lt;= %o", stop);
-    end if;
+    <span class="org-keyword">if</span> debugging <span class="org-keyword">then</span>
+        <span class="org-function-name">Sprintf</span>(<span class="org-string">"While H &lt;= %o"</span>, stop);
+    <span class="org-keyword">end</span> <span class="org-keyword">if</span>;
 
-    while H le stop do
+    <span class="org-keyword">while</span> H <span class="org-keyword">le</span> stop <span class="org-keyword">do</span>
 
-    if debugging then
-        Sprintf("H = %o", H);
-    end if;
+    <span class="org-keyword">if</span> debugging <span class="org-keyword">then</span>
+        <span class="org-function-name">Sprintf</span>(<span class="org-string">"H = %o"</span>, H);
+    <span class="org-keyword">end</span> <span class="org-keyword">if</span>;
 
-        for r in {Q!(H/d) : d in [1..H-1] | Gcd(H,d) eq 1} do
-            for e in [-1,1] do
-                if debugging then
-                    Sprintf("r = %o, with height = %o", e*r, phiHt(Numerator(e*r),Denominator(e*r)));
-                    Sprintf("r = %o, with height = %o", e*r, phiHt(Numerator(e/r),Denominator(e/r)));
-                end if;
-                action(~N,Numerator(e*r),Denominator(e*r),h);
-                action(~N,Numerator(e/r),Denominator(e/r),h);
-            end for;
-        end for;
+        <span class="org-keyword">for</span> r <span class="org-keyword">in</span> {Q!(H/d) : d <span class="org-keyword">in</span> [1..H-1] | <span class="org-function-name">Gcd</span>(H,d) <span class="org-keyword">eq</span> 1} <span class="org-keyword">do</span>
+            <span class="org-keyword">for</span> e <span class="org-keyword">in</span> [-1,1] <span class="org-keyword">do</span>
+                <span class="org-keyword">if</span> debugging <span class="org-keyword">then</span>
+                    <span class="org-function-name">Sprintf</span>(<span class="org-string">"r = %o, with height = %o"</span>, e*r, <span class="org-function-name">phiHt</span>(<span class="org-function-name">Numerator</span>(e*r),<span class="org-function-name">Denominator</span>(e*r)));
+                    <span class="org-function-name">Sprintf</span>(<span class="org-string">"r = %o, with height = %o"</span>, e*r, <span class="org-function-name">phiHt</span>(<span class="org-function-name">Numerator</span>(e/r),<span class="org-function-name">Denominator</span>(e/r)));
+                <span class="org-keyword">end</span> <span class="org-keyword">if</span>;
+                <span class="org-function-name">action</span>(~N,<span class="org-function-name">Numerator</span>(e*r),<span class="org-function-name">Denominator</span>(e*r),h);
+                <span class="org-function-name">action</span>(~N,<span class="org-function-name">Numerator</span>(e/r),<span class="org-function-name">Denominator</span>(e/r),h);
+            <span class="org-keyword">end</span> <span class="org-keyword">for</span>;
+        <span class="org-keyword">end</span> <span class="org-keyword">for</span>;
         H +:= 1;
-    end while;
-end procedure;
+    <span class="org-keyword">end</span> <span class="org-keyword">while</span>;
+<span class="org-keyword">end</span> <span class="org-keyword">procedure</span>;
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orga12dc94" class="outline-2">
-<h2 id="orga12dc94">Counting</h2>
-<div class="outline-text-2" id="text-orga12dc94">
+<div id="outline-container-org111af3a" class="outline-2">
+<h2 id="org111af3a">Counting</h2>
+<div class="outline-text-2" id="text-org111af3a">
 <div class="org-src-container">
-<pre class="src src-m">N_phi := function(h)
+<pre class="src src-m">N_phi := <span class="org-keyword">function</span>(h)
     N := 0; 
-    LoopOverRationals(~N, h, IncreaseCount);
-    return N;
-end function;
+    <span class="org-function-name">LoopOverRationals</span>(~N, h, IncreaseCount);
+    <span class="org-keyword">return</span> N;
+<span class="org-keyword">end</span> <span class="org-keyword">function</span>;
 </pre>
 </div>
 
 <div class="org-src-container">
-<pre class="src src-m">pi := Pi(RealField(53));
-close_to_one := func&lt;h | (N_phi(h)/Sqrt(h))*pi/4&gt;;
+<pre class="src src-m">pi := <span class="org-function-name">Pi</span>(<span class="org-function-name">RealField</span>(53));
+close_to_one := <span class="org-builtin">func</span>&lt;h | (<span class="org-function-name">N_phi</span>(h)/<span class="org-function-name">Sqrt</span>(h))*pi/4&gt;;
 </pre>
 </div>
 
@@ -391,10 +392,10 @@ close_to_one := func&lt;h | (N_phi(h)/Sqrt(h))*pi/4&gt;;
 We can run the following code to generate some data:
 </p>
 <div class="org-src-container">
-<pre class="src src-m">for n in [1..12] do
+<pre class="src src-m"><span class="org-keyword">for</span> n <span class="org-keyword">in</span> [1..12] <span class="org-keyword">do</span>
     h := 2^(4*n-2);
-    Sprintf("| %o | %o | %o |", n, h, close_to_one(h));
-end for;
+    <span class="org-function-name">Sprintf</span>(<span class="org-string">"| %o | %o | %o |"</span>, n, h, <span class="org-function-name">close_to_one</span>(h));
+<span class="org-keyword">end</span> <span class="org-keyword">for</span>;
 </pre>
 </div>
 
@@ -508,9 +509,9 @@ end for;
 </div>
 </div>
 
-<div id="outline-container-org1cd0403" class="outline-2">
-<h2 id="org1cd0403">Densities</h2>
-<div class="outline-text-2" id="text-org1cd0403">
+<div id="outline-container-orgd0ea73e" class="outline-2">
+<h2 id="orgd0ea73e">Densities</h2>
+<div class="outline-text-2" id="text-orgd0ea73e">
 <p>
 We obtain a numerical approximation for the density \(\delta_1 = 2/3\), using
 that \(\delta_1 = \lim_{h\to \infty} \delta_1(h)\), where
@@ -526,31 +527,31 @@ calculate the densities.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-m">numeratorDelta1 := procedure(~N, s, t, h)
-    if not EqualParity(s,t) then
-        if Max(Abs(s),Abs(t)) le h then
+<pre class="src src-m">numeratorDelta1 := <span class="org-keyword">procedure</span>(~N, s, t, h)
+    <span class="org-keyword">if</span> <span class="org-keyword">not</span> <span class="org-function-name">EqualParity</span>(s,t) <span class="org-keyword">then</span>
+        <span class="org-keyword">if</span> <span class="org-function-name">Max</span>(<span class="org-function-name">Abs</span>(s),<span class="org-function-name">Abs</span>(t)) <span class="org-keyword">le</span> h <span class="org-keyword">then</span>
             N +:= 1;
-        end if;
-    end if;
-end procedure;
+        <span class="org-keyword">end</span> <span class="org-keyword">if</span>;
+    <span class="org-keyword">end</span> <span class="org-keyword">if</span>;
+<span class="org-keyword">end</span> <span class="org-keyword">procedure</span>;
 
-denominatorDelta1 := procedure(~N, s, t, h)
-    if Max(Abs(s),Abs(t)) le h then
+denominatorDelta1 := <span class="org-keyword">procedure</span>(~N, s, t, h)
+    <span class="org-keyword">if</span> <span class="org-function-name">Max</span>(<span class="org-function-name">Abs</span>(s),<span class="org-function-name">Abs</span>(t)) <span class="org-keyword">le</span> h <span class="org-keyword">then</span>
         N +:= 1;
-    end if;
-end procedure;
+    <span class="org-keyword">end</span> <span class="org-keyword">if</span>;
+<span class="org-keyword">end</span> <span class="org-keyword">procedure</span>;
 </pre>
 </div>
 
 <div class="org-src-container">
-<pre class="src src-m">delta1 := function(h)
+<pre class="src src-m">delta1 := <span class="org-keyword">function</span>(h)
     Num := 0;
     Den := 0;
-    R := RealField(53);
-    LoopOverRationals(~Num, h, numeratorDelta1);
-    LoopOverRationals(~Den, h, denominatorDelta1);
-    return R!(Num/Den);
-end function;
+    R := <span class="org-function-name">RealField</span>(53);
+    <span class="org-function-name">LoopOverRationals</span>(~Num, h, numeratorDelta1);
+    <span class="org-function-name">LoopOverRationals</span>(~Den, h, denominatorDelta1);
+    <span class="org-keyword">return</span> R!(Num/Den);
+<span class="org-keyword">end</span> <span class="org-keyword">function</span>;
 </pre>
 </div>
 
@@ -558,10 +559,10 @@ end function;
 Running the following code, we see the limit approaching \(0.6666...\).
 </p>
 <div class="org-src-container">
-<pre class="src src-m">for n in [10*m : m in [2,3,4,5]] do
+<pre class="src src-m"><span class="org-keyword">for</span> n <span class="org-keyword">in</span> [10*m : m <span class="org-keyword">in</span> [2,3,4,5]] <span class="org-keyword">do</span>
     h := 2^n;
-    Sprintf("| %o | %o | %o |",n,h,delta1(h));
-end for;  
+    <span class="org-function-name">Sprintf</span>(<span class="org-string">"| %o | %o | %o |"</span>,n,h,<span class="org-function-name">delta1</span>(h));
+<span class="org-keyword">end</span> <span class="org-keyword">for</span>;  
 </pre>
 </div>
 
@@ -618,7 +619,7 @@ end for;
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: <a href="../index.html">Santiago Arango-Piñeros</a></p>
-<p class="date">Created: 2026-08-09 Sun 10:15</p>
+<p class="date">Created: 2026-08-23 Sun 21:38</p>
 </div>
 </body>
 </html>
