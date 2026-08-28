@@ -6,16 +6,31 @@
 #+OPTIONS: toc:t num:nil
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="org-css.css"/>
 #+HTML_HEAD:  <link rel="shortcut icon" type="image/x-icon" href="images/umass-favicon.ico">
+# MathJax. Org injects this on its own only when the buffer holds a real LaTeX
+# fragment. The publication list is raw HTML emitted by the babel block below,
+# which Org parses as an export block and never looks inside, so the math in a
+# paper title is invisible to that check and the loader has to be declared by
+# hand. The config is Org's own template verbatim, so this page matches the
+# teaching pages.
+#
+# If prose math is ever written directly in index.org, Org will start adding its
+# own copy and the page will carry two #MathJax-script tags; delete these lines
+# at that point.
+#+HTML_HEAD: <script>window.MathJax = {tex: {ams: {multlineWidth: '85%'},
+#+HTML_HEAD:   tags: 'ams', tagSide: 'right', tagIndent: '.8em'}, chtml: {scale: 1.0,
+#+HTML_HEAD:   displayAlign: 'center', displayIndent: '0em'}, svg: {scale: 1.0,
+#+HTML_HEAD:   displayAlign: 'center', displayIndent: '0em'}, output: {
+#+HTML_HEAD:   font: 'mathjax-modern', displayOverflow: 'overflow'}};</script>
+#+HTML_HEAD: <script id="MathJax-script" async
+#+HTML_HEAD:   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
 #+ATTR_HTML: :width 200px
 #+ATTR_HTML: :align right
 [[./images/thumbs/santi-website.jpg]]
 
-I am a mathematician interested in Number Theory and Arithmetic
-Geometry. My pronouns are He/Him/His.
-
-I earned my PhD in 2025 under the supervision of [[https://dmzb.github.io/][David Zureick-Brown]] and [[https://jvoight.github.io/][John
-Voight]].
+I am a mathematician interested in Number Theory and Arithmetic Geometry. My
+pronouns are *He/Him*. I earned my PhD in 2025 under the supervision of [[https://dmzb.github.io/][David
+Zureick-Brown]] and [[https://jvoight.github.io/][John Voight]].
 
 Currently, I am Visiting Assistant Professor (postdoc) at [[https://www.umass.edu/mathematics-statistics/][UMass Amherst]].
 
@@ -46,12 +61,12 @@ Here is my [[./documents/Santiago_Arango_Pineros_CV.pdf][CV]].
 # ** Future
 
 * Organizing
-+ I am co-organizing the [[https://dmzb.github.io/FCNTS.github.io/][Five College Number Theory Seminar]] with [[https://dmzb.github.io/][David
++ I co-organize the [[https://dmzb.github.io/FCNTS.github.io/][Pioneer Valley Number Theory Seminar]] with [[https://dmzb.github.io/][David
   Zureick-Brown]].
-+ I co-organized (together with [[https://people.math.harvard.edu/~achenjang/][Niven Achenjang]] and[[https://web.math.princeton.edu/~sameerav/][ Sameera Vemulapalli]]) a
-  special session at the /AMS Eastern Sectional/, on March 28-29 at Boston
-  College. The title of the session was: [[https://www.ams.org/meetings/sectional/2331_program_ss6.html#title][Arithmetic Statistics of Rational
-  Points and Number Fields]].
+# + I co-organized (together with [[https://people.math.harvard.edu/~achenjang/][Niven Achenjang]] and[[https://web.math.princeton.edu/~sameerav/][ Sameera Vemulapalli]]) a
+#   special session at the /AMS Eastern Sectional/, on March 28-29 at Boston
+#   College. The title of the session was: [[https://www.ams.org/meetings/sectional/2331_program_ss6.html#title][Arithmetic Statistics of Rational
+#   Points and Number Fields]].
   
 * Research Articles
 
@@ -59,7 +74,8 @@ Here is my [[./documents/Santiago_Arango_Pineros_CV.pdf][CV]].
 ;; ---------------------------------------------------------------------------
 ;; Publication list. To add a paper, prepend one entry to `papers' below.
 ;;
-;;   :title    string (required)
+;;   :title    string (required). Math goes in \\(...\\) -- doubled, because
+;;             the elisp reader eats a single backslash before "(".
 ;;   :authors  list of ("Name" . "url"), or a bare "Name" for no homepage.
 ;;             Omit for solo papers.
 ;;   :venue    (:prefix "To appear in" :name "..." :url "..."
@@ -73,7 +89,14 @@ Here is my [[./documents/Santiago_Arango_Pineros_CV.pdf][CV]].
 ;;   :image    (:src "images/x.png" :alt "..." :href "...")  :href defaults to :src
 ;; ---------------------------------------------------------------------------
 (let* ((papers
-        '((:title "Counting number fields of fixed degree by their smallest defining polynomial"
+         '((:title "Appendix to: On \\(p\\)-adic solubility of \\(Ax^{\\ell} + By^{m} + Cz^{n} = 0\\)"
+           :authors (("Christopher Keyes" . "https://c-keyes.github.io/")
+                     ("Andrew Kobin" . "https://www.andrewkobin.com/"))
+           :links ((arxiv . "2608.18525"))
+           :image (:src "images/thumbs/fermat-stack.png" :href "images/fermat-stack.png"
+                   :alt "A geometric fiber of the Fermat stack"))
+
+           (:title "Counting number fields of fixed degree by their smallest defining polynomial"
            :authors (("Fabian Gundlach" . "https://fabiangundlach.org")
                      ("Robert J. Lemke Oliver" . "https://lemkeoliver.github.io")
                      ("Kevin J. McGown" . "https://kmcgown.yourweb.csuchico.edu")
