@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 2026-09-16 Wed 18:12 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Preface</title>
+<meta name="generator" content="Org Mode" />
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<link rel="stylesheet" type="text/css" href="org-css.css"/>
+<link rel="stylesheet" type="text/css" href="book.css"/>
+<script src="macros.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-chtml-full.js"></script>
+<script defer src="org-code.js"></script>
+<script defer src="book.js"></script>
+</head>
+<body>
+<div id="preamble" class="status">
+<nav class="ec-sidebar" id="ec-sidebar" aria-label="Contents">
+<a class="ec-book-title" href="index.html">The arithmetic geometry of elliptic curves (DRAFT)</a>
+<p class="ec-book-subtitle">Math 714, Fall 2026</p>
+<ol class="ec-toc">
+<li class="ec-toc-chapter is-current"><a href="00-preface.html" aria-current="page"><span class="ec-toc-num"></span><span class="ec-toc-text">Preface</span></a>
+<ol class="ec-toc-sections">
+<li class="ec-toc-level-1"><a href="#sec-pref-prerequisites"><span class="ec-toc-num"></span><span class="ec-toc-text">Prerequisites</span></a></li>
+<li class="ec-toc-level-1"><a href="#sec-pref-notation"><span class="ec-toc-num"></span><span class="ec-toc-text">Notation and conventions</span></a></li>
+<li class="ec-toc-level-1"><a href="#sec-pref-roadmap"><span class="ec-toc-num"></span><span class="ec-toc-text">A road map</span></a></li>
+<li class="ec-toc-level-1"><a href="#sec-origin"><span class="ec-toc-num"></span><span class="ec-toc-text">Origin of these notes</span></a></li>
+<li class="ec-toc-level-1"><a href="#sec-pref-acknowledgements"><span class="ec-toc-num"></span><span class="ec-toc-text">Acknowledgements<span class="ec-toc-status"><span class="ec-status-label ec-status-draft">Draft</span></span></span></a></li>
+<li class="ec-toc-level-1"><a href="#sec-pref-ai-disclosure"><span class="ec-toc-num"></span><span class="ec-toc-text">AI disclosure<span class="ec-toc-status"><span class="ec-status-label ec-status-draft">Draft</span></span></span></a></li>
+</ol></li>
+<li class="ec-toc-chapter"><a href="01-riemann-surfaces.html"><span class="ec-toc-num">1</span><span class="ec-toc-text">Elliptic curves as Riemann surfaces<span class="ec-toc-status"><span class="ec-status-progress">2 of 8 sections finished</span></span></span></a></li>
+<li class="ec-toc-chapter"><a href="02-varieties.html"><span class="ec-toc-num">2</span><span class="ec-toc-text">Algebraic varieties<span class="ec-toc-status"><span class="ec-status-progress">0 of 4 sections finished</span></span></span></a></li>
+<li class="ec-toc-chapter"><a href="03-curves.html"><span class="ec-toc-num">3</span><span class="ec-toc-text">Algebraic curves<span class="ec-toc-status"><span class="ec-status-progress">0 of 7 sections finished</span></span></span></a></li>
+<li class="ec-toc-chapter"><a href="04-ec-algebraic.html"><span class="ec-toc-num">4</span><span class="ec-toc-text">Elliptic curves as algebraic curves<span class="ec-toc-status"><span class="ec-status-progress">1 of 8 sections finished</span></span></span></a></li>
+<li class="ec-toc-chapter"><a href="05-finite-fields.html"><span class="ec-toc-num">5</span><span class="ec-toc-text">Elliptic curves over finite fields<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
+<li class="ec-toc-chapter"><a href="06-local-fields.html"><span class="ec-toc-num">6</span><span class="ec-toc-text">Elliptic curves over local fields<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
+<li class="ec-toc-chapter"><a href="07-galois-cohomology.html"><span class="ec-toc-num">7</span><span class="ec-toc-text">Galois cohomology<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
+<li class="ec-toc-chapter"><a href="08-mordell-weil.html"><span class="ec-toc-num">8</span><span class="ec-toc-text">The Mordell&ndash;Weil theorem<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
+<li class="ec-toc-chapter"><a href="09-integral-points.html"><span class="ec-toc-num">9</span><span class="ec-toc-text">Integral points<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
+<li class="ec-toc-chapter"><a href="10-selmer-sha.html"><span class="ec-toc-num">10</span><span class="ec-toc-text">Twisting, Selmer, and Tate&ndash;Shafarevich<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
+<li class="ec-toc-chapter"><a href="11-complex-multiplication.html"><span class="ec-toc-num">11</span><span class="ec-toc-text">Complex multiplication<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
+<li class="ec-toc-chapter"><a href="12-tate-curve.html"><span class="ec-toc-num">12</span><span class="ec-toc-text">The Tate curve<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
+<li class="ec-toc-chapter"><a href="13-l-functions-bsd.html"><span class="ec-toc-num">13</span><span class="ec-toc-text">The \(L\)-function and BSD<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
+<li class="ec-toc-chapter"><a href="14-sato-tate.html"><span class="ec-toc-num">14</span><span class="ec-toc-text">The Sato&ndash;Tate conjecture<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
+<li class="ec-toc-chapter"><a href="15-modular-curves.html"><span class="ec-toc-num">15</span><span class="ec-toc-text">Introduction to modular curves<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
+</ol>
+<a class="ec-toc-glossary" href="glossary.html">Glossary</a>
+</nav>
+<button class="ec-menu" type="button" aria-controls="ec-sidebar" aria-expanded="false">Contents</button>
+<nav class="ec-pager ec-pager-top" aria-label="Chapters"><span class="ec-pager-prev"></span><a class="ec-pager-next" rel="next" href="01-riemann-surfaces.html"><span class="ec-pager-label">Next</span><span class="ec-pager-title">1. Elliptic curves as Riemann surfaces</span></a></nav>
+</div>
+<div id="content" class="content">
+<h1 class="title">Preface</h1>
+<p>
+These are the notes for Math 714, a first graduate course on the arithmetic of elliptic
+curves.  The main reference is [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>], which we follow closely from
+Chapter 4 on.
+</p>
+
+<div id="outline-container-sec-pref-prerequisites" class="outline-2">
+<h2 id="sec-pref-prerequisites">Prerequisites</h2>
+<div class="outline-text-2" id="text-sec-pref-prerequisites">
+<p>
+We assume the first-year graduate courses in algebra and complex analysis.  More
+precisely, the reader should be comfortable with:
+</p>
+
+<ul class="org-ul">
+<li><b>Algebra.</b> Finite and infinite Galois theory, including profinite groups and the Krull
+topology; modules over a principal ideal domain; basic commutative algebra
+(localization, integral extensions, discrete valuation rings).</li>
+<li><b>Algebraic number theory.</b> Number fields and \(p\)-adic fields and their
+rings of integers; Dedekind domains; the decomposition of primes; and the
+finiteness of the class group and of the unit rank.</li>
+<li><b>Complex analysis.</b> Holomorphic and meromorphic functions, Liouville's theorem, the
+residue theorem, and analytic continuation.  Chapter 1 builds the theory of Riemann
+surfaces it needs.</li>
+</ul>
+
+<p>
+No algebraic geometry is assumed. In the spirit of [<a class="ec-cite" href="#bib-Poonen06">Poo06</a>], we use the
+language of scheme theory and explain how to think concretely about
+scheme-theoretic constructions in terms of commutative algebra. Chapters 2
+and 3 collect what we use from the theory of algebraic varieties and algebraic
+curves.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-pref-notation" class="outline-2">
+<h2 id="sec-pref-notation">Notation and conventions</h2>
+<div class="outline-text-2" id="text-sec-pref-notation">
+<p>
+Rings are commutative with \(1\). We write \(\N\), \(\Z\), \(\Q\), \(\R\) and
+\(\C\) as usual, \(\F_q\) for the field with \(q\) elements, \(\Z_p\) and
+\(\Q_p\) for the \(p\)-adic integers and numbers, and \(\#S\) or
+\(\lvert S \rvert\) for the cardinality of a set \(S\).
+</p>
+
+<p>
+<b>Fields.</b> Throughout, \(k\) is an arbitrary field; in particular it need not be
+perfect. We fix an algebraic closure \(\kbar\), and write \(\ksep\) for the
+separable closure of \(k\) in \(\kbar\). We write \(\Gal_k \coloneqq
+\Gal(\ksep/k)\) for the absolute Galois group of \(k\). The group \(\Gal_k\)
+acts on \(X(\ksep)\); since restriction \(\Aut(\kbar/k) \to \Gal_k\) is an
+isomorphism, this also determines the action on \(X(\kbar)\).
+</p>
+
+<p>
+<b>Varieties.</b> A \(k\)-variety is a separated scheme of finite type over \(k\).
+We do not assume varieties to be integral or reduced. A curve is an integral
+\(k\)-variety of dimension \(1\), and a curve is nice if it is smooth,
+projective, and geometrically irreducible.
+</p>
+
+<p>
+<b>Coordinates.</b> Upper case letters are homogeneous coordinates on projective
+space, lower case letters are affine coordinates, and the two are related by
+dehomogenization. On the standard patch \(U_0 = \{X_0 \neq 0\}\) of \(\PP^n\)
+we write \(x_i = X_i/X_0\); for a plane curve in \(\PP^2\) with coordinates
+\(X\), \(Y\), \(Z\) the affine chart is \(Z \neq 0\), with \(x = X/Z\) and
+\(y = Y/Z\). The same rule applies to the names of polynomials: \(F\) is
+homogeneous and \(f\) is its dehomogenization.
+</p>
+
+<p>
+<b>Elliptic curves.</b> For an elliptic curve \(E\) over \(k\) and an integer \(m\),
+\(E[m]\) is the group scheme given by the kernel of multiplication by \(m\), and
+\(E[m](\kbar)\) is the \(m\)-torsion subgroup of \(E(\kbar)\). Likewise,
+\(\mu_m(\kbar)\) is the group of \(m\)-th roots of unity in \(\kbar^{\times}\).
+For a nice curve \(C\) we write \(\Div C\) and \(\Pic C\) for the divisor group
+and the Picard group, and \(\Div^0 C\), \(\Pic^0 C\) for their degree-zero
+parts. Isogenies in \(\Hom(E_1, E_2)\), \(\End(E)\) and \(\Aut(E)\) are defined
+over the ground field, and \(\Hom(E_{1,\kbar}, E_{2,\kbar})\) denotes those
+defined over \(\kbar\). For \(N\) prime to the characteristic,
+\(\bar\rho_{E,N}\) is the mod \(N\) Galois representation on \(E[N](\ksep)\),
+and \(\rho_{E,\ell}\) is the \(\ell\)-adic one on the Tate module
+\(T_\ell(E)\).
+</p>
+
+<p>
+The table below, based on [<a class="ec-cite" href="#bib-Poonen06">Poo06</a>, Warning 1.9.6], compares our notation
+with Silverman's, for a nice curve \(C\) and elliptic curves \(E_1\), \(E_2\)
+over \(k\).
+</p>
+
+<table>
+
+
+<colgroup>
+<col  class="org-left">
+
+<col  class="org-left">
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Our notation</th>
+<th scope="col" class="org-left">Notation in [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">\(k\) arbitrary field</td>
+<td class="org-left">\(k\) separable (\(\ksep = \kbar\))</td>
+</tr>
+
+<tr>
+<td class="org-left">\(\Div C\)</td>
+<td class="org-left">\(\Div_k(C)\)</td>
+</tr>
+
+<tr>
+<td class="org-left">\(\Div C_{\ksep}\)</td>
+<td class="org-left">\(\Div(C)\)</td>
+</tr>
+
+<tr>
+<td class="org-left">\(\Pic C\)</td>
+<td class="org-left">No notation for this.</td>
+</tr>
+
+<tr>
+<td class="org-left">\(\Pic C_{\ksep}\)</td>
+<td class="org-left">\(\Pic(C)\)</td>
+</tr>
+
+<tr>
+<td class="org-left">\((\Pic C_{\ksep})^{\Gal_k}\)</td>
+<td class="org-left">\(\Pic_k(C)\)</td>
+</tr>
+
+<tr>
+<td class="org-left">\(\Hom(E_1, E_2)\)</td>
+<td class="org-left">\(\Hom_k(E_1, E_2)\)</td>
+</tr>
+
+<tr>
+<td class="org-left">\(\Hom(E_{1,\ksep}, E_{2,\ksep})\)</td>
+<td class="org-left">\(\Hom(E_1, E_2)\)</td>
+</tr>
+
+<tr>
+<td class="org-left">\(\End(E)\), \(\Aut(E)\)</td>
+<td class="org-left">\(\End_k(E)\), \(\Aut_k(E)\)</td>
+</tr>
+
+<tr>
+<td class="org-left">\(\End(E_{\ksep})\)</td>
+<td class="org-left">\(\End(E)\)</td>
+</tr>
+
+<tr>
+<td class="org-left">\(E[m](\ksep)\)</td>
+<td class="org-left">\(E[m]\)</td>
+</tr>
+
+<tr>
+<td class="org-left">\(\Gal_k = \Gal(\ksep/k) \)</td>
+<td class="org-left">\(G_{\kbar/k} = \Gal(\kbar/k)\)</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="outline-container-sec-pref-roadmap" class="outline-2">
+<h2 id="sec-pref-roadmap">A road map</h2>
+<div class="outline-text-2" id="text-sec-pref-roadmap">
+<p>
+The notes fall into four parts.
+</p>
+
+<ul class="org-ul">
+<li><b>Foundations (Chapters 1&#x2013;4).</b> Chapter 1 treats elliptic curves over \(\C\)
+as complex tori \(\C/\Lambda\), as a source of geometric intuition for what
+follows. Chapters 2 and 3 develop varieties and curves over an arbitrary
+field, and Chapter 4 uses them to set up the general theory: Weierstrass
+equations, the group law, isogenies, the Tate module and the Weil pairing.</li>
+<li><b>Local theory (Chapters 5 and 6).</b> Elliptic curves over finite fields, including the
+Hasse bound, and over local fields: minimal models, reduction and the formal group.</li>
+<li><b>Global theory (Chapters 7&#x2013;10).</b> Galois cohomology, the Mordell&#x2013;Weil theorem,
+integral points; twists, Selmer groups, and the Tate&#x2013;Shafarevich group.</li>
+<li><b>Further topics (Chapters 11&#x2013;15).</b> Complex multiplication, the Tate curve, the
+\(L\)-function and the conjecture of Birch and Swinnerton-Dyer, the Sato&#x2013;Tate
+conjecture, and an introduction to modular curves.</li>
+</ul>
+
+<p>
+A thread running through the notes is the comparison of an elliptic curve with the
+multiplicative group \(\Gm\): over \(\C\), the torus \(\C/\Lambda\) against
+\(\C^\times = \C/2\pi i\Z\); over an arbitrary field, their invariant differentials, torsion
+points and Tate modules; and in Chapter 12, the Tate curve, which realizes an elliptic curve
+over a \(p\)-adic field as a quotient of \(\Gm\).
+</p>
+
+<p>
+Chapter 1 can be read independently of Chapters 2 and 3, and Chapter 4 relies on Chapters 2 and 3.
+After Chapter 4, the main line runs through Chapters 5 to 8; Chapters 9 and 10 build on
+Chapter 8, and each of the further topics can be read after the chapters it
+cites. The worksheets for the problem sessions, with their solutions, are
+linked from the web page of the notes; each one says which sections it draws
+on.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-origin" class="outline-2">
+<h2 id="sec-origin">Origin of these notes</h2>
+<div class="outline-text-2" id="text-sec-origin">
+<p>
+When I was a first-year graduate student trying to learn scheme theory in
+parallel with the arithmetic of elliptic curves, the difference between the
+notation of Hartshorne [<a class="ec-cite" href="#bib-Hartshorne77">Har77</a>] and that of Silverman
+[<a class="ec-cite" href="#bib-Silverman09">Sil09</a>] was a frustrating source of confusion. When I complained
+about this to my Ph.D. advisor, David Zureick-Brown, he pointed me to the
+wonderful notes of Bjorn Poonen [<a class="ec-cite" href="#bib-Poonen06">Poo06</a>], which helped me learn to
+translate between the two.
+</p>
+
+<p>
+I completed my first year as a postdoc in the summer of 2026. That summer I
+attended a lecture by Joe Silverman at the CTNT conference at UConn. After a
+beautiful talk on arithmetic dynamics, he encouraged the audience to <i>write the
+mathematics textbook that you wish existed when you were a graduate student.</i>
+I thought then that the perfect book on elliptic curves (for me) would be one
+that borrowed intuition from the complex-analytic world and treated the topics
+of [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>] in the language of schemes.
+</p>
+
+<p>
+Coincidentally, I was scheduled to teach Math 714 (<i>Arithmetic of elliptic
+curves</i>) at UMass in the fall of 2026. My original plan was to teach straight
+from Silverman's book; after all, that is where I learned the material myself,
+and it is still the best book on the subject.
+</p>
+
+<p>
+Nevertheless, I was already writing (by hand) my personal lecture notes to
+prepare for the class, and I realized it would be easy to ask Claude to convert
+these into a more professional format. And here we are now.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-pref-acknowledgements" class="outline-2">
+<h2 id="sec-pref-acknowledgements"><span class="ec-status ec-status-draft"><span class="ec-status-label ec-status-draft">Draft</span><time datetime="2026-09-15">15 Sep 2026</time></span>Acknowledgements</h2>
+<div class="outline-text-2" id="text-sec-pref-acknowledgements">
+<p>
+This text owes an enormous intellectual debt to Silverman's book
+[<a class="ec-cite" href="#bib-Silverman09">Sil09</a>] and Poonen's notes [<a class="ec-cite" href="#bib-Poonen06">Poo06</a>]. I also benefited
+greatly from Milne's excellent book [<a class="ec-cite" href="#bib-Milne20">Mil20</a>].
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-pref-ai-disclosure" class="outline-2">
+<h2 id="sec-pref-ai-disclosure"><span class="ec-status ec-status-draft"><span class="ec-status-label ec-status-draft">Draft</span><time datetime="2026-09-15">15 Sep 2026</time></span>AI disclosure</h2>
+<div class="outline-text-2" id="text-sec-pref-ai-disclosure">
+<p>
+Throughout this project, we used Claude Opus 5 for writing code, carrying out
+computations, formatting, and proofreading. All mathematical results stated in
+this manuscript, as well as the AI-generated code and computations verifying them,
+have been independently verified by the author, who takes full responsibility
+for the accuracy and content of this work.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org17b39b6" class="outline-2 ec-references">
+<h2 id="org17b39b6">References</h2>
+<div class="outline-text-2" id="text-org17b39b6">
+<dl class="ec-bibliography">
+<dt id="bib-Hartshorne77">[Har77]</dt>
+<dd>Robin Hartshorne. <i>Algebraic geometry</i>. Vol. No. 52. Graduate Texts in Mathematics. Springer-Verlag, New York-Heidelberg, 1977.</dd>
+<dt id="bib-Milne20">[Mil20]</dt>
+<dd>James S. Milne. <i>Elliptic curves</i>. Second. World Scientific Publishing Co. Pte. Ltd., Hackensack, NJ, 2020.</dd>
+<dt id="bib-Poonen06">[Poo06]</dt>
+<dd>Bjorn Poonen. <i>Lectures on rational points on curves</i>. 2006. Lecture notes, March 5, 2006 version.</dd>
+<dt id="bib-Silverman09">[Sil09]</dt>
+<dd>Joseph H. Silverman. <i>The arithmetic of elliptic curves</i>. Second. Vol. 106. Graduate Texts in Mathematics. Springer, Dordrecht, 2009. <a href="https://doi.org/10.1007/978-0-387-09494-6">doi:10.1007/978-0-387-09494-6</a>.</dd>
+</dl>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<nav class="ec-pager ec-pager-bottom" aria-label="Chapters"><span class="ec-pager-prev"></span><a class="ec-pager-next" rel="next" href="01-riemann-surfaces.html"><span class="ec-pager-label">Next</span><span class="ec-pager-title">1. Elliptic curves as Riemann surfaces</span></a></nav>
+</div>
+</body>
+</html>

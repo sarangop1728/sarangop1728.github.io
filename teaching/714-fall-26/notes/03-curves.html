@@ -1,0 +1,1275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 2026-09-16 Wed 18:12 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Algebraic curves</title>
+<meta name="generator" content="Org Mode" />
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<link rel="stylesheet" type="text/css" href="org-css.css"/>
+<link rel="stylesheet" type="text/css" href="book.css"/>
+<script src="macros.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-chtml-full.js"></script>
+<script defer src="org-code.js"></script>
+<script defer src="book.js"></script>
+</head>
+<body>
+<div id="preamble" class="status">
+<nav class="ec-sidebar" id="ec-sidebar" aria-label="Contents">
+<a class="ec-book-title" href="index.html">The arithmetic geometry of elliptic curves (DRAFT)</a>
+<p class="ec-book-subtitle">Math 714, Fall 2026</p>
+<ol class="ec-toc">
+<li class="ec-toc-chapter"><a href="00-preface.html"><span class="ec-toc-num"></span><span class="ec-toc-text">Preface</span></a></li>
+<li class="ec-toc-chapter"><a href="01-riemann-surfaces.html"><span class="ec-toc-num">1</span><span class="ec-toc-text">Elliptic curves as Riemann surfaces<span class="ec-toc-status"><span class="ec-status-progress">2 of 8 sections finished</span></span></span></a></li>
+<li class="ec-toc-chapter"><a href="02-varieties.html"><span class="ec-toc-num">2</span><span class="ec-toc-text">Algebraic varieties<span class="ec-toc-status"><span class="ec-status-progress">0 of 4 sections finished</span></span></span></a></li>
+<li class="ec-toc-chapter is-current"><a href="03-curves.html" aria-current="page"><span class="ec-toc-num">3</span><span class="ec-toc-text">Algebraic curves<span class="ec-toc-status"><span class="ec-status-progress">0 of 7 sections finished</span></span></span></a>
+<ol class="ec-toc-sections">
+<li class="ec-toc-level-1"><a href="#s3.1"><span class="ec-toc-num">3.1</span><span class="ec-toc-text">Closed points and local rings<span class="ec-toc-status"><span class="ec-status-label ec-status-draft">Draft</span></span></span></a></li>
+<li class="ec-toc-level-1"><a href="#s3.2"><span class="ec-toc-num">3.2</span><span class="ec-toc-text">Morphisms of curves<span class="ec-toc-status"><span class="ec-status-label ec-status-draft">Draft</span></span></span></a></li>
+<li class="ec-toc-level-1"><a href="#s3.3"><span class="ec-toc-num">3.3</span><span class="ec-toc-text">Divisors<span class="ec-toc-status"><span class="ec-status-label ec-status-draft">Draft</span></span></span></a></li>
+<li class="ec-toc-level-1"><a href="#s3.4"><span class="ec-toc-num">3.4</span><span class="ec-toc-text">Differentials<span class="ec-toc-status"><span class="ec-status-label ec-status-draft">Draft</span></span></span></a></li>
+<li class="ec-toc-level-1"><a href="#s3.5"><span class="ec-toc-num">3.5</span><span class="ec-toc-text">The Riemann&ndash;Roch theorem<span class="ec-toc-status"><span class="ec-status-label ec-status-draft">Draft</span></span></span></a></li>
+<li class="ec-toc-level-1"><a href="#s3.6"><span class="ec-toc-num">3.6</span><span class="ec-toc-text">The Hurwitz formula<span class="ec-toc-status"><span class="ec-status-label ec-status-draft">Draft</span></span></span></a></li>
+<li class="ec-toc-level-1"><a href="#s3.7"><span class="ec-toc-num">3.7</span><span class="ec-toc-text">Plane curves<span class="ec-toc-status"><span class="ec-status-label ec-status-draft">Draft</span></span></span></a></li>
+</ol></li>
+<li class="ec-toc-chapter"><a href="04-ec-algebraic.html"><span class="ec-toc-num">4</span><span class="ec-toc-text">Elliptic curves as algebraic curves<span class="ec-toc-status"><span class="ec-status-progress">1 of 8 sections finished</span></span></span></a></li>
+<li class="ec-toc-chapter"><a href="05-finite-fields.html"><span class="ec-toc-num">5</span><span class="ec-toc-text">Elliptic curves over finite fields<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
+<li class="ec-toc-chapter"><a href="06-local-fields.html"><span class="ec-toc-num">6</span><span class="ec-toc-text">Elliptic curves over local fields<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
+<li class="ec-toc-chapter"><a href="07-galois-cohomology.html"><span class="ec-toc-num">7</span><span class="ec-toc-text">Galois cohomology<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
+<li class="ec-toc-chapter"><a href="08-mordell-weil.html"><span class="ec-toc-num">8</span><span class="ec-toc-text">The Mordell&ndash;Weil theorem<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
+<li class="ec-toc-chapter"><a href="09-integral-points.html"><span class="ec-toc-num">9</span><span class="ec-toc-text">Integral points<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
+<li class="ec-toc-chapter"><a href="10-selmer-sha.html"><span class="ec-toc-num">10</span><span class="ec-toc-text">Twisting, Selmer, and Tate&ndash;Shafarevich<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
+<li class="ec-toc-chapter"><a href="11-complex-multiplication.html"><span class="ec-toc-num">11</span><span class="ec-toc-text">Complex multiplication<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
+<li class="ec-toc-chapter"><a href="12-tate-curve.html"><span class="ec-toc-num">12</span><span class="ec-toc-text">The Tate curve<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
+<li class="ec-toc-chapter"><a href="13-l-functions-bsd.html"><span class="ec-toc-num">13</span><span class="ec-toc-text">The \(L\)-function and BSD<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
+<li class="ec-toc-chapter"><a href="14-sato-tate.html"><span class="ec-toc-num">14</span><span class="ec-toc-text">The Sato&ndash;Tate conjecture<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
+<li class="ec-toc-chapter"><a href="15-modular-curves.html"><span class="ec-toc-num">15</span><span class="ec-toc-text">Introduction to modular curves<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
+</ol>
+<a class="ec-toc-glossary" href="glossary.html">Glossary</a>
+</nav>
+<button class="ec-menu" type="button" aria-controls="ec-sidebar" aria-expanded="false">Contents</button>
+<nav class="ec-pager ec-pager-top" aria-label="Chapters"><a class="ec-pager-prev" rel="prev" href="02-varieties.html"><span class="ec-pager-label">Previous</span><span class="ec-pager-title">2. Algebraic varieties</span></a><a class="ec-pager-next" rel="next" href="04-ec-algebraic.html"><span class="ec-pager-label">Next</span><span class="ec-pager-title">4. Elliptic curves as algebraic curves</span></a></nav>
+</div>
+<div id="content" class="content">
+<h1 class="title"><span class="ec-chapter-label">Chapter 3</span>Algebraic curves</h1>
+<div class="sources" id="orge92ec8d">
+<p>
+This chapter follows [<a class="ec-cite" href="#bib-Poonen06">Poo06</a>, Chapter 2] and [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Chapter II],
+with material on plane curves from [<a class="ec-cite" href="#bib-Milne20">Mil20</a>, Sections I.1 and I.6].  Unlike these
+sources, we do not assume that the ground field is perfect.
+</p>
+
+</div>
+
+<p>
+We keep the notation of the previous chapter: \(k\) is an arbitrary field, and
+\(\Gal_k \coloneqq \Gal(\ksep/k)\).
+</p>
+
+<div class="ec-thm ec-definition" id="def-crv-curve">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Definition 3.0.1</span>.</span> A <dfn class="ec-cdef" id="gls-curve" data-gls="curve">curve</dfn> over \(k\) is an integral \(k\)-variety of dimension \(1\).  A nice curve is
+a curve that is nice (Definition <a href="02-varieties.html#def-var-smooth">2.4.1</a>).
+</p>
+</div>
+
+<p>
+<b>Standing hypothesis.</b> Unless stated otherwise, \(C\), \(C_1\) and \(C_2\) denote nice
+curves over \(k\).  Remarks point out where a curve that is only regular behaves
+differently; the basic example is Example <a href="02-varieties.html#eg-var-regular-not-smooth">2.4.6</a>.
+</p>
+
+<div id="outline-container-sec-crv-points" class="outline-2">
+<h2 id="sec-crv-points"><span class="ec-status ec-status-draft"><span class="ec-status-label ec-status-draft">Draft</span><time datetime="2026-09-16">16 Sep 2026</time></span><span class="section-number" id="s3.1">3.1</span> Closed points and local rings</h2>
+<div class="outline-text-2" id="text-sec-crv-points">
+<div class="ec-thm ec-definition" id="def-crv-closed-point">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Definition 3.1.1</span>.</span> A <dfn class="ec-cdef" id="gls-closed-point" data-gls="closed-point">closed point</dfn> of a \(k\)-variety \(X\) is a point whose residue field \(k(P)\) is
+a finite extension of \(k\).  Its degree is \(\deg P \coloneqq [k(P) : k]\)
+[<a class="ec-cite" href="#bib-Poonen06">Poo06</a>, Definition 2.2.1].
+</p>
+</div>
+
+<p>
+The rational points of \(X\) are the closed points of degree \(1\).
+</p>
+
+<div class="ec-thm ec-proposition" id="prop-crv-closed-points">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Proposition 3.1.2</span>.</span> Let \(X\) be a \(k\)-variety.  Sending a \(\kbar\)-point to its image is a surjection from
+\(X(\kbar)\) onto the set of closed points of \(X\), whose fibres are the
+\(\Aut(\kbar/k)\)-orbits.  The fibre over \(P\) has \([k(P) : k]_s\) elements, and it
+meets \(X(\ksep)\) if and only if \(k(P)/k\) is separable.
+</p>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+A \(\kbar\)-point over \(P\) is the same as a \(k\)-embedding \(k(P) \hookrightarrow \kbar\).
+There are \([k(P) : k]_s\) of these, permuted transitively by \(\Aut(\kbar/k)\), and they
+land in \(\ksep\) exactly when \(k(P)/k\) is separable.
+</p>
+</details>
+
+<div class="ec-thm ec-example" id="eg-crv-closed-point-quadratic">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Example 3.1.3</span>.</span> On \(E\colon y^2 = x^3 + 17\) over \(\Q\), the closed point \(P \coloneqq V(x, y^2 - 17)\)
+has residue field \(\Q(\sqrt{17})\) and degree \(2\).  It corresponds to the orbit
+\(\{(0, \sqrt{17}), (0, -\sqrt{17})\}\) in \(E(\Qbar)\).
+</p>
+</div>
+
+<div class="ec-thm ec-example" id="eg-crv-closed-point-inseparable">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Example 3.1.4</span>.</span> Let \(k \coloneqq \F_p(t)\).  The closed point \(P \coloneqq V(x^p - t)\) of
+\(\AA^1_k\) has degree \(p\) and residue field \(k(t^{1/p})\).  It has a single
+\(\kbar\)-point above it, and no \(\ksep\)-point.
+</p>
+</div>
+
+<div class="ec-thm ec-proposition" id="prop-crv-dvr">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Proposition 3.1.5</span>.</span> Let \(X\) be a curve over \(k\), and \(P\) a closed point.  The local ring \(\calO_{X,P}\) is
+a discrete valuation ring if and only if \(X\) is regular at \(P\).  In particular this
+holds at every closed point of a nice curve.
+</p>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+A noetherian local domain of dimension \(1\) is a discrete valuation ring if and only if
+its maximal ideal is principal, i.e.&nbsp;it is regular [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Proposition II.1.1 and Exercise 2.1].
+</p>
+</details>
+
+<div class="ec-thm ec-definition" id="def-crv-order">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Definition 3.1.6</span>.</span> Let \(P\) be a closed point of \(C\).  The normalized valuation of \(\calO_{C,P}\) extends to
+\(\ord_P\colon k(C)^\times \to \Z\).  A <dfn class="ec-cdef" id="gls-uniformizer" data-gls="uniformizer">uniformizer</dfn> at \(P\) is a \(t \in k(C)\) with
+\(\ord_P(t) = 1\).  If \(\ord_P(f) > 0\), then \(f\) has a zero at \(P\); if
+\(\ord_P(f) < 0\), a pole.  If \(\ord_P(f) \geq 0\), then \(f\) is regular at \(P\), with
+value \(f(P) \in k(P)\) [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Section II.1].
+</p>
+</div>
+
+<div class="ec-thm ec-proposition" id="prop-crv-zeros-poles">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Proposition 3.1.7</span>.</span> Let \(f \in k(C)^\times\).  Then \(f\) has only finitely many zeros and poles.  If \(f\) has
+no poles, then \(f \in k\).
+</p>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+See [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Proposition II.1.2].  For the last statement over \(k\), note that
+\(k\) is algebraically closed in \(k(C)\), since \(C\) is geometrically integral
+(Proposition <a href="02-varieties.html#prop-var-geometric-criteria">2.2.4</a>).
+</p>
+</details>
+
+<div class="ec-thm ec-example" id="eg-crv-uniformizer">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Example 3.1.8</span>.</span> Let \(f(x, y) = 0\) be an affine patch of \(C\), and \(P = (a, b) \in C(k)\).  If
+\(\partial f/\partial x(P) \neq 0\), then \(y - b\) is a uniformizer at \(P\); if
+\(\partial f/\partial y(P) \neq 0\), then \(x - a\) is [<a class="ec-cite" href="#bib-Poonen06">Poo06</a>, Example 1.8.5].  For
+instance, on \(y^2 = x^3 + x\) with \(\operatorname{char} k \neq 2\), the function \(y\) is a
+uniformizer at \(P = (0, 0)\).  Since \(x = y^2/(x^2 + 1)\), we get \(\ord_P(x) = 2\), and
+\(\ord_P(2y^2 - x) = \ord_P\bigl(x(2x^2 + 1)\bigr) = 2\) [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Example II.1.3].
+</p>
+</div>
+
+<div class="ec-thm ec-proposition" id="prop-crv-separating-uniformizer">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Proposition 3.1.9</span>.</span> Let \(P \in C(k)\), and let \(t\) be a uniformizer at \(P\).  Then \(k(C)\) is a finite
+separable extension of \(k(t)\).
+</p>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+[<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Proposition II.1.4] proves this for perfect \(k\), by taking \(p\)-th roots
+of coefficients.  In general: since \(k(P) = k\), the map
+\(\mathfrak{m}_P/\mathfrak{m}_P^2 \to \Omega_{C/k, P} \otimes k(P)\) is an isomorphism
+[<a class="ec-cite" href="#bib-Hartshorne77">Har77</a>, Proposition II.8.7].  So \(dt\) generates the stalk \(\Omega_{C/k,P}\),
+and in particular \(dt \neq 0\) in \(\Omega_{k(C)/k}\).  Conclude by
+Proposition <a href="#prop-crv-differentials">3.4.2</a>.
+</p>
+</details>
+
+<p>
+The hypothesis \(P \in C(k)\) cannot be dropped: see Warning <a href="#warn-crv-uniformizer">3.4.5</a>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-crv-maps" class="outline-2">
+<h2 id="sec-crv-maps"><span class="ec-status ec-status-draft"><span class="ec-status-label ec-status-draft">Draft</span><time datetime="2026-09-16">16 Sep 2026</time></span><span class="section-number" id="s3.2">3.2</span> Morphisms of curves</h2>
+<div class="outline-text-2" id="text-sec-crv-maps">
+<div class="ec-thm ec-proposition" id="prop-crv-extend">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Proposition 3.2.1</span>.</span> Let \(X\) be a curve over \(k\), let \(P\) be a closed point at which \(X\) is regular, and
+let \(Y \subseteq \PP^n_k\) be a projective variety.  Then every rational map
+\(\varphi\colon X \dashrightarrow Y\) is regular at \(P\).  In particular, if \(X\) is
+regular, then \(\varphi\) is a morphism.
+</p>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+Write \(\varphi = (f_0 : \dots : f_n)\), let \(t\) be a uniformizer at \(P\) and
+\(m \coloneqq \min_i \ord_P(f_i)\).  Then every \(t^{-m}f_i\) is regular at \(P\), and some
+\((t^{-m}f_i)(P) \in k(P)\) is non-zero [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Proposition II.2.1].  The
+argument only uses that \(\calO_{X,P}\) is a discrete valuation ring, so it applies to
+closed points of any degree.
+</p>
+</details>
+
+<div class="ec-thm ec-proposition" id="prop-crv-surjective">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Proposition 3.2.2</span>.</span> A morphism from a projective curve to a curve is either constant or surjective.
+</p>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof <span class="ec-proof-cites">(Sil09)</span>.</span></summary>
+<p>
+See [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Theorem II.2.3].
+</p>
+</details>
+
+<div class="ec-thm ec-theorem" id="thm-crv-function-fields">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Theorem 3.2.3</span>.</span> The functor \(X \mapsto k(X)\) is an equivalence between the category of regular projective
+curves over \(k\) with non-constant morphisms, and the opposite of the category of finitely
+generated extensions \(K/k\) of transcendence degree \(1\) with \(k\)-embeddings.  Under this
+equivalence, \(X\) is geometrically integral if and only if \(k\) is algebraically closed in
+\(k(X)\) and \(k(X)/k\) is separable.
+</p>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+See [<a class="ec-cite" href="#bib-Poonen06">Poo06</a>, Section 2.1.2 and Remark 2.1.3] and [<a class="ec-cite" href="#bib-Milne20">Mil20</a>, Theorem I.6.3] for
+the equivalence.  The last statement follows from
+Proposition <a href="02-varieties.html#prop-var-geometric-criteria">2.2.4</a>.  If \(k(X)/k\) is separable, an element of
+\(k(X)\) that is algebraic over \(k\) is separable over \(k\).
+</p>
+</details>
+
+<div class="ec-thm ec-remark" id="rem-crv-silverman-equivalence">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Remark 3.2.4</span>.</span> [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Remark II.2.5] states the equivalence for smooth curves and function
+fields in which \(k\) is algebraically closed.  Over an imperfect field, the regular
+projective model of such a function field need not be smooth.  The function field
+\(\F_3(t)(x, y)\), with \(y^2 = x^3 - t\), satisfies both conditions of
+Theorem <a href="#thm-crv-function-fields">3.2.3</a>, but its regular projective model is the curve of
+Example <a href="02-varieties.html#eg-var-regular-not-smooth">2.4.6</a>, which is not smooth.  So no nice curve has this
+function field.
+</p>
+</div>
+
+<div class="ec-thm ec-definition" id="def-crv-degree">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Definition 3.2.5</span>.</span> Let \(\varphi\colon C_1 \to C_2\) be a non-constant morphism, and
+\(\varphi^*\colon k(C_2) \hookrightarrow k(C_1)\) the induced embedding.  The
+<dfn class="ec-cdef" id="gls-degree-of-a-morphism" data-gls="degree-of-a-morphism">degree</dfn> of \(\varphi\) is \(\deg\varphi \coloneqq [k(C_1) :
+\varphi^* k(C_2)]\); a constant morphism has degree \(0\).  The morphism \(\varphi\) is
+separable, inseparable or purely inseparable if the extension \(k(C_1)/\varphi^*k(C_2)\)
+is, and \(\deg_s \varphi\) and \(\deg_i \varphi\) are its separable and inseparable degrees
+[<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Section II.2], [<a class="ec-cite" href="#bib-Poonen06">Poo06</a>, Definition 2.1.4].  The norm gives
+\(\varphi_* \coloneqq (\varphi^*)^{-1} \circ \Nm_{k(C_1)/\varphi^*k(C_2)}\colon k(C_1) \to k(C_2)\).
+</p>
+</div>
+
+<div class="ec-thm ec-corollary" id="cor-crv-degree-one">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Corollary 3.2.6</span>.</span> A morphism of degree \(1\) between regular projective curves is an isomorphism.
+</p>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+This follows from Theorem <a href="#thm-crv-function-fields">3.2.3</a>; compare
+[<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Corollary II.2.4.1].
+</p>
+</details>
+
+<div class="ec-thm ec-definition" id="def-crv-ramification-index">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Definition 3.2.7</span>.</span> Let \(\varphi\colon C_1 \to C_2\) be non-constant, \(P\) a closed point of \(C_1\), and
+\(Q \coloneqq \varphi(P)\) with uniformizer \(t_Q\).  The <dfn class="ec-cdef" id="gls-ramification-index" data-gls="ramification-index">ramification index</dfn> of
+\(\varphi\) at \(P\) is \(e_\varphi(P) \coloneqq \ord_P(\varphi^* t_Q) \geq 1\), and the
+residue degree is \(f_\varphi(P) \coloneqq [k(P) : k(Q)]\).  The morphism \(\varphi\) is
+unramified at \(P\) if \(e_\varphi(P) = 1\) [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Section II.2].
+</p>
+</div>
+
+<div class="ec-thm ec-proposition" id="prop-crv-ramification">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Proposition 3.2.8</span>.</span> Let \(\varphi\colon C_1 \to C_2\) be non-constant.
+</p>
+<ol class="org-ol">
+<li>For every closed point \(Q\) of \(C_2\),
+\(\sum_{P \mapsto Q} e_\varphi(P) f_\varphi(P) = \deg\varphi\).</li>
+<li>For all but finitely many \(Q \in C_2(\kbar)\), the fibre of \(\varphi_{\kbar}\) over \(Q\)
+has \(\deg_s\varphi\) points.</li>
+<li>If \(\psi\colon C_2 \to C_3\) is non-constant, then
+\(e_{\psi\circ\varphi}(P) = e_\varphi(P)\,e_\psi(\varphi(P))\).</li>
+</ol>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+Over \(\kbar\) all residue degrees are \(1\), and this is
+[<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Proposition II.2.6].  Over \(k\), part 1 is the formula
+\(\sum e_i f_i = n\) for the finite extension of Dedekind domains
+\(\calO_{C_2,Q} \subseteq \calO_{C_1}\) above \(Q\) [<a class="ec-cite" href="#bib-Poonen06">Poo06</a>, Remark 2.5.3].
+</p>
+</details>
+
+<div class="ec-thm ec-example" id="eg-crv-p1-map">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Example 3.2.9</span>.</span> The morphism \(\varphi\colon \PP^1_k \to \PP^1_k\) given by
+\(\varphi = (X^3(X - Y)^2 : Y^5)\) has degree \(5\).  The fibre over \((0 : 1)\) consists of
+\((0 : 1)\), with \(e_\varphi = 3\), and \((1 : 1)\), with \(e_\varphi = 2\); and indeed
+\(3 + 2 = 5\) [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Example II.2.9].
+</p>
+</div>
+
+<div class="ec-thm ec-example" id="eg-crv-x-coordinate">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Example 3.2.10</span>.</span> Suppose \(\operatorname{char} k \neq 2\).  Let \(E\colon y^2 = p(x)\) with \(p\) a separable
+cubic, a smooth plane cubic by Example <a href="#eg-crv-y-squared-h">3.7.9</a> below, and let
+\(O = (0 : 1 : 0)\).  The morphism \(x\colon E \to \PP^1_k\) has degree \(2\), since
+\(k(E) = k(x)(y)\) with \(y^2 \in k(x)\), and it is separable.  Above \(\infty\) lies only
+\(O\), with \(e_x(O) = 2\).  Above the closed point of \(\AA^1_k\) given by an
+irreducible factor \(g\) of \(p\) lies only the closed point \(V(g, y)\), with ramification
+index \(2\).  All other closed points are unramified.  In characteristic \(2\) the
+extension \(k(x, y)/k(x)\) defined by \(y^2 = p(x)\) is purely inseparable
+[<a class="ec-cite" href="#bib-Milne20">Mil20</a>, Example I.4.25], but in that case this curve is singular, again by
+Example <a href="#eg-crv-y-squared-h">3.7.9</a>; see Example <a href="#eg-crv-wild">3.6.4</a> instead.
+</p>
+</div>
+
+<div class="ec-thm ec-definition" id="def-crv-frobenius">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Definition 3.2.11</span>.</span> Suppose \(\operatorname{char} k = p > 0\), and let \(q = p^r\).  Let
+\(C \subseteq \PP^n_k\) be defined by homogeneous polynomials \(G_1, \dots, G_m\), and let
+\(C^{(q)}\) be defined by the polynomials \(G_i^{(q)}\) obtained by raising every
+coefficient to the \(q\)-th power.  Equivalently, \(C^{(q)}\) is the base change of \(C\)
+along \(k \to k\), \(a \mapsto a^q\).  The <dfn class="ec-cdef" id="gls-relative-frobenius-morphism" data-gls="relative-frobenius-morphism">relative Frobenius morphism</dfn> is
+</p>
+\begin{equation*}
+F\colon C \to C^{(q)}, \qquad (X_0 : \dots : X_n) \mapsto (X_0^q : \dots : X_n^q).
+\end{equation*}
+<p>
+It lands in \(C^{(q)}\) because \(G^{(q)}(X_0^q, \dots, X_n^q) = G(X_0, \dots, X_n)^q\)
+[<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Section II.2].
+</p>
+</div>
+
+<div class="ec-thm ec-proposition" id="prop-crv-frobenius">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Proposition 3.2.12</span>.</span> Let \(F\colon C \to C^{(q)}\) be the relative Frobenius morphism.
+</p>
+<ol class="org-ol">
+<li>\(F^* k(C^{(q)}) = k \cdot k(C)^q\), the compositum of \(k\) and \(k(C)^q\) in \(k(C)\).</li>
+<li>\(F\) is purely inseparable of degree \(q\).</li>
+</ol>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+For perfect \(k\), part 1 reads \(F^*k(C^{(q)}) = k(C)^q\), and this is
+[<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Proposition II.2.11].  In general, suppose \(X_0\) does not vanish on
+\(C\), and let \(x_i = X_i/X_0\) be the affine coordinates on the patch \(U_0\).  Then
+\(k(C)\) and \(k(C^{(q)})\) are generated over \(k\) by the \(x_i\), and
+\(F^*(x_i) = x_i^q\).  Since \(F^*\) is \(k\)-linear, its image is \(k(x_i^q)\).  This
+equals \(k \cdot k(C)^q\): for \(g \in k(C)\), written as a rational function in the
+\(x_i\) with coefficients in \(k\), we have \(g^q = g^{(q)}(x_i^q)\).
+</p>
+
+<p>
+For part 2, pure inseparability follows from part 1.  By induction on \(r\) it suffices
+to treat \(q = p\).  Choose \(t \in k(C)\) with \(k(C)/k(t)\) separable
+(Proposition <a href="#prop-crv-separating-uniformizer">3.1.9</a>).  A separable algebraic extension
+\(L/K\) satisfies \(L = K L^p\), so \(k(C) = (k \cdot k(C)^p)(t)\), and
+\(t^p \in k \cdot k(C)^p\).  So the degree is at most \(p\).  Finally
+\(t \notin k \cdot k(C)^p\), since \(d\) vanishes on \(k \cdot k(C)^p\) but \(dt \neq 0\)
+(Proposition <a href="#prop-crv-differentials">3.4.2</a>).
+</p>
+</details>
+
+<div class="ec-thm ec-warning" id="warn-crv-frobenius">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Warning 3.2.13</span>.</span> If \(k\) is imperfect, then \(k(C)^q \subsetneq k \cdot k(C)^q\), because an element
+\(a \in k - k^q\) is not a \(q\)-th power in \(k(C)\).  Indeed, \(k\) is algebraically
+closed in \(k(C)\).  So [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Proposition II.2.11(a)] must be read with
+\(k \cdot k(C)^q\) in place of \(k(C)^q\).
+</p>
+</div>
+
+<div class="ec-thm ec-corollary" id="cor-crv-frobenius-factorization">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Corollary 3.2.14</span>.</span> Suppose \(\operatorname{char} k = p > 0\).  Let \(\psi\colon C_1 \to C_2\) be non-constant,
+and \(q \coloneqq \deg_i \psi\).  Then \(\psi = \lambda \circ F\), with
+\(F\colon C_1 \to C_1^{(q)}\) the relative Frobenius morphism and \(\lambda\) separable.
+</p>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+Let \(K\) be the separable closure of \(\psi^*k(C_2)\) in \(k(C_1)\).  Then \(k(C_1)/K\) is
+purely inseparable of degree \(q\), so \(k(C_1)^q \subseteq K\).  Since also \(k \subseteq
+K\), we get \(k \cdot k(C_1)^q \subseteq K\).  Both have index \(q\) in \(k(C_1)\), by
+Proposition <a href="#prop-crv-frobenius">3.2.12</a>, so they are equal.
+Theorem <a href="#thm-crv-function-fields">3.2.3</a> then gives \(\lambda\).  Compare
+[<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Corollary II.2.12].
+</p>
+</details>
+
+<div class="ec-thm ec-example" id="eg-crv-frobenius-weierstrass">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Example 3.2.15</span>.</span> If \(E\colon Y^2Z = X^3 + AXZ^2 + BZ^3\), then
+\(E^{(q)}\colon Y^2Z = X^3 + A^qXZ^2 + B^qZ^3\) [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Example II.2.10].  If
+\(A, B \in \F_q\), then \(E^{(q)} = E\), and the relative Frobenius morphism is an
+endomorphism of \(E\) of degree \(q\).
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-crv-divisors" class="outline-2">
+<h2 id="sec-crv-divisors"><span class="ec-status ec-status-draft"><span class="ec-status-label ec-status-draft">Draft</span><time datetime="2026-09-16">16 Sep 2026</time></span><span class="section-number" id="s3.3">3.3</span> Divisors</h2>
+<div class="outline-text-2" id="text-sec-crv-divisors">
+<div class="ec-thm ec-definition" id="def-crv-divisor">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Definition 3.3.1</span>.</span> The group \(\Div C\) of <dfn class="ec-cdef" id="gls-divisor" data-gls="divisor">divisors</dfn> on \(C\) is the free abelian group on the
+closed points of \(C\).  The degree of \(D = \sum n_P P\) is
+\(\deg D \coloneqq \sum n_P \deg P\), and \(\Div^0 C\) is the kernel of the degree.  \(D\) is
+effective, \(D \geq 0\), if all \(n_P \geq 0\).  For \(f \in k(C)^\times\), the
+<dfn class="ec-cdef" id="gls-principal-divisor" data-gls="principal-divisor">principal divisor</dfn> of \(f\) is \(\div(f) \coloneqq \sum_P \ord_P(f) P\).  Divisors are
+linearly equivalent if their difference is principal.  The <dfn class="ec-cdef" id="gls-picard-group" data-gls="picard-group">Picard group</dfn> is
+\(\Pic C \coloneqq \Div C/\div(k(C)^\times)\), and \(\Pic^0 C\) is the image of \(\Div^0 C\)
+[<a class="ec-cite" href="#bib-Poonen06">Poo06</a>, Sections 1.9 and 2.2].
+</p>
+</div>
+
+<div class="ec-thm ec-proposition" id="prop-crv-principal">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Proposition 3.3.2</span>.</span> Let \(f \in k(C)^\times\).  Then \(\div(f) = 0\) if and only if \(f \in k^\times\), and
+\(\deg \div(f) = 0\).  So there is an exact sequence
+</p>
+\begin{equation*}
+1 \to k^\times \to k(C)^\times \xrightarrow{\div} \Div^0 C \to \Pic^0 C \to 0.
+\end{equation*}
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+See [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Proposition II.3.1 and Remark II.3.4], and
+[<a class="ec-cite" href="#bib-Poonen06">Poo06</a>, Section 2.2.2]; the first statement is
+Proposition <a href="#prop-crv-zeros-poles">3.1.7</a>.
+</p>
+</details>
+
+<p>
+A non-zero rational function can be evaluated not only at a closed point, but at a whole
+divisor, provided the two stay out of each other's way.
+</p>
+
+<div class="ec-thm ec-definition" id="def-crv-eval-divisor">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Definition 3.3.3</span>.</span> Let \(f \in \kbar(C)^\times\) and let \(D = \sum n_P P \in \Div C_{\kbar}\) be a divisor
+whose support is disjoint from that of \(\div(f)\).  The value of \(f\) at \(D\) is
+</p>
+\begin{equation*}
+f(D) \coloneqq \prod_P f(P)^{n_P} \in \kbar^\times,
+\end{equation*}
+<p>
+the product over the points \(P \in C(\kbar)\) in the support of \(D\)
+[<a class="ec-cite" href="#bib-Poonen06">Poo06</a>, Section 1.9.2].
+</p>
+</div>
+
+<p>
+Each factor is a well defined element of \(\kbar^\times\): the function \(f\) has neither a
+zero nor a pole at \(P\), since \(P\) is not in the support of \(\div(f)\).  Two properties
+are immediate from the definition.  First, \(D \mapsto f(D)\) is a homomorphism on the group
+of divisors supported away from \(\div(f)\), and \(f \mapsto f(D)\) is a homomorphism on the
+functions whose divisors are supported away from \(D\).  Second, evaluation commutes with
+the Galois action: for \(\sigma \in \Aut(\kbar/k)\),
+</p>
+\begin{equation*}
+\sigma\bigl(f(D)\bigr) = f^\sigma(\sigma D),
+\end{equation*}
+<p>
+because \(\sigma(f(P)) = f^\sigma(\sigma P)\) on each factor.  In particular, if \(f\) is
+defined over \(k\), then \(\sigma(f(D)) = f(\sigma D)\).
+</p>
+
+<div class="ec-thm ec-theorem" id="thm-crv-weil-reciprocity">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Theorem 3.3.4</span> <span class="ec-thm-title">(Weil reciprocity)</span>.</span> Let \(f, g \in \kbar(C)^\times\) be functions on a nice curve \(C\) such that \(\div(f)\)
+and \(\div(g)\) have disjoint supports.  Then
+</p>
+\begin{equation*}
+f(\div g) = g(\div f).
+\end{equation*}
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+See [<a class="ec-cite" href="#bib-Poonen06">Poo06</a>, Theorem 1.9.5] and [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Exercise 2.11].  Poonen states
+<dfn class="ec-cdef" id="gls-weil-reciprocity" data-gls="weil-reciprocity">Weil reciprocity</dfn> over an algebraically closed field; since divisors on
+\(C_{\kbar}\) are supported on the points of \(C(\kbar)\), that is exactly the statement
+above.
+</p>
+</details>
+
+<p>
+The content of the theorem is already visible on \(\PP^1\).  If \(f\) and \(g\) are
+polynomials in \(k[x]\) with no common root, then the affine zeros contribute
+\(\prod_{g(\beta) = 0} f(\beta)\) to the left side and \(\prod_{f(\alpha) = 0} g(\alpha)\)
+to the right, and both products are the resultant \(\Res(f, g)\) up to the sign
+\((-1)^{\deg f \deg g}\) and the leading coefficients; the poles at \(\infty\)
+supply exactly those factors.  So reciprocity is a geometric form of the symmetry of
+the resultant.  We use
+Theorem <a href="#thm-crv-weil-reciprocity">3.3.4</a> to construct the Weil pairing in
+Section <a href="04-ec-algebraic.html#sec-ec-weil">4.6</a>.
+</p>
+
+<div class="ec-thm ec-definition" id="def-crv-pullback">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Definition 3.3.5</span>.</span> Let \(\varphi\colon C_1 \to C_2\) be non-constant.  On closed points, set
+</p>
+\begin{equation*}
+\varphi^* Q \coloneqq \sum_{P \mapsto Q} e_\varphi(P)\, P,
+\qquad
+\varphi_* P \coloneqq f_\varphi(P)\, \varphi(P),
+\end{equation*}
+<p>
+and extend linearly to \(\varphi^*\colon \Div C_2 \to \Div C_1\) and
+\(\varphi_*\colon \Div C_1 \to \Div C_2\) [<a class="ec-cite" href="#bib-Poonen06">Poo06</a>, Section 2.2.3].
+</p>
+</div>
+
+<div class="ec-thm ec-proposition" id="prop-crv-pullback">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Proposition 3.3.6</span>.</span> Let \(\varphi\colon C_1 \to C_2\) be non-constant.
+</p>
+<ol class="org-ol">
+<li>\(\deg \varphi^* D = (\deg\varphi)(\deg D)\) and \(\deg \varphi_* D = \deg D\).</li>
+<li>\(\varphi^* \div(f) = \div(\varphi^* f)\) and \(\varphi_* \div(f) = \div(\varphi_* f)\).</li>
+<li>\(\varphi_* \circ \varphi^*\) is multiplication by \(\deg\varphi\) on \(\Div C_2\).</li>
+<li>\((\psi \circ \varphi)^* = \varphi^* \circ \psi^*\) and
+\((\psi\circ\varphi)_* = \psi_* \circ \varphi_*\).</li>
+</ol>
+<p>
+So \(\varphi^*\) and \(\varphi_*\) induce homomorphisms between \(\Pic C_1\) and \(\Pic C_2\),
+and between \(\Pic^0 C_1\) and \(\Pic^0 C_2\).
+</p>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+Part 1 follows from Proposition <a href="#prop-crv-ramification">3.2.8</a>.  For the rest see
+[<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Proposition II.3.6] and [<a class="ec-cite" href="#bib-Poonen06">Poo06</a>, Section 2.2.3].
+</p>
+</details>
+
+<p>
+[<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Section II.3] works with divisors on \(C_{\kbar}\).  His
+\(\operatorname{Div}_K(C)\) consists of the \(\Aut(\kbar/k)\)-invariant divisors on \(C_{\kbar}\), and
+\(\operatorname{Pic}_K(C) \coloneqq (\Pic C_{\kbar})^{\Aut(\kbar/k)}\).  The dictionary with our
+groups is as follows; compare [<a class="ec-cite" href="#bib-Poonen06">Poo06</a>, Warning 1.9.6].
+</p>
+
+<div class="ec-thm ec-proposition" id="prop-crv-divisors-descent">
+<p><span class="ec-thm-head"><span class="ec-thm-name">Proposition 3.3.7</span>.</span> </p>
+<ol class="org-ol">
+<li>Pulling back along \(C_{\ksep} \to C\) identifies \(\Div C\) with
+\((\Div C_{\ksep})^{\Gal_k}\), compatibly with degrees and principal divisors.  A closed
+point \(P\) goes to the sum, with multiplicity \(1\), of the closed points of
+\(C_{\ksep}\) above \(P\).</li>
+<li>Pulling back along \(C_{\kbar} \to C\) sends a closed point \(P\) to
+\([k(P) : k]_i\) times the sum of the points of \(C(\kbar)\) above \(P\).  This is
+injective, compatible with degrees and principal divisors, and lands in
+\(\operatorname{Div}_K(C)\).  It is onto \(\operatorname{Div}_K(C)\) if \(k\) is perfect, but not in general.</li>
+<li>The homomorphism \(\Pic C \to (\Pic C_{\ksep})^{\Gal_k}\) is injective, but need not
+be surjective.</li>
+</ol>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+For part 1: \(k(P) \otimes_k \ksep\) is reduced, since \(\ksep/k\) is separable, so every
+point above \(P\) has multiplicity \(1\).  These points form one \(\Gal_k\)-orbit.  For part
+2: \(k(P) \otimes_k \kbar\) has length \([k(P):k]_i\) at each of its \([k(P):k]_s\) points
+(Proposition <a href="#prop-crv-closed-points">3.1.2</a>).  Part 3 follows from Hilbert's Theorem 90
+[<a class="ec-cite" href="#bib-Poonen06">Poo06</a>, Section 1.9.3 and Exercise 1.6].
+</p>
+</details>
+
+<div class="ec-thm ec-warning" id="warn-crv-pic-rational-point">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Warning 3.3.8</span>.</span> In general the injection \(\Pic C \to (\Pic C_{\ksep})^{\Gal_k}\) of
+Proposition <a href="#prop-crv-divisors-descent">3.3.7</a> is not surjective: its cokernel embeds in the
+Brauer group \(\operatorname{Br} k\) [<a class="ec-cite" href="#bib-Poonen2017">Poo17</a>, Corollary 6.7.8].  If \(C\) has a
+rational point, then the obstruction vanishes and \(\Pic C \to (\Pic C_{\ksep})^{\Gal_k}\) is
+an isomorphism, so the two readings of \(\Pic^0 C\) agree.  In particular Silverman's \(\operatorname{Pic}_K(C)\) need not
+be the quotient of \(\operatorname{Div}_K(C)\) by principal divisors, although it is when
+\(C\) has genus \(1\) and a rational point [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Exercise 2.13].  Whenever the
+distinction matters we say which rational, closed or \(\kbar\)-points are meant.
+</p>
+</div>
+
+<div class="ec-thm ec-example" id="eg-crv-pic-p1">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Example 3.3.9</span>.</span> The degree is an isomorphism \(\Pic \PP^1_k \cong \Z\).  Indeed, the closed points of
+\(\PP^1_k\) other than \(\infty\) correspond to monic irreducible \(g_P \in k[x]\), with
+\(\deg P = \deg g_P\).  A divisor \(D = \sum n_P P + n_\infty \infty\) of degree \(0\) is
+\(\div\bigl(\prod g_P^{n_P}\bigr)\), since \(\ord_\infty(g_P) = -\deg g_P\)
+[<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Example II.3.2].
+</p>
+</div>
+
+<div class="ec-thm ec-example" id="eg-crv-cubic-divisors">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Example 3.3.10</span>.</span> Suppose \(\operatorname{char} k \neq 2\).  Let
+\(E\colon y^2 = (x - e_1)(x - e_2)(x - e_3)\) with distinct \(e_i \in k\), let
+\(P_i \coloneqq (e_i, 0)\) and \(O \coloneqq (0 : 1 : 0)\).  Then
+</p>
+\begin{equation*}
+\div(x - e_i) = 2P_i - 2O, \qquad \div(y) = P_1 + P_2 + P_3 - 3O
+\end{equation*}
+<p>
+[<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Example II.3.3].  If instead \(y^2 = p(x)\) with \(p\) irreducible of
+degree \(3\), then \(\div(y) = P - 3O\), where \(P \coloneqq V(y, p(x))\) is a closed point
+of degree \(3\).
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-crv-differentials" class="outline-2">
+<h2 id="sec-crv-differentials"><span class="ec-status ec-status-draft"><span class="ec-status-label ec-status-draft">Draft</span><time datetime="2026-09-16">16 Sep 2026</time></span><span class="section-number" id="s3.4">3.4</span> Differentials</h2>
+<div class="outline-text-2" id="text-sec-crv-differentials">
+<div class="ec-thm ec-definition" id="def-crv-differentials">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Definition 3.4.1</span>.</span> Let \(X\) be a curve over \(k\).  The space \(\Omega_{k(X)/k}\) of
+<dfn class="ec-cdef" id="gls-differential" data-gls="differential">meromorphic differentials</dfn> on \(X\) is the \(k(X)\)-vector space
+generated by symbols \(dx\), \(x \in k(X)\), subject to \(d(x + y) = dx + dy\),
+\(d(xy) = x\,dy + y\,dx\) and \(da = 0\) for \(a \in k\).  A non-constant morphism
+\(\varphi\colon X_1 \to X_2\) induces
+\(\varphi^*\colon \Omega_{k(X_2)/k} \to \Omega_{k(X_1)/k}\)
+[<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Section II.4], [<a class="ec-cite" href="#bib-Poonen06">Poo06</a>, Section 2.3.1].
+</p>
+</div>
+
+<div class="ec-thm ec-proposition" id="prop-crv-differentials">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Proposition 3.4.2</span>.</span> Let \(X\) be a curve over \(k\) with \(k(X)/k\) separable, e.g.&nbsp;a geometrically
+reduced curve.
+</p>
+<ol class="org-ol">
+<li>\(\Omega_{k(X)/k}\) has dimension \(1\) over \(k(X)\).</li>
+<li>For \(x \in k(X)\), the differential \(dx\) is a basis if and only if it is non-zero,
+if and only if \(k(X)/k(x)\) is finite separable.</li>
+<li>A non-constant morphism \(\varphi\colon X_1 \to X_2\) of such curves is separable if and
+only if \(\varphi^* \neq 0\) on differentials.</li>
+</ol>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+See [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Proposition II.4.2] and [<a class="ec-cite" href="#bib-Poonen06">Poo06</a>, Proposition 2.3.1].  In
+characteristic \(p\), the last condition of [<a class="ec-cite" href="#bib-Poonen06">Poo06</a>, Proposition 2.3.1], \(t \notin
+k(X)^p\), must be read as \(t \notin k \cdot k(X)^p\) when \(k\) is imperfect.
+</p>
+</details>
+
+<p>
+Since \(C\) is smooth of dimension \(1\), the sheaf \(\Omega_{C/k}\) is invertible.  So for
+every closed point \(P\) the stalk \(\Omega_{C/k,P} \subseteq \Omega_{k(C)/k}\) is free of
+rank \(1\) over \(\calO_{C,P}\).
+</p>
+
+<div class="ec-thm ec-definition" id="def-crv-canonical">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Definition 3.4.3</span>.</span> Let \(\omega \in \Omega_{k(C)/k}\) be non-zero, \(P\) a closed point, and \(\eta\) a generator
+of \(\Omega_{C/k,P}\).  Write \(\omega = g\eta\), and set \(\ord_P(\omega) \coloneqq \ord_P(g)\).
+The divisor of \(\omega\) is \(\div(\omega) \coloneqq \sum_P \ord_P(\omega) P\).  The
+differential \(\omega\) is <dfn class="ec-cdef" id="gls-regular-differential" data-gls="regular-differential">regular</dfn> if \(\div(\omega) \geq 0\).
+A <dfn class="ec-cdef" id="gls-canonical-divisor" data-gls="canonical-divisor">canonical divisor</dfn> is a divisor \(K_C \coloneqq \div(\omega)\).  Its class in
+\(\Pic C\) does not depend on \(\omega\), since any other non-zero differential is
+\(f\omega\) with \(f \in k(C)^\times\) [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Section II.4],
+[<a class="ec-cite" href="#bib-Poonen06">Poo06</a>, Definitions 2.3.2 to 2.3.4].
+</p>
+</div>
+
+<div class="ec-thm ec-proposition" id="prop-crv-uniformizer-differential">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Proposition 3.4.4</span>.</span> Let \(P\) be a closed point of \(C\) with \(k(P)/k\) separable, e.g.&nbsp;\(P \in C(k)\), and
+let \(t\) be a uniformizer at \(P\).  Then \(dt\) generates \(\Omega_{C/k,P}\), so
+\(\ord_P(\omega) = \ord_P(\omega/dt)\), as in [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Proposition II.4.3].
+</p>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+For \(P \in C(k)\) see the proof of Proposition <a href="#prop-crv-separating-uniformizer">3.1.9</a>.
+</p>
+</details>
+
+<div class="ec-thm ec-warning" id="warn-crv-uniformizer">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Warning 3.4.5</span>.</span> If \(k(P)/k\) is inseparable, a uniformizer need not work.  Let \(k \coloneqq \F_p(a)\) and
+\(P \coloneqq V(x^p - a)\) on \(\PP^1_k\).  Then \(t \coloneqq x^p - a\) is a uniformizer at
+\(P\), but \(dt = px^{p-1}\,dx - da = 0\).  The stalk \(\Omega_{\PP^1/k,P}\) is generated by
+\(dx\), so \(\ord_P(dx) = 0\).  This is why Definition <a href="#def-crv-canonical">3.4.3</a> uses a
+generator of the stalk, rather than \(dt\) as in [<a class="ec-cite" href="#bib-Poonen06">Poo06</a>, Definition 2.3.2].
+</p>
+</div>
+
+<div class="ec-thm ec-example" id="eg-crv-div-dt">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Example 3.4.6</span>.</span> Let \(t\) be the coordinate on \(\PP^1_k\).  On \(\AA^1_k = \Spec k[t]\), the module of
+differentials is free on \(dt\), so \(\ord_P(dt) = 0\) for every closed point
+\(P \neq \infty\).  At \(\infty\), the function \(s \coloneqq 1/t\) is a uniformizer at a
+rational point, and \(dt = -s^{-2}\,ds\), so \(\div(dt) = -2\infty\).  In particular
+\(\PP^1_k\) has no non-zero regular differentials [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Example II.4.5].
+</p>
+</div>
+
+<p>
+The multiplicative group \(\Gm\) of Example <a href="02-varieties.html#eg-var-gm">2.1.5</a> will accompany elliptic curves
+throughout the book.  Both are group varieties of dimension \(1\), and most constructions
+of Chapter 4 (invariant differentials, multiplication by \(m\), torsion subgroups, Tate
+modules) have a simpler counterpart for \(\Gm\).  The next two examples start the
+comparison.
+</p>
+
+<div class="ec-thm ec-example" id="eg-crv-gm-differential">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Example 3.4.7</span>.</span> Let \(t\) be the coordinate on \(\Gm = \AA^1_k - \{0\} \subseteq \PP^1_k\).  Then
+\(k(\Gm) = k(\PP^1_k) = k(t)\), so a differential on \(\Gm\) is the same thing as a
+differential on \(\PP^1_k\).  Let \(\omega \coloneqq dt/t\).
+</p>
+<ol class="org-ol">
+<li><b>Invariance.</b>  For \(a \in k^\times\), the translation \(\tau_a\colon \Gm \to \Gm\),
+\(t \mapsto at\), gives \(\tau_a^*\omega = d(at)/(at) = \omega\).  Conversely, suppose
+that \(g \in \kbar(t)\) and \(\tau_a^*(g\,dt) = g\,dt\) for every \(a \in \kbar^\times\).
+Then \(a\,g(at) = g(t)\), so \(g(a) = g(1)/a\) for all but finitely many
+\(a \in \kbar^\times\), and hence \(g\,dt = g(1)\,\omega\).  So the invariant
+differentials on \((\Gm)_{\kbar}\) form the line spanned by \(\omega\).</li>
+<li><p>
+<b>Divisor.</b>  Since \(t\) is a unit of \(k[t, t^{-1}]\), \(\omega\) generates
+\(\Omega_{\Gm/k}\), so \(\omega\) has no zeros or poles on \(\Gm\).  At \(t = 0\) it has a
+simple pole.  At \(\infty\), with the uniformizer \(s \coloneqq 1/t\),
+</p>
+\begin{equation*}
+\omega = \frac{dt}{t} = -\frac{ds}{s^2} \cdot s = -\frac{ds}{s},
+\end{equation*}
+<p>
+again a simple pole.  So \(\div(\omega) = -(0) - (\infty)\), of degree \(-2\), as
+Example <a href="#eg-crv-div-dt">3.4.6</a> requires.  The coefficients of \(dt/t\) and \(ds/s\), the
+residues, are \(1\) and \(-1\), and they sum to \(0\).
+</p></li>
+</ol>
+<p>
+This is the algebraic form of Example <a href="01-riemann-surfaces.html#eg-invariant-differential-cstar">1.5.4</a>.  The invariant
+differential of \(\Gm\) has poles at the two points of \(\PP^1_k - \Gm\); by contrast, the
+invariant differential of an elliptic curve has no poles at all
+(Example <a href="#eg-crv-div-dx-y">3.4.9</a>), because an elliptic curve is already projective.
+</p>
+</div>
+
+<div class="ec-thm ec-example" id="eg-crv-gm-mult">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Example 3.4.8</span>.</span> Let \(m\) be a non-zero integer, and let \([m]\colon \PP^1_k \to \PP^1_k\) be the morphism
+extending \(t \mapsto t^m\) (Proposition <a href="#prop-crv-extend">3.2.1</a>).  It maps \(\Gm\) to \(\Gm\),
+and on points it is the homomorphism \(L^\times \to L^\times\), \(x \mapsto x^m\).  The
+polynomial \(T^{\lvert m\rvert} - t^{\lvert m\rvert}\) is Eisenstein over
+\(k[t^{\lvert m\rvert}]\), so \(\deg[m] = [k(t) : k(t^m)] = \lvert m\rvert\).
+</p>
+<ol class="org-ol">
+<li><b>Pullback.</b>  \([m]^*\omega = d(t^m)/t^m = m\,t^{m-1}\,dt/t^m = m\omega\).  By
+Proposition <a href="#prop-crv-differentials">3.4.2</a>, \([m]\) is separable if and only if
+\(\operatorname{char} k \nmid m\).</li>
+<li><b>Additivity.</b>  By the Leibniz rule, \(d(uv)/(uv) = du/u + dv/v\).  Since
+\(t^{m + n} = t^m \cdot t^n\), this gives \([m + n]^*\omega = [m]^*\omega + [n]^*\omega\)
+without computing either side.  The same statement for elliptic curves is
+Theorem <a href="04-ec-algebraic.html#thm-ec-omega-additive">4.4.2</a>, whose proof is much harder.</li>
+<li><b>Kernel.</b>  The fibre of \([m]\) over \(1\) is \(\mu_m \coloneqq \Spec k[t]/(t^m - 1)\) for
+\(m > 0\).  If \(\operatorname{char} k \nmid m\), then \(t^m - 1\) is separable, so
+\(\mu_m(\kbar)\) has \(m = \deg[m]\) points.  If \(\operatorname{char} k = p\) and
+\(m = p^r\), then \(t^{p^r} - 1 = (t - 1)^{p^r}\), so \(\mu_{p^r}(\kbar) = \{1\}\), with
+\(e_{[p^r]}(1) = p^r\): all of the degree is inseparable degree.  Indeed, \([p]\) is the
+relative Frobenius morphism of \(\PP^1_k = (\PP^1_k)^{(p)}\)
+(Definition <a href="#def-crv-frobenius">3.2.11</a>).</li>
+<li><b>Ramification.</b>  Above \(0\) and \(\infty\) lie only \(0\) and \(\infty\), each with
+ramification index \(\lvert m\rvert\).  If \(\operatorname{char} k \nmid m\), then \([m]\)
+is unramified elsewhere, by part 3 and translation, and the Hurwitz formula
+(Theorem <a href="#thm-crv-hurwitz">3.6.2</a>) reads \(-2 = \lvert m\rvert(-2) + 2(\lvert m\rvert - 1)\).</li>
+</ol>
+<p>
+For an elliptic curve, too, \([m]^*\omega = m\omega\) (Corollary <a href="04-ec-algebraic.html#cor-ec-mult-omega">4.4.3</a>), but
+\(\deg[m] = m^2\) (Theorem <a href="04-ec-algebraic.html#thm-ec-dual">4.3.10</a>), and \([m]\) is unramified everywhere.
+</p>
+</div>
+
+<div class="ec-thm ec-example" id="eg-crv-div-dx-y">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Example 3.4.9</span>.</span> Suppose \(\operatorname{char} k \neq 2\).  Let \(E\colon y^2 = p(x)\) with \(p\) a separable
+cubic, and \(O = (0 : 1 : 0)\).  On the affine part, \(2y\,dy = p'(x)\,dx\), and \(y\) and
+\(p'(x)\) have no common zero.  So \(dx/y = 2\,dy/p'(x)\) generates \(\Omega_{E/k}\) there.
+At \(O\), \(\ord_O(x) = -2\) and \(\ord_O(y) = -3\), so \(\ord_O(dx) = -3\) and
+\(\div(dx/y) = 0\) [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Example II.4.6].
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-crv-rr" class="outline-2">
+<h2 id="sec-crv-rr"><span class="ec-status ec-status-draft"><span class="ec-status-label ec-status-draft">Draft</span><time datetime="2026-09-13">13 Sep 2026</time></span><span class="section-number" id="s3.5">3.5</span> The Riemann&#x2013;Roch theorem</h2>
+<div class="outline-text-2" id="text-sec-crv-rr">
+<div class="ec-thm ec-definition" id="def-crv-rr-space">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Definition 3.5.1</span>.</span> For \(D \in \Div C\), let
+</p>
+\begin{equation*}
+\mcL(D) \coloneqq \{f \in k(C)^\times : \div(f) + D \geq 0\} \cup \{0\},
+\end{equation*}
+<p>
+a finite-dimensional \(k\)-vector space, and \(\ell(D) \coloneqq \dim_k \mcL(D)\).  If
+\(\deg D < 0\), then \(\mcL(D) = 0\); if \(D \sim D'\), then \(\ell(D) = \ell(D')\)
+[<a class="ec-cite" href="#bib-Poonen06">Poo06</a>, Definition 2.4.1], [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Proposition II.5.2].
+</p>
+</div>
+
+<div class="ec-thm ec-proposition" id="prop-crv-base-change-ld">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Proposition 3.5.2</span>.</span> Let \(D \in \Div C\), let \(L \supseteq k\) be a field extension, and \(D_L\) the pullback of
+\(D\) to \(C_L\).  Then the natural map \(\mcL(D) \otimes_k L \to \mcL(D_L)\) is an isomorphism, and
+\(\deg D_L = \deg D\).  In particular \(\ell(D_L) = \ell(D)\).
+</p>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+\(\mcL(D)\) is the space of global sections of the invertible sheaf \(\calO_C(D)\), and
+\(\calO_C(D)\) pulls back to \(\calO_{C_L}(D_L)\).  Taking global sections commutes with the
+flat base change \(\Spec L \to \Spec k\) [<a class="ec-cite" href="#bib-Hartshorne77">Har77</a>, Proposition III.9.3].  For
+\(L = \kbar\) and perfect \(k\), [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Proposition II.5.8] proves this with
+Galois descent instead, and [<a class="ec-cite" href="#bib-Poonen06">Poo06</a>, Section 2.4.1] states it.
+</p>
+</details>
+
+<div class="ec-thm ec-definition" id="def-crv-genus">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Definition 3.5.3</span>.</span> The <dfn class="ec-cdef" id="gls-genus" data-gls="genus">genus</dfn> of \(C\) is \(g \coloneqq \ell(K_C)\), the dimension of the \(k\)-vector
+space of regular differentials on \(C\) [<a class="ec-cite" href="#bib-Poonen06">Poo06</a>, Definition 2.4.5].
+</p>
+</div>
+
+<div class="ec-thm ec-theorem" id="thm-crv-rr">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Theorem 3.5.4</span> <span class="ec-thm-title">(Riemann&ndash;Roch)</span>.</span> Let \(C\) be a nice curve of genus \(g\), and \(D \in \Div C\).  Then
+</p>
+\begin{equation*}
+\ell(D) - \ell(K_C - D) = \deg D - g + 1.
+\end{equation*}
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+See [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Theorem II.5.4] and [<a class="ec-cite" href="#bib-Poonen06">Poo06</a>, Theorem 2.4.7].  To reduce to
+\(k = \kbar\), note that \(\Omega_{C_{\kbar}/\kbar}\) is the pullback of \(\Omega_{C/k}\), so
+\(K_C\) pulls back to a canonical divisor.  Then apply Proposition <a href="#prop-crv-base-change-ld">3.5.2</a>.
+</p>
+</details>
+
+<div class="ec-thm ec-corollary" id="cor-crv-rr">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Corollary 3.5.5</span>.</span> Let \(C\) be a nice curve of genus \(g\).
+</p>
+<ol class="org-ol">
+<li>\(\deg K_C = 2g - 2\).</li>
+<li>If \(\deg D > 2g - 2\), then \(\ell(D) = \deg D - g + 1\).</li>
+<li>For every field extension \(L \supseteq k\), the nice curve \(C_L\) has genus \(g\).</li>
+</ol>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+Parts 1 and 2 are [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Corollary II.5.5] and
+[<a class="ec-cite" href="#bib-Poonen06">Poo06</a>, Corollaries 2.4.8 and 2.4.9].  Part 3 follows from
+Proposition <a href="#prop-crv-base-change-ld">3.5.2</a>, since \(K_C\) pulls back to a canonical divisor.
+</p>
+</details>
+
+<div class="ec-thm ec-example" id="eg-crv-rr-p1">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Example 3.5.6</span>.</span> By Example <a href="#eg-crv-div-dt">3.4.6</a>, \(\PP^1_k\) has genus \(0\), and \(\ell(D) = \deg D + 1\)
+whenever \(\deg D \geq -1\) [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Example II.5.6].
+</p>
+</div>
+
+<div class="ec-thm ec-example" id="eg-crv-rr-cubic">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Example 3.5.7</span>.</span> Let \(E\colon y^2 = p(x)\) be as in Example <a href="#eg-crv-div-dx-y">3.4.9</a>.  We may take \(K_E = 0\),
+so \(E\) has genus \(\ell(0) = 1\), and \(\ell(D) = \deg D\) whenever \(\deg D \geq 1\).  In
+particular \(\ell(P) = 1\) for \(P \in E(k)\), so no function has a single simple pole.  For
+\(O = (0 : 1 : 0)\), the functions \(1, x\) form a basis of \(\mcL(2O)\), and \(1, x, y\) a basis of
+\(\mcL(3O)\).  The seven functions \(1, x, y, x^2, xy, x^3, y^2\) lie in the \(6\)-dimensional
+space \(\mcL(6O)\), and the linear relation between them is the equation of \(E\)
+[<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Example II.5.7].
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-crv-hurwitz" class="outline-2">
+<h2 id="sec-crv-hurwitz"><span class="ec-status ec-status-draft"><span class="ec-status-label ec-status-draft">Draft</span><time datetime="2026-09-16">16 Sep 2026</time></span><span class="section-number" id="s3.6">3.6</span> The Hurwitz formula</h2>
+<div class="outline-text-2" id="text-sec-crv-hurwitz">
+<div class="ec-thm ec-definition" id="def-crv-ramification-divisor">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Definition 3.6.1</span>.</span> Let \(\varphi\colon C_1 \to C_2\) be a non-constant separable morphism, and \(\omega\) a
+non-zero differential on \(C_2\), so that \(\varphi^*\omega \neq 0\)
+(Proposition <a href="#prop-crv-differentials">3.4.2</a>).  The <dfn class="ec-cdef" id="gls-ramification-divisor" data-gls="ramification-divisor">ramification divisor</dfn> of \(\varphi\) is
+</p>
+\begin{equation*}
+R_\varphi \coloneqq \div(\varphi^*\omega) - \varphi^*\div(\omega) \in \Div C_1.
+\end{equation*}
+<p>
+It does not depend on \(\omega\) [<a class="ec-cite" href="#bib-Poonen06">Poo06</a>, Definition 2.5.1].
+</p>
+</div>
+
+<div class="ec-thm ec-theorem" id="thm-crv-hurwitz">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Theorem 3.6.2</span> <span class="ec-thm-title">(Hurwitz)</span>.</span> Let \(\varphi\colon C_1 \to C_2\) be a non-constant separable morphism of nice curves of
+genera \(g_1\) and \(g_2\).  Then
+</p>
+\begin{equation*}
+2g_1 - 2 = (\deg\varphi)(2g_2 - 2) + \deg R_\varphi.
+\end{equation*}
+<p>
+For every \(P \in C_1(\kbar)\), the base change \(\varphi_{\kbar}\) satisfies
+\(\ord_P(R_{\varphi_{\kbar}}) \geq e(P) - 1\), with equality if and only if
+\(\operatorname{char} k \nmid e(P)\).  So if no ramification index is divisible by
+\(\operatorname{char} k\), then
+</p>
+\begin{equation*}
+2g_1 - 2 = (\deg\varphi)(2g_2 - 2) + \sum_{P \in C_1(\kbar)} \bigl(e(P) - 1\bigr).
+\end{equation*}
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+Take degrees in \(\div(\varphi^*\omega) = \varphi^*\div(\omega) + R_\varphi\), and use
+Proposition <a href="#prop-crv-pullback">3.3.6</a> and Corollary <a href="#cor-crv-rr">3.5.5</a>
+[<a class="ec-cite" href="#bib-Poonen06">Poo06</a>, Theorem 2.5.7].  Base change to \(\kbar\) preserves separability, degrees
+and genera, and over \(\kbar\) the rest is [<a class="ec-cite" href="#bib-Poonen06">Poo06</a>, Proposition 2.5.4 and Corollary 2.5.8]
+and [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Theorem II.5.9].
+</p>
+</details>
+
+<div class="ec-thm ec-example" id="eg-crv-hurwitz-cubic">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Example 3.6.3</span>.</span> Let \(x\colon E \to \PP^1_k\) be the morphism of Example <a href="#eg-crv-x-coordinate">3.2.10</a>, with
+\(\operatorname{char} k \neq 2\).  Over \(\kbar\) it is ramified exactly at the three roots
+\((e_i, 0)\) of \(p\) and at \(O\), each with index \(2\).  Hurwitz gives
+\(2g - 2 = 2 \cdot (-2) + 4 = 0\), so \(g = 1\), in agreement with
+Example <a href="#eg-crv-rr-cubic">3.5.7</a>.
+</p>
+</div>
+
+<div class="ec-thm ec-example" id="eg-crv-wild">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Example 3.6.4</span>.</span> Suppose \(\operatorname{char} k = 2\), and let \(C\colon Y^2Z + YZ^2 = X^3\), the curve
+\(y^2 + y = x^3\).  The partial derivatives are \(X^2\), \(Z^2\) and \(Y^2\), with no common
+zero, so \(C\) is a smooth cubic, of genus \(1\) by the degree&#x2013;genus formula
+(Corollary <a href="#cor-crv-plane-genus">3.7.7</a> below).  The
+morphism \(x\colon C \to \PP^1_k\) has degree \(2\), and it is separable, since
+\(y^2 + y - x^3\) has derivative \(1\) in \(y\).  Over each \(a \in \kbar\) the equation
+\(y^2 + y = a^3\) has two distinct roots.  So the only ramification is at \(O = (0 : 1 : 0)\),
+with index \(2\), which is wild.  One computes \(R_x = 4O\) [<a class="ec-cite" href="#bib-Poonen06">Poo06</a>, Example 2.5.6],
+and Hurwitz gives \(2g - 2 = 2 \cdot (-2) + 4 = 0\).  The formula for the tame case would
+give the impossible value \(2 \cdot (-2) + 1\).
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-crv-plane-curves" class="outline-2">
+<h2 id="sec-crv-plane-curves"><span class="ec-status ec-status-draft"><span class="ec-status-label ec-status-draft">Draft</span><time datetime="2026-09-16">16 Sep 2026</time></span><span class="section-number" id="s3.7">3.7</span> Plane curves</h2>
+<div class="outline-text-2" id="text-sec-crv-plane-curves">
+<p>
+We follow [<a class="ec-cite" href="#bib-Milne20">Mil20</a>, Section I.1], and use coordinates \((X : Y : Z)\) on
+\(\PP^2_k\), with \(x = X/Z\) and \(y = Y/Z\) on the affine patch \(Z \neq 0\).
+</p>
+
+<div class="ec-thm ec-definition" id="def-crv-plane-curve">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Definition 3.7.1</span>.</span> Let \(F \in k[X, Y, Z]\) be a non-constant homogeneous polynomial of degree \(d\) with no
+repeated factor in \(\kbar[X, Y, Z]\).  The <dfn class="ec-cdef" id="gls-projective-plane-curve" data-gls="projective-plane-curve">projective plane curve</dfn> defined by \(F\)
+is \(C_F \coloneqq V_+(F) \subseteq \PP^2_k\), and \(d\) is its degree.  Affine plane
+curves \(V(f) \subseteq \AA^2_k\) are defined in the same way.
+</p>
+</div>
+
+<p>
+The condition on \(F\) says that \(C_F\) is geometrically reduced
+[<a class="ec-cite" href="#bib-Milne20">Mil20</a>, Aside I.1.7].  The affine patches of \(C_F\) are the affine plane curves
+\(F(x, y, 1) = 0\), \(F(x, 1, z) = 0\) and \(F(1, y, z) = 0\).
+</p>
+
+<div class="ec-thm ec-proposition" id="prop-crv-plane-singular">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Proposition 3.7.2</span>.</span> Let \(C = V_+(F) \subseteq \PP^2_k\) be a projective plane curve of degree \(d\).  Its
+singular points are the common zeros in \(\PP^2(\kbar)\) of \(F\), \(\partial F/\partial X\),
+\(\partial F/\partial Y\) and \(\partial F/\partial Z\).  If \(\operatorname{char} k \nmid d\),
+the condition \(F = 0\) may be omitted, by the Euler relation
+</p>
+\begin{equation*}
+dF = X\frac{\partial F}{\partial X} + Y\frac{\partial F}{\partial Y} + Z\frac{\partial F}{\partial Z}.
+\end{equation*}
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof <span class="ec-proof-cites">(Poo06, Mil20)</span>.</span></summary>
+<p>
+See [<a class="ec-cite" href="#bib-Poonen06">Poo06</a>, Example 1.7.5] and [<a class="ec-cite" href="#bib-Milne20">Mil20</a>, Exercise I.1.17].
+</p>
+</details>
+
+<p>
+When \(\operatorname{char} k \mid d\) the condition \(F = 0\) cannot be dropped: for
+\(F = Y^2Z - X^3 + tZ^3\) over \(\F_3(t)\) (Example <a href="02-varieties.html#eg-var-regular-not-smooth">2.4.6</a>) the three
+partial derivatives vanish at \((0 : 0 : 1)\), which is not a point of the curve.
+</p>
+
+<div class="ec-thm ec-definition" id="def-crv-intersection-number">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Definition 3.7.3</span>.</span> Let \(C = V_+(F)\) and \(D = V_+(G)\) be projective plane curves with no common component.
+Then \(C \cap D \coloneqq V_+(F, G)\) is a finite \(k\)-scheme.  For a point \(P\) of
+\(C \cap D\), choose an affine patch containing \(P\), with dehomogenizations \(f\) and
+\(g\) of \(F\) and \(G\).  The <dfn class="ec-cdef" id="gls-intersection-number" data-gls="intersection-number">intersection number</dfn> of \(C\) and \(D\) at \(P\) is
+</p>
+\begin{equation*}
+I_P(C, D) \coloneqq \dim_k \calO_{\PP^2_k, P}/(f, g).
+\end{equation*}
+</div>
+
+<p>
+For \(P \in C(k) \cap D(k)\) this is the intersection number of
+[<a class="ec-cite" href="#bib-Milne20">Mil20</a>, Proposition I.1.8], and it does not change under base extension
+[<a class="ec-cite" href="#bib-Milne20">Mil20</a>, Remark I.1.9].
+</p>
+
+<div class="ec-thm ec-theorem" id="thm-crv-bezout">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Theorem 3.7.4</span> <span class="ec-thm-title">(Bézout)</span>.</span> Let \(C\) and \(D\) be projective plane curves over \(k\) of degrees \(m\) and \(n\), with no
+common component.  Then
+</p>
+\begin{equation*}
+\sum_{P \in C \cap D} I_P(C, D) = mn.
+\end{equation*}
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof <span class="ec-proof-cites">(Mil20)</span>.</span></summary>
+<p>
+Base change to \(\kbar\), and apply [<a class="ec-cite" href="#bib-Milne20">Mil20</a>, Theorem I.1.18].
+</p>
+</details>
+
+<div class="ec-thm ec-corollary" id="cor-crv-smooth-plane-nice">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Corollary 3.7.5</span>.</span> A smooth projective plane curve is geometrically integral, hence nice.
+</p>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+It is geometrically reduced by definition.  Over \(\kbar\), two irreducible components
+would meet by Theorem <a href="#thm-crv-bezout">3.7.4</a>, and a point on two components is singular
+[<a class="ec-cite" href="#bib-Milne20">Mil20</a>, Remarks I.1.4 and I.1.21].
+</p>
+</details>
+
+<div class="ec-thm ec-proposition" id="prop-crv-plane-canonical">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Proposition 3.7.6</span>.</span> Let \(C = V_+(F) \subseteq \PP^2_k\) be a smooth plane curve of degree \(d\), not the line
+\(Z = 0\), and let \(f(x, y) \coloneqq F(x, y, 1)\).  Let \(H\) be the effective divisor
+cut out by the line \(Z = 0\).  Then \(H\) has degree \(d\), and
+</p>
+\begin{equation*}
+\div\left(\frac{dx}{\partial f/\partial y}\right) = (d - 3)H.
+\end{equation*}
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+On the affine part, \(\frac{\partial f}{\partial x}\,dx + \frac{\partial f}{\partial y}\,dy = 0\), and
+the partial derivatives have no common zero (Proposition <a href="#prop-crv-plane-singular">3.7.2</a>).  So
+\(dx/(\partial f/\partial y) = -dy/(\partial f/\partial x)\) generates \(\Omega_{C/k}\) there.
+The degree of \(H\) is \(d\) by Theorem <a href="#thm-crv-bezout">3.7.4</a>: on a smooth curve,
+\(I_P(C, L) = \ord_P(\ell)\deg P\) for a local equation \(\ell\) of the line \(L\).
+</p>
+</details>
+
+<p>
+For \(d = 3\) and \(f = y^2 - p(x)\) this recovers Example <a href="#eg-crv-div-dx-y">3.4.9</a>.  For
+\(d = 1\), with \(f = y\), it recovers Example <a href="#eg-crv-div-dt">3.4.6</a>.
+</p>
+
+<div class="ec-thm ec-corollary" id="cor-crv-plane-genus">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Corollary 3.7.7</span>.</span> A smooth plane curve of degree \(d\) has genus \((d - 1)(d - 2)/2\).
+</p>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+By Proposition <a href="#prop-crv-plane-canonical">3.7.6</a>, \(\deg K_C = d(d - 3)\), and
+\(d(d - 3) = 2g - 2\) by Corollary <a href="#cor-crv-rr">3.5.5</a>.  See also
+[<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Exercise 2.7] and [<a class="ec-cite" href="#bib-Poonen06">Poo06</a>, Section 2.9.2].
+</p>
+</details>
+
+<div class="ec-thm ec-remark" id="rem-crv-genus-drop">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Remark 3.7.8</span>.</span> Smoothness cannot be weakened to regularity here.  The curve \(E\colon y^2 = x^3 - t\)
+over \(k = \F_3(t)\) of Example <a href="02-varieties.html#eg-var-regular-not-smooth">2.4.6</a> is regular and geometrically
+integral, and as a plane cubic it has arithmetic genus \(1\).  Over \(k' \coloneqq k(s)\),
+where \(s^3 = t\), it becomes the cuspidal cubic \(y^2 = (x - s)^3\), whose normalization
+\(u \mapsto (s + u^2, u^3)\) is \(\PP^1_{k'}\).  So the genus drops under base extension,
+and Corollary <a href="#cor-crv-rr">3.5.5</a> fails for \(E\).  Also \(\Omega_{E/k}\) is not
+invertible at the non-smooth point, so Definition <a href="#def-crv-canonical">3.4.3</a> does not apply.
+</p>
+</div>
+
+<div class="ec-thm ec-example" id="eg-crv-y-squared-h">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Example 3.7.9</span>.</span> Let \(h \in k[x]\) have degree \(n \geq 3\) and leading coefficient \(c\), let
+\(H(X, Z) \coloneqq Z^nh(X/Z)\) be its homogenization, and let
+\(C \coloneqq V_+(F) \subseteq \PP^2_k\), where
+</p>
+\begin{equation*}
+F \coloneqq Y^2Z^{n - 2} - H(X, Z),
+\end{equation*}
+<p>
+the projective closure of the affine curve \(y^2 = h(x)\).  Both \(F\) and \(C\) have
+degree \(n\).
+</p>
+<ol class="org-ol">
+<li><b>\(C\) is a plane curve.</b>  Since \(F \equiv -cX^n \pmod Z\), the polynomial \(Z\) does
+not divide \(F\), so a repeated factor of \(F\) is one of \(y^2 - h(x)\).  A
+factorization \(y^2 - h(x) = (y - g)(y + g)\) over \(\kbar\) has a repeated factor only
+if \(2g = 0\), so \(F\) has one exactly when \(\operatorname{char} k = 2\) and
+\(h \in k[x^2]\).  Exclude that case, so that Definition <a href="#def-crv-plane-curve">3.7.1</a> applies.</li>
+<li><p>
+<b>Singular points of the affine part.</b>  Here \(f = y^2 - h(x)\), so
+\(\partial f/\partial y = 2y\) and \(\partial f/\partial x = -h'(x)\), and the singular
+points of \(y^2 = h(x)\) are the pairs \((\alpha, \beta) \in \kbar^2\) with
+</p>
+\begin{equation*}
+\beta^2 = h(\alpha), \qquad 2\beta = 0, \qquad h'(\alpha) = 0.
+\end{equation*}
+<p>
+If \(\operatorname{char} k \neq 2\), then \(\beta = 0\), and the conditions
+\(h(\alpha) = h'(\alpha) = 0\) say that \(\alpha\) is a repeated root of \(h\).  So the
+affine curve is singular exactly at the points \((e, 0)\) with \(e\) a repeated root of
+\(h\) in \(\kbar\), and it is smooth if and only if \(h\) is separable.  For
+\(h = x^3 + Ax + B\) this says \(4A^3 + 27B^2 \neq 0\) [<a class="ec-cite" href="#bib-Milne20">Mil20</a>, Example I.1.5].
+If \(\operatorname{char} k = 2\), the condition \(2\beta = 0\) is vacuous.  When \(n\) is
+odd, \(h'\) has degree \(n - 1 \geq 2\), hence a root \(\alpha \in \kbar\), and any
+\(\beta\) with \(\beta^2 = h(\alpha)\) gives a singular point; for
+\(h = x^3 + Ax + B\) it is the point with \(\alpha^2 = A\) and
+\(\beta^2 = \alpha^3 + A\alpha + B\).
+</p></li>
+<li><p>
+<b>The point at infinity.</b>  Since \(n \geq 3\), we have \(F(X, Y, 0) = -cX^n\), so \(C\)
+meets the line \(L \coloneqq V_+(Z)\) only at \(O \coloneqq (0 : 1 : 0)\), and
+\(I_O(C, L) = n\) by Theorem <a href="#thm-crv-bezout">3.7.4</a>.  Now
+</p>
+\begin{equation*}
+\frac{\partial F}{\partial X} = -\frac{\partial H}{\partial X}, \qquad
+\frac{\partial F}{\partial Y} = 2YZ^{n - 2}, \qquad
+\frac{\partial F}{\partial Z} = (n - 2)Y^2Z^{n - 3} - \frac{\partial H}{\partial Z}.
+\end{equation*}
+<p>
+The partial derivatives of \(H\) are homogeneous of degree \(n - 1 \geq 2\) in
+\((X, Z)\), so they vanish at \(O\), as does \(\partial F/\partial Y\).  For \(n = 3\)
+the remaining derivative is \(\partial F/\partial Z = Y^2 - \partial H/\partial Z\),
+with value \(1\) at \(O\); for \(n \geq 4\) it vanishes at \(O\) as well.  So \(O\) is a
+smooth point of \(C\) if \(n = 3\), and a singular point if \(n \geq 4\), in every
+characteristic.
+</p></li>
+<li><b>Conclusion.</b>  If \(\operatorname{char} k \neq 2\), then \(C\) is smooth if and only if
+\(n = 3\) and \(h\) is separable; it is then nice by
+Corollary <a href="#cor-crv-smooth-plane-nice">3.7.5</a> and of genus \(1\) by
+Corollary <a href="#cor-crv-plane-genus">3.7.7</a>.  If \(\operatorname{char} k = 2\), then \(C\) is
+singular: by part 2 when \(n\) is odd, and by part 3 when \(n\) is even, since then
+\(n \geq 4\).  One needs the general Weierstrass equation instead
+[<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Section III.1].</li>
+</ol>
+<p>
+So a curve \(y^2 = h(x)\) with \(\deg h \geq 4\) has no smooth plane model, and must be
+studied through some other embedding.  The case \(n = 3\) is the one we pursue, in
+Section <a href="04-ec-algebraic.html#sec-ec-weierstrass">4.1</a>.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgd88c930" class="outline-2 ec-references">
+<h2 id="orgd88c930">References</h2>
+<div class="outline-text-2" id="text-orgd88c930">
+<dl class="ec-bibliography">
+<dt id="bib-Hartshorne77">[Har77]</dt>
+<dd>Robin Hartshorne. <i>Algebraic geometry</i>. Vol. No. 52. Graduate Texts in Mathematics. Springer-Verlag, New York-Heidelberg, 1977.</dd>
+<dt id="bib-Milne20">[Mil20]</dt>
+<dd>James S. Milne. <i>Elliptic curves</i>. Second. World Scientific Publishing Co. Pte. Ltd., Hackensack, NJ, 2020.</dd>
+<dt id="bib-Poonen06">[Poo06]</dt>
+<dd>Bjorn Poonen. <i>Lectures on rational points on curves</i>. 2006. Lecture notes, March 5, 2006 version.</dd>
+<dt id="bib-Poonen2017">[Poo17]</dt>
+<dd>Bjorn Poonen. <i>Rational points on varieties</i>. Vol. 186. Graduate Studies in Mathematics. American Mathematical Society, Providence, RI, 2017. <a href="https://doi.org/10.1090/gsm/186">doi:10.1090/gsm/186</a>.</dd>
+<dt id="bib-Silverman09">[Sil09]</dt>
+<dd>Joseph H. Silverman. <i>The arithmetic of elliptic curves</i>. Second. Vol. 106. Graduate Texts in Mathematics. Springer, Dordrecht, 2009. <a href="https://doi.org/10.1007/978-0-387-09494-6">doi:10.1007/978-0-387-09494-6</a>.</dd>
+</dl>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<nav class="ec-pager ec-pager-bottom" aria-label="Chapters"><a class="ec-pager-prev" rel="prev" href="02-varieties.html"><span class="ec-pager-label">Previous</span><span class="ec-pager-title">2. Algebraic varieties</span></a><a class="ec-pager-next" rel="next" href="04-ec-algebraic.html"><span class="ec-pager-label">Next</span><span class="ec-pager-title">4. Elliptic curves as algebraic curves</span></a></nav>
+</div>
+</body>
+</html>
