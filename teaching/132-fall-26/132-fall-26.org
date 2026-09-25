@@ -1,0 +1,354 @@
+#+TITLE: Calculus II
+#+SUBTITLE: Math 132 - Fall 2026
+#+AUTHOR: Santiago Arango-Piñeros
+#+EMAIL: sarangopiner@umass.edu
+#+OPTIONS: toc:1 num:nil
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../../org-css.css"/>
+#+HTML_HEAD:  <link rel="shortcut icon" type="image/x-icon" href="../../images/umass-favicon.ico">
+
+
+* Coordinates
+** Instructor
+[[https://sarangop1728.github.io/][Santiago Arango-Piñeros]], Ph.D. (He/Him).
+
+My office is in *LGRT 1238*, and you can contact me via email at:
++ ~sarangopiner@umass.edu~.
+
+** Teaching Assistant
+Bryan Silva. Their office is in *LGRT 1325*, and you can contact them via email at:
++ ~bryansilva@umass.edu~.
+
+** Lectures
+|---------+---------+---------------------+----------|
+|   <c>   |   <c>   |         <c>         |   <c>    |
+| Section |  Days   |        Time         |  Place   |
+|---------+---------+---------------------+----------|
+| 06-LEC  | Tu, Thu | 11:30 AM - 12:45 PM | LGRT 219 |
+|---------+---------+---------------------+----------|
+
+** Discussions
+Bryan teaches both discussion sections.
+
+|---------+------+-------------------+----------|
+|   <c>   | <c>  |        <c>        |   <c>    |
+| Section | Days |       Time        |  Place   |
+|---------+------+-------------------+----------|
+| 06AA    | Mon  | 5:30 PM - 6:20 PM | LGRT 141 |
+| 06AB    | Mon  | 2:30 PM - 3:20 PM | LGRT 171 |
+|---------+------+-------------------+----------|
+
+** Office hours
+The best way to get help is to come to our office hours. No appointment is
+needed, and you are welcome to bring your classmates and work on problems
+together.
+
+|------+---------------------+-----------+----------|
+| <c>  |         <c>         |    <c>    |   <c>    |
+| Days |        Time         |   Place   |    By    |
+|------+---------------------+-----------+----------|
+| Wed  |  3:00 PM - 4:00 PM  | LGRT 140  | Santiago |
+| Wed  |  4:00 PM - 5:00 PM  | LGRT 1238 | Santiago |
+| Mon  | 10:00 AM - 12:00 PM | LGRT 1325 | Bryan    |
+|------+---------------------+-----------+----------|
+
+If the times above are not convenient, or if you would like to discuss a
+private matter, send me an email and we will find a time to meet.
+
+* Course description
+The definite integral, techniques of integration, and applications to physics,
+chemistry, and engineering. Sequences, series, and power series. Taylor and
+Maclaurin series.
+
+MATH 132 is a four-credit General Education course that satisfies the *R1*
+(Basic Math Skills) and *R2* (Analytic Reasoning) requirements for graduation.
+
+** Prerequisite
+*MATH 131* or equivalent.
+
+** Textbook
++ ~[S]~ J. Stewart, /Calculus: Early Transcendentals/, 9th edition.
+
+Enhanced [[https://www.webassign.net/][WebAssign]] (access code + /e/-book) is *required*: your homework is
+done there. The /e/-book and the access code are bundled together inside your
+Canvas course, so *a physical copy of the textbook is not required*.
+
+** Learning objectives
+By the end of this course, you will be able to:
+1. Apply integration techniques to evaluate definite and indefinite integrals.
+2. Use integration in applications such as computing areas, volumes, and arc
+   lengths.
+3. Represent functions as power series, and find Taylor and Maclaurin series.
+4. Analyze curves and solve problems using parametric equations and polar
+   coordinates.
+
+** The official syllabus
+This page collects the things you will need week to week. The *official course
+syllabus* is the authoritative document, and it also contains the required
+university statements (Title IX, academic honesty and integrity, accommodations,
+the full make-up exam policy, and the General Education R1/R2 learning
+outcomes):
+
++ [[https://www.dropbox.com/scl/fi/9zukyhob8dd8yg5kvjy87/syllabus.pdf?rlkey=6iqk3at0lxt0wcns89zqlwsvl&dl=0][Math 132 syllabus (~pdf~)]], also posted on [[https://www.umass.edu/it/lms][Canvas]].
+
+* Grades
+Your grade will be computed as a weighted average of the following work:
++ [[*Exams][Midterm Exam 1]] (~25%~)
++ [[*Exams][Midterm Exam 2]] (~25%~)
++ [[*Exams][Final Exam]] (~30%~)
++ [[*Homework][Homework]] (~15%~)
++ [[*Quizzes][Quizzes]] (~5%~)
+
+| *Grade* |     A      |   A$-$    |   B$+$    |     B     |   B$-$    |
+|---------+------------+-----------+-----------+-----------+-----------|
+|   <c>   |    <c>     |    <c>    |    <c>    |    <c>    |    <c>    |
+| score   | $[90,100]$ | $[87,90)$ | $[83,87)$ | $[79,83)$ | $[75,79)$ |
+
+| *Grade* |   C$+$    |     C     |   C$-$    |   D$+$    |     D     |    F     |
+|---------+-----------+-----------+-----------+-----------+-----------+----------|
+|   <c>   |    <c>    |    <c>    |    <c>    |    <c>    |    <c>    |   <c>    |
+|  score  | $[71,75)$ | $[67,71)$ | $[63,67)$ | $[59,63)$ | $[55,59)$ | $[0,55)$ |
+
+Final numerical scores are *truncated down* to the nearest integer. For
+example, a final score of \(89.99\) is truncated to \(89\), which is an A$-$.
+
+* Exams
+There are two midterm exams and one final exam. Locations will be announced
+here and on Canvas.
+
++ *Exam 1*: <2026-10-15 Thu 19:00> - 9:00 PM. Covers Sections 5.3-5.5, 6.1,
+  6.2, and 7.1-7.5.
+  - Make-up: <2026-10-16 Fri 17:00> - 7:00 PM.
++ *Exam 2*: <2026-11-18 Wed 19:00> - 9:00 PM. Covers Sections 7.8 and
+  11.1-11.7.
+  - Make-up: <2026-11-19 Thu 19:00> - 9:00 PM.
++ *Final exam*: <2026-12-18 Fri 08:00> - 10:00 AM, location in SPIRE. It is
+  cumulative, with emphasis on the material covered after Exam 2.
+
+Exams are graded through [[https://www.gradescope.com/][Gradescope]]. You will be enrolled automatically around
+the time of the first midterm, and /we/ scan your exams, so there is nothing
+for you to upload.
+
+** Exam policy
+- All exams are *closed-book*.
+- Calculators, textbooks, notes, formula sheets, cell phones, smartwatches, and
+  all other electronic devices are strictly prohibited. Any electronic device
+  visible during the exam will lead to an assumption of cheating.
+- *Bring your student ID* to every exam.
+
+** Make-up exams
+You are expected to take the exams at the scheduled times. Make-up exams are
+offered in excusable situations: extenuating circumstances, religious reasons
+(tell me at the *beginning of the semester*), athletic events, field trips and
+performances, health reasons, and exam conflicts. Tell me *as early as
+possible*, and bring supporting documents when necessary.
+
++ *Exam conflicts.* University policy says that you cannot be expected to take
+  two exams at the same time, or three exams in one day. Submit the Evening
+  Exam Conflict or Final Exam Conflict form through SPIRE (Class & Finals
+  Schedule, in the Manage Classes tile) at least *two weeks* before the
+  scheduled exam.
++ There are @@html:<span style="color:red">@@no exam retakes@@html:</span>@@ in
+  this course, for any reason. If an emergency prevents you from taking an
+  exam, contact me *within 24 hours* of the scheduled exam.
++ The full policy is in the [[https://www.dropbox.com/scl/fi/9zukyhob8dd8yg5kvjy87/syllabus.pdf?rlkey=6iqk3at0lxt0wcns89zqlwsvl&dl=0][official syllabus]].
+
+** Testing accommodations
+If you are approved for testing accommodations, you take your *midterms on the
+same day* as everyone else, but starting at *6:00 PM* instead of 7:00 PM. The
+*final exam* is also on the same day, starting at *8:00 AM*.
+
+You do *not* need to schedule anything with the Disability Services Exam
+Proctoring Center or through Clockwork; no exams are given there. You will be
+emailed your exam location at least three days before each exam.
+
+* Homework
+Homework is assigned *weekly* through [[https://www.webassign.net/login.html][WebAssign]] and covers the material of the
+previous week. Due dates are posted in the WebAssign calendar, typically on
+*Wednesdays and Sundays by 11:59 PM*, except during exam weeks.
+
++ You get *5 submission attempts* per question, except for true/false and
+  convergent/divergent questions, which allow only *one*.
++ Buy the access code and register through the link in your Canvas course. If
+  Canvas is down, you can work directly on the [[https://www.webassign.net/login.html][WebAssign]] website. No Class Key
+  is needed.
++ *The two lowest homework scores are dropped.*
+
+** Late homework
+If you miss a deadline, you can still complete the assignment for up to *7
+days* after the due date by requesting an automatic extension through
+WebAssign. A *30% late penalty applies to the portion of the assignment
+submitted during those 7 days*. Beyond that, late homework is generally not
+accepted or extended without penalty.
+
+If you join the course late, catching up on the assignments is your
+responsibility. The schedule is arranged so that the first assignment is due
+one day after the last day to add or drop.
+
+* Quizzes
+There is a quiz in discussion *every week*, except during the first week and
+during midterm weeks.
+
++ All quizzes are *closed-book*, and calculators are not permitted.
++ Make-up quizzes are generally not offered; exceptions are considered only
+  with documented extenuating circumstances.
++ *The two lowest quiz scores are dropped.*
+
+* Schedule
+Below is a tentative schedule for our Tuesday/Thursday section. It will be
+adjusted as the semester goes on, so check back.
+
+It is your responsibility to read the sections *before* the lecture, and to
+come with questions. A few sections are covered only in part:
++ *11.5*: /except/ the subsection Rearrangements.
++ *11.10*: /except/ the subsections Multiplication and Division of Power Series,
+  and Binomial Series.
++ *10.2*: /only/ the subsections Tangents and Arc Length (/not/ Area and Surface
+  Area).
+
+|-----+------------------+-----------------------------------------------------------+----------------------------|
+|     |       Date       | Topic                                                     | Reading                    |
+| <c> |       <c>        |                                                           |                            |
+|-----+------------------+-----------------------------------------------------------+----------------------------|
+|  1  | <2026-09-08 Tue> | The Fundamental Theorem of Calculus                       | 5.3                        |
+|  2  | <2026-09-10 Thu> | Indefinite integrals and the Net Change Theorem           | 5.4                        |
+|  3  | <2026-09-15 Tue> | The Substitution Rule                                     | 5.5                        |
+|  4  | <2026-09-17 Thu> | Area Between Curves                                       | 6.1                        |
+|  5  | <2026-09-22 Tue> | Volumes                                                   | 6.2                        |
+|  6  | <2026-09-24 Thu> | Integration by Parts                                      | 7.1                        |
+|  7  | <2026-09-29 Tue> | Trigonometric Integrals                                   | 7.2                        |
+|  8  | <2026-10-01 Thu> | Trigonometric Substitution                                | 7.3                        |
+|  9  | <2026-10-06 Tue> | Rational functions by partial fractions                   | 7.4                        |
+| 10  | <2026-10-08 Thu> | Improper Integrals                                        | 7.8                        |
+| 11  | <2026-10-13 Tue> | Strategy for Integration (review)                         | 7.5                        |
+| 12  | <2026-10-15 Thu> | Sequences                                                 | 11.1                       |
+|     | <2026-10-15 Thu> | *Exam 1*, 7:00 - 9:00 PM                                  | 5.3-5.5, 6.1, 6.2, 7.1-7.5 |
+| 13  | <2026-10-20 Tue> | Series                                                    | 11.2                       |
+| 14  | <2026-10-22 Thu> | The Integral Test and Estimates of Sums                   | 11.3                       |
+| 15  | <2026-10-27 Tue> | The Comparison Tests                                      | 11.4                       |
+| 16  | <2026-10-29 Thu> | Alternating Series and Absolute Convergence               | 11.5                       |
+|     | <2026-11-03 Tue> | @@html:<span style="color:red">@@No class@@html:</span>@@ | (Election Day)             |
+| 17  | <2026-11-05 Thu> | The Ratio and Root Tests                                  | 11.6                       |
+| 18  | <2026-11-10 Tue> | Strategy for Testing Series (review)                      | 11.7                       |
+| 19  | <2026-11-12 Thu> | Power Series                                              | 11.8                       |
+| 20  | <2026-11-17 Tue> | Representation of Functions as Power Series               | 11.9                       |
+|     | <2026-11-18 Wed> | *Exam 2*, 7:00 - 9:00 PM                                  | 7.8, 11.1-11.7             |
+| 21  | <2026-11-19 Thu> | Taylor and Maclaurin Series                               | 11.10                      |
+|     | <2026-11-24 Tue> | @@html:<span style="color:red">@@No class@@html:</span>@@ | (Wednesday schedule)       |
+|     | <2026-11-26 Thu> | @@html:<span style="color:red">@@No class@@html:</span>@@ | (Thanksgiving)             |
+| 22  | <2026-12-01 Tue> | Curves Defined by Parametric Equations                    | 10.1                       |
+| 23  | <2026-12-03 Thu> | Calculus with Parametric Curves                           | 10.2                       |
+| 24  | <2026-12-08 Tue> | Polar Coordinates                                         | 10.3                       |
+| 25  | <2026-12-10 Thu> | Calculus in Polar Coordinates                             | 10.4                       |
+| 26  | <2026-12-15 Tue> | Review for the final exam                                 |                            |
+|     | <2026-12-18 Fri> | *Final exam*, 8:00 - 10:00 AM                             | Cumulative                 |
+|-----+------------------+-----------------------------------------------------------+----------------------------|
+
+* Help and resources
+The best way to get help is to come to [[*Office hours][our office hours]]. Beyond that:
+
++ The *Calculus Tutoring Center* (~LGRT 140~) is available to Math 132
+  students, and opens on <2026-09-14 Mon>.
++ The [[https://www.umass.edu/lrc][Learning Resource Center (LRC)]] offers free academic support: one-on-one
+  peer tutoring, study skills tutoring, [[https://www.umass.edu/lrc/supplemental-instruction-program-si][Supplemental Instruction (SI)]], and exam
+  review sessions. The starting date for SI sessions is TBA.
++ Talk to your classmates. Collaboration is encouraged, and explaining a
+  problem to someone else is one of the fastest ways to find out whether you
+  actually understand it.
+
+* Administrative details
+** Attendance
+You are expected to attend all classes regularly, and you are responsible for
+any material, announcements, or assignments you miss. Attendance is not taken,
+but let me know if illness or other extenuating circumstances prevent you from
+attending. Absences for university-approved conflicts or other excusable
+reasons do not excuse you from meeting the course requirements.
+
+** Technology
+This course uses [[https://www.umass.edu/it/lms][Canvas]] as its learning management system; log in with your
+~NetID@umass.edu~ and password. WebAssign and the /e/-book are reached from
+Canvas, and exams are graded in Gradescope. No course entry code is needed.
+
+** Academic alerts
+UMass Amherst uses [[https://www.umass.edu/it/navigate360][Navigate360]] to identify students who may need additional
+support. You may receive emails from Navigate360 about your grades and academic
+performance during the semester. Check your UMass email regularly, and if you
+get an alert, read it carefully and connect with the resources it lists. Alerts
+are meant to help you, not to punish you.
+
+** Drops, withdrawals, pass/fail, incompletes
+- Last day to add or drop with no record: <2026-09-14 Mon>.
+- Last day to drop with a "W" and to select P/F: <2026-11-04 Wed>.
+- See the [[https://www.umass.edu/registrar/academic-calendar][academic calendar]] for other important dates.
+- An Incomplete is possible only if: (1) you had a compelling personal reason,
+  e.g. serious illness; (2) your work has clearly been passing; and (3) there
+  is a good chance you will complete the course with a passing grade within the
+  allotted time. Failing work is not in itself a reason for an Incomplete.
+
+** Academic honesty
+Academic honesty is required of all students at UMass Amherst, and academic
+dishonesty --- cheating, fabrication, plagiarism, and facilitating dishonesty
+--- is prohibited in all programs of the University. The formal definitions,
+examples, and procedures are on the [[https://www.umass.edu/studentsuccess/academic-integrity][Academic Honesty website]], and the full
+statement is in the [[https://www.dropbox.com/scl/fi/9zukyhob8dd8yg5kvjy87/syllabus.pdf?rlkey=6iqk3at0lxt0wcns89zqlwsvl&dl=0][official syllabus]]. You are expected to be familiar with
+this policy: ignorance of these standards is not normally sufficient evidence
+of lack of intent.
+
+** Accommodations
+UMass Amherst is committed to providing an equal educational opportunity for
+all students. If you have a documented physical, psychological, or learning
+disability on file with [[https://www.umass.edu/disability/][Disability Services]], you may be eligible for reasonable
+academic accommodations. If you have a documented disability that requires an
+accommodation, please notify me *within the first two weeks of the semester*
+so that we can make the appropriate arrangements. See also [[*Testing accommodations][testing
+accommodations]] for the exams.
+
+** Title IX
+UMass Amherst is committed to providing a safe learning environment for all
+students, free from all forms of discrimination. A summary of the available
+Title IX resources, confidential and non-confidential, is at
+[[https://www.umass.edu/titleix/resources][umass.edu/titleix/resources]]; you do not need to make a formal report to access
+them. If you need immediate support, you are not alone: free and confidential
+support is available 24/7 at the SASA Hotline *413-545-0800*.
+
+* Philosophy
+** Adopt a growth mindset
+  Your effort and attitude determine your abilities. Embrace challenges and
+  failure as an opportunity to grow. Find inspiration in other people's success.
+
+** Learning is the student's responsibility
+Paraphrasing Galileo:
+#+BEGIN_QUOTE
+``You cannot teach a person *anything*; you can only help
+them find it within themselves.''
+#+END_QUOTE
+We are all here to _understand_. My job as a more experienced learner is to
+assist you on your journey. But you are responsible for investing the time and
+effort necessary to learn.
+
+** Doing hard things
+This is hard work, and it will be frustrating at times. In my opinion, the
+reward is well worth the investment, as is often the case with challenging
+endeavors. In the words of JFK:
+#+BEGIN_QUOTE
+``We choose to go to the Moon in this decade and do the other things, not
+because they are easy, but because they are hard; because that goal will serve
+to organize and measure the best of our energies and skills, because that
+challenge is one that we are willing to accept, one we are unwilling to
+postpone, and one we intend to win, and the others, too.''
+#+END_QUOTE
+
+** Everyone belongs in this classroom
+We will subscribe to [[https://www.ams.org/publications/journals/notices/201610/rnoti-p1164.pdf][Federico's axioms]].
+
++ *Axiom 1.* Mathematical potential is equally present in different groups,
+  irrespective of geographic, demographic, and economic boundaries.
+
++ *Axiom 2.* Everyone can have joyful, meaningful, and empowering mathematical
+  experiences.
+
++ *Axiom 3.* Mathematics is a powerful, malleable tool that can be shaped and
+  used differently by various communities to serve their needs.
+
++ *Axiom 4.* Every student deserves to be treated with dignity and respect.
+
+

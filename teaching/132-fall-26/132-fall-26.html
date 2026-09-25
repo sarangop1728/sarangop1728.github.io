@@ -1,0 +1,1220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2026-09-23 Wed 08:11 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Calculus II</title>
+<meta name="author" content="Santiago Arango-Piñeros" />
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<link rel="stylesheet" type="text/css" href="../../org-css.css"/>
+<link rel="shortcut icon" type="image/x-icon" href="../../images/umass-favicon.ico">
+<script defer src="https://sarangop1728.github.io/org-code.js"></script>
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">Calculus II
+<br />
+<span class="subtitle">Math 132 - Fall 2026</span>
+</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org73e206b">Coordinates</a></li>
+<li><a href="#org0b8a76e">Course description</a></li>
+<li><a href="#org2b29468">Grades</a></li>
+<li><a href="#org51d5e07">Exams</a></li>
+<li><a href="#orgde73a88">Homework</a></li>
+<li><a href="#orgd1bd2f4">Quizzes</a></li>
+<li><a href="#org8561d41">Schedule</a></li>
+<li><a href="#org8a0c556">Help and resources</a></li>
+<li><a href="#orge334de4">Administrative details</a></li>
+<li><a href="#orgad9d4d4">Philosophy</a></li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-org73e206b" class="outline-2">
+<h2 id="org73e206b">Coordinates</h2>
+<div class="outline-text-2" id="text-org73e206b">
+</div>
+<div id="outline-container-orgd7347a2" class="outline-3">
+<h3 id="orgd7347a2">Instructor</h3>
+<div class="outline-text-3" id="text-orgd7347a2">
+<p>
+<a href="https://sarangop1728.github.io/">Santiago Arango-Piñeros</a>, Ph.D. (He/Him).
+</p>
+
+<p>
+My office is in <b>LGRT 1238</b>, and you can contact me via email at:
+</p>
+<ul class="org-ul">
+<li><code>sarangopiner@umass.edu</code>.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgd14703e" class="outline-3">
+<h3 id="orgd14703e">Teaching Assistant</h3>
+<div class="outline-text-3" id="text-orgd14703e">
+<p>
+Bryan Silva. Their office is in <b>LGRT 1325</b>, and you can contact them via email at:
+</p>
+<ul class="org-ul">
+<li><code>bryansilva@umass.edu</code>.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org0413b21" class="outline-3">
+<h3 id="org0413b21">Lectures</h3>
+<div class="outline-text-3" id="text-org0413b21">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-center" />
+
+<col  class="org-center" />
+
+<col  class="org-center" />
+
+<col  class="org-center" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-center">Section</th>
+<th scope="col" class="org-center">Days</th>
+<th scope="col" class="org-center">Time</th>
+<th scope="col" class="org-center">Place</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-center">06-LEC</td>
+<td class="org-center">Tu, Thu</td>
+<td class="org-center">11:30 AM - 12:45 PM</td>
+<td class="org-center">LGRT 219</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="outline-container-org437d1f1" class="outline-3">
+<h3 id="org437d1f1">Discussions</h3>
+<div class="outline-text-3" id="text-org437d1f1">
+<p>
+Bryan teaches both discussion sections.
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-center" />
+
+<col  class="org-center" />
+
+<col  class="org-center" />
+
+<col  class="org-center" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-center">Section</th>
+<th scope="col" class="org-center">Days</th>
+<th scope="col" class="org-center">Time</th>
+<th scope="col" class="org-center">Place</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-center">06AA</td>
+<td class="org-center">Mon</td>
+<td class="org-center">5:30 PM - 6:20 PM</td>
+<td class="org-center">LGRT 141</td>
+</tr>
+
+<tr>
+<td class="org-center">06AB</td>
+<td class="org-center">Mon</td>
+<td class="org-center">2:30 PM - 3:20 PM</td>
+<td class="org-center">LGRT 171</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="outline-container-org4d5cc46" class="outline-3">
+<h3 id="org4d5cc46">Office hours</h3>
+<div class="outline-text-3" id="text-org4d5cc46">
+<p>
+The best way to get help is to come to our office hours. No appointment is
+needed, and you are welcome to bring your classmates and work on problems
+together.
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-center" />
+
+<col  class="org-center" />
+
+<col  class="org-center" />
+
+<col  class="org-center" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-center">Days</th>
+<th scope="col" class="org-center">Time</th>
+<th scope="col" class="org-center">Place</th>
+<th scope="col" class="org-center">By</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-center">Wed</td>
+<td class="org-center">3:00 PM - 4:00 PM</td>
+<td class="org-center">LGRT 140</td>
+<td class="org-center">Santiago</td>
+</tr>
+
+<tr>
+<td class="org-center">Wed</td>
+<td class="org-center">4:00 PM - 5:00 PM</td>
+<td class="org-center">LGRT 1238</td>
+<td class="org-center">Santiago</td>
+</tr>
+
+<tr>
+<td class="org-center">Mon</td>
+<td class="org-center">10:00 AM - 12:00 PM</td>
+<td class="org-center">LGRT 1325</td>
+<td class="org-center">Bryan</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+If the times above are not convenient, or if you would like to discuss a
+private matter, send me an email and we will find a time to meet.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org0b8a76e" class="outline-2">
+<h2 id="org0b8a76e">Course description</h2>
+<div class="outline-text-2" id="text-org0b8a76e">
+<p>
+The definite integral, techniques of integration, and applications to physics,
+chemistry, and engineering. Sequences, series, and power series. Taylor and
+Maclaurin series.
+</p>
+
+<p>
+MATH 132 is a four-credit General Education course that satisfies the <b>R1</b>
+(Basic Math Skills) and <b>R2</b> (Analytic Reasoning) requirements for graduation.
+</p>
+</div>
+
+<div id="outline-container-orga7c7400" class="outline-3">
+<h3 id="orga7c7400">Prerequisite</h3>
+<div class="outline-text-3" id="text-orga7c7400">
+<p>
+<b>MATH 131</b> or equivalent.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orge0ca994" class="outline-3">
+<h3 id="orge0ca994">Textbook</h3>
+<div class="outline-text-3" id="text-orge0ca994">
+<ul class="org-ul">
+<li><code>[S]</code> J. Stewart, <i>Calculus: Early Transcendentals</i>, 9th edition.</li>
+</ul>
+
+<p>
+Enhanced <a href="https://www.webassign.net/">WebAssign</a> (access code + <i>e</i>-book) is <b>required</b>: your homework is
+done there. The <i>e</i>-book and the access code are bundled together inside your
+Canvas course, so <b>a physical copy of the textbook is not required</b>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgc3b9935" class="outline-3">
+<h3 id="orgc3b9935">Learning objectives</h3>
+<div class="outline-text-3" id="text-orgc3b9935">
+<p>
+By the end of this course, you will be able to:
+</p>
+<ol class="org-ol">
+<li>Apply integration techniques to evaluate definite and indefinite integrals.</li>
+<li>Use integration in applications such as computing areas, volumes, and arc
+lengths.</li>
+<li>Represent functions as power series, and find Taylor and Maclaurin series.</li>
+<li>Analyze curves and solve problems using parametric equations and polar
+coordinates.</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-orgaaaca9b" class="outline-3">
+<h3 id="orgaaaca9b">The official syllabus</h3>
+<div class="outline-text-3" id="text-orgaaaca9b">
+<p>
+This page collects the things you will need week to week. The <b>official course
+syllabus</b> is the authoritative document, and it also contains the required
+university statements (Title IX, academic honesty and integrity, accommodations,
+the full make-up exam policy, and the General Education R1/R2 learning
+outcomes):
+</p>
+
+<ul class="org-ul">
+<li><a href="https://www.dropbox.com/scl/fi/9zukyhob8dd8yg5kvjy87/syllabus.pdf?rlkey=6iqk3at0lxt0wcns89zqlwsvl&amp;dl=0">Math 132 syllabus (<code>pdf</code>)</a>, also posted on <a href="https://www.umass.edu/it/lms">Canvas</a>.</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org2b29468" class="outline-2">
+<h2 id="org2b29468">Grades</h2>
+<div class="outline-text-2" id="text-org2b29468">
+<p>
+Your grade will be computed as a weighted average of the following work:
+</p>
+<ul class="org-ul">
+<li><a href="#org51d5e07">Midterm Exam 1</a> (<code>25%</code>)</li>
+<li><a href="#org51d5e07">Midterm Exam 2</a> (<code>25%</code>)</li>
+<li><a href="#org51d5e07">Final Exam</a> (<code>30%</code>)</li>
+<li><a href="#orgde73a88">Homework</a> (<code>15%</code>)</li>
+<li><a href="#orgd1bd2f4">Quizzes</a> (<code>5%</code>)</li>
+</ul>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-center" />
+
+<col  class="org-center" />
+
+<col  class="org-center" />
+
+<col  class="org-center" />
+
+<col  class="org-center" />
+
+<col  class="org-center" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-center"><b>Grade</b></th>
+<th scope="col" class="org-center">A</th>
+<th scope="col" class="org-center">A\(-\)</th>
+<th scope="col" class="org-center">B\(+\)</th>
+<th scope="col" class="org-center">B</th>
+<th scope="col" class="org-center">B\(-\)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-center">score</td>
+<td class="org-center">\([90,100]\)</td>
+<td class="org-center">\([87,90)\)</td>
+<td class="org-center">\([83,87)\)</td>
+<td class="org-center">\([79,83)\)</td>
+<td class="org-center">\([75,79)\)</td>
+</tr>
+</tbody>
+</table>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-center" />
+
+<col  class="org-center" />
+
+<col  class="org-center" />
+
+<col  class="org-center" />
+
+<col  class="org-center" />
+
+<col  class="org-center" />
+
+<col  class="org-center" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-center"><b>Grade</b></th>
+<th scope="col" class="org-center">C\(+\)</th>
+<th scope="col" class="org-center">C</th>
+<th scope="col" class="org-center">C\(-\)</th>
+<th scope="col" class="org-center">D\(+\)</th>
+<th scope="col" class="org-center">D</th>
+<th scope="col" class="org-center">F</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-center">score</td>
+<td class="org-center">\([71,75)\)</td>
+<td class="org-center">\([67,71)\)</td>
+<td class="org-center">\([63,67)\)</td>
+<td class="org-center">\([59,63)\)</td>
+<td class="org-center">\([55,59)\)</td>
+<td class="org-center">\([0,55)\)</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+Final numerical scores are <b>truncated down</b> to the nearest integer. For
+example, a final score of \(89.99\) is truncated to \(89\), which is an A\(-\).
+</p>
+</div>
+</div>
+
+<div id="outline-container-org51d5e07" class="outline-2">
+<h2 id="org51d5e07">Exams</h2>
+<div class="outline-text-2" id="text-org51d5e07">
+<p>
+There are two midterm exams and one final exam. Locations will be announced
+here and on Canvas.
+</p>
+
+<ul class="org-ul">
+<li><b>Exam 1</b>: <span class="timestamp-wrapper"><span class="timestamp">&lt;2026-10-15 Thu 19:00&gt; </span></span> - 9:00 PM. Covers Sections 5.3-5.5, 6.1,
+6.2, and 7.1-7.5.
+<ul class="org-ul">
+<li>Make-up: <span class="timestamp-wrapper"><span class="timestamp">&lt;2026-10-16 Fri 17:00&gt; </span></span> - 7:00 PM.</li>
+</ul></li>
+<li><b>Exam 2</b>: <span class="timestamp-wrapper"><span class="timestamp">&lt;2026-11-18 Wed 19:00&gt; </span></span> - 9:00 PM. Covers Sections 7.8 and
+11.1-11.7.
+<ul class="org-ul">
+<li>Make-up: <span class="timestamp-wrapper"><span class="timestamp">&lt;2026-11-19 Thu 19:00&gt; </span></span> - 9:00 PM.</li>
+</ul></li>
+<li><b>Final exam</b>: <span class="timestamp-wrapper"><span class="timestamp">&lt;2026-12-18 Fri 08:00&gt; </span></span> - 10:00 AM, location in SPIRE. It is
+cumulative, with emphasis on the material covered after Exam 2.</li>
+</ul>
+
+<p>
+Exams are graded through <a href="https://www.gradescope.com/">Gradescope</a>. You will be enrolled automatically around
+the time of the first midterm, and <i>we</i> scan your exams, so there is nothing
+for you to upload.
+</p>
+</div>
+
+<div id="outline-container-org2eda5f7" class="outline-3">
+<h3 id="org2eda5f7">Exam policy</h3>
+<div class="outline-text-3" id="text-org2eda5f7">
+<ul class="org-ul">
+<li>All exams are <b>closed-book</b>.</li>
+<li>Calculators, textbooks, notes, formula sheets, cell phones, smartwatches, and
+all other electronic devices are strictly prohibited. Any electronic device
+visible during the exam will lead to an assumption of cheating.</li>
+<li><b>Bring your student ID</b> to every exam.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgd29e78d" class="outline-3">
+<h3 id="orgd29e78d">Make-up exams</h3>
+<div class="outline-text-3" id="text-orgd29e78d">
+<p>
+You are expected to take the exams at the scheduled times. Make-up exams are
+offered in excusable situations: extenuating circumstances, religious reasons
+(tell me at the <b>beginning of the semester</b>), athletic events, field trips and
+performances, health reasons, and exam conflicts. Tell me <b>as early as
+possible</b>, and bring supporting documents when necessary.
+</p>
+
+<ul class="org-ul">
+<li><b>Exam conflicts.</b> University policy says that you cannot be expected to take
+two exams at the same time, or three exams in one day. Submit the Evening
+Exam Conflict or Final Exam Conflict form through SPIRE (Class &amp; Finals
+Schedule, in the Manage Classes tile) at least <b>two weeks</b> before the
+scheduled exam.</li>
+<li>There are <span style="color:red">no exam retakes</span> in
+this course, for any reason. If an emergency prevents you from taking an
+exam, contact me <b>within 24 hours</b> of the scheduled exam.</li>
+<li>The full policy is in the <a href="https://www.dropbox.com/scl/fi/9zukyhob8dd8yg5kvjy87/syllabus.pdf?rlkey=6iqk3at0lxt0wcns89zqlwsvl&amp;dl=0">official syllabus</a>.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgc799ab6" class="outline-3">
+<h3 id="orgc799ab6">Testing accommodations</h3>
+<div class="outline-text-3" id="text-orgc799ab6">
+<p>
+If you are approved for testing accommodations, you take your <b>midterms on the
+same day</b> as everyone else, but starting at <b>6:00 PM</b> instead of 7:00 PM. The
+<b>final exam</b> is also on the same day, starting at <b>8:00 AM</b>.
+</p>
+
+<p>
+You do <b>not</b> need to schedule anything with the Disability Services Exam
+Proctoring Center or through Clockwork; no exams are given there. You will be
+emailed your exam location at least three days before each exam.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgde73a88" class="outline-2">
+<h2 id="orgde73a88">Homework</h2>
+<div class="outline-text-2" id="text-orgde73a88">
+<p>
+Homework is assigned <b>weekly</b> through <a href="https://www.webassign.net/login.html">WebAssign</a> and covers the material of the
+previous week. Due dates are posted in the WebAssign calendar, typically on
+<b>Wednesdays and Sundays by 11:59 PM</b>, except during exam weeks.
+</p>
+
+<ul class="org-ul">
+<li>You get <b>5 submission attempts</b> per question, except for true/false and
+convergent/divergent questions, which allow only <b>one</b>.</li>
+<li>Buy the access code and register through the link in your Canvas course. If
+Canvas is down, you can work directly on the <a href="https://www.webassign.net/login.html">WebAssign</a> website. No Class Key
+is needed.</li>
+<li><b>The two lowest homework scores are dropped.</b></li>
+</ul>
+</div>
+
+<div id="outline-container-orgc2627b3" class="outline-3">
+<h3 id="orgc2627b3">Late homework</h3>
+<div class="outline-text-3" id="text-orgc2627b3">
+<p>
+If you miss a deadline, you can still complete the assignment for up to <b>7
+days</b> after the due date by requesting an automatic extension through
+WebAssign. A <b>30% late penalty applies to the portion of the assignment
+submitted during those 7 days</b>. Beyond that, late homework is generally not
+accepted or extended without penalty.
+</p>
+
+<p>
+If you join the course late, catching up on the assignments is your
+responsibility. The schedule is arranged so that the first assignment is due
+one day after the last day to add or drop.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgd1bd2f4" class="outline-2">
+<h2 id="orgd1bd2f4">Quizzes</h2>
+<div class="outline-text-2" id="text-orgd1bd2f4">
+<p>
+There is a quiz in discussion <b>every week</b>, except during the first week and
+during midterm weeks.
+</p>
+
+<ul class="org-ul">
+<li>All quizzes are <b>closed-book</b>, and calculators are not permitted.</li>
+<li>Make-up quizzes are generally not offered; exceptions are considered only
+with documented extenuating circumstances.</li>
+<li><b>The two lowest quiz scores are dropped.</b></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org8561d41" class="outline-2">
+<h2 id="org8561d41">Schedule</h2>
+<div class="outline-text-2" id="text-org8561d41">
+<p>
+Below is a tentative schedule for our Tuesday/Thursday section. It will be
+adjusted as the semester goes on, so check back.
+</p>
+
+<p>
+It is your responsibility to read the sections <b>before</b> the lecture, and to
+come with questions. A few sections are covered only in part:
+</p>
+<ul class="org-ul">
+<li><b>11.5</b>: <i>except</i> the subsection Rearrangements.</li>
+<li><b>11.10</b>: <i>except</i> the subsections Multiplication and Division of Power Series,
+and Binomial Series.</li>
+<li><b>10.2</b>: <i>only</i> the subsections Tangents and Arc Length (<i>not</i> Area and Surface
+Area).</li>
+</ul>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-center" />
+
+<col  class="org-center" />
+
+<col  class="org-left" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-center">&#xa0;</th>
+<th scope="col" class="org-center">Date</th>
+<th scope="col" class="org-left">Topic</th>
+<th scope="col" class="org-right">Reading</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-center">1</td>
+<td class="org-center"><span class="timestamp-wrapper"><span class="timestamp">&lt;2026-09-08 Tue&gt;</span></span></td>
+<td class="org-left">The Fundamental Theorem of Calculus</td>
+<td class="org-right">5.3</td>
+</tr>
+
+<tr>
+<td class="org-center">2</td>
+<td class="org-center"><span class="timestamp-wrapper"><span class="timestamp">&lt;2026-09-10 Thu&gt;</span></span></td>
+<td class="org-left">Indefinite integrals and the Net Change Theorem</td>
+<td class="org-right">5.4</td>
+</tr>
+
+<tr>
+<td class="org-center">3</td>
+<td class="org-center"><span class="timestamp-wrapper"><span class="timestamp">&lt;2026-09-15 Tue&gt;</span></span></td>
+<td class="org-left">The Substitution Rule</td>
+<td class="org-right">5.5</td>
+</tr>
+
+<tr>
+<td class="org-center">4</td>
+<td class="org-center"><span class="timestamp-wrapper"><span class="timestamp">&lt;2026-09-17 Thu&gt;</span></span></td>
+<td class="org-left">Area Between Curves</td>
+<td class="org-right">6.1</td>
+</tr>
+
+<tr>
+<td class="org-center">5</td>
+<td class="org-center"><span class="timestamp-wrapper"><span class="timestamp">&lt;2026-09-22 Tue&gt;</span></span></td>
+<td class="org-left">Volumes</td>
+<td class="org-right">6.2</td>
+</tr>
+
+<tr>
+<td class="org-center">6</td>
+<td class="org-center"><span class="timestamp-wrapper"><span class="timestamp">&lt;2026-09-24 Thu&gt;</span></span></td>
+<td class="org-left">Integration by Parts</td>
+<td class="org-right">7.1</td>
+</tr>
+
+<tr>
+<td class="org-center">7</td>
+<td class="org-center"><span class="timestamp-wrapper"><span class="timestamp">&lt;2026-09-29 Tue&gt;</span></span></td>
+<td class="org-left">Trigonometric Integrals</td>
+<td class="org-right">7.2</td>
+</tr>
+
+<tr>
+<td class="org-center">8</td>
+<td class="org-center"><span class="timestamp-wrapper"><span class="timestamp">&lt;2026-10-01 Thu&gt;</span></span></td>
+<td class="org-left">Trigonometric Substitution</td>
+<td class="org-right">7.3</td>
+</tr>
+
+<tr>
+<td class="org-center">9</td>
+<td class="org-center"><span class="timestamp-wrapper"><span class="timestamp">&lt;2026-10-06 Tue&gt;</span></span></td>
+<td class="org-left">Rational functions by partial fractions</td>
+<td class="org-right">7.4</td>
+</tr>
+
+<tr>
+<td class="org-center">10</td>
+<td class="org-center"><span class="timestamp-wrapper"><span class="timestamp">&lt;2026-10-08 Thu&gt;</span></span></td>
+<td class="org-left">Improper Integrals</td>
+<td class="org-right">7.8</td>
+</tr>
+
+<tr>
+<td class="org-center">11</td>
+<td class="org-center"><span class="timestamp-wrapper"><span class="timestamp">&lt;2026-10-13 Tue&gt;</span></span></td>
+<td class="org-left">Strategy for Integration (review)</td>
+<td class="org-right">7.5</td>
+</tr>
+
+<tr>
+<td class="org-center">12</td>
+<td class="org-center"><span class="timestamp-wrapper"><span class="timestamp">&lt;2026-10-15 Thu&gt;</span></span></td>
+<td class="org-left">Sequences</td>
+<td class="org-right">11.1</td>
+</tr>
+
+<tr>
+<td class="org-center">&#xa0;</td>
+<td class="org-center"><span class="timestamp-wrapper"><span class="timestamp">&lt;2026-10-15 Thu&gt;</span></span></td>
+<td class="org-left"><b>Exam 1</b>, 7:00 - 9:00 PM</td>
+<td class="org-right">5.3-5.5, 6.1, 6.2, 7.1-7.5</td>
+</tr>
+
+<tr>
+<td class="org-center">13</td>
+<td class="org-center"><span class="timestamp-wrapper"><span class="timestamp">&lt;2026-10-20 Tue&gt;</span></span></td>
+<td class="org-left">Series</td>
+<td class="org-right">11.2</td>
+</tr>
+
+<tr>
+<td class="org-center">14</td>
+<td class="org-center"><span class="timestamp-wrapper"><span class="timestamp">&lt;2026-10-22 Thu&gt;</span></span></td>
+<td class="org-left">The Integral Test and Estimates of Sums</td>
+<td class="org-right">11.3</td>
+</tr>
+
+<tr>
+<td class="org-center">15</td>
+<td class="org-center"><span class="timestamp-wrapper"><span class="timestamp">&lt;2026-10-27 Tue&gt;</span></span></td>
+<td class="org-left">The Comparison Tests</td>
+<td class="org-right">11.4</td>
+</tr>
+
+<tr>
+<td class="org-center">16</td>
+<td class="org-center"><span class="timestamp-wrapper"><span class="timestamp">&lt;2026-10-29 Thu&gt;</span></span></td>
+<td class="org-left">Alternating Series and Absolute Convergence</td>
+<td class="org-right">11.5</td>
+</tr>
+
+<tr>
+<td class="org-center">&#xa0;</td>
+<td class="org-center"><span class="timestamp-wrapper"><span class="timestamp">&lt;2026-11-03 Tue&gt;</span></span></td>
+<td class="org-left"><span style="color:red">No class</span></td>
+<td class="org-right">(Election Day)</td>
+</tr>
+
+<tr>
+<td class="org-center">17</td>
+<td class="org-center"><span class="timestamp-wrapper"><span class="timestamp">&lt;2026-11-05 Thu&gt;</span></span></td>
+<td class="org-left">The Ratio and Root Tests</td>
+<td class="org-right">11.6</td>
+</tr>
+
+<tr>
+<td class="org-center">18</td>
+<td class="org-center"><span class="timestamp-wrapper"><span class="timestamp">&lt;2026-11-10 Tue&gt;</span></span></td>
+<td class="org-left">Strategy for Testing Series (review)</td>
+<td class="org-right">11.7</td>
+</tr>
+
+<tr>
+<td class="org-center">19</td>
+<td class="org-center"><span class="timestamp-wrapper"><span class="timestamp">&lt;2026-11-12 Thu&gt;</span></span></td>
+<td class="org-left">Power Series</td>
+<td class="org-right">11.8</td>
+</tr>
+
+<tr>
+<td class="org-center">20</td>
+<td class="org-center"><span class="timestamp-wrapper"><span class="timestamp">&lt;2026-11-17 Tue&gt;</span></span></td>
+<td class="org-left">Representation of Functions as Power Series</td>
+<td class="org-right">11.9</td>
+</tr>
+
+<tr>
+<td class="org-center">&#xa0;</td>
+<td class="org-center"><span class="timestamp-wrapper"><span class="timestamp">&lt;2026-11-18 Wed&gt;</span></span></td>
+<td class="org-left"><b>Exam 2</b>, 7:00 - 9:00 PM</td>
+<td class="org-right">7.8, 11.1-11.7</td>
+</tr>
+
+<tr>
+<td class="org-center">21</td>
+<td class="org-center"><span class="timestamp-wrapper"><span class="timestamp">&lt;2026-11-19 Thu&gt;</span></span></td>
+<td class="org-left">Taylor and Maclaurin Series</td>
+<td class="org-right">11.10</td>
+</tr>
+
+<tr>
+<td class="org-center">&#xa0;</td>
+<td class="org-center"><span class="timestamp-wrapper"><span class="timestamp">&lt;2026-11-24 Tue&gt;</span></span></td>
+<td class="org-left"><span style="color:red">No class</span></td>
+<td class="org-right">(Wednesday schedule)</td>
+</tr>
+
+<tr>
+<td class="org-center">&#xa0;</td>
+<td class="org-center"><span class="timestamp-wrapper"><span class="timestamp">&lt;2026-11-26 Thu&gt;</span></span></td>
+<td class="org-left"><span style="color:red">No class</span></td>
+<td class="org-right">(Thanksgiving)</td>
+</tr>
+
+<tr>
+<td class="org-center">22</td>
+<td class="org-center"><span class="timestamp-wrapper"><span class="timestamp">&lt;2026-12-01 Tue&gt;</span></span></td>
+<td class="org-left">Curves Defined by Parametric Equations</td>
+<td class="org-right">10.1</td>
+</tr>
+
+<tr>
+<td class="org-center">23</td>
+<td class="org-center"><span class="timestamp-wrapper"><span class="timestamp">&lt;2026-12-03 Thu&gt;</span></span></td>
+<td class="org-left">Calculus with Parametric Curves</td>
+<td class="org-right">10.2</td>
+</tr>
+
+<tr>
+<td class="org-center">24</td>
+<td class="org-center"><span class="timestamp-wrapper"><span class="timestamp">&lt;2026-12-08 Tue&gt;</span></span></td>
+<td class="org-left">Polar Coordinates</td>
+<td class="org-right">10.3</td>
+</tr>
+
+<tr>
+<td class="org-center">25</td>
+<td class="org-center"><span class="timestamp-wrapper"><span class="timestamp">&lt;2026-12-10 Thu&gt;</span></span></td>
+<td class="org-left">Calculus in Polar Coordinates</td>
+<td class="org-right">10.4</td>
+</tr>
+
+<tr>
+<td class="org-center">26</td>
+<td class="org-center"><span class="timestamp-wrapper"><span class="timestamp">&lt;2026-12-15 Tue&gt;</span></span></td>
+<td class="org-left">Review for the final exam</td>
+<td class="org-right">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-center">&#xa0;</td>
+<td class="org-center"><span class="timestamp-wrapper"><span class="timestamp">&lt;2026-12-18 Fri&gt;</span></span></td>
+<td class="org-left"><b>Final exam</b>, 8:00 - 10:00 AM</td>
+<td class="org-right">Cumulative</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="outline-container-org8a0c556" class="outline-2">
+<h2 id="org8a0c556">Help and resources</h2>
+<div class="outline-text-2" id="text-org8a0c556">
+<p>
+The best way to get help is to come to <a href="#org4d5cc46">our office hours</a>. Beyond that:
+</p>
+
+<ul class="org-ul">
+<li>The <b>Calculus Tutoring Center</b> (<code>LGRT 140</code>) is available to Math 132
+students, and opens on <span class="timestamp-wrapper"><span class="timestamp">&lt;2026-09-14 Mon&gt;</span></span>.</li>
+<li>The <a href="https://www.umass.edu/lrc">Learning Resource Center (LRC)</a> offers free academic support: one-on-one
+peer tutoring, study skills tutoring, <a href="https://www.umass.edu/lrc/supplemental-instruction-program-si">Supplemental Instruction (SI)</a>, and exam
+review sessions. The starting date for SI sessions is TBA.</li>
+<li>Talk to your classmates. Collaboration is encouraged, and explaining a
+problem to someone else is one of the fastest ways to find out whether you
+actually understand it.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orge334de4" class="outline-2">
+<h2 id="orge334de4">Administrative details</h2>
+<div class="outline-text-2" id="text-orge334de4">
+</div>
+<div id="outline-container-org775684e" class="outline-3">
+<h3 id="org775684e">Attendance</h3>
+<div class="outline-text-3" id="text-org775684e">
+<p>
+You are expected to attend all classes regularly, and you are responsible for
+any material, announcements, or assignments you miss. Attendance is not taken,
+but let me know if illness or other extenuating circumstances prevent you from
+attending. Absences for university-approved conflicts or other excusable
+reasons do not excuse you from meeting the course requirements.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org9bdf67f" class="outline-3">
+<h3 id="org9bdf67f">Technology</h3>
+<div class="outline-text-3" id="text-org9bdf67f">
+<p>
+This course uses <a href="https://www.umass.edu/it/lms">Canvas</a> as its learning management system; log in with your
+<code>NetID@umass.edu</code> and password. WebAssign and the <i>e</i>-book are reached from
+Canvas, and exams are graded in Gradescope. No course entry code is needed.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org3623fa0" class="outline-3">
+<h3 id="org3623fa0">Academic alerts</h3>
+<div class="outline-text-3" id="text-org3623fa0">
+<p>
+UMass Amherst uses <a href="https://www.umass.edu/it/navigate360">Navigate360</a> to identify students who may need additional
+support. You may receive emails from Navigate360 about your grades and academic
+performance during the semester. Check your UMass email regularly, and if you
+get an alert, read it carefully and connect with the resources it lists. Alerts
+are meant to help you, not to punish you.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org7949600" class="outline-3">
+<h3 id="org7949600">Drops, withdrawals, pass/fail, incompletes</h3>
+<div class="outline-text-3" id="text-org7949600">
+<ul class="org-ul">
+<li>Last day to add or drop with no record: <span class="timestamp-wrapper"><span class="timestamp">&lt;2026-09-14 Mon&gt;</span></span>.</li>
+<li>Last day to drop with a "W" and to select P/F: <span class="timestamp-wrapper"><span class="timestamp">&lt;2026-11-04 Wed&gt;</span></span>.</li>
+<li>See the <a href="https://www.umass.edu/registrar/academic-calendar">academic calendar</a> for other important dates.</li>
+<li>An Incomplete is possible only if: (1) you had a compelling personal reason,
+e.g. serious illness; (2) your work has clearly been passing; and (3) there
+is a good chance you will complete the course with a passing grade within the
+allotted time. Failing work is not in itself a reason for an Incomplete.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org85616d4" class="outline-3">
+<h3 id="org85616d4">Academic honesty</h3>
+<div class="outline-text-3" id="text-org85616d4">
+<p>
+Academic honesty is required of all students at UMass Amherst, and academic
+dishonesty &#x2014; cheating, fabrication, plagiarism, and facilitating dishonesty
+&#x2014; is prohibited in all programs of the University. The formal definitions,
+examples, and procedures are on the <a href="https://www.umass.edu/studentsuccess/academic-integrity">Academic Honesty website</a>, and the full
+statement is in the <a href="https://www.dropbox.com/scl/fi/9zukyhob8dd8yg5kvjy87/syllabus.pdf?rlkey=6iqk3at0lxt0wcns89zqlwsvl&amp;dl=0">official syllabus</a>. You are expected to be familiar with
+this policy: ignorance of these standards is not normally sufficient evidence
+of lack of intent.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgc77d250" class="outline-3">
+<h3 id="orgc77d250">Accommodations</h3>
+<div class="outline-text-3" id="text-orgc77d250">
+<p>
+UMass Amherst is committed to providing an equal educational opportunity for
+all students. If you have a documented physical, psychological, or learning
+disability on file with <a href="https://www.umass.edu/disability/">Disability Services</a>, you may be eligible for reasonable
+academic accommodations. If you have a documented disability that requires an
+accommodation, please notify me <b>within the first two weeks of the semester</b>
+so that we can make the appropriate arrangements. See also <a href="#orgc799ab6">testing
+accommodations</a> for the exams.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org1a7030f" class="outline-3">
+<h3 id="org1a7030f">Title IX</h3>
+<div class="outline-text-3" id="text-org1a7030f">
+<p>
+UMass Amherst is committed to providing a safe learning environment for all
+students, free from all forms of discrimination. A summary of the available
+Title IX resources, confidential and non-confidential, is at
+<a href="https://www.umass.edu/titleix/resources">umass.edu/titleix/resources</a>; you do not need to make a formal report to access
+them. If you need immediate support, you are not alone: free and confidential
+support is available 24/7 at the SASA Hotline <b>413-545-0800</b>.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgad9d4d4" class="outline-2">
+<h2 id="orgad9d4d4">Philosophy</h2>
+<div class="outline-text-2" id="text-orgad9d4d4">
+</div>
+<div id="outline-container-org795d21a" class="outline-3">
+<h3 id="org795d21a">Adopt a growth mindset</h3>
+<div class="outline-text-3" id="text-org795d21a">
+<p>
+Your effort and attitude determine your abilities. Embrace challenges and
+failure as an opportunity to grow. Find inspiration in other people's success.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org0c81582" class="outline-3">
+<h3 id="org0c81582">Learning is the student's responsibility</h3>
+<div class="outline-text-3" id="text-org0c81582">
+<p>
+Paraphrasing Galileo:
+</p>
+<blockquote>
+<p>
+``You cannot teach a person <b>anything</b>; you can only help
+them find it within themselves.''
+</p>
+</blockquote>
+<p>
+We are all here to <span class="underline">understand</span>. My job as a more experienced learner is to
+assist you on your journey. But you are responsible for investing the time and
+effort necessary to learn.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgc0ef6d7" class="outline-3">
+<h3 id="orgc0ef6d7">Doing hard things</h3>
+<div class="outline-text-3" id="text-orgc0ef6d7">
+<p>
+This is hard work, and it will be frustrating at times. In my opinion, the
+reward is well worth the investment, as is often the case with challenging
+endeavors. In the words of JFK:
+</p>
+<blockquote>
+<p>
+``We choose to go to the Moon in this decade and do the other things, not
+because they are easy, but because they are hard; because that goal will serve
+to organize and measure the best of our energies and skills, because that
+challenge is one that we are willing to accept, one we are unwilling to
+postpone, and one we intend to win, and the others, too.''
+</p>
+</blockquote>
+</div>
+</div>
+
+<div id="outline-container-orgb36b9d5" class="outline-3">
+<h3 id="orgb36b9d5">Everyone belongs in this classroom</h3>
+<div class="outline-text-3" id="text-orgb36b9d5">
+<p>
+We will subscribe to <a href="https://www.ams.org/publications/journals/notices/201610/rnoti-p1164.pdf">Federico's axioms</a>.
+</p>
+
+<ul class="org-ul">
+<li><b>Axiom 1.</b> Mathematical potential is equally present in different groups,
+irrespective of geographic, demographic, and economic boundaries.</li>
+
+<li><b>Axiom 2.</b> Everyone can have joyful, meaningful, and empowering mathematical
+experiences.</li>
+
+<li><b>Axiom 3.</b> Mathematics is a powerful, malleable tool that can be shaped and
+used differently by various communities to serve their needs.</li>
+
+<li><b>Axiom 4.</b> Every student deserves to be treated with dignity and respect.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Santiago Arango-Piñeros</p>
+<p class="date">Created: 2026-09-23 Wed 08:11</p>
+</div>
+</body>
+</html>

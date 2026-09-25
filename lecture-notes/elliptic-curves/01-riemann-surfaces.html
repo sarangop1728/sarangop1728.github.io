@@ -1,0 +1,1307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 2026-09-24 Thu 08:35 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Elliptic curves as Riemann surfaces</title>
+<meta name="generator" content="Org Mode" />
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta name="robots" content="noindex, nofollow"/>
+<link rel="stylesheet" type="text/css" href="org-css.css"/>
+<link rel="stylesheet" type="text/css" href="book.css"/>
+<script src="macros.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-chtml-full.js"></script>
+<script defer src="org-code.js"></script>
+<script defer src="book.js"></script>
+</head>
+<body>
+<div id="preamble" class="status">
+<nav class="ec-sidebar" id="ec-sidebar" aria-label="Contents">
+<a class="ec-book-title" href="index.html">The arithmetic geometry of elliptic curves (DRAFT)</a>
+<p class="ec-book-subtitle">Math 714, Fall 2026</p>
+<ol class="ec-toc">
+<li class="ec-toc-chapter"><a href="00-preface.html"><span class="ec-toc-num"></span><span class="ec-toc-text">Preface</span></a></li>
+<li class="ec-toc-chapter is-current"><a href="01-riemann-surfaces.html" aria-current="page"><span class="ec-toc-num">1</span><span class="ec-toc-text">Elliptic curves as Riemann surfaces<span class="ec-toc-status"><span class="ec-status-progress">2 of 8 sections finished</span></span></span></a>
+<ol class="ec-toc-sections">
+<li class="ec-toc-level-1"><a href="#s1.1"><span class="ec-toc-num">1.1</span><span class="ec-toc-text">Riemann surfaces</span></a></li>
+<li class="ec-toc-level-1"><a href="#s1.2"><span class="ec-toc-num">1.2</span><span class="ec-toc-text">Complex tori</span></a></li>
+<li class="ec-toc-level-1"><a href="#s1.3"><span class="ec-toc-num">1.3</span><span class="ec-toc-text">Isogenies<span class="ec-toc-status"><span class="ec-status-label ec-status-draft">Draft</span></span></span></a></li>
+<li class="ec-toc-level-1"><a href="#s1.4"><span class="ec-toc-num">1.4</span><span class="ec-toc-text">Meromorphic functions<span class="ec-toc-status"><span class="ec-status-label ec-status-draft">Draft</span></span></span></a></li>
+<li class="ec-toc-level-1"><a href="#s1.5"><span class="ec-toc-num">1.5</span><span class="ec-toc-text">Invariant differentials<span class="ec-toc-status"><span class="ec-status-label ec-status-draft">Draft</span></span></span></a></li>
+<li class="ec-toc-level-1"><a href="#s1.6"><span class="ec-toc-num">1.6</span><span class="ec-toc-text">Projective plane curves as Riemann surfaces<span class="ec-toc-status"><span class="ec-status-label ec-status-draft">Draft</span></span></span></a></li>
+<li class="ec-toc-level-1"><a href="#s1.7"><span class="ec-toc-num">1.7</span><span class="ec-toc-text">The uniformization theorem<span class="ec-toc-status"><span class="ec-status-label ec-status-draft">Draft</span></span></span></a></li>
+<li class="ec-toc-level-1"><a href="#s1.8"><span class="ec-toc-num">1.8</span><span class="ec-toc-text">Isomorphism classes of complex tori<span class="ec-toc-status"><span class="ec-status-label ec-status-draft">Draft</span></span></span></a></li>
+</ol></li>
+<li class="ec-toc-chapter"><a href="02-varieties.html"><span class="ec-toc-num">2</span><span class="ec-toc-text">Algebraic varieties<span class="ec-toc-status"><span class="ec-status-progress">0 of 4 sections finished</span></span></span></a></li>
+<li class="ec-toc-chapter"><a href="03-curves.html"><span class="ec-toc-num">3</span><span class="ec-toc-text">Algebraic curves<span class="ec-toc-status"><span class="ec-status-progress">0 of 7 sections finished</span></span></span></a></li>
+<li class="ec-toc-chapter"><a href="04-ec-algebraic.html"><span class="ec-toc-num">4</span><span class="ec-toc-text">Elliptic curves as algebraic curves<span class="ec-toc-status"><span class="ec-status-progress">1 of 8 sections finished</span></span></span></a></li>
+<li class="ec-toc-chapter"><a href="05-finite-fields.html"><span class="ec-toc-num">5</span><span class="ec-toc-text">Elliptic curves over finite fields<span class="ec-toc-status"><span class="ec-status-progress">0 of 5 sections finished</span></span></span></a></li>
+<li class="ec-toc-chapter"><a href="06-local-fields.html"><span class="ec-toc-num">6</span><span class="ec-toc-text">Elliptic curves over local fields<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
+<li class="ec-toc-chapter"><a href="07-galois-cohomology.html"><span class="ec-toc-num">7</span><span class="ec-toc-text">Galois cohomology<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
+<li class="ec-toc-chapter"><a href="08-mordell-weil.html"><span class="ec-toc-num">8</span><span class="ec-toc-text">The Mordell&ndash;Weil theorem<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
+<li class="ec-toc-chapter"><a href="09-integral-points.html"><span class="ec-toc-num">9</span><span class="ec-toc-text">Integral points<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
+<li class="ec-toc-chapter"><a href="10-selmer-sha.html"><span class="ec-toc-num">10</span><span class="ec-toc-text">Twisting, Selmer, and Tate&ndash;Shafarevich<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
+<li class="ec-toc-chapter"><a href="11-complex-multiplication.html"><span class="ec-toc-num">11</span><span class="ec-toc-text">Complex multiplication<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
+<li class="ec-toc-chapter"><a href="12-tate-curve.html"><span class="ec-toc-num">12</span><span class="ec-toc-text">The Tate curve<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
+<li class="ec-toc-chapter"><a href="13-l-functions-bsd.html"><span class="ec-toc-num">13</span><span class="ec-toc-text">The \(L\)-function and BSD<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
+<li class="ec-toc-chapter"><a href="14-sato-tate.html"><span class="ec-toc-num">14</span><span class="ec-toc-text">The Sato&ndash;Tate conjecture<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
+<li class="ec-toc-chapter"><a href="15-modular-curves.html"><span class="ec-toc-num">15</span><span class="ec-toc-text">Introduction to modular curves<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
+</ol>
+<a class="ec-toc-glossary" href="glossary.html">Glossary</a>
+</nav>
+<button class="ec-menu" type="button" aria-controls="ec-sidebar" aria-expanded="false">Contents</button>
+<nav class="ec-pager ec-pager-top" aria-label="Chapters"><a class="ec-pager-prev" rel="prev" href="00-preface.html"><span class="ec-pager-label">Previous</span><span class="ec-pager-title">Preface</span></a><a class="ec-pager-next" rel="next" href="02-varieties.html"><span class="ec-pager-label">Next</span><span class="ec-pager-title">2. Algebraic varieties</span></a></nav>
+</div>
+<div id="content" class="content">
+<h1 class="title"><span class="ec-chapter-label">Chapter 1</span>Elliptic curves as Riemann surfaces</h1>
+<div class="sources" id="orgc709913">
+<p>
+This chapter follows [<a class="ec-cite" href="#bib-Miranda95">Mir95</a>] (parts of chapters I, II and IV) and
+[<a class="ec-cite" href="#bib-Diamond-Shurman_05">DS05</a>] (parts of Chapter I).
+</p>
+
+</div>
+
+<p>
+The main goal of this chapter is to introduce the category of <b>complex tori</b> and
+to develop their theory from the complex analytic point of view.  Students
+without previous experience in algebraic geometry can use it as a source of
+geometric intuition when we turn to the algebraic theory later on.
+</p>
+
+<div id="outline-container-sec-rs" class="outline-2">
+<h2 id="sec-rs"><span class="section-number" id="s1.1">1.1</span> Riemann surfaces</h2>
+<div class="outline-text-2" id="text-sec-rs">
+<p>
+Intuitively, a Riemann surface is a topological space that looks like \(\C\)
+near each of its points. We make this intuition more precise.
+</p>
+
+<div class="ec-thm ec-definition" id="def-rs-complex-structure">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Definition 1.1.1</span>.</span> Let \(X\) be a topological space.
+</p>
+<ol class="org-ol">
+<li>A <dfn class="ec-cdef" id="gls-chart" data-gls="chart">chart</dfn> in \(X\) is a homeomorphism \(\phi\colon U \to V\) between open subsets
+\(U \subseteq X\), \(V \subseteq \C\).</li>
+<li><p>
+For any two charts \(\phi_1\) and \(\phi_2\) we obtain two <dfn class="ec-cdef" id="gls-transition-map" data-gls="transition-map">transition maps</dfn>
+</p>
+\begin{equation*}
+\phi_2 \circ \phi_1^{-1}\colon \phi_1(U_1 \cap U_2) \to \phi_2(U_1 \cap U_2),
+\qquad
+\phi_1 \circ \phi_2^{-1}\colon \phi_2(U_1 \cap U_2) \to \phi_1(U_1 \cap U_2).
+\end{equation*}</li>
+<li>Two charts \(\phi_1\) and \(\phi_2\) are <dfn class="ec-cdef" id="gls-compatible-charts" data-gls="compatible-charts">compatible</dfn> if either
+\(U_1 \cap U_2 = \emptyset\), or the transition maps are holomorphic.</li>
+<li>A <dfn class="ec-cdef" id="gls-complex-structure" data-gls="complex-structure">complex structure</dfn> on \(X\) is a family \(\{\phi_i\}_i\) of compatible charts
+such that \(X = \bigcup_i U_i\).</li>
+</ol>
+</div>
+
+
+<figure class="ec-figure" id="fig-rs-transition-maps">
+<img class="ec-tikz" src="figures/25e6789878c7715a463c2a522aa7ec2c3b3b7b38.svg" style="--ec-w: 46.65em" alt=""/>
+<figcaption><span class="ec-thm-name">Figure 1.1.1</span>. Two charts on overlapping open sets, and the transition maps between their images.</figcaption>
+</figure>
+
+<p>
+A topological space is <dfn class="ec-cdef" id="gls-connected" data-gls="connected">connected</dfn> if it is not the union of two disjoint
+non-empty open subsets, and <dfn class="ec-cdef" id="gls-hausdorff" data-gls="hausdorff">Hausdorff</dfn> if any two distinct points of the space
+have disjoint open neighborhoods.
+</p>
+
+<div class="ec-thm ec-definition" id="def-rs">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Definition 1.1.2</span>.</span> A <dfn class="ec-cdef" id="gls-riemann-surface" data-gls="riemann-surface">Riemann surface</dfn> is a connected Hausdorff topological space with a
+complex structure.
+</p>
+</div>
+<p>
+Recall that a topological space is <dfn class="ec-cdef" id="gls-second-countable" data-gls="second-countable">second countable</dfn> if it admits a
+countable basis for its topology.  For Riemann surfaces this is automatic, by a
+theorem of Radó [<a class="ec-cite" href="#bib-Forster_91">For91</a>, Theorem 23.3], but it is part of the
+definition of a manifold in general: the long line is connected, Hausdorff and
+locally homeomorphic to \(\R\), and not second countable.
+</p>
+
+<p>
+The simplest examples are open subsets of \(\C\).
+</p>
+<div class="ec-thm ec-example" id="eg-rs-open-subset">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Example 1.1.3</span>.</span> Every connected open \(U \subseteq \C\) is a Riemann surface, with the complex
+structure consisting of the single chart \(\mathrm{id}\colon U \to U\).
+</p>
+</div>
+
+<p>
+More interestingly, the one-point compactification of \(\C\) is a Riemann surface.
+</p>
+<div class="ec-thm ec-example" id="eg-rs-riemann-sphere">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Example 1.1.4</span>.</span> Define
+</p>
+\begin{equation*}
+\PP^1(\C) \coloneqq \bigl(\C^2 - \{(0,0)\}\bigr)/\C^\times,
+\end{equation*}
+<p>
+with the quotient topology. This is the <dfn class="ec-cdef" id="gls-riemann-sphere" data-gls="riemann-sphere">Riemann sphere</dfn>, named after the
+sphere because it is isomorphic to the sphere \(S^2\) with the complex structure given
+by stereographic projection (Example <a href="#eg-rs-sphere">1.1.9</a>).  A point
+of \(\PP^1(\C)\) is a line through the origin:
+</p>
+\begin{equation*}
+(X_0 : X_1) \coloneqq \{(\lambda X_0, \lambda X_1) : \lambda \in \C^\times\}.
+\end{equation*}
+<p>
+The subsets \(U_i \coloneqq \{(X_0 : X_1) \in \PP^1(\C) : X_i \neq 0\}\), for
+\(i = 0, 1\), are open, and \(\PP^1(\C) = U_0 \cup U_1\).  The maps
+</p>
+\begin{equation*}
+\phi_0\colon U_0 \to \C, \quad (X_0 : X_1) \mapsto X_1/X_0,
+\qquad
+\phi_1\colon U_1 \to \C, \quad (X_0 : X_1) \mapsto X_0/X_1,
+\end{equation*}
+<p>
+are homeomorphisms.  They are compatible: \(\phi_0(U_0 \cap U_1) = \C^\times\), and
+on it
+</p>
+\begin{equation*}
+(\phi_1 \circ \phi_0^{-1})(w) = \phi_1(1 : w) = 1/w
+\end{equation*}
+<p>
+is holomorphic.  We identify \(\C\) with \(U_0\) via \(\phi_0\), and write
+\(\infty \coloneqq (0 : 1)\) for the one remaining point of \(\PP^1(\C)\).
+</p>
+</div>
+
+<p>
+We use charts to extend the notion of a holomorphic map between open subsets of
+\(\C\) to Riemann surfaces.
+</p>
+<div class="ec-thm ec-definition" id="def-rs-holomorphic">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Definition 1.1.5</span>.</span> A <dfn class="ec-cdef" id="gls-holomorphic-map" data-gls="holomorphic-map">holomorphic map</dfn> of Riemann surfaces is a continuous function \(f\colon X \to Y\) such
+that for any two charts \(\phi_1\colon U_1 \to V_1\) of \(X\) and
+\(\psi_2\colon U_2 \to V_2\) of \(Y\) with \(U_1 \cap f^{-1}(U_2) \neq \emptyset\), the map
+</p>
+\begin{equation*}
+\psi_2 \circ f \circ \phi_1^{-1}\big|_{\phi_1(U_1 \cap f^{-1}(U_2))}
+\end{equation*}
+<p>
+is holomorphic.
+</p>
+</div>
+
+<p>
+Figure <a href="#fig-rs-holomorphic-map">1.1.2</a> shows the maps in Definition <a href="#def-rs-holomorphic">1.1.5</a>.
+</p>
+
+<figure class="ec-figure" id="fig-rs-holomorphic-map">
+<img class="ec-tikz" src="figures/f7cb8dcbfd60901f4a4b43dc2abe3226d9c3d89e.svg" style="--ec-w: 44.64em" alt=""/>
+<figcaption><span class="ec-thm-name">Figure 1.1.2</span>. A holomorphic map read in charts: \(\psi_2 \circ f \circ \phi_1^{-1}\) on \(\phi_1(U_1 \cap f^{-1}(U_2))\).</figcaption>
+</figure>
+
+<div class="ec-thm ec-definition" id="def-rs-isomorphism">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Definition 1.1.6</span>.</span> An <dfn class="ec-cdef" id="gls-isomorphism-of-riemann-surfaces" data-gls="isomorphism-of-riemann-surfaces">isomorphism</dfn> of Riemann surfaces is a
+bijective holomorphic map with holomorphic inverse.
+</p>
+</div>
+
+<div class="ec-thm ec-example" id="eg-rs-charts-isomorphisms">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Example 1.1.7</span>.</span> The charts of a Riemann surface are isomorphisms onto their images.
+</p>
+</div>
+
+<div class="ec-thm ec-example" id="eg-rs-half-plane-disk">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Example 1.1.8</span>.</span> Let \(\bbH \coloneqq \{z \in \C : \Im(z) > 0\}\) denote the <dfn class="ec-cdef" id="gls-upper-half-plane" data-gls="upper-half-plane">upper half plane</dfn>, and
+\(\mathbb{D} \coloneqq \{z \in \C : \lvert z \rvert < 1\}\) the <dfn class="ec-cdef" id="gls-open-unit-disk" data-gls="open-unit-disk">open unit disk</dfn>.  The
+map
+</p>
+\begin{equation*}
+\phi\colon \bbH \to \mathbb{D}, \qquad z \mapsto \frac{z - i}{z + i},
+\end{equation*}
+<p>
+is an isomorphism of Riemann surfaces.
+</p>
+</div>
+
+<div class="ec-thm ec-example" id="eg-rs-sphere">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Example 1.1.9</span>.</span> Let \(S^2 \coloneqq \{x \in \R^3 : x_1^2 + x_2^2 + x_3^2 = 1\}\) be the unit sphere, with
+north pole \(\mathbf{n} \coloneqq (0,0,1)\) and south pole \(\mathbf{s} \coloneqq (0,0,-1)\).  The
+stereographic projections
+</p>
+\begin{equation*}
+\sigma_{\mathbf{n}}\colon S^2 - \{\mathbf{n}\} \to \C, \quad x \mapsto \frac{x_1 + ix_2}{1 - x_3},
+\qquad
+\sigma_{\mathbf{s}}\colon S^2 - \{\mathbf{s}\} \to \C, \quad x \mapsto \frac{x_1 - ix_2}{1 + x_3},
+\end{equation*}
+<p>
+are homeomorphisms.  Since \(x_1^2 + x_2^2 = 1 - x_3^2\), we have
+\(\sigma_{\mathbf{n}}(x)\sigma_{\mathbf{s}}(x) = 1\) for \(x \neq \mathbf{n}, \mathbf{s}\).  So
+\(\sigma_{\mathbf{n}}(S^2 - \{\mathbf{n}, \mathbf{s}\}) = \C^\times\), and on it
+</p>
+\begin{equation*}
+(\sigma_{\mathbf{s}} \circ \sigma_{\mathbf{n}}^{-1})(w) = 1/w
+\end{equation*}
+<p>
+is holomorphic.  Thus \(\{\sigma_{\mathbf{n}}, \sigma_{\mathbf{s}}\}\) is a complex structure, and
+\(S^2\), a connected subspace of \(\R^3\), is a Riemann surface.
+</p>
+
+<p>
+Define \(F\colon S^2 \to \PP^1(\C)\) by \(F(x) \coloneqq (1 : \sigma_{\mathbf{n}}(x))\) for
+\(x \neq \mathbf{n}\), and \(F(\mathbf{n}) \coloneqq \infty\).  It is a bijection, since \(\sigma_{\mathbf{n}}\) is
+a bijection onto \(\C\) and \(U_0 = \PP^1(\C) - \{\infty\}\).  In the charts of
+Example <a href="#eg-rs-riemann-sphere">1.1.4</a>,
+</p>
+\begin{equation*}
+\phi_0 \circ F \circ \sigma_{\mathbf{n}}^{-1} = \mathrm{id}_\C,
+\qquad
+\phi_1 \circ F \circ \sigma_{\mathbf{s}}^{-1} = \mathrm{id}_\C,
+\end{equation*}
+<p>
+the second because \(1/\sigma_{\mathbf{n}} = \sigma_{\mathbf{s}}\) away from \(\mathbf{n}\) and \(\mathbf{s}\), while
+\(\sigma_{\mathbf{s}}(\mathbf{n}) = 0 = \phi_1(\infty)\).  Hence \(F\) and \(F^{-1}\) are holomorphic,
+and \(F\) is an isomorphism of Riemann surfaces.
+</p>
+</div>
+
+<p>
+Recall that a connected topological space \(X\) is <dfn class="ec-cdef" id="gls-simply-connected" data-gls="simply-connected">simply connected</dfn> if,
+for any base point \(x \in X\), the <dfn class="ec-cdef" id="gls-fundamental-group" data-gls="fundamental-group">fundamental group</dfn> \(\pi_{1}(X,x)\)
+is trivial. In other words, simply connected spaces are those in which any loop
+can be continuously deformed to a point within \(X\).
+</p>
+
+<div class="ec-thm ec-theorem" id="thm-rs-simply-connected">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Theorem 1.1.10</span> <span class="ec-thm-title">(Uniformization theorem)</span>.</span> Every simply connected Riemann surface is isomorphic to exactly one of \(\C\),
+\(\PP^1(\C)\), or \(\mathbb{D}\) [<a class="ec-cite" href="#bib-Forster_91">For91</a>, Section 27].
+</p>
+</div>
+
+<p>
+So far, we have only seen examples of simply connected Riemann surfaces. One
+cheap way of ruining the simply connected property is by puncturing. Indeed,
+\(\C^\times\) is a Riemann surface by Example <a href="#eg-rs-open-subset">1.1.3</a>, and
+\(\pi_{1}(\C^{\times},1) \cong \Z\). We now turn to more interesting examples
+of surfaces that are not simply connected: donuts.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-rs-complex-tori" class="outline-2">
+<h2 id="sec-rs-complex-tori"><span class="section-number" id="s1.2">1.2</span> Complex tori</h2>
+<div class="outline-text-2" id="text-sec-rs-complex-tori">
+<div class="ec-thm ec-definition" id="def-rs-lattice">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Definition 1.2.1</span>.</span> A <dfn class="ec-cdef" id="gls-lattice" data-gls="lattice">lattice</dfn> in \(\C\) is a subgroup \(\Lambda \subseteq \C\),
+<dfn class="ec-cdef" id="gls-free" data-gls="free">free</dfn> of <dfn class="ec-cdef" id="gls-rank" data-gls="rank">rank</dfn> 2, that spans \(\C\) as an \(\R\)-vector space.
+</p>
+</div>
+
+<p>
+By definition, every lattice \(\Lambda\) admits a \(\Z\)-basis that is also an
+\(\R\)-basis of \(\C\); that is, a pair of elements \(\omega_1, \omega_2 \in \C\)
+such that \(\Lambda = \Z\omega_1 \oplus \Z\omega_2\) and
+</p>
+\begin{equation*}
+\Lambda \otimes_\Z \R \cong \R\omega_1 \oplus \R\omega_2 = \C.
+\end{equation*}
+<p>
+It follows that \(\Lambda\) is a discrete subset of \(\C\).
+</p>
+
+<div class="ec-thm ec-example" id="eg-rs-lattice-gaussian">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Example 1.2.2</span>.</span> \(\Lambda_i \coloneqq \Z \oplus i\Z\) is a lattice, the underlying group of the ring
+\(\Z[i]\) of <dfn class="ec-cdef" id="gls-gaussian-integers" data-gls="gaussian-integers">Gaussian integers</dfn>.
+</p>
+</div>
+
+<div class="ec-thm ec-example" id="eg-rs-lattice-eisenstein">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Example 1.2.3</span>.</span> \(\Lambda_\omega \coloneqq \Z \oplus \omega\Z\) for
+\(\omega = -\frac{1}{2} + \frac{\sqrt{-3}}{2}\) a primitive cube root of \(1\) is a
+lattice, the underlying group of the ring \(\Z[\omega]\) of <dfn class="ec-cdef" id="gls-eisenstein-integers" data-gls="eisenstein-integers">Eisenstein integers</dfn>.
+</p>
+</div>
+
+<p>
+Figure <a href="#fig-rs-lattices">1.2.1</a> shows both lattices.
+</p>
+
+<figure class="ec-figure" id="fig-rs-lattices">
+<img class="ec-tikz" src="figures/6da74bf966885367456330a959e860d70e1b8cd3.svg" style="--ec-w: 20.64em" alt=""/>
+<img class="ec-tikz" src="figures/bba7073c29d0d069be185221dad7a5c8915f3b65.svg" style="--ec-w: 20.64em" alt=""/>
+<figcaption><span class="ec-thm-name">Figure 1.2.1</span>. The lattices \(\Lambda_i\) (left) and \(\Lambda_\omega\) (right), with the \(\Z\)-bases \(\{1, i\}\) and \(\{1, \omega\}\) in blue and their fundamental parallelograms shaded.</figcaption>
+</figure>
+
+<p>
+Any lattice \(\Lambda \subseteq \C\) gives rise to a Riemann surface, namely the quotient
+group
+</p>
+\begin{equation*}
+\C/\Lambda \coloneqq \{z + \Lambda : z \in \C\}
+\end{equation*}
+<p>
+with the quotient topology.  We call \(\C/\Lambda\) a <dfn class="ec-cdef" id="gls-complex-torus" data-gls="complex-torus">complex torus</dfn>.
+</p>
+
+<figure class="ec-figure" id="fig-rs-torus">
+<img class="ec-tikz" src="figures/0a555f4e40d30f39f80ba56b36ae21d992602258.svg" style="--ec-w: 45.05em" alt=""/>
+<figcaption><span class="ec-thm-name">Figure 1.2.2</span>. Gluing opposite sides of a fundamental parallelogram gives the torus \(\C/\Lambda\): the two pairs of sides become the two circles marked with the same ticks, and disks in the parallelogram map to disks on the torus.</figcaption>
+</figure>
+
+<div class="ec-thm ec-lemma" id="lem-rs-torus-compact">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Lemma 1.2.4</span>.</span> \(\C/\Lambda\) is a compact Riemann surface.
+</p>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+Consider the quotient map
+</p>
+\begin{equation*}
+\pi\colon \C \to \C/\Lambda.
+\end{equation*}
+<p>
+It is continuous by the definition of the quotient topology, and open: for
+\(U \subseteq \C\) open, \(\pi^{-1}(\pi(U)) = \bigcup_{\lambda \in \Lambda} (U + \lambda)\)
+is open.  Since \(\pi\) is continuous and surjective, \(\C/\Lambda\) is connected, as
+\(\C\) is.  It is Hausdorff because \(\Lambda\) is discrete: if \(z - w \notin \Lambda\), choose
+\(\varepsilon > 0\) with \(\lvert z - w - \lambda \rvert > 2\varepsilon\) for every
+\(\lambda \in \Lambda\); then the images under \(\pi\) of the \(\varepsilon\)-disks around
+\(z\) and \(w\) are disjoint open neighborhoods of \(\pi(z)\) and \(\pi(w)\).  Let
+\(\Lambda = \Z\omega_1 \oplus \Z\omega_2\), and consider the <dfn class="ec-cdef" id="gls-fundamental-parallelogram" data-gls="fundamental-parallelogram">fundamental parallelogram</dfn>
+</p>
+\begin{equation*}
+\calF_\Lambda \coloneqq \{t_1\omega_1 + t_2\omega_2 : 0 \leq t_1, t_2 < 1\}.
+\end{equation*}
+<p>
+Its closure \(\overline{\calF_\Lambda}\) is compact, and
+\(\C/\Lambda = \pi(\overline{\calF_\Lambda})\), so \(\C/\Lambda\) is compact.
+</p>
+
+<p>
+For the complex structure, note that no two distinct points of the open parallelogram
+\(\calF_\Lambda^\circ\) differ by an element of \(\Lambda\), so \(\pi\) restricts to a
+homeomorphism from \(\calF_\Lambda^\circ\) onto its image, and likewise on every translate
+\(z + \calF_\Lambda^\circ\).  Hence every chart \(\phi\colon U \to V\) with
+\(U \subseteq z + \calF_\Lambda^\circ\) descends to a chart
+\(\tilde\phi\colon \pi(U) \to V\) with \(\tilde\phi \circ \pi = \phi\) on \(U\).
+</p>
+<div class="ec-diagram"><img class="ec-tikz" src="figures/cd86ccabdc1c4973fa2258ba543f926c90e5cb42.svg" style="--ec-w: 7.94em" alt=""/></div>
+<p>
+The translates \(\pi(z + \calF_\Lambda^\circ)\) cover \(\C/\Lambda\): translating is
+needed to reach the image of the boundary of the parallelogram.  Two such charts are
+compatible because, on the overlap, \((\pi|_{U_2})^{-1} \circ \pi|_{U_1}\) sends \(u\) to
+\(u + \lambda\) with \(\lambda \in \Lambda\) depending continuously on \(u\), hence
+locally constant; so the transition maps are locally
+\(\phi_2 \circ (u \mapsto u + \lambda) \circ \phi_1^{-1}\), which are holomorphic.
+</p>
+</details>
+</div>
+</div>
+
+<div id="outline-container-sec-rs-isogenies" class="outline-2">
+<h2 id="sec-rs-isogenies"><span class="ec-status ec-status-draft"><span class="ec-status-label ec-status-draft">Draft</span><time datetime="2026-09-21">21 Sep 2026</time></span><span class="section-number" id="s1.3">1.3</span> Isogenies</h2>
+<div class="outline-text-2" id="text-sec-rs-isogenies">
+<p>
+A complex torus is both a Riemann surface and an abelian group.  Holomorphic maps
+between complex tori are affine linear, and those respecting the group structure are
+linear.
+</p>
+
+<div class="ec-thm ec-proposition" id="prop-rs-torus-maps">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Proposition 1.3.1</span>.</span> Suppose \(\varphi\colon \C/\Lambda_1 \to \C/\Lambda_2\) is holomorphic.  Then there exist
+\(\alpha, \beta \in \C\) with \(\alpha\Lambda_1 \subseteq \Lambda_2\) such that
+</p>
+\begin{equation*}
+\varphi(z + \Lambda_1) = \alpha z + \beta + \Lambda_2
+\end{equation*}
+<p>
+for every \(z \in \C\).  The map \(\varphi\) is an isomorphism if and only if
+\(\alpha\Lambda_1 = \Lambda_2\).
+</p>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+Let \(\pi_j\colon \C \to \C/\Lambda_j\) be the quotient maps.  Since \(\C\) is simply
+connected and \(\pi_2\) is a covering map, \(\varphi \circ \pi_1\) lifts to a continuous
+map \(\tilde\varphi\colon \C \to \C\) with \(\pi_2 \circ \tilde\varphi = \varphi \circ
+\pi_1\).  As \(\pi_2\) is a local isomorphism, \(\tilde\varphi\) is holomorphic.  For any
+\(\lambda \in \Lambda_1\) we have \(\tilde\varphi(z + \lambda) + \Lambda_2 =
+\tilde\varphi(z) + \Lambda_2\).  In other words, the function
+</p>
+\begin{equation*}
+f_\lambda(z) \coloneqq \tilde\varphi(z + \lambda) - \tilde\varphi(z)
+\end{equation*}
+<p>
+takes values in \(\Lambda_2\), which is discrete.  Since \(f_\lambda\) is continuous and
+\(\C\) is connected, \(f_\lambda\) is constant, so \(f_\lambda' = 0\), that is,
+\(\tilde\varphi'(z + \lambda) = \tilde\varphi'(z)\) for every \(z \in \C\).  So
+\(\tilde\varphi'\) is \(\Lambda_1\)-periodic; it is therefore determined by its values on
+the compact set \(\overline{\calF_{\Lambda_1}}\) from the proof of
+Lemma <a href="#lem-rs-torus-compact">1.2.4</a>, hence bounded.  By Liouville's theorem,
+\(\tilde\varphi' = \alpha\) is constant, so \(\tilde\varphi(z) = \alpha z + \beta\).  Moreover
+\(\alpha\lambda = f_\lambda(z) \in \Lambda_2\) for every \(\lambda \in \Lambda_1\), that is,
+\(\alpha\Lambda_1 \subseteq \Lambda_2\).
+</p>
+
+<p>
+If \(\alpha = 0\), then \(\varphi\) is constant, so not injective.  If \(\alpha \neq 0\) and
+\(\alpha\Lambda_1 \subsetneq \Lambda_2\), pick \(w \in \Lambda_2 - \alpha\Lambda_1\).  Then
+\(w/\alpha \notin \Lambda_1\), and
+\(\varphi(w/\alpha + \Lambda_1) = w + \beta + \Lambda_2 = \beta + \Lambda_2 = \varphi(0 + \Lambda_1)\),
+so \(\varphi\) is not injective.  If \(\alpha\Lambda_1 = \Lambda_2\), then
+\(\psi(z + \Lambda_2) \coloneqq \frac{1}{\alpha}(z - \beta) + \Lambda_1\) is a well defined
+holomorphic inverse of \(\varphi\).
+</p>
+</details>
+
+<div class="ec-thm ec-corollary" id="cor-rs-torus-homs">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Corollary 1.3.2</span>.</span> A map \(\varphi\colon \C/\Lambda_1 \to \C/\Lambda_2\) is a holomorphic group
+homomorphism if and only if \(\varphi(z + \Lambda_1) = \alpha z + \Lambda_2\) for some
+\(\alpha \in \C\) with \(\alpha\Lambda_1 \subseteq \Lambda_2\).
+</p>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+In Proposition <a href="#prop-rs-torus-maps">1.3.1</a>, \(\varphi\) is a homomorphism if and only if
+\(\varphi(0 + \Lambda_1) = 0 + \Lambda_2\), that is, \(\beta \in \Lambda_2\).
+</p>
+</details>
+
+<div class="ec-thm ec-definition" id="def-rs-isogeny">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Definition 1.3.3</span>.</span> An <dfn class="ec-cdef" id="gls-isogeny" data-gls="isogeny">isogeny</dfn> is a non-zero holomorphic homomorphism between complex tori.  An
+<dfn class="ec-cdef" id="gls-isomorphism-of-complex-tori" data-gls="isomorphism-of-complex-tori">isomorphism</dfn> of complex tori is an invertible isogeny.
+</p>
+</div>
+
+<div class="ec-thm ec-example" id="eg-rs-mult-by-m">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Example 1.3.4</span>.</span> Let \(\Lambda\) be any lattice, and let \(m \geq 1\).  Then \(m \Lambda \subseteq
+\Lambda\), and the <dfn class="ec-cdef" id="gls-multiplication-by-m-map" data-gls="multiplication-by-m-map">multiplication by \(m\) map</dfn>
+</p>
+\begin{equation*}
+[m]\colon \C/\Lambda \to \C/\Lambda, \qquad z + \Lambda \mapsto mz + \Lambda
+\end{equation*}
+<p>
+is an isogeny.  Its kernel is the <dfn class="ec-cdef" id="gls-m-torsion-subgroup" data-gls="m-torsion-subgroup">\(m\)-torsion subgroup</dfn> of \(\C/\Lambda\),
+</p>
+\begin{equation*}
+(\C/\Lambda)[m] \coloneqq \{z + \Lambda : mz \in \Lambda\} = \tfrac{1}{m}\Lambda/\Lambda
+\cong (\Z/m\Z)^2.
+\end{equation*}
+<p>
+Figure <a href="#fig-rs-4-torsion">1.3.1</a> shows the \(4\)-torsion points in the fundamental parallelogram.
+This is the analogue, one dimension up, of the \(m\)-torsion subgroup of the circle
+</p>
+\begin{equation*}
+\R/\Z \cong \{z \in \C : \lvert z \rvert = 1\} \cong \C^\times/\R_{>0},
+\end{equation*}
+<p>
+which is \(\frac{1}{m}\Z/\Z \cong \Z/m\Z\), identified via \(t \mapsto e^{2\pi i t}\) with
+the group of complex \(m\)-th roots of unity
+</p>
+\begin{equation*}
+\mu_m(\C) \coloneqq \{z \in \C : z^m = 1\}.
+\end{equation*}
+</div>
+
+<figure class="ec-figure" id="fig-rs-4-torsion">
+<img class="ec-tikz" src="figures/95c7f15158b18c619a2ea761f913f00ef0aab02b.svg" style="--ec-w: 37.44em" alt=""/>
+<figcaption><span class="ec-thm-name">Figure 1.3.1</span>. The \(4\)-torsion points of \(\C/\Lambda\) (gray) in the fundamental parallelogram, whose vertices are lattice points (black).</figcaption>
+</figure>
+
+<div class="ec-thm ec-example" id="eg-rs-cyclic-isogeny">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Example 1.3.5</span>.</span> Let \(\Lambda = \Z\omega_1 \oplus \Z\omega_2\) be a lattice, and let \(N \geq 1\).  The
+lattice \(\Lambda' \coloneqq \Z\tfrac{\omega_1}{N} \oplus \Z\omega_2\) contains \(\Lambda\),
+and \(\Lambda'/\Lambda \cong \Z/N\Z\) is generated by \(\tfrac{\omega_1}{N} + \Lambda\).
+By Corollary <a href="#cor-rs-torus-homs">1.3.2</a> with \(\alpha = 1\), the map
+</p>
+\begin{equation*}
+\varphi\colon \C/\Lambda \to \C/\Lambda', \qquad z + \Lambda \mapsto z + \Lambda'
+\end{equation*}
+<p>
+is an isogeny.  Its kernel \(\Lambda'/\Lambda\) is a cyclic subgroup of order \(N\) of
+\((\C/\Lambda)[N]\), so \(\varphi\) is a <dfn class="ec-cdef" id="gls-cyclic-isogeny" data-gls="cyclic-isogeny">cyclic isogeny</dfn>.  Figure
+<a href="#fig-rs-cyclic-isogeny">1.3.2</a> shows the case \(N = 4\).  Conversely, every cyclic subgroup
+\(C \subseteq \C/\Lambda\) of order \(N\) is the kernel of such an isogeny: take
+\(\Lambda' \coloneqq \pi^{-1}(C)\), where \(\pi\colon \C \to \C/\Lambda\) is the quotient
+map.
+</p>
+
+<p>
+Since \(N\Lambda' = \Z\omega_1 \oplus \Z N\omega_2 \subseteq \Lambda\), multiplication by
+\(N\) also defines an isogeny
+\(\hat\varphi\colon \C/\Lambda' \to \C/\Lambda\), \(z + \Lambda' \mapsto Nz + \Lambda\).
+Both composites \(\hat\varphi \circ \varphi\) and \(\varphi \circ \hat\varphi\) are
+multiplication by \(N\) (Example <a href="#eg-rs-mult-by-m">1.3.4</a>).
+</p>
+</div>
+
+<figure class="ec-figure" id="fig-rs-cyclic-isogeny">
+<img class="ec-tikz" src="figures/6503054075a068d7bcbd84cdf0f34d3a3ebecec1.svg" style="--ec-w: 37.44em" alt=""/>
+<figcaption><span class="ec-thm-name">Figure 1.3.2</span>. The kernel of the cyclic isogeny \(\C/\Lambda \to \C/\Lambda'\) for \(N = 4\) (gray) in the fundamental parallelogram of \(\Lambda\), whose vertices are lattice points (black).  A fundamental parallelogram of \(\Lambda'\) is shaded, and its translates by the kernel are dotted.</figcaption>
+</figure>
+
+<p>
+In Example <a href="#eg-rs-cyclic-isogeny">1.3.5</a> the isogeny \(\varphi\) has a partner \(\hat\varphi\) going
+the other way, and both composites are multiplication by the order of the kernel.  Every
+isogeny has such a partner.  For a lattice \(\Lambda\),
+write \(\operatorname{area}(\Lambda)\) for the area of the fundamental parallelogram
+\(\calF_\Lambda\) from the proof of Lemma <a href="#lem-rs-torus-compact">1.2.4</a>.  It does not depend on the
+basis, since a change of basis has determinant \(\pm 1\).
+</p>
+
+<div class="ec-thm ec-lemma" id="lem-rs-isogeny-kernel">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Lemma 1.3.6</span>.</span> Let \(\varphi\colon \C/\Lambda_1 \to \C/\Lambda_2\), \(z + \Lambda_1 \mapsto \alpha z +
+\Lambda_2\), be an isogeny.  Then \(\ker\varphi = \alpha^{-1}\Lambda_2/\Lambda_1\) is finite,
+and
+</p>
+\begin{equation*}
+\#\ker\varphi = [\Lambda_2 : \alpha\Lambda_1]
+= \lvert\alpha\rvert^2\,\frac{\operatorname{area}(\Lambda_1)}{\operatorname{area}(\Lambda_2)}.
+\end{equation*}
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+We have \(z + \Lambda_1 \in \ker\varphi\) if and only if \(\alpha z \in \Lambda_2\), that is,
+\(z \in \alpha^{-1}\Lambda_2\).  Since \(\varphi \neq 0\), \(\alpha \neq 0\), and
+multiplication by \(\alpha\) is a group isomorphism \(\alpha^{-1}\Lambda_2/\Lambda_1 \to
+\Lambda_2/\alpha\Lambda_1\).  Now \(\alpha\Lambda_1 \subseteq \Lambda_2\) are both lattices.
+For lattices \(\Lambda' \subseteq \Lambda\), write a basis of \(\Lambda'\) in terms of a basis
+of \(\Lambda\) by a matrix \(M \in \mathrm{M}_2(\Z)\) with \(\det M \neq 0\).  By the Smith
+normal form, \([\Lambda : \Lambda'] = \lvert\det M\rvert\), and the \(\R\)-linear map of
+\(\C\) taking the one basis to the other scales areas by \(\lvert\det M\rvert\); so
+\([\Lambda : \Lambda'] = \operatorname{area}(\Lambda')/\operatorname{area}(\Lambda)\).
+Finally, \(z \mapsto \alpha z\) is \(\R\)-linear with determinant \(\lvert\alpha\rvert^2\), so
+\(\operatorname{area}(\alpha\Lambda_1) = \lvert\alpha\rvert^2 \operatorname{area}(\Lambda_1)\).
+</p>
+</details>
+
+<div class="ec-thm ec-definition" id="def-rs-isogeny-degree">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Definition 1.3.7</span>.</span> The <dfn class="ec-cdef" id="gls-degree-of-an-isogeny-of-complex-tori" data-gls="degree-of-an-isogeny-of-complex-tori">degree</dfn> of an isogeny \(\varphi\) of complex
+tori is \(\deg\varphi \coloneqq \#\ker\varphi\).
+</p>
+</div>
+
+<p>
+For instance, \(\deg[m] = m^2\) by Example <a href="#eg-rs-mult-by-m">1.3.4</a>, the cyclic isogeny of
+Example <a href="#eg-rs-cyclic-isogeny">1.3.5</a> has degree \(N\), and by Proposition <a href="#prop-rs-torus-maps">1.3.1</a> the
+isogenies of degree \(1\) are exactly the isomorphisms.  If \(\lambda\colon \C/\Lambda_2 \to
+\C/\Lambda_3\) is another isogeny, given by \(z \mapsto \beta z\), then \(\lambda \circ
+\varphi\) is given by \(z \mapsto \beta\alpha z\), and the area formula of
+Lemma <a href="#lem-rs-isogeny-kernel">1.3.6</a> gives \(\deg(\lambda \circ \varphi) = \deg\lambda \cdot
+\deg\varphi\).  The scalar \(\alpha\) is determined by \(\varphi\): if \(\alpha z - \alpha' z
+\in \Lambda_2\) for every \(z \in \C\), then \(\alpha - \alpha' = 0\), because a continuous
+map from \(\C\) to the discrete set \(\Lambda_2\) is constant.
+</p>
+
+<div class="ec-thm ec-theorem" id="thm-rs-dual-isogeny">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Theorem 1.3.8</span>.</span> Let \(\varphi\colon \C/\Lambda_1 \to \C/\Lambda_2\), \(z + \Lambda_1 \mapsto \alpha z +
+\Lambda_2\), be an isogeny of degree \(d\).
+</p>
+<ol class="org-ol">
+<li><a id="it-rs-dual-unique"></a> There is a unique isogeny \(\hat\varphi\colon \C/\Lambda_2 \to \C/\Lambda_1\), the
+<dfn class="ec-cdef" id="gls-dual-isogeny-of-complex-tori" data-gls="dual-isogeny-of-complex-tori">dual isogeny</dfn>, with \(\hat\varphi \circ \varphi =
+   [d]\).  It is \(\hat\varphi(z + \Lambda_2) = \frac{d}{\alpha} z + \Lambda_1\).</li>
+<li><a id="it-rs-dual-other-side"></a> \(\varphi \circ \hat\varphi = [d]\) on \(\C/\Lambda_2\).</li>
+<li><a id="it-rs-dual-composition"></a> \(\widehat{\lambda \circ \varphi} = \hat\varphi \circ \hat\lambda\) for an isogeny
+\(\lambda\colon \C/\Lambda_2 \to \C/\Lambda_3\).</li>
+<li><a id="it-rs-dual-sum"></a> \(\widehat{\varphi + \psi} = \hat\varphi + \hat\psi\) for an isogeny
+\(\psi\colon \C/\Lambda_1 \to \C/\Lambda_2\) with \(\varphi + \psi \neq 0\).</li>
+<li><a id="it-rs-dual-mult"></a> \(\widehat{[m]} = [m]\) for all \(m \geq 1\).</li>
+<li><a id="it-rs-dual-degree"></a> \(\deg\hat\varphi = \deg\varphi\) and \(\hat{\hat\varphi} = \varphi\).</li>
+</ol>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+By Lemma <a href="#lem-rs-isogeny-kernel">1.3.6</a>, \(\Lambda_2/\alpha\Lambda_1\) is a group of order \(d\), so it
+is killed by \(d\): \(d\Lambda_2 \subseteq \alpha\Lambda_1\), that is,
+\(\frac{d}{\alpha}\Lambda_2 \subseteq \Lambda_1\).  By Corollary <a href="#cor-rs-torus-homs">1.3.2</a>,
+\(\hat\varphi\) is an isogeny, and \(\hat\varphi \circ \varphi\) is \(z \mapsto dz\), which is
+\([d]\).  Composition of isogenies multiplies their scalars, and the scalar determines the
+isogeny, so an isogeny \(z \mapsto \gamma z\) with this property has \(\gamma\alpha = d\).
+This proves part <a href="#it-rs-dual-unique">1</a>, and part <a href="#it-rs-dual-other-side">2</a> follows from \(\alpha \cdot \frac{d}{\alpha} = d\).
+</p>
+
+<p>
+The rest is arithmetic with scalars.  Set \(c \coloneqq
+\operatorname{area}(\Lambda_1)/\operatorname{area}(\Lambda_2)\).  By
+Lemma <a href="#lem-rs-isogeny-kernel">1.3.6</a>, \(d = c\lvert\alpha\rvert^2\), so
+</p>
+\begin{equation*}
+\frac{d}{\alpha} = c\,\bar\alpha.
+\end{equation*}
+<p>
+For part <a href="#it-rs-dual-composition">3</a>, let \(\lambda\) be given by \(z \mapsto \beta z\), of degree \(d'\).  Then
+\(\lambda \circ \varphi\) has scalar \(\beta\alpha\) and degree \(dd'\), so its dual has
+scalar \(\frac{dd'}{\beta\alpha} = \frac{d}{\alpha} \cdot \frac{d'}{\beta}\), which is the
+scalar of \(\hat\varphi \circ \hat\lambda\).  For part <a href="#it-rs-dual-sum">4</a>, let \(\psi\) be given by \(z \mapsto
+\beta z\).  Then \(\varphi + \psi\) has scalar \(\alpha + \beta\), and since \(c\) depends only
+on \(\Lambda_1\) and \(\Lambda_2\), its dual has scalar \(c\,\overline{(\alpha + \beta)} =
+c\,\bar\alpha + c\,\bar\beta\).  For part <a href="#it-rs-dual-mult">5</a>, \([m]\) has scalar \(m\) and degree \(m^2\), so
+its dual has scalar \(m^2/m = m\).  For part <a href="#it-rs-dual-degree">6</a>, Lemma <a href="#lem-rs-isogeny-kernel">1.3.6</a> gives
+\(\deg\hat\varphi = \lvert d/\alpha\rvert^2 / c = d^2/d = d\), and so the dual of
+\(\hat\varphi\) has scalar \(d/(d/\alpha) = \alpha\).
+</p>
+</details>
+
+<p>
+In Example <a href="#eg-rs-cyclic-isogeny">1.3.5</a>, \(\alpha = 1\) and \(d = N\), so the isogeny
+\(\hat\varphi\) there is the dual of \(\varphi\).  The kernel of the dual is
+</p>
+\begin{equation*}
+\ker\hat\varphi = \tfrac{\alpha}{d}\Lambda_1/\Lambda_2 = \varphi\bigl((\C/\Lambda_1)[d]\bigr),
+\end{equation*}
+<p>
+since \((\C/\Lambda_1)[d] = \frac{1}{d}\Lambda_1/\Lambda_1\).  The formula
+\(d/\alpha = c\,\bar\alpha\) says that, up to the positive constant \(c\), taking the dual is
+complex conjugation of the scalar.  In particular, if we allow the zero map and set
+\(\deg 0 \coloneqq 0\), then \(\varphi \mapsto \deg\varphi = c\lvert\alpha\rvert^2\) is a positive
+definite quadratic form on the group of holomorphic homomorphisms
+\(\C/\Lambda_1 \to \C/\Lambda_2\).  For an endomorphism of \(\C/\Lambda\) we have \(c = 1\), so
+the dual is \(\bar\alpha\) and the degree is \(\lvert\alpha\rvert^2\).  These statements return
+for elliptic curves over an arbitrary field in Theorem <a href="04-ec-algebraic.html#thm-ec-dual">4.3.10</a> and
+Corollary <a href="04-ec-algebraic.html#cor-ec-degree-quadratic">4.3.11</a>, where there is no scalar to conjugate and the proofs
+are harder.
+</p>
+
+<div class="ec-thm ec-example" id="eg-rs-dual-eisenstein">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Example 1.3.9</span>.</span> Let \(\Lambda_\omega = \Z \oplus \omega\Z\) be the lattice of Example <a href="#eg-rs-lattice-eisenstein">1.2.3</a>.
+Since \(\Z[\omega]\) is a ring, \(\alpha\Lambda_\omega \subseteq \Lambda_\omega\) for every
+\(\alpha \in \Z[\omega]\), and \(z \mapsto \alpha z\) is an endomorphism of degree
+\(\lvert\alpha\rvert^2\) with dual \(z \mapsto \bar\alpha z\).
+</p>
+<ol class="org-ol">
+<li>For \(\alpha = \omega\), the degree is \(1\), so \(z \mapsto \omega z\) is an automorphism,
+and its dual \(z \mapsto \bar\omega z = \omega^2 z\) is its inverse.</li>
+<li>For \(\alpha = 1 - \omega\), the degree is \(\lvert 1 - \omega\rvert^2 = 3\), and the dual is
+\(z \mapsto (1 - \omega^2)z\); indeed \((1 - \omega)(1 - \omega^2) = 3\).  The kernel is
+cyclic of order \(3\), generated by \(\frac{1}{1 - \omega} + \Lambda_\omega =
+   \frac{2 + \omega}{3} + \Lambda_\omega\).</li>
+</ol>
+<p>
+Compare part <a href="04-ec-algebraic.html#it-ec-selmer-cm-isogeny">3</a> of Proposition <a href="04-ec-algebraic.html#prop-ec-selmer-cm">4.8.10</a>, where the same identity appears for the
+curves \(C_d\).  Similarly, on \(\C/\Lambda_i\) the endomorphism \(z \mapsto (1 + i)z\) has
+degree \(2\) and dual \(z \mapsto (1 - i)z\).
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-rs-meromorphic" class="outline-2">
+<h2 id="sec-rs-meromorphic"><span class="ec-status ec-status-draft"><span class="ec-status-label ec-status-draft">Draft</span><time datetime="2026-09-21">21 Sep 2026</time></span><span class="section-number" id="s1.4">1.4</span> Meromorphic functions</h2>
+<div class="outline-text-2" id="text-sec-rs-meromorphic">
+<div class="ec-thm ec-definition" id="def-rs-meromorphic">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Definition 1.4.1</span>.</span> Let \(X\) be a Riemann surface.  A <dfn class="ec-cdef" id="gls-meromorphic-function" data-gls="meromorphic-function">meromorphic function</dfn> on \(X\) is a holomorphic map
+\(X \to \PP^1(\C)\) that is not identically \(\infty\).  Denote the set of meromorphic
+functions on \(X\) by \(\C(X)\).
+</p>
+</div>
+
+<p>
+Equivalently, a meromorphic function is a function \(f\) with values in \(\C\), defined
+and holomorphic away from a discrete set of points of \(X\), at each of which \(f\) has a pole;
+there we set \(f = \infty\) [<a class="ec-cite" href="#bib-Miranda95">Mir95</a>, Proposition II.3.13].
+</p>
+
+<div class="ec-thm ec-example" id="eg-rs-meromorphic-p1">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Example 1.4.2</span>.</span> Let \(F_0, F_1 \in \C[X_0, X_1]\) be homogeneous polynomials of equal degree with no
+common zero on \(\PP^1(\C)\), and \(F_0 \neq 0\).  Then the map
+</p>
+\begin{equation*}
+F\colon \PP^1(\C) \to \PP^1(\C), \qquad (X_0 : X_1) \mapsto (F_0 : F_1)
+\end{equation*}
+<p>
+is a meromorphic function.  Moreover, every meromorphic function on \(\PP^1(\C)\) is of
+this form.
+</p>
+</div>
+
+<div class="ec-thm ec-example" id="eg-rs-meromorphic-torus">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Example 1.4.3</span>.</span> Let \(\Lambda \subseteq \C\) be a lattice.  Then there is a bijective correspondence
+between
+</p>
+<ul class="org-ul">
+<li>meromorphic functions on \(\C/\Lambda\), and</li>
+<li>\(\Lambda\)-periodic meromorphic functions on \(\C\),</li>
+</ul>
+<p>
+given by \(f \mapsto \tilde f \coloneqq f \circ \pi\).
+</p>
+<div class="ec-diagram"><img class="ec-tikz" src="figures/bc02d045638b0cd8e011d088b25d24f900b1d33d.svg" style="--ec-w: 9.58em" alt=""/></div>
+</div>
+
+<p>
+Given \(f, g \in \C(X)\), let \(S \subseteq X\) be the set of poles of \(f\) or \(g\).  It
+is discrete [<a class="ec-cite" href="#bib-Miranda95">Mir95</a>, Theorem II.1.33], and on \(X - S\) the pointwise sum \(f + g\)
+and product \(fg\) are holomorphic.  At each point of \(S\) they have either a removable
+singularity or a pole [<a class="ec-cite" href="#bib-Miranda95">Mir95</a>, Example II.1.17]; filling in the removable
+singularities and setting the value \(\infty\) at the poles defines \(f + g, fg \in
+\C(X)\).  The constant maps \(0, 1 \in \C(X)\) serve as additive and multiplicative
+identities, respectively.
+</p>
+
+<div class="ec-thm ec-lemma" id="lem-rs-meromorphic-field">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Lemma 1.4.4</span>.</span> Let \(X\) be a Riemann surface.  With the operations defined above, the set
+\(\C(X)\) of meromorphic functions on \(X\) is a field.
+</p>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+The ring axioms hold pointwise away from a discrete set, hence everywhere by continuity.
+If \(f \neq 0\), then since \(X\) is connected the zeros of \(f\) form a discrete set
+[<a class="ec-cite" href="#bib-Miranda95">Mir95</a>, Theorem II.1.33], so \(1/f\) is a meromorphic function
+[<a class="ec-cite" href="#bib-Miranda95">Mir95</a>, Example II.1.17] and \(f \cdot (1/f) = 1\).
+</p>
+</details>
+</div>
+</div>
+
+<div id="outline-container-sec-rs-invariant-differentials" class="outline-2">
+<h2 id="sec-rs-invariant-differentials"><span class="ec-status ec-status-draft"><span class="ec-status-label ec-status-draft">Draft</span><time datetime="2026-09-21">21 Sep 2026</time></span><span class="section-number" id="s1.5">1.5</span> Invariant differentials</h2>
+<div class="outline-text-2" id="text-sec-rs-invariant-differentials">
+<p>
+On an open subset of \(\C\) we can write down differentials \(f(z)\,dz\).  A Riemann
+surface has no global coordinate \(z\), so we write a differential in every chart and ask
+that the expressions agree under the chain rule [<a class="ec-cite" href="#bib-Miranda95">Mir95</a>, Section IV.1].
+</p>
+
+<div class="ec-thm ec-definition" id="def-rs-meromorphic-differential">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Definition 1.5.1</span>.</span> Let \(X\) be a Riemann surface.  A <dfn class="ec-cdef" id="gls-meromorphic-differential-on-a-riemann-surface" data-gls="meromorphic-differential-on-a-riemann-surface">meromorphic differential</dfn> \(\omega\) on \(X\)
+assigns to every chart \(\phi\colon U \to V\) of \(X\) a meromorphic function \(f_\phi\) on
+\(V\), written \(\omega = f_\phi(z)\,dz\), such that for any two charts \(\phi_1\) and
+\(\phi_2\), with transition map \(T \coloneqq \phi_2 \circ \phi_1^{-1}\),
+</p>
+\begin{equation*}
+f_{\phi_1}(z) = f_{\phi_2}\bigl(T(z)\bigr)\,T'(z)
+\qquad \text{for } z \in \phi_1(U_1 \cap U_2).
+\end{equation*}
+<p>
+If every \(f_\phi\) is holomorphic, then \(\omega\) is a <dfn class="ec-cdef" id="gls-holomorphic-differential" data-gls="holomorphic-differential">holomorphic differential</dfn>.
+</p>
+</div>
+
+<p>
+By the chain rule, it is enough to give functions \(f_\phi\) satisfying the
+transformation rule for the charts of a single complex structure on \(X\); they extend
+uniquely to all charts.  Since \(T'\) does not vanish, whether \(f_\phi\) has a zero or a
+pole at \(\phi(p)\) depends only on \(p\), so a non-zero meromorphic differential has a
+discrete set of zeros and poles.  If \(\eta \neq 0\) is a meromorphic differential, then
+the quotients \(f_\phi/h_\phi\), where \(\eta = h_\phi(z)\,dz\), glue to a meromorphic
+function, because the factors \(T'\) cancel.  So every meromorphic differential is
+\(g\eta\) for a unique \(g \in \C(X)\).
+</p>
+
+<p>
+Differentials pull back along holomorphic maps.  Let \(F\colon X \to Y\) be a
+non-constant holomorphic map and \(\omega\) a meromorphic differential on \(Y\).  For
+charts \(\phi\colon U \to V\) of \(X\) and \(\psi\colon U' \to V'\) of \(Y\) with
+\(F(U) \subseteq U'\), write \(F_{\psi\phi} \coloneqq \psi \circ F \circ \phi^{-1}\) and
+\(\omega = f_\psi(w)\,dw\), and set
+</p>
+\begin{equation*}
+F^*\omega \coloneqq f_\psi\bigl(F_{\psi\phi}(z)\bigr)\,F_{\psi\phi}'(z)\,dz.
+\end{equation*}
+<p>
+Such charts \(\phi\) cover \(X\), and the chain rule shows that \(F^*\omega\) is a
+meromorphic differential on \(X\).  If \(\omega\) is holomorphic, the same formula makes
+sense for constant \(F\), and gives \(F^*\omega = 0\).  Pullback satisfies
+\((G \circ F)^* = F^* \circ G^*\) and \(F^*(g\omega) = (g \circ F)\,F^*\omega\) for
+\(g \in \C(Y)\).  For instance, if \(F\) is a map between open subsets of \(\C\), then
+\(F^*(dw) = F'(z)\,dz\), which is the familiar substitution \(w = F(z)\).
+</p>
+
+<p>
+The Riemann surfaces \(\C^\times\) and \(\C/\Lambda\) are also abelian groups, and for
+every element \(a\) the translation \(\tau_a\), namely \(z \mapsto az\) on \(\C^\times\)
+and \(z + \Lambda \mapsto z + a + \Lambda\) on \(\C/\Lambda\), is an isomorphism of Riemann
+surfaces.
+</p>
+
+<div class="ec-thm ec-definition" id="def-rs-invariant-differential">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Definition 1.5.2</span>.</span> Let \(G\) be \(\C^\times\) or a complex torus.  A meromorphic differential \(\omega\) on
+\(G\) is <dfn class="ec-cdef" id="gls-translation-invariant-differential" data-gls="translation-invariant-differential">invariant</dfn> if \(\tau_a^*\omega = \omega\) for every \(a \in G\).
+</p>
+</div>
+
+<div class="ec-thm ec-lemma" id="lem-rs-invariant-differential-unique">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Lemma 1.5.3</span>.</span> Let \(G\) be \(\C^\times\) or a complex torus, and let \(\eta\) be a non-zero invariant
+differential on \(G\).  Then \(\eta\) has no zeros or poles, and every invariant
+differential on \(G\) is \(c\eta\) for a unique \(c \in \C\).
+</p>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+Since \(\tau_a^*\eta = \eta\), a point \(p\) of \(G\) is a zero of \(\eta\) if and only if
+\(\tau_a(p)\) is, and likewise for poles.  The translations act transitively on \(G\), so
+if \(\eta\) had a zero or a pole it would have one everywhere, contradicting discreteness.
+Let \(\omega\) be invariant, and write \(\omega = g\eta\) with \(g \in \C(G)\).  Then
+</p>
+\begin{equation*}
+g\eta = \omega = \tau_a^*\omega = (g \circ \tau_a)\,\tau_a^*\eta = (g \circ \tau_a)\,\eta,
+\end{equation*}
+<p>
+so \(g \circ \tau_a = g\) for every \(a \in G\).  Hence \(g\) is constant, and its value
+\(c \neq \infty\), since \(g\) is not identically \(\infty\).
+</p>
+</details>
+
+<div class="ec-thm ec-example" id="eg-rs-invariant-differential-cstar">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Example 1.5.4</span>.</span> On \(\C^\times\), with its single chart \(\mathrm{id}\), consider the holomorphic
+differential
+</p>
+\begin{equation*}
+\omega \coloneqq \frac{dz}{z}.
+\end{equation*}
+<p>
+For \(a \in \C^\times\), the translation \(\tau_a(z) = az\) gives
+</p>
+\begin{equation*}
+\tau_a^*\omega = \frac{a\,dz}{az} = \frac{dz}{z} = \omega,
+\end{equation*}
+<p>
+so \(\omega\) is invariant, and by Lemma <a href="#lem-rs-invariant-differential-unique">1.5.3</a> every
+invariant differential on \(\C^\times\) is a multiple of \(dz/z\).  By contrast, \(dz\) is
+also a holomorphic differential on \(\C^\times\), but \(\tau_a^*dz = a\,dz\), so it is not
+invariant.  The holomorphic differentials \(f(z)\,dz\), with \(f\) holomorphic on
+\(\C^\times\), form an infinite-dimensional space; only a line of them is invariant.
+</p>
+
+<ol class="org-ol">
+<li><p>
+<a id="it-rs-cstar-endomorphisms"></a> <b>Endomorphisms.</b>  For \(m \in \Z\), the map \([m]\colon z \mapsto z^m\) is a holomorphic
+group homomorphism \(\C^\times \to \C^\times\), with kernel \(\mu_m(\C)\) when
+\(m \neq 0\) (Example <a href="#eg-rs-mult-by-m">1.3.4</a>).  It pulls \(\omega\) back to
+</p>
+\begin{equation*}
+[m]^*\omega = \frac{mz^{m-1}\,dz}{z^m} = m\,\frac{dz}{z} = m\omega.
+\end{equation*}</li>
+<li><p>
+<a id="it-rs-cstar-uniformization"></a> <b>Uniformization.</b>  The exponential \(\exp\colon \C \to \C^\times\) is a surjective
+holomorphic homomorphism with kernel \(2\pi i\Z\), so it induces an isomorphism
+\(\C/2\pi i\Z \cong \C^\times\) of Riemann surfaces and of groups.  In the coordinate
+\(w\) on \(\C\),
+</p>
+\begin{equation*}
+\exp^*\omega = \frac{e^w\,dw}{e^w} = dw,
+\end{equation*}
+<p>
+so the invariant differential on \(\C^\times\) corresponds to the translation-invariant
+differential \(dw\) on \(\C\).
+</p></li>
+<li><a id="it-rs-cstar-periods"></a> <b>Periods.</b>  If \(\gamma\) is a loop in \(\C^\times\), then \(\int_\gamma dz/z\) is
+\(2\pi i\) times the winding number of \(\gamma\) around \(0\).  So the set of
+\(\int_\gamma \omega\), as \(\gamma\) runs over loops, is \(2\pi i\Z\), the kernel of
+\(\exp\), and it is generated by the integral over the unit circle, the image of the
+segment from \(0\) to \(2\pi i\).  The inverse of the isomorphism in part <a href="#it-rs-cstar-uniformization">2</a> is
+\(z \mapsto \int_1^z \omega \bmod 2\pi i\Z\), the logarithm, which is well defined
+modulo \(2\pi i\Z\).</li>
+<li><a id="it-rs-cstar-poles"></a> <b>At \(0\) and \(\infty\).</b>  In the chart \(\phi_1\) of Example <a href="#eg-rs-riemann-sphere">1.1.4</a>,
+with coordinate \(u = 1/z\), the transformation rule gives \(\omega = -du/u\).  So
+\(\omega\) is a meromorphic differential on \(\PP^1(\C)\) with simple poles at \(0\) and
+\(\infty\).  Unlike \(dz\) on \(\C/\Lambda\) below, it does not extend to a holomorphic
+differential on this compactification.</li>
+</ol>
+</div>
+
+<p>
+Algebraically, \(\C^\times\) is the group of complex points of the multiplicative group
+\(\Gm\) (Example <a href="02-varieties.html#eg-var-gm">2.1.5</a>), and \(\omega\) is \(dx/x\); see
+Examples <a href="03-curves.html#eg-crv-gm-differential">3.4.7</a> and <a href="03-curves.html#eg-crv-gm-mult">3.4.8</a> for the algebraic version over an
+arbitrary field.
+</p>
+
+<div class="ec-thm ec-example" id="eg-rs-invariant-differential-torus">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Example 1.5.5</span>.</span> Let \(\Lambda \subseteq \C\) be a lattice, and \(\pi\colon \C \to \C/\Lambda\) the quotient
+map.  Among the charts constructed in the proof of Lemma <a href="#lem-rs-torus-compact">1.2.4</a>, take those
+coming from \(\phi = \mathrm{id}\), that is, the inverses of the restrictions of \(\pi\) to
+small open subsets of \(\C\).  Their transition maps are locally \(u \mapsto u + \lambda\)
+with \(\lambda \in \Lambda\), whose derivative is \(1\).  So setting \(f_\phi \coloneqq 1\)
+on each of them satisfies the transformation rule, and defines a holomorphic
+differential
+</p>
+\begin{equation*}
+dz \quad \text{on } \C/\Lambda, \qquad \text{with } \pi^*dz = dz.
+\end{equation*}
+<p>
+In these charts the translation \(\tau_a\) reads \(u \mapsto u + a\), up to adding an element
+of \(\Lambda\), so \(\tau_a^*dz = dz\).  Hence \(dz\) is invariant, it has no zeros or poles,
+and every invariant differential on \(\C/\Lambda\) is a multiple of \(dz\), by
+Lemma <a href="#lem-rs-invariant-differential-unique">1.5.3</a>.
+</p>
+
+<ol class="org-ol">
+<li><b>All holomorphic differentials are invariant.</b>  Let \(\omega\) be a holomorphic
+differential on \(\C/\Lambda\), and write \(\omega = g\,dz\) with
+\(g \in \C(\C/\Lambda)\).  Since \(dz\) has no zeros, \(g\) has no poles.  By
+Example <a href="#eg-rs-meromorphic-torus">1.4.3</a>, \(g \circ \pi\) is a \(\Lambda\)-periodic entire
+function; it is bounded on the compact set \(\overline{\calF_\Lambda}\), hence bounded,
+hence constant by Liouville's theorem.  So the holomorphic differentials on
+\(\C/\Lambda\) are exactly the multiples of \(dz\), unlike on \(\C^\times\).  More
+generally, the meromorphic differentials on \(\C/\Lambda\) are the \(g\,dz\) with
+\(g \circ \pi\) a \(\Lambda\)-periodic meromorphic function on \(\C\).</li>
+<li><p>
+<b>Isogenies.</b>  By Proposition <a href="#prop-rs-torus-maps">1.3.1</a>, a holomorphic map
+\(\varphi\colon \C/\Lambda_1 \to \C/\Lambda_2\) has the form
+\(z + \Lambda_1 \mapsto \alpha z + \beta + \Lambda_2\).  In the charts above it reads
+\(u \mapsto \alpha u + \beta\), up to adding an element of \(\Lambda_2\), so
+</p>
+\begin{equation*}
+\varphi^*dz = \alpha\,dz.
+\end{equation*}
+<p>
+In particular \([m]^*dz = m\,dz\) for the multiplication by \(m\) map of
+Example <a href="#eg-rs-mult-by-m">1.3.4</a>, exactly as \([m]^*\omega = m\omega\) on \(\C^\times\).  An
+isogeny is determined by its effect on the invariant differential: by
+Corollary <a href="#cor-rs-torus-homs">1.3.2</a>, \(\varphi \mapsto \alpha\) identifies the holomorphic
+homomorphisms \(\C/\Lambda_1 \to \C/\Lambda_2\) with
+\(\{\alpha \in \C : \alpha\Lambda_1 \subseteq \Lambda_2\}\), and it turns composition
+into multiplication.
+</p></li>
+<li><b>Periods.</b>  A path \(\gamma\) in \(\C/\Lambda\) lifts along \(\pi\) to a path
+\(\tilde\gamma\) in \(\C\), unique up to translation by \(\Lambda\), and we set
+\(\int_\gamma dz \coloneqq \int_{\tilde\gamma} dz\), the difference of the endpoints of
+\(\tilde\gamma\).  If \(\gamma\) is a loop, then \(\tilde\gamma\) runs from some \(z\) to
+\(z + \lambda\) with \(\lambda \in \Lambda\), and \(\int_\gamma dz = \lambda\).  Every
+\(\lambda\) occurs, as the image of the segment from \(0\) to \(\lambda\).  So the
+periods of \(dz\) form the lattice \(\Lambda\) itself, the kernel of \(\pi\), and
+\(p \mapsto \int_0^p dz \bmod \Lambda\) is the identity of \(\C/\Lambda\).</li>
+</ol>
+</div>
+
+<p>
+For \(c \in \C^\times\), the periods of \(c\,dz\) form
+the lattice \(c\Lambda\), and the isomorphism \(\C/\Lambda \to \C/c\Lambda\),
+\(z + \Lambda \mapsto cz + c\Lambda\), of Proposition <a href="#prop-rs-torus-maps">1.3.1</a> pulls \(dz\) back to
+\(c\,dz\).  So a complex torus determines its lattice only up to scaling, but a complex
+torus together with a non-zero holomorphic differential determines the lattice itself.  Under the
+isomorphism of Theorem <a href="#thm-rs-uniformization">1.7.1</a>, \(dz\) becomes \(dx/(2y)\) on
+\(E_{A,B}(\C)\), as we will see in Remark <a href="04-ec-algebraic.html#rem-ec-complex-normalization">4.1.8</a>; this is the
+invariant differential of an elliptic curve in Chapter 4.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-rs-plane-curves" class="outline-2">
+<h2 id="sec-rs-plane-curves"><span class="ec-status ec-status-draft"><span class="ec-status-label ec-status-draft">Draft</span><time datetime="2026-09-21">21 Sep 2026</time></span><span class="section-number" id="s1.6">1.6</span> Projective plane curves as Riemann surfaces</h2>
+<div class="outline-text-2" id="text-sec-rs-plane-curves">
+<p>
+We follow [<a class="ec-cite" href="#bib-Miranda95">Mir95</a>, Section I.3].  The <dfn class="ec-cdef" id="gls-projective-plane" data-gls="projective-plane">projective plane</dfn> is
+</p>
+\begin{equation*}
+\PP^2(\C) \coloneqq \bigl(\C^3 - \{(0,0,0)\}\bigr)/\C^\times,
+\end{equation*}
+<p>
+with the quotient topology, and we write its points as \((X : Y : Z)\).  It is
+compact, being the image of the unit sphere in \(\C^3\), and it is covered by the open
+sets \(U_X\), \(U_Y\) and \(U_Z\) where \(X\), \(Y\) or \(Z\) does not vanish, each
+homeomorphic to \(\C^2\) by dividing by that coordinate.  If \(F \in \C[X, Y, Z]\) is
+homogeneous of degree \(d\),
+then \(F(\lambda z) = \lambda^d F(z)\), so the zero locus
+</p>
+\begin{equation*}
+C_F \coloneqq \{(X : Y : Z) \in \PP^2(\C) : F(X, Y, Z) = 0\}
+\end{equation*}
+<p>
+is a well defined closed subset of \(\PP^2(\C)\).
+</p>
+
+<div class="ec-thm ec-definition" id="def-rs-nonsingular-plane-curve">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Definition 1.6.1</span>.</span> A homogeneous polynomial \(F \in \C[X, Y, Z]\) is <dfn class="ec-cdef" id="gls-nonsingular-polynomial" data-gls="nonsingular-polynomial">nonsingular</dfn> if
+\(F\), \(\partial F/\partial X\), \(\partial F/\partial Y\) and
+\(\partial F/\partial Z\) have no common zero in \(\PP^2(\C)\).  In that case \(C_F\) is
+a <dfn class="ec-cdef" id="gls-smooth-projective-plane-curve" data-gls="smooth-projective-plane-curve">smooth projective plane curve</dfn>.
+</p>
+</div>
+
+<div class="ec-thm ec-proposition" id="prop-rs-smooth-plane-curve">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Proposition 1.6.2</span>.</span> Let \(F\) be a nonsingular homogeneous polynomial.  Then \(C_F\) is a compact Riemann
+surface.  Near every point of \(C_F\), some ratio of two homogeneous coordinates
+is a local coordinate.
+</p>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+See [<a class="ec-cite" href="#bib-Miranda95">Mir95</a>, Proposition I.3.6].  The idea: \(C_F \cap U_Z\) is the affine
+curve \(f(x, y) \coloneqq F(x, y, 1) = 0\), where \(x = X/Z\) and \(y = Y/Z\).  At
+a point \((x : y : 1)\) of \(C_F\) we have \(\partial f/\partial x = \partial F/\partial X\) and
+\(\partial f/\partial y = \partial F/\partial Y\), and Euler's formula
+</p>
+\begin{equation*}
+X \frac{\partial F}{\partial X} + Y \frac{\partial F}{\partial Y} + Z \frac{\partial F}{\partial Z} = dF
+\end{equation*}
+<p>
+gives \(\partial F/\partial Z = dF - x\,\partial F/\partial X - y\,\partial F/\partial
+Y\).  Hence the singular points of \(F\) in \(U_Z\) are exactly the common zeros of
+\(f\), \(\partial f/\partial x\) and \(\partial f/\partial y\), and likewise in \(U_X\)
+and \(U_Y\).  Where \(\partial f/\partial y \neq 0\), the implicit function theorem writes
+\(C_F\) locally as a graph \(y = g(x)\), so \(x\) is a local coordinate; similarly \(y\)
+is a local coordinate where \(\partial f/\partial x \neq 0\).  The transition maps between
+these charts are holomorphic, being built from such functions \(g\) and ratios of
+coordinates.  As a subspace of \(\PP^2(\C)\), \(C_F\) is Hausdorff,
+and it is compact, being closed.
+</p>
+
+<p>
+That \(C_F\) is connected is less elementary; here is the idea.  First, \(F\) is
+irreducible: if \(F = GH\) with \(G\) and \(H\) nonconstant, then the curves \(C_G\) and
+\(C_H\) meet at some point \(p\) of \(\PP^2(\C)\) by Bézout's theorem, and every partial
+derivative of \(F = GH\) vanishes at \(p\) by the product rule, so \(F\) is singular at
+\(p\).  After permuting the
+coordinates we may assume \(Z \nmid F\).  Then \(f\) is irreducible too, and \(C_F\)
+meets the line \(Z = 0\) in finitely many points.  Second, the zero locus of an
+irreducible \(f\) is connected [<a class="ec-cite" href="#bib-Miranda95">Mir95</a>, Theorem I.2.3].  Away from finitely many
+points, the projection \((x, y) \mapsto x\) makes it a finite covering of \(\C\) minus a
+finite set.  A connected component would pick out a subset of the roots \(y\) of
+\(f(x, \cdot) = 0\) that is preserved as \(x\) moves.  The elementary symmetric functions
+of those roots are then rational functions of \(x\), and they give a proper factor of
+\(f\).  Finally, \(C_F\) is the closure of the connected set \(C_F \cap U_Z\), because the
+finitely many remaining points are not isolated in \(C_F\).  Hence \(C_F\) is connected.
+</p>
+</details>
+
+<div class="ec-thm ec-example" id="eg-rs-weierstrass-curve">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Example 1.6.3</span>.</span> Let \(A, B \in \C\) and
+</p>
+\begin{gather*}
+F \coloneqq Y^2 Z - X^3 - AXZ^2 - BZ^3, \\
+E_{A,B}(\C) \coloneqq C_F = \{(X : Y : Z) \in \PP^2(\C) : Y^2 Z = X^3 + AXZ^2 + BZ^3\}.
+\end{gather*}
+<p>
+Then \(F\) is nonsingular if and only if \(4A^3 + 27B^2 \neq 0\).  Indeed:
+</p>
+<ul class="org-ul">
+<li>On \(Z = 0\), the equation forces \(X = 0\), so the only point of \(C_F\) there is
+\((0 : 1 : 0)\), where
+\(\partial F/\partial Z = Y^2 - 2AXZ - 3BZ^2 = 1 \neq 0\).</li>
+<li>On \(U_Z\), with \(x = X/Z\), \(y = Y/Z\) and \(p(x) \coloneqq x^3 + Ax + B\), we have
+\(f = y^2 - p(x)\).  By Euler's formula, a singular point is a common zero of \(f\),
+\(\partial f/\partial x = -p'(x)\) and \(\partial f/\partial y = 2y\), that is,
+\(y = 0\) and \(x\) a repeated root of \(p\).  Such an \(x\) exists if and only if the
+discriminant of \(p\), which is \(-(4A^3 + 27B^2)\), vanishes.</li>
+</ul>
+<p>
+So if \(4A^3 + 27B^2 \neq 0\), then \(E_{A,B}(\C)\) is a compact Riemann surface by
+Proposition <a href="#prop-rs-smooth-plane-curve">1.6.2</a>.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-rs-uniformization" class="outline-2">
+<h2 id="sec-rs-uniformization"><span class="ec-status ec-status-draft"><span class="ec-status-label ec-status-draft">Draft</span><time datetime="2026-09-21">21 Sep 2026</time></span><span class="section-number" id="s1.7">1.7</span> The uniformization theorem</h2>
+<div class="outline-text-2" id="text-sec-rs-uniformization">
+<p>
+Given any lattice \(\Lambda \subseteq \C\), the associated
+<dfn class="ec-cdef" id="gls-weierstrass-wp-function" data-gls="weierstrass-wp-function">Weierstrass \(\wp\)-function</dfn> is the meromorphic function
+</p>
+\begin{equation*}
+\wp_\Lambda\colon \C \to \PP^1(\C), \qquad
+z \mapsto \frac{1}{z^2} + \sum_{\substack{\omega \in \Lambda \\ \omega \neq 0}}
+\left[\frac{1}{(z - \omega)^2} - \frac{1}{\omega^2}\right].
+\end{equation*}
+<p>
+Its derivative is
+</p>
+\begin{equation*}
+\wp_\Lambda'\colon \C \to \PP^1(\C), \qquad
+z \mapsto -2 \sum_{\omega \in \Lambda} \frac{1}{(z - \omega)^3}.
+\end{equation*}
+<p>
+For even \(k > 2\), we have the <dfn class="ec-cdef" id="gls-eisenstein-series" data-gls="eisenstein-series">Eisenstein series</dfn>
+</p>
+\begin{equation*}
+G_k(\Lambda) \coloneqq \sum_{\substack{\omega \in \Lambda \\ \omega \neq 0}}
+\frac{1}{\omega^k}.
+\end{equation*}
+<p>
+We have the following beautiful result.
+</p>
+
+<div class="ec-thm ec-theorem" id="thm-rs-uniformization">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Theorem 1.7.1</span>.</span> Given \(A, B \in \C\) with \(4A^3 + 27B^2 \neq 0\), there exists a lattice
+\(\Lambda \subseteq \C\) such that the map
+</p>
+\begin{equation*}
+\phi\colon \C/\Lambda \to E_{A,B}(\C), \qquad
+z + \Lambda \mapsto
+\begin{cases}
+(\wp_\Lambda(z) : \tfrac{1}{2}\wp_\Lambda'(z) : 1) & \text{if } z \notin \Lambda, \\
+(0 : 1 : 0) & \text{if } z \in \Lambda,
+\end{cases}
+\end{equation*}
+<p>
+is an isomorphism of Riemann surfaces.  Moreover,
+</p>
+\begin{equation*}
+A = -15G_4(\Lambda), \qquad B = -35G_6(\Lambda).
+\end{equation*}
+</div>
+
+<div class="ec-thm ec-question" id="q-rs-wp-periodic">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Question 1.7.2</span> <span class="ec-thm-title">(Diamond&ndash;Shurman)</span>.</span> This is [<a class="ec-cite" href="#bib-Diamond-Shurman_05">DS05</a>, Exercise 1.4.2].  Let \(\Lambda \subseteq \C\) be a
+lattice.
+</p>
+<ol class="org-ol">
+<li>Show that \(\wp_\Lambda\) is even and that \(\wp_\Lambda'\) is \(\Lambda\)-periodic.</li>
+<li>Let \(\{\omega_1, \omega_2\}\) be a \(\Z\)-basis for \(\Lambda\).  For \(j = 1, 2\),
+show that \(\wp_\Lambda(z + \omega_j) - \wp_\Lambda(z)\) is some constant \(c_j\).
+Substitute \(z = -\omega_j/2\) to conclude that \(c_j = 0\), and deduce that
+\(\wp_\Lambda\) is \(\Lambda\)-periodic.</li>
+</ol>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-rs-tori-iso-classes" class="outline-2">
+<h2 id="sec-rs-tori-iso-classes"><span class="ec-status ec-status-draft"><span class="ec-status-label ec-status-draft">Draft</span><time datetime="2026-09-21">21 Sep 2026</time></span><span class="section-number" id="s1.8">1.8</span> Isomorphism classes of complex tori</h2>
+<div class="outline-text-2" id="text-sec-rs-tori-iso-classes">
+<p>
+Proposition <a href="#prop-rs-torus-maps">1.3.1</a> lets us classify complex tori up to isomorphism.  Start
+with an arbitrary lattice \(\Lambda \subseteq \C\), and choose a \(\Z\)-basis
+\(\{\omega_1, \omega_2\}\).  Since \(\omega_1/\omega_2 \notin \R\), after possibly swapping
+\(\omega_1\) and \(\omega_2\) we have \(\tau \coloneqq \omega_1/\omega_2 \in \bbH\).  Define
+\(\Lambda_\tau \coloneqq \Z \oplus \tau\Z\).  Since \(\frac{1}{\omega_2}\Lambda =
+\Lambda_\tau\), Proposition <a href="#prop-rs-torus-maps">1.3.1</a> implies that the map
+</p>
+\begin{equation*}
+\varphi_\tau\colon \C/\Lambda \to \C/\Lambda_\tau, \qquad
+z + \Lambda \mapsto \frac{z}{\omega_2} + \Lambda_\tau
+\end{equation*}
+<p>
+is an isomorphism of complex tori.  So every complex torus is isomorphic to one of the
+form \(\C/\Lambda_\tau\) with \(\tau \in \bbH\).  The number \(\tau\) depends on the
+choice of basis, and the group \(\SL_2(\Z)\) accounts for this ambiguity.  Recall that it
+acts on \(\bbH\) by
+</p>
+\begin{equation*}
+\gamma \cdot \tau \coloneqq \frac{a\tau + b}{c\tau + d},
+\qquad
+\gamma = \begin{pmatrix} a & b \\ c & d \end{pmatrix} \in \SL_2(\Z).
+\end{equation*}
+
+<div class="ec-thm ec-proposition" id="prop-rs-tori-iso-classes">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Proposition 1.8.1</span>.</span> Let \(\tau, \tau' \in \bbH\).  Then \(\C/\Lambda_\tau \cong \C/\Lambda_{\tau'}\) if and
+only if \(\tau' = \gamma \cdot \tau\) for some \(\gamma \in \SL_2(\Z)\).  Consequently,
+\(\tau \mapsto \C/\Lambda_\tau\) induces a bijection between \(\SL_2(\Z)\backslash\bbH\)
+and the set of isomorphism classes of complex tori.
+</p>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+By Proposition <a href="#prop-rs-torus-maps">1.3.1</a>, \(\C/\Lambda_\tau \cong \C/\Lambda_{\tau'}\) if and
+only if \(\alpha\Lambda_\tau = \Lambda_{\tau'}\) for some \(\alpha \in \C^\times\).
+</p>
+
+<p>
+Suppose \(\tau' = \gamma \cdot \tau\), and set \(\alpha \coloneqq 1/(c\tau + d)\), which is
+non-zero since \(\tau \notin \R\).  Since \(\gamma\) is invertible over \(\Z\),
+\(\{a\tau + b, c\tau + d\}\) is a \(\Z\)-basis of \(\Lambda_\tau\), so
+\(\alpha\Lambda_\tau = \Z\tau' \oplus \Z = \Lambda_{\tau'}\).
+</p>
+
+<p>
+Conversely, suppose \(\alpha\Lambda_\tau = \Lambda_{\tau'}\).  Then \(\{\alpha\tau, \alpha\}\) is a
+\(\Z\)-basis of \(\Lambda_{\tau'} = \Z\tau' \oplus \Z\), so there is
+\(\delta = \left(\begin{smallmatrix} a & b \\ c & d \end{smallmatrix}\right) \in
+\GL_2(\Z)\) with \(\alpha\tau = a\tau' + b\) and \(\alpha = c\tau' + d\).  Dividing,
+\(\tau = (a\tau' + b)/(c\tau' + d)\), and the identity
+</p>
+\begin{equation*}
+\Im\left(\frac{a\tau' + b}{c\tau' + d}\right)
+= \frac{\det(\delta)\, \Im(\tau')}{\lvert c\tau' + d \rvert^2}
+\end{equation*}
+<p>
+together with \(\tau, \tau' \in \bbH\) forces \(\det(\delta) = 1\).  Hence
+\(\tau = \delta \cdot \tau'\), that is, \(\tau' = \delta^{-1} \cdot \tau\) with
+\(\delta^{-1} \in \SL_2(\Z)\).  The last statement follows, since every complex torus is
+isomorphic to some \(\C/\Lambda_\tau\).
+</p>
+</details>
+
+<p>
+The region in Figure <a href="#fig-rs-sl2z-domain">1.8.1</a>, including its solid boundary and excluding its
+dotted boundary, contains exactly one point of every \(\SL_2(\Z)\)-orbit in \(\bbH\).  By
+Proposition <a href="#prop-rs-tori-iso-classes">1.8.1</a>, it is in bijection with the set of isomorphism
+classes of complex tori.
+</p>
+
+<figure class="ec-figure" id="fig-rs-sl2z-domain">
+<img class="ec-tikz" src="figures/b8dc5faeb36ff57b96f9edb84ac3189b8f61de3a.svg" style="--ec-w: 14.82em" alt=""/>
+<figcaption><span class="ec-thm-name">Figure 1.8.1</span>. A fundamental domain for the action of \(\SL_2(\Z)\) on \(\bbH\).</figcaption>
+</figure>
+</div>
+</div>
+
+<div id="outline-container-org61913b1" class="outline-2 ec-references">
+<h2 id="org61913b1">References</h2>
+<div class="outline-text-2" id="text-org61913b1">
+<dl class="ec-bibliography">
+<dt id="bib-Diamond-Shurman_05">[DS05]</dt>
+<dd>Fred Diamond and Jerry Shurman. <i>A first course in modular forms</i>. Vol. 228. Graduate Texts in Mathematics. Springer-Verlag, New York, 2005.</dd>
+<dt id="bib-Forster_91">[For91]</dt>
+<dd>Otto Forster. <i>Lectures on Riemann surfaces</i>. Vol. 81. Graduate Texts in Mathematics. Springer-Verlag, New York, 1991. Translated from the 1977 German original by Bruce Gilligan, Reprint of the 1981 English translation.</dd>
+<dt id="bib-Miranda95">[Mir95]</dt>
+<dd>Rick Miranda. <i>Algebraic curves and Riemann surfaces</i>. Vol. 5. Graduate Studies in Mathematics. American Mathematical Society, Providence, RI, 1995. <a href="https://doi.org/10.1090/gsm/005">doi:10.1090/gsm/005</a>.</dd>
+</dl>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<nav class="ec-pager ec-pager-bottom" aria-label="Chapters"><a class="ec-pager-prev" rel="prev" href="00-preface.html"><span class="ec-pager-label">Previous</span><span class="ec-pager-title">Preface</span></a><a class="ec-pager-next" rel="next" href="02-varieties.html"><span class="ec-pager-label">Next</span><span class="ec-pager-title">2. Algebraic varieties</span></a></nav>
+</div>
+</body>
+</html>

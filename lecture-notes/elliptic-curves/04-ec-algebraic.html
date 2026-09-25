@@ -1,0 +1,3166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 2026-09-24 Thu 08:35 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Elliptic curves as algebraic curves</title>
+<meta name="generator" content="Org Mode" />
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta name="robots" content="noindex, nofollow"/>
+<link rel="stylesheet" type="text/css" href="org-css.css"/>
+<link rel="stylesheet" type="text/css" href="book.css"/>
+<script src="macros.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-chtml-full.js"></script>
+<script defer src="org-code.js"></script>
+<script defer src="book.js"></script>
+</head>
+<body>
+<div id="preamble" class="status">
+<nav class="ec-sidebar" id="ec-sidebar" aria-label="Contents">
+<a class="ec-book-title" href="index.html">The arithmetic geometry of elliptic curves (DRAFT)</a>
+<p class="ec-book-subtitle">Math 714, Fall 2026</p>
+<ol class="ec-toc">
+<li class="ec-toc-chapter"><a href="00-preface.html"><span class="ec-toc-num"></span><span class="ec-toc-text">Preface</span></a></li>
+<li class="ec-toc-chapter"><a href="01-riemann-surfaces.html"><span class="ec-toc-num">1</span><span class="ec-toc-text">Elliptic curves as Riemann surfaces<span class="ec-toc-status"><span class="ec-status-progress">2 of 8 sections finished</span></span></span></a></li>
+<li class="ec-toc-chapter"><a href="02-varieties.html"><span class="ec-toc-num">2</span><span class="ec-toc-text">Algebraic varieties<span class="ec-toc-status"><span class="ec-status-progress">0 of 4 sections finished</span></span></span></a></li>
+<li class="ec-toc-chapter"><a href="03-curves.html"><span class="ec-toc-num">3</span><span class="ec-toc-text">Algebraic curves<span class="ec-toc-status"><span class="ec-status-progress">0 of 7 sections finished</span></span></span></a></li>
+<li class="ec-toc-chapter is-current"><a href="04-ec-algebraic.html" aria-current="page"><span class="ec-toc-num">4</span><span class="ec-toc-text">Elliptic curves as algebraic curves<span class="ec-toc-status"><span class="ec-status-progress">1 of 8 sections finished</span></span></span></a>
+<ol class="ec-toc-sections">
+<li class="ec-toc-level-1"><a href="#s4.1"><span class="ec-toc-num">4.1</span><span class="ec-toc-text">Weierstrass equations</span></a></li>
+<li class="ec-toc-level-1"><a href="#s4.2"><span class="ec-toc-num">4.2</span><span class="ec-toc-text">The group law<span class="ec-toc-status"><span class="ec-status-label ec-status-draft">Draft</span></span></span></a></li>
+<li class="ec-toc-level-1"><a href="#s4.3"><span class="ec-toc-num">4.3</span><span class="ec-toc-text">Isogenies<span class="ec-toc-status"><span class="ec-status-label ec-status-draft">Draft</span></span></span></a></li>
+<li class="ec-toc-level-1"><a href="#s4.4"><span class="ec-toc-num">4.4</span><span class="ec-toc-text">The invariant differential<span class="ec-toc-status"><span class="ec-status-label ec-status-draft">Draft</span></span></span></a></li>
+<li class="ec-toc-level-1"><a href="#s4.5"><span class="ec-toc-num">4.5</span><span class="ec-toc-text">The Tate module<span class="ec-toc-status"><span class="ec-status-label ec-status-draft">Draft</span></span></span></a></li>
+<li class="ec-toc-level-1"><a href="#s4.6"><span class="ec-toc-num">4.6</span><span class="ec-toc-text">The Weil pairing<span class="ec-toc-status"><span class="ec-status-label ec-status-draft">Draft</span></span></span></a></li>
+<li class="ec-toc-level-1"><a href="#s4.7"><span class="ec-toc-num">4.7</span><span class="ec-toc-text">Endomorphisms and automorphisms<span class="ec-toc-status"><span class="ec-status-label ec-status-draft">Draft</span></span></span></a></li>
+<li class="ec-toc-level-2"><a href="#s4.7.1"><span class="ec-toc-num">4.7.1</span><span class="ec-toc-text">Quaternion algebras</span></a></li>
+<li class="ec-toc-level-2"><a href="#s4.7.2"><span class="ec-toc-num">4.7.2</span><span class="ec-toc-text">The endomorphism ring</span></a></li>
+<li class="ec-toc-level-1"><a href="#s4.8"><span class="ec-toc-num">4.8</span><span class="ec-toc-text">Selmer elliptic curves<span class="ec-toc-status"><span class="ec-status-label ec-status-draft">Draft</span></span></span></a></li>
+</ol></li>
+<li class="ec-toc-chapter"><a href="05-finite-fields.html"><span class="ec-toc-num">5</span><span class="ec-toc-text">Elliptic curves over finite fields<span class="ec-toc-status"><span class="ec-status-progress">0 of 5 sections finished</span></span></span></a></li>
+<li class="ec-toc-chapter"><a href="06-local-fields.html"><span class="ec-toc-num">6</span><span class="ec-toc-text">Elliptic curves over local fields<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
+<li class="ec-toc-chapter"><a href="07-galois-cohomology.html"><span class="ec-toc-num">7</span><span class="ec-toc-text">Galois cohomology<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
+<li class="ec-toc-chapter"><a href="08-mordell-weil.html"><span class="ec-toc-num">8</span><span class="ec-toc-text">The Mordell&ndash;Weil theorem<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
+<li class="ec-toc-chapter"><a href="09-integral-points.html"><span class="ec-toc-num">9</span><span class="ec-toc-text">Integral points<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
+<li class="ec-toc-chapter"><a href="10-selmer-sha.html"><span class="ec-toc-num">10</span><span class="ec-toc-text">Twisting, Selmer, and Tate&ndash;Shafarevich<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
+<li class="ec-toc-chapter"><a href="11-complex-multiplication.html"><span class="ec-toc-num">11</span><span class="ec-toc-text">Complex multiplication<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
+<li class="ec-toc-chapter"><a href="12-tate-curve.html"><span class="ec-toc-num">12</span><span class="ec-toc-text">The Tate curve<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
+<li class="ec-toc-chapter"><a href="13-l-functions-bsd.html"><span class="ec-toc-num">13</span><span class="ec-toc-text">The \(L\)-function and BSD<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
+<li class="ec-toc-chapter"><a href="14-sato-tate.html"><span class="ec-toc-num">14</span><span class="ec-toc-text">The Sato&ndash;Tate conjecture<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
+<li class="ec-toc-chapter"><a href="15-modular-curves.html"><span class="ec-toc-num">15</span><span class="ec-toc-text">Introduction to modular curves<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
+</ol>
+<a class="ec-toc-glossary" href="glossary.html">Glossary</a>
+</nav>
+<button class="ec-menu" type="button" aria-controls="ec-sidebar" aria-expanded="false">Contents</button>
+<nav class="ec-pager ec-pager-top" aria-label="Chapters"><a class="ec-pager-prev" rel="prev" href="03-curves.html"><span class="ec-pager-label">Previous</span><span class="ec-pager-title">3. Algebraic curves</span></a><a class="ec-pager-next" rel="next" href="05-finite-fields.html"><span class="ec-pager-label">Next</span><span class="ec-pager-title">5. Elliptic curves over finite fields</span></a></nav>
+</div>
+<div id="content" class="content">
+<h1 class="title"><span class="ec-chapter-label">Chapter 4</span>Elliptic curves as algebraic curves</h1>
+<div class="sources" id="org3221054">
+<p>
+This chapter follows [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Chapter III], with some material from
+[<a class="ec-cite" href="#bib-Milne20">Mil20</a>, Sections II.1, II.2, II.5 and II.6], and [<a class="ec-cite" href="#bib-Voight21">Voi21</a>, Chapters 2, 3, 5
+and 10] for quaternion algebras and their orders.  As in the previous two chapters, we
+do not assume that the ground field is perfect.
+</p>
+
+</div>
+
+<p>
+In Chapter 1 we met complex tori \(\C/\Lambda\): compact Riemann surfaces that are also
+abelian groups.  The uniformization theorem (Theorem <a href="01-riemann-surfaces.html#thm-rs-uniformization">1.7.1</a>) identifies
+each of them with a smooth plane cubic \(E_{A,B}(\C)\), and under this identification
+the isogenies of Section <a href="01-riemann-surfaces.html#sec-rs-isogenies">1.3</a> and the torsion subgroups
+\((\C/\Lambda)[m] \cong (\Z/m\Z)^2\) of Example <a href="01-riemann-surfaces.html#eg-rs-mult-by-m">1.3.4</a> become statements about
+cubic curves.  The goal of this chapter is to recover that whole picture over an
+arbitrary field \(k\), where there is no lattice to divide by.  The tools are the ones
+developed in Chapters 2 and 3: the Riemann&#x2013;Roch theorem replaces the Weierstrass
+\(\wp\)-function, the Picard group replaces the quotient \(\C/\Lambda\), and the
+invariant differential replaces \(dz\).  Alongside, we compare \(E\) with the multiplicative
+group \(\Gm\), whose invariant differential, torsion points and Tate module are elementary
+(Examples <a href="03-curves.html#eg-crv-gm-differential">3.4.7</a> and <a href="03-curves.html#eg-crv-gm-mult">3.4.8</a>); the comparison is summarized at
+the end of Section <a href="#sec-ec-tate">4.5</a>.
+</p>
+
+<p>
+We keep the notation of the previous chapters: \(k\) is an arbitrary field,
+\(\ksep \subseteq \kbar\) are a separable and an algebraic closure, and
+\(\Gal_k \coloneqq \Gal(\ksep/k)\).  For a \(k\)-variety \(X\) and a field
+\(L \supseteq k\), recall that \(X_L\) is the base extension.
+</p>
+
+<div id="outline-container-sec-ec-weierstrass" class="outline-2">
+<h2 id="sec-ec-weierstrass"><span class="section-number" id="s4.1">4.1</span> Weierstrass equations</h2>
+<div class="outline-text-2" id="text-sec-ec-weierstrass">
+<div class="ec-thm ec-definition" id="def-ec-elliptic-curve">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Definition 4.1.1</span>.</span> An <dfn class="ec-cdef" id="gls-elliptic-curve" data-gls="elliptic-curve">elliptic curve</dfn> over \(k\) is a pair \((E, O)\), where \(E\) is a nice
+curve over \(k\) of genus \(1\) and \(O \in E(k)\). We usually write \(E\) for
+the pair. A morphism of elliptic curves \((E, O) \to (E', O')\) is a morphism
+of curves \(E \to E'\) sending \(O\) to \(O'\).
+</p>
+</div>
+
+<p>
+The rational point is part of the data. A nice curve of genus \(1\) need not
+have one: by a theorem of Selmer [<a class="ec-cite" href="#bib-Selmer-51">Sel51</a>], the smooth plane cubic
+\(3X^3 + 4Y^3 + 5Z^3 = 0\) over \(\Q\), which has genus \(1\) by Corollary
+<a href="03-curves.html#cor-crv-plane-genus">3.7.7</a>, has no rational points, although it has points over \(\R\)
+and over every \(\Q_p\). Such curves will reappear in Section <a href="#sec-ec-selmer">4.8</a>
+and in Chapter 10.
+</p>
+
+<p>
+The model for every elliptic curve is the smooth plane cubic \(y^2 = h(x)\) of
+Example <a href="03-curves.html#eg-crv-y-squared-h">3.7.9</a>.  In characteristic \(2\) that equation is always singular,
+by the same example, so we need a more general one.
+</p>
+
+<div class="ec-thm ec-definition" id="def-ec-weierstrass">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Definition 4.1.2</span>.</span> A <dfn class="ec-cdef" id="gls-weierstrass-equation" data-gls="weierstrass-equation">Weierstrass equation</dfn> over \(k\) is a projective plane cubic
+</p>
+\begin{equation}
+\label{eq:ec-weierstrass}
+Y^2Z + a_1XYZ + a_3YZ^2 = X^3 + a_2X^2Z + a_4XZ^2 + a_6Z^3 \tag{4.1.1}
+\end{equation}
+<p>
+with \(a_1, a_2, a_3, a_4, a_6 \in k\), which on the affine patch \(Z \neq 0\)
+reads \(y^2 + a_1xy + a_3y = x^3 + a_2x^2 + a_4x + a_6\). Intersecting with
+<dfn class="ec-cdef" id="gls-line-at-infinity" data-gls="line-at-infinity">the line at infinity</dfn> \(Z = 0\) leaves \(X^3 = 0\), so the only point at
+infinity is the flex \(O \coloneqq (0 : 1 : 0)\). We define the
+<dfn class="ec-cdef" id="gls-b-invariants" data-gls="b-invariants">\(b\)-invariants</dfn> and <dfn class="ec-cdef" id="gls-c-invariants" data-gls="c-invariants">\(c\)-invariants</dfn> of the Weierstrass equation by
+</p>
+\begin{align*}
+b_2 &\coloneqq a_1^2 + 4a_2, & b_4 &\coloneqq 2a_4 + a_1a_3, \\
+b_6 &\coloneqq a_3^2 + 4a_6, & b_8 &\coloneqq a_1^2a_6 + 4a_2a_6 - a_1a_3a_4 + a_2a_3^2 - a_4^2, \\
+c_4 &\coloneqq b_2^2 - 24b_4, & c_6 &\coloneqq -b_2^3 + 36b_2b_4 - 216b_6,
+\end{align*}
+<p>
+the <dfn class="ec-cdef" id="gls-discriminant" data-gls="discriminant">discriminant</dfn>
+\(\Delta \coloneqq -b_2^2b_8 - 8b_4^3 - 27b_6^2 + 9b_2b_4b_6\), and, when
+\(\Delta \neq 0\), the <dfn class="ec-cdef" id="gls-j-invariant" data-gls="j-invariant">\(j\)-invariant</dfn> \(j \coloneqq c_4^3/\Delta\).  The
+<dfn class="ec-cdef" id="gls-invariant-differential" data-gls="invariant-differential">invariant differential</dfn> is
+</p>
+\begin{equation*}
+\omega \coloneqq \frac{dx}{2y + a_1x + a_3} = \frac{dy}{3x^2 + 2a_2x + a_4 - a_1y}.
+\end{equation*}
+<p>
+These quantities satisfy \(4b_8 = b_2b_6 - b_4^2\) and \(1728\Delta = c_4^3 - c_6^2\).
+</p>
+</div>
+
+<p>
+A <dfn class="ec-cdef" id="gls-flex" data-gls="flex">flex</dfn> of a plane cubic is a smooth \(\kbar\)-point \(P\) whose tangent line meets
+the cubic at \(P\) with multiplicity \(3\); the tangent line at \(O\) is \(Z = 0\).  The two
+expressions for \(\omega\) agree because
+\(f \coloneqq y^2 + a_1xy + a_3y - x^3 - a_2x^2 - a_4x - a_6\) satisfies
+\(\frac{\partial f}{\partial x}\,dx + \frac{\partial f}{\partial y}\,dy = 0\), and
+\(\partial f/\partial y = 2y + a_1x + a_3\).
+</p>
+
+<div class="ec-thm ec-example" id="eg-ec-magma-invariants">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Example 4.1.3</span> <span class="ec-thm-title">(Recalling the formulas in Magma)</span>.</span> Over the field \(\Q(a_1, a_2, a_3, a_4, a_6)\) of rational functions in the
+coefficients, \eqref{eq:ec-weierstrass} is an elliptic curve, and Magma prints
+the quantities of Definition <a href="#def-ec-weierstrass">4.1.2</a> for it as polynomials in
+the \(a_i\) [<a class="ec-cite" href="#bib-Magma">BCP97</a>].
+</p>
+<div class="org-src-container">
+<pre class="src src-magma">K&lt;a1,a2,a3,a4,a6&gt; := <span class="org-function-name">FunctionField</span>(<span class="org-function-name">Rationals</span>(), 5);
+E := <span class="org-function-name">EllipticCurve</span>([a1, a2, a3, a4, a6]);
+<span class="org-function-name">aInvariants</span>(E);            <span class="org-comment">// [a1, a2, a3, a4, a6]
+</span><span class="org-function-name">bInvariants</span>(E);            <span class="org-comment">// [b2, b4, b6, b8]
+</span><span class="org-function-name">cInvariants</span>(E);            <span class="org-comment">// [c4, c6]</span>
+</pre>
+</div>
+<p>
+Printing <code>Discriminant(E)</code> and <code>jInvariant(E)</code> gives expressions too long to read, but the
+identities of Definition <a href="#def-ec-weierstrass">4.1.2</a> fit on one line each.  A <code>true</code> here is an
+identity of rational functions with integer coefficients, so it holds for every Weierstrass
+equation over every field.
+</p>
+<div class="org-src-container">
+<pre class="src src-magma">b2, b4, b6, b8 := <span class="org-function-name">Explode</span>(<span class="org-function-name">bInvariants</span>(E));
+c4, c6 := <span class="org-function-name">Explode</span>(<span class="org-function-name">cInvariants</span>(E));
+4*b8 <span class="org-keyword">eq</span> b2*b6 - b4^2;
+1728*<span class="org-function-name">Discriminant</span>(E) <span class="org-keyword">eq</span> c4^3 - c6^2;
+<span class="org-function-name">jInvariant</span>(E) <span class="org-keyword">eq</span> c4^3/<span class="org-function-name">Discriminant</span>(E);
+</pre>
+</div>
+</div>
+
+<div class="ec-thm ec-lemma" id="lem-ec-short-form">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Lemma 4.1.4</span> <span class="ec-thm-title">(Short Weierstrass form)</span>.</span> If \(\operatorname{char} k \neq 2\), completing the square in \(y\), and then, if also
+\(\operatorname{char} k \neq 3\), completing the cube in \(x\), brings the equation to the
+short form
+</p>
+\begin{equation}
+\label{eq:ec-short-weierstrass}
+y^2 = x^3 + Ax + B, \tag{4.1.2}
+\end{equation}
+<p>
+whose discriminant, \(j\)-invariant and invariant differential are
+</p>
+\begin{equation*}
+\Delta = -16(4A^3 + 27B^2),
+\qquad
+j = 1728\,\frac{4A^3}{4A^3 + 27B^2},
+\qquad
+\omega = \frac{dx}{2y}.
+\end{equation*}
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+Both steps are instances of the change of variables
+\(x = u^2x' + r\), \(y = u^3y' + su^2x' + t\) with \(u \in k^\times\) and \(r, s, t \in k\),
+which reappears in Theorem <a href="#thm-ec-weierstrass-model">4.1.6</a>.  Magma performs one with
+<code>Transformation</code>, in the inverse convention: our \((u, r, s, t)\) is Magma's tuple
+\([-r/u^2,\ -s/u,\ (rs - t)/u^3,\ 1/u]\).  We translate once and for all, and use <code>subst</code>
+again in the proofs below; the blocks of this section run in one session, in order.
+</p>
+<div class="org-src-container">
+<pre class="src src-magma"><span class="org-comment">// Weierstrass change of variables, as above:
+//   x = u^2*x' + r,  y = u^3*y' + s*u^2*x' + t.
+// Magma's Transformation inverts it, so translate the tuple.
+</span>subst := <span class="org-builtin">func</span>&lt; E,u,r,s,t | <span class="org-function-name">Transformation</span>(E,
+  [<span class="org-function-name">BaseRing</span>(E) | -r/u^2, -s/u, (r*s - t)/u^3, 1/u]) &gt;;
+</pre>
+</div>
+
+<p>
+If \(\operatorname{char} k \neq 2\), take \(u = 1\), \(r = 0\), \(s = -a_1/2\) and
+\(t = -a_3/2\).  This makes the new \(a_1\) and \(a_3\) vanish, and the equation becomes
+\(y^2 = x^3 + \frac{b_2}{4}x^2 + \frac{b_4}{2}x + \frac{b_6}{4}\).
+</p>
+<div class="org-src-container">
+<pre class="src src-magma">K&lt;a1,a2,a3,a4,a6&gt; := <span class="org-function-name">FunctionField</span>(<span class="org-function-name">Rationals</span>(), 5);
+E := <span class="org-function-name">EllipticCurve</span>([a1,a2,a3,a4,a6]);
+b2, b4, b6, b8 := <span class="org-function-name">Explode</span>(<span class="org-function-name">bInvariants</span>(E));
+c4, c6 := <span class="org-function-name">Explode</span>(<span class="org-function-name">cInvariants</span>(E));
+E1 := <span class="org-function-name">subst</span>(E, 1, 0, -a1/2, -a3/2);
+<span class="org-function-name">aInvariants</span>(E1) <span class="org-keyword">eq</span> [K | 0, b2/4, 0, b4/2, b6/4];   <span class="org-comment">// true</span>
+</pre>
+</div>
+
+<p>
+If also \(\operatorname{char} k \neq 3\), take \(u = 1\) and \(r = -b_2/12\).  This makes
+the new \(a_2\) vanish and leaves \eqref{eq:ec-short-weierstrass}, with
+\(A = -c_4/48\) and \(B = -c_6/864\).
+</p>
+<div class="org-src-container">
+<pre class="src src-magma">E2 := <span class="org-function-name">subst</span>(E1, 1, -b2/12, 0, 0);
+A := -c4/48;  B := -c6/864;
+<span class="org-function-name">aInvariants</span>(E2) <span class="org-keyword">eq</span> [K | 0, 0, 0, A, B];          <span class="org-comment">// true
+</span><span class="org-function-name">Discriminant</span>(E2) <span class="org-keyword">eq</span> -16*(4*A^3 + 27*B^2);        <span class="org-comment">// true
+</span><span class="org-function-name">jInvariant</span>(E2) <span class="org-keyword">eq</span> 1728*4*A^3/(4*A^3 + 27*B^2);   <span class="org-comment">// true
+</span><span class="org-function-name">Discriminant</span>(E2) <span class="org-keyword">eq</span> <span class="org-function-name">Discriminant</span>(E);             <span class="org-comment">// true</span>
+</pre>
+</div>
+
+<p>
+The last line records that neither substitution changes \(\Delta\), as both have
+\(u = 1\); the same holds for \(j\) and for \(\omega\).  The displayed formulas are those of
+Definition <a href="#def-ec-weierstrass">4.1.2</a> read off the short form.
+</p>
+</details>
+
+<p>
+Weierstrass equations with non-zero discriminant, together with the <dfn class="ec-cdef" id="gls-point-at-infinity" data-gls="point-at-infinity">point at infinity</dfn>,
+define elliptic curves over any field \(k\).
+</p>
+<div class="ec-thm ec-proposition" id="prop-ec-weierstrass-smooth">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Proposition 4.1.5</span>.</span> Let \(E\) be the plane cubic \eqref{eq:ec-weierstrass}.
+</p>
+<ol class="org-ol">
+<li>\(E\) is smooth if and only if \(\Delta \neq 0\).</li>
+<li>If \(\Delta \neq 0\), then \((E, O)\) is an elliptic curve over \(k\), and the invariant
+differential satisfies \(\div(\omega) = 0\).</li>
+</ol>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+Write \(F\) for the cubic form in \eqref{eq:ec-weierstrass}.  At \(O\) we have
+\(\partial F/\partial Z = Y^2 = 1\), so \(O\) is always a smooth point.  That a singular
+point of the affine part exists if and only if \(\Delta = 0\) is
+[<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Proposition III.1.4(a)], a computation over \(\kbar\); when
+\(\operatorname{char} k \neq 2, 3\) it is Example <a href="03-curves.html#eg-crv-y-squared-h">3.7.9</a>, by
+\eqref{eq:ec-short-weierstrass}.
+</p>
+
+<p>
+If \(E\) is smooth, it is nice by Corollary <a href="03-curves.html#cor-crv-smooth-plane-nice">3.7.5</a>, of genus \(1\) by
+Corollary <a href="03-curves.html#cor-crv-plane-genus">3.7.7</a>, and \(O \in E(k)\).  Finally, let
+\(\omega = dx/(\partial f/\partial y)\), so \(\div(\omega) = (3 - 3)O = 0\) by
+Proposition <a href="03-curves.html#prop-crv-plane-canonical">3.7.6</a>.
+</p>
+</details>
+
+<p>
+The converse is the first application of the Riemann&#x2013;Roch theorem: every
+elliptic curve is a Weierstrass cubic. Example <a href="03-curves.html#eg-crv-rr-cubic">3.5.7</a> already contains
+the idea, run backwards. The following is [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Proposition
+III.3.1].
+</p>
+
+<div class="ec-thm ec-theorem" id="thm-ec-weierstrass-model">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Theorem 4.1.6</span>.</span> Let \((E, O)\) be an elliptic curve over \(k\).
+</p>
+<ol class="org-ol">
+<li><a id="it-ec-model-existence"></a> There are \(x, y \in k(E)\) such that the morphism \(E \to \PP^2_k\) given by
+\((x : y : 1)\) is an isomorphism onto a smooth Weierstrass cubic \eqref{eq:ec-weierstrass}, sending \(O\) to
+\((0 : 1 : 0)\).  Moreover \(k(E) = k(x, y)\) and \([k(E) : k(x)] = 2\).</li>
+<li><p>
+<a id="it-ec-model-uniqueness"></a> Any two such pairs, \((x, y)\) and \((x', y')\), are related by
+</p>
+   \begin{equation}
+   \label{eq:ec-change-of-variables}
+   x = u^2x' + r, \qquad y = u^3y' + su^2x' + t, \tag{4.1.3}
+\end{equation}
+<p>
+for some \(u \in k^\times\) and \(r, s, t \in k\).
+</p></li>
+</ol>
+</div>
+
+<p>
+The functions \(x\) and \(y\) are <dfn class="ec-cdef" id="gls-weierstrass-coordinates" data-gls="weierstrass-coordinates">Weierstrass coordinates</dfn> on \(E\).
+</p>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+Since \(E\) has genus \(1\), Corollary <a href="03-curves.html#cor-crv-rr">3.5.5</a> gives \(\ell(nO) = n\) for every
+\(n \geq 1\).  So \(\mcL(O) = k\), and we may choose \(x \in \mcL(2O)\) and \(y \in \mcL(3O)\) with
+\(\{1, x\}\) and \(\{1, x, y\}\) bases; then \(\ord_O(x) = -2\) and \(\ord_O(y) = -3\).  The
+seven functions \(1, x, y, x^2, xy, y^2, x^3\) lie in the \(6\)-dimensional space
+\(\mcL(6O)\), so they satisfy a linear relation over \(k\).  The only functions in the list
+with a pole of order \(6\) are \(y^2\) and \(x^3\), so both appear with non-zero
+coefficients, and rescaling \(x\) and \(y\) by elements of \(k^\times\) gives a Weierstrass
+equation.  Let \(C\) be the cubic it defines.  The rational map
+\(\varphi \coloneqq (x : y : 1)\colon E \dashrightarrow C\) is a morphism by
+Proposition <a href="03-curves.html#prop-crv-extend">3.2.1</a>, and \(\varphi(O) = (x/y : 1 : 1/y)(O) = (0 : 1 : 0)\).
+</p>
+
+<p>
+The morphism \(x\colon E \to \PP^1_k\) pulls \(\infty\) back to \(2O\), so it
+has degree \(2\) by Proposition <a href="03-curves.html#prop-crv-ramification">3.2.8</a>; likewise \(y\) has
+degree \(3\). Hence \([k(E) : k(x, y)]\) divides \(2\) and \(3\), so \(k(E) =
+k(x, y)\) and \(\varphi\) is birational onto \(C\). If \(C\) were singular,
+then \(C_{\kbar}\), and so \(E_{\kbar}\), would be birational to
+\(\PP^1_{\kbar}\) [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Proposition III.1.6]; compare Example
+<a href="02-varieties.html#eg-var-nodal-cubic">2.3.5</a>. By Corollary <a href="03-curves.html#cor-crv-degree-one">3.2.6</a> this would make the nice
+curve \(E_{\kbar}\) isomorphic to \(\PP^1_{\kbar}\), which has genus \(0\),
+whereas \(E_{\kbar}\) has genus \(1\) by Corollary <a href="03-curves.html#cor-crv-rr">3.5.5</a>. Since the genus
+is a geometric invariant, \(C\) is smooth, and \(\varphi\) is an isomorphism by
+Corollary <a href="03-curves.html#cor-crv-degree-one">3.2.6</a>.
+</p>
+
+<p>
+For part <a href="#it-ec-model-uniqueness">2</a>, \(\{1, x\}\) and \(\{1, x'\}\) are both bases of \(\mcL(2O)\), and \(\{1, x, y\}\)
+and \(\{1, x', y'\}\) of \(\mcL(3O)\).  So \(x = u_1x' + r\) and \(y = u_2y' + s_2x' + t\) with
+\(u_1, u_2 \in k^\times\).  Comparing the coefficients of \(x'^3\) and \(y'^2\) in the two
+equations gives \(u_1^3 = u_2^2\), and \(u \coloneqq u_2/u_1\) does the job.
+</p>
+</details>
+
+<div class="ec-thm ec-proposition" id="prop-ec-change-of-variables">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Proposition 4.1.7</span>.</span> Under the change of variables \eqref{eq:ec-change-of-variables}, the quantities of the
+primed equation satisfy
+</p>
+\begin{equation*}
+u^4c_4' = c_4, \qquad u^6c_6' = c_6, \qquad u^{12}\Delta' = \Delta, \qquad j' = j,
+\qquad u^{-1}\omega' = \omega.
+\end{equation*}
+<p>
+In particular the \(j\)-invariant and the class of \(\Delta\) in
+\(k^\times/k^{\times 12}\) are invariants of the elliptic curve \(E\).  In the short form
+\eqref{eq:ec-short-weierstrass}, the only changes of variables preserving the form are
+\(x = u^2x'\), \(y = u^3y'\), and they give \(A' = u^{-4}A\) and \(B' = u^{-6}B\).
+</p>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+This is a direct computation, which we can do in Magma: over the function field in the five
+coefficients and the four parameters of \eqref{eq:ec-change-of-variables}, a <code>true</code> is an
+identity of rational functions, hence holds for every Weierstrass equation over every field.
+</p>
+<div class="org-src-container">
+<pre class="src src-magma">L&lt;a1,a2,a3,a4,a6,u,r,s,t&gt; := <span class="org-function-name">FunctionField</span>(<span class="org-function-name">Rationals</span>(), 9);
+E := <span class="org-function-name">EllipticCurve</span>([a1,a2,a3,a4,a6]);
+Ep := <span class="org-function-name">subst</span>(E, u, r, s, t);
+c4, c6 := <span class="org-function-name">Explode</span>(<span class="org-function-name">cInvariants</span>(E));
+c4p, c6p := <span class="org-function-name">Explode</span>(<span class="org-function-name">cInvariants</span>(Ep));
+u^4*c4p <span class="org-keyword">eq</span> c4;                              <span class="org-comment">// true
+</span>u^6*c6p <span class="org-keyword">eq</span> c6;                              <span class="org-comment">// true
+</span>u^12*<span class="org-function-name">Discriminant</span>(Ep) <span class="org-keyword">eq</span> <span class="org-function-name">Discriminant</span>(E);   <span class="org-comment">// true
+</span><span class="org-function-name">jInvariant</span>(Ep) <span class="org-keyword">eq</span> <span class="org-function-name">jInvariant</span>(E);            <span class="org-comment">// true</span>
+</pre>
+</div>
+<p>
+For \(\omega\), differentiating \(x = u^2x' + r\) gives \(dx = u^2\,dx'\), while
+\(2y + a_1x + a_3 = u^3(2y' + a_1'x' + a_3')\), so \(\omega = u^{-1}\omega'\).
+</p>
+
+<p>
+A change of variables preserving the short form \eqref{eq:ec-short-weierstrass} must have
+\(a_1' = a_3' = 0\), forcing \(s = t = 0\), and then \(a_2' = 0\) forces \(r = 0\).  What is
+left rescales \(A\) and \(B\).
+</p>
+<div class="org-src-container">
+<pre class="src src-magma">M&lt;A,B,u&gt; := <span class="org-function-name">FunctionField</span>(<span class="org-function-name">Rationals</span>(), 3);
+E := <span class="org-function-name">EllipticCurve</span>([M | 0, 0, 0, A, B]);
+<span class="org-function-name">aInvariants</span>(<span class="org-function-name">subst</span>(E, u, 0, 0, 0));   <span class="org-comment">// [0, 0, 0, A/u^4, B/u^6]</span>
+</pre>
+</div>
+<p>
+That is \(A' = u^{-4}A\) and \(B' = u^{-6}B\).
+</p>
+</details>
+
+<div class="ec-thm ec-remark" id="rem-ec-complex-normalization">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Remark 4.1.8</span>.</span> Chapter 1 uses the short form \eqref{eq:ec-short-weierstrass}
+(Example <a href="01-riemann-surfaces.html#eg-rs-weierstrass-curve">1.6.3</a>), and the discriminant of Lemma <a href="#lem-ec-short-form">4.1.4</a>
+explains the condition \(4A^3 + 27B^2 \neq 0\) there.  Under the isomorphism of
+Theorem <a href="01-riemann-surfaces.html#thm-rs-uniformization">1.7.1</a> we have \(x = \wp_\Lambda(z)\) and
+\(y = \frac{1}{2}\wp_\Lambda'(z)\), so \(\omega = \wp_\Lambda'(z)\,dz/\wp_\Lambda'(z) = dz\): the
+invariant differential is the translation-invariant differential \(dz\) on \(\C/\Lambda\).
+With \(A = -15G_4(\Lambda)\) and \(B = -35G_6(\Lambda)\), the \(j\)-invariant becomes a
+function of the lattice, and by Proposition <a href="#prop-ec-change-of-variables">4.1.7</a> a function on
+\(\SL_2(\Z)\backslash\bbH\) (Proposition <a href="01-riemann-surfaces.html#prop-rs-tori-iso-classes">1.8.1</a>).
+</p>
+</div>
+
+<p>
+The \(j\)-invariant classifies elliptic curves up to isomorphism over \(\kbar\), but not
+over \(k\).  The failure is already visible in the short form.  Suppose
+\(\operatorname{char} k \neq 2\), let \(E\colon y^2 = x^3 + Ax + B\) and let
+\(d \in k^\times\).  The <dfn class="ec-cdef" id="gls-quadratic-twist" data-gls="quadratic-twist">quadratic twist</dfn> of \(E\) by \(d\) is
+</p>
+\begin{equation*}
+E^d\colon y^2 = x^3 + d^2Ax + d^3B,
+\end{equation*}
+<p>
+which is \(dy^2 = x^3 + Ax + B\) in the coordinates \(dx\) and \(d^2y\).  So
+\((x, y) \mapsto (dx, d^{3/2}y)\) is an isomorphism \(E \to E^d\) over \(k(\sqrt{d})\), and
+\(j(E^d) = j(E)\).  Suppose now that \(j(E) \neq 0, 1728\), that is \(AB \neq 0\).  By
+Proposition <a href="#prop-ec-change-of-variables">4.1.7</a> an isomorphism \(E \to E^d\) over \(k\) would be
+a change of variables \(x = u^2x'\), \(y = u^3y'\) with \(u^4 = d^{-2}\) and
+\(u^6 = d^{-3}\), forcing \(u^2 = d^{-1}\).  So \(E\) and \(E^d\) are isomorphic over \(k\)
+exactly when \(d \in k^{\times 2}\), and the quadratic twists of \(E\) are indexed by
+\(d \in k^\times/k^{\times 2}\).  They all share one \(j\)-invariant.  For \(j = 0\) and
+\(j = 1728\) the curve has extra automorphisms and there are more twists than these; see
+Theorem <a href="#thm-ec-automorphisms">4.7.11</a> and Chapter 10.
+</p>
+
+<div class="ec-thm ec-example" id="eg-ec-quadratic-twist">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Example 4.1.9</span>.</span> Take \(E\colon y^2 = x^3 + x + 1\) over \(\Q\) and \(d = -1\), so that
+\(E^{-1}\colon y^2 = x^3 + x - 1\).  Here \(d^6 = 1\), so the two curves have the same
+discriminant \(-496\) as well as the same \(j\)-invariant \(6912/31\); they are nonetheless
+not isomorphic over \(\Q\), because \(-1 \notin \Q^{\times 2}\).  They become isomorphic
+over \(\Q(i)\).  So \(\Delta\) and \(j\) together do not determine an elliptic curve up to
+isomorphism over \(k\).
+</p>
+<div class="org-src-container">
+<pre class="src src-magma">E := <span class="org-function-name">EllipticCurve</span>([<span class="org-function-name">Rationals</span>() | 0, 0, 0, 1, 1]);
+Ed := <span class="org-function-name">QuadraticTwist</span>(E, -1);
+<span class="org-function-name">aInvariants</span>(Ed);                     <span class="org-comment">// [0, 0, 0, 1, -1]
+</span><span class="org-function-name">jInvariant</span>(Ed) <span class="org-keyword">eq</span> <span class="org-function-name">jInvariant</span>(E);     <span class="org-comment">// true
+</span><span class="org-function-name">Discriminant</span>(Ed) <span class="org-keyword">eq</span> <span class="org-function-name">Discriminant</span>(E); <span class="org-comment">// true
+</span><span class="org-function-name">IsIsomorphic</span>(E, Ed);                 <span class="org-comment">// false
+</span>K&lt;i&gt; := <span class="org-function-name">QuadraticField</span>(-1);
+<span class="org-function-name">IsIsomorphic</span>(<span class="org-function-name">ChangeRing</span>(E, K), <span class="org-function-name">ChangeRing</span>(Ed, K));   <span class="org-comment">// true</span>
+</pre>
+</div>
+<p>
+The curves \(y^2 = x^3 - x\) and \(y^2 = x^3 + x\), which also share a \(j\)-invariant, are
+<b>not</b> quadratic twists of one another: each is its own twist by \(-1\).  They are quartic
+twists, the extra twists that \(j = 1728\) admits.
+</p>
+</div>
+
+<p>
+Twists in general are the subject of Chapter 10; the cubic twists of
+Section <a href="#sec-ec-selmer">4.8</a> are the other case we meet in this chapter.
+</p>
+
+<div class="ec-thm ec-proposition" id="prop-ec-j-invariant">
+<p><span class="ec-thm-head"><span class="ec-thm-name">Proposition 4.1.10</span>.</span> </p>
+<ol class="org-ol">
+<li><a id="it-ec-j-isomorphism"></a> Two elliptic curves over \(k\) are isomorphic over \(\kbar\) if and only if they have
+the same \(j\)-invariant.</li>
+<li><a id="it-ec-j-existence"></a> Every \(j_0 \in k\) is the \(j\)-invariant of an elliptic curve over \(k\), namely the
+one listed here, where \(c \coloneqq 1/(j_0 - 1728)\).</li>
+</ol>
+
+<table>
+
+
+<colgroup>
+<col  class="org-left">
+
+<col  class="org-left">
+
+<col  class="org-left">
+
+<col  class="org-left">
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">\(j_0\)</th>
+<th scope="col" class="org-left">Weierstrass equation</th>
+<th scope="col" class="org-left">\(\Delta\)</th>
+<th scope="col" class="org-left">needs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">\(\neq 0, 1728\)</td>
+<td class="org-left">\(y^2 + xy = x^3 - 36cx - c\)</td>
+<td class="org-left">\(j_0^2c^3\)</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">\(0\)</td>
+<td class="org-left">\(y^2 + y = x^3\)</td>
+<td class="org-left">\(-27\)</td>
+<td class="org-left">\(\operatorname{char} k \neq 3\)</td>
+</tr>
+
+<tr>
+<td class="org-left">\(1728\)</td>
+<td class="org-left">\(y^2 = x^3 + x\)</td>
+<td class="org-left">\(-64\)</td>
+<td class="org-left">\(\operatorname{char} k \neq 2\)</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+In characteristic \(2\) and \(3\) we have \(0 = 1728\), and exactly one of the last two rows
+applies, so the single special value is covered.
+</p>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+In part <a href="#it-ec-j-isomorphism">1</a>, an isomorphism over \(\kbar\) is a change of variables
+\eqref{eq:ec-change-of-variables} over \(\kbar\), so it preserves \(j\) by
+Proposition <a href="#prop-ec-change-of-variables">4.1.7</a>.  For the converse, suppose
+\(\operatorname{char} k \neq 2, 3\) and put both curves in the short form
+\eqref{eq:ec-short-weierstrass}.  The changes of variables preserving that form are
+\(x = u^2x'\), \(y = u^3y'\), giving \(A' = u^{-4}A\) and \(B' = u^{-6}B\), so we must
+produce \(u \in \kbar^\times\) with \(u^4 = A/A'\) and \(u^6 = B/B'\).  Now \(j = j'\) means
+\(A^3B'^2 = A'^3B^2\).  If \(A = 0\), then \(A' = 0\), and \(u^6 = B/B'\) will do.  If
+\(B = 0\), then \(B' = 0\), and \(u^4 = A/A'\) will do.  Otherwise take \(u^4 = A/A'\); then
+\((u^6)^2 = (A/A')^3 = (B/B')^2\), and replacing \(u\) by \(\sqrt{-1}\,u\) if necessary
+gives \(u^6 = B/B'\).  The characteristics \(2\) and \(3\) need the normal forms of
+Proposition <a href="#prop-ec-normal-forms">4.1.12</a>, and are finished after it.
+</p>
+
+<p>
+For part <a href="#it-ec-j-existence">2</a>, the first row has \(b_2 = 1\), \(b_4 = -72c\), \(b_6 = -4c\) and
+\(b_8 = -c - 1296c^2\), whence \(c_4 = 1 + 1728c\) and \(\Delta = j_0^2c^3\).  Since
+\(j_0 = 1728 + 1/c\) we have \(c_4 = j_0c\), so \(j = c_4^3/\Delta = j_0^3c^3/(j_0^2c^3) = j_0\).
+The second row has \(b_6 = 1\) as its only non-zero \(b\), so \(\Delta = -27\) and
+\(c_4 = 0\), giving \(j = 0\); the third has \(b_4 = 2\) and \(b_8 = -1\), so
+\(\Delta = -64\) and \(c_4 = -48\), giving \(j = 1728\).  Each row asks only that its own
+\(\Delta\) be non-zero, which is the condition listed.
+</p>
+</details>
+
+<div class="ec-thm ec-remark" id="rem-ec-singular-cubics">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Remark 4.1.11</span>.</span> If \(\Delta = 0\), the cubic \eqref{eq:ec-weierstrass} has exactly one singular point
+\(S\).  It is a node (two distinct tangent directions) if \(c_4 \neq 0\), and a cusp (one
+tangent direction) if \(c_4 = 0\) [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Proposition III.1.4(a)].  In both
+cases the curve is birational to \(\PP^1\), as for the nodal cubic of
+Example <a href="02-varieties.html#eg-var-nodal-cubic">2.3.5</a> [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Proposition III.1.6].  These curves
+matter to us because an elliptic curve over \(\Q\) acquires such a singularity when its
+equation is reduced modulo a prime dividing \(\Delta\) (Chapter 6); see
+Proposition <a href="#prop-ec-singular-group">4.2.11</a>.
+</p>
+</div>
+
+<p>
+In characteristic \(2\) and \(3\) the short form \eqref{eq:ec-short-weierstrass} is not
+available, and the general equation \eqref{eq:ec-weierstrass} carries too many coefficients
+to compute with.  The substitutions \eqref{eq:ec-change-of-variables} still cut it down to a
+short list of normal forms: two in each of these characteristics, according as \(j = 0\) or
+not.
+</p>
+
+<div class="ec-thm ec-proposition" id="prop-ec-normal-forms">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Proposition 4.1.12</span>.</span> Let \(E\) be an elliptic curve over \(k\).  Then the Weierstrass coordinates of
+Theorem <a href="#thm-ec-weierstrass-model">4.1.6</a> can be chosen so that the model
+\eqref{eq:ec-weierstrass} is the short form \eqref{eq:ec-short-weierstrass} when
+\(\operatorname{char} k \neq 2, 3\), and otherwise is the one listed here.
+</p>
+
+<table>
+
+
+<colgroup>
+<col  class="org-left">
+
+<col  class="org-left">
+
+<col  class="org-left">
+
+<col  class="org-left">
+
+<col  class="org-left">
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">\(\operatorname{char} k\)</th>
+<th scope="col" class="org-left">case</th>
+<th scope="col" class="org-left">Weierstrass equation</th>
+<th scope="col" class="org-left">\(\Delta\)</th>
+<th scope="col" class="org-left">\(j\)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">\(3\)</td>
+<td class="org-left">\(j(E) \neq 0\)</td>
+<td class="org-left">\(y^2 = x^3 + a_2x^2 + a_6\)</td>
+<td class="org-left">\(-a_2^3a_6\)</td>
+<td class="org-left">\(-a_2^3/a_6\)</td>
+</tr>
+
+<tr>
+<td class="org-left">\(3\)</td>
+<td class="org-left">\(j(E) = 0\)</td>
+<td class="org-left">\(y^2 = x^3 + a_4x + a_6\)</td>
+<td class="org-left">\(-a_4^3\)</td>
+<td class="org-left">\(0\)</td>
+</tr>
+
+<tr>
+<td class="org-left">\(2\)</td>
+<td class="org-left">\(j(E) \neq 0\)</td>
+<td class="org-left">\(y^2 + xy = x^3 + a_2x^2 + a_6\)</td>
+<td class="org-left">\(a_6\)</td>
+<td class="org-left">\(1/a_6\)</td>
+</tr>
+
+<tr>
+<td class="org-left">\(2\)</td>
+<td class="org-left">\(j(E) = 0\)</td>
+<td class="org-left">\(y^2 + a_3y = x^3 + a_4x + a_6\)</td>
+<td class="org-left">\(a_3^4\)</td>
+<td class="org-left">\(0\)</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+The case \(\operatorname{char} k \neq 2, 3\) is the completion of the square and of the cube
+that produced \eqref{eq:ec-short-weierstrass}.  In the two remaining characteristics we start from a
+model \eqref{eq:ec-weierstrass} and apply a substitution \eqref{eq:ec-change-of-variables},
+reading off the new coefficients from the transformation table
+[<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Table 3.1].  Nothing deep goes into the choice of \(u, r, s, t\): one
+only asks that certain coefficients become \(0\) or \(1\).  Each step below can be watched
+in Magma over the function field in the coefficients, in the characteristic at hand, with
+<code>subst</code> as defined above; the blocks run in one session, in order, and each redefines the
+\(a_i\) it needs.
+</p>
+
+<p>
+Suppose \(\operatorname{char} k = 3\).  Completing the square in \(y\) is
+\eqref{eq:ec-change-of-variables} with \(u = 1\), \(r = 0\), \(s = -a_1/2\) and
+\(t = -a_3/2\), and it gives \(y^2 = x^3 + a_2x^2 + a_4x + a_6\).
+</p>
+<div class="org-src-container">
+<pre class="src src-magma">K&lt;a1,a2,a3,a4,a6&gt; := <span class="org-function-name">FunctionField</span>(<span class="org-function-name">GF</span>(3), 5);
+E := <span class="org-function-name">EllipticCurve</span>([a1,a2,a3,a4,a6]);
+<span class="org-function-name">aInvariants</span>(<span class="org-function-name">subst</span>(E, 1, 0, -a1/2, -a3/2));   <span class="org-comment">// a1 = a3 = 0</span>
+</pre>
+</div>
+
+<p>
+For such an equation a direct computation in characteristic \(3\) gives \(c_4 = a_2^2\) and
+\(\Delta = a_2^2a_4^2 - a_2^3a_6 - a_4^3\).  So \(j = a_2^6/\Delta\), and \(j = 0\) if and
+only if \(a_2 = 0\).
+</p>
+<div class="org-src-container">
+<pre class="src src-magma">L&lt;a2,a4,a6&gt; := <span class="org-function-name">FunctionField</span>(<span class="org-function-name">GF</span>(3), 3);
+D := <span class="org-function-name">EllipticCurve</span>([L | 0, a2, 0, a4, a6]);
+<span class="org-function-name">cInvariants</span>(D)[1] <span class="org-keyword">eq</span> a2^2;                      <span class="org-comment">// true
+</span><span class="org-function-name">Discriminant</span>(D) <span class="org-keyword">eq</span> a2^2*a4^2 - a2^3*a6 - a4^3;  <span class="org-comment">// true
+</span><span class="org-function-name">jInvariant</span>(D) <span class="org-keyword">eq</span> a2^6/<span class="org-function-name">Discriminant</span>(D);          <span class="org-comment">// true</span>
+</pre>
+</div>
+
+<p>
+If \(j = 0\), the equation is already the one listed, with \(\Delta = -a_4^3\).  If
+\(j \neq 0\), then \(a_2 \neq 0\), and \(x = x' + a_4/a_2\) turns the coefficient of \(x'\)
+into \(2a_2(a_4/a_2) + a_4 = 3a_4 = 0\), leaving the equation listed for \(j \neq 0\); its
+discriminant is \(-a_2^3a_6\), so \(j = a_2^6/(-a_2^3a_6) = -a_2^3/a_6\).
+</p>
+<div class="org-src-container">
+<pre class="src src-magma">D2 := <span class="org-function-name">subst</span>(D, 1, a4/a2, 0, 0);
+a6new := <span class="org-function-name">aInvariants</span>(D2)[5];
+<span class="org-function-name">aInvariants</span>(D2);                    <span class="org-comment">// [0, a2, 0, 0, a6new]
+</span><span class="org-function-name">Discriminant</span>(D2) <span class="org-keyword">eq</span> -a2^3*a6new;    <span class="org-comment">// true
+</span><span class="org-function-name">jInvariant</span>(D2) <span class="org-keyword">eq</span> -a2^3/a6new;      <span class="org-comment">// true</span>
+</pre>
+</div>
+
+<p>
+Suppose \(\operatorname{char} k = 2\).  Now \(c_4 = a_1^4\), so \(j = a_1^{12}/\Delta\), and
+\(j = 0\) if and only if \(a_1 = 0\).  If \(j \neq 0\), the substitution
+</p>
+\begin{equation*}
+x = a_1^2x' + \frac{a_3}{a_1},
+\qquad
+y = a_1^3y' + \frac{a_1^2a_4 + a_3^2}{a_1^3}
+\end{equation*}
+<p>
+makes the new \(a_1\) equal to \(1\) and kills the new \(a_3\) and \(a_4\), leaving the
+equation listed for \(j \neq 0\); there \(b_2 = 1\), \(b_4 = b_6 = 0\) and \(b_8 = a_6\), so
+\(\Delta = a_6\) and \(j = 1/a_6\).
+</p>
+<div class="org-src-container">
+<pre class="src src-magma">K&lt;a1,a2,a3,a4,a6&gt; := <span class="org-function-name">FunctionField</span>(<span class="org-function-name">GF</span>(2), 5);
+E := <span class="org-function-name">EllipticCurve</span>([a1,a2,a3,a4,a6]);
+<span class="org-function-name">cInvariants</span>(E)[1] <span class="org-keyword">eq</span> a1^4;          <span class="org-comment">// true
+</span>F := <span class="org-function-name">subst</span>(E, a1, a3/a1, 0, (a1^2*a4 + a3^2)/a1^3);
+a6new := <span class="org-function-name">aInvariants</span>(F)[5];
+<span class="org-function-name">aInvariants</span>(F);                     <span class="org-comment">// [1, a2new, 0, 0, a6new]
+</span><span class="org-function-name">Discriminant</span>(F) <span class="org-keyword">eq</span> a6new;           <span class="org-comment">// true
+</span><span class="org-function-name">jInvariant</span>(F) <span class="org-keyword">eq</span> 1/a6new;           <span class="org-comment">// true</span>
+</pre>
+</div>
+
+<p>
+If \(j = 0\), then \(a_1 = 0\), and \(x = x' + a_2\), \(y = y'\) kills the new \(a_2\),
+since \(4a_2 = 0\), leaving the last equation of the table.
+</p>
+<div class="org-src-container">
+<pre class="src src-magma">M&lt;a2,a3,a4,a6&gt; := <span class="org-function-name">FunctionField</span>(<span class="org-function-name">GF</span>(2), 4);
+G := <span class="org-function-name">EllipticCurve</span>([M | 0, a2, a3, a4, a6]);
+G2 := <span class="org-function-name">subst</span>(G, 1, a2, 0, 0);
+<span class="org-function-name">aInvariants</span>(G2);            <span class="org-comment">// [0, 0, a3, a2^2 + a4, a2*a4 + a6]
+</span><span class="org-function-name">Discriminant</span>(G2) <span class="org-keyword">eq</span> a3^4;   <span class="org-comment">// true
+</span><span class="org-function-name">jInvariant</span>(G2) <span class="org-keyword">eq</span> 0;        <span class="org-comment">// true</span>
+</pre>
+</div>
+
+<p>
+There \(b_2 = b_4 = 0\) and \(b_6 = a_3^2\), so \(\Delta = -27a_3^4 = a_3^4\), while
+\(c_4 = 0\), so \(j = 0\).  This is [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Proposition A.1.1].
+</p>
+</details>
+
+<p>
+Since \(\Delta \neq 0\), the two characteristic \(2\) rows force \(a_6 \neq 0\) and
+\(a_3 \neq 0\) respectively; in characteristic \(2\) there is no smooth Weierstrass equation
+with \(a_1 = a_3 = 0\).
+</p>
+
+<p>
+The normal forms finish the converse in Proposition <a href="#prop-ec-j-invariant">4.1.10</a>, which we left
+open in characteristic \(2\) and \(3\).  Let \(E\) and \(E'\) be elliptic curves over
+\(\kbar\) with \(j(E) = j(E')\), both put in the form of the same row of the table; we must
+find a change of variables \eqref{eq:ec-change-of-variables} over \(\kbar\) carrying one to
+the other.  In each case the substitutions preserving the row's shape are constrained first,
+by asking that the coefficients the row sets to \(0\) or \(1\) stay that way.
+</p>
+
+<ul class="org-ul">
+<li><b>Characteristic \(3\), \(j \neq 0\).</b>  In \(y^2 = x^3 + a_2x^2 + a_6\), the condition
+\(a_1' = 0\) forces \(s = 0\), then \(a_3' = 0\) forces \(t = 0\), and then \(a_4' = 0\)
+reads \(2ra_2 = 0\), so \(r = 0\) because \(a_2 \neq 0\).  What is left is
+\(x = u^2x'\), \(y = u^3y'\), giving \(a_2' = a_2/u^2\) and \(a_6' = a_6/u^6\).  Now
+\(j = -a_2^3/a_6\), so \(j = j'\) says \(a_2^3a_6' = a_2'^3a_6\), and \(u^2 \coloneqq a_2/a_2'\)
+does the job.</li>
+<li><b>Characteristic \(3\), \(j = 0\).</b>  In \(y^2 = x^3 + a_4x + a_6\) we again get
+\(s = t = 0\), while \(a_2' = 0\) is automatic since \(3r = 0\).  So \(x = u^2x' + r\),
+\(y = u^3y'\), with \(a_4' = a_4/u^4\) and \(a_6' = (a_6 + ra_4 + r^3)/u^6\).  Here
+\(a_4 \neq 0\), so choose \(u\) with \(u^4 = a_4/a_4'\), and then \(r\) as a root of
+\(r^3 + a_4r + a_6 - u^6a_6' = 0\).</li>
+<li><b>Characteristic \(2\), \(j \neq 0\).</b>  In \(y^2 + xy = x^3 + a_2x^2 + a_6\), the condition
+\(a_1' = 1\) forces \(u = 1\), then \(a_3' = 0\) forces \(r = 0\) and \(a_4' = 0\) forces
+\(t = 0\).  So \(x = x'\), \(y = y' + sx'\), with \(a_6' = a_6\) and
+\(a_2' = a_2 + s + s^2\).  Since \(j = 1/a_6\), the hypothesis \(j = j'\) already gives
+\(a_6' = a_6\), and it remains to take \(s\) a root of \(s^2 + s + a_2 + a_2' = 0\).</li>
+<li><b>Characteristic \(2\), \(j = 0\).</b>  In \(y^2 + a_3y = x^3 + a_4x + a_6\) the condition
+\(a_1' = 0\) is automatic and \(a_2' = 0\) forces \(r = s^2\).  Then
+\(a_3' = a_3/u^3\), \(a_4' = (a_4 + sa_3 + s^4)/u^4\) and
+\(a_6' = (a_6 + s^2a_4 + s^6 + ta_3 + t^2)/u^6\).  Here \(a_3 \neq 0\), so choose \(u\)
+with \(u^3 = a_3/a_3'\), then \(s\) a root of \(s^4 + a_3s + a_4 - u^4a_4' = 0\), and then
+\(t\) a root of \(t^2 + a_3t + a_6 + s^2a_4 + s^6 - u^6a_6' = 0\).</li>
+</ul>
+
+<p>
+Each equation has a root because \(\kbar\) is algebraically closed, so
+Proposition <a href="#prop-ec-j-invariant">4.1.10</a> holds in every characteristic.  Reading the same four
+computations with \(E = E'\) counts the automorphisms, which is
+Theorem <a href="#thm-ec-automorphisms">4.7.11</a>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-ec-group-law" class="outline-2">
+<h2 id="sec-ec-group-law"><span class="ec-status ec-status-draft"><span class="ec-status-label ec-status-draft">Draft</span><time datetime="2026-09-21">21 Sep 2026</time></span><span class="section-number" id="s4.2">4.2</span> The group law</h2>
+<div class="outline-text-2" id="text-sec-ec-group-law">
+<p>
+On \(\C/\Lambda\) the group law comes for free from addition in \(\C\).  On an elliptic
+curve over \(k\) it comes from the group \(\Pic^0 E\) of degree-\(0\) divisors modulo
+principal divisors (Proposition <a href="03-curves.html#prop-crv-principal">3.3.2</a>): for a curve of genus \(1\), the
+map \(P \mapsto [P - O]\) is a bijection \(E(k) \to \Pic^0 E\).
+</p>
+
+<div class="ec-thm ec-lemma" id="lem-ec-points-not-equivalent">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Lemma 4.2.1</span>.</span> Let \(E\) be a nice curve of genus \(1\), and \(P, Q \in E(k)\).  If \(P \sim Q\), then
+\(P = Q\).
+</p>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+Say \(\div(f) = P - Q\).  Then \(f \in \mcL(Q)\).  Since \(\deg Q = 1 > 2g - 2 = 0\),
+Corollary <a href="03-curves.html#cor-crv-rr">3.5.5</a> gives \(\ell(Q) = 1\), so \(\mcL(Q) = k\) and \(f\) is constant.
+Hence \(P - Q = \div(f) = 0\).
+</p>
+</details>
+
+<p>
+This is what distinguishes genus \(1\) from genus \(0\): on \(\PP^1_k\) any two rational
+points are linearly equivalent (Example <a href="03-curves.html#eg-crv-pic-p1">3.3.9</a>).
+</p>
+
+<div class="ec-thm ec-proposition" id="prop-ec-abel-jacobi">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Proposition 4.2.2</span>.</span> Let \((E, O)\) be an elliptic curve over \(k\).
+</p>
+<ol class="org-ol">
+<li><a id="it-ec-aj-sigma"></a> For every \(D \in \Div^0 E\) there is a unique \(P \in E(k)\) with \(D \sim P - O\).
+Write \(\sigma(D) \coloneqq P\).</li>
+<li><a id="it-ec-aj-kappa"></a> The map \(\kappa\colon E(k) \to \Pic^0 E\), \(P \mapsto [P - O]\), is a bijection,
+with inverse induced by \(\sigma\).</li>
+</ol>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+Uniqueness in part <a href="#it-ec-aj-sigma">1</a> is Lemma <a href="#lem-ec-points-not-equivalent">4.2.1</a>.  For existence,
+\(\deg(D + O) = 1\), so \(\ell(D + O) = 1\) by Corollary <a href="03-curves.html#cor-crv-rr">3.5.5</a>.  Let \(f\) span
+\(\mcL(D + O)\).  Then \(\div(f) + D + O\) is an effective divisor of degree \(1\), so it is a
+single closed point \(P\) of degree \(1\), that is, a rational point, and
+\(D \sim P - O\).  Part <a href="#it-ec-aj-kappa">2</a> follows [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Proposition III.3.4].
+</p>
+</details>
+
+<p>
+Note that the argument works over \(k\) itself, with no Galois descent: an effective
+divisor of degree \(1\) is automatically a rational point.  Since \(O\) is a rational point,
+\(\Pic^0 E\) is also \((\Pic^0 E_{\ksep})^{\Gal_k}\) by
+Warning <a href="03-curves.html#warn-crv-pic-rational-point">3.3.8</a>, so both readings of \(\Pic^0\) give \(E(k)\).  This
+fails for a nice curve of genus \(1\) with no rational point, such as
+\(3X^3 + 4Y^3 + 5Z^3 = 0\) (Remark <a href="#rem-ec-selmer-name">4.8.13</a>).  We use \(\kappa\) to transport
+the group structure of \(\Pic^0 E\) to \(E(k)\).  So \(P + Q\) is the unique rational point
+with
+</p>
+\begin{equation*}
+(P + Q) - O \sim (P - O) + (Q - O),
+\end{equation*}
+<p>
+and \(O\) is the identity.  For every field \(L \supseteq k\), the same construction on
+\(E_L\) makes \(E(L)\) a group, and \(E(k) \subseteq E(L)\) is a subgroup.  If \(L/k\) is
+Galois, then \(\Gal(L/k)\) acts on \(E(L)\) by group automorphisms, with fixed points
+\(E(k)\) (Proposition <a href="02-varieties.html#prop-var-galois-points">2.1.12</a>).
+</p>
+
+<div class="ec-thm ec-corollary" id="cor-ec-principal">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Corollary 4.2.3</span>.</span> Let \(D = \sum n_P P\) be a divisor on \(E\) supported on points of \(E(k)\).  Then \(D\) is
+principal if and only if \(\sum n_P = 0\) and \(\sum [n_P]P = O\) in \(E(k)\).  More
+generally, there is an exact sequence
+</p>
+\begin{equation*}
+1 \to k^\times \to k(E)^\times \xrightarrow{\div} \Div^0 E \xrightarrow{\sigma} E(k) \to 0.
+\end{equation*}
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+Combine Proposition <a href="03-curves.html#prop-crv-principal">3.3.2</a> with Proposition <a href="#prop-ec-abel-jacobi">4.2.2</a>
+[<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Corollary III.3.5].
+</p>
+</details>
+
+<p>
+For a smooth plane cubic whose base point is a flex, such as a Weierstrass cubic, this
+group law is the classical chord-and-tangent construction, illustrated in
+Figure <a href="#fig-ec-chord-tangent">4.2.1</a>.  By Definition <a href="#def-ec-weierstrass">4.1.2</a>, the point at infinity
+of a Weierstrass cubic is a flex, with tangent line \(Z = 0\).
+</p>
+
+<div class="ec-thm ec-proposition" id="prop-ec-chord-tangent">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Proposition 4.2.4</span>.</span> Let \(E \subseteq \PP^2_k\) be a smooth plane cubic, let \(O \in E(k)\) be a flex, and give
+\(E(\kbar)\) the group law with identity \(O\).
+</p>
+<ol class="org-ol">
+<li><a id="it-ec-chord-rule"></a> If a line meets \(E\) in \(P, Q, R \in E(\kbar)\), counted with intersection
+multiplicity, then \(P + Q + R = O\).</li>
+<li><a id="it-ec-chord-negation"></a> If \(E\) is a Weierstrass cubic \eqref{eq:ec-weierstrass} and \(O = (0 : 1 : 0)\), then
+\(-P = (x_0, -y_0 - a_1x_0 - a_3)\) for \(P = (x_0, y_0)\).</li>
+</ol>
+<p>
+So \(P + Q\) is obtained by drawing the line through \(P\) and \(Q\) (the tangent line if
+\(P = Q\)), taking its third intersection point \(R\) with \(E\), and reflecting: \(P + Q\) is
+the third intersection point of the line through \(R\) and \(O\).
+</p>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+We may assume that \(k = \kbar\).  Let \(L_O\) be a linear form defining the tangent line at
+\(O\), which meets \(E\) only at \(O\), with multiplicity \(3\); for a Weierstrass cubic,
+\(L_O = Z\) (Definition <a href="#def-ec-weierstrass">4.1.2</a>).  Let \(L\) be a linear form defining the
+line.  On a smooth curve the intersection number at a closed point \(P\) is
+\(\ord_P(L/L_O)\deg P\) away from \(L_O = 0\) (see the proof of
+Proposition <a href="03-curves.html#prop-crv-plane-canonical">3.7.6</a>), so by Theorem <a href="03-curves.html#thm-crv-bezout">3.7.4</a>
+</p>
+\begin{equation*}
+\div(L/L_O) = P + Q + R - 3O.
+\end{equation*}
+<p>
+So \((P - O) + (Q - O) + (R - O) \sim 0\), which is part <a href="#it-ec-chord-rule">1</a>.  For part <a href="#it-ec-chord-negation">2</a>, the vertical line
+\(X - x_0Z\) passes through \(O\), and its other two intersection points with \(E\) are
+the roots in \(y\) of \(f(x_0, y) = 0\), whose sum is \(-a_1x_0 - a_3\).  Part <a href="#it-ec-chord-rule">1</a> with
+\(R = O\) gives part <a href="#it-ec-chord-negation">2</a>.
+</p>
+</details>
+
+<figure class="ec-figure" id="fig-ec-chord-tangent">
+<img class="ec-tikz" src="figures/6371a1b64367da1c96e8fc53e8c75f08a0f54638.svg" style="--ec-w: 18.62em" alt=""/>
+<figcaption><span class="ec-thm-name">Figure 4.2.1</span>. The chord-and-tangent law on \(y^2 = x^3 - x + 1\) over \(\R\): the line through \(P = (-1, 1)\) and \(Q = (0, 1)\) meets the curve again at \(R = (1, 1)\), and \(P + Q = -R = (1, -1)\).</figcaption>
+</figure>
+
+<p>
+To compute the third intersection point we expand the cubic form along a line.  For
+vectors \(P, Q \in k^3\) we write
+\(\nabla F(P) \cdot Q \coloneqq \sum_i \frac{\partial F}{\partial X_i}(P)\, Q_i\).
+</p>
+
+<div class="ec-thm ec-lemma" id="lem-ec-polar-expansion">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Lemma 4.2.5</span> <span class="ec-thm-title">(Polar expansion)</span>.</span> Let \(F \in k[X, Y, Z]\) be a cubic form, and \(P, Q \in k^3\).  Then, for \(s, t \in k\),
+</p>
+\begin{equation}
+\label{eq:ec-polar-expansion}
+F(sP + tQ) = s^3 F(P) + s^2t\, \nabla F(P) \cdot Q + st^2\, \nabla F(Q) \cdot P + t^3 F(Q). \tag{4.2.1}
+\end{equation}
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+Since \(F\) is homogeneous of degree \(3\), \(F(sP + tQ)\) is a form of degree \(3\) in
+\(s\) and \(t\), say \(\sum_{m = 0}^3 c_m s^{3 - m}t^m\), with \(c_0 = F(P)\) and
+\(c_3 = F(Q)\).  Setting \(s = 1\), \(c_1\) is the coefficient of \(t\) in the polynomial
+\(F(P + tQ) \in k[t]\), which is its derivative at \(t = 0\); by the chain rule for
+polynomials, this is \(\nabla F(P) \cdot Q\).  Exchanging the roles of \(P\) and \(Q\)
+gives \(c_2 = \nabla F(Q) \cdot P\).
+</p>
+</details>
+
+<p>
+The tangent line to \(E\) at a smooth point \(P\) is \(\{\nabla F(P) \cdot V = 0\}\), so the
+coefficient \(\nabla F(P) \cdot Q\) vanishes exactly when \(Q\) lies on the tangent line at
+\(P\).  This turns the chord-and-tangent construction into formulas in homogeneous
+coordinates.
+</p>
+
+<div class="ec-thm ec-proposition" id="prop-ec-addition-formulas">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Proposition 4.2.6</span>.</span> Let \(E = V_+(F) \subseteq \PP^2_k\) be a smooth plane cubic with a flex \(O \in E(k)\), and
+give \(E(\kbar)\) the group law with identity \(O\), as in
+Proposition <a href="#prop-ec-chord-tangent">4.2.4</a>.  We write \(\kbar\)-points as vectors in
+\(\kbar^3\), and the formulas below are homogeneous.
+</p>
+<ol class="org-ol">
+<li><a id="it-ec-add-chord"></a> <b>Chord.</b>  Let \(P_1 \neq P_2\) be points of \(E(\kbar)\), and set
+\(A \coloneqq \nabla F(P_1) \cdot P_2\) and \(B \coloneqq \nabla F(P_2) \cdot P_1\).
+Then \(A\) and \(B\) do not both vanish, the line through \(P_1\) and \(P_2\) meets
+\(E\) in the third intersection point \(R \coloneqq BP_1 - AP_2\), and
+\(P_1 + P_2 = -R\).</li>
+<li><a id="it-ec-add-tangent"></a> <b>Tangent.</b>  Let \(P \in E(\kbar)\), and let \(Q \in \kbar^3\) be a vector on the tangent
+line at \(P\), that is \(\nabla F(P) \cdot Q = 0\), which is not a multiple of \(P\).
+Then \(F(Q)\) and \(\nabla F(Q) \cdot P\) do not both vanish, the tangent line meets
+\(E\) again in \(R \coloneqq F(Q)P - (\nabla F(Q) \cdot P)\,Q\), and \([2]P = -R\).</li>
+<li><a id="it-ec-add-weierstrass"></a> <b>Weierstrass cubics.</b>  If \(E\) is the Weierstrass cubic \eqref{eq:ec-weierstrass}
+with \(O = (0 : 1 : 0)\), then \(-(X : Y : Z) = (X : -Y - a_1X - a_3Z : Z)\), and for
+\(P \neq O\) the vector \(Q \coloneqq \bigl(\frac{\partial F}{\partial Y}(P),
+   -\frac{\partial F}{\partial X}(P), 0\bigr)\) satisfies the hypotheses of part <a href="#it-ec-add-tangent">2</a>.</li>
+</ol>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+For part <a href="#it-ec-add-chord">1</a>, \(F(P_1) = F(P_2) = 0\), so \eqref{eq:ec-polar-expansion} reads
+\(F(sP_1 + tP_2) = st(As + Bt)\).  If \(A = B = 0\), this vanishes identically, so the
+line would be a component of \(E\), which is impossible since \(E\) is geometrically
+integral (Corollary <a href="03-curves.html#cor-crv-smooth-plane-nice">3.7.5</a>).  Hence the line meets \(E\) at
+\((s : t) = (1 : 0)\), \((0 : 1)\) and \((B : -A)\), that is, at \(P_1\), \(P_2\) and
+\(R\).  If \(A = 0\), then \(P_2\) lies on the tangent line at \(P_1\), and \(R = P_1\) is
+the tangency, counted twice.  Now \(P_1 + P_2 + R = O\) by
+Proposition <a href="#prop-ec-chord-tangent">4.2.4</a>.
+</p>
+
+<p>
+For part <a href="#it-ec-add-tangent">2</a>, \(F(P) = 0\) and \(\nabla F(P) \cdot Q = 0\), so
+\(F(sP + tQ) = t^2\bigl(s\,\nabla F(Q) \cdot P + tF(Q)\bigr)\).  The double root at
+\(t = 0\) is the tangency at \(P\), and the remaining root
+\((s : t) = \bigl(F(Q) : -\nabla F(Q) \cdot P\bigr)\) is \(R\); as before the two
+coefficients cannot both vanish.  Then \(P + P + R = O\).
+</p>
+
+<p>
+For part <a href="#it-ec-add-weierstrass">3</a>, negation is part <a href="#it-ec-chord-negation">2</a> of Proposition <a href="#prop-ec-chord-tangent">4.2.4</a>, homogenized.
+The vector \(Q\) satisfies \(\nabla F(P) \cdot Q = \frac{\partial F}{\partial X}
+\frac{\partial F}{\partial Y} - \frac{\partial F}{\partial Y} \frac{\partial F}{\partial X} = 0\).
+It is non-zero: if both partial derivatives vanished at \(P\), the Euler relation
+\(X \frac{\partial F}{\partial X} + Y \frac{\partial F}{\partial Y} + Z \frac{\partial F}{\partial Z} = 3F\)
+evaluated at \(P\) would give \(Z_0 \frac{\partial F}{\partial Z}(P) = 0\), so, as
+\(Z_0 \neq 0\) for \(P \neq O\), the \(\kbar\)-point \(P\) would be singular.  Finally, \(Q\) has
+third coordinate \(0\) and \(P\) does not, so \(Q\) is not a multiple of \(P\).
+</p>
+</details>
+
+<p>
+For \(P = O\) there is nothing to compute, since \([2]O = O\).  Reading these formulas
+on the affine patch \(Z = 1\), with the line written as \(y = \lambda x + \nu\), gives
+the classical algorithm.
+</p>
+
+<div class="ec-thm ec-algorithm" id="alg-ec-group-law">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Algorithm 4.2.7</span> <span class="ec-thm-title">(Group law)</span>.</span> Let \(E\) be a smooth Weierstrass cubic \eqref{eq:ec-weierstrass}, and
+\(P_i = (x_i, y_i) \in E(k)\) for \(i = 1, 2\).
+</p>
+<ol class="org-ol">
+<li>If \(x_1 = x_2\) and \(y_1 + y_2 + a_1x_2 + a_3 = 0\), then \(P_1 + P_2 = O\).</li>
+<li><p>
+Otherwise set
+</p>
+\begin{align*}
+\lambda &\coloneqq \frac{y_2 - y_1}{x_2 - x_1}, &
+\nu &\coloneqq \frac{y_1x_2 - y_2x_1}{x_2 - x_1}
+&& \text{if } x_1 \neq x_2, \\
+\lambda &\coloneqq \frac{3x_1^2 + 2a_2x_1 + a_4 - a_1y_1}{2y_1 + a_1x_1 + a_3}, &
+\nu &\coloneqq \frac{-x_1^3 + a_4x_1 + 2a_6 - a_3y_1}{2y_1 + a_1x_1 + a_3}
+&& \text{if } x_1 = x_2,
+\end{align*}
+<p>
+so that \(y = \lambda x + \nu\) is the line through \(P_1\) and \(P_2\), or the tangent
+line if \(P_1 = P_2\).  Then \(P_1 + P_2 = (x_3, y_3)\) with
+</p>
+\begin{equation*}
+x_3 = \lambda^2 + a_1\lambda - a_2 - x_1 - x_2, \qquad
+y_3 = -(\lambda + a_1)x_3 - \nu - a_3.
+\end{equation*}</li>
+</ol>
+<p>
+In particular, for the short form \eqref{eq:ec-short-weierstrass} and \(P = (x, y)\) with
+\(y \neq 0\), the duplication formula is
+</p>
+\begin{equation*}
+x([2]P) = \frac{x^4 - 2Ax^2 - 8Bx + A^2}{4(x^3 + Ax + B)}.
+\end{equation*}
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+Substitute \(y = \lambda x + \nu\) into the equation of \(E\); this is
+\eqref{eq:ec-polar-expansion} on the patch \(Z = 1\), with the line parametrized by
+\(x\) instead of \((s : t)\).  The resulting cubic in \(x\) has roots \(x_1\), \(x_2\) and
+\(x_3\), and the coefficient of \(x^2\) gives
+\(x_1 + x_2 + x_3 = \lambda^2 + a_1\lambda - a_2\).  Then negate, by part <a href="#it-ec-add-weierstrass">3</a> of
+Proposition <a href="#prop-ec-addition-formulas">4.2.6</a> [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Algorithm III.2.3].
+</p>
+</details>
+
+<div class="ec-thm ec-example" id="eg-ec-points-17">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Example 4.2.8</span>.</span> On \(E\colon y^2 = x^3 + 17\) over \(\Q\), let \(P_1 \coloneqq (-2, 3)\) and
+\(P_2 \coloneqq (-1, 4)\).  The line through them has \(\lambda = 1\), \(\nu = 5\), so
+\(x_3 = 1 + 2 + 1 = 4\), \(y_3 = -4 - 5 = -9\), and \(P_1 + P_2 = (4, -9)\).  Likewise
+\([2]P_1 = (8, -23)\) and \([2]P_2 = (137/64, -2651/512)\).  Denominators appear quickly;
+the Mordell&#x2013;Weil theorem (Chapter 8) says that nonetheless \(E(\Q)\) is finitely generated.
+</p>
+</div>
+
+<div class="ec-thm ec-example" id="eg-ec-two-torsion">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Example 4.2.9</span>.</span> A point \(P \neq O\) of \(E(\kbar)\) satisfies \([2]P = O\) if and only if \(P = -P\), i.e.&nbsp;if and
+only if \(2y + a_1x + a_3 = 0\) at \(P\).  Suppose \(\operatorname{char} k \neq 2\), and let
+\(E\colon y^2 = (x - e_1)(x - e_2)(x - e_3)\) with distinct \(e_i \in k\), and
+\(P_i \coloneqq (e_i, 0)\), as in Example <a href="03-curves.html#eg-crv-cubic-divisors">3.3.10</a>.  The divisors computed
+there,
+</p>
+\begin{equation*}
+\div(x - e_i) = 2P_i - 2O, \qquad \div(y) = P_1 + P_2 + P_3 - 3O,
+\end{equation*}
+<p>
+say, by Corollary <a href="#cor-ec-principal">4.2.3</a>, that \([2]P_i = O\) and \(P_1 + P_2 + P_3 = O\).  So
+</p>
+\begin{equation*}
+\{O, P_1, P_2, P_3\} \cong (\Z/2\Z)^2,
+\end{equation*}
+<p>
+exactly as for \((\C/\Lambda)[2]\) in Example <a href="01-riemann-surfaces.html#eg-rs-mult-by-m">1.3.4</a>.
+</p>
+</div>
+
+<p>
+The group law is given by morphisms.
+</p>
+
+<div class="ec-thm ec-theorem" id="thm-ec-group-variety">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Theorem 4.2.10</span>.</span> Let \(E\) be an elliptic curve over \(k\).  The formulas of Algorithm <a href="#alg-ec-group-law">4.2.7</a>
+define morphisms of \(k\)-varieties
+</p>
+\begin{equation*}
++\colon E \times E \to E, \qquad -\colon E \to E.
+\end{equation*}
+<p>
+In particular, for \(Q \in E(k)\), translation \(\tau_Q\colon E \to E\),
+\(P \mapsto P + Q\), is an isomorphism of curves.
+</p>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+Negation is a rational map \(E \dashrightarrow E\), hence a morphism by
+Proposition <a href="03-curves.html#prop-crv-extend">3.2.1</a>.  For addition, see [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Theorem III.3.6]:
+one shows that \(\tau_Q\) is a morphism for each \(Q\), and then that the rational map
+\(E \times E \dashrightarrow E\) is regular everywhere by translating.
+</p>
+</details>
+
+<p>
+So an elliptic curve is a group variety, an abelian variety of dimension \(1\).  We end
+the section with the singular Weierstrass cubics of Remark <a href="#rem-ec-singular-cubics">4.1.11</a>.
+</p>
+
+<div class="ec-thm ec-proposition" id="prop-ec-singular-group">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Proposition 4.2.11</span>.</span> Let \(E\) be a Weierstrass cubic with \(\Delta = 0\), singular point \(S\), and
+\(E_{\ns} \coloneqq E - \{S\}\).  The chord-and-tangent construction of
+Proposition <a href="#prop-ec-chord-tangent">4.2.4</a> makes \(E_{\ns}(\kbar)\) an abelian group, and:
+</p>
+<ol class="org-ol">
+<li>if \(S\) is a node, with tangent lines \(y = \alpha_i x + \beta_i\) for \(i = 1, 2\),
+then \((x, y) \mapsto (y - \alpha_1x - \beta_1)/(y - \alpha_2x - \beta_2)\) is an
+isomorphism \(E_{\ns}(\kbar) \cong \kbar^\times\);</li>
+<li>if \(S\) is a cusp, with tangent line \(y = \alpha x + \beta\), then
+\((x, y) \mapsto (x - x(S))/(y - \alpha x - \beta)\) is an isomorphism
+\(E_{\ns}(\kbar) \cong \kbar\).</li>
+</ol>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof <span class="ec-proof-cites">(Sil09)</span>.</span></summary>
+<p>
+See [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Proposition III.2.5].
+</p>
+</details>
+</div>
+</div>
+
+<div id="outline-container-sec-ec-isogenies" class="outline-2">
+<h2 id="sec-ec-isogenies"><span class="ec-status ec-status-draft"><span class="ec-status-label ec-status-draft">Draft</span><time datetime="2026-09-23">23 Sep 2026</time></span><span class="section-number" id="s4.3">4.3</span> Isogenies</h2>
+<div class="outline-text-2" id="text-sec-ec-isogenies">
+<p>
+By Proposition <a href="01-riemann-surfaces.html#prop-rs-torus-maps">1.3.1</a>, every holomorphic map of complex tori is a
+homomorphism followed by a translation, and holomorphic homomorphisms are the maps
+\(z \mapsto \alpha z\) with \(\alpha\Lambda_1 \subseteq \Lambda_2\) (Corollary <a href="01-riemann-surfaces.html#cor-rs-torus-homs">1.3.2</a>).
+We now prove the algebraic analogue.
+</p>
+
+<div class="ec-thm ec-definition" id="def-ec-isogeny">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Definition 4.3.1</span>.</span> Let \(E_1\) and \(E_2\) be elliptic curves over \(k\).  An
+<dfn class="ec-cdef" id="gls-isogeny-of-elliptic-curves" data-gls="isogeny-of-elliptic-curves">isogeny</dfn> is a morphism \(\varphi\colon E_1 \to E_2\) with
+\(\varphi(O_1) = O_2\).  By Proposition <a href="03-curves.html#prop-crv-surjective">3.2.2</a>, either
+\(\varphi = 0\) is constant, or \(\varphi\) is surjective and has a degree
+(Definition <a href="03-curves.html#def-crv-degree">3.2.5</a>); we set \(\deg 0 \coloneqq 0\).  The curves are isogenous if
+there is a non-zero isogeny between them.  We write \(\Hom(E_1, E_2)\) for the set of
+isogenies, \(\End(E) \coloneqq \Hom(E, E)\) and \(\Aut(E)\) for the invertible elements of
+\(\End(E)\).  For a field \(L \supseteq k\), the isogenies after base extension to \(L\) are
+the elements of \(\Hom(E_{1,L}, E_{2,L})\), \(\End(E_L)\) and \(\Aut(E_L)\).
+</p>
+</div>
+
+<p>
+Unlike Definition <a href="01-riemann-surfaces.html#def-rs-isogeny">1.3.3</a>, we allow the zero map.  By
+Remark <a href="02-varieties.html#rem-var-defined-over-k">2.3.2</a>, elements of \(\Hom(E_1, E_2)\) are morphisms over \(k\),
+and \(\Hom(E_1, E_2) \subseteq \Hom(E_{1,\kbar}, E_{2,\kbar})\); Silverman writes
+\(\Hom(E_1, E_2)\) for the latter.  By Theorem <a href="#thm-ec-group-variety">4.2.10</a>, \(\Hom(E_1, E_2)\) is a group under
+\((\varphi + \psi)(P) \coloneqq \varphi(P) + \psi(P)\), and \(\End(E)\) is a ring under
+composition.
+</p>
+
+<div class="ec-thm ec-example" id="eg-ec-isogeny-mult">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Example 4.3.2</span>.</span> For \(m \in \Z\), the multiplication by \(m\) map \([m]\colon E \to E\) is an isogeny,
+by Theorem <a href="#thm-ec-group-variety">4.2.10</a>.  Its kernel is the group scheme \(E[m]\), and \(E[m](\kbar)\) is the \(m\)-torsion subgroup of \(E(\kbar)\).
+</p>
+</div>
+
+<div class="ec-thm ec-example" id="eg-ec-isogeny-frobenius">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Example 4.3.3</span>.</span> Suppose \(\operatorname{char} k = p > 0\) and \(q = p^r\).  The relative Frobenius
+morphism \(\Frob\colon E \to E^{(q)}\) of Definition <a href="03-curves.html#def-crv-frobenius">3.2.11</a> sends
+\((0 : 1 : 0)\) to \((0 : 1 : 0)\), and \(E^{(q)}\) is the Weierstrass cubic with
+coefficients \(a_i^q\), which has discriminant \(\Delta^q \neq 0\).  So \(\Frob\) is an
+isogeny, purely inseparable of degree \(q\) by Proposition <a href="03-curves.html#prop-crv-frobenius">3.2.12</a>.  If
+\(E\) is defined over \(\F_q\), then \(\Frob \in \End(E)\) (Example <a href="03-curves.html#eg-crv-frobenius-weierstrass">3.2.15</a>).
+</p>
+</div>
+
+<div class="ec-thm ec-example" id="eg-ec-aut-i">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Example 4.3.4</span>.</span> If \(\operatorname{char} k \neq 2\) and \(i \in k\) is a square root of \(-1\), then
+\([i](x, y) \coloneqq (-x, iy)\) is an automorphism of \(y^2 = x^3 + x\) with
+\([i]^2 = [-1]\).
+</p>
+</div>
+
+<div class="ec-thm ec-example" id="eg-ec-translation">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Example 4.3.5</span>.</span> For \(Q \in E(k)\), \(Q \neq O\), the translation \(\tau_Q\) is a morphism but not an
+isogeny.  Every morphism \(\psi\colon E_1 \to E_2\) is
+\(\tau_{\psi(O_1)} \circ \varphi\) with \(\varphi \coloneqq \tau_{-\psi(O_1)} \circ \psi\)
+an isogeny, as in Proposition <a href="01-riemann-surfaces.html#prop-rs-torus-maps">1.3.1</a>.
+</p>
+</div>
+
+<div class="ec-thm ec-theorem" id="thm-ec-isogeny-homomorphism">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Theorem 4.3.6</span>.</span> An isogeny \(\varphi\colon E_1 \to E_2\) is a group homomorphism \(E_1(L) \to E_2(L)\), for
+every field \(L \supseteq k\).
+</p>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+After base extension we may assume \(L = k\), and that \(\varphi \neq 0\).  By
+Proposition <a href="03-curves.html#prop-crv-pullback">3.3.6</a>, \(\varphi_*\colon \Pic^0 E_1 \to \Pic^0 E_2\) is a
+homomorphism, and \(\varphi_*(P - O_1) = \varphi(P) - O_2\) for \(P \in E_1(k)\), because
+rational points have residue degree \(1\).  So \(\varphi = \kappa_2^{-1} \circ \varphi_*
+\circ \kappa_1\) on \(E_1(k)\), a composition of homomorphisms
+(Proposition <a href="#prop-ec-abel-jacobi">4.2.2</a>) [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Theorem III.4.8].
+</p>
+</details>
+
+<div class="ec-thm ec-proposition" id="prop-ec-hom-torsion-free">
+<p><span class="ec-thm-head"><span class="ec-thm-name">Proposition 4.3.7</span>.</span> </p>
+<ol class="org-ol">
+<li><a id="it-ec-hom-mult-nonzero"></a> If \(m \neq 0\), then \([m] \neq 0\).</li>
+<li><a id="it-ec-hom-torsion-free"></a> \(\Hom(E_1, E_2)\) is a torsion-free \(\Z\)-module.</li>
+<li><a id="it-ec-hom-end-domain"></a> \(\End(E)\) is a ring of characteristic \(0\) without zero divisors.</li>
+</ol>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+Part <a href="#it-ec-hom-mult-nonzero">1</a> is [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Proposition III.4.2(a)]; when \(\operatorname{char} k \nmid m\)
+it also follows from Corollary <a href="#cor-ec-mult-omega">4.4.3</a> below.  Given part <a href="#it-ec-hom-mult-nonzero">1</a>,
+\([m] \circ \varphi = 0\) forces \(\varphi = 0\), since \(\deg\) is multiplicative and
+non-constant morphisms compose to non-constant morphisms.  This gives parts <a href="#it-ec-hom-torsion-free">2</a> and <a href="#it-ec-hom-end-domain">3</a>.
+</p>
+</details>
+
+<p>
+We write \(\ker\varphi\) for the kernel of \(\varphi\) on \(E_1(\kbar)\).  The kernel of a
+non-zero isogeny is finite, being a fiber.  The next theorem is the
+analogue of Lemma <a href="01-riemann-surfaces.html#lem-rs-isogeny-kernel">1.3.6</a>; it is the Galois theory of function fields of
+elliptic curves.
+</p>
+
+<div class="ec-thm ec-theorem" id="thm-ec-isogeny-kernel">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Theorem 4.3.8</span>.</span> Let \(\varphi\colon E_1 \to E_2\) be a non-zero isogeny.
+</p>
+<ol class="org-ol">
+<li><a id="it-ec-kernel-fibers"></a> For every \(Q \in E_2(\kbar)\), the fiber \(\varphi^{-1}(Q) \subseteq E_1(\kbar)\) has
+\(\deg_s \varphi\) elements, and \(e_\varphi(P) = \deg_i \varphi\) for every
+\(P \in E_1(\kbar)\).</li>
+<li><a id="it-ec-kernel-separable"></a> Suppose \(\varphi\) is separable.  Then \(\varphi\) is unramified,
+\(\#\ker\varphi = \deg\varphi\), and \(\kbar(E_1)/\varphi^*\kbar(E_2)\) is a Galois
+extension, with Galois group \(\ker\varphi\) acting by \(T \mapsto \tau_T^*\).</li>
+</ol>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+By Proposition <a href="03-curves.html#prop-crv-ramification">3.2.8</a>, all but finitely many fibers have
+\(\deg_s\varphi\) elements.  But for \(Q, Q' \in E_2(\kbar)\) with \(\varphi(P) = Q\) and
+\(\varphi(P') = Q'\), translation by \(P' - P\) is a bijection
+\(\varphi^{-1}(Q) \to \varphi^{-1}(Q')\), by Theorem <a href="#thm-ec-isogeny-homomorphism">4.3.6</a>, and it
+preserves ramification indices.  So all fibers have the same size and the same
+ramification indices, and part <a href="#it-ec-kernel-fibers">1</a> follows from
+\(\sum_{P \mapsto Q} e_\varphi(P) = \deg\varphi\).  In part <a href="#it-ec-kernel-separable">2</a>, \(e_\varphi = 1\), so
+\(\#\ker\varphi = \deg\varphi\).  The translations \(\tau_T\), \(T \in \ker\varphi\), give
+\(\deg\varphi\) distinct automorphisms of \(\kbar(E_1)\) over \(\varphi^*\kbar(E_2)\), so
+the extension is Galois [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Theorem III.4.10].
+</p>
+</details>
+
+<p>
+If \(\varphi\) is separable, the scheme-theoretic fiber \(\varphi^{-1}(O_2)\) is étale over
+\(k\), so \(\ker\varphi \subseteq E_1(\ksep)\), and it is a \(\Gal_k\)-stable subgroup.  So
+an isogeny determines a finite \(\Gal_k\)-module.  Conversely, every finite subgroup is a
+kernel; this replaces the lattice \(\Lambda_2 \supseteq \Lambda_1\) of Chapter 1.
+</p>
+
+<div class="ec-thm ec-proposition" id="prop-ec-quotient">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Proposition 4.3.9</span>.</span> Let \(\Phi \subseteq E(\kbar)\) be a finite subgroup.  There are an elliptic curve \(E'\)
+over \(\kbar\), unique up to isomorphism, and a separable isogeny
+\(\varphi\colon E_{\kbar} \to E'\) with \(\ker\varphi = \Phi\).  We write
+\(E/\Phi \coloneqq E'\).  If \(\Phi \subseteq E(\ksep)\) is \(\Gal_k\)-stable, then \(E'\)
+and \(\varphi\) can be defined over \(k\).  Moreover, if \(\varphi\colon E_1 \to E_2\) is
+separable and \(\psi\colon E_1 \to E_3\) is an isogeny with
+\(\ker\varphi \subseteq \ker\psi\), then \(\psi = \lambda \circ \varphi\) for a unique
+isogeny \(\lambda\colon E_2 \to E_3\).
+</p>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+Take \(E'\) to be the nice curve with function field \(\kbar(E)^\Phi\), the fixed field of
+the translations \(\tau_T^*\), \(T \in \Phi\) (Theorem <a href="03-curves.html#thm-crv-function-fields">3.2.3</a>); see
+[<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Proposition III.4.12, Remarks III.4.13.1 and III.4.13.2, and
+Corollary III.4.11].
+</p>
+</details>
+
+<p>
+Over \(\C\), the structure \((\C/\Lambda)[N] \cong (\Z/N\Z)^2\) was immediate from
+\((\C/\Lambda)[N] = \frac{1}{N}\Lambda/\Lambda\).  Over \(k\) we know from
+Theorem <a href="#thm-ec-isogeny-kernel">4.3.8</a> that \(\#E[N](\kbar) = \deg_s[N]\), so what we need is
+\(\deg[N] = N^2\).  The tool is the dual isogeny, the algebraic analogue of
+Theorem <a href="01-riemann-surfaces.html#thm-rs-dual-isogeny">1.3.8</a>.
+</p>
+
+<div class="ec-thm ec-theorem" id="thm-ec-dual">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Theorem 4.3.10</span>.</span> Let \(\varphi\colon E_1 \to E_2\) be an isogeny of degree \(d\).
+</p>
+<ol class="org-ol">
+<li><a id="it-ec-dual-unique"></a> There is a unique isogeny \(\hat\varphi\colon E_2 \to E_1\), the
+<dfn class="ec-cdef" id="gls-dual-isogeny" data-gls="dual-isogeny">dual isogeny</dfn>, with \(\hat\varphi \circ \varphi = [d]\).  If \(\varphi \neq 0\),
+then on rational points \(\hat\varphi = \sigma \circ \varphi^* \circ \kappa_2\), that is,
+\(Q \mapsto \sigma\bigl(\varphi^*(Q - O_2)\bigr)\), with \(\sigma\) as in
+Proposition <a href="#prop-ec-abel-jacobi">4.2.2</a>.  We set \(\hat 0 \coloneqq 0\).</li>
+<li><a id="it-ec-dual-other-side"></a> \(\varphi \circ \hat\varphi = [d]\) on \(E_2\).</li>
+<li><a id="it-ec-dual-composition"></a> \(\widehat{\lambda \circ \varphi} = \hat\varphi \circ \hat\lambda\) for an isogeny
+\(\lambda\colon E_2 \to E_3\).</li>
+<li><a id="it-ec-dual-sum"></a> \(\widehat{\varphi + \psi} = \hat\varphi + \hat\psi\) for
+\(\psi \in \Hom(E_1, E_2)\).</li>
+<li><a id="it-ec-dual-mult"></a> \(\widehat{[m]} = [m]\) and \(\deg[m] = m^2\) for all \(m \in \Z\).</li>
+<li><a id="it-ec-dual-degree"></a> \(\deg\hat\varphi = \deg\varphi\) and \(\hat{\hat\varphi} = \varphi\).</li>
+</ol>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+See [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Theorems III.6.1 and III.6.2].  We indicate two steps.
+</p>
+
+<p>
+For a separable \(\varphi\) and \(P \in E_1(\kbar)\), Theorem <a href="#thm-ec-isogeny-kernel">4.3.8</a>
+gives \(\varphi^*(\varphi(P)) = \sum_{T \in \ker\varphi} (P + T)\) and
+\(\varphi^*(O_2) = \sum_{T \in \ker\varphi} T\).  So
+\(\sigma\bigl(\varphi^*(\varphi(P) - O_2)\bigr) = \sum_T (P + T) - \sum_T T = [d]P\), which
+is \(\hat\varphi \circ \varphi = [d]\).  The inseparable case reduces to this one and
+to Frobenius, using Corollary <a href="03-curves.html#cor-crv-frobenius-factorization">3.2.14</a>.
+</p>
+
+<p>
+The formula in part <a href="#it-ec-dual-unique">1</a> shows that \(\hat\varphi\) is defined over \(k\).  Apply it to the
+generic point of \(E_2\), that is, to the point \(\eta \in E_2(k(E_2))\) given by the
+identity; it gives a point of \(E_1(k(E_2))\), which is a rational map
+\(E_2 \dashrightarrow E_1\) over \(k\), hence a morphism by
+Proposition <a href="03-curves.html#prop-crv-extend">3.2.1</a>.  Part <a href="#it-ec-dual-mult">5</a> follows from part <a href="#it-ec-dual-sum">4</a> by induction on \(m\), and
+then \([\deg[m]] = \widehat{[m]} \circ [m] = [m^2]\), so \(\deg[m] = m^2\) by
+Proposition <a href="#prop-ec-hom-torsion-free">4.3.7</a>.
+</p>
+</details>
+
+<div class="ec-thm ec-corollary" id="cor-ec-degree-quadratic">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Corollary 4.3.11</span>.</span> The degree \(\deg\colon \Hom(E_1, E_2) \to \Z\) is a positive definite quadratic form:
+\((\varphi, \psi) \mapsto \deg(\varphi + \psi) - \deg\varphi - \deg\psi\) is bilinear, and
+\(\deg\varphi > 0\) for \(\varphi \neq 0\).
+</p>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+Viewing integers in \(\End(E_1)\) via \(m \mapsto [m]\), the pairing is
+\(\hat\varphi\psi + \hat\psi\varphi\), which is bilinear by part <a href="#it-ec-dual-sum">4</a> of
+Theorem <a href="#thm-ec-dual">4.3.10</a> [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Corollary III.6.3].
+</p>
+</details>
+
+<p>
+In characteristic \(p\), the dual of the Frobenius morphism has a name of its own.
+</p>
+
+<div class="ec-thm ec-definition" id="def-ec-verschiebung">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Definition 4.3.12</span>.</span> Suppose \(\operatorname{char} k = p > 0\), and let \(E\) be an elliptic curve over
+\(k\).  For \(r \geq 1\), write
+</p>
+\begin{equation*}
+\Frob^r\colon E \to E^{(p^r)}
+\end{equation*}
+<p>
+for the \(p^r\)-th power relative Frobenius morphism (Definition <a href="03-curves.html#def-crv-frobenius">3.2.11</a>
+with \(q = p^r\)), and
+</p>
+\begin{equation*}
+\Versch^r \coloneqq \widehat{\Frob^r}\colon E^{(p^r)} \to E
+\end{equation*}
+<p>
+for its dual isogeny, the <dfn class="ec-cdef" id="gls-verschiebung" data-gls="verschiebung">Verschiebung</dfn>.
+</p>
+</div>
+
+<p>
+The exponent is not an abuse: \(\Frob^r\) is the composite
+\(E \to E^{(p)} \to \dots \to E^{(p^r)}\) of \(p\)-th power Frobenius morphisms, one
+for each of the curves \(E^{(p^i)}\).  By Example <a href="#eg-ec-isogeny-frobenius">4.3.3</a> it is purely
+inseparable of degree \(p^r\), so Theorem <a href="#thm-ec-dual">4.3.10</a> gives
+</p>
+\begin{equation*}
+\Versch^r \circ \Frob^r = [p^r] \text{ on } E, \qquad
+\Frob^r \circ \Versch^r = [p^r] \text{ on } E^{(p^r)}, \qquad
+\deg \Versch^r = p^r,
+\end{equation*}
+<p>
+by parts <a href="#it-ec-dual-unique">1</a>, <a href="#it-ec-dual-other-side">2</a> and <a href="#it-ec-dual-degree">6</a>.  If
+\(E\) is defined over \(\F_{p^r}\), then \(E^{(p^r)} = E\) and both \(\Frob^r\) and
+\(\Versch^r\) lie in \(\End(E)\).  The name is the German word for "shift".
+</p>
+
+<div class="ec-thm ec-example" id="eg-ec-2-isogeny">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Example 4.3.13</span>.</span> Suppose \(\operatorname{char} k \neq 2\).  Let \(a, b \in k\) with \(b(a^2 - 4b) \neq 0\), and
+</p>
+\begin{equation*}
+E_1\colon y_1^2 = x_1^3 + ax_1^2 + bx_1, \qquad
+E_2\colon y_2^2 = x_2^3 - 2ax_2^2 + (a^2 - 4b)x_2,
+\end{equation*}
+<p>
+with \(x_i, y_i\) the affine coordinates of \(E_i\).  Both cubics have distinct roots, so
+both curves are smooth, and \(T \coloneqq (0, 0)\) is a point of order \(2\) on \(E_1\).  Let
+</p>
+\begin{equation*}
+\varphi\colon E_1 \to E_2, \qquad
+\varphi(x_1, y_1) \coloneqq \Bigl(\frac{y_1^2}{x_1^2},\ \frac{y_1\,(x_1^2 - b)}{x_1^2}\Bigr)
+\end{equation*}
+<p>
+[<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Example III.4.5].
+</p>
+<ol class="org-ol">
+<li><a id="it-ec-2-isogeny-kernel"></a> <b>Kernel and degree.</b>  The function \(\varphi^*x_2 = y_1^2/x_1^2 = x_1 + a + b/x_1\) has
+poles only at \(T\) and \(O_1\), so \(\ker\varphi = \{O_1, T\}\).  Since
+\(y_1 = x_1^2\,\varphi^*y_2/(x_1^2 - b)\) and \(x_1^2 + (a - \varphi^*x_2)x_1 + b = 0\), the
+field \(k(E_1)\) has degree at most \(2\) over \(\varphi^*k(E_2)\).  By
+Theorem <a href="#thm-ec-isogeny-kernel">4.3.8</a>, \(\deg\varphi \geq \#\ker\varphi\), so
+\(\deg\varphi = 2\), and \(\varphi\) is separable.</li>
+<li><a id="it-ec-2-isogeny-dual"></a> <b>The dual.</b>  The same construction applied to \(E_2\), whose coefficients are
+\(-2a\) and \(a^2 - 4b\), gives an isogeny \(\psi\colon E_2 \to E_3\) with
+\(E_3\colon y_3^2 = x_3^3 + 4ax_3^2 + 16bx_3\), and
+\(\iota(x_3, y_3) \coloneqq (x_3/4, y_3/8)\) is an isomorphism \(E_3 \to E_1\).  A direct
+computation with Algorithm <a href="#alg-ec-group-law">4.2.7</a> shows that
+\(\iota \circ \psi \circ \varphi = [2]\), so \(\hat\varphi = \iota \circ \psi\).
+Its kernel is \(\{O_2, (0, 0)\}\), which is \(\varphi(E_1[2](\kbar))\): the other two points
+\((e, 0)\) of \(E_1[2](\kbar)\) have \(e^2 + ae + b = 0\), and \(\varphi(e, 0) = (0, 0)\).</li>
+<li><a id="it-ec-2-isogeny-example"></a> <b>Example.</b>  For \(y_1^2 = x_1^3 - x_1\), that is \(a = 0\) and \(b = -1\), we get
+\(E_2\colon y_2^2 = x_2^3 + 4x_2\) and
+\(\varphi(x_1, y_1) = \bigl((x_1^2 - 1)/x_1,\ y_1(x_1^2 + 1)/x_1^2\bigr)\).</li>
+</ol>
+<p>
+The invariant differential detects the sign in part <a href="#it-ec-2-isogeny-dual">2</a> without computing \([2]\)
+(Example <a href="#eg-ec-c-phi-2-isogeny">4.4.7</a>).
+</p>
+</div>
+
+<div class="ec-thm ec-remark" id="rem-ec-gm-no-dual">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Remark 4.3.14</span>.</span> Compare the multiplicative group.  A morphism \((\Gm)_{\kbar} \to (\Gm)_{\kbar}\) is
+\(t \mapsto ct^m\), since the units of \(\kbar[t, t^{-1}]\) are the \(ct^m\), and it is a
+homomorphism only if \(c = 1\).  So the endomorphisms of \(\Gm\) are the maps \([m]\), and
+\(\deg[m] = \lvert m\rvert\) (Example <a href="03-curves.html#eg-crv-gm-mult">3.4.8</a>).  There is no dual in the sense of
+Theorem <a href="#thm-ec-dual">4.3.10</a>: for \(m \geq 1\), the only \([n]\) with \([n] \circ [m] = [\deg[m]]\)
+is \([1]\), and the rule \([m] \mapsto [1]\) is not additive.  The identity
+\(\deg[m] = m^2\) of part <a href="#it-ec-dual-mult">5</a> is what makes the dual of an elliptic curve possible.  Over
+\(\C\), it reflects the fact that \(\C/\Lambda\) is the quotient of \(\C\) by a lattice of
+rank \(2\), whereas \(\C^\times \cong \C/2\pi i\Z\) is the quotient by a subgroup of rank
+\(1\) (Example <a href="01-riemann-surfaces.html#eg-rs-invariant-differential-cstar">1.5.4</a>).
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-ec-invariant-differential" class="outline-2">
+<h2 id="sec-ec-invariant-differential"><span class="ec-status ec-status-draft"><span class="ec-status-label ec-status-draft">Draft</span><time datetime="2026-09-21">21 Sep 2026</time></span><span class="section-number" id="s4.4">4.4</span> The invariant differential</h2>
+<div class="outline-text-2" id="text-sec-ec-invariant-differential">
+<p>
+On \(\C/\Lambda\), the differential \(dz\) is invariant under translation, and an isogeny
+\(z \mapsto \alpha z\) pulls it back to \(\alpha\,dz\), so pullback of differentials is
+additive (Example <a href="01-riemann-surfaces.html#eg-rs-invariant-differential-torus">1.5.5</a>).  By Remark <a href="#rem-ec-complex-normalization">4.1.8</a>
+the invariant differential \(\omega\) is \(dz\), and all of this survives over \(k\).  The
+consequences in positive characteristic are striking, because pullback detects
+separability (Proposition <a href="03-curves.html#prop-crv-differentials">3.4.2</a>).
+</p>
+
+<p>
+Throughout, \(\omega\) is the invariant differential of a Weierstrass model of \(E\).  By
+Proposition <a href="#prop-ec-weierstrass-smooth">4.1.5</a>, \(\div(\omega) = 0\).  Any non-zero
+differential with divisor \(0\) is \(a\omega\) with \(a \in k^\times\), by
+Proposition <a href="03-curves.html#prop-crv-zeros-poles">3.1.7</a>, so up to a scalar \(\omega\) does not depend on the
+model.
+</p>
+
+<div class="ec-thm ec-proposition" id="prop-ec-omega-invariant">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Proposition 4.4.1</span>.</span> For every \(Q \in E(k)\), \(\tau_Q^*\omega = \omega\).
+</p>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+Since \(\tau_Q\) is an isomorphism, \(\div(\tau_Q^*\omega) = \tau_Q^*\div(\omega) = 0\), so
+\(\tau_Q^*\omega = a_Q\omega\) with \(a_Q \in k^\times\).  After base extension to \(\kbar\),
+the map \(E_{\kbar} \to \PP^1_{\kbar}\), \(Q \mapsto a_Q\), is a morphism that omits \(0\)
+and \(\infty\), so it is constant by Proposition <a href="03-curves.html#prop-crv-surjective">3.2.2</a>, equal to
+\(a_O = 1\) [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Proposition III.5.1].
+</p>
+</details>
+
+<div class="ec-thm ec-theorem" id="thm-ec-omega-additive">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Theorem 4.4.2</span>.</span> Let \(\varphi, \psi\colon E' \to E\) be isogenies.  Then
+\((\varphi + \psi)^*\omega = \varphi^*\omega + \psi^*\omega\).
+</p>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+See [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Theorem III.5.2].  The idea: on \(E \times E\), the differential
+\(\mathrm{sum}^*\omega\) is a combination of the pullbacks of \(\omega\) along the two
+projections, and translation invariance forces both coefficients to be \(1\).
+</p>
+</details>
+
+<p>
+The two plus signs have different meanings: the first is addition in
+\(\Hom(E', E)\), the second is addition of differentials.
+</p>
+
+<div class="ec-thm ec-corollary" id="cor-ec-mult-omega">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Corollary 4.4.3</span>.</span> For every \(m \in \Z\), \([m]^*\omega = m\omega\).  So if \(\operatorname{char} k \nmid m\),
+then \([m]\) is non-zero and separable.
+</p>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+Induction on \(m\), starting from \([0]^*\omega = 0\) and \([1]^*\omega = \omega\), using
+Theorem <a href="#thm-ec-omega-additive">4.4.2</a>.  If \(m \neq 0\) in \(k\), then \([m]^*\omega \neq 0\),
+so \([m] \neq 0\), and \([m]\) is separable by Proposition <a href="03-curves.html#prop-crv-differentials">3.4.2</a>
+[<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Corollaries III.5.3 and III.5.4].
+</p>
+</details>
+
+<div class="ec-thm ec-corollary" id="cor-ec-frobenius-separable">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Corollary 4.4.4</span>.</span> Let \(E\) be an elliptic curve over \(\F_q\), of characteristic \(p\), and
+\(\Frob \in \End(E)\) its \(q\)-th power Frobenius endomorphism
+(Example <a href="03-curves.html#eg-crv-frobenius-weierstrass">3.2.15</a>).  For \(m, n \in \Z\), the isogeny \(m + n\Frob\) is
+separable if and only if \(p \nmid m\).  In particular \(1 - \Frob\) is separable.
+</p>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+\(\Frob\) is inseparable, so \(\Frob^*\omega = 0\) by Proposition <a href="03-curves.html#prop-crv-differentials">3.4.2</a>.  By
+Theorem <a href="#thm-ec-omega-additive">4.4.2</a> and Corollary <a href="#cor-ec-mult-omega">4.4.3</a>,
+\((m + n\Frob)^*\omega = m\omega\), which vanishes if and only if \(p \mid m\)
+[<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Corollary III.5.5].
+</p>
+</details>
+
+<p>
+Since \(E(\F_q)\) is the set of fixed points of \(\Frob\) on \(E(\kbar)\), it is the kernel of
+\(1 - \Frob\).  By Theorem <a href="#thm-ec-isogeny-kernel">4.3.8</a> and
+Corollary <a href="#cor-ec-frobenius-separable">4.4.4</a>,
+</p>
+\begin{equation*}
+\#E(\F_q) = \deg(1 - \Frob).
+\end{equation*}
+
+<p>
+Every isogeny acts on invariant differentials by a scalar.
+</p>
+
+<div class="ec-thm ec-proposition" id="prop-ec-c-phi">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Proposition 4.4.5</span>.</span> Let \(\omega_1\), \(\omega_2\) and \(\omega_3\) be invariant differentials of Weierstrass
+models of elliptic curves \(E_1\), \(E_2\) and \(E_3\).
+</p>
+<ol class="org-ol">
+<li><a id="it-ec-c-phi-unique"></a> For every isogeny \(\varphi\colon E_1 \to E_2\) there is a unique \(c_\varphi \in k\) with
+\(\varphi^*\omega_2 = c_\varphi\,\omega_1\).</li>
+<li><a id="it-ec-c-phi-ring"></a> \(c_{\lambda \circ \varphi} = c_\lambda c_\varphi\) for \(\lambda\colon E_2 \to E_3\), and
+\(c_{\varphi + \psi} = c_\varphi + c_\psi\) for \(\psi \in \Hom(E_1, E_2)\).</li>
+<li><a id="it-ec-c-phi-rescale"></a> Replacing \(\omega_1\) by \(u\omega_1\), with \(u \in k^\times\), replaces \(c_\varphi\) by
+\(c_\varphi/u\).</li>
+<li><a id="it-ec-c-phi-separable"></a> \(\varphi\) is separable if and only if \(c_\varphi \neq 0\).</li>
+<li><a id="it-ec-c-phi-dual"></a> \(c_{\hat\varphi}\,c_\varphi = \deg\varphi\), where \(c_{\hat\varphi}\) is computed with
+\(\omega_2\) and \(\omega_1\).</li>
+</ol>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+For part <a href="#it-ec-c-phi-unique">1</a> we may assume \(\varphi \neq 0\).  Over \(\kbar\), for \(P \in E_1(\kbar)\), we have
+\(\varphi \circ \tau_P = \tau_{\varphi(P)} \circ \varphi\) by
+Theorem <a href="#thm-ec-isogeny-homomorphism">4.3.6</a>, so by Proposition <a href="#prop-ec-omega-invariant">4.4.1</a>
+</p>
+\begin{equation*}
+\tau_P^*\varphi^*\omega_2 = \varphi^*\tau_{\varphi(P)}^*\omega_2 = \varphi^*\omega_2.
+\end{equation*}
+<p>
+Write \(\varphi^*\omega_2 = g\omega_1\) with \(g \in k(E_1)\).  Since \(\omega_1\) is invariant
+too, \(g \circ \tau_P = g\) for every \(P\).  If \(g \neq 0\) had a pole, it would have a pole
+at every point of \(E_1(\kbar)\); so \(g\) is constant, and \(g \in k\) by
+Proposition <a href="03-curves.html#prop-crv-zeros-poles">3.1.7</a>.  Part <a href="#it-ec-c-phi-ring">2</a> follows from
+\((\lambda \circ \varphi)^* = \varphi^* \circ \lambda^*\) and Theorem <a href="#thm-ec-omega-additive">4.4.2</a>,
+part <a href="#it-ec-c-phi-rescale">3</a> is immediate, and part <a href="#it-ec-c-phi-separable">4</a> is Proposition <a href="03-curves.html#prop-crv-differentials">3.4.2</a>.  For part <a href="#it-ec-c-phi-dual">5</a>, by
+parts <a href="#it-ec-c-phi-ring">2</a> and <a href="#it-ec-c-phi-rescale">3</a> and Corollary <a href="#cor-ec-mult-omega">4.4.3</a>,
+\(c_{\hat\varphi}c_\varphi = c_{\hat\varphi \circ \varphi} = c_{[\deg\varphi]} = \deg\varphi\)
+[<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Section III.5].
+</p>
+</details>
+
+<div class="ec-thm ec-corollary" id="cor-ec-c-phi-ring">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Corollary 4.4.6</span>.</span> For \(\varphi \in \End(E)\), compute \(c_\varphi\) with \(\omega_1 = \omega_2 = \omega\), so
+that \(\varphi^*\omega = c_\varphi\,\omega\).  Then \(\varphi \mapsto c_\varphi\) is a ring
+homomorphism \(\End(E) \to k\) whose kernel consists of \(0\) and the inseparable
+endomorphisms.  If \(\operatorname{char} k = 0\), then \(\End(E_{\kbar})\) embeds in \(\kbar\),
+and so it is commutative.
+</p>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+It is a ring homomorphism by part <a href="#it-ec-c-phi-ring">2</a> of Proposition <a href="#prop-ec-c-phi">4.4.5</a>,
+with the stated kernel by part <a href="#it-ec-c-phi-separable">4</a>.  In characteristic \(0\) every
+non-zero endomorphism is separable; apply this to \(E_{\kbar}\)
+[<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Corollary III.5.6].
+</p>
+</details>
+
+<p>
+Over \(\C\), the homomorphism \(\varphi \mapsto c_\varphi\) sends \(z \mapsto \alpha z\) to \(\alpha\):
+it identifies \(\End(\C/\Lambda)\) with \(\{\alpha \in \C : \alpha\Lambda \subseteq \Lambda\}\), as in
+Corollary <a href="01-riemann-surfaces.html#cor-rs-torus-homs">1.3.2</a>.
+</p>
+
+<div class="ec-thm ec-example" id="eg-ec-c-phi-2-isogeny">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Example 4.4.7</span>.</span> Take the isogenies of Example <a href="#eg-ec-2-isogeny">4.3.13</a>, with \(\omega_i \coloneqq dx_i/(2y_i)\)
+on \(E_i\).  Since \(\varphi^*y_2 = y_1(x_1^2 - b)/x_1^2\) and
+\(\varphi^*x_2 = x_1 + a + b/x_1\), we have \(\varphi^*dx_2 = (x_1^2 - b)\,dx_1/x_1^2\), so
+</p>
+\begin{equation*}
+\varphi^*\omega_2 = \frac{(x_1^2 - b)\,dx_1/x_1^2}{2y_1\,(x_1^2 - b)/x_1^2} = \omega_1,
+\qquad c_\varphi = 1.
+\end{equation*}
+<p>
+The same computation gives \(c_\psi = 1\), and
+\(\iota^*\omega_1 = (dx_3/4)/(2y_3/8) = 2\,\omega_3\), so \(c_\iota = 2\).  Hence
+\(c_{\hat\varphi} = 2\) and \(c_{\hat\varphi}c_\varphi = 2 = \deg\varphi\), as part <a href="#it-ec-c-phi-dual">5</a> of
+Proposition <a href="#prop-ec-c-phi">4.4.5</a> requires.  If we only knew that
+\(\iota \circ \psi \circ \varphi = \pm[2]\), this would decide the sign, since
+\(c_{[-2]} = -2 \neq 2\).
+</p>
+</div>
+
+<div class="ec-thm ec-corollary" id="cor-ec-dual-inseparable">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Corollary 4.4.8</span>.</span> Suppose \(\operatorname{char} k = p > 0\).
+</p>
+<ol class="org-ol">
+<li><a id="it-ec-insep-dual"></a> If \(p \mid \deg\varphi\), then \(\varphi\) or \(\hat\varphi\) is inseparable.</li>
+<li><a id="it-ec-insep-p"></a> \([p]\) is inseparable.</li>
+</ol>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+Part <a href="#it-ec-insep-dual">1</a> is part <a href="#it-ec-c-phi-dual">5</a> of Proposition <a href="#prop-ec-c-phi">4.4.5</a> with \(\deg\varphi = 0\) in \(k\).  For part <a href="#it-ec-insep-p">2</a>,
+\(c_{[p]} = p = 0\).
+</p>
+</details>
+
+<p>
+For \(\Gm\) the same two facts are elementary
+(Examples <a href="03-curves.html#eg-crv-gm-differential">3.4.7</a> and <a href="03-curves.html#eg-crv-gm-mult">3.4.8</a>).  In
+both cases \(c_{[m]} = m\) is the derivative of \([m]\) at the identity: of \(t \mapsto t^m\)
+at \(t = 1\), and of \(z \mapsto mz\) on \(\C/\Lambda\).  The difference is the degree.  In
+characteristic \(p\), \([p]\) on \(\Gm\) is inseparable of degree \(p\), so it has no room for a
+kernel; on \(E\) it is inseparable of degree \(p^2\), and \(E[p](\kbar)\) can have \(p\)
+elements.
+</p>
+
+<div class="ec-thm ec-warning" id="warn-ec-torsion-imperfect">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Warning 4.4.9</span>.</span> If \(k\) is imperfect, the points of \(E[p](\kbar)\) need not lie in \(E(\ksep)\).  Let
+\(k \coloneqq \F_5(u)\) and \(E\colon y^2 = x^3 + 3x + u\), with \(j = 2/(u^2 + 4)\).  Its
+\(5\)-division polynomial is \((x^5 - c_1)(x^5 - c_2)\), with \(c_1 = 4u^2 + 2u + 1\) and
+\(c_2 = u^2 + 2u + 4\).  So the four non-zero points of \(E[5](\kbar)\) have \(x\)-coordinates
+\(c_1^{1/5}\) and \(c_2^{1/5}\), which are purely inseparable over \(k\) and not in \(k\).
+Hence \(E[5](\kbar) \cong \Z/5\Z\), but \(E[5](\kbar) \cap E(\ksep) = \{O\}\).  This does not contradict
+the discussion after Theorem <a href="#thm-ec-isogeny-kernel">4.3.8</a>, since \([5]\) is inseparable.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-ec-tate" class="outline-2">
+<h2 id="sec-ec-tate"><span class="ec-status ec-status-draft"><span class="ec-status-label ec-status-draft">Draft</span><time datetime="2026-09-23">23 Sep 2026</time></span><span class="section-number" id="s4.5">4.5</span> The Tate module</h2>
+<div class="outline-text-2" id="text-sec-ec-tate">
+<div class="ec-thm ec-corollary" id="cor-ec-torsion">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Corollary 4.5.1</span>.</span> Let \(E\) be an elliptic curve over \(k\), and \(N \geq 1\).
+</p>
+<ol class="org-ol">
+<li><a id="it-ec-torsion-prime-to-p"></a> If \(\operatorname{char} k \nmid N\), then \(E[N](\kbar) \subseteq E(\ksep)\), and
+\(E[N](\kbar) \cong (\Z/N\Z)^2\).</li>
+<li><a id="it-ec-torsion-p"></a> If \(\operatorname{char} k = p > 0\), then either \(E[p^e](\kbar) = 0\) for all \(e \geq 1\), or
+\(E[p^e](\kbar) \cong \Z/p^e\Z\) for all \(e \geq 1\).</li>
+</ol>
+<p>
+Here \(E[N](\kbar)\) is the kernel of \([N]\) on \(E(\kbar)\).
+</p>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<ol class="org-ol">
+<li>By Corollary <a href="#cor-ec-mult-omega">4.4.3</a>, \([N]\) is separable, so
+\(\#E[N](\kbar) = \deg[N] = N^2\) by Theorems <a href="#thm-ec-isogeny-kernel">4.3.8</a> and <a href="#thm-ec-dual">4.3.10</a>.
+The same holds for every divisor of \(N\).  A finite abelian group of order \(N^2\) with
+\(d^2\) elements killed by \(d\), for every \(d \mid N\), is \((\Z/N\Z)^2\).  The points of
+\(E[N](\kbar)\) lie in \(E(\ksep)\) by the discussion after Theorem <a href="#thm-ec-isogeny-kernel">4.3.8</a>.</li>
+<li>Write \([p] = \Versch \circ \Frob\), with \(\Frob\) the \(p\)-th power relative
+Frobenius and \(\Versch\) its Verschiebung (Definition <a href="#def-ec-verschiebung">4.3.12</a>);
+\(\Frob\) is purely inseparable of degree \(p\).  Then
+\(\#E[p^e](\kbar) = \deg_s[p^e] = (\deg_s\Versch)^e\), and \(\deg_s\Versch \in \{1, p\}\)
+[<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Corollary III.6.4].</li>
+</ol>
+</details>
+
+<p>
+Compare with Example <a href="01-riemann-surfaces.html#eg-rs-mult-by-m">1.3.4</a>.  In case <a href="#it-ec-torsion-p">2</a>, \(E\) is ordinary if
+\(E[p](\kbar) \cong \Z/p\Z\), and supersingular if \(E[p](\kbar) = 0\)
+(Theorem <a href="05-finite-fields.html#thm-ff-supersingular">5.4.1</a>).  By part <a href="#it-ec-torsion-prime-to-p">1</a>, \(\Gal_k\) acts on \(E[N](\kbar) \cong (\Z/N\Z)^2\) whenever
+\(\operatorname{char} k \nmid N\), giving the mod \(N\) Galois representation
+</p>
+\begin{equation*}
+\bar\rho_{E,N}\colon \Gal_k \to \Aut(E[N](\kbar)) \cong \GL_2(\Z/N\Z),
+\end{equation*}
+<p>
+the second isomorphism depending on a choice of basis.  For instance, for
+\(y^2 = (x - e_1)(x - e_2)(x - e_3)\) as in Example <a href="#eg-ec-two-torsion">4.2.9</a>, \(E[2](\kbar)\) consists
+of rational points and \(\bar\rho_{E,2}\) is trivial.  If \(y^2 = p(x)\) with \(p\)
+irreducible, then \(\Gal_k\) permutes the three roots of \(p\), and \(\bar\rho_{E,2}\) has
+image containing an element of order \(3\) in \(\GL_2(\F_2) \cong S_3\).
+</p>
+
+<p>
+For \(\Gm\) the analogue of Corollary <a href="#cor-ec-torsion">4.5.1</a> is elementary
+(Example <a href="03-curves.html#eg-crv-gm-mult">3.4.8</a>).  If \(\operatorname{char} k \nmid N\), then
+\(\mu_N(\kbar) \subseteq \ksep\) is a subgroup of order \(N\) of \((\ksep)^\times\), hence
+cyclic: \(\mu_N(\kbar) \cong \Z/N\Z\), and an isomorphism is the choice of a primitive
+\(N\)-th root of unity.  If \(\operatorname{char} k = p\), then \(\mu_{p^e}(\kbar) = \{1\}\).
+Torsion of rank \(1\) for \(\Gm\), of rank \(2\) for \(E\), matches \(\deg[N] = N\) versus
+\(N^2\).
+</p>
+
+<div class="ec-thm ec-example" id="eg-ec-mu-f7">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Example 4.5.2</span>.</span> Let \(k \coloneqq \F_7\).  Since \(\F_{7^m}^\times\) is cyclic of order \(7^m - 1\), we have
+\(\mu_{3^n}(\kbar) \subseteq \F_{7^m}\) if and only if \(3^n \mid 7^m - 1\).  By the lifting
+the exponent lemma, \(v_3(7^m - 1) = v_3(7 - 1) + v_3(m) = 1 + v_3(m)\).  So
+\(\mu_3(\kbar) \subseteq \F_7\), and the field generated by \(\mu_{3^n}(\kbar)\) is
+\(\F_{7^{3^{n - 1}}}\).  Equivalently, the Frobenius \(\zeta \mapsto \zeta^7\) generates the
+action of \(\Gal_{\F_7}\) on \(\mu_{3^n}(\kbar) \cong \Z/3^n\Z\), and \(7\) has order \(3^{n-1}\) in
+\((\Z/3^n\Z)^\times\).
+</p>
+</div>
+
+<p>
+The groups \(E[\ell^n](\ksep)\) for varying \(n\) fit together.  Throughout this section and the
+next, \(\ell\) is a prime different from \(\operatorname{char} k\).
+</p>
+
+<div class="ec-thm ec-definition" id="def-ec-tate-module">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Definition 4.5.3</span>.</span> The (\(\ell\)-adic) <dfn class="ec-cdef" id="gls-tate-module" data-gls="tate-module">Tate module</dfn> of \(E\) is the inverse limit
+</p>
+\begin{equation*}
+T_\ell(E) \coloneqq \varprojlim_n E[\ell^n](\ksep),
+\end{equation*}
+<p>
+taken with respect to the maps \([\ell]\colon E[\ell^{n+1}](\ksep) \to E[\ell^n](\ksep)\).  The
+\(\ell\)-adic representation of \(E\) is the continuous homomorphism
+\(\rho_{E,\ell}\colon \Gal_k \to \Aut(T_\ell(E))\) obtained from the action of \(\Gal_k\)
+on each \(E[\ell^n](\ksep)\).
+</p>
+</div>
+
+<p>
+Likewise, \(T_\ell(\Gm) \coloneqq \varprojlim_n \mu_{\ell^n}(\ksep)\), with the maps
+\(\zeta \mapsto \zeta^\ell\), is also written \(\Z_\ell(1)\).  Choosing primitive
+\(\ell^n\)-th roots of unity \(\zeta_{\ell^n}\) with \(\zeta_{\ell^{n+1}}^\ell = \zeta_{\ell^n}\),
+which is possible because \(\zeta \mapsto \zeta^\ell\) maps \(\mu_{\ell^{n+1}}(\ksep)\) onto
+\(\mu_{\ell^n}(\ksep)\), gives an isomorphism \(\Z_\ell \to T_\ell(\Gm)\),
+\((a_n)_n \mapsto (\zeta_{\ell^n}^{a_n})_n\).  Over \(\C\) one can take
+\(\zeta_{\ell^n} = e^{2\pi i/\ell^n}\).  The group \(\Gal_k\) acts on \(T_\ell(\Gm)\) through
+the \(\ell\)-adic cyclotomic character \(\chi_\ell\colon \Gal_k \to \Z_\ell^\times\),
+defined by \(\sigma(\zeta) = \zeta^{\chi_\ell(\sigma)}\).  In characteristic \(p\),
+\(T_p(\Gm) = 0\).
+</p>
+
+<p>
+By Corollary <a href="#cor-ec-torsion">4.5.1</a>, \(T_\ell(E) \cong \Z_\ell^2\) as a \(\Z_\ell\)-module, so
+\(\rho_{E,\ell}\) takes values in \(\GL_2(\Z_\ell)\) after choosing a basis; and
+\(T_p(E)\) is \(0\) or \(\Z_p\) if \(p = \operatorname{char} k > 0\)
+[<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Proposition III.7.1].  Concretely, \([\ell]\colon E[\ell^{n+1}](\ksep) \to
+E[\ell^n](\ksep)\) is surjective, because \([\ell]\) is surjective on \(E(\kbar)\).  Choose a basis
+\((P_1, Q_1)\) of \(E[\ell](\ksep)\), and inductively \(P_{n+1}, Q_{n+1}\) with
+\([\ell]P_{n+1} = P_n\) and \([\ell]Q_{n+1} = Q_n\).  If \([a]P_n + [b]Q_n = O\), then applying
+\([\ell^{n-1}]\) and induction show that \(\ell^n \mid a\) and \(\ell^n \mid b\), so
+\((P_n, Q_n)\) is a basis of \(E[\ell^n](\ksep) \cong (\Z/\ell^n\Z)^2\), and
+\((a_n, b_n)_n \mapsto ([a_n]P_n + [b_n]Q_n)_n\) is an isomorphism
+\(\Z_\ell^2 \to T_\ell(E)\).  Over \(\C\) this is familiar: since
+\(E[\ell^n](\C) = \ell^{-n}\Lambda/\Lambda \cong \Lambda/\ell^n\Lambda\) compatibly in \(n\),
+</p>
+\begin{equation*}
+T_\ell(\C/\Lambda) \cong \Lambda \otimes_\Z \Z_\ell, \qquad
+T_\ell(\C^\times) \cong 2\pi i\Z \otimes_\Z \Z_\ell,
+\end{equation*}
+<p>
+and \(\Lambda\) and \(2\pi i\Z\) are the first homology groups of \(\C/\Lambda\) and
+\(\C^\times\) (Examples <a href="01-riemann-surfaces.html#eg-rs-invariant-differential-cstar">1.5.4</a> and
+<a href="01-riemann-surfaces.html#eg-rs-invariant-differential-torus">1.5.5</a>).  So the Tate module is an algebraic substitute for
+\(H_1\), and unlike \(H_1\) it carries an action of \(\Gal_k\).
+</p>
+
+<div class="ec-thm ec-example" id="eg-ec-tate-y2-x3-x">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Example 4.5.4</span>.</span> Let \(E\colon y^2 = x^3 - x\) over \(\Q\), and \(\ell = 2\).  Then
+\(E[2](\Qbar) = \{O, (0, 0), (1, 0), (-1, 0)\}\).  By Algorithm <a href="#alg-ec-group-law">4.2.7</a>,
+\([2]^*x \coloneqq x \circ [2] = (x^2 + 1)^2/\bigl(4(x^3 - x)\bigr)\), and
+</p>
+\begin{equation*}
+[2]^*x - e = \frac{g_e(x)^2}{4(x^3 - x)}, \qquad
+g_0 = x^2 + 1, \quad g_1 = x^2 - 2x - 1, \quad g_{-1} = x^2 + 2x - 1.
+\end{equation*}
+<p>
+So the points of \(E(\Qbar)\) halving \((0, 0)\) have \(x = \pm i\), those halving \((1, 0)\) have
+\(x = 1 \pm \sqrt 2\), and those halving \((-1, 0)\) have \(x = -1 \pm \sqrt 2\).  For
+instance \(P_2 \coloneqq (i, 1 - i)\) and \(Q_2 \coloneqq (1 + \sqrt 2, 2 + \sqrt 2)\) lie on
+\(E\), because \(i^3 - i = (1 - i)^2\) and \(x^3 - x = 2x^2 = (2 + \sqrt 2)^2\) for
+\(x = 1 + \sqrt 2\).  They satisfy \([2]P_2 = (0, 0)\) and \([2]Q_2 = (1, 0)\), so, with
+\(P_1 \coloneqq (0, 0)\) and \(Q_1 \coloneqq (1, 0)\), \((P_2, Q_2)\) is a basis of \(E[4](\Qbar)\) as
+above.  Hence \(E[4](\Qbar) \subseteq E(\Q(i, \sqrt 2))\), and \(\Q(i, \sqrt 2) = \Q(\zeta_8)\) is the
+field generated by \(\mu_8(\Qbar)\), which it must contain by Corollary <a href="#cor-ec-weil-roots-of-unity">4.6.5</a>.
+Complex conjugation \(\sigma\) fixes \(Q_2\) and sends \(P_2\) to
+\((-i, 1 + i) = [3]P_2 + [2]Q_2\), so in this basis
+</p>
+\begin{equation*}
+\bar\rho_{E,4}(\sigma) = \begin{pmatrix} 3 & 0 \\ 2 & 1 \end{pmatrix}, \qquad
+\det\bar\rho_{E,4}(\sigma) = 3 \equiv \chi_2(\sigma) \pmod 4,
+\end{equation*}
+<p>
+since \(\sigma(i) = i^3\).  Continuing to halve gives compatible sequences
+\((P_1, P_2, P_3, \dots)\) and \((Q_1, Q_2, Q_3, \dots)\), a \(\Z_2\)-basis of \(T_2(E)\),
+just as \((-1, i, \zeta_8, \dots)\) is a \(\Z_2\)-basis of \(T_2(\Gm)\).
+</p>
+</div>
+
+<p>
+An isogeny \(\varphi\colon E_1 \to E_2\) restricts to maps \(E_1[\ell^n](\ksep) \to E_2[\ell^n](\ksep)\)
+compatible with \([\ell]\), and so induces a \(\Z_\ell\)-linear map
+\(\varphi_\ell\colon T_\ell(E_1) \to T_\ell(E_2)\).  Since \(\varphi\) is a morphism of
+\(k\)-varieties, \(\varphi_\ell\) commutes with \(\Gal_k\).  The construction respects
+composition and sums, and \([m]_\ell = m\), so Theorem <a href="#thm-ec-dual">4.3.10</a> gives
+\(\hat\varphi_\ell \circ \varphi_\ell = \deg\varphi\).  Since multiplication by
+\(\deg\varphi \neq 0\) is injective on the torsion-free module \(T_\ell(E_1)\),
+\(\varphi_\ell\) is injective if \(\varphi \neq 0\), and an isomorphism if
+\(\ell \nmid \deg\varphi\).  For \(\Gm\), \([m]_\ell\) is multiplication by \(m\) on
+\(\Z_\ell(1)\).  Note that \(c_{\hat\varphi}c_\varphi = \deg\varphi\) and
+\(\hat\varphi_\ell \circ \varphi_\ell = \deg\varphi\) both come from
+\(\hat\varphi \circ \varphi = [\deg\varphi]\): pullback of differentials reverses the order of
+composition and \(\varphi \mapsto \varphi_\ell\) does not, but scalars commute.  In
+characteristic \(p\), the scalar \(c_{[p]} = 0\) detects that \([p]\) is inseparable, while
+\(T_p\) is too small to see it.
+</p>
+
+<div class="ec-thm ec-theorem" id="thm-ec-tate-injective">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Theorem 4.5.5</span>.</span> The map \(\Hom(E_1, E_2) \otimes \Z_\ell \to \Hom_{\Z_\ell}(T_\ell(E_1), T_\ell(E_2))\),
+\(\varphi \mapsto \varphi_\ell\), is injective.  Consequently \(\Hom(E_1, E_2)\) is a free
+\(\Z\)-module of rank at most \(4\).
+</p>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+See [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Theorem III.7.4 and Corollary III.7.5].  The key input is that
+\(\ker[\ell^n] \subseteq \ker\varphi\) forces \(\varphi\) to factor through \([\ell^n]\)
+(Proposition <a href="#prop-ec-quotient">4.3.9</a>).  The rank bound follows because the target is free of
+rank \(4\) over \(\Z_\ell\), and \(\Hom(E_1, E_2)\) is torsion-free
+(Proposition <a href="#prop-ec-hom-torsion-free">4.3.7</a>).
+</p>
+</details>
+
+<p>
+For number fields and finite fields the image of \(\Hom(E_1, E_2) \otimes \Z_\ell\) is
+exactly the \(\Gal_k\)-equivariant homomorphisms.  This is the Tate conjecture, a theorem of
+Tate over finite fields and of Faltings over number fields
+[<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Section III.7].
+</p>
+
+<p>
+We summarize the comparison between the multiplicative group and an elliptic curve.  Here
+\(\ell \neq \operatorname{char} k\), \(p = \operatorname{char} k > 0\) in the row about
+\([p^e]\), and kernels are taken on \(\kbar\)-points.
+</p>
+
+<table>
+
+
+<colgroup>
+<col  class="org-left">
+
+<col  class="org-left">
+
+<col  class="org-left">
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">&#xa0;</th>
+<th scope="col" class="org-left">\(\Gm\)</th>
+<th scope="col" class="org-left">\(E\)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">points over \(\kbar\)</td>
+<td class="org-left">\(\kbar^\times\)</td>
+<td class="org-left">\(E(\kbar)\)</td>
+</tr>
+
+<tr>
+<td class="org-left">over \(\C\)</td>
+<td class="org-left">\(\C/2\pi i\Z\)</td>
+<td class="org-left">\(\C/\Lambda\)</td>
+</tr>
+
+<tr>
+<td class="org-left">invariant differential</td>
+<td class="org-left">\(dt/t\), poles at \(0\) and \(\infty\)</td>
+<td class="org-left">\(dx/(2y)\), no zeros or poles</td>
+</tr>
+
+<tr>
+<td class="org-left">\([m]^*\omega\)</td>
+<td class="org-left">\(m\omega\)</td>
+<td class="org-left">\(m\omega\)</td>
+</tr>
+
+<tr>
+<td class="org-left">\(\deg[m]\)</td>
+<td class="org-left">\(\lvert m\rvert\)</td>
+<td class="org-left">\(m^2\)</td>
+</tr>
+
+<tr>
+<td class="org-left">\(\ker[\ell^n]\)</td>
+<td class="org-left">\(\Z/\ell^n\Z\)</td>
+<td class="org-left">\((\Z/\ell^n\Z)^2\)</td>
+</tr>
+
+<tr>
+<td class="org-left">\(\ker[p^e]\)</td>
+<td class="org-left">\(0\)</td>
+<td class="org-left">\(0\) or \(\Z/p^e\Z\)</td>
+</tr>
+
+<tr>
+<td class="org-left">\(T_\ell\)</td>
+<td class="org-left">\(\Z_\ell(1) \cong \Z_\ell\)</td>
+<td class="org-left">\(\Z_\ell^2\)</td>
+</tr>
+
+<tr>
+<td class="org-left">\(T_\ell\) over \(\C\)</td>
+<td class="org-left">\(2\pi i\Z \otimes \Z_\ell\)</td>
+<td class="org-left">\(\Lambda \otimes \Z_\ell\)</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="outline-container-sec-ec-weil" class="outline-2">
+<h2 id="sec-ec-weil"><span class="ec-status ec-status-draft"><span class="ec-status-label ec-status-draft">Draft</span><time datetime="2026-09-21">21 Sep 2026</time></span><span class="section-number" id="s4.6">4.6</span> The Weil pairing</h2>
+<div class="outline-text-2" id="text-sec-ec-weil">
+<p>
+In Example <a href="01-riemann-surfaces.html#eg-rs-mult-by-m">1.3.4</a> we compared \((\C/\Lambda)[N]\) with the group \(\mu_N(\C)\) of
+roots of unity.  There is a deeper link: if \(\Lambda = \Z\omega_1 \oplus \Z\omega_2\) with
+\(\omega_1/\omega_2 \in \bbH\), the pairing
+</p>
+\begin{equation*}
+\Bigl(\frac{a\omega_1 + b\omega_2}{N}, \frac{c\omega_1 + d\omega_2}{N}\Bigr)
+\mapsto e^{2\pi i(ad - bc)/N}
+\end{equation*}
+<p>
+is a well defined, bilinear, alternating and non-degenerate map
+\((\C/\Lambda)[N] \times (\C/\Lambda)[N] \to \mu_N(\C)\).  Over an arbitrary field there
+is no \(e^{2\pi i t}\), but the pairing can be built from functions.  Its values lie in
+\(\mu_N(\ksep)\), where \(\mu_N = \Gm[N]\), so the Weil pairing relates the torsion of \(E\) to the torsion of the
+multiplicative group.
+</p>
+
+<p>
+Fix \(N \geq 2\) with \(\operatorname{char} k \nmid N\), so that
+\(E[N](\kbar) = E[N](\ksep) \cong (\Z/N\Z)^2\) by Corollary <a href="#cor-ec-torsion">4.5.1</a>.  Let
+\(S, T \in E[N](\ksep)\).  Choose divisors
+</p>
+\begin{equation*}
+D_S \sim (S) - (O), \qquad D_T \sim (T) - (O)
+\end{equation*}
+<p>
+in \(\Div E_{\ksep}\) with disjoint supports; this is possible because
+\(D_T\) may be replaced by \((T + R) - (R)\) for any \(R \in E(\ksep)\) outside the support of
+\(D_S\), and \(E(\ksep)\) is infinite.  The divisor \(N D_S\) is linearly equivalent to
+\(N(S) - N(O)\), which is principal by Corollary <a href="#cor-ec-principal">4.2.3</a>, since \([N]S = O\).
+So there are \(f_S, f_T \in \ksep(E)^\times\) with
+</p>
+\begin{equation*}
+\div(f_S) = N D_S, \qquad \div(f_T) = N D_T,
+\end{equation*}
+<p>
+and the supports of \(\div(f_S)\) and \(D_T\) are disjoint, as are those of \(\div(f_T)\)
+and \(D_S\).  Both values \(f_S(D_T)\) and \(f_T(D_S)\) are therefore defined in the sense of
+Definition <a href="03-curves.html#def-crv-eval-divisor">3.3.3</a>.
+</p>
+
+<div class="ec-thm ec-definition" id="def-ec-weil-pairing">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Definition 4.6.1</span>.</span> The <dfn class="ec-cdef" id="gls-weil-pairing" data-gls="weil-pairing">Weil pairing</dfn> is
+</p>
+\begin{equation*}
+e_N\colon E[N](\ksep) \times E[N](\ksep) \to \mu_N(\ksep), \qquad
+e_N(S, T) \coloneqq \frac{f_S(D_T)}{f_T(D_S)},
+\end{equation*}
+<p>
+for any choice of \(D_S\), \(D_T\), \(f_S\) and \(f_T\) as above.
+</p>
+</div>
+
+<div class="ec-thm ec-lemma" id="lem-ec-weil-well-defined">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Lemma 4.6.2</span>.</span> The quantity \(e_N(S, T)\) lies in \(\mu_N(\ksep)\) and does not depend on the choices of
+\(D_S\), \(D_T\), \(f_S\) and \(f_T\).
+</p>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+Everything follows from Weil reciprocity (Theorem <a href="03-curves.html#thm-crv-weil-reciprocity">3.3.4</a>), applied
+over \(\kbar\) to functions that happen to be defined over \(\ksep\).
+</p>
+
+<p>
+The function \(f_S\) is determined by \(D_S\) up to a constant \(c \in \ksep^\times\) by
+Proposition <a href="03-curves.html#prop-crv-principal">3.3.2</a>, and replacing \(f_S\) by \(cf_S\) multiplies
+\(f_S(D_T)\) by \(c^{\deg D_T} = c^0 = 1\).  So \(e_N(S, T)\) depends only on \(D_S\) and
+\(D_T\).
+</p>
+
+<p>
+Now replace \(D_S\) by \(D_S + \div(h)\), which is the general divisor linearly equivalent
+to \(D_S\); moving \(D_T\) if necessary, we may assume the supports stay disjoint.  Then \(f_S\)
+is replaced by \(f_S h^N\), and \(e_N(S, T)\) is multiplied by
+</p>
+\begin{equation*}
+\frac{h(D_T)^N}{f_T(\div h)} = \frac{h(N D_T)}{f_T(\div h)} = \frac{h(\div f_T)}{f_T(\div h)} = 1,
+\end{equation*}
+<p>
+the last equality by reciprocity.  The same argument applies to \(D_T\).
+</p>
+
+<p>
+Finally, \(\deg D_S = \deg D_T = 0\) gives
+</p>
+\begin{equation*}
+e_N(S, T)^N = \frac{f_S(D_T)^N}{f_T(D_S)^N} = \frac{f_S(N D_T)}{f_T(N D_S)}
+= \frac{f_S(\div f_T)}{f_T(\div f_S)} = 1,
+\end{equation*}
+<p>
+again by reciprocity.  So \(e_N(S, T) \in \mu_N(\kbar)\), and it lies in \(\mu_N(\ksep)\)
+because \(\operatorname{char} k \nmid N\).
+</p>
+</details>
+
+<p>
+The values are \(N\)-th roots of unity for the same reason that the pairing is well
+defined, and neither fact needs \(e^{2\pi i t}\).
+</p>
+
+<div class="ec-thm ec-proposition" id="prop-ec-weil-pairing">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Proposition 4.6.3</span>.</span> The Weil pairing is
+</p>
+<ol class="org-ol">
+<li><a id="it-ec-weil-bilinear"></a> bilinear;</li>
+<li><a id="it-ec-weil-alternating"></a> alternating: \(e_N(T, T) = 1\), so \(e_N(S, T) = e_N(T, S)^{-1}\);</li>
+<li><a id="it-ec-weil-non-degenerate"></a> non-degenerate: if \(e_N(S, T) = 1\) for all \(S \in E[N](\ksep)\), then \(T = O\);</li>
+<li><a id="it-ec-weil-galois"></a> Galois equivariant: \(\sigma(e_N(S, T)) = e_N(\sigma S, \sigma T)\) for
+\(\sigma \in \Gal_k\);</li>
+<li><a id="it-ec-weil-compatible"></a> compatible: \(e_{NN'}(S, T) = e_N([N']S, T)\) for \(S \in E[NN'](\ksep)\) and \(T \in E[N](\ksep)\);</li>
+<li><a id="it-ec-weil-adjoint"></a> adjoint for isogenies: \(e_N(\varphi S, T) = e_N(S, \hat\varphi T)\) for
+\(\varphi\colon E_1 \to E_2\), \(S \in E_1[N](\ksep)\) and \(T \in E_2[N](\ksep)\).</li>
+</ol>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+Parts <a href="#it-ec-weil-bilinear">1</a> and <a href="#it-ec-weil-galois">4</a> come straight from the definition.  For additivity in the first variable,
+take \(D_{S_1}\), \(D_{S_2}\) and \(D_{S_1 + S_2}\) supported away from \(D_T\).  Their
+difference is linearly equivalent to \((S_1) + (S_2) - (S_1 + S_2) - (O)\), a divisor of
+degree \(0\) that sums to \(O\) in \(E(\ksep)\), hence is \(\div(h)\) for some \(h\) by
+Corollary <a href="#cor-ec-principal">4.2.3</a>.  So \(f_{S_1}f_{S_2}/f_{S_1 + S_2}\) and \(h^N\) have the
+same divisor, and reciprocity kills the resulting factor exactly as in
+Lemma <a href="#lem-ec-weil-well-defined">4.6.2</a>.  Part <a href="#it-ec-weil-galois">4</a> is the Galois equivariance of evaluation noted
+after Definition <a href="03-curves.html#def-crv-eval-divisor">3.3.3</a>: applying \(\sigma\) carries a choice of
+\(D_S\), \(D_T\), \(f_S\), \(f_T\) for the pair \((S, T)\) to one for
+\((\sigma S, \sigma T)\).  Swapping \(S\) and \(T\) inverts the defining ratio, which gives
+the second half of part <a href="#it-ec-weil-alternating">2</a>; the first half, \(e_N(T, T) = 1\), is stronger in characteristic
+\(2\) and is proved from the construction of Remark <a href="#rem-ec-weil-silverman">4.6.4</a>.  For that,
+and for parts <a href="#it-ec-weil-non-degenerate">3</a>, <a href="#it-ec-weil-compatible">5</a> and <a href="#it-ec-weil-adjoint">6</a>, see [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Propositions III.8.1 and III.8.2].
+</p>
+</details>
+
+<div class="ec-thm ec-remark" id="rem-ec-weil-silverman">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Remark 4.6.4</span>.</span> Silverman [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>] defines the pairing differently, by pulling back along \([N]\).  Given
+\(T \in E[N](\ksep)\), choose \(f\) with \(\div(f) = N(T) - N(O)\), and choose
+\(T' \in E[N^2](\ksep)\) with \([N]T' = T\).  The divisor
+\(\sum_{R \in E[N](\ksep)} \bigl((T' + R) - (R)\bigr)\) has degree \(0\) and sums to
+\([N^2]T' = O\), so it is \(\div(g)\) for some \(g\), and then \(f \circ [N]\) and \(g^N\)
+have the same divisor; rescaling \(f\) gives \(f \circ [N] = g^N\).  For
+\(S \in E[N](\ksep)\) and \(X \in E(\ksep)\) we get \(g(X + S)^N = f([N]X) = g(X)^N\), so
+\(g(X + S)/g(X)\) is an \(N\)-th root of unity, and as a function of \(X\) it is a
+morphism \(E \to \PP^1\) that is not surjective, hence constant.  That constant is
+\(e_N(S, T)\) [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Exercise 3.16].  This construction makes the analogy with
+\(\Gm\) visible &#x2014; the pairing is built from the \(N\)-th power map &#x2014; and it is the form
+in which part <a href="#it-ec-weil-alternating">2</a> of Proposition <a href="#prop-ec-weil-pairing">4.6.3</a> is proved.  The definition above is
+the one to compute with: evaluating \(f_S\) at \(D_T\) is what Miller's algorithm does.
+</p>
+</div>
+
+<div class="ec-thm ec-corollary" id="cor-ec-weil-roots-of-unity">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Corollary 4.6.5</span>.</span> The Weil pairing is surjective onto \(\mu_N(\ksep)\).  In particular, if
+\(E[N](\ksep) \subseteq E(k)\), then \(\mu_N(\ksep) \subseteq k\).
+</p>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+The image is a subgroup \(\mu_d(\ksep)\).  Then \(e_N([d]S, T) = e_N(S, T)^d = 1\) for all \(S\)
+and \(T\), so \([d]S = O\) for all \(S \in E[N](\ksep)\) by non-degeneracy, and \(d = N\) by
+Corollary <a href="#cor-ec-torsion">4.5.1</a>.  If \(E[N](\ksep) \subseteq E(k)\), then \(\Gal_k\) fixes every value
+\(e_N(S, T)\) by Galois equivariance [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Corollary III.8.1.1].
+</p>
+</details>
+
+<div class="ec-thm ec-example" id="eg-ec-weil-q">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Example 4.6.6</span>.</span> If \(E\) is an elliptic curve over \(\Q\) and \(N \geq 3\), then \(E[N](\Qbar) \not\subseteq E(\Q)\),
+since \(\mu_N(\Qbar) \not\subseteq \Q\).  So \(E(\Q)_{\tors}\) never contains a copy of
+\((\Z/N\Z)^2\) with \(N \geq 3\), while \((\Z/2\Z)^2\) does occur
+(Example <a href="#eg-ec-two-torsion">4.2.9</a>).
+</p>
+</div>
+
+<p>
+By compatibility, the pairings \(e_{\ell^n}\) fit into a pairing
+\(e\colon T_\ell(E) \times T_\ell(E) \to \Z_\ell(1) = T_\ell(\Gm)\),
+which is bilinear, alternating, non-degenerate and Galois equivariant
+[<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Proposition III.8.3].  A bilinear alternating form on a free module of
+rank \(2\) transforms under an endomorphism by its determinant.  So
+\(e(\varphi_\ell x, \varphi_\ell y) = e(x, y)^{\det\varphi_\ell}\), while by adjointness
+\(e(\varphi_\ell x, \varphi_\ell y) = e(x, \hat\varphi_\ell\varphi_\ell y) =
+e(x, y)^{\deg\varphi}\).  Similarly, Galois equivariance says that
+\(\det\rho_{E,\ell}\) is the \(\ell\)-adic cyclotomic character.
+</p>
+
+<div class="ec-thm ec-proposition" id="prop-ec-det-trace">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Proposition 4.6.7</span>.</span> Let \(\varphi \in \End(E)\).  Then
+</p>
+\begin{equation*}
+\det\varphi_\ell = \deg\varphi, \qquad \tr\varphi_\ell = 1 + \deg\varphi - \deg(1 - \varphi).
+\end{equation*}
+<p>
+In particular, the characteristic polynomial of \(\varphi_\ell\) has integer coefficients
+independent of \(\ell\).
+</p>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+The determinant was computed above.  For the trace, apply
+\(\det(1 - M) = 1 - \tr M + \det M\), valid for \(2 \times 2\) matrices, to
+\(M = \varphi_\ell\) [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Proposition III.8.6].
+</p>
+</details>
+
+<p>
+For the Frobenius endomorphism of an elliptic curve over \(\F_q\), this gives the
+characteristic polynomial of \(\Frob_\ell\) (Theorem <a href="05-finite-fields.html#thm-ff-frobenius">5.3.8</a>), and positivity of
+the degree (Corollary <a href="#cor-ec-degree-quadratic">4.3.11</a>) gives Hasse's bound
+(Theorem <a href="05-finite-fields.html#thm-ff-hasse">5.2.1</a>).
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-ec-end-aut" class="outline-2">
+<h2 id="sec-ec-end-aut"><span class="ec-status ec-status-draft"><span class="ec-status-label ec-status-draft">Draft</span><time datetime="2026-09-23">23 Sep 2026</time></span><span class="section-number" id="s4.7">4.7</span> Endomorphisms and automorphisms</h2>
+<div class="outline-text-2" id="text-sec-ec-end-aut">
+<p>
+For complex tori, \(\End(\C/\Lambda) = \{\alpha \in \C : \alpha\Lambda \subseteq \Lambda\}\)
+(Corollary <a href="01-riemann-surfaces.html#cor-rs-torus-homs">1.3.2</a>).
+Such an \(\alpha\) satisfies a monic quadratic equation over \(\Z\), by the Cayley&#x2013;Hamilton
+theorem applied to multiplication by \(\alpha\) on \(\Lambda \cong \Z^2\).  If \(\alpha \in \R\), then
+multiplication by \(\alpha\) on \(\Lambda \otimes_\Z \R = \C\) is the scalar \(\alpha\), so its
+characteristic polynomial \((T - \alpha)^2\) has integer coefficients, and \(\alpha \in \Z\).  So if
+\(\alpha \notin \Z\), then \(\Q(\alpha)\) is an imaginary quadratic field.  Hence \(\End(\C/\Lambda)\) is either \(\Z\) or an order in an
+imaginary quadratic field.  The Gaussian and Eisenstein lattices of
+Examples <a href="01-riemann-surfaces.html#eg-rs-lattice-gaussian">1.2.2</a> and <a href="01-riemann-surfaces.html#eg-rs-lattice-eisenstein">1.2.3</a> have the extra endomorphisms \(i\) and \(\omega\).  In positive
+characteristic a third possibility appears, a non-commutative one, and to name it we
+first collect what we need about quaternion algebras.
+</p>
+</div>
+
+<div id="outline-container-org946de59" class="outline-3">
+<h3 id="org946de59"><span class="section-number" id="s4.7.1">4.7.1</span> Quaternion algebras</h3>
+<div class="outline-text-3" id="text-7-1">
+<p>
+We follow [<a class="ec-cite" href="#bib-Voight21">Voi21</a>].  Throughout this subsection, \(F\) is a field with
+\(\operatorname{char} F \neq 2\).
+</p>
+
+<div class="ec-thm ec-definition" id="def-ec-quaternion-algebra">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Definition 4.7.1</span>.</span> A <dfn class="ec-cdef" id="gls-quaternion-algebra" data-gls="quaternion-algebra">quaternion algebra</dfn> over \(F\) is an \(F\)-algebra \(B\) with a basis
+\(1, i, j, ij\) such that
+</p>
+\begin{equation*}
+i^2 = a, \qquad j^2 = b, \qquad ji = -ij
+\end{equation*}
+<p>
+for some \(a, b \in F^\times\).  These relations determine the multiplication, and for
+every \(a, b \in F^\times\) they define a quaternion algebra, denoted
+\(\bigl(\frac{a,\,b}{F}\bigr)\) or \((a, b \mid F)\) [<a class="ec-cite" href="#bib-Voight21">Voi21</a>, Definition 2.2.1].
+</p>
+</div>
+
+<div class="ec-thm ec-example" id="eg-ec-quaternion-algebras">
+<p><span class="ec-thm-head"><span class="ec-thm-name">Example 4.7.2</span>.</span> </p>
+<ol class="org-ol">
+<li>Hamilton's quaternions are \(\mathbf{H} \coloneqq (-1, -1 \mid \R)\)
+[<a class="ec-cite" href="#bib-Voight21">Voi21</a>, Example 2.2.3].</li>
+<li>The matrix algebra \(M_2(F)\) is \((1, 1 \mid F)\), via
+\(i \mapsto \left(\begin{smallmatrix} 1 & 0 \\ 0 & -1 \end{smallmatrix}\right)\) and
+\(j \mapsto \left(\begin{smallmatrix} 0 & 1 \\ 1 & 0 \end{smallmatrix}\right)\)
+[<a class="ec-cite" href="#bib-Voight21">Voi21</a>, Example 2.2.4].</li>
+<li>For a field extension \(K \supseteq F\), \((a, b \mid F) \otimes_F K = (a, b \mid K)\),
+with the same basis.</li>
+</ol>
+</div>
+
+<p>
+Every \(\alpha = t + xi + yj + zij \in B\) has a conjugate
+\(\bar\alpha \coloneqq t - xi - yj - zij\).  The map \(\alpha \mapsto \bar\alpha\) is
+\(F\)-linear, fixes \(1\), and satisfies \(\bar{\bar\alpha} = \alpha\) and
+\(\overline{\alpha\beta} = \bar\beta\bar\alpha\); it is the
+<dfn class="ec-cdef" id="gls-standard-involution" data-gls="standard-involution">standard involution</dfn> of \(B\).  The <dfn class="ec-cdef" id="gls-reduced-trace" data-gls="reduced-trace">reduced trace</dfn> and the
+<dfn class="ec-cdef" id="gls-reduced-norm" data-gls="reduced-norm">reduced norm</dfn> are
+</p>
+\begin{equation*}
+\trd(\alpha) \coloneqq \alpha + \bar\alpha = 2t,
+\qquad
+\nrd(\alpha) \coloneqq \alpha\bar\alpha = t^2 - ax^2 - by^2 + abz^2,
+\end{equation*}
+<p>
+both in \(F\), and every \(\alpha \in B\) satisfies
+</p>
+\begin{equation*}
+\alpha^2 - \trd(\alpha)\,\alpha + \nrd(\alpha) = 0
+\end{equation*}
+<p>
+[<a class="ec-cite" href="#bib-Voight21">Voi21</a>, Sections 3.2 and 3.3].  The reduced norm is multiplicative, and
+\(\alpha\) is a unit if and only if \(\nrd(\alpha) \neq 0\), with inverse
+\(\bar\alpha/\nrd(\alpha)\).  On \(M_2(F)\), the reduced trace and norm are the trace and
+the determinant.  More generally, a standard involution on an \(F\)-algebra \(B\) is an
+\(F\)-linear map \(\alpha \mapsto \bar\alpha\) with \(\bar 1 = 1\),
+\(\bar{\bar\alpha} = \alpha\), \(\overline{\alpha\beta} = \bar\beta\bar\alpha\) and
+\(\alpha\bar\alpha \in F\) for every \(\alpha\) [<a class="ec-cite" href="#bib-Voight21">Voi21</a>, Definitions 3.2.1 and 3.2.4].
+The field \(F\), and a quadratic extension of \(F\) with its conjugation, have one.
+</p>
+
+<div class="ec-thm ec-theorem" id="thm-ec-division-algebras">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Theorem 4.7.3</span>.</span> Let \(B\) be a division algebra over \(F\) with a standard involution.  Then \(B\) is
+\(F\), a quadratic field extension of \(F\), or a division quaternion algebra over \(F\).
+</p>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+See [<a class="ec-cite" href="#bib-Voight21">Voi21</a>, Theorem 3.5.1 and Corollary 3.5.4].  The involution makes every
+\(\alpha \in B\) a root of \(T^2 - \trd(\alpha)T + \nrd(\alpha) \in F[T]\), where
+\(\trd(\alpha) \coloneqq \alpha + \bar\alpha\) and \(\nrd(\alpha) \coloneqq \alpha\bar\alpha\).
+The theorem says that a division algebra all of whose elements are quadratic over
+\(F\) has dimension at most \(4\), with the three shapes listed.
+</p>
+</details>
+
+<div class="ec-thm ec-definition" id="def-ec-quaternion-split">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Definition 4.7.4</span>.</span> A quaternion algebra \(B\) over \(F\) is <dfn class="ec-cdef" id="gls-split-quaternion-algebra" data-gls="split-quaternion-algebra">split</dfn> if
+\(B \cong M_2(F)\), and a field \(K \supseteq F\) is a splitting field for \(B\) if
+\(B \otimes_F K\) is split [<a class="ec-cite" href="#bib-Voight21">Voi21</a>, Definition 5.4.5].  A quaternion algebra
+\(B\) over \(\Q\) is <dfn class="ec-cdef" id="gls-definite-quaternion-algebra" data-gls="definite-quaternion-algebra">definite</dfn> if
+\(B \otimes_\Q \R \cong \mathbf{H}\), that is, if \(\R\) is not a splitting field
+[<a class="ec-cite" href="#bib-Voight21">Voi21</a>, Section 14.1].
+</p>
+</div>
+
+<div class="ec-thm ec-proposition" id="prop-ec-quaternion-split">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Proposition 4.7.5</span>.</span> Let \(B = (a, b \mid F)\).  The following are equivalent: \(B\) is split; \(B\) is not a
+division ring; the quadratic form \(\nrd\) on \(B\) has a non-trivial zero; \(b\) is a
+norm from \(F(\sqrt a)\).  In particular, every quaternion algebra over an algebraically
+closed field is split, \((a, b \mid \R)\) is split if and only if \(a > 0\) or \(b > 0\),
+and \((a, b \mid \Q)\) is definite if and only if \(a < 0\) and \(b < 0\).
+</p>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof <span class="ec-proof-cites">(Voi21)</span>.</span></summary>
+<p>
+See [<a class="ec-cite" href="#bib-Voight21">Voi21</a>, Main Theorem 5.4.4 and Section 14.1].
+</p>
+</details>
+
+<p>
+The endomorphism ring of an elliptic curve is not a \(\Q\)-algebra but a ring of
+integers inside one.
+</p>
+
+<div class="ec-thm ec-definition" id="def-ec-order">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Definition 4.7.6</span>.</span> Let \(B\) be a finite-dimensional \(\Q\)-algebra.  A
+<dfn class="ec-cdef" id="gls-lattice-in-an-algebra" data-gls="lattice-in-an-algebra">lattice</dfn> in \(B\) is a finitely generated
+\(\Z\)-submodule \(M \subseteq B\) that spans \(B\) over \(\Q\); it is then free of
+rank \(\dim_\Q B\) [<a class="ec-cite" href="#bib-Voight21">Voi21</a>, Definition 9.3.1].  An <dfn class="ec-cdef" id="gls-order" data-gls="order">order</dfn> of \(B\) is a
+lattice that is also a subring of \(B\), and a <dfn class="ec-cdef" id="gls-maximal-order" data-gls="maximal-order">maximal order</dfn> is an order not
+properly contained in another order [<a class="ec-cite" href="#bib-Voight21">Voi21</a>, Definitions 10.2.1 and 10.4.1].
+</p>
+</div>
+
+<p>
+Every element \(\alpha\) of an order \(\calO\) is integral over \(\Z\): the subring
+\(\Z[\alpha] \subseteq \calO\) is a finitely generated \(\Z\)-module, so \(\alpha\) is a
+root of a monic polynomial with integer coefficients.  In a quaternion algebra this
+says that \(\trd(\alpha)\) and \(\nrd(\alpha)\) are integers for every \(\alpha \in \calO\)
+[<a class="ec-cite" href="#bib-Voight21">Voi21</a>, Section 10.3].
+</p>
+
+<div class="ec-thm ec-example" id="eg-ec-orders">
+<p><span class="ec-thm-head"><span class="ec-thm-name">Example 4.7.7</span>.</span> </p>
+<ol class="org-ol">
+<li>In an imaginary quadratic field \(K\), the orders are the rings \(\Z + f\calO_K\) with
+\(f \geq 1\), and the ring of integers \(\calO_K\) is the unique maximal order.  For
+instance \(\Z[\sqrt{-3}]\) is an order of \(\Q(\sqrt{-3})\), properly contained in the
+maximal order \(\Z[\omega]\) of Eisenstein integers (Example <a href="01-riemann-surfaces.html#eg-rs-lattice-eisenstein">1.2.3</a>).</li>
+<li>In \((-1, -1 \mid \Q)\), the Lipschitz order \(\Z + \Z i + \Z j + \Z ij\) is not
+maximal: it is properly contained in the Hurwitz order, generated over it by
+\(\frac{1 + i + j + ij}{2}\), which is maximal [<a class="ec-cite" href="#bib-Voight21">Voi21</a>, Section 11.1].  Unlike a
+number field, a quaternion algebra has in general several maximal orders, none
+containing the others.</li>
+</ol>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org4fa6d7c" class="outline-3">
+<h3 id="org4fa6d7c"><span class="section-number" id="s4.7.2">4.7.2</span> The endomorphism ring</h3>
+<div class="outline-text-3" id="text-7-2">
+<div class="ec-thm ec-theorem" id="thm-ec-endomorphism-ring">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Theorem 4.7.8</span>.</span> Let \(E\) be an elliptic curve over \(k\).  The ring \(\End(E)\) is isomorphic to one of:
+</p>
+<ol class="org-ol">
+<li><a id="it-ec-end-integers"></a> \(\Z\);</li>
+<li><a id="it-ec-end-quadratic"></a> an order in an imaginary quadratic field;</li>
+<li><a id="it-ec-end-quaternion"></a> an order in a definite quaternion algebra over \(\Q\).</li>
+</ol>
+<p>
+If \(\operatorname{char} k = 0\), case <a href="#it-ec-end-quaternion">3</a> does not occur.
+</p>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+The ring \(\End(E)\) has no zero divisors (Proposition <a href="#prop-ec-hom-torsion-free">4.3.7</a>), it is
+free of rank at most \(4\) over \(\Z\) (Theorem <a href="#thm-ec-tate-injective">4.5.5</a>), and it has the
+involution \(\varphi \mapsto \hat\varphi\), with \(\hat\varphi\varphi = [\deg\varphi]\) a
+positive integer for \(\varphi \neq 0\) (Theorem <a href="#thm-ec-dual">4.3.10</a>).  These force the three
+cases, as follows.  The degree is a positive definite quadratic form on \(\End(E)\)
+(Corollary <a href="#cor-ec-degree-quadratic">4.3.11</a>), so its associated pairing
+</p>
+\begin{equation*}
+\langle \varphi, \psi \rangle \coloneqq \deg(\varphi + \psi) - \deg\varphi - \deg\psi
+= \hat\varphi\psi + \hat\psi\varphi
+\end{equation*}
+<p>
+is \(\Z\)-bilinear.  Taking \(\psi = 1\) shows that the trace
+\(t(\varphi) \coloneqq \varphi + \hat\varphi\) is the integer
+\(1 + \deg\varphi - \deg(1 - \varphi)\), and multiplying \(\varphi + \hat\varphi = [t(\varphi)]\)
+by \(\varphi\) gives the monic integral quadratic relation
+</p>
+\begin{equation*}
+\varphi^2 - [t(\varphi)]\varphi + [\deg\varphi] = 0.
+\end{equation*}
+<p>
+Its discriminant satisfies
+\((\varphi - \hat\varphi)^2 = t(\varphi)^2 - 4\deg\varphi = -\deg(\varphi - \hat\varphi)\),
+so \(t(\varphi)^2 - 4\deg\varphi \leq 0\), with equality only when \(\varphi = \hat\varphi\).
+In that case \(([2]\varphi - [t(\varphi)])^2 = t(\varphi)^2 - 4\deg\varphi = 0\), so
+\([2]\varphi = [t(\varphi)]\) because \(\End(E)\) has no zero divisors; taking degrees gives
+\(t(\varphi)^2 = 4\deg\varphi\), so \(t(\varphi) = 2s\) is even, and \(\varphi = [s] \in \Z\)
+because \(\End(E)\) is torsion-free.  So every element of
+\(B \coloneqq \End(E) \otimes_\Z \Q\) outside \(\Q\) generates an imaginary quadratic
+field.
+</p>
+
+<p>
+Now \(B\) is a division algebra: it has no zero divisors and is finite-dimensional over
+\(\Q\), so multiplication by a non-zero element is injective, hence bijective.  The map
+\(\varphi \mapsto \hat\varphi\) extends \(\Q\)-linearly to \(B\), and by
+Theorem <a href="#thm-ec-dual">4.3.10</a> it is a standard involution, with \(\trd(\varphi) = t(\varphi)\)
+and \(\nrd(\varphi) = \deg\varphi\).  Theorem <a href="#thm-ec-division-algebras">4.7.3</a> leaves three
+possibilities for \(B\): the field \(\Q\); a quadratic field, which is imaginary because
+\(t(\varphi)^2 - 4\deg\varphi < 0\) for \(\varphi \notin \Q\); or a quaternion algebra
+\((a, b \mid \Q)\), in which \(a = i^2 = -\nrd(i) = -\deg i < 0\) because
+\(\trd(i) = 0\), and likewise \(b < 0\), so that \(B\) is definite by
+Proposition <a href="#prop-ec-quaternion-split">4.7.5</a>.  Finally, \(\End(E)\) is a subring of \(B\), and
+a free \(\Z\)-module of finite rank (Theorem <a href="#thm-ec-tate-injective">4.5.5</a>) spanning \(B\); so
+it is an order (Definition <a href="#def-ec-order">4.7.6</a>).  Compare [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Theorem III.9.3
+and Corollary III.9.4].  In characteristic \(0\), \(\End(E)\) is commutative by
+Corollary <a href="#cor-ec-c-phi-ring">4.4.6</a>, which rules out case <a href="#it-ec-end-quaternion">3</a>.
+</p>
+</details>
+
+<p>
+The endomorphism ring of \(E_{\kbar}\) will be the subject of Chapter 11 in
+characteristic \(0\), where \(E\) has complex multiplication if \(\End(E_{\kbar}) \neq \Z\),
+and of Section <a href="05-finite-fields.html#sec-ff-endomorphism-ring">5.4</a> in characteristic \(p\), where
+case <a href="#it-ec-end-quaternion">3</a> happens exactly for supersingular curves.
+</p>
+
+<div class="ec-thm ec-example" id="eg-ec-cm-i">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Example 4.7.9</span>.</span> Suppose \(\operatorname{char} k \neq 2, 3\).  On \(y^2 = x^3 + x\), the automorphism
+\([i]\) of Example <a href="#eg-ec-aut-i">4.3.4</a> satisfies \([i]^2 = [-1]\), so
+\(\Z[i] \subseteq \End(E_{\kbar})\).
+</p>
+</div>
+
+<div class="ec-thm ec-example" id="eg-ec-cm-zeta">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Example 4.7.10</span>.</span> Suppose \(\operatorname{char} k \neq 2, 3\).  On \(y^2 = x^3 + 1\), let \(\zeta \in \kbar\)
+be a primitive cube root of \(1\).  Then \([\zeta](x, y) \coloneqq (\zeta x, y)\) satisfies
+\([\zeta]^2 + [\zeta] + 1 = 0\), so \(\Z[\zeta] \subseteq \End(E_{\kbar})\).
+</p>
+</div>
+
+<p>
+These are the algebraic counterparts of Examples <a href="01-riemann-surfaces.html#eg-rs-lattice-gaussian">1.2.2</a> and
+<a href="01-riemann-surfaces.html#eg-rs-lattice-eisenstein">1.2.3</a>.  Indeed, since \(i\Lambda_i = \Lambda_i\), we have
+\(G_6(\Lambda_i) = G_6(i\Lambda_i) = i^{-6}G_6(\Lambda_i)\), so \(G_6(\Lambda_i) = 0\), and
+in Theorem <a href="01-riemann-surfaces.html#thm-rs-uniformization">1.7.1</a> \(B = 0\).  Similarly \(G_4(\Lambda_\omega) = 0\), so
+\(A = 0\).
+</p>
+
+<p>
+Automorphisms are the units of \(\End(E_{\kbar})\), and so there are very few of them.
+</p>
+
+<div class="ec-thm ec-theorem" id="thm-ec-automorphisms">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Theorem 4.7.11</span>.</span> Let \(E\) be an elliptic curve over \(k\).  Then \(\Aut(E_{\kbar})\) is finite, of order
+</p>
+\begin{equation*}
+\#\Aut(E_{\kbar}) =
+\begin{cases}
+2 & \text{if } j(E) \neq 0, 1728, \\
+4 & \text{if } j(E) = 1728 \text{ and } \operatorname{char} k \neq 2, 3, \\
+6 & \text{if } j(E) = 0 \text{ and } \operatorname{char} k \neq 2, 3, \\
+12 & \text{if } j(E) = 0 = 1728 \text{ and } \operatorname{char} k = 3, \\
+24 & \text{if } j(E) = 0 = 1728 \text{ and } \operatorname{char} k = 2.
+\end{cases}
+\end{equation*}
+<p>
+If \(\operatorname{char} k \neq 2, 3\), let \(n \coloneqq \#\Aut(E_{\kbar})\).  Then
+\(\Aut(E_{\kbar}) = \Aut(E_{\ksep})\), and \([\zeta](x, y) \coloneqq (\zeta^2x, \zeta^3y)\)
+defines an isomorphism of \(\Gal_k\)-modules \(\mu_n(\ksep) \to \Aut(E_{\ksep})\) for a short
+Weierstrass model.
+</p>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+We treat \(\operatorname{char} k \neq 2, 3\); for the rest see
+[<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Theorem III.10.1].  By Theorem <a href="#thm-ec-weierstrass-model">4.1.6</a> and
+Proposition <a href="#prop-ec-change-of-variables">4.1.7</a>, an automorphism of
+\(y^2 = x^3 + Ax + B\) is \((x, y) \mapsto (u^2x, u^3y)\) with \(u \in \kbar^\times\),
+\(u^4 A = A\) and \(u^6 B = B\).  If \(AB \neq 0\), this forces \(u = \pm 1\).  If \(B = 0\),
+then \(j = 1728\) and \(u^4 = 1\).  If \(A = 0\), then \(j = 0\) and \(u^6 = 1\).  In each case
+the solutions form \(\mu_n(\kbar)\), which lies in \(\ksep\) since \(\operatorname{char} k \nmid n\),
+and \(\sigma(u)\) corresponds to the conjugate automorphism
+[<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Corollary III.10.2].
+</p>
+</details>
+
+<p>
+The last two cases are the non-abelian ones, and they are no accident: in characteristic
+\(2\) and \(3\) the curve with \(j = 0\) is supersingular, so \(\End(E_{\kbar})\) is a
+quaternion order by case <a href="#it-ec-end-quaternion">3</a> of Theorem <a href="#thm-ec-endomorphism-ring">4.7.8</a>, and its unit group need
+not be cyclic.  The description of \(\Aut(E_{\kbar})\) as \(\mu_n(\ksep)\) holds exactly in
+the cases where \(\End(E_{\kbar})\) is commutative.
+</p>
+
+<div class="ec-thm ec-remark" id="rem-ec-supersingular-order">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Remark 4.7.12</span>.</span> Case <a href="#it-ec-end-quaternion">3</a> of Theorem <a href="#thm-ec-endomorphism-ring">4.7.8</a> occurs for \(E_{\kbar}\) exactly when
+\(E\) is supersingular (Theorem <a href="05-finite-fields.html#thm-ff-supersingular">5.4.1</a>), and then \(\End(E_{\kbar})\) is
+an order in a quaternion algebra; by a theorem of Deuring it is a maximal order in the
+definite quaternion algebra over \(\Q\) that is split at every prime other than
+\(\operatorname{char} k\) [<a class="ec-cite" href="#bib-Voight21">Voi21</a>, Theorem 42.1.9].  The worksheet on the Weil
+pairing, endomorphisms and automorphisms works this out for \(y^2 = x^3 - x\) over
+\(\F_9\): its endomorphism ring is the maximal order \(\Z + \Z i + \Z\frac{1 + j}{2} +
+\Z i\frac{1 + j}{2}\) of \((-1, -3 \mid \Q)\) [<a class="ec-cite" href="#bib-Voight21">Voi21</a>, Exercise 11.11], whose unit
+group is the group of order \(12\) in Theorem <a href="#thm-ec-automorphisms">4.7.11</a>.
+</p>
+</div>
+
+<div class="ec-thm ec-remark" id="rem-ec-aut-elliptic-points">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Remark 4.7.13</span>.</span> Over \(\C\), the values \(j = 1728\) and \(j = 0\) come from the lattices \(\Lambda_i\) and
+\(\Lambda_\omega\) (Examples <a href="#eg-ec-cm-i">4.7.9</a> and <a href="#eg-ec-cm-zeta">4.7.10</a>), that is, from the points \(i\) and \(\omega\) of
+the fundamental domain in Figure <a href="01-riemann-surfaces.html#fig-rs-sl2z-domain">1.8.1</a>.  These are exactly the points of
+\(\bbH\) whose stabilizers in \(\SL_2(\Z)\) are larger than \(\{\pm 1\}\): the stabilizer of
+\(i\) has order \(4\) and that of \(\omega\) has order \(6\), matching
+Theorem <a href="#thm-ec-automorphisms">4.7.11</a>.  Indeed, by the proof of
+Proposition <a href="01-riemann-surfaces.html#prop-rs-tori-iso-classes">1.8.1</a>, an automorphism of \(\C/\Lambda_\tau\) is
+multiplication by some \(\alpha\) with \(\alpha\Lambda_\tau = \Lambda_\tau\), and these
+\(\alpha\) correspond to the stabilizer of \(\tau\).
+</p>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-ec-selmer" class="outline-2">
+<h2 id="sec-ec-selmer"><span class="ec-status ec-status-draft"><span class="ec-status-label ec-status-draft">Draft</span><time datetime="2026-09-21">21 Sep 2026</time></span><span class="section-number" id="s4.8">4.8</span> Selmer elliptic curves</h2>
+<div class="outline-text-2" id="text-sec-ec-selmer">
+<p>
+We end the chapter by running its results on a single family of plane cubics, where
+everything can be computed by hand.  These curves are not given by Weierstrass equations:
+the base point is a flex, but the line \(Z = 0\) is not its tangent, and finding a
+Weierstrass model is part of the work.  Throughout this section
+\(\operatorname{char} k \neq 3\), \(d \in k^\times\), and \(\zeta \in \ksep\) is a
+primitive cube root of \(1\).
+</p>
+
+<div class="ec-thm ec-definition" id="def-ec-selmer-curve">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Definition 4.8.1</span>.</span> The <dfn class="ec-cdef" id="gls-selmer-elliptic-curve" data-gls="selmer-elliptic-curve">Selmer elliptic curve</dfn> with parameter \(d\) is the plane cubic
+</p>
+\begin{equation*}
+C_d\colon X^3 + Y^3 = dZ^3, \qquad O \coloneqq (1 : -1 : 0).
+\end{equation*}
+<p>
+We write \(F \coloneqq X^3 + Y^3 - dZ^3\), and
+\(Q_1 \coloneqq (1 : -\zeta : 0)\), \(Q_2 \coloneqq (1 : -\zeta^2 : 0)\).
+</p>
+</div>
+
+<div class="ec-thm ec-proposition" id="prop-ec-selmer-elliptic">
+<p><span class="ec-thm-head"><span class="ec-thm-name">Proposition 4.8.2</span>.</span> </p>
+<ol class="org-ol">
+<li><a id="it-ec-selmer-elliptic"></a> \((C_d, O)\) is an elliptic curve over \(k\).</li>
+<li><a id="it-ec-selmer-flex"></a> The tangent line to \(C_d\) at \(O\) is \(X + Y = 0\), and it meets \(C_d\) only at
+\(O\), with multiplicity \(3\): the base point \(O\) is a flex.  The line \(Z = 0\) meets
+\(C_d\) in the three distinct \(\ksep\)-points \(O\), \(Q_1\) and \(Q_2\).</li>
+</ol>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+The partial derivatives \(3X^2\), \(3Y^2\) and \(-3dZ^2\) have no common zero in
+\(\PP^2(\kbar)\), because \(3\) and \(d\) are units.  So \(C_d\) is smooth, hence nice by
+Corollary <a href="03-curves.html#cor-crv-smooth-plane-nice">3.7.5</a> and of genus \(1\) by
+Corollary <a href="03-curves.html#cor-crv-plane-genus">3.7.7</a>, and \(O \in C_d(k)\).  This is part <a href="#it-ec-selmer-elliptic">1</a>.
+</p>
+
+<p>
+For part <a href="#it-ec-selmer-flex">2</a>, \(\nabla F(O) = (3, 3, 0)\).  Substituting \(Y = -X\) into \(F\) leaves
+\(-dZ^3\), which vanishes to order \(3\) at \(O\).  On \(Z = 0\), \(F\) leaves
+\(X^3 + Y^3\), whose roots \(X/Y = -1, -\zeta, -\zeta^2\) are distinct since
+\(\operatorname{char} k \neq 3\).
+</p>
+</details>
+
+<p>
+So \(O\) plays the role of the point at infinity of a Weierstrass cubic, with the flex
+tangent \(X + Y = 0\) in place of the line \(Z = 0\), and
+Proposition <a href="#prop-ec-chord-tangent">4.2.4</a> applies: if a line meets \(C_d\) in
+\(P, Q, R \in C_d(\kbar)\), counted with multiplicity, then \(P + Q + R = O\), and by its
+proof \(\div\bigl(L/(X + Y)\bigr) = P + Q + R - 3O\) for a linear form \(L\) defining the
+line.
+</p>
+
+<div class="ec-thm ec-proposition" id="prop-ec-selmer-weierstrass">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Proposition 4.8.3</span>.</span> Let \(w \coloneqq Z/(X + Y)\) and \(v \coloneqq X/(X + Y)\) in \(k(C_d)\).
+</p>
+<ol class="org-ol">
+<li><a id="it-ec-selmer-rr-basis"></a> \(\div(w) = Q_1 + Q_2 - 2O\), and \(v\) has a pole of order \(3\) at \(O\) and no other
+pole.  So \(\{1, w\}\) is a basis of \(\mcL(2O)\), and \(\{1, w, v\}\) is a basis of
+\(\mcL(3O)\).</li>
+<li><a id="it-ec-selmer-relation"></a> \(3v^2 - 3v + 1 = dw^3\).</li>
+<li><p>
+<a id="it-ec-selmer-coordinates"></a> The functions \(x \coloneqq 3dw\) and \(y \coloneqq 9dv\) are Weierstrass coordinates:
+\(\varphi \coloneqq (x : y : 1)\) is an isomorphism from \(C_d\) onto
+</p>
+   \begin{equation}
+   \label{eq:ec-selmer-model}
+   E_d\colon y^2 - 9dy = x^3 - 27d^2, \tag{4.8.1}
+\end{equation}
+<p>
+with inverse \((x : y : 1) \mapsto (y : 9d - y : 3x)\).  This equation has
+\(a_3 = -9d\), \(a_6 = -27d^2\) and \(a_1 = a_2 = a_4 = 0\), and \(c_4 = 0\),
+\(\Delta = -3^9d^4\), \(j = 0\).
+</p></li>
+<li><a id="it-ec-selmer-negation"></a> Negation on \(C_d\) is \((X_0 : Y_0 : Z_0) \mapsto (Y_0 : X_0 : Z_0)\).</li>
+<li><a id="it-ec-selmer-differential"></a> Let \(\xi \coloneqq X/Z\) and \(\eta \coloneqq Y/Z\).  The invariant differential of
+\eqref{eq:ec-selmer-model} is \(\omega = d\xi/(3\eta^2)\).</li>
+<li><a id="it-ec-selmer-short-model"></a> If \(\operatorname{char} k \neq 2\), then \(12dw\) and \(36d(X - Y)/(X + Y)\) are
+Weierstrass coordinates for \(y^2 = x^3 - 432d^2\), which has
+\(\Delta = -2^{12}3^9d^4\).</li>
+</ol>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+For every linear form \(h\), the discussion after Proposition <a href="#prop-ec-selmer-elliptic">4.8.2</a>
+gives \(\div\bigl(h/(X + Y)\bigr) = (h \cap C_d) - 3O\).  For \(h = Z\) this is \(\div(w)\), by
+part <a href="#it-ec-selmer-flex">2</a> of that proposition.  The line \(X = 0\) does not pass through \(O\), so \(v\) has a
+pole of order exactly \(3\) at \(O\).  Since \(\ell(nO) = n\) by Corollary <a href="03-curves.html#cor-crv-rr">3.5.5</a>,
+and \(1, w, v\) have pole orders \(0, 2, 3\), this proves part <a href="#it-ec-selmer-rr-basis">1</a>.  Part <a href="#it-ec-selmer-relation">2</a> is the equation
+of \(C_d\) divided by \((X + Y)^3\), since
+\(X^3 + Y^3 = (X + Y)^3 - 3XY(X + Y)\) and \(Y/(X + Y) = 1 - v\).
+</p>
+
+<p>
+For part <a href="#it-ec-selmer-coordinates">3</a>, part <a href="#it-ec-selmer-relation">2</a> gives
+\(y^2 - 9dy = 81d^2(v^2 - v) = 27d^2(dw^3 - 1) = x^3 - 27d^2\), and the proof of
+Theorem <a href="#thm-ec-weierstrass-model">4.1.6</a> shows that \(\varphi\) is an isomorphism onto
+\eqref{eq:ec-selmer-model}.  For the inverse, \(X : Y : Z = v : 1 - v : w\).  The
+invariants follow from Definition <a href="#def-ec-weierstrass">4.1.2</a>: \(b_2 = b_4 = b_8 = 0\) and
+\(b_6 = a_3^2 + 4a_6 = -27d^2\), so \(c_4 = 0\) and \(\Delta = -27b_6^2 = -3^9d^4\).
+</p>
+
+<p>
+For part <a href="#it-ec-selmer-negation">4</a>, \(\varphi\) is a homomorphism by Theorem <a href="#thm-ec-isogeny-homomorphism">4.3.6</a>, and by
+Proposition <a href="#prop-ec-chord-tangent">4.2.4</a> negation on \(E_d\) is
+\((x, y) \mapsto (x, 9d - y)\).  The inverse of \(\varphi\) turns this into
+\((y : 9d - y : 3x) \mapsto (9d - y : y : 3x)\).
+</p>
+
+<p>
+For part <a href="#it-ec-selmer-differential">5</a>, \(\omega = dx/(2y - 9d)\).  On the affine patch \(Z \neq 0\) we have
+\(x = 3d/(\xi + \eta)\), \(2y - 9d = 9d(\xi - \eta)/(\xi + \eta)\) and
+\(\xi^2\,d\xi + \eta^2\,d\eta = 0\), so
+</p>
+\begin{equation*}
+dx = -\frac{3d\,(d\xi + d\eta)}{(\xi + \eta)^2}
+   = \frac{3d\,(\xi - \eta)}{(\xi + \eta)\,\eta^2}\,d\xi,
+\qquad
+\omega = \frac{d\xi}{3\eta^2}.
+\end{equation*}
+
+<p>
+For part <a href="#it-ec-selmer-short-model">6</a>, completing the square in \eqref{eq:ec-selmer-model} gives
+\((2y - 9d)^2 = 4x^3 - 27d^2\), and multiplying by \(16\) gives
+\((8y - 36d)^2 = (4x)^3 - 432d^2\), with \(4x = 12dw\) and
+\(8y - 36d = 36d(X - Y)/(X + Y)\).  This is the change of variables
+\eqref{eq:ec-change-of-variables} with \(u = 1/2\), so the discriminant is \(2^{12}\Delta\)
+by Proposition <a href="#prop-ec-change-of-variables">4.1.7</a>.
+</p>
+</details>
+
+<p>
+The differential in part <a href="#it-ec-selmer-differential">5</a> is \(d\xi/(\partial f/\partial\eta)\) for
+\(f \coloneqq \xi^3 + \eta^3 - d\), the differential that
+Proposition <a href="03-curves.html#prop-crv-plane-canonical">3.7.6</a> attaches to the plane cubic \(C_d\), with divisor
+\((3 - 3)H = 0\).  The equation \eqref{eq:ec-selmer-model} is valid in characteristic
+\(2\), where \(\Delta = -3^9d^4 = d^4\) is still non-zero, but it has \(a_3 \neq 0\), and
+there is no way to complete the square.  Part <a href="#it-ec-selmer-short-model">6</a> needs \(\operatorname{char} k \neq 2\) twice:
+to define \(X - Y\) as a function with a pole of order \(3\) at \(O\), and to complete the
+square.  This is why the general Weierstrass equation keeps the coefficients \(a_1\) and
+\(a_3\).  Finally, the divisor in part <a href="#it-ec-selmer-rr-basis">1</a> is written in \(\Div C_{d,\kbar}\).  If
+\(\zeta \notin k\), then \(Q_1\) and \(Q_2\) are conjugate, and in \(\Div C_d\) they form a
+single closed point of degree \(2\).
+</p>
+
+<p>
+The torsion points of \(C_d\) are cut out by lines.
+</p>
+
+<div class="ec-thm ec-proposition" id="prop-ec-selmer-torsion">
+<p><span class="ec-thm-head"><span class="ec-thm-name">Proposition 4.8.4</span>.</span> </p>
+<ol class="org-ol">
+<li><a id="it-ec-selmer-2-torsion"></a> The non-zero points of \(C_d[2](\kbar)\) are the points \((c : c : 1)\) with \(2c^3 = d\).</li>
+<li><a id="it-ec-selmer-3-torsion-flex"></a> A point \(P \in C_d(\kbar)\) satisfies \([3]P = O\) if and only if \(P\) is a flex.</li>
+<li><p>
+<a id="it-ec-selmer-3-torsion-list"></a> Let \(\delta \in \kbar\) with \(\delta^3 = d\).  Then
+\(C_d[3](\kbar) = \bigl(C_d \cap \{XYZ = 0\}\bigr)(\kbar)\) consists of the nine
+\(\kbar\)-points
+</p>
+\begin{equation*}
+O,\ Q_1,\ Q_2, \qquad (0 : \zeta^i\delta : 1), \qquad (\zeta^i\delta : 0 : 1),
+\qquad i = 0, 1, 2.
+\end{equation*}</li>
+</ol>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+For part <a href="#it-ec-selmer-2-torsion">1</a>, by part <a href="#it-ec-selmer-negation">4</a> of Proposition <a href="#prop-ec-selmer-weierstrass">4.8.3</a>, \(P = -P\) if and
+only if \((X_0 : Y_0 : Z_0) = (Y_0 : X_0 : Z_0)\).  Either \(X_0 = Y_0\), or
+\(X_0 = -Y_0\) and \(Z_0 = 0\), which is \(P = O\).  If \(X_0 = Y_0\) and \(Z_0 = 0\), then
+\(2X_0^3 = 0\), so \(\operatorname{char} k = 2\) and again \(P = (1 : 1 : 0) = O\).
+</p>
+
+<p>
+For part <a href="#it-ec-selmer-3-torsion-flex">2</a>, if the tangent line \(L\) at \(P\) meets \(C_d\) in \(3P\), then \(P + P + P = O\)
+by Proposition <a href="#prop-ec-chord-tangent">4.2.4</a>.  Conversely, if \([3]P = O\), then
+\(3P - 3O = \div(f)\) for some \(f \in \kbar(C_d)\) (Corollary <a href="#cor-ec-principal">4.2.3</a>).  By
+part <a href="#it-ec-selmer-rr-basis">1</a> of Proposition <a href="#prop-ec-selmer-weierstrass">4.8.3</a> and
+Proposition <a href="03-curves.html#prop-crv-base-change-ld">3.5.2</a>, \(f\) is a \(\kbar\)-linear combination of
+\(1, w, v\), that is, \(f = h/(X + Y)\) for a linear form \(h\).  So \(h\) cuts out \(3P\),
+and \(h\) is the tangent line at \(P\), meeting \(C_d\) with multiplicity \(3\).
+</p>
+
+<p>
+For part <a href="#it-ec-selmer-3-torsion-list">3</a>, let \(P_0 = (X_0 : Y_0 : Z_0) \in C_d(\kbar)\) with \(X_0 = 0\).  The tangent line
+\(Y_0^2Y = dZ_0^2Z\) at \(P_0\) is the line \(Z_0Y = Y_0Z\) through \(P_0\) and
+\((1 : 0 : 0)\), and on it \(F = X^3\), which vanishes to order \(3\) at \(P_0\).  So
+\(P_0\) is a flex.  The same computation with the roles of the coordinates exchanged
+applies when \(Y_0 = 0\) or \(Z_0 = 0\).  This gives nine distinct flexes, and
+\(\#C_d[3](\kbar) = 9\) by Corollary <a href="#cor-ec-torsion">4.5.1</a>, so part <a href="#it-ec-selmer-3-torsion-flex">2</a> shows that they are all of
+\(C_d[3](\kbar)\).
+</p>
+</details>
+
+<p>
+In characteristic \(2\), part <a href="#it-ec-selmer-2-torsion">1</a> says that \(C_d[2](\kbar) = 0\).  So by Corollary <a href="#cor-ec-torsion">4.5.1</a>
+every Selmer curve is supersingular in characteristic \(2\), which fits with \(j = 0\).
+</p>
+
+<div class="ec-thm ec-example" id="eg-ec-selmer-2-torsion-q">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Example 4.8.5</span>.</span> Over \(\Q\), \(C_d\) has a rational point of order \(2\) if and only if \(d = 2c^3\) with
+\(c \in \Q^\times\), and then it is \((c : c : 1)\).  For instance \((1 : 1 : 1) \in C_2(\Q)\).
+Otherwise the three points of order \(2\) are permuted transitively by \(\Gal_\Q\), and
+\(\Q(C_d[2](\Qbar))\) is the splitting field \(\Q(\zeta, \sqrt[3]{d/2})\) of \(2T^3 - d\), of
+degree \(6\).  So \(\bar\rho_{C_d,2}\colon \Gal_\Q \to \GL_2(\F_2) \cong S_3\) is
+surjective.
+</p>
+</div>
+
+<div class="ec-thm ec-example" id="eg-ec-selmer-3-torsion-q">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Example 4.8.6</span>.</span> Over \(\Q\), the \(\Qbar\)-points \(Q_1\) and \(Q_2\) are never rational, and
+\((0 : \zeta^i\delta : 1)\) is rational only if \(i = 0\) and \(d = \delta^3\) is a cube.
+So \(C_d(\Q)[3]\) is \(\{O, (0 : \delta : 1), (\delta : 0 : 1)\} \cong \Z/3\Z\) if
+\(d = \delta^3\), and trivial otherwise.  In either case
+\(\Q(C_d[3](\Qbar)) = \Q(\zeta, \sqrt[3]{d})\) contains \(\mu_3(\Qbar)\), as
+Corollary <a href="#cor-ec-weil-roots-of-unity">4.6.5</a> requires, and \(C_d[3](\Qbar)\) is never contained in
+\(C_d(\Q)\) (Example <a href="#eg-ec-weil-q">4.6.6</a>).
+</p>
+</div>
+
+<div class="ec-thm ec-example" id="eg-ec-selmer-fermat">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Example 4.8.7</span>.</span> \(C_1\) is the Fermat cubic \(X^3 + Y^3 = Z^3\).  Fermat's Last Theorem for exponent
+\(3\) says exactly that \(C_1(\Q) = \{O, (1 : 0 : 1), (0 : 1 : 1)\}\): every rational
+point is a flex.
+</p>
+</div>
+
+<p>
+For \(C_d\), the polar expansion of Lemma <a href="#lem-ec-polar-expansion">4.2.5</a> takes a symmetric
+form.  For \(P = (X_P, Y_P, Z_P)\), \(Q\) and \(R\) in \(\kbar^3\), let
+</p>
+\begin{equation*}
+\langle P, Q, R\rangle \coloneqq X_PX_QX_R + Y_PY_QY_R - dZ_PZ_QZ_R.
+\end{equation*}
+<p>
+This form is symmetric and trilinear, with \(\langle P, P, P\rangle = F(P)\) and
+\(\nabla F(P) \cdot Q = 3\langle P, P, Q\rangle\), so \eqref{eq:ec-polar-expansion} reads
+</p>
+\begin{equation}
+\label{eq:ec-selmer-expansion}
+F(sP + tQ) = s^3F(P) + 3s^2t\,\langle P, P, Q\rangle + 3st^2\,\langle P, Q, Q\rangle + t^3F(Q). \tag{4.8.2}
+\end{equation}
+
+<div class="ec-thm ec-proposition" id="prop-ec-selmer-addition">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Proposition 4.8.8</span>.</span> Let \(P_1 = (X_1 : Y_1 : Z_1)\) and \(P_2 = (X_2 : Y_2 : Z_2)\) be points of \(C_d(\kbar)\).
+</p>
+<ol class="org-ol">
+<li><p>
+<a id="it-ec-selmer-chord-formula"></a> If \(P_1 \neq P_2\), let \(A \coloneqq \langle P_1, P_1, P_2\rangle\) and
+\(B \coloneqq \langle P_1, P_2, P_2\rangle\).  Then
+</p>
+   \begin{equation}
+   \label{eq:ec-selmer-chord}
+   P_1 + P_2 = (BY_1 - AY_2 : BX_1 - AX_2 : BZ_1 - AZ_2). \tag{4.8.3}
+\end{equation}</li>
+<li><p>
+<a id="it-ec-selmer-doubling-formula"></a> For every \(P = (X_0 : Y_0 : Z_0) \in C_d(\kbar)\),
+</p>
+   \begin{equation}
+   \label{eq:ec-selmer-doubling}
+   [2]P = \bigl(-Y_0(2X_0^3 + Y_0^3) : X_0(X_0^3 + 2Y_0^3) : Z_0(X_0^3 - Y_0^3)\bigr). \tag{4.8.4}
+\end{equation}</li>
+</ol>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+Proposition <a href="#prop-ec-addition-formulas">4.2.6</a> applies to \(C_d\) with its flex \(O\).  For
+part <a href="#it-ec-selmer-chord-formula">1</a>, the coefficients there are \(\nabla F(P_1) \cdot P_2 = 3A\) and
+\(\nabla F(P_2) \cdot P_1 = 3B\), and since \(3 \in k^\times\) the third intersection
+point of the line through \(P_1\) and \(P_2\) is \(BP_1 - AP_2\).  Its negative is
+\eqref{eq:ec-selmer-chord} by part <a href="#it-ec-selmer-negation">4</a> of Proposition <a href="#prop-ec-selmer-weierstrass">4.8.3</a>.
+</p>
+
+<p>
+For part <a href="#it-ec-selmer-doubling-formula">2</a>, if \(Z_0 = 0\), then \(P \in \{O, Q_1, Q_2\} \subseteq C_d[3](\kbar)\), so
+\([2]P = -P\), and \eqref{eq:ec-selmer-doubling} gives \((Y_0 : X_0 : 0)\) because
+\(X_0^3 = -Y_0^3\).  If \(Z_0 \neq 0\), let \(Q \coloneqq (Y_0^2, -X_0^2, 0)\), which is not a
+multiple of \(P\).  Then \(\nabla F(P) \cdot Q = 3\langle P, P, Q\rangle = 0\), so \(Q\) lies
+on the tangent line at \(P\), and part <a href="#it-ec-add-tangent">2</a> of Proposition <a href="#prop-ec-addition-formulas">4.2.6</a> says
+that the tangent line meets \(C_d\) again at
+\(R \coloneqq F(Q)P - 3\langle P, Q, Q\rangle Q\).  Here
+\(F(Q) = Y_0^6 - X_0^6\) and \(\langle P, Q, Q\rangle = X_0Y_0(X_0^3 + Y_0^3) =
+dX_0Y_0Z_0^3\).  Substituting \(dZ_0^3 = X_0^3 + Y_0^3\), which is non-zero, gives
+</p>
+\begin{equation*}
+R = -(X_0^3 + Y_0^3)\bigl(X_0(X_0^3 + 2Y_0^3),\ -Y_0(2X_0^3 + Y_0^3),\ Z_0(X_0^3 - Y_0^3)\bigr),
+\end{equation*}
+<p>
+and \([2]P = -R\) is \eqref{eq:ec-selmer-doubling}.
+</p>
+</details>
+
+<p>
+On the line \(X = Y\), \eqref{eq:ec-selmer-doubling} gives \((-3X_0^4 : 3X_0^4 : 0) = O\),
+recovering part <a href="#it-ec-selmer-2-torsion">1</a> of Proposition <a href="#prop-ec-selmer-torsion">4.8.4</a>.  Note that the derivation
+collapses in characteristic \(3\), where the middle terms of
+\eqref{eq:ec-selmer-expansion} vanish, and \(F = (X + Y - \delta Z)^3\) over \(\kbar\) is a
+triple line.
+</p>
+
+<div class="ec-thm ec-example" id="eg-ec-selmer-d7">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Example 4.8.9</span>.</span> On \(C_7\), let \(P \coloneqq (2 : -1 : 1)\), since \(2^3 + (-1)^3 = 7\).  By
+\eqref{eq:ec-selmer-doubling}, \([2]P = (15 : 12 : 9) = (5 : 4 : 3)\), and indeed
+\(5^3 + 4^3 = 189 = 7 \cdot 3^3\).  With \(P_1 = P\) and \(P_2 = [2]P\),
+\eqref{eq:ec-selmer-chord} has \(A = 3\) and \(B = -29\), so
+</p>
+\begin{equation*}
+[3]P = (-17 : 73 : 38), \qquad 73^3 - 17^3 = 7 \cdot 38^3,
+\end{equation*}
+<p>
+and doubling \([2]P\) gives \([4]P = (-1256 : 1265 : 183)\).  By
+Examples <a href="#eg-ec-selmer-2-torsion-q">4.8.5</a> and <a href="#eg-ec-selmer-3-torsion-q">4.8.6</a>, \(C_7(\Q)\) has no
+points of order \(2\) or \(3\).  The
+growth of the coordinates suggests that \(P\) has infinite order; this will follow from the
+Nagell&#x2013;Lutz theorem in Chapter 8.  Under \(\varphi\), \(P\) maps to
+\((21, 126) \in E_7(\Q)\).
+</p>
+</div>
+
+<p>
+The cube roots of unity act on \(C_d\) by scaling one coordinate, and this is where the
+endomorphisms beyond \(\Z\) come from.
+</p>
+
+<div class="ec-thm ec-proposition" id="prop-ec-selmer-cm">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Proposition 4.8.10</span>.</span> Let \(\alpha(X : Y : Z) \coloneqq (X : Y : \zeta Z)\), a morphism
+\(C_{d,k(\zeta)} \to C_{d,k(\zeta)}\).
+</p>
+<ol class="org-ol">
+<li><a id="it-ec-selmer-cm-alpha"></a> \(\alpha\) is an automorphism of \(C_{d,k(\zeta)}\) with
+\(\alpha^2 + \alpha + 1 = 0\), so \(\Z[\alpha] \cong \Z[\zeta]\) is a subring of
+\(\End(C_{d,k(\zeta)})\).  In the coordinates of \eqref{eq:ec-selmer-model},
+\(\alpha(x, y) = (\zeta x, y)\), and \(\alpha^*\omega = \zeta\omega\).</li>
+<li><a id="it-ec-selmer-cm-aut"></a> If \(\operatorname{char} k \neq 2\), then \(\Aut(C_{d,\kbar}) = \{\pm 1, \pm\alpha,
+   \pm\alpha^2\}\).  If moreover \(\zeta \notin k\), then \(\Aut(C_d) = \{\pm 1\}\).</li>
+<li><a id="it-ec-selmer-cm-isogeny"></a> The endomorphism \(1 - \alpha\) is separable of degree \(3\), with dual
+\(1 - \alpha^2\) and kernel \(\{O, Q_1, Q_2\}\).</li>
+</ol>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+For part <a href="#it-ec-selmer-cm-alpha">1</a>, \(F(X, Y, \zeta Z) = F\) and \(\alpha(O) = O\), so \(\alpha\) is an isogeny with
+inverse \(\alpha^2\).  Since \(\alpha \neq 1\) and \((\alpha - 1)(\alpha^2 + \alpha + 1) =
+\alpha^3 - 1 = 0\), Proposition <a href="#prop-ec-hom-torsion-free">4.3.7</a> gives
+\(\alpha^2 + \alpha + 1 = 0\).  The kernel of \(\Z[T]/(T^2 + T + 1) \to \End(C_d)\) is an
+ideal of \(\Z[\zeta]\), with finite quotient if it is non-zero, which would contradict
+Proposition <a href="#prop-ec-hom-torsion-free">4.3.7</a>.  Next, \(\alpha^*w = \zeta w\) and
+\(\alpha^*v = v\), so \(\alpha^*x = \zeta x\) and \(\alpha^*y = y\), and
+\(\alpha^*\omega = \zeta\,dx/(2y - 9d) = \zeta\omega\).
+</p>
+
+<p>
+For part <a href="#it-ec-selmer-cm-aut">2</a>, \(j = 0\), so \(\#\Aut(C_{d,\kbar}) = 6\) by Theorem <a href="#thm-ec-automorphisms">4.7.11</a>.
+The six automorphisms listed pull \(\omega\) back to \(\pm\zeta^i\omega\), six distinct
+multiples, so they are distinct.  An element \(\varphi\) of \(\Aut(C_d)\) has
+\(c_\varphi \in k\) by Proposition <a href="#prop-ec-c-phi">4.4.5</a>, which rules out \(\pm\alpha\) and
+\(\pm\alpha^2\) if \(\zeta \notin k\).
+</p>
+
+<p>
+For part <a href="#it-ec-selmer-cm-isogeny">3</a>, \(\alpha\) has degree \(1\), so \(\hat\alpha = \alpha^{-1} = \alpha^2\) by
+Theorem <a href="#thm-ec-dual">4.3.10</a>, and \(\widehat{1 - \alpha} = 1 - \alpha^2\).  Then
+\((1 - \alpha^2)(1 - \alpha) = 2 - \alpha - \alpha^2 = 3\), so \(\deg(1 - \alpha) = 3\).
+It is separable by Proposition <a href="#prop-ec-c-phi">4.4.5</a>, since
+\(c_{1 - \alpha} = 1 - \zeta \neq 0\).  So \(\#\ker(1 - \alpha) = 3\) by
+Theorem <a href="#thm-ec-isogeny-kernel">4.3.8</a>.  The kernel is the set of fixed points of \(\alpha\), and
+\((X : Y : \zeta Z) = (X : Y : Z)\) forces \(Z = 0\), since \(X = Y = 0\) is not on \(C_d\).
+</p>
+</details>
+
+<p>
+In characteristic \(0\), \(\End(C_{d,\kbar})\) is an order in an imaginary quadratic field
+by Theorem <a href="#thm-ec-endomorphism-ring">4.7.8</a>, and it contains the maximal order \(\Z[\zeta]\), so
+\(\End(C_{d,\kbar}) = \Z[\zeta]\).  The automorphism \(\alpha\) is the \([\zeta]\) of
+Example <a href="#eg-ec-cm-zeta">4.7.10</a> in another model, and \(1 - \alpha\) is the algebraic counterpart of
+multiplication by \(1 - \zeta\) on the Eisenstein lattice.  Note also
+\((1 - \alpha)^2 = -3\alpha\), so \(\ker(1 - \alpha) \subseteq C_d[3](\kbar)\), in accordance with
+Proposition <a href="#prop-ec-selmer-torsion">4.8.4</a>.
+</p>
+
+<div class="ec-thm ec-example" id="eg-ec-selmer-isogeny">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Example 4.8.11</span>.</span> The kernel \(\{O, Q_1, Q_2\}\) of \(1 - \alpha\) is cut out by the line \(Z = 0\), so it is
+\(\Gal_k\)-stable, even though \(1 - \alpha\) is only an endomorphism of
+\(C_{d,k(\zeta)}\).  By Proposition <a href="#prop-ec-quotient">4.3.9</a>, there is a \(3\)-isogeny over \(k\)
+with this kernel.
+Suppose \(\operatorname{char} k \neq 2\), and use the model \(y^2 = x^3 + D\) with
+\(D = -432d^2\) of Proposition <a href="#prop-ec-selmer-weierstrass">4.8.3</a>, in which \(Q_1\) and \(Q_2\)
+become the \(\kbar\)-points \((0, \pm\sqrt{D})\).  The isogeny is
+</p>
+\begin{equation*}
+\psi(x, y) \coloneqq \left(\frac{x^3 + 4D}{x^2},\ \frac{y\,(x^3 - 8D)}{x^3}\right),
+\qquad
+\psi\colon \bigl(y^2 = x^3 + D\bigr) \to \bigl(y^2 = x^3 - 27D\bigr),
+\end{equation*}
+<p>
+which lands on the target because \((u + D)(u - 8D)^2 = (u + 4D)^3 - 27Du^2\) with
+\(u = x^3\).  Since \(-27D = 3^6 \cdot 16d^2\), the target is isomorphic to
+\(y^2 = x^3 + 16d^2\), by Proposition <a href="#prop-ec-change-of-variables">4.1.7</a> with \(u = 3\).  Over
+\(k(\zeta)\) this curve is isomorphic to \(C_d\), because \(-432d^2/(16d^2) = -27 =
+(\sqrt{-3})^6\) and \(\sqrt{-3} = 2\zeta + 1\).  Composed with such an isomorphism,
+\(\psi\) has the same kernel as \(1 - \alpha\), so by Proposition <a href="#prop-ec-quotient">4.3.9</a> it
+agrees with \(1 - \alpha\) up to an automorphism of \(C_d\).  If
+\(\zeta \notin k\), the target is not isomorphic over \(k\) to any \(C_{d'}\): that would need
+\(-27(d'/d)^2 \in k^{\times 6}\), and so \(-3 \in k^{\times 2}\).
+</p>
+</div>
+
+<p>
+Finally, the Selmer curves are twists of one another.
+</p>
+
+<div class="ec-thm ec-proposition" id="prop-ec-selmer-twists">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Proposition 4.8.12</span>.</span> Let \(d, d' \in k^\times\).
+</p>
+<ol class="org-ol">
+<li><a id="it-ec-selmer-twists-cube"></a> If \(d' = c^3d\) with \(c \in k^\times\), then \((X : Y : Z) \mapsto (X : Y : Z/c)\) is an
+isomorphism of elliptic curves \(C_d \to C_{d'}\) over \(k\).</li>
+<li><a id="it-ec-selmer-twists-converse"></a> If \(\operatorname{char} k \neq 2\) and \(C_d \cong C_{d'}\) over \(k\), then
+\(d'/d \in k^{\times 3}\).</li>
+</ol>
+<p>
+So the Selmer curves all become isomorphic over \(\kbar\), and if
+\(\operatorname{char} k \neq 2\) their isomorphism classes over \(k\) are indexed by
+\(\umtp{k}\).
+</p>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+Part <a href="#it-ec-selmer-twists-cube">1</a> is immediate, since \(d'(Z/c)^3 = dZ^3\) and \(O\) is fixed.  For part <a href="#it-ec-selmer-twists-converse">2</a>, use the
+models \(y^2 = x^3 - 432d^2\) and \(y^2 = x^3 - 432d'^2\) of
+Proposition <a href="#prop-ec-selmer-weierstrass">4.8.3</a>.  By Proposition <a href="#prop-ec-change-of-variables">4.1.7</a>,
+an isomorphism between them has \(d^2 = u^6d'^2\) for some \(u \in k^\times\), so
+\(d/d' = \pm u^3\), and \(-1 = (-1)^3\).  They become isomorphic over \(\kbar\) by
+Proposition <a href="#prop-ec-j-invariant">4.1.10</a>, since \(j = 0\).
+</p>
+</details>
+
+<p>
+The \(C_d\) are the <dfn class="ec-cdef" id="gls-cubic-twist" data-gls="cubic-twist">cubic twists</dfn> of the Fermat cubic \(C_1\); twists in
+general are the subject of Chapter 10.
+</p>
+
+<div class="ec-thm ec-remark" id="rem-ec-selmer-name">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Remark 4.8.13</span>.</span> Selmer studied the diagonal cubics \(aX^3 + bY^3 + cZ^3 = 0\) [<a class="ec-cite" href="#bib-Selmer-51">Sel51</a>].  Among them
+is the curve \(3X^3 + 4Y^3 + 5Z^3 = 0\) of Section <a href="#sec-ec-weierstrass">4.1</a>, which is a nice
+curve of genus \(1\) with no rational point, so not an elliptic curve over \(\Q\).  It has a
+Jacobian, an elliptic curve over \(\Q\), and in general the Jacobian of
+\(aX^3 + bY^3 + cZ^3 = 0\) is \(y^2 = x^3 - 432(abc)^2\), that is, the Selmer curve
+\(C_{abc}\).  So Selmer's counterexample to the Hasse principle is a torsor under
+\(C_{60}\).  We return to this in Chapter 10, where the \(C_d\) are the first examples for
+descent.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgfe29742" class="outline-2 ec-references">
+<h2 id="orgfe29742">References</h2>
+<div class="outline-text-2" id="text-orgfe29742">
+<dl class="ec-bibliography">
+<dt id="bib-Magma">[BCP97]</dt>
+<dd>Wieb Bosma, John Cannon and Catherine Playoust. &ldquo;The Magma algebra system. I. The user language&rdquo;. In: <i>J. Symbolic Comput.</i> 24.3&ndash;4 (1997), pp. 235&ndash;265. Computational algebra and number theory (London, 1993). <a href="https://doi.org/10.1006/jsco.1996.0125">doi:10.1006/jsco.1996.0125</a>.</dd>
+<dt id="bib-Milne20">[Mil20]</dt>
+<dd>James S. Milne. <i>Elliptic curves</i>. Second. World Scientific Publishing Co. Pte. Ltd., Hackensack, NJ, 2020.</dd>
+<dt id="bib-Selmer-51">[Sel51]</dt>
+<dd>Ernst S. Selmer. &ldquo;The Diophantine equation \(ax^3+by^3+cz^3=0\)&rdquo;. In: <i>Acta Math.</i> 85 (1951), pp. 203&ndash;362 (1 plate). <a href="https://doi.org/10.1007/BF02395746">doi:10.1007/BF02395746</a>.</dd>
+<dt id="bib-Silverman09">[Sil09]</dt>
+<dd>Joseph H. Silverman. <i>The arithmetic of elliptic curves</i>. Second. Vol. 106. Graduate Texts in Mathematics. Springer, Dordrecht, 2009. <a href="https://doi.org/10.1007/978-0-387-09494-6">doi:10.1007/978-0-387-09494-6</a>.</dd>
+<dt id="bib-Voight21">[Voi21]</dt>
+<dd>John Voight. <i>Quaternion algebras</i>. Vol. 288. Graduate Texts in Mathematics. Springer, Cham, 2021. <a href="https://doi.org/10.1007/978-3-030-56694-4">doi:10.1007/978-3-030-56694-4</a>.</dd>
+</dl>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<nav class="ec-pager ec-pager-bottom" aria-label="Chapters"><a class="ec-pager-prev" rel="prev" href="03-curves.html"><span class="ec-pager-label">Previous</span><span class="ec-pager-title">3. Algebraic curves</span></a><a class="ec-pager-next" rel="next" href="05-finite-fields.html"><span class="ec-pager-label">Next</span><span class="ec-pager-title">5. Elliptic curves over finite fields</span></a></nav>
+</div>
+</body>
+</html>

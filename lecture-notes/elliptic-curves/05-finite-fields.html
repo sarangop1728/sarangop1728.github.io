@@ -1,0 +1,1335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 2026-09-24 Thu 08:35 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Elliptic curves over finite fields</title>
+<meta name="generator" content="Org Mode" />
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta name="robots" content="noindex, nofollow"/>
+<link rel="stylesheet" type="text/css" href="org-css.css"/>
+<link rel="stylesheet" type="text/css" href="book.css"/>
+<script src="macros.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-chtml-full.js"></script>
+<script defer src="org-code.js"></script>
+<script defer src="book.js"></script>
+</head>
+<body>
+<div id="preamble" class="status">
+<nav class="ec-sidebar" id="ec-sidebar" aria-label="Contents">
+<a class="ec-book-title" href="index.html">The arithmetic geometry of elliptic curves (DRAFT)</a>
+<p class="ec-book-subtitle">Math 714, Fall 2026</p>
+<ol class="ec-toc">
+<li class="ec-toc-chapter"><a href="00-preface.html"><span class="ec-toc-num"></span><span class="ec-toc-text">Preface</span></a></li>
+<li class="ec-toc-chapter"><a href="01-riemann-surfaces.html"><span class="ec-toc-num">1</span><span class="ec-toc-text">Elliptic curves as Riemann surfaces<span class="ec-toc-status"><span class="ec-status-progress">2 of 8 sections finished</span></span></span></a></li>
+<li class="ec-toc-chapter"><a href="02-varieties.html"><span class="ec-toc-num">2</span><span class="ec-toc-text">Algebraic varieties<span class="ec-toc-status"><span class="ec-status-progress">0 of 4 sections finished</span></span></span></a></li>
+<li class="ec-toc-chapter"><a href="03-curves.html"><span class="ec-toc-num">3</span><span class="ec-toc-text">Algebraic curves<span class="ec-toc-status"><span class="ec-status-progress">0 of 7 sections finished</span></span></span></a></li>
+<li class="ec-toc-chapter"><a href="04-ec-algebraic.html"><span class="ec-toc-num">4</span><span class="ec-toc-text">Elliptic curves as algebraic curves<span class="ec-toc-status"><span class="ec-status-progress">1 of 8 sections finished</span></span></span></a></li>
+<li class="ec-toc-chapter is-current"><a href="05-finite-fields.html" aria-current="page"><span class="ec-toc-num">5</span><span class="ec-toc-text">Elliptic curves over finite fields<span class="ec-toc-status"><span class="ec-status-progress">0 of 5 sections finished</span></span></span></a>
+<ol class="ec-toc-sections">
+<li class="ec-toc-level-1"><a href="#s5.1"><span class="ec-toc-num">5.1</span><span class="ec-toc-text">The Frobenius automorphism<span class="ec-toc-status"><span class="ec-status-label ec-status-draft">Draft</span></span></span></a></li>
+<li class="ec-toc-level-1"><a href="#s5.2"><span class="ec-toc-num">5.2</span><span class="ec-toc-text">Hasse's bound<span class="ec-toc-status"><span class="ec-status-label ec-status-draft">Draft</span></span></span></a></li>
+<li class="ec-toc-level-1"><a href="#s5.3"><span class="ec-toc-num">5.3</span><span class="ec-toc-text">The Weil conjectures<span class="ec-toc-status"><span class="ec-status-label ec-status-draft">Draft</span></span></span></a></li>
+<li class="ec-toc-level-2"><a href="#s5.3.1"><span class="ec-toc-num">5.3.1</span><span class="ec-toc-text">The zeta function</span></a></li>
+<li class="ec-toc-level-2"><a href="#s5.3.2"><span class="ec-toc-num">5.3.2</span><span class="ec-toc-text">The statement</span></a></li>
+<li class="ec-toc-level-2"><a href="#s5.3.3"><span class="ec-toc-num">5.3.3</span><span class="ec-toc-text">Elliptic curves</span></a></li>
+<li class="ec-toc-level-1"><a href="#s5.4"><span class="ec-toc-num">5.4</span><span class="ec-toc-text">The endomorphism ring<span class="ec-toc-status"><span class="ec-status-label ec-status-draft">Draft</span></span></span></a></li>
+<li class="ec-toc-level-1"><a href="#s5.5"><span class="ec-toc-num">5.5</span><span class="ec-toc-text">The Cartier operator and the Hasse invariant<span class="ec-toc-status"><span class="ec-status-label ec-status-draft">Draft</span></span></span></a></li>
+</ol></li>
+<li class="ec-toc-chapter"><a href="06-local-fields.html"><span class="ec-toc-num">6</span><span class="ec-toc-text">Elliptic curves over local fields<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
+<li class="ec-toc-chapter"><a href="07-galois-cohomology.html"><span class="ec-toc-num">7</span><span class="ec-toc-text">Galois cohomology<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
+<li class="ec-toc-chapter"><a href="08-mordell-weil.html"><span class="ec-toc-num">8</span><span class="ec-toc-text">The Mordell&ndash;Weil theorem<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
+<li class="ec-toc-chapter"><a href="09-integral-points.html"><span class="ec-toc-num">9</span><span class="ec-toc-text">Integral points<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
+<li class="ec-toc-chapter"><a href="10-selmer-sha.html"><span class="ec-toc-num">10</span><span class="ec-toc-text">Twisting, Selmer, and Tate&ndash;Shafarevich<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
+<li class="ec-toc-chapter"><a href="11-complex-multiplication.html"><span class="ec-toc-num">11</span><span class="ec-toc-text">Complex multiplication<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
+<li class="ec-toc-chapter"><a href="12-tate-curve.html"><span class="ec-toc-num">12</span><span class="ec-toc-text">The Tate curve<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
+<li class="ec-toc-chapter"><a href="13-l-functions-bsd.html"><span class="ec-toc-num">13</span><span class="ec-toc-text">The \(L\)-function and BSD<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
+<li class="ec-toc-chapter"><a href="14-sato-tate.html"><span class="ec-toc-num">14</span><span class="ec-toc-text">The Sato&ndash;Tate conjecture<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
+<li class="ec-toc-chapter"><a href="15-modular-curves.html"><span class="ec-toc-num">15</span><span class="ec-toc-text">Introduction to modular curves<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
+</ol>
+<a class="ec-toc-glossary" href="glossary.html">Glossary</a>
+</nav>
+<button class="ec-menu" type="button" aria-controls="ec-sidebar" aria-expanded="false">Contents</button>
+<nav class="ec-pager ec-pager-top" aria-label="Chapters"><a class="ec-pager-prev" rel="prev" href="04-ec-algebraic.html"><span class="ec-pager-label">Previous</span><span class="ec-pager-title">4. Elliptic curves as algebraic curves</span></a><a class="ec-pager-next" rel="next" href="06-local-fields.html"><span class="ec-pager-label">Next</span><span class="ec-pager-title">6. Elliptic curves over local fields</span></a></nav>
+</div>
+<div id="content" class="content">
+<h1 class="title"><span class="ec-chapter-label">Chapter 5</span>Elliptic curves over finite fields</h1>
+<div class="sources" id="org013dc11">
+<p>
+This chapter follows [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Chapter V] and [<a class="ec-cite" href="#bib-Poonen06">Poo06</a>, Chapter 3], with
+[<a class="ec-cite" href="#bib-Milne22">Mil22</a>] for the Galois theory of finite fields, [<a class="ec-cite" href="#bib-Achter-Howe17">AH17</a>] for the
+Cartier operator, and [<a class="ec-cite" href="#bib-Voight21">Voi21</a>] for the mass formula.
+</p>
+
+</div>
+
+<div id="outline-container-sec-ff-frobenius" class="outline-2">
+<h2 id="sec-ff-frobenius"><span class="ec-status ec-status-draft"><span class="ec-status-label ec-status-draft">Draft</span><time datetime="2026-09-21">21 Sep 2026</time></span><span class="section-number" id="s5.1">5.1</span> The Frobenius automorphism</h2>
+<div class="outline-text-2" id="text-sec-ff-frobenius">
+<p>
+Let \(p\) be a prime, let \(q \coloneqq p^e\) for some \(e \geq 1\), and let
+\(k \coloneqq \F_q\) be the finite field with \(q\) elements.  Since \(k\) is perfect,
+\(\ksep = \kbar = \Fbar_q\).  Moreover,
+</p>
+
+\begin{equation*}
+\Fbar_q = \varinjlim_{r} \F_{q^r}.
+\end{equation*}
+<p>
+Here \(\F_{q^r}\) is the unique subfield of \(\Fbar_q\) with \(q^r\) elements, and
+\(\F_{q^r} \subseteq \F_{q^s}\) if and only if \(r \mid s\); the direct limit is the union
+\(\bigcup_{r \geq 1} \F_{q^r}\).
+</p>
+
+<p>
+The Galois group \(\Gal_{\F_q} = \Gal(\Fbar_q/\F_q)\) is topologically generated by the
+<dfn class="ec-cdef" id="gls-frobenius-automorphism" data-gls="frobenius-automorphism">Frobenius automorphism</dfn>
+</p>
+\begin{equation*}
+\sigma\colon \Fbar_q \to \Fbar_q, \qquad x \mapsto x^q,
+\end{equation*}
+<p>
+that is, the powers of \(\sigma\) are dense in
+\(\Gal_{\F_q} = \varprojlim_{r} \Gal(\F_{q^r}/\F_q)\).
+</p>
+
+<p>
+In particular, for every \(r > 0\),
+</p>
+\begin{equation*}
+\Gal(\F_{q^r}/\F_q) = \langle \sigma|_{\F_{q^r}} \rangle \cong \Z/r\Z,
+\end{equation*}
+<p>
+the isomorphism given by \((n \bmod r) \mapsto (\sigma|_{\F_{q^r}})^n\).  Assembling these
+maps for all \(r \geq 1\) gives
+</p>
+\begin{equation}
+\label{eq:ff-zhat}
+\Zhat \coloneqq \varprojlim_{r} \Z/r\Z \xrightarrow{\ \sim\ } \Gal_{\F_q}, \qquad
+(n_r \bmod r)_{r \geq 1} \mapsto \bigl((\sigma|_{\F_{q^r}})^{n_r}\bigr)_{r \geq 1}. \tag{5.1.1}
+\end{equation}
+
+<p>
+For all of this, see [<a class="ec-cite" href="#bib-Milne22">Mil22</a>].
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-ff-hasse" class="outline-2">
+<h2 id="sec-ff-hasse"><span class="ec-status ec-status-draft"><span class="ec-status-label ec-status-draft">Draft</span><time datetime="2026-09-21">21 Sep 2026</time></span><span class="section-number" id="s5.2">5.2</span> Hasse's bound</h2>
+<div class="outline-text-2" id="text-sec-ff-hasse">
+<p>
+Let \(E\) be an elliptic curve over \(\F_q\).  We know from
+Theorem <a href="04-ec-algebraic.html#thm-ec-weierstrass-model">4.1.6</a> that \(E\) is
+given by a Weierstrass equation <a class="ec-eqref" href="04-ec-algebraic.html#mjx-eqn%3Aeq%3Aec-weierstrass">(4.1.1)</a>, that is, by \(f(x, y) = 0\) with
+</p>
+\begin{equation*}
+f \coloneqq y^2 + a_1xy + a_3y - (x^3 + a_2x^2 + a_4x + a_6) \in \F_q[x, y],
+\end{equation*}
+<p>
+and that the set \(E(\F_q)\) of rational points contains at least one rational point:
+\(O \coloneqq (0 : 1 : 0)\).
+</p>
+
+<p>
+On the other hand,
+</p>
+\begin{equation*}
+E(\F_q) = \{O\} \cup \{(x, y) \in \F_q^2 : f(x, y) = 0\}.
+\end{equation*}
+<p>
+If \(x \in \F_q\) is fixed, the polynomial \(f(x, y) \in \F_q[y]\) has at most two roots in
+\(\F_q\), so we obtain the trivial upper bound
+</p>
+\begin{equation*}
+\#E(\F_q) \leq 2q + 1.
+\end{equation*}
+
+<p>
+Let \(\Frob \in \End(E)\) be the \(q\)-th power Frobenius endomorphism
+(Definition <a href="03-curves.html#def-crv-frobenius">3.2.11</a> and Example <a href="04-ec-algebraic.html#eg-ec-isogeny-frobenius">4.3.3</a>).  On
+\(\Fbar_q\)-points it acts as the Frobenius automorphism \(\sigma\) on coordinates:
+</p>
+
+\begin{equation*}
+\Frob\colon E(\Fbar_q) \to E(\Fbar_q), \qquad O \mapsto O, \qquad (x, y) \mapsto (x^q, y^q).
+\end{equation*}
+
+<p>
+E.&nbsp;Artin conjectured, in his thesis, and H.&nbsp;Hasse proved the optimal upper bound.
+</p>
+
+<div class="ec-thm ec-theorem" id="thm-ff-hasse">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Theorem 5.2.1</span> <span class="ec-thm-title">(Hasse)</span>.</span> Let \(E\) be an elliptic curve over \(\F_q\).  Then for every \(r \geq 1\),
+</p>
+\begin{equation*}
+\lvert \#E(\F_{q^r}) - (q^r + 1) \rvert \leq 2q^{r/2}.
+\end{equation*}
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+(Sketch; see [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Theorem V.1.1].)  There are three key observations that go
+into the proof of Hasse's bound.
+</p>
+<ol class="org-ol">
+<li><a id="it-ff-hasse-kernel"></a> \(E(\F_{q^r}) = \ker(1 - \Frob^r)(\Fbar_q)\).  Indeed, since
+\(\F_{q^r} = \Fbar_q^{\langle \sigma^r \rangle}\), we know that
+\(P \in E(\F_{q^r}) \iff \Frob^r(P) = P\).</li>
+<li><a id="it-ff-hasse-degree"></a> The map \(\deg\colon \End(E) \to \Z\) is a positive definite quadratic form
+(Corollary <a href="04-ec-algebraic.html#cor-ec-degree-quadratic">4.3.11</a>).</li>
+<li><p>
+<a id="it-ff-hasse-cauchy-schwarz"></a> For any abelian group \(A\) and any positive definite quadratic form
+\(d\colon A \to \Z\), the Cauchy&#x2013;Schwarz inequality gives
+</p>
+\begin{equation*}
+\lvert d(a_1 - a_2) - d(a_1) - d(a_2) \rvert \leq 2\sqrt{d(a_1)\, d(a_2)}.
+\end{equation*}</li>
+</ol>
+
+<p>
+To combine them: \(1 - \Frob^r\) is separable (Corollary <a href="04-ec-algebraic.html#cor-ec-frobenius-separable">4.4.4</a>,
+applied over \(\F_{q^r}\)), so observation <a href="#it-ff-hasse-kernel">1</a> and
+Theorem <a href="04-ec-algebraic.html#thm-ec-isogeny-kernel">4.3.8</a>
+give \(\#E(\F_{q^r}) = \deg(1 - \Frob^r)\), and \(\deg \Frob^r = q^r\)
+(Proposition <a href="03-curves.html#prop-crv-frobenius">3.2.12</a>).  Now apply observation <a href="#it-ff-hasse-cauchy-schwarz">3</a> with \(d = \deg\),
+\(a_1 = 1\) and \(a_2 = \Frob^r\).
+</p>
+</details>
+</div>
+</div>
+
+<div id="outline-container-sec-ff-weil" class="outline-2">
+<h2 id="sec-ff-weil"><span class="ec-status ec-status-draft"><span class="ec-status-label ec-status-draft">Draft</span><time datetime="2026-09-24">24 Sep 2026</time></span><span class="section-number" id="s5.3">5.3</span> The Weil conjectures</h2>
+<div class="outline-text-2" id="text-sec-ff-weil">
+<p>
+In 1949, Weil made a series of remarkable conjectures about the numbers
+\(\#X(\F_{q^n})\), \(n \geq 1\), for a variety \(X\) over \(\F_q\) [<a class="ec-cite" href="#bib-Weil49">Wei49</a>].  Their
+proof was one of the main motivations for the scheme-theoretic foundations of algebraic
+geometry and for étale cohomology (Remark <a href="#rem-ff-weil-history">5.3.6</a>).  In this section we
+state the conjectures for curves, check them on \(\PP^1\), and prove them for elliptic
+curves.  We keep the notation of Section <a href="#sec-ff-frobenius">5.1</a>, and \(C\) denotes a nice
+curve over \(\F_q\) (Definition <a href="02-varieties.html#def-var-smooth">2.4.1</a>).
+</p>
+</div>
+
+<div id="outline-container-sec-ff-zeta" class="outline-3">
+<h3 id="sec-ff-zeta"><span class="section-number" id="s5.3.1">5.3.1</span> The zeta function</h3>
+<div class="outline-text-3" id="text-sec-ff-zeta">
+<p>
+Each set \(C(\F_{q^n})\) is finite, and we encode all of their sizes in a single
+generating function.
+</p>
+
+<div class="ec-thm ec-definition" id="def-ff-zeta">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Definition 5.3.1</span>.</span> The <dfn class="ec-cdef" id="gls-zeta-function" data-gls="zeta-function">zeta function</dfn> of \(C/\F_q\) is the power series
+</p>
+\begin{equation}
+\label{eq:ff-zeta}
+Z(C/\F_q; T) \coloneqq \exp\left( \sum_{n=1}^\infty \#C(\F_{q^n}) \frac{T^n}{n} \right)
+\in \Q[[T]]. \tag{5.3.1}
+\end{equation}
+</div>
+
+<p>
+Here \(\exp F(T) \coloneqq \sum_{m \geq 0} F(T)^m/m!\) for a power series \(F(T)\) with no
+constant term, so \(Z(C/\F_q; 0) = 1\).  The zeta function determines the numbers
+\(\#C(\F_{q^n})\): \(\#C(\F_{q^n})\) is the coefficient of \(T^{n-1}\) in
+\(\frac{d}{dT} \log Z(C/\F_q; T)\).  The exponential in \eqref{eq:ff-zeta} looks odd at
+first: the more natural series is \(\sum_n \#C(\F_{q^n}) T^n\).  The choice makes
+\(Z(C/\F_q; T)\) an Euler product over the closed points of \(C\).
+</p>
+
+<div class="ec-thm ec-proposition" id="prop-ff-zeta-euler">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Proposition 5.3.2</span>.</span> For \(d \geq 1\), let \(N_d\) be the number of closed points of \(C\) of degree \(d\).
+</p>
+<ol class="org-ol">
+<li><a id="it-ff-zeta-count"></a> Each \(N_d\) is finite, and \(\#C(\F_{q^n}) = \sum_{d \mid n} d N_d\)
+for every \(n \geq 1\).</li>
+<li><p>
+<a id="it-ff-zeta-euler"></a> In \(\Z[[T]]\),
+</p>
+   \begin{equation}
+   \label{eq:ff-zeta-euler}
+   Z(C/\F_q; T) = \prod_{P} \left( 1 - T^{\deg P} \right)^{-1}
+   = \prod_{d \geq 1} \left( 1 - T^d \right)^{-N_d}, \tag{5.3.2}
+\end{equation}
+<p>
+where the first product ranges over the closed points \(P\) of \(C\).  In particular
+\(Z(C/\F_q; T) \in 1 + T\Z[[T]]\).
+</p></li>
+<li><a id="it-ff-zeta-mobius"></a> For every \(d \geq 1\),
+\(N_d = \frac{1}{d} \sum_{e \mid d} \mu(d/e)\, \#C(\F_{q^e})\), where \(\mu\) is the
+Möbius function.</li>
+</ol>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+By Proposition <a href="03-curves.html#prop-crv-closed-points">3.1.2</a>, the points of \(C(\Fbar_q)\) above a closed
+point \(P\) form a single Galois orbit with \(\deg P\) elements, because \(\F_q\) is
+perfect.  Such an \(\Fbar_q\)-point lies in \(C(\F_{q^n})\) exactly when the residue field
+\(\F_q(P) \cong \F_{q^{\deg P}}\) embeds in \(\F_{q^n}\), that is, when
+\(\deg P \mid n\).  So \(N_d \leq \#C(\F_{q^d}) < \infty\), and
+\(C(\F_{q^n})\) is the disjoint union of the orbits of size \(d \mid n\), which proves
+part <a href="#it-ff-zeta-count">1</a>.
+</p>
+
+<p>
+For part <a href="#it-ff-zeta-euler">2</a>, only the finitely many factors with \(\deg P < m\) are
+\(\not\equiv 1 \pmod{T^m}\), so the product converges in \(\Z[[T]]\).  Taking its logarithm
+and expanding \(-\log(1 - x) = \sum_{k \geq 1} x^k/k\),
+</p>
+\begin{equation*}
+\sum_{d \geq 1} N_d \sum_{k \geq 1} \frac{T^{dk}}{k}
+= \sum_{n \geq 1} \left( \sum_{d \mid n} d N_d \right) \frac{T^n}{n}
+= \sum_{n \geq 1} \#C(\F_{q^n}) \frac{T^n}{n},
+\end{equation*}
+<p>
+where we set \(n = dk\).  Part <a href="#it-ff-zeta-mobius">3</a> is Möbius inversion of
+part <a href="#it-ff-zeta-count">1</a>, applied to \(n \mapsto \#C(\F_{q^n})\) and \(d \mapsto dN_d\).
+</p>
+</details>
+
+<p>
+So the numbers of rational points over the extensions of \(\F_q\) and the numbers of closed
+points of each degree determine each other.  Substituting \(T = q^{-s}\), and writing
+\(NP \coloneqq \#\F_q(P) = q^{\deg P}\) for the norm of a closed point, gives
+</p>
+\begin{equation*}
+\zeta_C(s) \coloneqq Z(C/\F_q; q^{-s}) = \prod_P \left( 1 - NP^{-s} \right)^{-1},
+\end{equation*}
+<p>
+which has the shape of the Euler product \(\zeta(s) = \prod_p (1 - p^{-s})^{-1}\) of the
+Riemann zeta function, with closed points in place of primes.
+</p>
+
+<div class="ec-thm ec-example" id="eg-ff-zeta-p1">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Example 5.3.3</span>.</span> Let \(C \coloneqq \PP^1\) over \(\F_q\).  Then \(\#\PP^1(\F_{q^n}) = q^n + 1\), so
+</p>
+\begin{equation*}
+\log Z(\PP^1/\F_q; T) = \sum_{n \geq 1} \frac{T^n}{n} + \sum_{n \geq 1} \frac{(qT)^n}{n},
+\qquad Z(\PP^1/\F_q; T) = \frac{1}{(1 - T)(1 - qT)}
+\end{equation*}
+<p>
+[<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Example V.2.1].  The Euler product gives the same answer in another
+way.  The closed points of \(\PP^1\) are the rational point \(\infty\), of degree \(1\),
+and the closed points of \(\AA^1\), which are the monic irreducible polynomials
+\(f \in \F_q[t]\), with \(\deg P = \deg f\).  Since \(\F_q[t]\) is a unique factorization
+domain, expanding each factor of \eqref{eq:ff-zeta-euler} as a geometric series gives
+</p>
+\begin{equation*}
+(1 - T)^{-1} \prod_f \left( 1 - T^{\deg f} \right)^{-1}
+= \frac{1}{1 - T} \sum_{g \text{ monic}} T^{\deg g}
+= \frac{1}{1 - T} \sum_{d \geq 0} q^d T^d,
+\end{equation*}
+<p>
+because there are \(q^d\) monic polynomials of degree \(d\).  Part <a href="#it-ff-zeta-mobius">3</a> of
+Proposition <a href="#prop-ff-zeta-euler">5.3.2</a> counts them: since \(\sum_{e \mid d} \mu(d/e) = 0\) for
+\(d > 1\), the \(+1\) in \(q^e + 1\) drops out, and the number of monic irreducible
+polynomials of degree \(d\) over \(\F_q\) is \(\frac{1}{d} \sum_{e \mid d} \mu(d/e) q^e\)
+for every \(d \geq 1\).  Over \(\F_2\), in degree \(2\), this is \(\frac12(4 - 2) = 1\): the
+polynomial \(t^2 + t + 1\), whose roots form the Galois orbit \(\{\omega, \omega^2\}\) of
+a primitive cube root of unity in \(\F_4\).
+</p>
+</div>
+
+<p>
+The zeta function of \(\PP^1\) is a rational function, and this is no accident.  The next
+lemma turns a formula for \(\#C(\F_{q^n})\) as a trace of \(n\)-th powers into a
+formula for \(Z(C/\F_q; T)\).
+</p>
+
+<div class="ec-thm ec-lemma" id="lem-ff-exp-trace">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Lemma 5.3.4</span>.</span> Let \(A\) be a square matrix over a field \(K\) of characteristic \(0\).  Then
+</p>
+\begin{equation}
+\label{eq:ff-exp-trace}
+\exp\left( \sum_{n \geq 1} \tr(A^n) \frac{T^n}{n} \right) = \frac{1}{\det(1 - AT)}
+\qquad \text{in } K[[T]]. \tag{5.3.3}
+\end{equation}
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+(See [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Exercise 5.3].)  Over an algebraic closure \(\bar K\), triangularize
+\(A\), with its eigenvalues \(\lambda_1, \dots, \lambda_m\) on the diagonal.  Then
+\(\tr(A^n) = \sum_i \lambda_i^n\) and \(\det(1 - AT) = \prod_i (1 - \lambda_i T)\).  Since
+\(\exp(F + G) = \exp F \exp G\), both sides of \eqref{eq:ff-exp-trace} are the products
+over \(i\) of the corresponding sides for the \(1 \times 1\) matrix \((\lambda_i)\), and
+for these
+</p>
+\begin{equation*}
+\sum_{n \geq 1} \lambda^n \frac{T^n}{n} = -\log(1 - \lambda T), \qquad
+\exp\bigl( -\log(1 - \lambda T) \bigr) = (1 - \lambda T)^{-1}
+\end{equation*}
+<p>
+in \(\bar K[[T]]\), which needs characteristic \(0\).  Both sides of
+\eqref{eq:ff-exp-trace} have coefficients in \(K\).
+</p>
+</details>
+
+<p>
+For example, if there are \(\alpha_1, \dots, \alpha_r \in \C\) and signs
+\(\varepsilon_i \in \{\pm 1\}\) with \(\#C(\F_{q^n}) = \sum_i \varepsilon_i \alpha_i^n\) for
+all \(n \geq 1\), then Lemma <a href="#lem-ff-exp-trace">5.3.4</a>, applied to the \(1 \times 1\) matrices
+\((\alpha_i)\), gives \(Z(C/\F_q; T) = \prod_{i=1}^r (1 - \alpha_i T)^{-\varepsilon_i}\).
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-ff-weil-statement" class="outline-3">
+<h3 id="sec-ff-weil-statement"><span class="section-number" id="s5.3.2">5.3.2</span> The statement</h3>
+<div class="outline-text-3" id="text-sec-ff-weil-statement">
+<div class="ec-thm ec-theorem" id="thm-ff-weil">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Theorem 5.3.5</span> <span class="ec-thm-title">(Weil conjectures for curves)</span>.</span> Let \(C\) be a nice curve of genus \(g\) over \(\F_q\) (Definition <a href="03-curves.html#def-crv-genus">3.5.3</a>).
+</p>
+<ol class="org-ol">
+<li><p>
+<a id="it-ff-weil-rationality"></a> (Rationality) There is a polynomial \(P \in 1 + T\Z[T]\) of
+degree \(2g\) such that
+</p>
+\begin{equation*}
+Z(C/\F_q; T) = \frac{P(T)}{(1 - T)(1 - qT)}.
+\end{equation*}</li>
+<li><p>
+<a id="it-ff-weil-functional-equation"></a> (Functional equation)
+</p>
+\begin{equation*}
+Z\left(C/\F_q; \frac{1}{qT}\right) = q^{1-g} T^{2-2g} Z(C/\F_q; T).
+\end{equation*}</li>
+<li><p>
+<a id="it-ff-weil-riemann"></a> (Riemann hypothesis) Over \(\C\),
+</p>
+\begin{equation*}
+P(T) = \prod_{i=1}^{2g} (1 - \alpha_i T), \qquad \lvert \alpha_i \rvert = \sqrt{q}
+\quad \text{for every } i.
+\end{equation*}</li>
+</ol>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+Rationality and the functional equation are due to F.&nbsp;K.&nbsp;Schmidt, from the
+Riemann&#x2013;Roch theorem (Theorem <a href="03-curves.html#thm-crv-rr">3.5.4</a>); the Riemann hypothesis is due to Weil
+[<a class="ec-cite" href="#bib-Weil49">Wei49</a>].  See Remark <a href="#rem-ff-weil-history">5.3.6</a>.  We prove the theorem for elliptic
+curves in Theorem <a href="#thm-ff-weil-ec">5.3.9</a>.
+</p>
+</details>
+
+<p>
+Taking the logarithm of the formula for \(Z(C/\F_q; T)\), as in
+Example <a href="#eg-ff-zeta-p1">5.3.3</a>, the \(\alpha_i\) determine all the numbers \(\#C(\F_{q^n})\):
+</p>
+\begin{equation*}
+\#C(\F_{q^n}) = q^n + 1 - \sum_{i=1}^{2g} \alpha_i^n, \qquad\text{so}\qquad
+\bigl\lvert \#C(\F_{q^n}) - (q^n + 1) \bigr\rvert \leq 2g\, q^{n/2}.
+\end{equation*}
+<p>
+For \(C = \PP^1\), of genus \(0\), Example <a href="#eg-ff-zeta-p1">5.3.3</a> gives the theorem with
+\(P = 1\).
+</p>
+
+<div class="ec-thm ec-remark" id="rem-ff-weil-history">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Remark 5.3.6</span> <span class="ec-thm-title">(A brief and incomplete history)</span>.</span> F.&nbsp;K.&nbsp;Schmidt proved rationality and the functional equation for curves.  Hasse
+proved the Riemann hypothesis for elliptic curves in the 1930s, and Weil proved it for all
+curves, and for abelian varieties, using intersection theory on surfaces
+[<a class="ec-cite" href="#bib-Weil49">Wei49</a>].
+</p>
+
+<p>
+Weil's conjectures were guided by the Lefschetz fixed-point theorem.  If \(f\colon M \to
+M\) is a reasonable map of a compact manifold of dimension \(d\), then the number of fixed
+points of \(f\), counted with multiplicity, is
+</p>
+\begin{equation*}
+\sum_{i=0}^{d} (-1)^i \tr\left( f^* \mid H^i(M, \Q) \right).
+\end{equation*}
+<p>
+The set \(C(\F_{q^n})\) is exactly the fixed-point set of the \(n\)-th power of the
+Frobenius morphism on \(C(\Fbar_q)\).  If \(C\) comes from a curve over \(\C\), then
+\(H^0\) and \(H^2\) of the Riemann surface have rank \(1\) and \(H^1\) has rank \(2g\).
+So one expects cohomology groups that behave like these but exist in characteristic \(p\),
+with \(\Frob\) acting by \(1\) on \(H^0\), by \(q\) on \(H^2\), and with eigenvalues
+\(\alpha_1, \dots, \alpha_{2g}\) on \(H^1\).  This gives the shape of
+Theorem <a href="#thm-ff-weil">5.3.5</a>.
+</p>
+
+<p>
+Weil stated his conjectures for varieties of any dimension.  Dwork proved rationality in
+1960 using \(p\)-adic analysis [<a class="ec-cite" href="#bib-Dwork60">Dwo60</a>].  The cohomology theory Weil was looking for
+is étale cohomology, developed by M.&nbsp;Artin, Grothendieck and others: its
+Grothendieck&#x2013;Lefschetz trace formula proves every part of the conjectures except the
+Riemann hypothesis, which Deligne proved in 1973 [<a class="ec-cite" href="#bib-Deligne74">Del74</a>].  See [<a class="ec-cite" href="#bib-Oort14">Oor14</a>].
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-ff-weil-ec" class="outline-3">
+<h3 id="sec-ff-weil-ec"><span class="section-number" id="s5.3.3">5.3.3</span> Elliptic curves</h3>
+<div class="outline-text-3" id="text-sec-ff-weil-ec">
+<p>
+We now prove Theorem <a href="#thm-ff-weil">5.3.5</a> for elliptic curves; the result is
+Theorem <a href="#thm-ff-weil-ec">5.3.9</a>.  Let \(E\) be an elliptic curve over \(\F_q\), let
+\(\Frob \in \End(E)\) be its \(q\)-th power Frobenius endomorphism
+(Section <a href="#sec-ff-hasse">5.2</a>), let \(\ell \neq p\) be a prime, and let \(\Frob_\ell\) be the map
+induced by \(\Frob\) on \(T_\ell(E)\) (Section <a href="04-ec-algebraic.html#sec-ec-tate">4.5</a>).  Then
+\(\deg \Frob = q\) by Proposition <a href="03-curves.html#prop-crv-frobenius">3.2.12</a>, and \(\Frob^n\) is the \(q^n\)-th
+power Frobenius endomorphism.  So the discussion after
+Corollary <a href="04-ec-algebraic.html#cor-ec-frobenius-separable">4.4.4</a>, applied to \(E\) over \(\F_{q^n}\), gives
+</p>
+\begin{equation}
+\label{eq:ff-count-degree}
+\#E(\F_{q^n}) = \deg(1 - \Frob^n). \tag{5.3.4}
+\end{equation}
+
+<div class="ec-thm ec-definition" id="def-ff-trace">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Definition 5.3.7</span>.</span> The <dfn class="ec-cdef" id="gls-trace-of-frobenius" data-gls="trace-of-frobenius">trace of Frobenius</dfn> of \(E/\F_q\) is \(a \coloneqq q + 1 - \#E(\F_q)\).
+</p>
+</div>
+
+<p>
+The name comes from Proposition <a href="04-ec-algebraic.html#prop-ec-det-trace">4.6.7</a> and \eqref{eq:ff-count-degree}: for
+every \(\ell \neq p\),
+</p>
+\begin{gather*}
+\tr \Frob_\ell = 1 + \deg \Frob - \deg(1 - \Frob) = 1 + q - \#E(\F_q) = a, \\
+\det \Frob_\ell = \deg \Frob = q
+\end{gather*}
+<p>
+[<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Remark V.2.6].
+</p>
+
+<div class="ec-thm ec-theorem" id="thm-ff-frobenius">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Theorem 5.3.8</span>.</span> Let \(E/\F_q\) be an elliptic curve with trace of Frobenius \(a\).
+</p>
+<ol class="org-ol">
+<li><p>
+<a id="it-ff-frobenius-charpoly"></a> The characteristic polynomial of \(\Frob_\ell\) is \(T^2 - aT + q\).  Its complex roots
+\(\alpha\) and \(\beta\) are complex conjugates with
+\(\lvert\alpha\rvert = \lvert\beta\rvert = \sqrt{q}\), and for every \(n \geq 1\),
+</p>
+   \begin{equation}
+   \label{eq:ff-count}
+   \#E(\F_{q^n}) = q^n + 1 - \alpha^n - \beta^n. \tag{5.3.5}
+\end{equation}</li>
+<li><a id="it-ff-frobenius-relation"></a> \(\Frob^2 - a\Frob + q = 0\) in \(\End(E)\).</li>
+</ol>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+By the computation above, \(\det(T - \Frob_\ell) = T^2 - \tr(\Frob_\ell) T + \det \Frob_\ell = T^2 - aT +
+q\).
+</p>
+
+<p>
+For part <a href="#it-ff-frobenius-charpoly">1</a>, let \(m/n \in \Q\).  By Proposition <a href="04-ec-algebraic.html#prop-ec-det-trace">4.6.7</a> and
+Corollary <a href="04-ec-algebraic.html#cor-ec-degree-quadratic">4.3.11</a>,
+</p>
+\begin{equation*}
+\det\left( \frac{m}{n} - \Frob_\ell \right) = \frac{\det(m - n\Frob_\ell)}{n^2}
+= \frac{\deg(m - n\Frob)}{n^2} \geq 0.
+\end{equation*}
+<p>
+So the real quadratic polynomial \(T^2 - aT + q\) is non-negative on \(\Q\), hence on
+\(\R\), and its discriminant satisfies \(a^2 - 4q \leq 0\).  Its roots are therefore
+complex conjugates or a repeated real root, so in either case
+\(\lvert\alpha\rvert^2 = \alpha\beta = q\).  (The inequality \(a^2 \leq 4q\) is
+Hasse's bound, Theorem <a href="#thm-ff-hasse">5.2.1</a> with \(r = 1\).)
+</p>
+
+<p>
+Viewing \(\alpha\) and \(\beta\) in an algebraic closure of \(\Q_\ell\), we can
+triangularize \(\Frob_\ell\) with \(\alpha\) and \(\beta\) on the diagonal.  Then
+\((\Frob^n)_\ell = \Frob_\ell^n\) is triangular with \(\alpha^n\) and \(\beta^n\) on the diagonal.
+By \eqref{eq:ff-count-degree} and Proposition <a href="04-ec-algebraic.html#prop-ec-det-trace">4.6.7</a>,
+</p>
+\begin{equation*}
+\#E(\F_{q^n}) = \deg(1 - \Frob^n) = \det(1 - \Frob_\ell^n) = (1 - \alpha^n)(1 - \beta^n)
+= 1 - \alpha^n - \beta^n + q^n.
+\end{equation*}
+<p>
+Since \(\alpha^n + \beta^n\) is a polynomial in \(a = \alpha + \beta\) and \(q = \alpha\beta\)
+with integer coefficients, it does not matter whether \(\alpha\) and \(\beta\) are read in
+\(\C\) or in \(\overline{\Q}_\ell\).
+</p>
+
+<p>
+For part <a href="#it-ff-frobenius-relation">2</a>, let \(\psi \coloneqq \Frob^2 - a\Frob + q \in \End(E)\).  By the
+Cayley&#x2013;Hamilton theorem, \(\Frob_\ell\) satisfies its characteristic polynomial, so
+\(\psi_\ell = \Frob_\ell^2 - a\Frob_\ell + q = 0\).  By Theorem <a href="04-ec-algebraic.html#thm-ec-tate-injective">4.5.5</a>,
+\(\psi = 0\) [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Theorem V.2.3.1].
+</p>
+</details>
+
+<p>
+Theorem <a href="#thm-ff-frobenius">5.3.8</a> recovers Hasse's bound over every extension at once: by
+\eqref{eq:ff-count},
+</p>
+\begin{equation*}
+\lvert \#E(\F_{q^n}) - (q^n + 1) \rvert = \lvert \alpha^n + \beta^n \rvert
+\leq \lvert\alpha\rvert^n + \lvert\beta\rvert^n = 2q^{n/2},
+\end{equation*}
+<p>
+which is Theorem <a href="#thm-ff-hasse">5.2.1</a> with \(r = n\).
+</p>
+
+<div class="ec-thm ec-theorem" id="thm-ff-weil-ec">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Theorem 5.3.9</span> <span class="ec-thm-title">(Weil conjectures for elliptic curves)</span>.</span> Let \(E/\F_q\) be an elliptic curve with trace of Frobenius \(a\), and let \(\alpha\) and
+\(\beta\) be as in Theorem <a href="#thm-ff-frobenius">5.3.8</a>.  Then
+</p>
+\begin{equation}
+\label{eq:ff-zeta-ec}
+\begin{gathered}
+Z(E/\F_q; T) = \frac{\det(1 - \Frob_\ell T)}{(1 - T)(1 - qT)}
+= \frac{1 - aT + qT^2}{(1 - T)(1 - qT)}, \\
+1 - aT + qT^2 = (1 - \alpha T)(1 - \beta T), \qquad
+\lvert\alpha\rvert = \lvert\beta\rvert = \sqrt{q},
+\end{gathered} \tag{5.3.6}
+\end{equation}
+<p>
+and
+</p>
+\begin{equation*}
+Z\left(E/\F_q; \frac{1}{qT}\right) = Z(E/\F_q; T).
+\end{equation*}
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+For a \(2 \times 2\) matrix \(M\), \(\det(1 - M) = 1 - \tr M + \det M\).  By
+\eqref{eq:ff-count-degree} and Proposition <a href="04-ec-algebraic.html#prop-ec-det-trace">4.6.7</a>, and since
+\(\det \Frob_\ell^n = q^n\),
+</p>
+\begin{equation*}
+\#E(\F_{q^n}) = \deg(1 - \Frob^n) = \det(1 - \Frob_\ell^n) = 1 - \tr(\Frob_\ell^n) + q^n.
+\end{equation*}
+<p>
+So, working in \(\Q_\ell[[T]]\) and applying Lemma <a href="#lem-ff-exp-trace">5.3.4</a> to \(1\), \(q\) and
+\(\Frob_\ell\),
+</p>
+\begin{equation*}
+Z(E/\F_q; T) = \exp\left( \sum_{n \geq 1} (1 + q^n) \frac{T^n}{n} \right)
+\exp\left( -\sum_{n \geq 1} \tr(\Frob_\ell^n) \frac{T^n}{n} \right)
+= \frac{\det(1 - \Frob_\ell T)}{(1 - T)(1 - qT)}.
+\end{equation*}
+<p>
+By Theorem <a href="#thm-ff-frobenius">5.3.8</a>, \(\det(1 - \Frob_\ell T) = T^2 \det(T^{-1} - \Frob_\ell)
+= 1 - aT + qT^2 = (1 - \alpha T)(1 - \beta T)\), and
+\(\lvert\alpha\rvert = \lvert\beta\rvert = \sqrt{q}\).  For the functional equation,
+substitute \(T \mapsto 1/(qT)\) and multiply numerator and denominator by \(qT^2\):
+</p>
+\begin{equation*}
+\frac{1 - a/(qT) + 1/(qT^2)}{(1 - 1/(qT))(1 - 1/T)}
+= \frac{qT^2 - aT + 1}{(qT - 1)(T - 1)} = Z(E/\F_q; T)
+\end{equation*}
+<p>
+[<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Theorem V.2.4].
+</p>
+</details>
+
+<p>
+So \(E\) satisfies Theorem <a href="#thm-ff-weil">5.3.5</a> with \(g = 1\) and
+\(P(T) = 1 - aT + qT^2 = \det(1 - \Frob_\ell T)\).
+</p>
+
+<div class="ec-thm ec-corollary" id="cor-ff-recurrence">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Corollary 5.3.10</span>.</span> Let \(E/\F_q\) be an elliptic curve with trace of Frobenius \(a\).  Put
+\(a_n \coloneqq q^n + 1 - \#E(\F_{q^n})\) for \(n \geq 1\), and \(a_0 \coloneqq 2\).  Then
+\(a_1 = a\) and
+</p>
+\begin{equation*}
+a_{n+2} = a\, a_{n+1} - q\, a_n \qquad \text{for all } n \geq 0.
+\end{equation*}
+<p>
+In particular, the single number \(\#E(\F_q)\) determines \(\#E(\F_{q^n})\) for every
+\(n \geq 1\).
+</p>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+By \eqref{eq:ff-count}, \(a_n = \alpha^n + \beta^n\) for \(n \geq 1\), and also for
+\(n = 0\).  Since \(\alpha\) is a root of \(T^2 - aT + q\),
+\(\alpha^{n+2} = a\alpha^{n+1} - q\alpha^n\), and likewise for \(\beta\); add the two
+[<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Exercise 5.13].
+</p>
+</details>
+
+<p>
+For instance \(a_2 = a^2 - 2q\), so \(\#E(\F_{q^2}) = q^2 + 1 - a^2 + 2q\).
+</p>
+
+<div class="ec-thm ec-remark" id="rem-ff-weil-ec-riemann">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Remark 5.3.11</span>.</span> To see why part <a href="#it-ff-weil-riemann">3</a> of Theorem <a href="#thm-ff-weil">5.3.5</a> is called the Riemann hypothesis, set
+\(T = q^{-s}\) as in Section <a href="#sec-ff-zeta">5.3.1</a>:
+</p>
+\begin{equation*}
+\zeta_E(s) \coloneqq Z(E/\F_q; q^{-s}) = \frac{1 - aq^{-s} + q^{1-2s}}{(1 - q^{-s})(1 - q^{1-s})}.
+\end{equation*}
+<p>
+The functional equation becomes \(\zeta_E(s) = \zeta_E(1 - s)\), and if
+\(\zeta_E(s) = 0\), then \(q^s \in \{\alpha, \beta\}\), so \(\lvert q^s \rvert = \sqrt{q}\),
+that is, \(\Re s = 1/2\) [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Remark V.2.5].
+</p>
+</div>
+
+<div class="ec-thm ec-example" id="eg-ff-weil-ec-f2">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Example 5.3.12</span>.</span> Let \(E\colon y^2 + y = x^3 - x\) over \(\F_2\), the reduction modulo \(2\) of the curve
+with LMFDB label 37.a1, which has good reduction away from \(37\) [<a class="ec-cite" href="#bib-lmfdb">LMFDB</a>].  For
+\(x = 0\) and \(x = 1\) the equation reads \(y^2 + y = 0\), which has the two solutions
+\(y = 0, 1\).  With the point at infinity, \(\#E(\F_2) = 5\), so \(a = 2 + 1 - 5 = -2\) and
+</p>
+\begin{equation*}
+Z(E/\F_2; T) = \frac{1 + 2T + 2T^2}{(1 - T)(1 - 2T)}.
+\end{equation*}
+<p>
+The roots of \(T^2 + 2T + 2\) are \(\alpha, \beta = -1 \pm i\), of absolute value
+\(\sqrt{2}\).  Since \(\alpha^2 = -2i\), \(\alpha^3 = 2 + 2i\) and \(\alpha^4 = -4\),
+\eqref{eq:ff-count} predicts
+</p>
+\begin{equation*}
+\#E(\F_4) = 5, \qquad \#E(\F_8) = 9 - 4 = 5, \qquad \#E(\F_{16}) = 17 + 8 = 25.
+\end{equation*}
+<p>
+Magma agrees [<a class="ec-cite" href="#bib-Magma">BCP97</a>].  It writes the denominator of the zeta function expanded.
+</p>
+<div class="org-src-container">
+<pre class="src src-magma">E := <span class="org-function-name">EllipticCurve</span>([<span class="org-function-name">GF</span>(2) | 0, 0, 1, -1, 0]);
+<span class="org-function-name">TraceOfFrobenius</span>(E);                        <span class="org-comment">// -2
+</span>[#<span class="org-function-name">BaseChange</span>(E, <span class="org-function-name">GF</span>(2^n)) : n <span class="org-keyword">in</span> [1..4]];    <span class="org-comment">// [ 5, 5, 5, 25 ]
+</span>Z := <span class="org-function-name">ZetaFunction</span>(E); K&lt;T&gt; := <span class="org-function-name">Parent</span>(Z); Z;
+<span class="org-comment">// (2*T^2 + 2*T + 1)/(2*T^2 - 3*T + 1)</span>
+</pre>
+</div>
+</div>
+
+<div class="ec-thm ec-example" id="eg-ff-weil-ec-supersingular">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Example 5.3.13</span>.</span> Let \(E\colon y^2 = x^3 + x\) over \(\F_3\).  The values of \(x^3 + x\) at
+\(x = 0, 1, 2\) are \(0, 2, 1\), and \(2\) is not a square in \(\F_3\), so
+\(E(\F_3) = \{O, (0, 0), (2, 1), (2, 2)\}\).  Hence \(a = 0\),
+</p>
+\begin{equation*}
+Z(E/\F_3; T) = \frac{1 + 3T^2}{(1 - T)(1 - 3T)},
+\end{equation*}
+<p>
+\(\alpha, \beta = \pm i\sqrt{3}\), and \(\#E(\F_{3^n}) = 3^n + 1\) for \(n\) odd and
+\(3^n + 1 - 2(-3)^{n/2}\) for \(n\) even.  Part <a href="#it-ff-frobenius-relation">2</a> of Theorem <a href="#thm-ff-frobenius">5.3.8</a> says that
+\(\Frob^2 = [-3]\): applying the \(9\)-th power map to the coordinates of a point of
+\(E(\Fbar_3)\) is the same as multiplying it by \(-3\).  We check this on a random point of
+\(E(\F_{3^5})\).
+</p>
+<div class="org-src-container">
+<pre class="src src-magma">E := <span class="org-function-name">EllipticCurve</span>([<span class="org-function-name">GF</span>(3) | 1, 0]);
+<span class="org-function-name">TraceOfFrobenius</span>(E);                        <span class="org-comment">// 0
+</span>[#<span class="org-function-name">BaseChange</span>(E, <span class="org-function-name">GF</span>(3^n)) : n <span class="org-keyword">in</span> [1..4]];    <span class="org-comment">// [ 4, 16, 28, 64 ]
+</span>E5 := <span class="org-function-name">BaseChange</span>(E, <span class="org-function-name">GF</span>(3^5));
+P := <span class="org-function-name">Random</span>(E5);
+E5![P[1]^9, P[2]^9, P[3]^9] <span class="org-keyword">eq</span> -3*P;        <span class="org-comment">// true</span>
+</pre>
+</div>
+<p>
+By Corollary <a href="#cor-ff-supersingular-trace">5.5.6</a>, an elliptic curve over \(\F_q\) is
+supersingular if and only if \(a \equiv 0 \pmod p\); so this curve is supersingular.
+</p>
+</div>
+
+<div class="ec-thm ec-example" id="eg-ff-weil-ec-37a">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Example 5.3.14</span>.</span> Let \(E\) be 37.a1 again, now reduced modulo the prime \(q = 1013\):
+\(E\colon y^2 + y = x^3 + 1012x\) over \(\F_{1013}\).  Magma computes \(\#E(\F_{1013}) = 978\),
+so \(a = 36\) and
+</p>
+\begin{equation*}
+Z(E/\F_{1013}; T) = \frac{1 - 36T + 1013T^2}{(1 - T)(1 - 1013T)}.
+\end{equation*}
+<p>
+The roots of \(T^2 - 36T + 1013\) are \(18 \pm \sqrt{689}\,i \approx 18 \pm 26.2488i\), of
+absolute value \(\sqrt{1013} \approx 31.8277\).  Then Corollary <a href="#cor-ff-recurrence">5.3.10</a>
+predicts \(\#E(\F_{1013^2}) = q^2 + 1 - (a^2 - 2q) = 1026900\).
+</p>
+<div class="org-src-container">
+<pre class="src src-magma">q := 1013;
+E := <span class="org-function-name">EllipticCurve</span>([<span class="org-function-name">GF</span>(q) | 0, 0, 1, -1, 0]);
+#E, <span class="org-function-name">TraceOfFrobenius</span>(E);                    <span class="org-comment">// 978 36
+</span>#<span class="org-function-name">BaseChange</span>(E, <span class="org-function-name">GF</span>(q^2));                    <span class="org-comment">// 1026900
+</span>Z := <span class="org-function-name">ZetaFunction</span>(E); K&lt;T&gt; := <span class="org-function-name">Parent</span>(Z); Z;
+<span class="org-comment">// (1013*T^2 - 36*T + 1)/(1013*T^2 - 1014*T + 1)</span>
+</pre>
+</div>
+</div>
+
+<div class="ec-thm ec-proposition" id="prop-ff-isogeny-zeta">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Proposition 5.3.15</span>.</span> Let \(E_1\) and \(E_2\) be elliptic curves over \(\F_q\).  The following are equivalent:
+</p>
+<ol class="org-ol">
+<li><a id="it-ff-isogeny-zeta-isogenous"></a> \(E_1\) and \(E_2\) are isogenous over \(\F_q\);</li>
+<li><a id="it-ff-isogeny-zeta-count"></a> \(\#E_1(\F_q) = \#E_2(\F_q)\);</li>
+<li><a id="it-ff-isogeny-zeta-zeta"></a> \(Z(E_1/\F_q; T) = Z(E_2/\F_q; T)\);</li>
+<li><a id="it-ff-isogeny-zeta-closed"></a> \(E_1\) and \(E_2\) have the same number of closed points
+of each degree.</li>
+</ol>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+(See [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Exercise 5.4].)  Let \(\Frob_1\) and \(\Frob_2\) be the \(q\)-th
+power Frobenius endomorphisms of \(E_1\) and \(E_2\).  Parts
+<a href="#it-ff-isogeny-zeta-count">2</a>, <a href="#it-ff-isogeny-zeta-zeta">3</a> and
+<a href="#it-ff-isogeny-zeta-closed">4</a> of Proposition <a href="#prop-ff-isogeny-zeta">5.3.15</a> are equivalent by Theorem <a href="#thm-ff-weil-ec">5.3.9</a> (the zeta
+function depends only on \(q\) and \(a\)) and by parts <a href="#it-ff-zeta-count">1</a> and
+<a href="#it-ff-zeta-mobius">3</a> of Proposition <a href="#prop-ff-zeta-euler">5.3.2</a>.
+</p>
+
+<p>
+Suppose that \(\varphi\colon E_1 \to E_2\) is a non-zero isogeny over \(\F_q\).  Its
+coordinate functions have coefficients in \(\F_q\), which the \(q\)-th power map fixes, so
+\(\varphi \circ \Frob_1 = \Frob_2 \circ \varphi\), and hence
+\(\varphi \circ (1 - \Frob_1) = (1 - \Frob_2) \circ \varphi\).  Taking degrees and
+cancelling \(\deg \varphi \neq 0\), \eqref{eq:ff-count-degree} gives
+\(\#E_1(\F_q) = \#E_2(\F_q)\).
+</p>
+
+<p>
+Conversely, suppose that \(\#E_1(\F_q) = \#E_2(\F_q)\), so that \(\Frob_{1,\ell}\) and
+\(\Frob_{2,\ell}\) have the same characteristic polynomial \(f(T) = T^2 - aT + q\).  By
+Tate's theorem, mentioned after Theorem <a href="04-ec-algebraic.html#thm-ec-tate-injective">4.5.5</a>, the map
+\(\Hom(E_1, E_2) \otimes \Z_\ell \to \Hom_{\Gal_{\F_q}}(T_\ell(E_1), T_\ell(E_2))\) is an
+isomorphism [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Theorem III.7.7(a)].  Since \(\sigma\) acts on
+\(E_i(\Fbar_q)\) as \(\Frob_i\) and topologically generates \(\Gal_{\F_q}\), a
+\(\Z_\ell\)-linear map is \(\Gal_{\F_q}\)-equivariant if and only if it intertwines
+\(\Frob_{1,\ell}\) and \(\Frob_{2,\ell}\).  It suffices to find a non-zero such map, since
+then \(\Hom(E_1, E_2) \otimes \Z_\ell \neq 0\), and \(\Hom(E_1, E_2)\) is a free
+\(\Z\)-module (Theorem <a href="04-ec-algebraic.html#thm-ec-tate-injective">4.5.5</a>), so it is non-zero.
+</p>
+<ul class="org-ul">
+<li>If \(a^2 \neq 4q\), then \(\Frob_{i,\ell}\) is not a scalar, so
+\(V_i \coloneqq T_\ell(E_i) \otimes \Q_\ell\) has a basis \(v, \Frob_{i,\ell} v\) and
+\(V_i \cong \Q_\ell[T]/(f)\), with \(T\) acting by \(\Frob_{i,\ell}\).  An isomorphism
+\(V_1 \cong V_2\) of \(\Q_\ell[T]\)-modules, multiplied by a large power of \(\ell\),
+maps \(T_\ell(E_1)\) into \(T_\ell(E_2)\).</li>
+<li>If \(a^2 = 4q\), then \(f(T) = (T - a/2)^2\) with \(a/2 \in \Z\), and by
+Proposition <a href="04-ec-algebraic.html#prop-ec-det-trace">4.6.7</a>,
+\(\deg(\Frob_i - [a/2]) = \det(\Frob_{i,\ell} - a/2) = f(a/2) = 0\).  So
+\(\Frob_i = [a/2]\), and every \(\Z_\ell\)-linear map intertwines the two.</li>
+</ul>
+</details>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-ff-endomorphism-ring" class="outline-2">
+<h2 id="sec-ff-endomorphism-ring"><span class="ec-status ec-status-draft"><span class="ec-status-label ec-status-draft">Draft</span><time datetime="2026-09-23">23 Sep 2026</time></span><span class="section-number" id="s5.4">5.4</span> The endomorphism ring</h2>
+<div class="outline-text-2" id="text-sec-ff-endomorphism-ring">
+<p>
+In this section and the next, \(k\) is a field of characteristic \(p > 0\), not necessarily
+finite, and \(E\) is an elliptic curve over \(k\).  We use the Frobenius isogeny
+\(\Frob^r\colon E \to E^{(p^r)}\) and its Verschiebung \(\Versch^r = \widehat{\Frob^r}\) of
+Definition <a href="04-ec-algebraic.html#def-ec-verschiebung">4.3.12</a>.
+</p>
+
+<p>
+Over \(\F_q\) with \(q = p^e\) the two readings agree: \(E^{(p^e)} = E\), and the \(q\)-th
+power Frobenius endomorphism is \(\Frob^e\), with dual \(\Versch^e\).
+</p>
+
+<p>
+Corollary <a href="04-ec-algebraic.html#cor-ec-torsion">4.5.1</a> left two possibilities for \(E[p^r](\kbar)\), and
+Theorem <a href="04-ec-algebraic.html#thm-ec-endomorphism-ring">4.7.8</a> three possibilities for \(\End(E_{\kbar})\).  The
+following theorem of Deuring says that these are not independent: the \(p\)-torsion decides
+the endomorphism ring.
+</p>
+
+<div class="ec-thm ec-theorem" id="thm-ff-supersingular">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Theorem 5.4.1</span> <span class="ec-thm-title">(Supersingular and ordinary elliptic curves)</span>.</span> Let \(k\) be a field of characteristic \(p\), and let \(E\) be an elliptic curve over
+\(k\).  The following conditions are equivalent.
+</p>
+<ol class="org-ol">
+<li><a id="it-ff-ss-torsion"></a> \(E[p^r](\kbar) = 0\) for some (all) \(r \geq 1\).</li>
+<li><a id="it-ff-ss-verschiebung"></a> \(\Versch^r\) is purely inseparable for some (all) \(r \geq 1\).</li>
+<li><a id="it-ff-ss-p-inseparable"></a> \([p]\colon E \to E\) is purely inseparable and \(j(E) \in \F_{p^2}\).</li>
+<li><a id="it-ff-ss-quaternion"></a> \(\End(E_{\kbar})\) is an order in a quaternion algebra.</li>
+<li><a id="it-ff-ss-height"></a> The formal group \(\hat E\) has height \(2\).</li>
+</ol>
+
+<p>
+If they hold, \(E\) is <dfn class="ec-cdef" id="gls-supersingular" data-gls="supersingular">supersingular</dfn>.  Otherwise \(E\) is <dfn class="ec-cdef" id="gls-ordinary" data-gls="ordinary">ordinary</dfn>, and then
+</p>
+\begin{equation*}
+E[p^r](\kbar) \cong \Z/p^r\Z \qquad \text{for all } r \geq 1;
+\end{equation*}
+<p>
+if moreover \(j(E) \in \Fbar_p\), then \(\End(E_{\kbar})\) is an order in an imaginary
+quadratic field.
+</p>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+This is [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Theorem V.3.1], due to Deuring [<a class="ec-cite" href="#bib-Deuring41">Deu41</a>].  Two of the
+conditions are already familiar.  For conditions <a href="#it-ff-ss-torsion">1</a> and
+<a href="#it-ff-ss-verschiebung">2</a>,
+the proof of Corollary <a href="04-ec-algebraic.html#cor-ec-torsion">4.5.1</a> gives
+\(\#E[p^r](\kbar) = \deg_s[p^r] = \deg_s \Versch^r\), because \(\Frob^r\) is purely
+inseparable and \([p^r] = \Versch^r \circ \Frob^r\); so the \(p^r\)-torsion vanishes exactly
+when \(\Versch^r\) has separable degree \(1\).  Condition <a href="#it-ff-ss-quaternion">4</a> is
+case <a href="04-ec-algebraic.html#it-ec-end-quaternion">3</a> of Theorem <a href="04-ec-algebraic.html#thm-ec-endomorphism-ring">4.7.8</a>, and the ordinary
+case is case <a href="04-ec-algebraic.html#it-ec-end-quadratic">2</a>; compare Remark <a href="04-ec-algebraic.html#rem-ec-supersingular-order">4.7.12</a>.
+</p>
+</details>
+
+<p>
+By condition <a href="#it-ff-ss-p-inseparable">3</a> of Theorem <a href="#thm-ff-supersingular">5.4.1</a> there are only
+finitely many supersingular elliptic curves
+over \(\Fbar_p\) up to isomorphism, since each has \(j\)-invariant in the finite field
+\(\F_{p^2}\).  Counting them is the subject of Theorem <a href="#thm-ff-deuring-mass">5.5.9</a>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-ff-cartier-hasse" class="outline-2">
+<h2 id="sec-ff-cartier-hasse"><span class="ec-status ec-status-draft"><span class="ec-status-label ec-status-draft">Draft</span><time datetime="2026-09-23">23 Sep 2026</time></span><span class="section-number" id="s5.5">5.5</span> The Cartier operator and the Hasse invariant</h2>
+<div class="outline-text-2" id="text-sec-ff-cartier-hasse">
+<p>
+None of the conditions of Theorem <a href="#thm-ff-supersingular">5.4.1</a> is easy to check on a given
+Weierstrass equation.  The Cartier operator turns the dichotomy into the vanishing of a
+single coefficient.
+</p>
+
+<p>
+Throughout this section \(k\) is a <b>perfect</b> field of characteristic \(p > 0\), so that
+\(a \mapsto a^p\) is an automorphism of \(k\) and we may write \(a^{1/p}\) for its inverse.
+Perfectness is also what makes the definition below work at every closed point: it
+guarantees \(dt \neq 0\) for a uniformizer \(t\), which fails over an imperfect field
+(Warning <a href="03-curves.html#warn-crv-uniformizer">3.4.5</a>).
+</p>
+
+<div class="ec-thm ec-definition" id="def-ff-cartier">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Definition 5.5.1</span>.</span> Let \(C\) be a nice curve of genus \(g \geq 1\) over a perfect field \(k\) of characteristic
+\(p\), let \(P\) be a closed point of \(C\) and let \(t\) be a uniformizer at \(P\).  The
+functions \(1, t, \dots, t^{p-1}\) form a \(p\)-basis of \(\calO_{C,P}\): every differential
+regular at \(P\) is uniquely
+</p>
+\begin{equation*}
+\omega = \left( \sum_{j=0}^{p-1} f_j^p\, t^j \right) dt, \qquad f_j \in \calO_{C,P}.
+\end{equation*}
+<p>
+The <dfn class="ec-cdef" id="gls-cartier-operator" data-gls="cartier-operator">Cartier operator</dfn> is
+</p>
+\begin{equation*}
+\calC\colon \Omega_{k(C)/k} \to \Omega_{k(C)/k}, \qquad \calC(\omega) \coloneqq f_{p-1}\,dt.
+\end{equation*}
+</div>
+
+<p>
+The value \(\calC(\omega)\) does not depend on the uniformizer, the local definitions agree
+on overlaps, and the result extends from differentials regular at \(P\) to all of
+\(\Omega_{k(C)/k}\); see [<a class="ec-cite" href="#bib-Achter-Howe17">AH17</a>, Section 2.2], which follows
+[<a class="ec-cite" href="#bib-Serre58">Ser58</a>, Section 10].  The operator is due to Cartier [<a class="ec-cite" href="#bib-Cartier57">Car57</a>].  There is a
+second description, the one used in computations: if \(x \in k(C)\) is a separating element,
+so that \(dx\) is a basis of \(\Omega_{k(C)/k}\) (Proposition <a href="03-curves.html#prop-crv-differentials">3.4.2</a>),
+then every differential is uniquely
+</p>
+\begin{equation}
+\label{eq:ff-cartier-global}
+\omega = \left( \sum_{j=0}^{p-1} g_j^p\, x^j \right) dx, \qquad g_j \in k(C),
+\qquad \text{and} \qquad \calC(\omega) = g_{p-1}\,dx. \tag{5.5.1}
+\end{equation}
+
+<div class="ec-thm ec-proposition" id="prop-ff-cartier">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Proposition 5.5.2</span>.</span> Let \(C\) be a nice curve of genus \(g \geq 1\) over a perfect field \(k\) of
+characteristic \(p\).
+</p>
+<ol class="org-ol">
+<li><a id="it-ff-cartier-additive"></a> \(\calC(\omega_1 + \omega_2) = \calC(\omega_1) + \calC(\omega_2)\).</li>
+<li><a id="it-ff-cartier-semilinear"></a> \(\calC(f^p\omega) = f\,\calC(\omega)\) for \(f \in k(C)\).  In particular
+\(\calC(c\,\omega) = c^{1/p}\,\calC(\omega)\) for \(c \in k\), so \(\calC\) is semilinear
+for the inverse of the \(p\)-th power map on \(k\).</li>
+<li><a id="it-ff-cartier-exact"></a> \(\calC(df) = 0\) for \(f \in k(C)\).</li>
+<li><a id="it-ff-cartier-regular"></a> If \(\omega\) is regular, then so is \(\calC(\omega)\).  So \(\calC\) restricts to an
+operator on the space of regular differentials of \(C\), which has dimension \(g\).</li>
+</ol>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+Parts <a href="#it-ff-cartier-additive">1</a> to <a href="#it-ff-cartier-exact">3</a> are immediate from
+\eqref{eq:ff-cartier-global}, and part <a href="#it-ff-cartier-regular">4</a> is the statement that
+\(\calC\) acts on \(H^0(C, \Omega_{C/k})\); see [<a class="ec-cite" href="#bib-Achter-Howe17">AH17</a>, Section 2.2] and
+[<a class="ec-cite" href="#bib-Serre58">Ser58</a>, Section 10].  Dividing by a fixed non-zero regular differential identifies
+the space of regular differentials with \(\mcL(K_C)\), whose dimension is the genus
+(Definition <a href="03-curves.html#def-crv-genus">3.5.3</a>).
+</p>
+</details>
+
+<p>
+Note that the semilinearity in part <a href="#it-ff-cartier-semilinear">2</a> is for the inverse of the
+\(p\)-th power map, not for the Frobenius automorphism \(\sigma\colon x \mapsto x^q\) of
+Section <a href="#sec-ff-frobenius">5.1</a>; the two agree only when \(q = p\).
+</p>
+
+<p>
+For an elliptic curve the space of regular differentials is one-dimensional, spanned by the
+invariant differential \(\omega\), so \(\calC\) acts on it by a single scalar.  That scalar
+is the Hasse invariant.
+</p>
+
+<div class="ec-thm ec-definition" id="def-ff-hasse-invariant">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Definition 5.5.3</span>.</span> Let \(q\) be a power of \(p \geq 3\) and let \(E\) be an elliptic curve over \(\F_q\), given
+by \(y^2 = f(x)\) with \(f \in \F_q[x]\) a cubic with distinct roots in \(\Fbar_q\)
+(Lemma <a href="04-ec-algebraic.html#lem-ec-short-form">4.1.4</a>), with invariant differential \(\omega = dx/(2y)\).  Write
+</p>
+\begin{equation*}
+f(x)^{(p-1)/2} = \sum_{m \geq 0} c_m x^m.
+\end{equation*}
+<p>
+The <dfn class="ec-cdef" id="gls-hasse-invariant" data-gls="hasse-invariant">Hasse invariant</dfn> of the equation is \(A \coloneqq c_{p-1}\), the coefficient of
+\(x^{p-1}\) in \(f(x)^{(p-1)/2}\).
+</p>
+</div>
+
+<p>
+The Hasse invariant is exactly the scalar by which the Cartier operator acts.  Indeed,
+using \(y^2 = f(x)\),
+</p>
+\begin{equation*}
+\frac{dx}{y} = \frac{(y^2)^{(p-1)/2}}{y^p}\,dx
+= y^{-p} f(x)^{(p-1)/2}\,dx
+= y^{-p} \left( \sum_{m \geq 0} c_m x^m \right) dx,
+\end{equation*}
+<p>
+so part <a href="#it-ff-cartier-semilinear">2</a> of Proposition <a href="#prop-ff-cartier">5.5.2</a> and
+\eqref{eq:ff-cartier-global} give
+</p>
+\begin{equation}
+\label{eq:ff-cartier-omega}
+\calC\!\left( \frac{dx}{y} \right) = \frac{1}{y} \, \calC\!\left( \sum_{m \geq 0} c_m x^m \, dx \right) = A^{1/p}\,\frac{dx}{y}. \tag{5.5.2}
+\end{equation}
+<p>
+Only the terms with \(m \equiv p - 1 \pmod p\) survive, and \(f^{(p-1)/2}\) has degree
+\(3(p-1)/2 < 2p - 1\), so \(m = p - 1\) is the only one.  Since \(2 \in \F_p\) is fixed by
+\(c \mapsto c^{1/p}\), the same scalar appears for \(\omega = dx/(2y)\):
+\(\calC(\omega) = A^{1/p}\,\omega\).  This is the genus-\(1\) case of the computation in
+[<a class="ec-cite" href="#bib-Achter-Howe17">AH17</a>, Section 3].
+</p>
+
+<div class="ec-thm ec-remark" id="rem-ff-hasse-invariant">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Remark 5.5.4</span>.</span> Three warnings.  First, \(A\) depends on the equation and not only on \(E\): the change of
+coordinates \((x, y) \mapsto (u^2x, u^3y)\) of <a class="ec-eqref" href="04-ec-algebraic.html#mjx-eqn%3Aeq%3Aec-change-of-variables">(4.1.3)</a> replaces
+\(A\) by \(u^{-(p-1)}A\).  What is intrinsic is whether \(A\) vanishes, equivalently whether
+\(\calC = 0\) on the regular differentials of \(E\).  Second, the definition asks for
+\(p \geq 3\), although the Cartier operator itself does not; over \(\Fbar_2\) the only
+supersingular elliptic curve is \(y^2 + y = x^3\) [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Section V.4].  Third,
+Silverman [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>] uses "Hasse invariant" for the binary invariant of
+Theorem <a href="#thm-ff-supersingular">5.4.1</a>, which is \(0\) for a supersingular curve and \(1\) for an
+ordinary one; here it is the scalar \(A\) attached to an equation.
+</p>
+</div>
+
+<p>
+The proof that \(A\) detects supersingularity counts points with the quadratic character.
+</p>
+
+<div class="ec-thm ec-lemma" id="lem-ff-character-sum">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Lemma 5.5.5</span>.</span> Let \(q\) be a power of \(p \geq 3\), let \(\chi\colon \F_q^\times \to \{\pm 1\}\) be the
+unique character of order \(2\), extended by \(\chi(0) \coloneqq 0\), and let \(E/\F_q\) be
+given by \(y^2 = f(x)\) as in Definition <a href="#def-ff-hasse-invariant">5.5.3</a>.  Then
+</p>
+\begin{equation}
+\label{eq:ff-character-sum}
+\#E(\F_q) = 1 + q + \sum_{x \in \F_q} \chi(f(x)). \tag{5.5.3}
+\end{equation}
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+For a fixed \(x \in \F_q\), the number of \(y \in \F_q\) with \(y^2 = f(x)\) is \(2\) if
+\(f(x)\) is a non-zero square, \(1\) if \(f(x) = 0\) and \(0\) otherwise, that is,
+\(1 + \chi(f(x))\).  Summing over the \(q\) values of \(x\) and adding the point at infinity
+gives \eqref{eq:ff-character-sum} [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Application V.1.3].
+</p>
+</details>
+
+<div class="ec-thm ec-corollary" id="cor-ff-supersingular-trace">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Corollary 5.5.6</span>.</span> Let \(E\) be an elliptic curve over \(\F_q\), \(q = p^e\), with trace of Frobenius \(a\)
+(Definition <a href="#def-ff-trace">5.3.7</a>).  Then \(E\) is supersingular if and only if
+\(a \equiv 0 \pmod p\).
+</p>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+Write \(\Frob \in \End(E)\) for the \(q\)-th power Frobenius endomorphism.  It is the
+\(e\)-fold composite of the \(p\)-th power Frobenius, so its dual is \(\Versch^e\) in the
+notation of Definition <a href="04-ec-algebraic.html#def-ec-verschiebung">4.3.12</a>.  By part <a href="#it-ff-frobenius-relation">2</a> of
+Theorem <a href="#thm-ff-frobenius">5.3.8</a> and \(\widehat{\Frob} \circ \Frob = [q]\),
+</p>
+\begin{equation*}
+\bigl( \Frob - [a] + \widehat{\Frob} \bigr) \circ \Frob
+= \Frob^2 - a\Frob + q = 0,
+\end{equation*}
+<p>
+and \(\End(E)\) has no zero divisors (Proposition <a href="04-ec-algebraic.html#prop-ec-hom-torsion-free">4.3.7</a>) with
+\(\Frob \neq 0\), so \(\Versch^e = \widehat{\Frob} = [a] - \Frob\).  By
+Corollary <a href="04-ec-algebraic.html#cor-ec-frobenius-separable">4.4.4</a>, \([a] - \Frob\) is separable if and only if
+\(p \nmid a\).  Finally \(\deg_s \Versch^e = \#E[p^e](\kbar) \in \{1, p^e\}\) by
+part <a href="04-ec-algebraic.html#it-ec-torsion-p">2</a> of Corollary <a href="04-ec-algebraic.html#cor-ec-torsion">4.5.1</a>, so \(\Versch^e\) is inseparable
+if and only if it is purely inseparable, and part <a href="#it-ff-ss-verschiebung">2</a> of
+Theorem <a href="#thm-ff-supersingular">5.4.1</a>, with \(r = e\), finishes the proof
+[<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Exercise 5.10].
+</p>
+</details>
+
+<div class="ec-thm ec-theorem" id="thm-ff-hasse-invariant">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Theorem 5.5.7</span>.</span> Let \(q\) be a power of \(p \geq 3\) and let \(E\) be an elliptic curve over \(\F_q\), given
+by \(y^2 = f(x)\) as in Definition <a href="#def-ff-hasse-invariant">5.5.3</a>, with Hasse invariant \(A\).
+For \(r \geq 1\), let \(A_{p^r}\) be the coefficient of \(x^{p^r-1}\) in
+\(f(x)^{(p^r-1)/2}\), so that \(A_p = A\).  The following are equivalent.
+</p>
+<ol class="org-ol">
+<li><a id="it-ff-hasse-supersingular"></a> \(E\) is supersingular.</li>
+<li><a id="it-ff-hasse-aq"></a> \(A_q = 0\).</li>
+<li><a id="it-ff-hasse-a"></a> \(A = 0\).</li>
+<li><a id="it-ff-hasse-cartier"></a> \(\calC = 0\) on the regular differentials of \(E\).</li>
+</ol>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+This is [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Theorem V.4.1(a)]; the argument is Manin's [<a class="ec-cite" href="#bib-Manin61">Man61</a>].
+</p>
+
+<p>
+Since \(\F_q^\times\) is cyclic of order \(q - 1\), we have \(\chi(z) = z^{(q-1)/2}\) in
+\(\F_q\) for every \(z \in \F_q\), including \(z = 0\).  So Lemma <a href="#lem-ff-character-sum">5.5.5</a>
+reads
+</p>
+\begin{equation*}
+\#E(\F_q) = 1 + \sum_{x \in \F_q} f(x)^{(q-1)/2}
+\qquad \text{in } \F_q,
+\end{equation*}
+<p>
+using \(q = 0\) in \(\F_q\).  Again because \(\F_q^\times\) is cyclic,
+\(\sum_{x \in \F_q} x^n\) is \(-1\) when \(n > 0\) and \(q - 1 \mid n\), and \(0\)
+otherwise.  The polynomial \(f(x)^{(q-1)/2}\) has degree \(3(q-1)/2 < 2(q-1)\), so the only
+surviving term is the one with \(n = q - 1\), and
+\(\#E(\F_q) = 1 - A_q\) in \(\F_q\).  Comparing with \(\#E(\F_q) = q + 1 - a\) gives
+\(a \equiv A_q \pmod p\), so conditions <a href="#it-ff-hasse-supersingular">1</a> and
+<a href="#it-ff-hasse-aq">2</a> are
+equivalent by Corollary <a href="#cor-ff-supersingular-trace">5.5.6</a>.
+</p>
+
+<p>
+For conditions <a href="#it-ff-hasse-aq">2</a> and <a href="#it-ff-hasse-a">3</a>, write
+</p>
+\begin{equation*}
+f(x)^{(p^{r+1}-1)/2} = \left( f(x)^{(p^r-1)/2} \right)^p f(x)^{(p-1)/2}.
+\end{equation*}
+<p>
+A term of the right-hand side contributing to \(x^{p^{r+1}-1}\) is \(x^{pn}\) times
+\(x^m\) with \(pn + m = p^{r+1} - 1\), so \(m \equiv p - 1 \pmod p\); since
+\(m \leq 3(p-1)/2 < 2p - 1\), the only possibility is \(m = p - 1\), and then
+\(n = p^r - 1\).  Hence \(A_{p^{r+1}} = A_{p^r}^p\, A\), and by induction \(A_q = 0\) if and
+only if \(A = 0\).
+</p>
+
+<p>
+For conditions <a href="#it-ff-hasse-a">3</a> and <a href="#it-ff-hasse-cartier">4</a>, the regular differentials of
+\(E\) are the \(\F_q\)-multiples of \(\omega\), and \(\calC(\omega) = A^{1/p}\omega\) by
+\eqref{eq:ff-cartier-omega}.
+</p>
+</details>
+
+<div class="ec-thm ec-example" id="eg-ff-hasse-invariant">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Example 5.5.8</span>.</span> Let \(E\colon y^2 = x^3 - x\), and write \(m \coloneqq (p-1)/2\).  Then
+\(f^{(p-1)/2} = x^m (x^2-1)^m\), whose exponents are all congruent to \(m\) modulo \(2\).
+So the coefficient \(A\) of \(x^{p-1} = x^{2m}\) vanishes unless \(m\) is even, that is,
+unless \(p \equiv 1 \pmod 4\); and when \(p \equiv 1 \pmod 4\) the one surviving term gives
+\(A = (-1)^{m/2}\binom{m}{m/2}\), which is non-zero in \(\F_p\) because
+\(\binom{m}{m/2}\) is a quotient of factorials of integers smaller than \(p\).  Hence \(E\)
+is supersingular exactly when \(p \equiv 3 \pmod 4\).  For \(p = 11\) we get \(A = 0\), and
+for \(p = 13\), \(A = (-1)^3\binom{6}{3} = -20 = 6\) in \(\F_{13}\).  Magma agrees [<a class="ec-cite" href="#bib-Magma">BCP97</a>], and lists
+the supersingular \(j\)-invariants of each characteristic; note \(1728 = 1\) in \(\F_{11}\).
+</p>
+<div class="org-src-container">
+<pre class="src src-magma"><span class="org-keyword">for</span> p <span class="org-keyword">in</span> [11, 13] <span class="org-keyword">do</span>
+  P&lt;x&gt; := <span class="org-function-name">PolynomialRing</span>(<span class="org-function-name">GF</span>(p));
+  f := x^3 - x;
+  E := <span class="org-function-name">EllipticCurve</span>([<span class="org-function-name">GF</span>(p) | -1, 0]);
+  A := <span class="org-function-name">Coefficient</span>(f^((p-1) <span class="org-keyword">div</span> 2), p-1);
+  <span class="org-keyword">print</span> p, A, <span class="org-function-name">IsSupersingular</span>(E);
+  <span class="org-keyword">print</span> [ j : j <span class="org-keyword">in</span> <span class="org-function-name">GF</span>(p^2) | <span class="org-function-name">IsSupersingular</span>(<span class="org-function-name">EllipticCurveFromjInvariant</span>(j)) ];
+<span class="org-keyword">end</span> <span class="org-keyword">for</span>;
+<span class="org-comment">// 11 0 true
+// [ 0, 1 ]
+// 13 6 false
+// [ 5 ]</span>
+</pre>
+</div>
+<p>
+Both lists are as short as part <a href="#it-ff-ss-p-inseparable">3</a> of
+Theorem <a href="#thm-ff-supersingular">5.4.1</a> promises, and they satisfy the mass formula of
+Theorem <a href="#thm-ff-deuring-mass">5.5.9</a>: in characteristic \(11\) the two supersingular curves have
+\(j = 0\) and \(j = 1728\), so \(\#\Aut(E)\) is \(6\) and \(4\) by
+Theorem <a href="04-ec-algebraic.html#thm-ec-automorphisms">4.7.11</a>, and \(1/6 + 1/4 = 5/12 = (11-1)/24\); in characteristic
+\(13\) the only one has \(j = 5\), with \(\#\Aut(E) = 2\) and \(1/2 = (13-1)/24\).
+</p>
+</div>
+
+<p>
+We close with a count of the supersingular curves, weighted by their automorphisms.
+</p>
+
+<div class="ec-thm ec-theorem" id="thm-ff-deuring-mass">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Theorem 5.5.9</span> <span class="ec-thm-title">(Mass formula)</span>.</span> Let \(p\) be a prime.  Then
+</p>
+\begin{equation}
+\label{eq:ff-deuring-mass}
+\sum_{E} \frac{1}{\#\Aut(E)} = \frac{p - 1}{24}, \tag{5.5.4}
+\end{equation}
+<p>
+where \(E\) runs over the isomorphism classes of supersingular elliptic curves over
+\(\Fbar_p\).
+</p>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+Due to Deuring [<a class="ec-cite" href="#bib-Deuring41">Deu41</a>]; see [<a class="ec-cite" href="#bib-Voight21">Voi21</a>, (42.3.9)] and
+[<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Exercise 5.9].  Remark <a href="#rem-ff-deuring-mass">5.5.10</a> explains what a proof
+needs.
+</p>
+</details>
+
+<div class="ec-thm ec-remark" id="rem-ff-deuring-mass">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Remark 5.5.10</span>.</span> The mass formula does not follow from Theorems <a href="#thm-ff-supersingular">5.4.1</a> and
+<a href="#thm-ff-hasse-invariant">5.5.7</a> alone: those say which curves are supersingular, not how many
+there are.  Two routes to \eqref{eq:ff-deuring-mass} are worth recording.
+</p>
+
+<p>
+The first is analytic, and is the one that explains the denominator.  By part
+condition <a href="#it-ff-ss-quaternion">4</a> of Theorem <a href="#thm-ff-supersingular">5.4.1</a> the endomorphism ring
+of a
+supersingular curve is an order in a quaternion algebra, and Deuring's correspondence
+[<a class="ec-cite" href="#bib-Voight21">Voi21</a>, Corollary 42.3.7] makes this precise: the supersingular elliptic curves over
+\(\Fbar_p\), up to isomorphism, are in bijection with the class set of a maximal order
+\(\calO\) in the definite quaternion algebra over \(\Q\) ramified exactly at \(p\) and
+\(\infty\), and under the bijection \(\Aut(E)\) is the unit group of the corresponding
+order.  The count on the quaternionic side is the Eichler mass formula
+[<a class="ec-cite" href="#bib-Voight21">Voi21</a>, Theorem 25.1.1]: for a maximal order in a definite quaternion algebra over
+\(\Q\) of discriminant \(D\),
+</p>
+\begin{equation*}
+\sum_{[J]} \frac{1}{w_J} = \frac{\varphi(D)}{12}, \qquad
+w_J \coloneqq \#\left( \calO_L(J)^\times/\{\pm 1\} \right),
+\end{equation*}
+<p>
+which for \(D = p\) gives \((p-1)/12\); the quotient by \(\{\pm 1\}\) accounts for the
+factor \(2\) between that and \eqref{eq:ff-deuring-mass}.  The Eichler mass formula is
+proved by analytic means, from the analytic class number formula and the zeta function of
+the order [<a class="ec-cite" href="#bib-Voight21">Voi21</a>, Main Theorem 26.1.5 and Section 26.2]; over \(\Q\) it goes back to
+Hey and to Brandt.
+</p>
+
+<p>
+The second route is a count.  The supersingular \(j\)-invariants in characteristic \(p\) are
+the roots of an explicit polynomial, and there are \(\lfloor p/12 \rfloor + \varepsilon\) of
+them, with \(\varepsilon \in \{0, 1, 2\}\) depending on \(p \bmod 12\)
+[<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Theorem V.4.1]; this is due to Igusa [<a class="ec-cite" href="#bib-Igusa58">Igu58</a>].  Weighting each by
+\(\#\Aut(E)\), which is \(2\), \(4\) or \(6\) according as \(j(E) \neq 0, 1728\), \(j(E) =
+1728\) or \(j(E) = 0\) when \(p \geq 5\) (Theorem <a href="04-ec-algebraic.html#thm-ec-automorphisms">4.7.11</a>), and checking
+\(p = 2, 3\) by hand, gives \eqref{eq:ff-deuring-mass} case by case.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org8e58924" class="outline-2 ec-references">
+<h2 id="org8e58924">References</h2>
+<div class="outline-text-2" id="text-org8e58924">
+<dl class="ec-bibliography">
+<dt id="bib-Achter-Howe17">[AH17]</dt>
+<dd>Jeffrey D. Achter and Everett W. Howe. <i>Hasse&ndash;Witt and Cartier&ndash;Manin matrices: a warning and a request</i>. 2017. arXiv:1710.10726.</dd>
+<dt id="bib-Magma">[BCP97]</dt>
+<dd>Wieb Bosma, John Cannon and Catherine Playoust. &ldquo;The Magma algebra system. I. The user language&rdquo;. In: <i>J. Symbolic Comput.</i> 24.3&ndash;4 (1997), pp. 235&ndash;265. Computational algebra and number theory (London, 1993). <a href="https://doi.org/10.1006/jsco.1996.0125">doi:10.1006/jsco.1996.0125</a>.</dd>
+<dt id="bib-Cartier57">[Car57]</dt>
+<dd>Pierre Cartier. &ldquo;Une nouvelle op\'ération sur les formes diff\'érentielles&rdquo;. In: <i>C. R. Acad. Sci. Paris</i> 244 (1957), pp. 426&ndash;428.</dd>
+<dt id="bib-Deligne74">[Del74]</dt>
+<dd>Pierre Deligne. &ldquo;La conjecture de Weil. I&rdquo;. In: <i>Inst. Hautes \'Études Sci. Publ. Math.</i>.43 (1974), pp. 273&ndash;307.</dd>
+<dt id="bib-Deuring41">[Deu41]</dt>
+<dd>Max Deuring. &ldquo;Die Typen der Multiplikatorenringe elliptischer Funktionenk\"örper&rdquo;. In: <i>Abh. Math. Sem. Hansischen Univ.</i> 14 (1941), pp. 197&ndash;272.</dd>
+<dt id="bib-Dwork60">[Dwo60]</dt>
+<dd>Bernard Dwork. &ldquo;On the rationality of the zeta function of an algebraic variety&rdquo;. In: <i>Amer. J. Math.</i> 82 (1960), pp. 631&ndash;648.</dd>
+<dt id="bib-Igusa58">[Igu58]</dt>
+<dd>Jun-ichi Igusa. &ldquo;Class number of a definite quaternion with prime discriminant&rdquo;. In: <i>Proc. Nat. Acad. Sci. U.S.A.</i> 44 (1958), pp. 312&ndash;314.</dd>
+<dt id="bib-lmfdb">[LMFDB]</dt>
+<dd>The LMFDB Collaboration. <i>The L-functions and modular forms database</i>. <a href="https://www.lmfdb.org">https://www.lmfdb.org</a>. 2025. [Online; accessed 21 July 2025].</dd>
+<dt id="bib-Manin61">[Man61]</dt>
+<dd>Ju. I. Manin. &ldquo;The Hasse&ndash;Witt matrix of an algebraic curve&rdquo;. In: <i>Izv. Akad. Nauk SSSR Ser. Mat.</i> 25 (1961), pp. 153&ndash;172. English translation: Amer. Math. Soc. Transl. (2) 45 (1965), 245&ndash;264.</dd>
+<dt id="bib-Milne22">[Mil22]</dt>
+<dd>James S. Milne. <i>Fields and Galois theory</i>. Kea Books, Ann Arbor, MI, 2022.</dd>
+<dt id="bib-Oort14">[Oor14]</dt>
+<dd>Frans Oort. &ldquo;The Weil conjectures&rdquo;. In: <i>Nieuw Arch. Wiskd. (5)</i> 15.3 (2014). <a href="http://www.nieuwarchief.nl/serie5/pdf/naw5-2014-15-3-211.pdf">http://www.nieuwarchief.nl/serie5/pdf/naw5-2014-15-3-211.pdf</a>.</dd>
+<dt id="bib-Poonen06">[Poo06]</dt>
+<dd>Bjorn Poonen. <i>Lectures on rational points on curves</i>. 2006. Lecture notes, March 5, 2006 version.</dd>
+<dt id="bib-Serre58">[Ser58]</dt>
+<dd>Jean-Pierre Serre. &ldquo;Sur la topologie des vari\'ét\'és alg\'ébriques en caract\'éristique \(p\)&rdquo;. In: <i>Symposium internacional de topolog\'ía algebraica</i>, pp. 24&ndash;53. Universidad Nacional Aut\'ónoma de M\'éxico and UNESCO, Mexico City, 1958.</dd>
+<dt id="bib-Silverman09">[Sil09]</dt>
+<dd>Joseph H. Silverman. <i>The arithmetic of elliptic curves</i>. Second. Vol. 106. Graduate Texts in Mathematics. Springer, Dordrecht, 2009. <a href="https://doi.org/10.1007/978-0-387-09494-6">doi:10.1007/978-0-387-09494-6</a>.</dd>
+<dt id="bib-Voight21">[Voi21]</dt>
+<dd>John Voight. <i>Quaternion algebras</i>. Vol. 288. Graduate Texts in Mathematics. Springer, Cham, 2021. <a href="https://doi.org/10.1007/978-3-030-56694-4">doi:10.1007/978-3-030-56694-4</a>.</dd>
+<dt id="bib-Weil49">[Wei49]</dt>
+<dd>Andr\'é Weil. &ldquo;Numbers of solutions of equations in finite fields&rdquo;. In: <i>Bull. Amer. Math. Soc.</i> 55 (1949), pp. 497&ndash;508.</dd>
+</dl>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<nav class="ec-pager ec-pager-bottom" aria-label="Chapters"><a class="ec-pager-prev" rel="prev" href="04-ec-algebraic.html"><span class="ec-pager-label">Previous</span><span class="ec-pager-title">4. Elliptic curves as algebraic curves</span></a><a class="ec-pager-next" rel="next" href="06-local-fields.html"><span class="ec-pager-label">Next</span><span class="ec-pager-title">6. Elliptic curves over local fields</span></a></nav>
+</div>
+</body>
+</html>
