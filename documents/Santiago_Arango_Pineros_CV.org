@@ -59,7 +59,7 @@
 \begin{center}
   \begin{tabular}{ll}
     UMass Amherst & \texttt{santiago.arango.pineros@gmail.com} \\
-    Department of Mathematics & \texttt{sarangopine@umass.edu} \\
+    Department of Mathematics & \texttt{sarangopiner@umass.edu} \\
     LGRT 1238 & \href{https://sarangop1728.github.io}{\texttt{https://sarangop1728.github.io}} \\
     Amherst, Massachusetts, USA
       & \href{https://arxiv.org/search/math?searchtype=author&query=Arango-Pi%C3%B1eros%2C+S}{\texttt{arXiv}},
@@ -74,7 +74,7 @@
 #+begin_export html
 <ul>
 <li>Department of Mathematics, UMass Amherst, LGRT 1238, Amherst, Massachusetts, USA</li>
-<li><code>santiago.arango.pineros@gmail.com</code>, <code>sarangopine@umass.edu</code></li>
+<li><code>santiago.arango.pineros@gmail.com</code>, <code>sarangopiner@umass.edu</code></li>
 <li><a href="https://sarangop1728.github.io">https://sarangop1728.github.io</a></li>
 <li><a href="https://arxiv.org/search/math?searchtype=author&amp;query=Arango-Pi%C3%B1eros%2C+S">arXiv</a>,
     <a href="https://mathscinet.ams.org/mathscinet/author?authorId=1392812">MathSciNet</a>,
@@ -162,7 +162,6 @@ Journal of Mathematics, Sixteenth Algorithmic Number Theory Symposium.
 - 2023 :: PAlmetto Number Theory Series XXXVII. UGA, Athens, GA.
 - 2023 :: LuCaNT: LMFDB, Computation, and Number Theory. ICERM, Providence, RI.
 - 2023 :: MRC: Explicit computations with stacks. Buffalo, NY.
-- 2023 :: PAlmetto Number Theory Series XXXVII. UGA, Athens, GA.
 - 2023 :: Conference in Arithmetic Statistics. CIRM, Marseille, France.
 - 2023 :: Spring school in Arithmetic Statistics. CIRM, Marseille, France.
 - 2023 :: Arizona Winter School: Unlikely Intersections. Tucson, AZ.
