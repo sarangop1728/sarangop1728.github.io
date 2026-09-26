@@ -109,6 +109,9 @@
 
 * Teaching
 ** UMass Amherst, Instructor of Record
+- Fall 2026 :: [[https://sarangop1728.github.io/teaching/714-fall-26/714-fall-26.html][Math 714: Arithmetic of Elliptic Curves]]
+- Fall 2026 :: [[https://sarangop1728.github.io/teaching/132-fall-26/132-fall-26.html][Math 132: Calculus II]]
+- Spring 2026 :: [[https://sarangop1728.github.io/teaching/411-spring-26/411-spring-26.html][Math 411: Introduction to Abstract Algebra 1]]
 - Fall 2025 :: [[https://sarangop1728.github.io/teaching/411-fall-25/411-fall-25.html][Math 411: Introduction to Abstract Algebra 1]]
 ** Arizona Winter School
 - Spring 2024 :: Study Group Leader at [[https://swc-math.github.io/aws/2024/index.html][AWS 2024]]
