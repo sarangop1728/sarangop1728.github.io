@@ -1,0 +1,218 @@
+#+TITLE: Santiago Arango-Piñeros
+#+SUBTITLE: Curriculum Vitae
+#+AUTHOR: Santiago Arango-Piñeros
+#+EMAIL: santiago.arango.pineros@gmail.com
+#+DATE: {{{time(%B %-d\, %Y)}}}
+#+OPTIONS: toc:nil num:nil
+# Export:  C-c C-e l p  -> Santiago_Arango_Pineros_CV.pdf  (the file index.org links to)
+#          C-c C-e h h  -> Santiago_Arango_Pineros_CV.html
+# The article list is generated from ../papers.el, shared with index.org.
+
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../org-css.css"/>
+#+HTML_HEAD: <link rel="shortcut icon" type="image/x-icon" href="../images/umass-favicon.ico">
+# Dated entries are description lists; lay them out as a date | entry grid.
+#+HTML_HEAD: <style>
+#+HTML_HEAD: dl.org-dl { display: grid; grid-template-columns: 8.5em 1fr; column-gap: 1em; row-gap: .35em; }
+#+HTML_HEAD: dl.org-dl dt { font-weight: normal; color: var(--text-muted); }
+#+HTML_HEAD: dl.org-dl dd { margin: 0; }
+#+HTML_HEAD: @media (max-width: 36rem) { dl.org-dl { grid-template-columns: 1fr; row-gap: 0; }
+#+HTML_HEAD:   dl.org-dl dd { margin-bottom: .6em; } }
+#+HTML_HEAD: </style>
+
+# ---- LaTeX preamble ---------------------------------------------------------
+#+LATEX_CLASS: article
+#+LATEX_CLASS_OPTIONS: [12pt]
+#+LATEX_HEADER: \usepackage{enumitem,etaremune,fancyhdr,titlesec}
+#+LATEX_HEADER: \usepackage[dvipsnames]{xcolor}
+#+LATEX_HEADER: \definecolor{santicolor}{rgb}{0.0, 0.45, 0.73} % french blue
+#+LATEX_HEADER: \oddsidemargin=-20pt \topmargin=-20pt \headheight=18pt
+#+LATEX_HEADER: \textheight=620pt \textwidth=495pt
+#+LATEX_HEADER: \parskip=.3pt plus 1pt \parindent=0pt
+#+LATEX_HEADER: \hypersetup{colorlinks=true, linkcolor=OrangeRed, filecolor=OrangeRed, urlcolor=OrangeRed}
+# Running head.
+#+LATEX_HEADER: \pagestyle{fancy} \fancyhf{} \fancyheadoffset{6mm}
+#+LATEX_HEADER: \lhead{\large Santiago Arango-Piñeros} \rhead{\thepage}
+# Section headings: blue bar, then large small caps.
+#+LATEX_HEADER: \titleformat{\section}{\large\scshape}{}{0pt}{\hspace{-6.5mm}\textcolor{santicolor}{\rule[.75mm]{21.5mm}{1mm}}\hspace{.2mm}}
+#+LATEX_HEADER: \titlespacing*{\section}{0pt}{4ex}{1.2ex}
+#+LATEX_HEADER: \titleformat{\subsection}{\normalsize\scshape}{}{0pt}{}
+#+LATEX_HEADER: \titlespacing*{\subsection}{0pt}{1.5ex}{.5ex}
+# Dated entries (org description lists): date column on the left.
+#+LATEX_HEADER: \setlist[description]{leftmargin=17ex, labelwidth=15ex, labelsep=2ex, labelindent=0pt, align=parleft, font=\normalfont, itemsep=0pt, topsep=.5ex}
+#+LATEX_HEADER: \setlist[itemize]{itemsep=0pt, topsep=.3ex}
+# Title block: name and date. The contact table follows in the body (export block
+# below): \href URLs with % and & break when read inside a \newcommand.
+#+LATEX_HEADER: \makeatletter
+#+LATEX_HEADER: \renewcommand{\maketitle}{\thispagestyle{empty}
+#+LATEX_HEADER:   \begin{center}
+#+LATEX_HEADER:     {\LARGE\scshape \@author}\\[3mm]
+#+LATEX_HEADER:     {\Large\itshape Curriculum Vitae}\\[3mm]
+#+LATEX_HEADER:     {\small (Last updated \@date)}
+#+LATEX_HEADER:   \end{center}
+#+LATEX_HEADER:   \vspace{1.2cm}
+#+LATEX_HEADER:   {\noindent\hspace{-6.5mm}\color{santicolor}\rule[.75mm]{18.2cm}{1pt}}
+#+LATEX_HEADER:   }
+#+LATEX_HEADER: \makeatother
+# -----------------------------------------------------------------------------
+
+#+begin_export latex
+\begin{center}
+  \begin{tabular}{ll}
+    UMass Amherst & \texttt{santiago.arango.pineros@gmail.com} \\
+    Department of Mathematics & \texttt{sarangopine@umass.edu} \\
+    LGRT 1238 & \href{https://sarangop1728.github.io}{\texttt{https://sarangop1728.github.io}} \\
+    Amherst, Massachusetts, USA
+      & \href{https://arxiv.org/search/math?searchtype=author&query=Arango-Pi%C3%B1eros%2C+S}{\texttt{arXiv}},
+        \href{https://mathscinet.ams.org/mathscinet/author?authorId=1392812}{\texttt{MathSciNet}},
+        \href{https://github.com/sarangop1728}{\texttt{GitHub}} \\
+  \end{tabular}
+\end{center}
+{\noindent\hspace{-6.5mm}\color{santicolor}\rule[.75mm]{18.2cm}{1pt}}
+\bigskip
+#+end_export
+
+#+begin_export html
+<ul>
+<li>Department of Mathematics, UMass Amherst, LGRT 1238, Amherst, Massachusetts, USA</li>
+<li><code>santiago.arango.pineros@gmail.com</code>, <code>sarangopine@umass.edu</code></li>
+<li><a href="https://sarangop1728.github.io">https://sarangop1728.github.io</a></li>
+<li><a href="https://arxiv.org/search/math?searchtype=author&amp;query=Arango-Pi%C3%B1eros%2C+S">arXiv</a>,
+    <a href="https://mathscinet.ams.org/mathscinet/author?authorId=1392812">MathSciNet</a>,
+    <a href="https://github.com/sarangop1728">GitHub</a></li>
+<li><a href="Santiago_Arango_Pineros_CV.pdf">PDF version</a></li>
+</ul>
+#+end_export
+
+* Appointments
+- 2025--present :: *UMass Amherst* \\
+  Visiting Assistant Professor (Postdoc)
+
+* Education
+- 2025 :: Ph.D. Mathematics, Emory University \\
+  Advised by [[https://dmzb.github.io/][David Zureick-Brown]] and [[https://math.dartmouth.edu/~jvoight/][John Voight]].
+- 2019 :: M.S. Mathematics, IMPA, Rio de Janeiro, Brazil
+- 2017 :: B.S. Mathematics, Universidad de los Andes, Bogotá, Colombia
+- 2017 :: B.S. Environmental Engineering, Universidad de los Andes, Bogotá, Colombia
+
+* Research interests
+- *Broad* :: Number theory and arithmetic algebraic geometry.
+- *Specific* :: Elliptic curves and abelian varieties, Galois representations, Honda--Tate
+  theory, low degree points on curves, modular curves, generalized Fermat equations, stacky
+  curves, arithmetic statistics, computational and algorithmic aspects.
+
+* Articles
+#+begin_src emacs-lisp :exports results :results raw drawer :lexical yes
+;; Generated from ../papers.el; edit the paper list there, not here.
+(load (expand-file-name "../papers.el") nil t)
+(sap/papers-org)
+#+end_src
+
+* Teaching
+** UMass Amherst, Instructor of Record
+- Fall 2025 :: [[https://sarangop1728.github.io/teaching/411-fall-25/411-fall-25.html][Math 411: Introduction to Abstract Algebra 1]]
+** Arizona Winter School
+- Spring 2024 :: Study Group Leader at [[https://swc-math.github.io/aws/2024/index.html][AWS 2024]]
+- Fall 2023 :: Problem Set Leader at [[https://swc-math.github.io/aws/2024/2024PAWS.html][PAWS 2023]]
+** Emory University, Instructor of Record
+- Fall 2023 :: Math 111: Calculus I
+- Fall 2022 :: Math 111: Calculus I
+** Emory University, Teaching Assistant
+- Spring 2022 :: Math 116: Calculus for life sciences
+- Fall 2021 :: Math 221: Linear Algebra
+** Universidad de los Andes, Teaching Assistant
+- Spring 2020 :: Mate 1203: Cálculo Diferencial
+- Fall 2019 :: Mate 1203: Cálculo Diferencial
+- Spring 2019 :: Mate 1207: Cálculo Vectorial
+
+* Invited seminar talks
+- 2025 :: Harvard University, Number theory seminar
+- 2025 :: Wesleyan University, Algebra seminar
+- 2025 :: Amherst College, Five college number theory seminar
+- 2025 :: University of California San Diego, Number theory seminar
+- 2024 :: University of Illinois Chicago, Number theory seminar
+- 2024 :: Tufts University, Number theory seminar
+- 2024 :: Boston University, Algebra and number theory seminar
+- 2024 :: Brown University, Algebra seminar
+- 2024 :: Emory University, Algebra and number theory seminar
+- 2024 :: Amherst College, Five college number theory seminar
+- 2024 :: Dartmouth College, Algebra and number theory seminar
+- 2024 :: University of Georgia, Athens, Algebra and number theory seminar
+- 2023 :: University of South Carolina, Number theory seminar
+
+* Departmental service
+** UMass Amherst
+- 2025--present :: [[https://dmzb.github.io/FCNTS.html][Five College Number Theory Seminar]], co-organizer
+** Emory University
+- 2024--2025 :: [[https://sarangop1728.github.io/misc/eants][Algebra and Number Theory Seminar]], main organizer
+- 2022--2024 :: Graduate student algebra and number theory seminar, co-organizer
+
+* Referee work
+Mathematische Zeitschrift, Proceedings of the American Mathematical Society, Rocky Mountain
+Journal of Mathematics, Sixteenth Algorithmic Number Theory Symposium.
+
+* Selected conference and workshop participation
+- 2025 :: Algebraic points on curves, ICERM, Providence, RI.
+- 2024 :: Nilpotent counting problems in arithmetic statistics, AIM, Pasadena, CA.
+- 2024 :: Number theory in the Americas 2, Casa Matemática Oaxaca, Oaxaca, México.
+- 2024 :: XVI Algorithmic Number Theory Symposium. MIT, Boston, MA.
+- 2024 :: The Mordell conjecture 100 years later. MIT, Boston, MA.
+- 2024 :: Hypergeometric motives in the LMFDB. MIT, Boston, MA.
+- 2024 :: Shimura curves in the LMFDB. Dartmouth, Hanover, NH.
+- 2024 :: Arizona Winter School: Abelian Varieties. Tucson, AZ.
+- 2023 :: PAlmetto Number Theory Series XXXVII. UGA, Athens, GA.
+- 2023 :: LuCaNT: LMFDB, Computation, and Number Theory. ICERM, Providence, RI.
+- 2023 :: MRC: Explicit computations with stacks. Buffalo, NY.
+- 2023 :: PAlmetto Number Theory Series XXXVII. UGA, Athens, GA.
+- 2023 :: Conference in Arithmetic Statistics. CIRM, Marseille, France.
+- 2023 :: Spring school in Arithmetic Statistics. CIRM, Marseille, France.
+- 2023 :: Arizona Winter School: Unlikely Intersections. Tucson, AZ.
+- 2023 :: Introductory Workshop: Diophantine Geometry. MSRI, Berkeley, CA.
+- 2023 :: Connections Workshop: Diophantine Geometry. MSRI, Berkeley, CA.
+- 2022 :: PAlmetto Number Theory Series XXXV. U of SC, Columbia, SC.
+- 2022 :: AGNES: Summer school in higher dimensional moduli. Brown, Providence, RI.
+- 2022 :: PCMI: Number theory informed by computation. Park City, UT.
+- 2022 :: CTNT: Connecticut summer school in number theory. UCONN, Storrs, CT.
+- 2022 :: GAGS: Georgia Algebraic Geometry Symposium. Emory, Atlanta, GA.
+- 2022 :: Arizona Winter School: Automorphic forms beyond \(\mathrm{GL}_2\). Tucson, AZ.
+- 2021 :: PCMI: Inverse Galois Problem. Online.
+
+* Software and databases
+- 2023 :: \(L\)-functions and Modular Forms Database (LMFDB), [[https://www.lmfdb.org]] \\
+  I have made modest contributions. Most recently:
+  + I developed the Zigzag pictures for the hypergeometric motives pages. See this
+    [[https://beta.lmfdb.org/Motive/Hypergeometric/Q/A18.4.2.2_B7.6.1.1][random family]].
+  + I updated the Newton polygon pictures for abelian varieties over finite fields, see
+    this [[https://www.lmfdb.org/Variety/Abelian/Fq/6/2/ad_h_ao_ba_abo_ci][random isogeny class]].
+
+* Skills
+- *Language* :: Spanish (native speaker), English, Portuguese.
+- *Computer* :: Python, Magma, SageMath.
+
+* Awards
+- 2025 :: Graduate Student Research Award, Emory University Math Department
+
+* Expository seminar presentations                                 :noexport:
+I have contributed a number of talks on the graduate student seminars at Emory and IMPA.
+Here are the titles of some of them:
++ The generalized Fermat equations \(x^2 + y^3 = z^n\). (Emory)
++ Belyi's Theorem. (Emory)
++ Serre's Open Image Theorem. (Emory)
++ Complex Multiplication of Elliptic Curves. (Emory)
++ Frobenius Distributions of Abelian Varieties. (Emory)
++ Lang's Conjecture. (Unlikely intersections learning seminar at Emory)
++ Group Schemes. (Learning seminar on abelian varieties at Emory)
++ \(\ell\)-adic Representations of Abelian Varieties. (Emory)
++ The Winding Quotient. (Learning seminar on Mazur's theorem at Emory)
++ The Weil Conjectures. (Emory)
++ Moduli of Elliptic Curves. (Learning seminar on modular curves at Emory)
++ Modular Curves over \(\mathbf{Q}\). (Learning seminar on modular curves at Emory)
++ Modular Jacobians. (Learning seminar on modular curves at Emory)
++ Artin--Schreier Theory. (Emory)
++ Schanuel's Theorem. (Emory)
++ A Mertens--Chebotarev Theorem. (Emory)
++ The Lang--Trotter Conjecture. (Emory)
++ Global Field Totients. (Emory)
++ Decomposition Groups of Plane Curves. (Master thesis presentation at IMPA)
++ Bernoulli Numbers and the Riemann Zeta Function. (IMPA)
++ Fermat's Last Theorem for Regular Primes. (IMPA)
++ Moduli Spaces of Elliptic Curves. (Undergraduate thesis presentation at Los Andes)

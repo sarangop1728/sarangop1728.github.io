@@ -1,0 +1,496 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2026-09-26 Sat 11:59 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Santiago Arango-Piñeros</title>
+<meta name="author" content="Santiago Arango-Piñeros" />
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<link rel="stylesheet" type="text/css" href="../org-css.css"/>
+<link rel="shortcut icon" type="image/x-icon" href="../images/umass-favicon.ico">
+<style>
+dl.org-dl { display: grid; grid-template-columns: 8.5em 1fr; column-gap: 1em; row-gap: .35em; }
+dl.org-dl dt { font-weight: normal; color: var(--text-muted); }
+dl.org-dl dd { margin: 0; }
+@media (max-width: 36rem) { dl.org-dl { grid-template-columns: 1fr; row-gap: 0; }
+dl.org-dl dd { margin-bottom: .6em; } }
+</style>
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">Santiago Arango-Piñeros
+<br />
+<span class="subtitle">Curriculum Vitae</span>
+</h1>
+<ul>
+<li>Department of Mathematics, UMass Amherst, LGRT 1238, Amherst, Massachusetts, USA</li>
+<li><code>santiago.arango.pineros@gmail.com</code>, <code>sarangopine@umass.edu</code></li>
+<li><a href="https://sarangop1728.github.io">https://sarangop1728.github.io</a></li>
+<li><a href="https://arxiv.org/search/math?searchtype=author&amp;query=Arango-Pi%C3%B1eros%2C+S">arXiv</a>,
+    <a href="https://mathscinet.ams.org/mathscinet/author?authorId=1392812">MathSciNet</a>,
+    <a href="https://github.com/sarangop1728">GitHub</a></li>
+<li><a href="Santiago_Arango_Pineros_CV.pdf">PDF version</a></li>
+</ul>
+
+<div id="outline-container-org32e9e88" class="outline-2">
+<h2 id="org32e9e88">Appointments</h2>
+<div class="outline-text-2" id="text-org32e9e88">
+<dl class="org-dl">
+<dt>2025&#x2013;present</dt><dd><b>UMass Amherst</b> <br />
+Visiting Assistant Professor (Postdoc)</dd>
+</dl>
+</div>
+</div>
+
+<div id="outline-container-org0703919" class="outline-2">
+<h2 id="org0703919">Education</h2>
+<div class="outline-text-2" id="text-org0703919">
+<dl class="org-dl">
+<dt>2025</dt><dd>Ph.D. Mathematics, Emory University <br />
+Advised by <a href="https://dmzb.github.io/">David Zureick-Brown</a> and <a href="https://math.dartmouth.edu/~jvoight/">John Voight</a>.</dd>
+<dt>2019</dt><dd>M.S. Mathematics, IMPA, Rio de Janeiro, Brazil</dd>
+<dt>2017</dt><dd>B.S. Mathematics, Universidad de los Andes, Bogotá, Colombia</dd>
+<dt>2017</dt><dd>B.S. Environmental Engineering, Universidad de los Andes, Bogotá, Colombia</dd>
+</dl>
+</div>
+</div>
+
+<div id="outline-container-orgad607fe" class="outline-2">
+<h2 id="orgad607fe">Research interests</h2>
+<div class="outline-text-2" id="text-orgad607fe">
+<dl class="org-dl">
+<dt><b>Broad</b></dt><dd>Number theory and arithmetic algebraic geometry.</dd>
+<dt><b>Specific</b></dt><dd>Elliptic curves and abelian varieties, Galois representations, Honda&#x2013;Tate
+theory, low degree points on curves, modular curves, generalized Fermat equations, stacky
+curves, arithmetic statistics, computational and algorithmic aspects.</dd>
+</dl>
+</div>
+</div>
+
+<div id="outline-container-org748b827" class="outline-2">
+<h2 id="org748b827">Articles</h2>
+<div class="outline-text-2" id="text-org748b827">
+<ol reversed="reversed" class="org-ol">
+<li><a href="https://arxiv.org/abs/2608.18525"><i>Appendix to: On \(p\)-adic solubility of \(Ax^{\ell} + By^{m} + Cz^{n} = 0\)</i></a>, <br />
+with Christopher Keyes and Andrew Kobin.</li>
+<li><a href="https://arxiv.org/abs/2602.06943"><i>Counting number fields of fixed degree by their smallest defining polynomial</i></a>, <br />
+with Fabian Gundlach, Robert J. Lemke Oliver, Kevin J. McGown, Will Sawin, Allechar Serrano López, Arul Shankar, and Ila Varma.</li>
+<li><a href="https://arxiv.org/abs/2508.13093"><i>Counting primitive integral solutions to spherical generalized Fermat equations</i></a>. <br />
+<b>Canadian Mathematical Bulletin</b> FirstView (2026).</li>
+<li><a href="https://arxiv.org/abs/2508.13059"><i>Fermat descent</i></a>.</li>
+<li><a href="https://arxiv.org/abs/2505.09589"><i>Galois groups of simple abelian varieties over finite fields and exceptional Tate classes</i></a>, <br />
+with Sam Frengley and Sameera Vemulapalli.</li>
+<li><a href="https://arxiv.org/abs/2504.07750"><i>Counting 5-isogenies of elliptic curves over the rationals</i></a>, <br />
+with Changho Han, Oana Padurariu, and Sun Woo Park. <b>Journal of the London Mathematical Society</b> 113 (2026), no. 5, e70572.</li>
+<li><a href="https://arxiv.org/abs/2412.12467"><i>Bounds for the relative class number problem for function fields</i></a>, <br />
+with María Chara, Asimina S. Hamakiotes, Kiran S. Kedlaya, and Gustavo Rama. <b>Journal of Number Theory</b> 278 (2026), 977&#x2013;1010.</li>
+<li><a href="https://arxiv.org/abs/2412.03358"><i>Galois groups of low dimensional abelian varieties over finite fields</i></a>, <br />
+with Sam Frengley and Sameera Vemulapalli. To appear in <b>Transactions of the American Mathematical Society</b>.</li>
+<li><a href="https://arxiv.org/abs/2306.02237"><i>Frobenius distributions of low dimensional abelian varieties over finite fields</i></a>, <br />
+with Deewang Bhamidipati and Soumya Sankar. <b>International Mathematics Research Notices</b> 2024 (2024), no. 16, 11989&#x2013;12020.</li>
+<li><a href="https://arxiv.org/abs/2103.14747"><i>Mertens' theorem for Chebotarev sets</i></a>, <br />
+with Daniel Keliher and Chris Keyes. <b>International Journal of Number Theory</b> 18 (2022), no. 8, 1823&#x2013;1842.</li>
+<li><a href="https://arxiv.org/abs/2005.04521"><i>The global field Euler function</i></a>, <br />
+with Juan Diego Rojas. <b>Research in the Mathematical Sciences</b> 7 (2020), no. 3, Paper No. 19, 21 pp.</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-org73022e7" class="outline-2">
+<h2 id="org73022e7">Teaching</h2>
+<div class="outline-text-2" id="text-org73022e7">
+</div>
+<div id="outline-container-org90c5c2d" class="outline-3">
+<h3 id="org90c5c2d">UMass Amherst, Instructor of Record</h3>
+<div class="outline-text-3" id="text-org90c5c2d">
+<dl class="org-dl">
+<dt>Fall 2025</dt><dd><a href="https://sarangop1728.github.io/teaching/411-fall-25/411-fall-25.html">Math 411: Introduction to Abstract Algebra 1</a></dd>
+</dl>
+</div>
+</div>
+<div id="outline-container-org7e6eae2" class="outline-3">
+<h3 id="org7e6eae2">Arizona Winter School</h3>
+<div class="outline-text-3" id="text-org7e6eae2">
+<dl class="org-dl">
+<dt>Spring 2024</dt><dd>Study Group Leader at <a href="https://swc-math.github.io/aws/2024/index.html">AWS 2024</a></dd>
+<dt>Fall 2023</dt><dd>Problem Set Leader at <a href="https://swc-math.github.io/aws/2024/2024PAWS.html">PAWS 2023</a></dd>
+</dl>
+</div>
+</div>
+<div id="outline-container-orgdbb122b" class="outline-3">
+<h3 id="orgdbb122b">Emory University, Instructor of Record</h3>
+<div class="outline-text-3" id="text-orgdbb122b">
+<dl class="org-dl">
+<dt>Fall 2023</dt><dd>Math 111: Calculus I</dd>
+<dt>Fall 2022</dt><dd>Math 111: Calculus I</dd>
+</dl>
+</div>
+</div>
+<div id="outline-container-org6a3b2f3" class="outline-3">
+<h3 id="org6a3b2f3">Emory University, Teaching Assistant</h3>
+<div class="outline-text-3" id="text-org6a3b2f3">
+<dl class="org-dl">
+<dt>Spring 2022</dt><dd>Math 116: Calculus for life sciences</dd>
+<dt>Fall 2021</dt><dd>Math 221: Linear Algebra</dd>
+</dl>
+</div>
+</div>
+<div id="outline-container-orgff60514" class="outline-3">
+<h3 id="orgff60514">Universidad de los Andes, Teaching Assistant</h3>
+<div class="outline-text-3" id="text-orgff60514">
+<dl class="org-dl">
+<dt>Spring 2020</dt><dd>Mate 1203: Cálculo Diferencial</dd>
+<dt>Fall 2019</dt><dd>Mate 1203: Cálculo Diferencial</dd>
+<dt>Spring 2019</dt><dd>Mate 1207: Cálculo Vectorial</dd>
+</dl>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org67c6436" class="outline-2">
+<h2 id="org67c6436">Invited seminar talks</h2>
+<div class="outline-text-2" id="text-org67c6436">
+<dl class="org-dl">
+<dt>2025</dt><dd>Harvard University, Number theory seminar</dd>
+<dt>2025</dt><dd>Wesleyan University, Algebra seminar</dd>
+<dt>2025</dt><dd>Amherst College, Five college number theory seminar</dd>
+<dt>2025</dt><dd>University of California San Diego, Number theory seminar</dd>
+<dt>2024</dt><dd>University of Illinois Chicago, Number theory seminar</dd>
+<dt>2024</dt><dd>Tufts University, Number theory seminar</dd>
+<dt>2024</dt><dd>Boston University, Algebra and number theory seminar</dd>
+<dt>2024</dt><dd>Brown University, Algebra seminar</dd>
+<dt>2024</dt><dd>Emory University, Algebra and number theory seminar</dd>
+<dt>2024</dt><dd>Amherst College, Five college number theory seminar</dd>
+<dt>2024</dt><dd>Dartmouth College, Algebra and number theory seminar</dd>
+<dt>2024</dt><dd>University of Georgia, Athens, Algebra and number theory seminar</dd>
+<dt>2023</dt><dd>University of South Carolina, Number theory seminar</dd>
+</dl>
+</div>
+</div>
+
+<div id="outline-container-orgb15e77c" class="outline-2">
+<h2 id="orgb15e77c">Departmental service</h2>
+<div class="outline-text-2" id="text-orgb15e77c">
+</div>
+<div id="outline-container-orgf603010" class="outline-3">
+<h3 id="orgf603010">UMass Amherst</h3>
+<div class="outline-text-3" id="text-orgf603010">
+<dl class="org-dl">
+<dt>2025&#x2013;present</dt><dd><a href="https://dmzb.github.io/FCNTS.html">Five College Number Theory Seminar</a>, co-organizer</dd>
+</dl>
+</div>
+</div>
+<div id="outline-container-org67d5393" class="outline-3">
+<h3 id="org67d5393">Emory University</h3>
+<div class="outline-text-3" id="text-org67d5393">
+<dl class="org-dl">
+<dt>2024&#x2013;2025</dt><dd><a href="https://sarangop1728.github.io/misc/eants">Algebra and Number Theory Seminar</a>, main organizer</dd>
+<dt>2022&#x2013;2024</dt><dd>Graduate student algebra and number theory seminar, co-organizer</dd>
+</dl>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgfeb57d6" class="outline-2">
+<h2 id="orgfeb57d6">Referee work</h2>
+<div class="outline-text-2" id="text-orgfeb57d6">
+<p>
+Mathematische Zeitschrift, Proceedings of the American Mathematical Society, Rocky Mountain
+Journal of Mathematics, Sixteenth Algorithmic Number Theory Symposium.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org2fc3b17" class="outline-2">
+<h2 id="org2fc3b17">Selected conference and workshop participation</h2>
+<div class="outline-text-2" id="text-org2fc3b17">
+<dl class="org-dl">
+<dt>2025</dt><dd>Algebraic points on curves, ICERM, Providence, RI.</dd>
+<dt>2024</dt><dd>Nilpotent counting problems in arithmetic statistics, AIM, Pasadena, CA.</dd>
+<dt>2024</dt><dd>Number theory in the Americas 2, Casa Matemática Oaxaca, Oaxaca, México.</dd>
+<dt>2024</dt><dd>XVI Algorithmic Number Theory Symposium. MIT, Boston, MA.</dd>
+<dt>2024</dt><dd>The Mordell conjecture 100 years later. MIT, Boston, MA.</dd>
+<dt>2024</dt><dd>Hypergeometric motives in the LMFDB. MIT, Boston, MA.</dd>
+<dt>2024</dt><dd>Shimura curves in the LMFDB. Dartmouth, Hanover, NH.</dd>
+<dt>2024</dt><dd>Arizona Winter School: Abelian Varieties. Tucson, AZ.</dd>
+<dt>2023</dt><dd>PAlmetto Number Theory Series XXXVII. UGA, Athens, GA.</dd>
+<dt>2023</dt><dd>LuCaNT: LMFDB, Computation, and Number Theory. ICERM, Providence, RI.</dd>
+<dt>2023</dt><dd>MRC: Explicit computations with stacks. Buffalo, NY.</dd>
+<dt>2023</dt><dd>PAlmetto Number Theory Series XXXVII. UGA, Athens, GA.</dd>
+<dt>2023</dt><dd>Conference in Arithmetic Statistics. CIRM, Marseille, France.</dd>
+<dt>2023</dt><dd>Spring school in Arithmetic Statistics. CIRM, Marseille, France.</dd>
+<dt>2023</dt><dd>Arizona Winter School: Unlikely Intersections. Tucson, AZ.</dd>
+<dt>2023</dt><dd>Introductory Workshop: Diophantine Geometry. MSRI, Berkeley, CA.</dd>
+<dt>2023</dt><dd>Connections Workshop: Diophantine Geometry. MSRI, Berkeley, CA.</dd>
+<dt>2022</dt><dd>PAlmetto Number Theory Series XXXV. U of SC, Columbia, SC.</dd>
+<dt>2022</dt><dd>AGNES: Summer school in higher dimensional moduli. Brown, Providence, RI.</dd>
+<dt>2022</dt><dd>PCMI: Number theory informed by computation. Park City, UT.</dd>
+<dt>2022</dt><dd>CTNT: Connecticut summer school in number theory. UCONN, Storrs, CT.</dd>
+<dt>2022</dt><dd>GAGS: Georgia Algebraic Geometry Symposium. Emory, Atlanta, GA.</dd>
+<dt>2022</dt><dd>Arizona Winter School: Automorphic forms beyond \(\mathrm{GL}_2\). Tucson, AZ.</dd>
+<dt>2021</dt><dd>PCMI: Inverse Galois Problem. Online.</dd>
+</dl>
+</div>
+</div>
+
+<div id="outline-container-orga659afd" class="outline-2">
+<h2 id="orga659afd">Software and databases</h2>
+<div class="outline-text-2" id="text-orga659afd">
+<dl class="org-dl">
+<dt>2023</dt><dd>\(L\)-functions and Modular Forms Database (LMFDB), <a href="https://www.lmfdb.org">https://www.lmfdb.org</a> <br />
+I have made modest contributions. Most recently:
+<ul class="org-ul">
+<li>I developed the Zigzag pictures for the hypergeometric motives pages. See this
+<a href="https://beta.lmfdb.org/Motive/Hypergeometric/Q/A18.4.2.2_B7.6.1.1">random family</a>.</li>
+<li>I updated the Newton polygon pictures for abelian varieties over finite fields, see
+this <a href="https://www.lmfdb.org/Variety/Abelian/Fq/6/2/ad_h_ao_ba_abo_ci">random isogeny class</a>.</li>
+</ul></dd>
+</dl>
+</div>
+</div>
+
+<div id="outline-container-orgb6c1dbc" class="outline-2">
+<h2 id="orgb6c1dbc">Skills</h2>
+<div class="outline-text-2" id="text-orgb6c1dbc">
+<dl class="org-dl">
+<dt><b>Language</b></dt><dd>Spanish (native speaker), English, Portuguese.</dd>
+<dt><b>Computer</b></dt><dd>Python, Magma, SageMath.</dd>
+</dl>
+</div>
+</div>
+
+<div id="outline-container-org6159138" class="outline-2">
+<h2 id="org6159138">Awards</h2>
+<div class="outline-text-2" id="text-org6159138">
+<dl class="org-dl">
+<dt>2025</dt><dd>Graduate Student Research Award, Emory University Math Department</dd>
+</dl>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Date: September 26, 2026</p>
+<p class="author">Author: Santiago Arango-Piñeros</p>
+<p class="date">Created: 2026-09-26 Sat 11:59</p>
+</div>
+</body>
+</html>
