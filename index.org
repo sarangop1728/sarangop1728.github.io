@@ -63,7 +63,7 @@ Here is my [[./documents/Santiago_Arango_Pineros_CV.html][CV]] ([[./documents/Sa
 * Organizing
 + I co-organize the [[https://dmzb.github.io/FCNTS.github.io/][Five College Number Theory Seminar]] with [[https://dmzb.github.io/][David
   Zureick-Brown]].
-# + I co-organized (together with [[https://people.math.harvard.edu/~achenjang/][Niven Achenjang]] and[[https://web.math.princeton.edu/~sameerav/][ Sameera Vemulapalli]]) a
+# + I co-organized (together with [[https://people.math.harvard.edu/~achenjang/][Niven Achenjang]] and[[https://sites.google.com/view/sameeravemulapalli/home][ Sameera Vemulapalli]]) a
 #   special session at the /AMS Eastern Sectional/, on March 28-29 at Boston
 #   College. The title of the session was: [[https://www.ams.org/meetings/sectional/2331_program_ss6.html#title][Arithmetic Statistics of Rational
 #   Points and Number Fields]].

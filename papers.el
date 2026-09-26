@@ -60,7 +60,7 @@
 
     (:title "Galois groups of simple abelian varieties over finite fields and exceptional Tate classes"
             :authors (("Sam Frengley" . "https://samfrengley.github.io")
-                      ("Sameera Vemulapalli" . "https://web.math.princeton.edu/~sameerav/"))
+                      ("Sameera Vemulapalli" . "https://sites.google.com/view/sameeravemulapalli/home"))
             :links ((arxiv . "2505.09589")
                     (code . "https://github.com/SamFrengley/exceptional-tate-classes"))
             :image (:src "images/thumbs/np.png" :href "images/np.png" :alt "Newton polygon"))
@@ -93,7 +93,7 @@
 
     (:title "Galois groups of low dimensional abelian varieties over finite fields"
             :authors (("Sam Frengley" . "https://samfrengley.github.io")
-                      ("Sameera Vemulapalli" . "https://web.math.princeton.edu/~sameerav/"))
+                      ("Sameera Vemulapalli" . "https://sites.google.com/view/sameeravemulapalli/home"))
             :venue (:prefix "To appear in"
 			    :name "Transactions of the American Mathematical Society")
             :links ((arxiv . "2412.03358")
