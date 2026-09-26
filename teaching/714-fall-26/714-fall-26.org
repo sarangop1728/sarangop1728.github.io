@@ -24,7 +24,7 @@ My office is in *LGRT 1238*, and you can contact me via email at:
 
 ** Office hours
 
-TBD.
+Wednesday's 12:00 M - 2:00 PM.
 
 * Course description
 
@@ -61,8 +61,8 @@ We will use the remaining time to solve homework problems.
 
 ** Lecture notes
 
-+ [[file:notes/index.html][Lecture notes]], with the worksheets and a PDF of the whole book. They are
-  a work in progress, updated during the semester.
++ [[file:~/Dropbox/sarangop1728.github.io/lecture-notes/elliptic-curves/index.html][Lecture notes]], with the worksheets and a PDF. They are a work in progress,
+  updated during the semester.
 
 ** Other references
 

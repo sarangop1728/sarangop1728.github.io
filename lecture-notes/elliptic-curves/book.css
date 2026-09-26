@@ -259,7 +259,7 @@ body {
 }
 
 .ec-definition, .ec-example, .ec-remark, .ec-remarks, .ec-question,
-.ec-answer, .ec-fact, .ec-algorithm, .ec-warning {
+.ec-answer, .ec-fact, .ec-algorithm, .ec-warning, .ec-situation {
   border-left: 3px solid var(--ec-statement-edge);
   border-right: 3px solid var(--ec-statement-edge);
   padding: 0 1.1em;

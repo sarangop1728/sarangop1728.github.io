@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2026-09-24 Thu 08:35 -->
+<!-- 2026-09-26 Sat 08:14 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Algebraic curves</title>
@@ -23,7 +23,7 @@
 <ol class="ec-toc">
 <li class="ec-toc-chapter"><a href="00-preface.html"><span class="ec-toc-num"></span><span class="ec-toc-text">Preface</span></a></li>
 <li class="ec-toc-chapter"><a href="01-riemann-surfaces.html"><span class="ec-toc-num">1</span><span class="ec-toc-text">Elliptic curves as Riemann surfaces<span class="ec-toc-status"><span class="ec-status-progress">2 of 8 sections finished</span></span></span></a></li>
-<li class="ec-toc-chapter"><a href="02-varieties.html"><span class="ec-toc-num">2</span><span class="ec-toc-text">Algebraic varieties<span class="ec-toc-status"><span class="ec-status-progress">0 of 4 sections finished</span></span></span></a></li>
+<li class="ec-toc-chapter"><a href="02-varieties.html"><span class="ec-toc-num">2</span><span class="ec-toc-text">Algebraic varieties<span class="ec-toc-status"><span class="ec-status-progress">1 of 4 sections finished</span></span></span></a></li>
 <li class="ec-toc-chapter is-current"><a href="03-curves.html" aria-current="page"><span class="ec-toc-num">3</span><span class="ec-toc-text">Algebraic curves<span class="ec-toc-status"><span class="ec-status-progress">0 of 7 sections finished</span></span></span></a>
 <ol class="ec-toc-sections">
 <li class="ec-toc-level-1"><a href="#s3.1"><span class="ec-toc-num">3.1</span><span class="ec-toc-text">Closed points and local rings<span class="ec-toc-status"><span class="ec-status-label ec-status-draft">Draft</span></span></span></a></li>
@@ -54,7 +54,7 @@
 </div>
 <div id="content" class="content">
 <h1 class="title"><span class="ec-chapter-label">Chapter 3</span>Algebraic curves</h1>
-<div class="sources" id="orge14fe1d">
+<div class="sources" id="orgb212d1a">
 <p>
 This chapter follows [<a class="ec-cite" href="#bib-Poonen06">Poo06</a>, Chapter 2] and [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Chapter II],
 with material on plane curves from [<a class="ec-cite" href="#bib-Milne20">Mil20</a>, Sections I.1 and I.6].  Unlike these
@@ -63,11 +63,6 @@ sources, we do not assume that the ground field is perfect.
 
 </div>
 
-<p>
-We keep the notation of the previous chapter: \(k\) is an arbitrary field, and
-\(\Gal_k \coloneqq \Gal(\ksep/k)\).
-</p>
-
 <div class="ec-thm ec-definition" id="def-crv-curve">
 <p>
 <span class="ec-thm-head"><span class="ec-thm-name">Definition 3.0.1</span>.</span> A <dfn class="ec-cdef" id="gls-curve" data-gls="curve">curve</dfn> over \(k\) is an integral \(k\)-variety of dimension \(1\).  A nice curve is
@@ -75,9 +70,16 @@ a curve that is nice (Definition <a href="02-varieties.html#def-var-smooth">2.4.
 </p>
 </div>
 
+<div class="ec-thm ec-situation" id="sit-crv-standing">
 <p>
-<b>Standing hypothesis.</b> Unless stated otherwise, \(C\), \(C_1\) and \(C_2\) denote nice
-curves over \(k\).  Remarks point out where a curve that is only regular behaves
+<span class="ec-thm-head"><span class="ec-thm-name">Situation 3.0.2</span>.</span> We keep Situation <a href="02-varieties.html#sit-var-standing">2.0.1</a>: \(k\) is an arbitrary field, and
+\(\Gal_k \coloneqq \Gal(\ksep/k)\).  Unless stated otherwise, \(C\), \(C_1\) and \(C_2\)
+denote nice curves over \(k\).
+</p>
+</div>
+
+<p>
+Remarks point out where a curve that is only regular behaves
 differently; the basic example is Example <a href="02-varieties.html#eg-var-regular-not-smooth">2.4.6</a>.
 </p>
 
@@ -764,7 +766,7 @@ rational point, and \(dt = -s^{-2}\,ds\), so \(\div(dt) = -2\infty\).  In partic
 
 <p>
 The next two examples start the comparison of elliptic curves with the multiplicative
-group \(\Gm\) of Example <a href="02-varieties.html#eg-var-gm">2.1.5</a>, which runs through Chapter 4.
+group \(\Gm\) of Example <a href="02-varieties.html#eg-var-gm">2.1.6</a>, which runs through Chapter 4.
 </p>
 
 <div class="ec-thm ec-example" id="eg-crv-gm-differential">
@@ -1275,9 +1277,9 @@ Section <a href="04-ec-algebraic.html#sec-ec-weierstrass">4.1</a>.
 </div>
 </div>
 
-<div id="outline-container-org76be245" class="outline-2 ec-references">
-<h2 id="org76be245">References</h2>
-<div class="outline-text-2" id="text-org76be245">
+<div id="outline-container-org227e852" class="outline-2 ec-references">
+<h2 id="org227e852">References</h2>
+<div class="outline-text-2" id="text-org227e852">
 <dl class="ec-bibliography">
 <dt id="bib-Hartshorne77">[Har77]</dt>
 <dd>Robin Hartshorne. <i>Algebraic geometry</i>. Vol. No. 52. Graduate Texts in Mathematics. Springer-Verlag, New York-Heidelberg, 1977.</dd>

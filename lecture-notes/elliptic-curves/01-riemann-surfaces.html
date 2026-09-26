@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2026-09-24 Thu 08:35 -->
+<!-- 2026-09-26 Sat 08:14 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Elliptic curves as Riemann surfaces</title>
@@ -33,7 +33,7 @@
 <li class="ec-toc-level-1"><a href="#s1.7"><span class="ec-toc-num">1.7</span><span class="ec-toc-text">The uniformization theorem<span class="ec-toc-status"><span class="ec-status-label ec-status-draft">Draft</span></span></span></a></li>
 <li class="ec-toc-level-1"><a href="#s1.8"><span class="ec-toc-num">1.8</span><span class="ec-toc-text">Isomorphism classes of complex tori<span class="ec-toc-status"><span class="ec-status-label ec-status-draft">Draft</span></span></span></a></li>
 </ol></li>
-<li class="ec-toc-chapter"><a href="02-varieties.html"><span class="ec-toc-num">2</span><span class="ec-toc-text">Algebraic varieties<span class="ec-toc-status"><span class="ec-status-progress">0 of 4 sections finished</span></span></span></a></li>
+<li class="ec-toc-chapter"><a href="02-varieties.html"><span class="ec-toc-num">2</span><span class="ec-toc-text">Algebraic varieties<span class="ec-toc-status"><span class="ec-status-progress">1 of 4 sections finished</span></span></span></a></li>
 <li class="ec-toc-chapter"><a href="03-curves.html"><span class="ec-toc-num">3</span><span class="ec-toc-text">Algebraic curves<span class="ec-toc-status"><span class="ec-status-progress">0 of 7 sections finished</span></span></span></a></li>
 <li class="ec-toc-chapter"><a href="04-ec-algebraic.html"><span class="ec-toc-num">4</span><span class="ec-toc-text">Elliptic curves as algebraic curves<span class="ec-toc-status"><span class="ec-status-progress">1 of 8 sections finished</span></span></span></a></li>
 <li class="ec-toc-chapter"><a href="05-finite-fields.html"><span class="ec-toc-num">5</span><span class="ec-toc-text">Elliptic curves over finite fields<span class="ec-toc-status"><span class="ec-status-progress">0 of 5 sections finished</span></span></span></a></li>
@@ -55,7 +55,7 @@
 </div>
 <div id="content" class="content">
 <h1 class="title"><span class="ec-chapter-label">Chapter 1</span>Elliptic curves as Riemann surfaces</h1>
-<div class="sources" id="orgc709913">
+<div class="sources" id="org41c6d89">
 <p>
 This chapter follows [<a class="ec-cite" href="#bib-Miranda95">Mir95</a>] (parts of chapters I, II and IV) and
 [<a class="ec-cite" href="#bib-Diamond-Shurman_05">DS05</a>] (parts of Chapter I).
@@ -69,6 +69,14 @@ to develop their theory from the complex analytic point of view.  Students
 without previous experience in algebraic geometry can use it as a source of
 geometric intuition when we turn to the algebraic theory later on.
 </p>
+
+<div class="ec-thm ec-situation" id="sit-rs-standing">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Situation 1.0.1</span>.</span> There is no ground field in this chapter: everything is complex analytic.  Riemann
+surfaces are connected (Definition <a href="#def-rs">1.1.2</a>), and \(\Lambda\), \(\Lambda_1\),
+\(\Lambda_2\) denote lattices in \(\C\) (Definition <a href="#def-rs-lattice">1.2.1</a>).
+</p>
+</div>
 
 <div id="outline-container-sec-rs" class="outline-2">
 <h2 id="sec-rs"><span class="section-number" id="s1.1">1.1</span> Riemann surfaces</h2>
@@ -102,7 +110,7 @@ such that \(X = \bigcup_i U_i\).</li>
 
 
 <figure class="ec-figure" id="fig-rs-transition-maps">
-<img class="ec-tikz" src="figures/25e6789878c7715a463c2a522aa7ec2c3b3b7b38.svg" style="--ec-w: 46.65em" alt=""/>
+<img class="ec-tikz" src="figures/4ca2407555e46b7aff06e1d5b5b2708cb843840c.svg" style="--ec-w: 46.65em" alt=""/>
 <figcaption><span class="ec-thm-name">Figure 1.1.1</span>. Two charts on overlapping open sets, and the transition maps between their images.</figcaption>
 </figure>
 
@@ -200,7 +208,7 @@ Figure <a href="#fig-rs-holomorphic-map">1.1.2</a> shows the maps in Definition 
 </p>
 
 <figure class="ec-figure" id="fig-rs-holomorphic-map">
-<img class="ec-tikz" src="figures/f7cb8dcbfd60901f4a4b43dc2abe3226d9c3d89e.svg" style="--ec-w: 44.64em" alt=""/>
+<img class="ec-tikz" src="figures/2c1b96eadda73280206950d989b6db2224fcc5bb.svg" style="--ec-w: 44.64em" alt=""/>
 <figcaption><span class="ec-thm-name">Figure 1.1.2</span>. A holomorphic map read in charts: \(\psi_2 \circ f \circ \phi_1^{-1}\) on \(\phi_1(U_1 \cap f^{-1}(U_2))\).</figcaption>
 </figure>
 
@@ -339,8 +347,8 @@ Figure <a href="#fig-rs-lattices">1.2.1</a> shows both lattices.
 </p>
 
 <figure class="ec-figure" id="fig-rs-lattices">
-<img class="ec-tikz" src="figures/6da74bf966885367456330a959e860d70e1b8cd3.svg" style="--ec-w: 20.64em" alt=""/>
-<img class="ec-tikz" src="figures/bba7073c29d0d069be185221dad7a5c8915f3b65.svg" style="--ec-w: 20.64em" alt=""/>
+<img class="ec-tikz" src="figures/c80e356971ff267d97ad17ff8c142737afb3ca94.svg" style="--ec-w: 20.64em" alt=""/>
+<img class="ec-tikz" src="figures/3c73235836855c7a308c27e820671296c5d7a58d.svg" style="--ec-w: 20.64em" alt=""/>
 <figcaption><span class="ec-thm-name">Figure 1.2.1</span>. The lattices \(\Lambda_i\) (left) and \(\Lambda_\omega\) (right), with the \(\Z\)-bases \(\{1, i\}\) and \(\{1, \omega\}\) in blue and their fundamental parallelograms shaded.</figcaption>
 </figure>
 
@@ -356,7 +364,7 @@ with the quotient topology.  We call \(\C/\Lambda\) a <dfn class="ec-cdef" id="g
 </p>
 
 <figure class="ec-figure" id="fig-rs-torus">
-<img class="ec-tikz" src="figures/0a555f4e40d30f39f80ba56b36ae21d992602258.svg" style="--ec-w: 45.05em" alt=""/>
+<img class="ec-tikz" src="figures/b3a1a20423cd8ced72674ab759be85707e1b573d.svg" style="--ec-w: 45.05em" alt=""/>
 <figcaption><span class="ec-thm-name">Figure 1.2.2</span>. Gluing opposite sides of a fundamental parallelogram gives the torus \(\C/\Lambda\): the two pairs of sides become the two circles marked with the same ticks, and disks in the parallelogram map to disks on the torus.</figcaption>
 </figure>
 
@@ -400,7 +408,7 @@ homeomorphism from \(\calF_\Lambda^\circ\) onto its image, and likewise on every
 \(U \subseteq z + \calF_\Lambda^\circ\) descends to a chart
 \(\tilde\phi\colon \pi(U) \to V\) with \(\tilde\phi \circ \pi = \phi\) on \(U\).
 </p>
-<div class="ec-diagram"><img class="ec-tikz" src="figures/cd86ccabdc1c4973fa2258ba543f926c90e5cb42.svg" style="--ec-w: 7.94em" alt=""/></div>
+<div class="ec-diagram"><img class="ec-tikz" src="figures/a22f47c2bba549899d87f9370fa1dea2d4443804.svg" style="--ec-w: 7.94em" alt=""/></div>
 <p>
 The translates \(\pi(z + \calF_\Lambda^\circ)\) cover \(\C/\Lambda\): translating is
 needed to reach the image of the boundary of the parallelogram.  Two such charts are
@@ -527,7 +535,7 @@ the group of complex \(m\)-th roots of unity
 </div>
 
 <figure class="ec-figure" id="fig-rs-4-torsion">
-<img class="ec-tikz" src="figures/95c7f15158b18c619a2ea761f913f00ef0aab02b.svg" style="--ec-w: 37.44em" alt=""/>
+<img class="ec-tikz" src="figures/1d2099db7e206186f607e1d39b51e68607f464c7.svg" style="--ec-w: 37.44em" alt=""/>
 <figcaption><span class="ec-thm-name">Figure 1.3.1</span>. The \(4\)-torsion points of \(\C/\Lambda\) (gray) in the fundamental parallelogram, whose vertices are lattice points (black).</figcaption>
 </figure>
 
@@ -560,7 +568,7 @@ multiplication by \(N\) (Example <a href="#eg-rs-mult-by-m">1.3.4</a>).
 </div>
 
 <figure class="ec-figure" id="fig-rs-cyclic-isogeny">
-<img class="ec-tikz" src="figures/6503054075a068d7bcbd84cdf0f34d3a3ebecec1.svg" style="--ec-w: 37.44em" alt=""/>
+<img class="ec-tikz" src="figures/3656086459d90aed4ce25a4c2171792c14b8e057.svg" style="--ec-w: 37.44em" alt=""/>
 <figcaption><span class="ec-thm-name">Figure 1.3.2</span>. The kernel of the cyclic isogeny \(\C/\Lambda \to \C/\Lambda'\) for \(N = 4\) (gray) in the fundamental parallelogram of \(\Lambda\), whose vertices are lattice points (black).  A fundamental parallelogram of \(\Lambda'\) is shaded, and its translates by the kernel are dotted.</figcaption>
 </figure>
 
@@ -710,7 +718,7 @@ cyclic of order \(3\), generated by \(\frac{1}{1 - \omega} + \Lambda_\omega =
    \frac{2 + \omega}{3} + \Lambda_\omega\).</li>
 </ol>
 <p>
-Compare part <a href="04-ec-algebraic.html#it-ec-selmer-cm-isogeny">3</a> of Proposition <a href="04-ec-algebraic.html#prop-ec-selmer-cm">4.8.10</a>, where the same identity appears for the
+Compare part <a href="04-ec-algebraic.html#it-ec-selmer-cm-isogeny">3</a> of Proposition <a href="04-ec-algebraic.html#prop-ec-selmer-cm">4.8.11</a>, where the same identity appears for the
 curves \(C_d\).  Similarly, on \(\C/\Lambda_i\) the endomorphism \(z \mapsto (1 + i)z\) has
 degree \(2\) and dual \(z \mapsto (1 - i)z\).
 </p>
@@ -761,7 +769,7 @@ between
 <p>
 given by \(f \mapsto \tilde f \coloneqq f \circ \pi\).
 </p>
-<div class="ec-diagram"><img class="ec-tikz" src="figures/bc02d045638b0cd8e011d088b25d24f900b1d33d.svg" style="--ec-w: 9.58em" alt=""/></div>
+<div class="ec-diagram"><img class="ec-tikz" src="figures/8a881abb6683e15ebea1f6c475373e7d82e09735.svg" style="--ec-w: 9.58em" alt=""/></div>
 </div>
 
 <p>
@@ -948,7 +956,7 @@ differential on this compactification.</li>
 
 <p>
 Algebraically, \(\C^\times\) is the group of complex points of the multiplicative group
-\(\Gm\) (Example <a href="02-varieties.html#eg-var-gm">2.1.5</a>), and \(\omega\) is \(dx/x\); see
+\(\Gm\) (Example <a href="02-varieties.html#eg-var-gm">2.1.6</a>), and \(\omega\) is \(dx/x\); see
 Examples <a href="03-curves.html#eg-crv-gm-differential">3.4.7</a> and <a href="03-curves.html#eg-crv-gm-mult">3.4.8</a> for the algebraic version over an
 arbitrary field.
 </p>
@@ -1280,15 +1288,15 @@ classes of complex tori.
 </p>
 
 <figure class="ec-figure" id="fig-rs-sl2z-domain">
-<img class="ec-tikz" src="figures/b8dc5faeb36ff57b96f9edb84ac3189b8f61de3a.svg" style="--ec-w: 14.82em" alt=""/>
+<img class="ec-tikz" src="figures/8ebc262dda8d5105851edc560ec7fdce1157c6ec.svg" style="--ec-w: 14.82em" alt=""/>
 <figcaption><span class="ec-thm-name">Figure 1.8.1</span>. A fundamental domain for the action of \(\SL_2(\Z)\) on \(\bbH\).</figcaption>
 </figure>
 </div>
 </div>
 
-<div id="outline-container-org61913b1" class="outline-2 ec-references">
-<h2 id="org61913b1">References</h2>
-<div class="outline-text-2" id="text-org61913b1">
+<div id="outline-container-orgf335a57" class="outline-2 ec-references">
+<h2 id="orgf335a57">References</h2>
+<div class="outline-text-2" id="text-orgf335a57">
 <dl class="ec-bibliography">
 <dt id="bib-Diamond-Shurman_05">[DS05]</dt>
 <dd>Fred Diamond and Jerry Shurman. <i>A first course in modular forms</i>. Vol. 228. Graduate Texts in Mathematics. Springer-Verlag, New York, 2005.</dd>

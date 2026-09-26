@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2026-09-24 Thu 08:35 -->
+<!-- 2026-09-26 Sat 08:14 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Elliptic curves over finite fields</title>
@@ -23,7 +23,7 @@
 <ol class="ec-toc">
 <li class="ec-toc-chapter"><a href="00-preface.html"><span class="ec-toc-num"></span><span class="ec-toc-text">Preface</span></a></li>
 <li class="ec-toc-chapter"><a href="01-riemann-surfaces.html"><span class="ec-toc-num">1</span><span class="ec-toc-text">Elliptic curves as Riemann surfaces<span class="ec-toc-status"><span class="ec-status-progress">2 of 8 sections finished</span></span></span></a></li>
-<li class="ec-toc-chapter"><a href="02-varieties.html"><span class="ec-toc-num">2</span><span class="ec-toc-text">Algebraic varieties<span class="ec-toc-status"><span class="ec-status-progress">0 of 4 sections finished</span></span></span></a></li>
+<li class="ec-toc-chapter"><a href="02-varieties.html"><span class="ec-toc-num">2</span><span class="ec-toc-text">Algebraic varieties<span class="ec-toc-status"><span class="ec-status-progress">1 of 4 sections finished</span></span></span></a></li>
 <li class="ec-toc-chapter"><a href="03-curves.html"><span class="ec-toc-num">3</span><span class="ec-toc-text">Algebraic curves<span class="ec-toc-status"><span class="ec-status-progress">0 of 7 sections finished</span></span></span></a></li>
 <li class="ec-toc-chapter"><a href="04-ec-algebraic.html"><span class="ec-toc-num">4</span><span class="ec-toc-text">Elliptic curves as algebraic curves<span class="ec-toc-status"><span class="ec-status-progress">1 of 8 sections finished</span></span></span></a></li>
 <li class="ec-toc-chapter is-current"><a href="05-finite-fields.html" aria-current="page"><span class="ec-toc-num">5</span><span class="ec-toc-text">Elliptic curves over finite fields<span class="ec-toc-status"><span class="ec-status-progress">0 of 5 sections finished</span></span></span></a>
@@ -55,7 +55,7 @@
 </div>
 <div id="content" class="content">
 <h1 class="title"><span class="ec-chapter-label">Chapter 5</span>Elliptic curves over finite fields</h1>
-<div class="sources" id="org013dc11">
+<div class="sources" id="org895771e">
 <p>
 This chapter follows [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Chapter V] and [<a class="ec-cite" href="#bib-Poonen06">Poo06</a>, Chapter 3], with
 [<a class="ec-cite" href="#bib-Milne22">Mil22</a>] for the Galois theory of finite fields, [<a class="ec-cite" href="#bib-Achter-Howe17">AH17</a>] for the
@@ -64,13 +64,19 @@ Cartier operator, and [<a class="ec-cite" href="#bib-Voight21">Voi21</a>] for th
 
 </div>
 
+<div class="ec-thm ec-situation" id="sit-ff-standing">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Situation 5.0.1</span>.</span> Let \(p\) be a prime, let \(q \coloneqq p^e\) for some \(e \geq 1\), and let
+\(k \coloneqq \F_q\) be the finite field with \(q\) elements.  Since \(k\) is perfect,
+\(\ksep = \kbar = \Fbar_q\).
+</p>
+</div>
+
 <div id="outline-container-sec-ff-frobenius" class="outline-2">
-<h2 id="sec-ff-frobenius"><span class="ec-status ec-status-draft"><span class="ec-status-label ec-status-draft">Draft</span><time datetime="2026-09-21">21 Sep 2026</time></span><span class="section-number" id="s5.1">5.1</span> The Frobenius automorphism</h2>
+<h2 id="sec-ff-frobenius"><span class="ec-status ec-status-draft"><span class="ec-status-label ec-status-draft">Draft</span><time datetime="2026-09-26">26 Sep 2026</time></span><span class="section-number" id="s5.1">5.1</span> The Frobenius automorphism</h2>
 <div class="outline-text-2" id="text-sec-ff-frobenius">
 <p>
-Let \(p\) be a prime, let \(q \coloneqq p^e\) for some \(e \geq 1\), and let
-\(k \coloneqq \F_q\) be the finite field with \(q\) elements.  Since \(k\) is perfect,
-\(\ksep = \kbar = \Fbar_q\).  Moreover,
+We are in Situation <a href="#sit-ff-standing">5.0.1</a>.  The algebraic closure of \(k\) is
 </p>
 
 \begin{equation*}
@@ -203,7 +209,7 @@ give \(\#E(\F_{q^r}) = \deg(1 - \Frob^r)\), and \(\deg \Frob^r = q^r\)
 </div>
 
 <div id="outline-container-sec-ff-weil" class="outline-2">
-<h2 id="sec-ff-weil"><span class="ec-status ec-status-draft"><span class="ec-status-label ec-status-draft">Draft</span><time datetime="2026-09-24">24 Sep 2026</time></span><span class="section-number" id="s5.3">5.3</span> The Weil conjectures</h2>
+<h2 id="sec-ff-weil"><span class="ec-status ec-status-draft"><span class="ec-status-label ec-status-draft">Draft</span><time datetime="2026-09-26">26 Sep 2026</time></span><span class="section-number" id="s5.3">5.3</span> The Weil conjectures</h2>
 <div class="outline-text-2" id="text-sec-ff-weil">
 <p>
 In 1949, Weil made a series of remarkable conjectures about the numbers
@@ -211,7 +217,7 @@ In 1949, Weil made a series of remarkable conjectures about the numbers
 proof was one of the main motivations for the scheme-theoretic foundations of algebraic
 geometry and for étale cohomology (Remark <a href="#rem-ff-weil-history">5.3.6</a>).  In this section we
 state the conjectures for curves, check them on \(\PP^1\), and prove them for elliptic
-curves.  We keep the notation of Section <a href="#sec-ff-frobenius">5.1</a>, and \(C\) denotes a nice
+curves.  We keep Situation <a href="#sit-ff-standing">5.0.1</a>, and \(C\) denotes a nice
 curve over \(\F_q\) (Definition <a href="02-varieties.html#def-var-smooth">2.4.1</a>).
 </p>
 </div>
@@ -574,7 +580,7 @@ with integer coefficients, it does not matter whether \(\alpha\) and \(\beta\) a
 <p>
 For part <a href="#it-ff-frobenius-relation">2</a>, let \(\psi \coloneqq \Frob^2 - a\Frob + q \in \End(E)\).  By the
 Cayley&#x2013;Hamilton theorem, \(\Frob_\ell\) satisfies its characteristic polynomial, so
-\(\psi_\ell = \Frob_\ell^2 - a\Frob_\ell + q = 0\).  By Theorem <a href="04-ec-algebraic.html#thm-ec-tate-injective">4.5.5</a>,
+\(\psi_\ell = \Frob_\ell^2 - a\Frob_\ell + q = 0\).  By Theorem <a href="04-ec-algebraic.html#thm-ec-tate-injective">4.5.6</a>,
 \(\psi = 0\) [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Theorem V.2.3.1].
 </p>
 </details>
@@ -753,7 +759,7 @@ E5![P[1]^9, P[2]^9, P[3]^9] <span class="org-keyword">eq</span> -3*P;        <sp
 </pre>
 </div>
 <p>
-By Corollary <a href="#cor-ff-supersingular-trace">5.5.6</a>, an elliptic curve over \(\F_q\) is
+By Corollary <a href="#cor-ff-supersingular-trace">5.5.7</a>, an elliptic curve over \(\F_q\) is
 supersingular if and only if \(a \equiv 0 \pmod p\); so this curve is supersingular.
 </p>
 </div>
@@ -819,14 +825,14 @@ cancelling \(\deg \varphi \neq 0\), \eqref{eq:ff-count-degree} gives
 <p>
 Conversely, suppose that \(\#E_1(\F_q) = \#E_2(\F_q)\), so that \(\Frob_{1,\ell}\) and
 \(\Frob_{2,\ell}\) have the same characteristic polynomial \(f(T) = T^2 - aT + q\).  By
-Tate's theorem, mentioned after Theorem <a href="04-ec-algebraic.html#thm-ec-tate-injective">4.5.5</a>, the map
+Tate's theorem, mentioned after Theorem <a href="04-ec-algebraic.html#thm-ec-tate-injective">4.5.6</a>, the map
 \(\Hom(E_1, E_2) \otimes \Z_\ell \to \Hom_{\Gal_{\F_q}}(T_\ell(E_1), T_\ell(E_2))\) is an
 isomorphism [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Theorem III.7.7(a)].  Since \(\sigma\) acts on
 \(E_i(\Fbar_q)\) as \(\Frob_i\) and topologically generates \(\Gal_{\F_q}\), a
 \(\Z_\ell\)-linear map is \(\Gal_{\F_q}\)-equivariant if and only if it intertwines
 \(\Frob_{1,\ell}\) and \(\Frob_{2,\ell}\).  It suffices to find a non-zero such map, since
 then \(\Hom(E_1, E_2) \otimes \Z_\ell \neq 0\), and \(\Hom(E_1, E_2)\) is a free
-\(\Z\)-module (Theorem <a href="04-ec-algebraic.html#thm-ec-tate-injective">4.5.5</a>), so it is non-zero.
+\(\Z\)-module (Theorem <a href="04-ec-algebraic.html#thm-ec-tate-injective">4.5.6</a>), so it is non-zero.
 </p>
 <ul class="org-ul">
 <li>If \(a^2 \neq 4q\), then \(\Frob_{i,\ell}\) is not a scalar, so
@@ -910,13 +916,13 @@ case is case <a href="04-ec-algebraic.html#it-ec-end-quadratic">2</a>; compare R
 By condition <a href="#it-ff-ss-p-inseparable">3</a> of Theorem <a href="#thm-ff-supersingular">5.4.1</a> there are only
 finitely many supersingular elliptic curves
 over \(\Fbar_p\) up to isomorphism, since each has \(j\)-invariant in the finite field
-\(\F_{p^2}\).  Counting them is the subject of Theorem <a href="#thm-ff-deuring-mass">5.5.9</a>.
+\(\F_{p^2}\).  Counting them is the subject of Theorem <a href="#thm-ff-deuring-mass">5.5.10</a>.
 </p>
 </div>
 </div>
 
 <div id="outline-container-sec-ff-cartier-hasse" class="outline-2">
-<h2 id="sec-ff-cartier-hasse"><span class="ec-status ec-status-draft"><span class="ec-status-label ec-status-draft">Draft</span><time datetime="2026-09-23">23 Sep 2026</time></span><span class="section-number" id="s5.5">5.5</span> The Cartier operator and the Hasse invariant</h2>
+<h2 id="sec-ff-cartier-hasse"><span class="ec-status ec-status-draft"><span class="ec-status-label ec-status-draft">Draft</span><time datetime="2026-09-26">26 Sep 2026</time></span><span class="section-number" id="s5.5">5.5</span> The Cartier operator and the Hasse invariant</h2>
 <div class="outline-text-2" id="text-sec-ff-cartier-hasse">
 <p>
 None of the conditions of Theorem <a href="#thm-ff-supersingular">5.4.1</a> is easy to check on a given
@@ -924,9 +930,15 @@ Weierstrass equation.  The Cartier operator turns the dichotomy into the vanishi
 single coefficient.
 </p>
 
+<div class="ec-thm ec-situation" id="sit-ff-cartier">
 <p>
-Throughout this section \(k\) is a <b>perfect</b> field of characteristic \(p > 0\), so that
-\(a \mapsto a^p\) is an automorphism of \(k\) and we may write \(a^{1/p}\) for its inverse.
+<span class="ec-thm-head"><span class="ec-thm-name">Situation 5.5.1</span>.</span> In this section \(k\) is a <b>perfect</b> field of characteristic \(p > 0\), not necessarily
+finite, so that \(a \mapsto a^p\) is an automorphism of \(k\) and we may write
+\(a^{1/p}\) for its inverse.
+</p>
+</div>
+
+<p>
 Perfectness is also what makes the definition below work at every closed point: it
 guarantees \(dt \neq 0\) for a uniformizer \(t\), which fails over an imperfect field
 (Warning <a href="03-curves.html#warn-crv-uniformizer">3.4.5</a>).
@@ -934,8 +946,8 @@ guarantees \(dt \neq 0\) for a uniformizer \(t\), which fails over an imperfect 
 
 <div class="ec-thm ec-definition" id="def-ff-cartier">
 <p>
-<span class="ec-thm-head"><span class="ec-thm-name">Definition 5.5.1</span>.</span> Let \(C\) be a nice curve of genus \(g \geq 1\) over a perfect field \(k\) of characteristic
-\(p\), let \(P\) be a closed point of \(C\) and let \(t\) be a uniformizer at \(P\).  The
+<span class="ec-thm-head"><span class="ec-thm-name">Definition 5.5.2</span>.</span> In Situation <a href="#sit-ff-cartier">5.5.1</a>, let \(C\) be a nice curve of genus \(g \geq 1\) over \(k\),
+let \(P\) be a closed point of \(C\) and let \(t\) be a uniformizer at \(P\).  The
 functions \(1, t, \dots, t^{p-1}\) form a \(p\)-basis of \(\calO_{C,P}\): every differential
 regular at \(P\) is uniquely
 </p>
@@ -967,8 +979,7 @@ then every differential is uniquely
 
 <div class="ec-thm ec-proposition" id="prop-ff-cartier">
 <p>
-<span class="ec-thm-head"><span class="ec-thm-name">Proposition 5.5.2</span>.</span> Let \(C\) be a nice curve of genus \(g \geq 1\) over a perfect field \(k\) of
-characteristic \(p\).
+<span class="ec-thm-head"><span class="ec-thm-name">Proposition 5.5.3</span>.</span> In Situation <a href="#sit-ff-cartier">5.5.1</a>, let \(C\) be a nice curve of genus \(g \geq 1\) over \(k\).
 </p>
 <ol class="org-ol">
 <li><a id="it-ff-cartier-additive"></a> \(\calC(\omega_1 + \omega_2) = \calC(\omega_1) + \calC(\omega_2)\).</li>
@@ -1007,7 +1018,7 @@ is the Hasse invariant.
 
 <div class="ec-thm ec-definition" id="def-ff-hasse-invariant">
 <p>
-<span class="ec-thm-head"><span class="ec-thm-name">Definition 5.5.3</span>.</span> Let \(q\) be a power of \(p \geq 3\) and let \(E\) be an elliptic curve over \(\F_q\), given
+<span class="ec-thm-head"><span class="ec-thm-name">Definition 5.5.4</span>.</span> Let \(q\) be a power of \(p \geq 3\) and let \(E\) be an elliptic curve over \(\F_q\), given
 by \(y^2 = f(x)\) with \(f \in \F_q[x]\) a cubic with distinct roots in \(\Fbar_q\)
 (Lemma <a href="04-ec-algebraic.html#lem-ec-short-form">4.1.4</a>), with invariant differential \(\omega = dx/(2y)\).  Write
 </p>
@@ -1030,7 +1041,7 @@ using \(y^2 = f(x)\),
 = y^{-p} \left( \sum_{m \geq 0} c_m x^m \right) dx,
 \end{equation*}
 <p>
-so part <a href="#it-ff-cartier-semilinear">2</a> of Proposition <a href="#prop-ff-cartier">5.5.2</a> and
+so part <a href="#it-ff-cartier-semilinear">2</a> of Proposition <a href="#prop-ff-cartier">5.5.3</a> and
 \eqref{eq:ff-cartier-global} give
 </p>
 \begin{equation}
@@ -1047,7 +1058,7 @@ Only the terms with \(m \equiv p - 1 \pmod p\) survive, and \(f^{(p-1)/2}\) has 
 
 <div class="ec-thm ec-remark" id="rem-ff-hasse-invariant">
 <p>
-<span class="ec-thm-head"><span class="ec-thm-name">Remark 5.5.4</span>.</span> Three warnings.  First, \(A\) depends on the equation and not only on \(E\): the change of
+<span class="ec-thm-head"><span class="ec-thm-name">Remark 5.5.5</span>.</span> Three warnings.  First, \(A\) depends on the equation and not only on \(E\): the change of
 coordinates \((x, y) \mapsto (u^2x, u^3y)\) of <a class="ec-eqref" href="04-ec-algebraic.html#mjx-eqn%3Aeq%3Aec-change-of-variables">(4.1.3)</a> replaces
 \(A\) by \(u^{-(p-1)}A\).  What is intrinsic is whether \(A\) vanishes, equivalently whether
 \(\calC = 0\) on the regular differentials of \(E\).  Second, the definition asks for
@@ -1065,9 +1076,9 @@ The proof that \(A\) detects supersingularity counts points with the quadratic c
 
 <div class="ec-thm ec-lemma" id="lem-ff-character-sum">
 <p>
-<span class="ec-thm-head"><span class="ec-thm-name">Lemma 5.5.5</span>.</span> Let \(q\) be a power of \(p \geq 3\), let \(\chi\colon \F_q^\times \to \{\pm 1\}\) be the
+<span class="ec-thm-head"><span class="ec-thm-name">Lemma 5.5.6</span>.</span> Let \(q\) be a power of \(p \geq 3\), let \(\chi\colon \F_q^\times \to \{\pm 1\}\) be the
 unique character of order \(2\), extended by \(\chi(0) \coloneqq 0\), and let \(E/\F_q\) be
-given by \(y^2 = f(x)\) as in Definition <a href="#def-ff-hasse-invariant">5.5.3</a>.  Then
+given by \(y^2 = f(x)\) as in Definition <a href="#def-ff-hasse-invariant">5.5.4</a>.  Then
 </p>
 \begin{equation}
 \label{eq:ff-character-sum}
@@ -1087,7 +1098,7 @@ gives \eqref{eq:ff-character-sum} [<a class="ec-cite" href="#bib-Silverman09">Si
 
 <div class="ec-thm ec-corollary" id="cor-ff-supersingular-trace">
 <p>
-<span class="ec-thm-head"><span class="ec-thm-name">Corollary 5.5.6</span>.</span> Let \(E\) be an elliptic curve over \(\F_q\), \(q = p^e\), with trace of Frobenius \(a\)
+<span class="ec-thm-head"><span class="ec-thm-name">Corollary 5.5.7</span>.</span> Let \(E\) be an elliptic curve over \(\F_q\), \(q = p^e\), with trace of Frobenius \(a\)
 (Definition <a href="#def-ff-trace">5.3.7</a>).  Then \(E\) is supersingular if and only if
 \(a \equiv 0 \pmod p\).
 </p>
@@ -1119,8 +1130,8 @@ Theorem <a href="#thm-ff-supersingular">5.4.1</a>, with \(r = e\), finishes the 
 
 <div class="ec-thm ec-theorem" id="thm-ff-hasse-invariant">
 <p>
-<span class="ec-thm-head"><span class="ec-thm-name">Theorem 5.5.7</span>.</span> Let \(q\) be a power of \(p \geq 3\) and let \(E\) be an elliptic curve over \(\F_q\), given
-by \(y^2 = f(x)\) as in Definition <a href="#def-ff-hasse-invariant">5.5.3</a>, with Hasse invariant \(A\).
+<span class="ec-thm-head"><span class="ec-thm-name">Theorem 5.5.8</span>.</span> Let \(q\) be a power of \(p \geq 3\) and let \(E\) be an elliptic curve over \(\F_q\), given
+by \(y^2 = f(x)\) as in Definition <a href="#def-ff-hasse-invariant">5.5.4</a>, with Hasse invariant \(A\).
 For \(r \geq 1\), let \(A_{p^r}\) be the coefficient of \(x^{p^r-1}\) in
 \(f(x)^{(p^r-1)/2}\), so that \(A_p = A\).  The following are equivalent.
 </p>
@@ -1140,7 +1151,7 @@ This is [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Theorem V.4.1(a)]
 
 <p>
 Since \(\F_q^\times\) is cyclic of order \(q - 1\), we have \(\chi(z) = z^{(q-1)/2}\) in
-\(\F_q\) for every \(z \in \F_q\), including \(z = 0\).  So Lemma <a href="#lem-ff-character-sum">5.5.5</a>
+\(\F_q\) for every \(z \in \F_q\), including \(z = 0\).  So Lemma <a href="#lem-ff-character-sum">5.5.6</a>
 reads
 </p>
 \begin{equation*}
@@ -1155,7 +1166,7 @@ surviving term is the one with \(n = q - 1\), and
 \(\#E(\F_q) = 1 - A_q\) in \(\F_q\).  Comparing with \(\#E(\F_q) = q + 1 - a\) gives
 \(a \equiv A_q \pmod p\), so conditions <a href="#it-ff-hasse-supersingular">1</a> and
 <a href="#it-ff-hasse-aq">2</a> are
-equivalent by Corollary <a href="#cor-ff-supersingular-trace">5.5.6</a>.
+equivalent by Corollary <a href="#cor-ff-supersingular-trace">5.5.7</a>.
 </p>
 
 <p>
@@ -1181,7 +1192,7 @@ For conditions <a href="#it-ff-hasse-a">3</a> and <a href="#it-ff-hasse-cartier"
 
 <div class="ec-thm ec-example" id="eg-ff-hasse-invariant">
 <p>
-<span class="ec-thm-head"><span class="ec-thm-name">Example 5.5.8</span>.</span> Let \(E\colon y^2 = x^3 - x\), and write \(m \coloneqq (p-1)/2\).  Then
+<span class="ec-thm-head"><span class="ec-thm-name">Example 5.5.9</span>.</span> Let \(E\colon y^2 = x^3 - x\), and write \(m \coloneqq (p-1)/2\).  Then
 \(f^{(p-1)/2} = x^m (x^2-1)^m\), whose exponents are all congruent to \(m\) modulo \(2\).
 So the coefficient \(A\) of \(x^{p-1} = x^{2m}\) vanishes unless \(m\) is even, that is,
 unless \(p \equiv 1 \pmod 4\); and when \(p \equiv 1 \pmod 4\) the one surviving term gives
@@ -1209,7 +1220,7 @@ the supersingular \(j\)-invariants of each characteristic; note \(1728 = 1\) in 
 <p>
 Both lists are as short as part <a href="#it-ff-ss-p-inseparable">3</a> of
 Theorem <a href="#thm-ff-supersingular">5.4.1</a> promises, and they satisfy the mass formula of
-Theorem <a href="#thm-ff-deuring-mass">5.5.9</a>: in characteristic \(11\) the two supersingular curves have
+Theorem <a href="#thm-ff-deuring-mass">5.5.10</a>: in characteristic \(11\) the two supersingular curves have
 \(j = 0\) and \(j = 1728\), so \(\#\Aut(E)\) is \(6\) and \(4\) by
 Theorem <a href="04-ec-algebraic.html#thm-ec-automorphisms">4.7.11</a>, and \(1/6 + 1/4 = 5/12 = (11-1)/24\); in characteristic
 \(13\) the only one has \(j = 5\), with \(\#\Aut(E) = 2\) and \(1/2 = (13-1)/24\).
@@ -1222,7 +1233,7 @@ We close with a count of the supersingular curves, weighted by their automorphis
 
 <div class="ec-thm ec-theorem" id="thm-ff-deuring-mass">
 <p>
-<span class="ec-thm-head"><span class="ec-thm-name">Theorem 5.5.9</span> <span class="ec-thm-title">(Mass formula)</span>.</span> Let \(p\) be a prime.  Then
+<span class="ec-thm-head"><span class="ec-thm-name">Theorem 5.5.10</span> <span class="ec-thm-title">(Mass formula)</span>.</span> Let \(p\) be a prime.  Then
 </p>
 \begin{equation}
 \label{eq:ff-deuring-mass}
@@ -1238,15 +1249,15 @@ where \(E\) runs over the isomorphism classes of supersingular elliptic curves o
 <summary><span class="ec-proof-head">Proof.</span></summary>
 <p>
 Due to Deuring [<a class="ec-cite" href="#bib-Deuring41">Deu41</a>]; see [<a class="ec-cite" href="#bib-Voight21">Voi21</a>, (42.3.9)] and
-[<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Exercise 5.9].  Remark <a href="#rem-ff-deuring-mass">5.5.10</a> explains what a proof
+[<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Exercise 5.9].  Remark <a href="#rem-ff-deuring-mass">5.5.11</a> explains what a proof
 needs.
 </p>
 </details>
 
 <div class="ec-thm ec-remark" id="rem-ff-deuring-mass">
 <p>
-<span class="ec-thm-head"><span class="ec-thm-name">Remark 5.5.10</span>.</span> The mass formula does not follow from Theorems <a href="#thm-ff-supersingular">5.4.1</a> and
-<a href="#thm-ff-hasse-invariant">5.5.7</a> alone: those say which curves are supersingular, not how many
+<span class="ec-thm-head"><span class="ec-thm-name">Remark 5.5.11</span>.</span> The mass formula does not follow from Theorems <a href="#thm-ff-supersingular">5.4.1</a> and
+<a href="#thm-ff-hasse-invariant">5.5.8</a> alone: those say which curves are supersingular, not how many
 there are.  Two routes to \eqref{eq:ff-deuring-mass} are worth recording.
 </p>
 
@@ -1288,9 +1299,9 @@ them, with \(\varepsilon \in \{0, 1, 2\}\) depending on \(p \bmod 12\)
 </div>
 </div>
 
-<div id="outline-container-org8e58924" class="outline-2 ec-references">
-<h2 id="org8e58924">References</h2>
-<div class="outline-text-2" id="text-org8e58924">
+<div id="outline-container-orge724dab" class="outline-2 ec-references">
+<h2 id="orge724dab">References</h2>
+<div class="outline-text-2" id="text-orge724dab">
 <dl class="ec-bibliography">
 <dt id="bib-Achter-Howe17">[AH17]</dt>
 <dd>Jeffrey D. Achter and Everett W. Howe. <i>Hasse&ndash;Witt and Cartier&ndash;Manin matrices: a warning and a request</i>. 2017. arXiv:1710.10726.</dd>

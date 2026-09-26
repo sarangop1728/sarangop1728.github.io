@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2026-09-24 Thu 08:35 -->
+<!-- 2026-09-26 Sat 08:14 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Elliptic curves as algebraic curves</title>
@@ -23,7 +23,7 @@
 <ol class="ec-toc">
 <li class="ec-toc-chapter"><a href="00-preface.html"><span class="ec-toc-num"></span><span class="ec-toc-text">Preface</span></a></li>
 <li class="ec-toc-chapter"><a href="01-riemann-surfaces.html"><span class="ec-toc-num">1</span><span class="ec-toc-text">Elliptic curves as Riemann surfaces<span class="ec-toc-status"><span class="ec-status-progress">2 of 8 sections finished</span></span></span></a></li>
-<li class="ec-toc-chapter"><a href="02-varieties.html"><span class="ec-toc-num">2</span><span class="ec-toc-text">Algebraic varieties<span class="ec-toc-status"><span class="ec-status-progress">0 of 4 sections finished</span></span></span></a></li>
+<li class="ec-toc-chapter"><a href="02-varieties.html"><span class="ec-toc-num">2</span><span class="ec-toc-text">Algebraic varieties<span class="ec-toc-status"><span class="ec-status-progress">1 of 4 sections finished</span></span></span></a></li>
 <li class="ec-toc-chapter"><a href="03-curves.html"><span class="ec-toc-num">3</span><span class="ec-toc-text">Algebraic curves<span class="ec-toc-status"><span class="ec-status-progress">0 of 7 sections finished</span></span></span></a></li>
 <li class="ec-toc-chapter is-current"><a href="04-ec-algebraic.html" aria-current="page"><span class="ec-toc-num">4</span><span class="ec-toc-text">Elliptic curves as algebraic curves<span class="ec-toc-status"><span class="ec-status-progress">1 of 8 sections finished</span></span></span></a>
 <ol class="ec-toc-sections">
@@ -57,7 +57,7 @@
 </div>
 <div id="content" class="content">
 <h1 class="title"><span class="ec-chapter-label">Chapter 4</span>Elliptic curves as algebraic curves</h1>
-<div class="sources" id="org3221054">
+<div class="sources" id="org1517f18">
 <p>
 This chapter follows [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Chapter III], with some material from
 [<a class="ec-cite" href="#bib-Milne20">Mil20</a>, Sections II.1, II.2, II.5 and II.6], and [<a class="ec-cite" href="#bib-Voight21">Voi21</a>, Chapters 2, 3, 5
@@ -83,12 +83,14 @@ group \(\Gm\), whose invariant differential, torsion points and Tate module are 
 the end of Section <a href="#sec-ec-tate">4.5</a>.
 </p>
 
+<div class="ec-thm ec-situation" id="sit-ec-standing">
 <p>
-We keep the notation of the previous chapters: \(k\) is an arbitrary field,
+<span class="ec-thm-head"><span class="ec-thm-name">Situation 4.0.1</span>.</span> We keep Situation <a href="02-varieties.html#sit-var-standing">2.0.1</a>: \(k\) is an arbitrary field, not assumed perfect,
 \(\ksep \subseteq \kbar\) are a separable and an algebraic closure, and
 \(\Gal_k \coloneqq \Gal(\ksep/k)\).  For a \(k\)-variety \(X\) and a field
 \(L \supseteq k\), recall that \(X_L\) is the base extension.
 </p>
+</div>
 
 <div id="outline-container-sec-ec-weierstrass" class="outline-2">
 <h2 id="sec-ec-weierstrass"><span class="section-number" id="s4.1">4.1</span> Weierstrass equations</h2>
@@ -882,7 +884,7 @@ divisor of degree \(1\) is automatically a rational point.  Since \(O\) is a rat
 \(\Pic^0 E\) is also \((\Pic^0 E_{\ksep})^{\Gal_k}\) by
 Warning <a href="03-curves.html#warn-crv-pic-rational-point">3.3.8</a>, so both readings of \(\Pic^0\) give \(E(k)\).  This
 fails for a nice curve of genus \(1\) with no rational point, such as
-\(3X^3 + 4Y^3 + 5Z^3 = 0\) (Remark <a href="#rem-ec-selmer-name">4.8.13</a>).  We use \(\kappa\) to transport
+\(3X^3 + 4Y^3 + 5Z^3 = 0\) (Remark <a href="#rem-ec-selmer-name">4.8.14</a>).  We use \(\kappa\) to transport
 the group structure of \(\Pic^0 E\) to \(E(k)\).  So \(P + Q\) is the unique rational point
 with
 </p>
@@ -893,7 +895,7 @@ with
 and \(O\) is the identity.  For every field \(L \supseteq k\), the same construction on
 \(E_L\) makes \(E(L)\) a group, and \(E(k) \subseteq E(L)\) is a subgroup.  If \(L/k\) is
 Galois, then \(\Gal(L/k)\) acts on \(E(L)\) by group automorphisms, with fixed points
-\(E(k)\) (Proposition <a href="02-varieties.html#prop-var-galois-points">2.1.12</a>).
+\(E(k)\) (Proposition <a href="02-varieties.html#prop-var-galois-points">2.1.13</a>).
 </p>
 
 <div class="ec-thm ec-corollary" id="cor-ec-principal">
@@ -962,7 +964,7 @@ the roots in \(y\) of \(f(x_0, y) = 0\), whose sum is \(-a_1x_0 - a_3\).  Part <
 </details>
 
 <figure class="ec-figure" id="fig-ec-chord-tangent">
-<img class="ec-tikz" src="figures/6371a1b64367da1c96e8fc53e8c75f08a0f54638.svg" style="--ec-w: 18.62em" alt=""/>
+<img class="ec-tikz" src="figures/3eae2564c62f558e4e7578c97a92813db85ad53f.svg" style="--ec-w: 18.62em" alt=""/>
 <figcaption><span class="ec-thm-name">Figure 4.2.1</span>. The chord-and-tangent law on \(y^2 = x^3 - x + 1\) over \(\R\): the line through \(P = (-1, 1)\) and \(Q = (0, 1)\) meets the curve again at \(R = (1, 1)\), and \(P + Q = -R = (1, -1)\).</figcaption>
 </figure>
 
@@ -1785,7 +1787,7 @@ the discussion after Theorem <a href="#thm-ec-isogeny-kernel">4.3.8</a>, since \
 </div>
 
 <div id="outline-container-sec-ec-tate" class="outline-2">
-<h2 id="sec-ec-tate"><span class="ec-status ec-status-draft"><span class="ec-status-label ec-status-draft">Draft</span><time datetime="2026-09-23">23 Sep 2026</time></span><span class="section-number" id="s4.5">4.5</span> The Tate module</h2>
+<h2 id="sec-ec-tate"><span class="ec-status ec-status-draft"><span class="ec-status-label ec-status-draft">Draft</span><time datetime="2026-09-26">26 Sep 2026</time></span><span class="section-number" id="s4.5">4.5</span> The Tate module</h2>
 <div class="outline-text-2" id="text-sec-ec-tate">
 <div class="ec-thm ec-corollary" id="cor-ec-torsion">
 <p>
@@ -1858,13 +1860,19 @@ action of \(\Gal_{\F_7}\) on \(\mu_{3^n}(\kbar) \cong \Z/3^n\Z\), and \(7\) has 
 </div>
 
 <p>
-The groups \(E[\ell^n](\ksep)\) for varying \(n\) fit together.  Throughout this section and the
-next, \(\ell\) is a prime different from \(\operatorname{char} k\).
+The groups \(E[\ell^n](\ksep)\) for varying \(n\) fit together.
 </p>
+
+<div class="ec-thm ec-situation" id="sit-ec-tate">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Situation 4.5.3</span>.</span> In this section and the next, \(\ell\) is a prime different from
+\(\operatorname{char} k\).
+</p>
+</div>
 
 <div class="ec-thm ec-definition" id="def-ec-tate-module">
 <p>
-<span class="ec-thm-head"><span class="ec-thm-name">Definition 4.5.3</span>.</span> The (\(\ell\)-adic) <dfn class="ec-cdef" id="gls-tate-module" data-gls="tate-module">Tate module</dfn> of \(E\) is the inverse limit
+<span class="ec-thm-head"><span class="ec-thm-name">Definition 4.5.4</span>.</span> The (\(\ell\)-adic) <dfn class="ec-cdef" id="gls-tate-module" data-gls="tate-module">Tate module</dfn> of \(E\) is the inverse limit
 </p>
 \begin{equation*}
 T_\ell(E) \coloneqq \varprojlim_n E[\ell^n](\ksep),
@@ -1917,7 +1925,7 @@ and \(\Lambda\) and \(2\pi i\Z\) are the first homology groups of \(\C/\Lambda\)
 
 <div class="ec-thm ec-example" id="eg-ec-tate-y2-x3-x">
 <p>
-<span class="ec-thm-head"><span class="ec-thm-name">Example 4.5.4</span>.</span> Let \(E\colon y^2 = x^3 - x\) over \(\Q\), and \(\ell = 2\).  Then
+<span class="ec-thm-head"><span class="ec-thm-name">Example 4.5.5</span>.</span> Let \(E\colon y^2 = x^3 - x\) over \(\Q\), and \(\ell = 2\).  Then
 \(E[2](\Qbar) = \{O, (0, 0), (1, 0), (-1, 0)\}\).  By Algorithm <a href="#alg-ec-group-law">4.2.7</a>,
 \([2]^*x \coloneqq x \circ [2] = (x^2 + 1)^2/\bigl(4(x^3 - x)\bigr)\), and
 </p>
@@ -1968,7 +1976,7 @@ characteristic \(p\), the scalar \(c_{[p]} = 0\) detects that \([p]\) is insepar
 
 <div class="ec-thm ec-theorem" id="thm-ec-tate-injective">
 <p>
-<span class="ec-thm-head"><span class="ec-thm-name">Theorem 4.5.5</span>.</span> The map \(\Hom(E_1, E_2) \otimes \Z_\ell \to \Hom_{\Z_\ell}(T_\ell(E_1), T_\ell(E_2))\),
+<span class="ec-thm-head"><span class="ec-thm-name">Theorem 4.5.6</span>.</span> The map \(\Hom(E_1, E_2) \otimes \Z_\ell \to \Hom_{\Z_\ell}(T_\ell(E_1), T_\ell(E_2))\),
 \(\varphi \mapsto \varphi_\ell\), is injective.  Consequently \(\Hom(E_1, E_2)\) is a free
 \(\Z\)-module of rank at most \(4\).
 </p>
@@ -2322,8 +2330,8 @@ first collect what we need about quaternion algebras.
 </p>
 </div>
 
-<div id="outline-container-org946de59" class="outline-3">
-<h3 id="org946de59"><span class="section-number" id="s4.7.1">4.7.1</span> Quaternion algebras</h3>
+<div id="outline-container-orgc2cc2b2" class="outline-3">
+<h3 id="orgc2cc2b2"><span class="section-number" id="s4.7.1">4.7.1</span> Quaternion algebras</h3>
 <div class="outline-text-3" id="text-7-1">
 <p>
 We follow [<a class="ec-cite" href="#bib-Voight21">Voi21</a>].  Throughout this subsection, \(F\) is a field with
@@ -2476,8 +2484,8 @@ containing the others.</li>
 </div>
 </div>
 
-<div id="outline-container-org4fa6d7c" class="outline-3">
-<h3 id="org4fa6d7c"><span class="section-number" id="s4.7.2">4.7.2</span> The endomorphism ring</h3>
+<div id="outline-container-org40b4a75" class="outline-3">
+<h3 id="org40b4a75"><span class="section-number" id="s4.7.2">4.7.2</span> The endomorphism ring</h3>
 <div class="outline-text-3" id="text-7-2">
 <div class="ec-thm ec-theorem" id="thm-ec-endomorphism-ring">
 <p>
@@ -2497,7 +2505,7 @@ If \(\operatorname{char} k = 0\), case <a href="#it-ec-end-quaternion">3</a> doe
 <summary><span class="ec-proof-head">Proof.</span></summary>
 <p>
 The ring \(\End(E)\) has no zero divisors (Proposition <a href="#prop-ec-hom-torsion-free">4.3.7</a>), it is
-free of rank at most \(4\) over \(\Z\) (Theorem <a href="#thm-ec-tate-injective">4.5.5</a>), and it has the
+free of rank at most \(4\) over \(\Z\) (Theorem <a href="#thm-ec-tate-injective">4.5.6</a>), and it has the
 involution \(\varphi \mapsto \hat\varphi\), with \(\hat\varphi\varphi = [\deg\varphi]\) a
 positive integer for \(\varphi \neq 0\) (Theorem <a href="#thm-ec-dual">4.3.10</a>).  These force the three
 cases, as follows.  The degree is a positive definite quadratic form on \(\End(E)\)
@@ -2539,7 +2547,7 @@ possibilities for \(B\): the field \(\Q\); a quadratic field, which is imaginary
 \((a, b \mid \Q)\), in which \(a = i^2 = -\nrd(i) = -\deg i < 0\) because
 \(\trd(i) = 0\), and likewise \(b < 0\), so that \(B\) is definite by
 Proposition <a href="#prop-ec-quaternion-split">4.7.5</a>.  Finally, \(\End(E)\) is a subring of \(B\), and
-a free \(\Z\)-module of finite rank (Theorem <a href="#thm-ec-tate-injective">4.5.5</a>) spanning \(B\); so
+a free \(\Z\)-module of finite rank (Theorem <a href="#thm-ec-tate-injective">4.5.6</a>) spanning \(B\); so
 it is an order (Definition <a href="#def-ec-order">4.7.6</a>).  Compare [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Theorem III.9.3
 and Corollary III.9.4].  In characteristic \(0\), \(\End(E)\) is commutative by
 Corollary <a href="#cor-ec-c-phi-ring">4.4.6</a>, which rules out case <a href="#it-ec-end-quaternion">3</a>.
@@ -2658,20 +2666,25 @@ multiplication by some \(\alpha\) with \(\alpha\Lambda_\tau = \Lambda_\tau\), an
 </div>
 
 <div id="outline-container-sec-ec-selmer" class="outline-2">
-<h2 id="sec-ec-selmer"><span class="ec-status ec-status-draft"><span class="ec-status-label ec-status-draft">Draft</span><time datetime="2026-09-21">21 Sep 2026</time></span><span class="section-number" id="s4.8">4.8</span> Selmer elliptic curves</h2>
+<h2 id="sec-ec-selmer"><span class="ec-status ec-status-draft"><span class="ec-status-label ec-status-draft">Draft</span><time datetime="2026-09-26">26 Sep 2026</time></span><span class="section-number" id="s4.8">4.8</span> Selmer elliptic curves</h2>
 <div class="outline-text-2" id="text-sec-ec-selmer">
 <p>
 We end the chapter by running its results on a single family of plane cubics, where
 everything can be computed by hand.  These curves are not given by Weierstrass equations:
 the base point is a flex, but the line \(Z = 0\) is not its tangent, and finding a
-Weierstrass model is part of the work.  Throughout this section
-\(\operatorname{char} k \neq 3\), \(d \in k^\times\), and \(\zeta \in \ksep\) is a
-primitive cube root of \(1\).
+Weierstrass model is part of the work.
 </p>
+
+<div class="ec-thm ec-situation" id="sit-ec-selmer">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Situation 4.8.1</span>.</span> In this section \(\operatorname{char} k \neq 3\), \(d \in k^\times\), and
+\(\zeta \in \ksep\) is a primitive cube root of \(1\).
+</p>
+</div>
 
 <div class="ec-thm ec-definition" id="def-ec-selmer-curve">
 <p>
-<span class="ec-thm-head"><span class="ec-thm-name">Definition 4.8.1</span>.</span> The <dfn class="ec-cdef" id="gls-selmer-elliptic-curve" data-gls="selmer-elliptic-curve">Selmer elliptic curve</dfn> with parameter \(d\) is the plane cubic
+<span class="ec-thm-head"><span class="ec-thm-name">Definition 4.8.2</span>.</span> The <dfn class="ec-cdef" id="gls-selmer-elliptic-curve" data-gls="selmer-elliptic-curve">Selmer elliptic curve</dfn> with parameter \(d\) is the plane cubic
 </p>
 \begin{equation*}
 C_d\colon X^3 + Y^3 = dZ^3, \qquad O \coloneqq (1 : -1 : 0).
@@ -2683,7 +2696,7 @@ We write \(F \coloneqq X^3 + Y^3 - dZ^3\), and
 </div>
 
 <div class="ec-thm ec-proposition" id="prop-ec-selmer-elliptic">
-<p><span class="ec-thm-head"><span class="ec-thm-name">Proposition 4.8.2</span>.</span> </p>
+<p><span class="ec-thm-head"><span class="ec-thm-name">Proposition 4.8.3</span>.</span> </p>
 <ol class="org-ol">
 <li><a id="it-ec-selmer-elliptic"></a> \((C_d, O)\) is an elliptic curve over \(k\).</li>
 <li><a id="it-ec-selmer-flex"></a> The tangent line to \(C_d\) at \(O\) is \(X + Y = 0\), and it meets \(C_d\) only at
@@ -2720,7 +2733,7 @@ line.
 
 <div class="ec-thm ec-proposition" id="prop-ec-selmer-weierstrass">
 <p>
-<span class="ec-thm-head"><span class="ec-thm-name">Proposition 4.8.3</span>.</span> Let \(w \coloneqq Z/(X + Y)\) and \(v \coloneqq X/(X + Y)\) in \(k(C_d)\).
+<span class="ec-thm-head"><span class="ec-thm-name">Proposition 4.8.4</span>.</span> Let \(w \coloneqq Z/(X + Y)\) and \(v \coloneqq X/(X + Y)\) in \(k(C_d)\).
 </p>
 <ol class="org-ol">
 <li><a id="it-ec-selmer-rr-basis"></a> \(\div(w) = Q_1 + Q_2 - 2O\), and \(v\) has a pole of order \(3\) at \(O\) and no other
@@ -2752,7 +2765,7 @@ Weierstrass coordinates for \(y^2 = x^3 - 432d^2\), which has
 <details class="ec-proof">
 <summary><span class="ec-proof-head">Proof.</span></summary>
 <p>
-For every linear form \(h\), the discussion after Proposition <a href="#prop-ec-selmer-elliptic">4.8.2</a>
+For every linear form \(h\), the discussion after Proposition <a href="#prop-ec-selmer-elliptic">4.8.3</a>
 gives \(\div\bigl(h/(X + Y)\bigr) = (h \cap C_d) - 3O\).  For \(h = Z\) this is \(\div(w)\), by
 part <a href="#it-ec-selmer-flex">2</a> of that proposition.  The line \(X = 0\) does not pass through \(O\), so \(v\) has a
 pole of order exactly \(3\) at \(O\).  Since \(\ell(nO) = n\) by Corollary <a href="03-curves.html#cor-crv-rr">3.5.5</a>,
@@ -2818,7 +2831,7 @@ The torsion points of \(C_d\) are cut out by lines.
 </p>
 
 <div class="ec-thm ec-proposition" id="prop-ec-selmer-torsion">
-<p><span class="ec-thm-head"><span class="ec-thm-name">Proposition 4.8.4</span>.</span> </p>
+<p><span class="ec-thm-head"><span class="ec-thm-name">Proposition 4.8.5</span>.</span> </p>
 <ol class="org-ol">
 <li><a id="it-ec-selmer-2-torsion"></a> The non-zero points of \(C_d[2](\kbar)\) are the points \((c : c : 1)\) with \(2c^3 = d\).</li>
 <li><a id="it-ec-selmer-3-torsion-flex"></a> A point \(P \in C_d(\kbar)\) satisfies \([3]P = O\) if and only if \(P\) is a flex.</li>
@@ -2837,7 +2850,7 @@ O,\ Q_1,\ Q_2, \qquad (0 : \zeta^i\delta : 1), \qquad (\zeta^i\delta : 0 : 1),
 <details class="ec-proof">
 <summary><span class="ec-proof-head">Proof.</span></summary>
 <p>
-For part <a href="#it-ec-selmer-2-torsion">1</a>, by part <a href="#it-ec-selmer-negation">4</a> of Proposition <a href="#prop-ec-selmer-weierstrass">4.8.3</a>, \(P = -P\) if and
+For part <a href="#it-ec-selmer-2-torsion">1</a>, by part <a href="#it-ec-selmer-negation">4</a> of Proposition <a href="#prop-ec-selmer-weierstrass">4.8.4</a>, \(P = -P\) if and
 only if \((X_0 : Y_0 : Z_0) = (Y_0 : X_0 : Z_0)\).  Either \(X_0 = Y_0\), or
 \(X_0 = -Y_0\) and \(Z_0 = 0\), which is \(P = O\).  If \(X_0 = Y_0\) and \(Z_0 = 0\), then
 \(2X_0^3 = 0\), so \(\operatorname{char} k = 2\) and again \(P = (1 : 1 : 0) = O\).
@@ -2847,7 +2860,7 @@ only if \((X_0 : Y_0 : Z_0) = (Y_0 : X_0 : Z_0)\).  Either \(X_0 = Y_0\), or
 For part <a href="#it-ec-selmer-3-torsion-flex">2</a>, if the tangent line \(L\) at \(P\) meets \(C_d\) in \(3P\), then \(P + P + P = O\)
 by Proposition <a href="#prop-ec-chord-tangent">4.2.4</a>.  Conversely, if \([3]P = O\), then
 \(3P - 3O = \div(f)\) for some \(f \in \kbar(C_d)\) (Corollary <a href="#cor-ec-principal">4.2.3</a>).  By
-part <a href="#it-ec-selmer-rr-basis">1</a> of Proposition <a href="#prop-ec-selmer-weierstrass">4.8.3</a> and
+part <a href="#it-ec-selmer-rr-basis">1</a> of Proposition <a href="#prop-ec-selmer-weierstrass">4.8.4</a> and
 Proposition <a href="03-curves.html#prop-crv-base-change-ld">3.5.2</a>, \(f\) is a \(\kbar\)-linear combination of
 \(1, w, v\), that is, \(f = h/(X + Y)\) for a linear form \(h\).  So \(h\) cuts out \(3P\),
 and \(h\) is the tangent line at \(P\), meeting \(C_d\) with multiplicity \(3\).
@@ -2871,7 +2884,7 @@ every Selmer curve is supersingular in characteristic \(2\), which fits with \(j
 
 <div class="ec-thm ec-example" id="eg-ec-selmer-2-torsion-q">
 <p>
-<span class="ec-thm-head"><span class="ec-thm-name">Example 4.8.5</span>.</span> Over \(\Q\), \(C_d\) has a rational point of order \(2\) if and only if \(d = 2c^3\) with
+<span class="ec-thm-head"><span class="ec-thm-name">Example 4.8.6</span>.</span> Over \(\Q\), \(C_d\) has a rational point of order \(2\) if and only if \(d = 2c^3\) with
 \(c \in \Q^\times\), and then it is \((c : c : 1)\).  For instance \((1 : 1 : 1) \in C_2(\Q)\).
 Otherwise the three points of order \(2\) are permuted transitively by \(\Gal_\Q\), and
 \(\Q(C_d[2](\Qbar))\) is the splitting field \(\Q(\zeta, \sqrt[3]{d/2})\) of \(2T^3 - d\), of
@@ -2882,7 +2895,7 @@ surjective.
 
 <div class="ec-thm ec-example" id="eg-ec-selmer-3-torsion-q">
 <p>
-<span class="ec-thm-head"><span class="ec-thm-name">Example 4.8.6</span>.</span> Over \(\Q\), the \(\Qbar\)-points \(Q_1\) and \(Q_2\) are never rational, and
+<span class="ec-thm-head"><span class="ec-thm-name">Example 4.8.7</span>.</span> Over \(\Q\), the \(\Qbar\)-points \(Q_1\) and \(Q_2\) are never rational, and
 \((0 : \zeta^i\delta : 1)\) is rational only if \(i = 0\) and \(d = \delta^3\) is a cube.
 So \(C_d(\Q)[3]\) is \(\{O, (0 : \delta : 1), (\delta : 0 : 1)\} \cong \Z/3\Z\) if
 \(d = \delta^3\), and trivial otherwise.  In either case
@@ -2894,7 +2907,7 @@ Corollary <a href="#cor-ec-weil-roots-of-unity">4.6.5</a> requires, and \(C_d[3]
 
 <div class="ec-thm ec-example" id="eg-ec-selmer-fermat">
 <p>
-<span class="ec-thm-head"><span class="ec-thm-name">Example 4.8.7</span>.</span> \(C_1\) is the Fermat cubic \(X^3 + Y^3 = Z^3\).  Fermat's Last Theorem for exponent
+<span class="ec-thm-head"><span class="ec-thm-name">Example 4.8.8</span>.</span> \(C_1\) is the Fermat cubic \(X^3 + Y^3 = Z^3\).  Fermat's Last Theorem for exponent
 \(3\) says exactly that \(C_1(\Q) = \{O, (1 : 0 : 1), (0 : 1 : 1)\}\): every rational
 point is a flex.
 </p>
@@ -2918,7 +2931,7 @@ F(sP + tQ) = s^3F(P) + 3s^2t\,\langle P, P, Q\rangle + 3st^2\,\langle P, Q, Q\ra
 
 <div class="ec-thm ec-proposition" id="prop-ec-selmer-addition">
 <p>
-<span class="ec-thm-head"><span class="ec-thm-name">Proposition 4.8.8</span>.</span> Let \(P_1 = (X_1 : Y_1 : Z_1)\) and \(P_2 = (X_2 : Y_2 : Z_2)\) be points of \(C_d(\kbar)\).
+<span class="ec-thm-head"><span class="ec-thm-name">Proposition 4.8.9</span>.</span> Let \(P_1 = (X_1 : Y_1 : Z_1)\) and \(P_2 = (X_2 : Y_2 : Z_2)\) be points of \(C_d(\kbar)\).
 </p>
 <ol class="org-ol">
 <li><p>
@@ -2946,7 +2959,7 @@ Proposition <a href="#prop-ec-addition-formulas">4.2.6</a> applies to \(C_d\) wi
 part <a href="#it-ec-selmer-chord-formula">1</a>, the coefficients there are \(\nabla F(P_1) \cdot P_2 = 3A\) and
 \(\nabla F(P_2) \cdot P_1 = 3B\), and since \(3 \in k^\times\) the third intersection
 point of the line through \(P_1\) and \(P_2\) is \(BP_1 - AP_2\).  Its negative is
-\eqref{eq:ec-selmer-chord} by part <a href="#it-ec-selmer-negation">4</a> of Proposition <a href="#prop-ec-selmer-weierstrass">4.8.3</a>.
+\eqref{eq:ec-selmer-chord} by part <a href="#it-ec-selmer-negation">4</a> of Proposition <a href="#prop-ec-selmer-weierstrass">4.8.4</a>.
 </p>
 
 <p>
@@ -2970,7 +2983,7 @@ and \([2]P = -R\) is \eqref{eq:ec-selmer-doubling}.
 
 <p>
 On the line \(X = Y\), \eqref{eq:ec-selmer-doubling} gives \((-3X_0^4 : 3X_0^4 : 0) = O\),
-recovering part <a href="#it-ec-selmer-2-torsion">1</a> of Proposition <a href="#prop-ec-selmer-torsion">4.8.4</a>.  Note that the derivation
+recovering part <a href="#it-ec-selmer-2-torsion">1</a> of Proposition <a href="#prop-ec-selmer-torsion">4.8.5</a>.  Note that the derivation
 collapses in characteristic \(3\), where the middle terms of
 \eqref{eq:ec-selmer-expansion} vanish, and \(F = (X + Y - \delta Z)^3\) over \(\kbar\) is a
 triple line.
@@ -2978,7 +2991,7 @@ triple line.
 
 <div class="ec-thm ec-example" id="eg-ec-selmer-d7">
 <p>
-<span class="ec-thm-head"><span class="ec-thm-name">Example 4.8.9</span>.</span> On \(C_7\), let \(P \coloneqq (2 : -1 : 1)\), since \(2^3 + (-1)^3 = 7\).  By
+<span class="ec-thm-head"><span class="ec-thm-name">Example 4.8.10</span>.</span> On \(C_7\), let \(P \coloneqq (2 : -1 : 1)\), since \(2^3 + (-1)^3 = 7\).  By
 \eqref{eq:ec-selmer-doubling}, \([2]P = (15 : 12 : 9) = (5 : 4 : 3)\), and indeed
 \(5^3 + 4^3 = 189 = 7 \cdot 3^3\).  With \(P_1 = P\) and \(P_2 = [2]P\),
 \eqref{eq:ec-selmer-chord} has \(A = 3\) and \(B = -29\), so
@@ -2988,7 +3001,7 @@ triple line.
 \end{equation*}
 <p>
 and doubling \([2]P\) gives \([4]P = (-1256 : 1265 : 183)\).  By
-Examples <a href="#eg-ec-selmer-2-torsion-q">4.8.5</a> and <a href="#eg-ec-selmer-3-torsion-q">4.8.6</a>, \(C_7(\Q)\) has no
+Examples <a href="#eg-ec-selmer-2-torsion-q">4.8.6</a> and <a href="#eg-ec-selmer-3-torsion-q">4.8.7</a>, \(C_7(\Q)\) has no
 points of order \(2\) or \(3\).  The
 growth of the coordinates suggests that \(P\) has infinite order; this will follow from the
 Nagell&#x2013;Lutz theorem in Chapter 8.  Under \(\varphi\), \(P\) maps to
@@ -3003,7 +3016,7 @@ endomorphisms beyond \(\Z\) come from.
 
 <div class="ec-thm ec-proposition" id="prop-ec-selmer-cm">
 <p>
-<span class="ec-thm-head"><span class="ec-thm-name">Proposition 4.8.10</span>.</span> Let \(\alpha(X : Y : Z) \coloneqq (X : Y : \zeta Z)\), a morphism
+<span class="ec-thm-head"><span class="ec-thm-name">Proposition 4.8.11</span>.</span> Let \(\alpha(X : Y : Z) \coloneqq (X : Y : \zeta Z)\), a morphism
 \(C_{d,k(\zeta)} \to C_{d,k(\zeta)}\).
 </p>
 <ol class="org-ol">
@@ -3057,17 +3070,17 @@ by Theorem <a href="#thm-ec-endomorphism-ring">4.7.8</a>, and it contains the ma
 Example <a href="#eg-ec-cm-zeta">4.7.10</a> in another model, and \(1 - \alpha\) is the algebraic counterpart of
 multiplication by \(1 - \zeta\) on the Eisenstein lattice.  Note also
 \((1 - \alpha)^2 = -3\alpha\), so \(\ker(1 - \alpha) \subseteq C_d[3](\kbar)\), in accordance with
-Proposition <a href="#prop-ec-selmer-torsion">4.8.4</a>.
+Proposition <a href="#prop-ec-selmer-torsion">4.8.5</a>.
 </p>
 
 <div class="ec-thm ec-example" id="eg-ec-selmer-isogeny">
 <p>
-<span class="ec-thm-head"><span class="ec-thm-name">Example 4.8.11</span>.</span> The kernel \(\{O, Q_1, Q_2\}\) of \(1 - \alpha\) is cut out by the line \(Z = 0\), so it is
+<span class="ec-thm-head"><span class="ec-thm-name">Example 4.8.12</span>.</span> The kernel \(\{O, Q_1, Q_2\}\) of \(1 - \alpha\) is cut out by the line \(Z = 0\), so it is
 \(\Gal_k\)-stable, even though \(1 - \alpha\) is only an endomorphism of
 \(C_{d,k(\zeta)}\).  By Proposition <a href="#prop-ec-quotient">4.3.9</a>, there is a \(3\)-isogeny over \(k\)
 with this kernel.
 Suppose \(\operatorname{char} k \neq 2\), and use the model \(y^2 = x^3 + D\) with
-\(D = -432d^2\) of Proposition <a href="#prop-ec-selmer-weierstrass">4.8.3</a>, in which \(Q_1\) and \(Q_2\)
+\(D = -432d^2\) of Proposition <a href="#prop-ec-selmer-weierstrass">4.8.4</a>, in which \(Q_1\) and \(Q_2\)
 become the \(\kbar\)-points \((0, \pm\sqrt{D})\).  The isogeny is
 </p>
 \begin{equation*}
@@ -3094,7 +3107,7 @@ Finally, the Selmer curves are twists of one another.
 
 <div class="ec-thm ec-proposition" id="prop-ec-selmer-twists">
 <p>
-<span class="ec-thm-head"><span class="ec-thm-name">Proposition 4.8.12</span>.</span> Let \(d, d' \in k^\times\).
+<span class="ec-thm-head"><span class="ec-thm-name">Proposition 4.8.13</span>.</span> Let \(d, d' \in k^\times\).
 </p>
 <ol class="org-ol">
 <li><a id="it-ec-selmer-twists-cube"></a> If \(d' = c^3d\) with \(c \in k^\times\), then \((X : Y : Z) \mapsto (X : Y : Z/c)\) is an
@@ -3114,7 +3127,7 @@ So the Selmer curves all become isomorphic over \(\kbar\), and if
 <p>
 Part <a href="#it-ec-selmer-twists-cube">1</a> is immediate, since \(d'(Z/c)^3 = dZ^3\) and \(O\) is fixed.  For part <a href="#it-ec-selmer-twists-converse">2</a>, use the
 models \(y^2 = x^3 - 432d^2\) and \(y^2 = x^3 - 432d'^2\) of
-Proposition <a href="#prop-ec-selmer-weierstrass">4.8.3</a>.  By Proposition <a href="#prop-ec-change-of-variables">4.1.7</a>,
+Proposition <a href="#prop-ec-selmer-weierstrass">4.8.4</a>.  By Proposition <a href="#prop-ec-change-of-variables">4.1.7</a>,
 an isomorphism between them has \(d^2 = u^6d'^2\) for some \(u \in k^\times\), so
 \(d/d' = \pm u^3\), and \(-1 = (-1)^3\).  They become isomorphic over \(\kbar\) by
 Proposition <a href="#prop-ec-j-invariant">4.1.10</a>, since \(j = 0\).
@@ -3128,7 +3141,7 @@ general are the subject of Chapter 10.
 
 <div class="ec-thm ec-remark" id="rem-ec-selmer-name">
 <p>
-<span class="ec-thm-head"><span class="ec-thm-name">Remark 4.8.13</span>.</span> Selmer studied the diagonal cubics \(aX^3 + bY^3 + cZ^3 = 0\) [<a class="ec-cite" href="#bib-Selmer-51">Sel51</a>].  Among them
+<span class="ec-thm-head"><span class="ec-thm-name">Remark 4.8.14</span>.</span> Selmer studied the diagonal cubics \(aX^3 + bY^3 + cZ^3 = 0\) [<a class="ec-cite" href="#bib-Selmer-51">Sel51</a>].  Among them
 is the curve \(3X^3 + 4Y^3 + 5Z^3 = 0\) of Section <a href="#sec-ec-weierstrass">4.1</a>, which is a nice
 curve of genus \(1\) with no rational point, so not an elliptic curve over \(\Q\).  It has a
 Jacobian, an elliptic curve over \(\Q\), and in general the Jacobian of
@@ -3141,9 +3154,9 @@ descent.
 </div>
 </div>
 
-<div id="outline-container-orgfe29742" class="outline-2 ec-references">
-<h2 id="orgfe29742">References</h2>
-<div class="outline-text-2" id="text-orgfe29742">
+<div id="outline-container-orga6da5b2" class="outline-2 ec-references">
+<h2 id="orga6da5b2">References</h2>
+<div class="outline-text-2" id="text-orga6da5b2">
 <dl class="ec-bibliography">
 <dt id="bib-Magma">[BCP97]</dt>
 <dd>Wieb Bosma, John Cannon and Catherine Playoust. &ldquo;The Magma algebra system. I. The user language&rdquo;. In: <i>J. Symbolic Comput.</i> 24.3&ndash;4 (1997), pp. 235&ndash;265. Computational algebra and number theory (London, 1993). <a href="https://doi.org/10.1006/jsco.1996.0125">doi:10.1006/jsco.1996.0125</a>.</dd>
