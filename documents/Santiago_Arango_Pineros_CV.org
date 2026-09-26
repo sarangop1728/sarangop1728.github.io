@@ -142,7 +142,14 @@
 - 2024 :: University of Georgia, Athens, Algebra and number theory seminar
 - 2023 :: University of South Carolina, Number theory seminar
 
-* Departmental service
+* Organization
+** Special sessions
+- 2026 :: [[https://www.ams.org/meetings/sectional/2331_program_ss6.html][Arithmetic Statistics of Rational Points and Number Fields]],
+  AMS Spring Eastern Sectional Meeting, Boston College. \\
+  With Niven Achenjang and Sameera Vemulapalli.
+- 2024 :: [[https://jointmathematicsmeetings.org/meetings/national/jmm2024/2300_program_ss103.html][Explicit Computation with Stacks]] (MRC special session),
+  Joint Mathematics Meetings, San Francisco. \\
+  With Jonathan Love and Sameera Vemulapalli.
 ** UMass Amherst
 - 2025--present :: [[https://dmzb.github.io/FCNTS.html][Five College Number Theory Seminar]], co-organizer
 ** Emory University
