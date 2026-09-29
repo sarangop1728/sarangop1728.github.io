@@ -61,7 +61,7 @@ We will use the remaining time to solve homework problems.
 
 ** Lecture notes
 
-+ [[file:~/Dropbox/sarangop1728.github.io/lecture-notes/elliptic-curves/index.html][Lecture notes]], with the worksheets and a PDF. They are a work in progress,
++ [[https://sarangop1728.github.io/lecture-notes/elliptic-curves/index.html][Lecture notes]], with the worksheets and a PDF. They are a work in progress,
   updated during the semester.
 
 ** Other references

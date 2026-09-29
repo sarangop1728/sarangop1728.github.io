@@ -22,11 +22,11 @@
 ;;   :image    (:src "images/x.png" :alt "..." :href "...")  :href defaults to :src
 ;; ---------------------------------------------------------------------------
 (defconst sap/papers
-  '(;; (:title "\\(7\\)-adic Galois representations of elliptic curves over the rationals via Kummer descent"
-    ;; :authors (("David Zureick--Brown" . "https://dmzb.github.io/"))
-    ;; :links ((arxiv . "2608.18525"))
-    ;; :image (:src "images/thumbs/7-adic-settlers-of-cartan.svg" :href "images/7-adic-settlers-of-cartan.jpg"
-    ;;         :alt "7-adic Settlers of Catan"))
+  '((:title "\\(7\\)-adic Galois representations of elliptic curves over the rationals via Kummer descent"
+    :authors (("David Zureick--Brown" . "https://dmzb.github.io/"))
+    :links ((arxiv . "2608.18525"))
+    :image (:src "images/thumbs/7-adic-settlers-of-cartan.svg" :href "images/7-adic-settlers-of-cartan.jpg"
+            :alt "7-adic Settlers of Catan"))
 
     (:title "Appendix to: On \\(p\\)-adic solubility of \\(Ax^{\\ell} + By^{m} + Cz^{n} = 0\\)"
             :authors (("Christopher Keyes" . "https://c-keyes.github.io/")

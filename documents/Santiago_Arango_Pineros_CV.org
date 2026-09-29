@@ -127,7 +127,11 @@
 - Fall 2019 :: Mate 1203: Cálculo Diferencial
 - Spring 2019 :: Mate 1207: Cálculo Vectorial
 
+* Invited conference talks
+- 2026 :: [[https://ctnt-summer.math.uconn.edu/conference-26/][Connecticut Summer School in Number Theory Conference]]
 * Invited seminar talks
+- 2026 :: Rice University, Algebra seminar
+- 2026 :: Dartmouth College, Algebra and number theory seminar
 - 2025 :: Harvard University, Number theory seminar
 - 2025 :: Wesleyan University, Algebra seminar
 - 2025 :: Amherst College, Five college number theory seminar

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2026-09-26 Sat 08:14 -->
+<!-- 2026-09-29 Tue 08:42 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Elliptic curves over local fields</title>
@@ -27,7 +27,11 @@
 <li class="ec-toc-chapter"><a href="03-curves.html"><span class="ec-toc-num">3</span><span class="ec-toc-text">Algebraic curves<span class="ec-toc-status"><span class="ec-status-progress">0 of 7 sections finished</span></span></span></a></li>
 <li class="ec-toc-chapter"><a href="04-ec-algebraic.html"><span class="ec-toc-num">4</span><span class="ec-toc-text">Elliptic curves as algebraic curves<span class="ec-toc-status"><span class="ec-status-progress">1 of 8 sections finished</span></span></span></a></li>
 <li class="ec-toc-chapter"><a href="05-finite-fields.html"><span class="ec-toc-num">5</span><span class="ec-toc-text">Elliptic curves over finite fields<span class="ec-toc-status"><span class="ec-status-progress">0 of 5 sections finished</span></span></span></a></li>
-<li class="ec-toc-chapter is-current"><a href="06-local-fields.html" aria-current="page"><span class="ec-toc-num">6</span><span class="ec-toc-text">Elliptic curves over local fields<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
+<li class="ec-toc-chapter is-current"><a href="06-local-fields.html" aria-current="page"><span class="ec-toc-num">6</span><span class="ec-toc-text">Elliptic curves over local fields<span class="ec-toc-status"><span class="ec-status-progress">0 of 2 sections finished</span></span></span></a>
+<ol class="ec-toc-sections">
+<li class="ec-toc-level-1"><a href="#s6.1"><span class="ec-toc-num">6.1</span><span class="ec-toc-text">Minimal Weierstrass equations<span class="ec-toc-status"><span class="ec-status-label ec-status-draft">Draft</span></span></span></a></li>
+<li class="ec-toc-level-1"><a href="#s6.2"><span class="ec-toc-num">6.2</span><span class="ec-toc-text">Reduction modulo \(\pi\)<span class="ec-toc-status"><span class="ec-status-label ec-status-draft">Draft</span></span></span></a></li>
+</ol></li>
 <li class="ec-toc-chapter"><a href="07-galois-cohomology.html"><span class="ec-toc-num">7</span><span class="ec-toc-text">Galois cohomology<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
 <li class="ec-toc-chapter"><a href="08-mordell-weil.html"><span class="ec-toc-num">8</span><span class="ec-toc-text">The Mordell&ndash;Weil theorem<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
 <li class="ec-toc-chapter"><a href="09-integral-points.html"><span class="ec-toc-num">9</span><span class="ec-toc-text">Integral points<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
@@ -45,6 +49,815 @@
 </div>
 <div id="content" class="content">
 <h1 class="title"><span class="ec-chapter-label">Chapter 6</span>Elliptic curves over local fields</h1>
+<div class="sources" id="org950b845">
+<p>
+This chapter follows [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Chapter VII].
+</p>
+
+</div>
+
+<p>
+A <dfn class="ec-cdef" id="gls-number-field" data-gls="number-field">number field</dfn> is a finite extension of \(\Q\).  A <dfn class="ec-cdef" id="gls-global-function-field" data-gls="global-function-field">global function field</dfn> is
+a finite extension of \(\F_p(t)\) for some prime \(p\) or, equivalently, it is the function
+field \(k(C)\) of a geometrically integral curve \(C\) defined over a finite field \(\F_q\).
+We say that \(k\) is a <dfn class="ec-cdef" id="gls-global-field" data-gls="global-field">global field</dfn> if it is either a number field or a global
+function field.
+</p>
+
+<p>
+For \(k\) a global field, we let \(\Omega_k\) denote the set of <dfn class="ec-cdef" id="gls-place" data-gls="place">places</dfn> of
+\(k\): equivalence classes of non-trivial absolute values on \(k\).  For
+\(v \in \Omega_k\), we denote by \(k_v\) the <dfn class="ec-cdef" id="gls-completion" data-gls="completion">completion</dfn> of \(k\) at \(v\).  A
+<dfn class="ec-cdef" id="gls-local-field" data-gls="local-field">local field</dfn> is the completion of a global field at a place.
+</p>
+
+<div class="ec-thm ec-remark" id="rem-lf-places">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Remark 6.0.1</span>.</span> A place \(v\) need not come from a discrete valuation.
+</p>
+<ul class="org-ul">
+<li>If \(k\) is a number field, the archimedean places correspond to the real embeddings and
+the pairs of complex conjugate embeddings of \(k\), and for them \(k_v\) is \(\R\) or
+\(\C\).  There \(v\) is an absolute value but not a valuation, and \(k_v\) has no ring of
+integers in the sense below.</li>
+<li>The non-archimedean places of a number field correspond to the non-zero prime ideals
+\(\pp\) of its ring of integers; a global function field has only non-archimedean places,
+and they correspond to the closed points of the nice curve with function field \(k\).</li>
+</ul>
+<p>
+In the non-archimedean case we write \(v\colon k_v^\times \to \Z\) for the normalized
+discrete valuation of the place, extended by \(v(0) = \infty\); then \(k_v\) is complete
+for \(v\) and its residue field is finite.
+</p>
+</div>
+
+<div class="ec-thm ec-situation" id="sit-lf-standing">
+<p><span class="ec-thm-head"><span class="ec-thm-name">Situation 6.0.2</span>.</span> </p>
+<ul class="org-ul">
+<li>\(k\) is a global field.</li>
+<li>\(v \in \Omega_k\) is a non-archimedean place, identified with its normalized discrete
+valuation \(v\colon k_v^\times \to \Z\).</li>
+<li>\(k_v\) is the local field, the completion of \(k\) at \(v\).</li>
+<li>\(\calO_v \coloneqq \{x \in k_v : v(x) \geq 0\}\) is the <dfn class="ec-cdef" id="gls-ring-of-integers" data-gls="ring-of-integers">ring of integers</dfn> of
+\(k_v\).</li>
+<li>\(\calO_v^\times \coloneqq \{x \in k_v : v(x) = 0\}\) is the <dfn class="ec-cdef" id="gls-unit-group" data-gls="unit-group">unit group</dfn> of
+\(\calO_v\).</li>
+<li>\(\mm_v \coloneqq \{x \in k_v : v(x) > 0\}\) is the <dfn class="ec-cdef" id="gls-maximal-ideal" data-gls="maximal-ideal">maximal ideal</dfn> of \(\calO_v\).</li>
+<li>\(\pi_v\) is a uniformizer for \(\mm_v\), that is, a generator \(\mm_v = \pi_v\calO_v\).
+Since \(v\) is normalized, \(v(\pi_v) = 1\).</li>
+<li>\(\kappa(v) \coloneqq \calO_v/\mm_v\) is the <dfn class="ec-cdef" id="gls-residue-field" data-gls="residue-field">residue field</dfn>.</li>
+</ul>
+<p>
+The residue field \(\kappa(v)\) is finite, hence perfect; this is not an extra hypothesis.
+The characteristic of \(k\) is arbitrary.
+</p>
+</div>
+
+<div id="outline-container-sec-lf-minimal" class="outline-2">
+<h2 id="sec-lf-minimal"><span class="ec-status ec-status-draft"><span class="ec-status-label ec-status-draft">Draft</span><time datetime="2026-09-29">29 Sep 2026</time></span><span class="section-number" id="s6.1">6.1</span> Minimal Weierstrass equations</h2>
+<div class="outline-text-2" id="text-sec-lf-minimal">
+<p>
+We are in Situation <a href="#sit-lf-standing">6.0.2</a>.  Given an elliptic curve \(E\) defined over
+\(k_v\), it has a Weierstrass equation
+</p>
+\begin{equation*}
+y^2 + a_1xy + a_3y = x^3 + a_2x^2 + a_4x + a_6
+\end{equation*}
+<p>
+by part <a href="04-ec-algebraic.html#it-ec-model-existence">1</a> of Theorem <a href="04-ec-algebraic.html#thm-ec-weierstrass-model">4.1.6</a>, which we encode by
+\((a_1, a_2, a_3, a_4, a_6) \in k_v^5\).
+</p>
+
+<p>
+Given \(u \in k_v^\times\), substituting \(u^{-2}x\) for \(x\) and \(u^{-3}y\) for \(y\) and
+multiplying by \(u^6\) yields another Weierstrass equation for \(E\) with coefficients
+</p>
+\begin{equation*}
+(ua_1, u^2a_2, u^3a_3, u^4a_4, u^6a_6).
+\end{equation*}
+<p>
+This is the change of variables <a class="ec-eqref" href="04-ec-algebraic.html#mjx-eqn%3Aeq%3Aec-change-of-variables">(4.1.3)</a> with parameters
+\((u^{-1}, 0, 0, 0)\), and <a class="ec-eqref" href="04-ec-algebraic.html#mjx-eqn%3Aeq%3Aec-cov-coeffs">(4.1.4)</a> gives the same coefficients.
+</p>
+
+<p>
+So, choosing \(u \in k_v^\times\) with
+</p>
+\begin{equation*}
+v(u^ia_i) = v(u^i) + v(a_i) = i\,v(u) + v(a_i) \geq 0,
+\quad\Longleftrightarrow\quad
+v(u) \geq -v(a_i)/i,
+\end{equation*}
+<p>
+for each \(i \in \{1, 2, 3, 4, 6\}\) with \(a_i \neq 0\), for instance \(u = \pi_v^n\) with
+\(n\) large, ensures that
+</p>
+\begin{equation*}
+(ua_1, u^2a_2, u^3a_3, u^4a_4, u^6a_6) \in \calO_v^5.
+\end{equation*}
+<p>
+In particular, \(v(\Delta(ua_1, \dots, u^6a_6)) \geq 0\), since the discriminant is a
+polynomial with integer coefficients in the coefficients of the equation
+(Definition <a href="04-ec-algebraic.html#def-ec-weierstrass">4.1.2</a>).
+</p>
+
+<div class="ec-thm ec-definition" id="def-lf-minimal">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Definition 6.1.1</span>.</span> A Weierstrass equation \((a_1, a_2, a_3, a_4, a_6) \in k_v^5\) for \(E\) is called
+<dfn class="ec-cdef" id="gls-minimal-weierstrass-equation" data-gls="minimal-weierstrass-equation">\(v\)-minimal</dfn> if \(v(\Delta(a_1, \dots, a_6))\) is
+minimized subject to the constraint \((a_1, a_2, a_3, a_4, a_6) \in \calO_v^5\).  This
+minimal value of \(v(\Delta)\) is the <dfn class="ec-cdef" id="gls-valuation-of-the-minimal-discriminant" data-gls="valuation-of-the-minimal-discriminant">valuation of the minimal discriminant</dfn> of
+\(E\) at \(v\).
+</p>
+</div>
+
+<p>
+The following is [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Proposition VII.1.3].  It uses the transformation
+formulas <a class="ec-eqref" href="04-ec-algebraic.html#mjx-eqn%3Aeq%3Aec-cov-coeffs">(4.1.4)</a> of Proposition <a href="04-ec-algebraic.html#prop-ec-change-of-variables">4.1.7</a>.
+</p>
+
+<div class="ec-thm ec-proposition" id="prop-lf-minimal">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Proposition 6.1.2</span>.</span> Let \(E\) be an elliptic curve over \(k_v\).
+</p>
+<ol class="org-ol">
+<li><a id="it-lf-minimal-exists"></a> \(E\) has a \(v\)-minimal Weierstrass equation.</li>
+<li><a id="it-lf-minimal-unique"></a> Any two \(v\)-minimal Weierstrass equations for \(E\) are related
+by a change of variables <a class="ec-eqref" href="04-ec-algebraic.html#mjx-eqn%3Aeq%3Aec-change-of-variables">(4.1.3)</a> with \(u \in \calO_v^\times\)
+and \(r, s, t \in \calO_v\).</li>
+<li><a id="it-lf-minimal-differential"></a> The invariant differential \(\omega\) of a \(v\)-minimal
+Weierstrass equation for \(E\) is unique up to multiplication by an element of
+\(\calO_v^\times\).</li>
+<li><a id="it-lf-minimal-converse"></a> Conversely, if a Weierstrass equation for \(E\) has
+coefficients in \(\calO_v\), then any change of variables
+<a class="ec-eqref" href="04-ec-algebraic.html#mjx-eqn%3Aeq%3Aec-change-of-variables">(4.1.3)</a> taking it to a \(v\)-minimal Weierstrass equation has
+\(u, r, s, t \in \calO_v\).</li>
+</ol>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+For part <a href="#it-lf-minimal-exists">1</a>, the discussion before Definition <a href="#def-lf-minimal">6.1.1</a> gives a
+Weierstrass equation for \(E\) with coefficients in \(\calO_v\).  For every such equation
+\(v(\Delta)\) lies in \(\Z_{\geq 0}\), because \(v\) is discrete and \(\Delta \in \calO_v\),
+so the minimum is attained.
+</p>
+
+<p>
+For part <a href="#it-lf-minimal-converse">4</a>, let the unprimed equation have coefficients in
+\(\calO_v\) and let the primed one, obtained by <a class="ec-eqref" href="04-ec-algebraic.html#mjx-eqn%3Aeq%3Aec-change-of-variables">(4.1.3)</a>, be
+\(v\)-minimal.  By minimality \(v(\Delta') \leq v(\Delta)\), and
+\(u^{12}\Delta' = \Delta\) by Proposition <a href="04-ec-algebraic.html#prop-ec-change-of-variables">4.1.7</a>, so
+\(12\,v(u) = v(\Delta) - v(\Delta') \geq 0\) and \(u \in \calO_v\).  All the \(a_i\),
+\(a_i'\), \(b_i\) and \(b_i'\) lie in \(\calO_v\), since the \(b_i\) are polynomials with
+integer coefficients in the \(a_i\).  By the \(b_6\) and \(b_8\) lines of
+<a class="ec-eqref" href="04-ec-algebraic.html#mjx-eqn%3Aeq%3Aec-cov-coeffs">(4.1.4)</a>, \(r\) is a root of
+</p>
+\begin{align*}
+P_6(T) &\coloneqq 4T^3 + b_2T^2 + 2b_4T + b_6 - u^6b_6', \\
+P_8(T) &\coloneqq 3T^4 + b_2T^3 + 3b_4T^2 + 3b_6T + b_8 - u^8b_8',
+\end{align*}
+<p>
+hence of the monic polynomial
+</p>
+\begin{equation*}
+T\,P_6(T) - P_8(T) = T^4 - b_4T^2 - (2b_6 + u^6b_6')\,T - (b_8 - u^8b_8')
+\end{equation*}
+<p>
+with coefficients in \(\calO_v\).  So \(r\) is integral over \(\calO_v\), and \(r \in \calO_v\)
+because a discrete valuation ring is integrally closed.  Next, the \(a_2\) line of
+<a class="ec-eqref" href="04-ec-algebraic.html#mjx-eqn%3Aeq%3Aec-cov-coeffs">(4.1.4)</a> says that \(s\) is a root of the monic polynomial
+</p>
+\begin{equation*}
+T^2 + a_1T - (a_2 + 3r - u^2a_2'),
+\end{equation*}
+<p>
+whose coefficients are now in \(\calO_v\), so \(s \in \calO_v\).  Finally, the \(a_6\) line
+says that \(t\) is a root of the monic polynomial
+</p>
+\begin{equation*}
+T^2 + (a_3 + ra_1)\,T - (a_6 + ra_4 + r^2a_2 + r^3 - u^6a_6'),
+\end{equation*}
+<p>
+so \(t \in \calO_v\).
+</p>
+
+<p>
+For part <a href="#it-lf-minimal-unique">2</a>, two Weierstrass equations for \(E\) are related by some
+change of variables <a class="ec-eqref" href="04-ec-algebraic.html#mjx-eqn%3Aeq%3Aec-change-of-variables">(4.1.3)</a> with \(u \in k_v^\times\) and
+\(r, s, t \in k_v\), by part <a href="04-ec-algebraic.html#it-ec-model-uniqueness">2</a> of Theorem
+<a href="04-ec-algebraic.html#thm-ec-weierstrass-model">4.1.6</a>.  If both are \(v\)-minimal, the first has coefficients in
+\(\calO_v\), so \(u, r, s, t \in \calO_v\) by part <a href="#it-lf-minimal-converse">4</a>.  Moreover
+\(v(\Delta) = v(\Delta')\), so \(v(u) = 0\) and \(u \in \calO_v^\times\).
+</p>
+
+<p>
+Part <a href="#it-lf-minimal-differential">3</a> follows from part <a href="#it-lf-minimal-unique">2</a>, since
+\(\omega = u^{-1}\omega'\) by Proposition <a href="04-ec-algebraic.html#prop-ec-change-of-variables">4.1.7</a>.
+</p>
+</details>
+</div>
+</div>
+
+<div id="outline-container-sec-lf-reduction" class="outline-2">
+<h2 id="sec-lf-reduction"><span class="ec-status ec-status-draft"><span class="ec-status-label ec-status-draft">Draft</span><time datetime="2026-09-29">29 Sep 2026</time></span><span class="section-number" id="s6.2">6.2</span> Reduction modulo \(\pi\)</h2>
+<div class="outline-text-2" id="text-sec-lf-reduction">
+<p>
+We are in Situation <a href="#sit-lf-standing">6.0.2</a>.  The scheme \(\Spec \calO_v\) has two prime ideals: the
+<dfn class="ec-cdef" id="gls-generic-point" data-gls="generic-point">generic point</dfn> \((0)\), with residue field \(k_v\), and the <dfn class="ec-cdef" id="gls-special-point" data-gls="special-point">special point</dfn>
+\(\mm_v\), with residue field \(\kappa(v)\), which is its only closed point.  The following
+definitions are [<a class="ec-cite" href="#bib-Poonen2017">Poo17</a>, Definitions 3.2.6 and 3.2.8].
+</p>
+
+<div class="ec-thm ec-definition" id="def-lf-model">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Definition 6.2.1</span>.</span> Let \(X\) be a \(k_v\)-scheme.  An <dfn class="ec-cdef" id="gls-integral-model" data-gls="integral-model">integral model</dfn> of \(X\) is an
+\(\calO_v\)-scheme \(\calX\) together with an isomorphism of \(k_v\)-schemes
+\(\calX_{k_v} \coloneqq \calX \times_{\Spec \calO_v} \Spec k_v \to X\).  The
+\(k_v\)-scheme \(\calX_{k_v}\) is the <dfn class="ec-cdef" id="gls-generic-fiber" data-gls="generic-fiber">generic fiber</dfn> of \(\calX\), and the
+\(\kappa(v)\)-scheme
+</p>
+\begin{equation*}
+\calX_\pi \coloneqq \calX \times_{\Spec \calO_v} \Spec \kappa(v)
+\end{equation*}
+<p>
+is its <dfn class="ec-cdef" id="gls-special-fiber" data-gls="special-fiber">special fiber</dfn>.
+</p>
+</div>
+
+<p>
+The subscript \(\pi\) is only notation: the special fiber depends on \(\mm_v\), not on the
+choice of the uniformizer \(\pi_v\).  As it stands, the definition allows useless models:
+\(X\) itself, viewed as an \(\calO_v\)-scheme, is an integral model of \(X\) with empty
+special fiber.  The models we use are the following.
+</p>
+
+<p>
+Let \(E\) be an elliptic curve over \(k_v\).  The previous section produced Weierstrass
+equations for \(E\) with coefficients in \(\calO_v\), and each of them defines an integral
+model of \(E\) [<a class="ec-cite" href="#bib-Poonen2017">Poo17</a>, Section 5.7.6].
+</p>
+
+<div class="ec-thm ec-definition" id="def-lf-weierstrass-model">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Definition 6.2.2</span>.</span> Let \((a_1, a_2, a_3, a_4, a_6) \in \calO_v^5\) be a Weierstrass equation for \(E\).  Its
+<dfn class="ec-cdef" id="gls-weierstrass-model" data-gls="weierstrass-model">Weierstrass model</dfn> is the closed subscheme \(\calW \subseteq \PP^2_{\calO_v}\) cut out
+by
+</p>
+\begin{equation*}
+Y^2Z + a_1XYZ + a_3YZ^2 = X^3 + a_2X^2Z + a_4XZ^2 + a_6Z^3.
+\end{equation*}
+<p>
+If the equation is \(v\)-minimal (Definition <a href="#def-lf-minimal">6.1.1</a>), then \(\calW\) is a
+<dfn class="ec-cdef" id="gls-minimal-weierstrass-model" data-gls="minimal-weierstrass-model">minimal Weierstrass model</dfn> of \(E\).
+</p>
+</div>
+
+<p>
+The generic fiber of \(\calW\) is the curve in \(\PP^2_{k_v}\) cut out by the same
+equation, which is \(E\), so \(\calW\) is an integral model of \(E\); it is proper over
+\(\calO_v\), being closed in \(\PP^2_{\calO_v}\).  Write \(a \mapsto \bar a\) for the
+reduction \(\calO_v \to \kappa(v)\).  The special fiber of \(\calW\) is the Weierstrass
+cubic
+</p>
+\begin{equation*}
+\calW_\pi\colon Y^2Z + \bar a_1XYZ + \bar a_3YZ^2
+= X^3 + \bar a_2X^2Z + \bar a_4XZ^2 + \bar a_6Z^3
+\end{equation*}
+<p>
+over \(\kappa(v)\).  Its discriminant is \(\bar\Delta\), since \(\Delta\) is a polynomial
+with integer coefficients in the \(a_i\), so by Proposition <a href="04-ec-algebraic.html#prop-ec-weierstrass-smooth">4.1.5</a> the
+cubic \(\calW_\pi\) is smooth if \(v(\Delta) = 0\) and singular if \(v(\Delta) > 0\).
+</p>
+
+<p>
+We would like to define the reduction of \(E\) modulo \(\pi\) to be the special fiber of
+such a model.  Since \(E\) has many integral models, there are two ways to make this a
+definition:
+</p>
+<ul class="org-ul">
+<li>show that \(\calX_\pi \cong \calX'_\pi\) for any two integral models \(\calX\) and
+\(\calX'\) of \(E\); or</li>
+<li>find a canonical integral model for every elliptic curve over \(k_v\), and define the
+reduction modulo \(\pi\) in terms of it.</li>
+</ul>
+<p>
+The next example shows that the first way is not an option, even among Weierstrass models.
+</p>
+
+<div class="ec-thm ec-example" id="eg-lf-model-dependence">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Example 6.2.3</span>.</span> Let \(k = \Q\) and let \(v = p\) be a prime with \(p \geq 5\), so that \(k_v = \Q_p\),
+\(\calO_v = \Z_p\), \(\pi_v = p\) and \(\kappa(v) = \F_p\).  Recall that \(\Spec \Z_p\)
+has two prime ideals: the generic point \((0)\) and the special point \(p\Z_p\), its only closed
+point.
+</p>
+
+<p>
+The elliptic curves
+</p>
+\begin{equation*}
+E\colon Y^2Z = X^3 + Z^3
+\qquad\text{and}\qquad
+E'\colon Y^2Z = X^3 + p^6Z^3
+\end{equation*}
+<p>
+in \(\PP^2_{\Q_p}\) are isomorphic over \(\Q_p\).  Indeed, the linear automorphism
+\((X : Y : Z) \mapsto (p^2X : p^3Y : Z)\) of \(\PP^2_{\Q_p}\) pulls back the equation of
+\(E'\) to \(p^6\) times the equation of \(E\),
+</p>
+\begin{equation*}
+(p^3Y)^2Z - (p^2X)^3 - p^6Z^3 = p^6\,(Y^2Z - X^3 - Z^3),
+\end{equation*}
+<p>
+so it maps \(E\) isomorphically onto \(E'\).  It is the substitution of
+Section <a href="#sec-lf-minimal">6.1</a> with \(u = p\).
+</p>
+
+<p>
+Since both equations have coefficients in \(\Z_p\), the Weierstrass models
+</p>
+\begin{equation*}
+\calW\colon Y^2Z = X^3 + Z^3
+\qquad\text{and}\qquad
+\calW'\colon Y^2Z = X^3 + p^6Z^3
+\end{equation*}
+<p>
+in \(\PP^2_{\Z_p}\) have generic fibers \(\calW_{\Q_p} = E\) and
+\(\calW'_{\Q_p} = E' \cong E\): both are integral models of \(E\).  Their special fibers
+are
+</p>
+\begin{equation*}
+\calW_p\colon Y^2Z = X^3 + Z^3
+\qquad\text{and}\qquad
+\calW'_p\colon Y^2Z = X^3
+\end{equation*}
+<p>
+over \(\F_p\).  The equation of \(\calW\) has discriminant \(\Delta = -2^4 3^3\), a unit in
+\(\Z_p\) since \(p \geq 5\), so \(\calW_p\) is an elliptic curve over \(\F_p\).  The
+equation of \(\calW'\) has discriminant \(p^{12}\Delta\), and \(\calW'_p\) has a cusp at the
+rational point \((0 : 0 : 1)\).  So \(\calW_p \not\cong \calW'_p\), although
+\(\calW_{\Q_p} \cong \calW'_{\Q_p}\); see Figure <a href="#fig-lf-two-models">6.2.1</a>.  The first equation
+is \(p\)-minimal, and the second is not.
+</p>
+</div>
+
+<figure class="ec-figure" id="fig-lf-two-models">
+<img class="ec-tikz" src="figures/4eba9e73370ffcb67ae0b0339905d485dc3af0f5.svg" style="--ec-w: 30.63em" alt=""/>
+<figcaption><span class="ec-thm-name">Figure 6.2.1</span>. The models \(\calW\) and \(\calW'\) of Example <a href="#eg-lf-model-dependence">6.2.3</a> over \(\Spec \Z_p\): the same generic fiber \(E\) over \((0)\), and non-isomorphic special fibers over \(p\Z_p\).</figcaption>
+</figure>
+
+<p>
+So we take the second way.  By part <a href="#it-lf-minimal-unique">2</a> of
+Proposition <a href="#prop-lf-minimal">6.1.2</a>, a minimal Weierstrass model of \(E\) is unique up to a
+change of variables with \(u \in \calO_v^\times\) and \(r, s, t \in \calO_v\), and we follow
+[<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Section VII.2] in defining the reduction by it.
+</p>
+
+<div class="ec-thm ec-definition" id="def-lf-reduction">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Definition 6.2.4</span>.</span> Let \(E\) be an elliptic curve over \(k_v\), and let \(\calW\) be a minimal Weierstrass
+model of \(E\).  The <dfn class="ec-cdef" id="gls-reduction-modulo-pi" data-gls="reduction-modulo-pi">reduction of \(E\) modulo \(\pi\)</dfn> is the
+special fiber
+</p>
+\begin{equation*}
+E_\pi \coloneqq \calW_\pi,
+\end{equation*}
+<p>
+a Weierstrass cubic over \(\kappa(v)\).  We write \(E_\pi^{\ns}\) for its nonsingular part,
+as in Proposition <a href="04-ec-algebraic.html#prop-ec-singular-group">4.2.11</a>; it is \(E_\pi\) if \(E_\pi\) is smooth.
+</p>
+</div>
+
+<div class="ec-thm ec-remark" id="rem-lf-reduction-well-defined">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Remark 6.2.5</span>.</span> The reduction \(E_\pi\) is well defined up to isomorphism over \(\kappa(v)\).  Two minimal
+Weierstrass equations for \(E\) are related by a change of variables
+<a class="ec-eqref" href="04-ec-algebraic.html#mjx-eqn%3Aeq%3Aec-change-of-variables">(4.1.3)</a> with \(u \in \calO_v^\times\) and \(r, s, t \in \calO_v\)
+(part <a href="#it-lf-minimal-unique">2</a> of Proposition <a href="#prop-lf-minimal">6.1.2</a>).  The formulas
+<a class="ec-eqref" href="04-ec-algebraic.html#mjx-eqn%3Aeq%3Aec-cov-coeffs">(4.1.4)</a> express each \(u^ia_i'\) as a polynomial with integer coefficients
+in the \(a_j\), \(r\), \(s\) and \(t\), so they remain true after reduction, and the change of
+variables with parameters \(\bar u \neq 0\), \(\bar r\), \(\bar s\), \(\bar t\)
+takes the reduction of one equation to the reduction of the other.
+</p>
+</div>
+
+<p>
+Luckily, there is also a canonical integral model with good functorial properties: the
+Néron model.  The following is [<a class="ec-cite" href="#bib-Poonen2017">Poo17</a>, Definition 3.5.82], for an elliptic curve.
+</p>
+
+<div class="ec-thm ec-definition" id="def-lf-neron">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Definition 6.2.6</span>.</span> Let \(E\) be an elliptic curve over \(k_v\).  A <dfn class="ec-cdef" id="gls-n-ron-model" data-gls="n-ron-model">Néron model</dfn> of \(E\) is a smooth
+\(\calO_v\)-scheme \(\calE\) together with an isomorphism \(\calE_{k_v} \to E\), such that
+for every smooth \(\calO_v\)-scheme \(\calT\) the map
+\(\calE(\calT) \to E(\calT_{k_v})\), restriction to the generic fiber, is bijective.
+</p>
+</div>
+
+<div class="ec-thm ec-theorem" id="thm-lf-neron">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Theorem 6.2.7</span> <span class="ec-thm-title">(Néron)</span>.</span> Let \(E\) be an elliptic curve over \(k_v\).
+</p>
+<ol class="org-ol">
+<li><a id="it-lf-neron-exists"></a> \(E\) has a Néron model \(\calE\).  It is of finite type over
+\(\calO_v\), unique up to unique isomorphism, and a group scheme over \(\calO_v\).</li>
+<li><a id="it-lf-neron-points"></a> Restriction to the generic fiber is a bijection
+\(\calE(\calO_v) \to E(k_v)\).</li>
+<li><a id="it-lf-neron-weierstrass"></a> Let \(\calW\) be a minimal Weierstrass model of \(E\), and
+\(\calE^0 \subseteq \calE\) the open subscheme obtained by removing the non-identity
+components of the special fiber \(\calE_\pi\).  Then the smooth locus
+\(\calW^{\smooth}\) of \(\calW \to \Spec \calO_v\) is isomorphic to \(\calE^0\).</li>
+<li><a id="it-lf-neron-good"></a> If \(E\) has a Weierstrass equation with coefficients in
+\(\calO_v\) and \(v(\Delta) = 0\), then its Weierstrass model \(\calW\) is smooth and
+proper over \(\calO_v\), and \(\calW \cong \calE\).</li>
+</ol>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+Existence and finite type are [<a class="ec-cite" href="#bib-Poonen2017">Poo17</a>, Theorem 5.7.25].  Uniqueness follows from
+Yoneda's lemma in the category of smooth \(\calO_v\)-schemes, and the group structure of
+\(E\) makes \(\calE\) a group object there [<a class="ec-cite" href="#bib-Poonen2017">Poo17</a>, Section 3.5.16].  Part
+<a href="#it-lf-neron-points">2</a> is the definition with \(\calT = \Spec \calO_v\).  Part
+<a href="#it-lf-neron-weierstrass">3</a> is [<a class="ec-cite" href="#bib-Poonen2017">Poo17</a>, Theorem 5.7.30].  For part
+<a href="#it-lf-neron-good">4</a>, the equation is \(v\)-minimal because \(v(\Delta) \geq 0\) for every
+integral equation, and then \(\calW\) is an abelian scheme over \(\calO_v\), in particular
+smooth, hence regular [<a class="ec-cite" href="#bib-Poonen2017">Poo17</a>, Section 5.7.6].  So \(\calW\) is already the minimal
+regular proper model of \(E\) constructed there, and it is its own smooth locus, so
+\(\calW \cong \calE\) by the first isomorphism of [<a class="ec-cite" href="#bib-Poonen2017">Poo17</a>, Theorem 5.7.30].
+</p>
+</details>
+
+<p>
+Part <a href="#it-lf-neron-weierstrass">3</a> of Theorem <a href="#thm-lf-neron">6.2.7</a> is how the Néron model is
+constructed from a minimal Weierstrass model [<a class="ec-cite" href="#bib-Poonen2017">Poo17</a>, Section 5.7.6].  Blowing up
+the non-regular closed points of \(\calW\) repeatedly yields a regular proper integral model
+of \(E\), in fact the minimal one; removing the closed points of its special fiber at which
+it is not smooth over \(\calO_v\) yields \(\calE\).  Removing only the singular point of
+\(E_\pi\) from \(\calW\), if there is one, yields \(\calE^0\).
+</p>
+
+<p>
+So the special fiber \(\calE_\pi\) of the Néron model and the reduction \(E_\pi\) of
+Definition <a href="#def-lf-reduction">6.2.4</a> agree when \(E_\pi\) is smooth, by part <a href="#it-lf-neron-good">4</a>
+of Theorem <a href="#thm-lf-neron">6.2.7</a>, but not in general, despite the notation.  When \(E_\pi\) is
+singular, \(E_\pi\) is proper and not smooth, while \(\calE_\pi\) is smooth, and possibly
+neither connected nor proper.  What they share is
+</p>
+\begin{equation*}
+E_\pi^{\ns} \cong \calW^{\smooth}_\pi \cong \calE^0_\pi,
+\end{equation*}
+<p>
+the identity component of \(\calE_\pi\), by part <a href="#it-lf-neron-weierstrass">3</a> of
+Theorem <a href="#thm-lf-neron">6.2.7</a>.
+</p>
+
+<p>
+We now reduce \(k_v\)-points.  A \(k_v\)-point \(P\) of \(\PP^2\) has homogeneous coordinates
+\(P = (X_0 : Y_0 : Z_0)\) with \(X_0, Y_0, Z_0 \in \calO_v\), not all in \(\mm_v\): scale by
+a power of \(\pi_v\).  They are unique up to multiplication by \(\calO_v^\times\), so
+\(\bar P \coloneqq (\bar X_0 : \bar Y_0 : \bar Z_0)\) is a well-defined
+\(\kappa(v)\)-point of \(\PP^2\).  If \(P \in E(k_v)\), with \(E \subseteq \PP^2_{k_v}\)
+cut out by the equation of \(\calW\), then \(\bar P\) satisfies the reduced equation,
+so \(\bar P \in E_\pi(\kappa(v))\).
+This is the <dfn class="ec-cdef" id="gls-reduction-map" data-gls="reduction-map">reduction map</dfn>
+</p>
+\begin{equation*}
+E(k_v) \to E_\pi(\kappa(v)), \qquad P \mapsto \bar P.
+\end{equation*}
+<p>
+In terms of models, \(P\) extends uniquely to an \(\calO_v\)-point of the proper
+\(\calO_v\)-scheme \(\calW\) [<a class="ec-cite" href="#bib-Poonen2017">Poo17</a>, Theorem 3.2.12], namely
+\(\Spec \calO_v \to \PP^2_{\calO_v}\) given by \((X_0 : Y_0 : Z_0)\), and \(\bar P\) is
+its restriction to the special point.  Let \(O = (0 : 1 : 0)\).  Following
+[<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Section VII.2], we define the subsets
+</p>
+\begin{align*}
+E_0(k_v) &\coloneqq \{P \in E(k_v) : \bar P \in E_\pi^{\ns}(\kappa(v))\}, \\
+E_1(k_v) &\coloneqq \{P \in E(k_v) : \bar P = \bar O\}
+\end{align*}
+<p>
+of \(k_v\)-points with nonsingular reduction, and the <dfn class="ec-cdef" id="gls-kernel-of-reduction" data-gls="kernel-of-reduction">kernel of reduction</dfn>.  Since
+\(\bar O = (0 : 1 : 0)\) is a smooth point of \(E_\pi\) by
+Proposition <a href="04-ec-algebraic.html#prop-ec-weierstrass-smooth">4.1.5</a>, \(E_1(k_v) \subseteq E_0(k_v)\).  Neither set
+depends on the choice of minimal Weierstrass equation: the change of variables of
+Remark <a href="#rem-lf-reduction-well-defined">6.2.5</a> has coefficients in \(\calO_v\), so it commutes with
+reduction of \(k_v\)-points, and its reduction maps nonsingular points of one reduced cubic to
+nonsingular points of the other.  An \(\calO_v\)-point of \(\calW\) lies in
+\(\calW^{\smooth}\) exactly when its restriction to the special point does, so
+\(E_0(k_v) = \calW^{\smooth}(\calO_v)\), which is \(\calE^0(\calO_v)\) by
+Theorem <a href="#thm-lf-neron">6.2.7</a>.
+</p>
+
+<p>
+The following is [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Proposition VII.2.1].
+</p>
+
+<div class="ec-thm ec-proposition" id="prop-lf-reduction-exact">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Proposition 6.2.8</span>.</span> Let \(E\) be an elliptic curve over \(k_v\).  Then \(E_0(k_v)\) is a subgroup of \(E(k_v)\),
+and there is an exact sequence of abelian groups
+</p>
+\begin{equation*}
+0 \to E_1(k_v) \to E_0(k_v) \to E_\pi^{\ns}(\kappa(v)) \to 0,
+\end{equation*}
+<p>
+where the map on the right is the reduction map \(P \mapsto \bar P\).
+</p>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+Fix a minimal Weierstrass equation for \(E\), let \(F\) be its cubic form, with coefficients
+in \(\calO_v\), and let \(f(x, y) \coloneqq F(x, y, 1)\).  Then \(\bar F\) is the cubic
+form of \(E_\pi\).  Neither \(E\) nor \(E_\pi\) contains a line: the line at infinity meets
+each of them only at \(O\), respectively \(\bar O\) (Definition <a href="04-ec-algebraic.html#def-ec-weierstrass">4.1.2</a>),
+and an affine line \(y = \alpha x + \beta\) or \(x = \gamma\) on the curve would make
+\(f(x, \alpha x + \beta)\), of degree \(3\) in \(x\), or \(f(\gamma, y)\), monic of degree
+\(2\) in \(y\), vanish identically.
+</p>
+
+<p>
+<b>The reduction map is surjective.</b>  Let \(Q \in E_\pi^{\ns}(\kappa(v))\).  If
+\(Q = \bar O\), then \(Q\) is the reduction of \(O\).  Otherwise \(Q = (\alpha, \beta)\)
+is affine, and \(\partial\bar f/\partial x\) or \(\partial\bar f/\partial y\) is nonzero
+at \(Q\), since \(Q\) is nonsingular.  Suppose that
+\((\partial\bar f/\partial y)(\alpha, \beta) \neq 0\), choose \(x_0 \in \calO_v\) with
+\(\bar x_0 = \alpha\), and let \(g(T) \coloneqq f(x_0, T) \in \calO_v[T]\).  Then
+\(\bar g(\beta) = 0\) and \(\bar g'(\beta) \neq 0\).  The \(\calO_v\)-scheme
+\(\Spec \calO_v[T, g'(T)^{-1}]/(g(T))\) is étale, and \(\beta\) is one of its
+\(\kappa(v)\)-points, so by Hensel's lemma [<a class="ec-cite" href="#bib-Poonen2017">Poo17</a>, Theorem 3.5.63], which uses
+that \(\calO_v\) is complete, there is \(y_0 \in \calO_v\) with \(g(y_0) = 0\) and
+\(\bar y_0 = \beta\).  Then \(P \coloneqq (x_0 : y_0 : 1) \in E(k_v)\) and
+\(\bar P = Q\), so \(P \in E_0(k_v)\).  If instead
+\((\partial\bar f/\partial x)(\alpha, \beta) \neq 0\), exchange the roles of the two
+coordinates: lift \(\beta\) to \(y_0 \in \calO_v\) and apply Hensel's lemma to
+\(f(T, y_0)\).
+</p>
+
+<p>
+<b>Lines and reduction.</b>  Let \(L\) be a line in \(\PP^2\) defined over \(k_v\).  Write it as
+\(aX + bY + cZ = 0\) with \(a, b, c \in \calO_v\), not all in \(\mm_v\).  Then the linear form
+\(\calO_v^3 \to \calO_v\) given by \((a, b, c)\) is surjective, so its kernel \(M\) is a
+direct summand of \(\calO_v^3\), free of rank \(2\); let \(w, w'\) be a basis of \(M\).  The
+map sending \((s : t)\) to \(sw + tw'\), from \(\PP^1\) to \(L\), is an isomorphism over \(k_v\), and since
+\(M\) is a direct summand, \(\bar w, \bar w'\) is a basis of the kernel of
+\((\bar a, \bar b, \bar c)\), so its reduction is an isomorphism \(\PP^1 \to \bar L\)
+over \(\kappa(v)\), compatible with the reduction of \(k_v\)-points.  The binary cubic
+</p>
+\begin{equation*}
+G(s, t) \coloneqq F(sw + tw') \in \calO_v[s, t]
+\end{equation*}
+<p>
+is the restriction of \(F\) to \(L\).  It is nonzero, because \(E\) contains no line; we
+count the intersection points of \(L\) and \(E\) with multiplicity as the roots of \(G\) in
+\(\PP^1\).  Suppose that \(G\) has three roots \((s_i : t_i) \in \PP^1(k_v)\), with
+\(s_i, t_i \in \calO_v\) not both in \(\mm_v\), corresponding to
+\(P_1, P_2, P_3 \in E(k_v)\).  Then
+</p>
+\begin{equation*}
+G = c\prod_{i=1}^3 (t_is - s_it)
+\end{equation*}
+<p>
+for some \(c \in k_v^\times\).  By Gauss's lemma the product of the three linear forms has a
+coefficient in \(\calO_v^\times\), so \(c \in \calO_v\), and
+\(\bar G = \bar c\prod_i (\bar t_is - \bar s_it)\).  On the other hand
+\(\bar G(s, t) = \bar F(s\bar w + t\bar w')\) is the restriction of \(\bar F\) to
+\(\bar L\), which is nonzero because \(E_\pi\) contains no line.  So \(\bar c \neq 0\),
+and \(\bar L\) meets \(E_\pi\) in \(\bar P_1, \bar P_2, \bar P_3\), counted with
+multiplicity.
+</p>
+
+<p>
+<b>The group law.</b>  Let \(P_1, P_2 \in E_0(k_v)\), let \(L\) be the line through them (the
+tangent line to \(E\) at \(P_1\) if \(P_1 = P_2\)), and let \(P_3\) be the third
+intersection point of \(L\) and \(E\), so that \(P_3 \in E(k_v)\) and
+\(P_1 + P_2 + P_3 = O\) by part <a href="04-ec-algebraic.html#it-ec-chord-rule">1</a> of Proposition <a href="04-ec-algebraic.html#prop-ec-chord-tangent">4.2.4</a>.
+By the previous step \(\bar L\) meets \(E_\pi\) in \(\bar P_1, \bar P_2, \bar P_3\).
+If \(E_\pi\) has a singular point \(S\), every line through \(S\) meets \(E_\pi\) at \(S\)
+with multiplicity at least \(2\), since all partial derivatives of \(\bar F\) vanish at
+\(S\).  As \(\bar P_1, \bar P_2 \neq S\), the case \(\bar P_3 = S\) would give
+\(\bar G\), of degree \(3\), at least \(4\) roots.  So \(\bar P_3 \in
+E_\pi^{\ns}(\kappa(v))\), that is, \(P_3 \in E_0(k_v)\), and
+</p>
+\begin{equation*}
+\bar P_1 + \bar P_2 + \bar P_3 = \bar O
+\end{equation*}
+<p>
+by the chord-and-tangent construction of the group law on \(E_\pi^{\ns}\)
+(Proposition <a href="04-ec-algebraic.html#prop-ec-singular-group">4.2.11</a>, or part <a href="04-ec-algebraic.html#it-ec-chord-rule">1</a> of
+Proposition <a href="04-ec-algebraic.html#prop-ec-chord-tangent">4.2.4</a> if \(E_\pi\) is smooth).
+</p>
+
+<p>
+Taking \(P_2 = O\), which lies in \(E_0(k_v)\), gives \(P_3 = -P_1 \in E_0(k_v)\) and
+\(\overline{-P_1} = -\bar P_1\).  In general, then,
+\(P_1 + P_2 = -P_3 \in E_0(k_v)\) and
+\(\overline{P_1 + P_2} = -\bar P_3 = \bar P_1 + \bar P_2\).  So \(E_0(k_v)\) is a
+subgroup of \(E(k_v)\), and reduction is a homomorphism
+\(E_0(k_v) \to E_\pi^{\ns}(\kappa(v))\).  Its kernel is \(E_1(k_v)\) by definition, and it is
+surjective by the first step.
+</p>
+</details>
+
+<p>
+The following is [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Proposition VII.3.1], the local input to the weak
+Mordell&#x2013;Weil theorem.  Let \(p\) be the characteristic of \(\kappa(v)\), which is positive
+since \(\kappa(v)\) is finite.
+</p>
+
+<div class="ec-thm ec-proposition" id="prop-lf-torsion">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Proposition 6.2.9</span>.</span> Let \(E\) be an elliptic curve over \(k_v\), and let \(m \geq 1\) be an integer with
+\(p \nmid m\).
+</p>
+<ol class="org-ol">
+<li><a id="it-lf-torsion-kernel"></a> The kernel of reduction \(E_1(k_v)\) contains no \(k_v\)-point of
+order \(m\) other than \(O\).</li>
+<li><a id="it-lf-torsion-good"></a> If \(E_\pi\) is smooth, then the reduction map
+\(E[m](k_v) \to E_\pi(\kappa(v))\) is injective.</li>
+</ol>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+For part <a href="#it-lf-torsion-kernel">1</a>, fix a minimal Weierstrass equation for \(E\).  The group
+\(E_1(k_v)\) is isomorphic to the group \(\hat E(\mm_v)\) attached to the formal group
+\(\hat E\) of \(E\) [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Proposition VII.2.2], and every element of finite
+order of \(\hat E(\mm_v)\) has order a power of \(p\)
+[<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Proposition IV.3.2(b)].  Since \(p \nmid m\), the only \(k_v\)-point of
+\(E_1(k_v)\) killed by \(m\) is \(O\).
+</p>
+
+<p>
+For part <a href="#it-lf-torsion-good">2</a>, if \(E_\pi\) is smooth, then \(E_\pi^{\ns} = E_\pi\) and
+\(E_0(k_v) = E(k_v)\), so by Proposition <a href="#prop-lf-reduction-exact">6.2.8</a> reduction is a
+homomorphism \(E(k_v) \to E_\pi(\kappa(v))\) with kernel \(E_1(k_v)\).  Its restriction to
+\(E[m](k_v)\) has kernel \(E_1(k_v) \cap E[m](k_v) = \{O\}\) by part
+<a href="#it-lf-torsion-kernel">1</a>.
+</p>
+</details>
+
+<p>
+The next result, due to Cassels, bounds the denominators of the coordinates of a torsion
+\(k_v\)-point; it is [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Theorem VII.3.4].  Unlike
+Proposition <a href="#prop-lf-torsion">6.2.9</a>, the Weierstrass equation need not be \(v\)-minimal.
+</p>
+
+<div class="ec-thm ec-theorem" id="thm-lf-torsion-denominators">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Theorem 6.2.10</span>.</span> Let \(E\) be an elliptic curve over \(k_v\), given by a Weierstrass equation
+</p>
+\begin{equation*}
+y^2 + a_1xy + a_3y = x^3 + a_2x^2 + a_4x + a_6
+\end{equation*}
+<p>
+with all \(a_i \in \calO_v\), not necessarily \(v\)-minimal.  Let \(P \in E(k_v)\) be a
+\(k_v\)-point of exact order \(m \geq 2\).
+</p>
+<ol class="org-ol">
+<li><a id="it-lf-denominators-prime-to-p"></a> If \(m\) is not a power of \(p\), then
+\(x(P), y(P) \in \calO_v\).</li>
+<li><p>
+<a id="it-lf-denominators-p-power"></a> If \(\operatorname{char} k = 0\) and \(m = p^n\), then
+</p>
+\begin{equation*}
+\pi_v^{2r}x(P),\ \pi_v^{3r}y(P) \in \calO_v,
+\qquad\text{where}\qquad
+r \coloneqq \left\lfloor \frac{v(p)}{p^n - p^{n-1}} \right\rfloor.
+\end{equation*}</li>
+</ol>
+</div>
+
+<p>
+Here \(v(p)\) is the ramification index of \(k_v\) over \(\Q_p\); it is \(1\) for
+\(k_v = \Q_p\).
+</p>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+Write \(x \coloneqq x(P)\) and \(y \coloneqq y(P)\); since \(m \geq 2\), \(P \neq O\) is
+affine.
+</p>
+
+<p>
+<b>Any integral equation.</b>  If \(v(x) \geq 0\), then \(y\) is a root of the monic polynomial
+</p>
+\begin{equation*}
+T^2 + (a_1x + a_3)\,T - (x^3 + a_2x^2 + a_4x + a_6) \in \calO_v[T],
+\end{equation*}
+<p>
+so \(y \in \calO_v\), because a discrete valuation ring is integrally closed.  Then both
+parts hold, since \(r \geq 0\).  Suppose instead that \(v(x) < 0\).  The right side of the
+Weierstrass equation has valuation exactly \(3v(x)\).  If \(v(y) \geq v(x)\), the left side
+would have valuation at least \(\min(2v(y), v(x) + v(y), v(y)) \geq 2v(x) > 3v(x)\).  So
+\(v(y) < v(x) < 0\), the left side has valuation exactly \(2v(y)\), and \(2v(y) = 3v(x)\):
+</p>
+\begin{equation*}
+v(x) = -2s, \qquad v(y) = -3s \qquad\text{for an integer } s \geq 1.
+\end{equation*}
+
+<p>
+<b>Reduction to a \(v\)-minimal equation.</b>  By part <a href="#it-lf-minimal-converse">4</a> of
+Proposition <a href="#prop-lf-minimal">6.1.2</a>, a change of variables <a class="ec-eqref" href="04-ec-algebraic.html#mjx-eqn%3Aeq%3Aec-change-of-variables">(4.1.3)</a>,
+</p>
+\begin{equation*}
+x = u^2x' + r_0, \qquad y = u^3y' + s_0u^2x' + t_0,
+\end{equation*}
+<p>
+with \(u, r_0, s_0, t_0 \in \calO_v\), takes the equation to a \(v\)-minimal one, with
+coordinates \(x', y'\).  Suppose that \(v(x) < 0\).  Then \(v(x'(P)) < 0\), for otherwise
+\(x \in \calO_v\); so by the previous step, applied to the \(v\)-minimal equation,
+\(v(y'(P)) < v(x'(P)) < 0\), and therefore
+</p>
+\begin{equation*}
+v(x) \geq v(x'(P)), \qquad v(y) \geq v(y'(P)).
+\end{equation*}
+<p>
+Hence both parts for the \(v\)-minimal equation imply them for the given one, and we may
+assume that the equation is \(v\)-minimal.
+</p>
+
+<p>
+<b>The \(v\)-minimal case.</b>  Suppose that \(v(x) < 0\), with \(s\) as above.  Then
+\(P = (\pi_v^{3s}x : \pi_v^{3s}y : \pi_v^{3s})\) with \(\pi_v^{3s}y \in \calO_v^\times\)
+and the other two coordinates in \(\mm_v\), so \(\bar P = (0 : 1 : 0) = \bar O\) and
+\(P \in E_1(k_v)\).  Under the isomorphism \(E_1(k_v) \cong \hat E(\mm_v)\)
+[<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Proposition VII.2.2], \(P\) corresponds to \(z \coloneqq -x/y\), of exact
+order \(m\), with \(v(z) = -2s + 3s = s\).
+</p>
+
+<p>
+For part <a href="#it-lf-denominators-prime-to-p">1</a>: every element of finite order of
+\(\hat E(\mm_v)\) has order a power of \(p\) [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Proposition IV.3.2(b)],
+which contradicts the hypothesis on \(m\).  So \(v(x) \geq 0\), and the first step gives
+\(x, y \in \calO_v\).
+</p>
+
+<p>
+For part <a href="#it-lf-denominators-p-power">2</a>: since \(z\) has exact order \(p^n\) in
+\(\hat E(\mm_v)\), [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Theorem IV.6.1] gives
+\(s = v(z) \leq v(p)/(p^n - p^{n-1})\), so \(s \leq r\), as \(s\) is an integer.  Hence
+\(v(\pi_v^{2r}x) = 2(r - s) \geq 0\) and \(v(\pi_v^{3r}y) = 3(r - s) \geq 0\).
+</p>
+</details>
+
+<p>
+The following is [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Application VII.3.5].
+</p>
+
+<div class="ec-thm ec-example" id="eg-lf-torsion-integral">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Example 6.2.11</span>.</span> Let \(k = \Q\), let \(E\) be an elliptic curve over \(\Q\) given by a Weierstrass equation
+with coefficients in \(\Z\), and let \(P \in E(\Q)\) be a rational point of exact order
+\(m \geq 3\).  Let \(p\) be a prime and apply Theorem <a href="#thm-lf-torsion-denominators">6.2.10</a> to
+\(P \in E(\Q_p)\).  If \(m\) is not a power of \(p\), then \(x(P), y(P) \in \Z_p\) by
+part <a href="#it-lf-denominators-prime-to-p">1</a>.  If \(m = p^n\), then \(v(p) = 1\), and
+</p>
+\begin{equation*}
+r = \left\lfloor \frac{1}{p^n - p^{n-1}} \right\rfloor = 0
+\end{equation*}
+<p>
+unless \(p^n - p^{n-1} = 1\), that is, \(p = 2\) and \(n = 1\), which \(m \geq 3\) excludes;
+so \(x(P), y(P) \in \Z_p\) by part <a href="#it-lf-denominators-p-power">2</a>.  Hence
+\(x(P), y(P) \in \Z\): a rational torsion point of order at least \(3\) has integer
+coordinates.
+</p>
+
+<p>
+This fails for points of order \(2\).  The curve
+</p>
+\begin{equation*}
+E\colon y^2 + xy = x^3 + 4x + 1
+\end{equation*}
+<p>
+has discriminant \(-65^2 \neq 0\), and \(P = (-1/4, 1/8) \in E(\Q)\): both sides equal
+\(-1/64\).  Since \(-P = (x(P), -y(P) - x(P)) = P\), the rational point \(P\) has order
+\(2\).  At \(p = 2\), with \(n = 1\), the theorem gives \(r = 1\) and says only that
+\(4x(P), 8y(P) \in \Z_2\), which is attained.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org1b8d8bb" class="outline-2 ec-references">
+<h2 id="org1b8d8bb">References</h2>
+<div class="outline-text-2" id="text-org1b8d8bb">
+<dl class="ec-bibliography">
+<dt id="bib-Poonen2017">[Poo17]</dt>
+<dd>Bjorn Poonen. <i>Rational points on varieties</i>. Vol. 186. Graduate Studies in Mathematics. American Mathematical Society, Providence, RI, 2017. <a href="https://doi.org/10.1090/gsm/186">doi:10.1090/gsm/186</a>.</dd>
+<dt id="bib-Silverman09">[Sil09]</dt>
+<dd>Joseph H. Silverman. <i>The arithmetic of elliptic curves</i>. Second. Vol. 106. Graduate Texts in Mathematics. Springer, Dordrecht, 2009. <a href="https://doi.org/10.1007/978-0-387-09494-6">doi:10.1007/978-0-387-09494-6</a>.</dd>
+</dl>
+</div>
+</div>
 </div>
 <div id="postamble" class="status">
 <nav class="ec-pager ec-pager-bottom" aria-label="Chapters"><a class="ec-pager-prev" rel="prev" href="05-finite-fields.html"><span class="ec-pager-label">Previous</span><span class="ec-pager-title">5. Elliptic curves over finite fields</span></a><a class="ec-pager-next" rel="next" href="07-galois-cohomology.html"><span class="ec-pager-label">Next</span><span class="ec-pager-title">7. Galois cohomology</span></a></nav>

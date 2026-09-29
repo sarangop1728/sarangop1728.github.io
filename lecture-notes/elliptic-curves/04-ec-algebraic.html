@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2026-09-26 Sat 08:14 -->
+<!-- 2026-09-29 Tue 08:42 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Elliptic curves as algebraic curves</title>
@@ -39,7 +39,7 @@
 <li class="ec-toc-level-1"><a href="#s4.8"><span class="ec-toc-num">4.8</span><span class="ec-toc-text">Selmer elliptic curves<span class="ec-toc-status"><span class="ec-status-label ec-status-draft">Draft</span></span></span></a></li>
 </ol></li>
 <li class="ec-toc-chapter"><a href="05-finite-fields.html"><span class="ec-toc-num">5</span><span class="ec-toc-text">Elliptic curves over finite fields<span class="ec-toc-status"><span class="ec-status-progress">0 of 5 sections finished</span></span></span></a></li>
-<li class="ec-toc-chapter"><a href="06-local-fields.html"><span class="ec-toc-num">6</span><span class="ec-toc-text">Elliptic curves over local fields<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
+<li class="ec-toc-chapter"><a href="06-local-fields.html"><span class="ec-toc-num">6</span><span class="ec-toc-text">Elliptic curves over local fields<span class="ec-toc-status"><span class="ec-status-progress">0 of 2 sections finished</span></span></span></a></li>
 <li class="ec-toc-chapter"><a href="07-galois-cohomology.html"><span class="ec-toc-num">7</span><span class="ec-toc-text">Galois cohomology<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
 <li class="ec-toc-chapter"><a href="08-mordell-weil.html"><span class="ec-toc-num">8</span><span class="ec-toc-text">The Mordell&ndash;Weil theorem<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
 <li class="ec-toc-chapter"><a href="09-integral-points.html"><span class="ec-toc-num">9</span><span class="ec-toc-text">Integral points<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
@@ -57,7 +57,7 @@
 </div>
 <div id="content" class="content">
 <h1 class="title"><span class="ec-chapter-label">Chapter 4</span>Elliptic curves as algebraic curves</h1>
-<div class="sources" id="org1517f18">
+<div class="sources" id="orgf6577ce">
 <p>
 This chapter follows [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Chapter III], with some material from
 [<a class="ec-cite" href="#bib-Milne20">Mil20</a>, Sections II.1, II.2, II.5 and II.6], and [<a class="ec-cite" href="#bib-Voight21">Voi21</a>, Chapters 2, 3, 5
@@ -379,6 +379,23 @@ equations gives \(u_1^3 = u_2^2\), and \(u \coloneqq u_2/u_1\) does the job.
 <span class="ec-thm-head"><span class="ec-thm-name">Proposition 4.1.7</span>.</span> Under the change of variables \eqref{eq:ec-change-of-variables}, the quantities of the
 primed equation satisfy
 </p>
+\begin{equation}
+\label{eq:ec-cov-coeffs}
+\begin{aligned}
+u a_1' &= a_1 + 2s, \\
+u^2 a_2' &= a_2 - sa_1 + 3r - s^2, \\
+u^3 a_3' &= a_3 + ra_1 + 2t, \\
+u^4 a_4' &= a_4 - sa_3 + 2ra_2 - (t + rs)a_1 + 3r^2 - 2st, \\
+u^6 a_6' &= a_6 + ra_4 + r^2a_2 + r^3 - ta_3 - t^2 - rta_1, \\
+u^2 b_2' &= b_2 + 12r, \\
+u^4 b_4' &= b_4 + rb_2 + 6r^2, \\
+u^6 b_6' &= b_6 + 2rb_4 + r^2b_2 + 4r^3, \\
+u^8 b_8' &= b_8 + 3rb_6 + 3r^2b_4 + r^3b_2 + 3r^4,
+\end{aligned} \tag{4.1.4}
+\end{equation}
+<p>
+and
+</p>
 \begin{equation*}
 u^4c_4' = c_4, \qquad u^6c_6' = c_6, \qquad u^{12}\Delta' = \Delta, \qquad j' = j,
 \qquad u^{-1}\omega' = \omega.
@@ -402,7 +419,19 @@ identity of rational functions, hence holds for every Weierstrass equation over 
 <pre class="src src-magma">L&lt;a1,a2,a3,a4,a6,u,r,s,t&gt; := <span class="org-function-name">FunctionField</span>(<span class="org-function-name">Rationals</span>(), 9);
 E := <span class="org-function-name">EllipticCurve</span>([a1,a2,a3,a4,a6]);
 Ep := <span class="org-function-name">subst</span>(E, u, r, s, t);
-c4, c6 := <span class="org-function-name">Explode</span>(<span class="org-function-name">cInvariants</span>(E));
+a1p, a2p, a3p, a4p, a6p := <span class="org-function-name">Explode</span>(<span class="org-function-name">aInvariants</span>(Ep));
+u*a1p <span class="org-keyword">eq</span> a1 + 2*s;                                                    <span class="org-comment">// true
+</span>u^2*a2p <span class="org-keyword">eq</span> a2 - s*a1 + 3*r - s^2;                                     <span class="org-comment">// true
+</span>u^3*a3p <span class="org-keyword">eq</span> a3 + r*a1 + 2*t;                                           <span class="org-comment">// true
+</span>u^4*a4p <span class="org-keyword">eq</span> a4 - s*a3 + 2*r*a2 - (t + r*s)*a1 + 3*r^2 - 2*s*t;         <span class="org-comment">// true
+</span>u^6*a6p <span class="org-keyword">eq</span> a6 + r*a4 + r^2*a2 + r^3 - t*a3 - t^2 - r*t*a1;            <span class="org-comment">// true
+</span>b2, b4, b6, b8 := <span class="org-function-name">Explode</span>(<span class="org-function-name">bInvariants</span>(E));
+b2p, b4p, b6p, b8p := <span class="org-function-name">Explode</span>(<span class="org-function-name">bInvariants</span>(Ep));
+u^2*b2p <span class="org-keyword">eq</span> b2 + 12*r;                                                 <span class="org-comment">// true
+</span>u^4*b4p <span class="org-keyword">eq</span> b4 + r*b2 + 6*r^2;                                         <span class="org-comment">// true
+</span>u^6*b6p <span class="org-keyword">eq</span> b6 + 2*r*b4 + r^2*b2 + 4*r^3;                              <span class="org-comment">// true
+</span>u^8*b8p <span class="org-keyword">eq</span> b8 + 3*r*b6 + 3*r^2*b4 + r^3*b2 + 3*r^4;                   <span class="org-comment">// true
+</span>c4, c6 := <span class="org-function-name">Explode</span>(<span class="org-function-name">cInvariants</span>(E));
 c4p, c6p := <span class="org-function-name">Explode</span>(<span class="org-function-name">cInvariants</span>(Ep));
 u^4*c4p <span class="org-keyword">eq</span> c4;                              <span class="org-comment">// true
 </span>u^6*c6p <span class="org-keyword">eq</span> c6;                              <span class="org-comment">// true
@@ -825,7 +854,7 @@ Theorem <a href="#thm-ec-automorphisms">4.7.11</a>.
 </div>
 
 <div id="outline-container-sec-ec-group-law" class="outline-2">
-<h2 id="sec-ec-group-law"><span class="ec-status ec-status-draft"><span class="ec-status-label ec-status-draft">Draft</span><time datetime="2026-09-21">21 Sep 2026</time></span><span class="section-number" id="s4.2">4.2</span> The group law</h2>
+<h2 id="sec-ec-group-law"><span class="ec-status ec-status-draft"><span class="ec-status-label ec-status-draft">Draft</span><time datetime="2026-09-29">29 Sep 2026</time></span><span class="section-number" id="s4.2">4.2</span> The group law</h2>
 <div class="outline-text-2" id="text-sec-ec-group-law">
 <p>
 On \(\C/\Lambda\) the group law comes for free from addition in \(\C\).  On an elliptic
@@ -1182,16 +1211,16 @@ the section with the singular Weierstrass cubics of Remark <a href="#rem-ec-sing
 <div class="ec-thm ec-proposition" id="prop-ec-singular-group">
 <p>
 <span class="ec-thm-head"><span class="ec-thm-name">Proposition 4.2.11</span>.</span> Let \(E\) be a Weierstrass cubic with \(\Delta = 0\), singular point \(S\), and
-\(E_{\ns} \coloneqq E - \{S\}\).  The chord-and-tangent construction of
-Proposition <a href="#prop-ec-chord-tangent">4.2.4</a> makes \(E_{\ns}(\kbar)\) an abelian group, and:
+\(E^{\ns} \coloneqq E - \{S\}\).  The chord-and-tangent construction of
+Proposition <a href="#prop-ec-chord-tangent">4.2.4</a> makes \(E^{\ns}(\kbar)\) an abelian group, and:
 </p>
 <ol class="org-ol">
 <li>if \(S\) is a node, with tangent lines \(y = \alpha_i x + \beta_i\) for \(i = 1, 2\),
 then \((x, y) \mapsto (y - \alpha_1x - \beta_1)/(y - \alpha_2x - \beta_2)\) is an
-isomorphism \(E_{\ns}(\kbar) \cong \kbar^\times\);</li>
+isomorphism \(E^{\ns}(\kbar) \cong \kbar^\times\);</li>
 <li>if \(S\) is a cusp, with tangent line \(y = \alpha x + \beta\), then
 \((x, y) \mapsto (x - x(S))/(y - \alpha x - \beta)\) is an isomorphism
-\(E_{\ns}(\kbar) \cong \kbar\).</li>
+\(E^{\ns}(\kbar) \cong \kbar\).</li>
 </ol>
 </div>
 
@@ -2330,8 +2359,8 @@ first collect what we need about quaternion algebras.
 </p>
 </div>
 
-<div id="outline-container-orgc2cc2b2" class="outline-3">
-<h3 id="orgc2cc2b2"><span class="section-number" id="s4.7.1">4.7.1</span> Quaternion algebras</h3>
+<div id="outline-container-orgfb60a24" class="outline-3">
+<h3 id="orgfb60a24"><span class="section-number" id="s4.7.1">4.7.1</span> Quaternion algebras</h3>
 <div class="outline-text-3" id="text-7-1">
 <p>
 We follow [<a class="ec-cite" href="#bib-Voight21">Voi21</a>].  Throughout this subsection, \(F\) is a field with
@@ -2484,8 +2513,8 @@ containing the others.</li>
 </div>
 </div>
 
-<div id="outline-container-org40b4a75" class="outline-3">
-<h3 id="org40b4a75"><span class="section-number" id="s4.7.2">4.7.2</span> The endomorphism ring</h3>
+<div id="outline-container-org9ff5e88" class="outline-3">
+<h3 id="org9ff5e88"><span class="section-number" id="s4.7.2">4.7.2</span> The endomorphism ring</h3>
 <div class="outline-text-3" id="text-7-2">
 <div class="ec-thm ec-theorem" id="thm-ec-endomorphism-ring">
 <p>
@@ -3154,9 +3183,9 @@ descent.
 </div>
 </div>
 
-<div id="outline-container-orga6da5b2" class="outline-2 ec-references">
-<h2 id="orga6da5b2">References</h2>
-<div class="outline-text-2" id="text-orga6da5b2">
+<div id="outline-container-org637cff6" class="outline-2 ec-references">
+<h2 id="org637cff6">References</h2>
+<div class="outline-text-2" id="text-org637cff6">
 <dl class="ec-bibliography">
 <dt id="bib-Magma">[BCP97]</dt>
 <dd>Wieb Bosma, John Cannon and Catherine Playoust. &ldquo;The Magma algebra system. I. The user language&rdquo;. In: <i>J. Symbolic Comput.</i> 24.3&ndash;4 (1997), pp. 235&ndash;265. Computational algebra and number theory (London, 1993). <a href="https://doi.org/10.1006/jsco.1996.0125">doi:10.1006/jsco.1996.0125</a>.</dd>
