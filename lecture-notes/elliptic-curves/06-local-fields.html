@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2026-09-29 Tue 08:42 -->
+<!-- 2026-10-01 Thu 08:27 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Elliptic curves over local fields</title>
@@ -27,10 +27,12 @@
 <li class="ec-toc-chapter"><a href="03-curves.html"><span class="ec-toc-num">3</span><span class="ec-toc-text">Algebraic curves<span class="ec-toc-status"><span class="ec-status-progress">0 of 7 sections finished</span></span></span></a></li>
 <li class="ec-toc-chapter"><a href="04-ec-algebraic.html"><span class="ec-toc-num">4</span><span class="ec-toc-text">Elliptic curves as algebraic curves<span class="ec-toc-status"><span class="ec-status-progress">1 of 8 sections finished</span></span></span></a></li>
 <li class="ec-toc-chapter"><a href="05-finite-fields.html"><span class="ec-toc-num">5</span><span class="ec-toc-text">Elliptic curves over finite fields<span class="ec-toc-status"><span class="ec-status-progress">0 of 5 sections finished</span></span></span></a></li>
-<li class="ec-toc-chapter is-current"><a href="06-local-fields.html" aria-current="page"><span class="ec-toc-num">6</span><span class="ec-toc-text">Elliptic curves over local fields<span class="ec-toc-status"><span class="ec-status-progress">0 of 2 sections finished</span></span></span></a>
+<li class="ec-toc-chapter is-current"><a href="06-local-fields.html" aria-current="page"><span class="ec-toc-num">6</span><span class="ec-toc-text">Elliptic curves over local fields<span class="ec-toc-status"><span class="ec-status-progress">0 of 4 sections finished</span></span></span></a>
 <ol class="ec-toc-sections">
 <li class="ec-toc-level-1"><a href="#s6.1"><span class="ec-toc-num">6.1</span><span class="ec-toc-text">Minimal Weierstrass equations<span class="ec-toc-status"><span class="ec-status-label ec-status-draft">Draft</span></span></span></a></li>
 <li class="ec-toc-level-1"><a href="#s6.2"><span class="ec-toc-num">6.2</span><span class="ec-toc-text">Reduction modulo \(\pi\)<span class="ec-toc-status"><span class="ec-status-label ec-status-draft">Draft</span></span></span></a></li>
+<li class="ec-toc-level-1"><a href="#s6.3"><span class="ec-toc-num">6.3</span><span class="ec-toc-text">Good and bad reduction<span class="ec-toc-status"><span class="ec-status-label ec-status-draft">Draft</span></span></span></a></li>
+<li class="ec-toc-level-1"><a href="#s6.4"><span class="ec-toc-num">6.4</span><span class="ec-toc-text">Inertia and the criterion of Néron&ndash;Ogg&ndash;Shafarevich<span class="ec-toc-status"><span class="ec-status-label ec-status-draft">Draft</span></span></span></a></li>
 </ol></li>
 <li class="ec-toc-chapter"><a href="07-galois-cohomology.html"><span class="ec-toc-num">7</span><span class="ec-toc-text">Galois cohomology<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
 <li class="ec-toc-chapter"><a href="08-mordell-weil.html"><span class="ec-toc-num">8</span><span class="ec-toc-text">The Mordell&ndash;Weil theorem<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
@@ -49,9 +51,11 @@
 </div>
 <div id="content" class="content">
 <h1 class="title"><span class="ec-chapter-label">Chapter 6</span>Elliptic curves over local fields</h1>
-<div class="sources" id="org950b845">
+<div class="sources" id="orgc72bdc6">
 <p>
-This chapter follows [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Chapter VII].
+This chapter follows [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Chapter VII].  For the reduction types we also follow
+[<a class="ec-cite" href="#bib-Poonen08">Poo08</a>, Section 6] and [<a class="ec-cite" href="#bib-Milne20">Mil20</a>, Section II.3]; Silverman's Section VII.4 is
+merged here with its converse, Section VII.7.
 </p>
 
 </div>
@@ -261,7 +265,7 @@ Part <a href="#it-lf-minimal-differential">3</a> follows from part <a href="#it-
 </div>
 
 <div id="outline-container-sec-lf-reduction" class="outline-2">
-<h2 id="sec-lf-reduction"><span class="ec-status ec-status-draft"><span class="ec-status-label ec-status-draft">Draft</span><time datetime="2026-09-29">29 Sep 2026</time></span><span class="section-number" id="s6.2">6.2</span> Reduction modulo \(\pi\)</h2>
+<h2 id="sec-lf-reduction"><span class="ec-status ec-status-draft"><span class="ec-status-label ec-status-draft">Draft</span><time datetime="2026-10-01">1 Oct 2026</time></span><span class="section-number" id="s6.2">6.2</span> Reduction modulo \(\pi\)</h2>
 <div class="outline-text-2" id="text-sec-lf-reduction">
 <p>
 We are in Situation <a href="#sit-lf-standing">6.0.2</a>.  The scheme \(\Spec \calO_v\) has two prime ideals: the
@@ -404,7 +408,7 @@ is \(p\)-minimal, and the second is not.
 </div>
 
 <figure class="ec-figure" id="fig-lf-two-models">
-<img class="ec-tikz" src="figures/4eba9e73370ffcb67ae0b0339905d485dc3af0f5.svg" style="--ec-w: 30.63em" alt=""/>
+<img class="ec-tikz" src="figures/4f2242687dc0f0307426bb4d42bef0168cb1fe00.svg" style="--ec-w: 30.63em" alt=""/>
 <figcaption><span class="ec-thm-name">Figure 6.2.1</span>. The models \(\calW\) and \(\calW'\) of Example <a href="#eg-lf-model-dependence">6.2.3</a> over \(\Spec \Z_p\): the same generic fiber \(E\) over \((0)\), and non-isomorphic special fibers over \(p\Z_p\).</figcaption>
 </figure>
 
@@ -847,10 +851,638 @@ has discriminant \(-65^2 \neq 0\), and \(P = (-1/4, 1/8) \in E(\Q)\): both sides
 </div>
 </div>
 
-<div id="outline-container-org1b8d8bb" class="outline-2 ec-references">
-<h2 id="org1b8d8bb">References</h2>
-<div class="outline-text-2" id="text-org1b8d8bb">
+<div id="outline-container-sec-lf-types" class="outline-2">
+<h2 id="sec-lf-types"><span class="ec-status ec-status-draft"><span class="ec-status-label ec-status-draft">Draft</span><time datetime="2026-10-01">1 Oct 2026</time></span><span class="section-number" id="s6.3">6.3</span> Good and bad reduction</h2>
+<div class="outline-text-2" id="text-sec-lf-types">
+<p>
+We are in Situation <a href="#sit-lf-standing">6.0.2</a>, and \(q \coloneqq \#\kappa(v)\).  By
+Proposition <a href="04-ec-algebraic.html#prop-ec-weierstrass-smooth">4.1.5</a> and Remark <a href="04-ec-algebraic.html#rem-ec-singular-cubics">4.1.11</a>, the
+reduction \(E_\pi\) of an elliptic curve \(E\) over \(k_v\) (Definition <a href="#def-lf-reduction">6.2.4</a>)
+is smooth, or has a node, or has a cusp.  Since \(\kappa(v)\) is perfect, its singular point
+is a rational point and the tangent lines at a cusp are defined over \(\kappa(v)\), so
+Proposition <a href="04-ec-algebraic.html#prop-ec-singular-group">4.2.11</a> applies to \(E_\pi\) with no further hypothesis.  The
+following is [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Section VII.5]; compare [<a class="ec-cite" href="#bib-Poonen08">Poo08</a>, Section 6.4] and
+[<a class="ec-cite" href="#bib-Milne20">Mil20</a>, Section II.3].
+</p>
+
+<div class="ec-thm ec-definition" id="def-lf-reduction-types">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Definition 6.3.1</span>.</span> Let \(E\) be an elliptic curve over \(k_v\), with reduction \(E_\pi\).
+</p>
+<ol class="org-ol">
+<li>\(E\) has <dfn class="ec-cdef" id="gls-good-reduction" data-gls="good-reduction">good reduction</dfn> if \(E_\pi\) is smooth, hence an elliptic curve over
+\(\kappa(v)\).</li>
+<li>\(E\) has <dfn class="ec-cdef" id="gls-multiplicative-reduction" data-gls="multiplicative-reduction">multiplicative reduction</dfn> if \(E_\pi\) has a node.  The reduction is
+<dfn class="ec-cdef" id="gls-split-multiplicative-reduction" data-gls="split-multiplicative-reduction">split</dfn> if the slopes of the tangent lines at the
+node lie in \(\kappa(v)\), and <dfn class="ec-cdef" id="gls-nonsplit-multiplicative-reduction" data-gls="nonsplit-multiplicative-reduction">nonsplit</dfn>
+otherwise.</li>
+<li>\(E\) has <dfn class="ec-cdef" id="gls-additive-reduction" data-gls="additive-reduction">additive reduction</dfn> if \(E_\pi\) has a cusp.</li>
+</ol>
+<p>
+In the last two cases \(E\) has <dfn class="ec-cdef" id="gls-bad-reduction" data-gls="bad-reduction">bad reduction</dfn>.  It has <dfn class="ec-cdef" id="gls-semistable-reduction" data-gls="semistable-reduction">semistable reduction</dfn>
+if its reduction is good or multiplicative.
+</p>
+</div>
+
+<p>
+The reduction type does not depend on the choice of minimal Weierstrass equation, since
+\(E_\pi\) is well defined up to isomorphism (Remark <a href="#rem-lf-reduction-well-defined">6.2.5</a>).
+</p>
+
+<div class="ec-thm ec-proposition" id="prop-lf-reduction-types">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Proposition 6.3.2</span>.</span> Let \(E\) be an elliptic curve over \(k_v\), given by a minimal Weierstrass equation with
+discriminant \(\Delta\) and invariant \(c_4\).
+</p>
+<ol class="org-ol">
+<li><a id="it-lf-types-good"></a> \(E\) has good reduction if and only if \(v(\Delta) = 0\).</li>
+<li><a id="it-lf-types-mult"></a> \(E\) has multiplicative reduction if and only if \(v(\Delta) > 0\) and
+\(v(c_4) = 0\).  Then \(E_\pi^{\ns} \cong \Gm\) if the reduction is split, and
+\(E_\pi^{\ns} \cong \Gm^{(d)}\) with \(L_d = \F_{q^2}\) if it is nonsplit.</li>
+<li><a id="it-lf-types-add"></a> \(E\) has additive reduction if and only if \(v(\Delta) > 0\) and
+\(v(c_4) > 0\).  Then \(E_\pi^{\ns} \cong \Ga\).</li>
+</ol>
+<p>
+If \(\operatorname{char} \kappa(v) \neq 2\) and the reduction is multiplicative, it is split
+if and only if \(-\bar c_6\) is a square in \(\kappa(v)\).
+</p>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+The reduced equation has discriminant \(\bar\Delta\) and invariants \(\bar c_4\), \(\bar c_6\),
+because these are polynomials with integer coefficients in the \(a_i\).  So the three cases
+follow from Proposition <a href="04-ec-algebraic.html#prop-ec-weierstrass-smooth">4.1.5</a> and
+Remark <a href="04-ec-algebraic.html#rem-ec-singular-cubics">4.1.11</a>, and the descriptions of \(E_\pi^{\ns}\) from
+Proposition <a href="04-ec-algebraic.html#prop-ec-singular-group">4.2.11</a> over \(\kappa(v)\); in the nonsplit case \(L_d\) is a
+quadratic extension of \(\kappa(v)\), which is \(\F_{q^2}\).  For the last statement, move the
+node to \((0, 0)\) as in <a class="ec-eqref" href="04-ec-algebraic.html#mjx-eqn%3Aeq%3Aec-singular-normal-form">(4.2.2)</a>, a change of variables with
+\(u = 1\), which does not change \(c_6\).  There \(b_4 = b_6 = 0\), so
+\(c_6 = -b_2^3 + 36b_2b_4 - 216b_6 = -b_2^3\), and \(-c_6 = b_2^3\) is a square exactly when
+\(b_2 = d\) is, that is, when \(L_d \cong \kappa(v) \times \kappa(v)\).  Another minimal equation
+changes \(c_6\) by \(u^{-6}\) with \(u \in \calO_v^\times\), a square.
+</p>
+</details>
+
+<p>
+Counting \(\kappa(v)\)-points with Example <a href="02-varieties.html#eg-var-one-dim-groups">2.1.8</a> and part
+<a href="02-varieties.html#it-var-twisted-gm-finite">4</a> of Proposition <a href="02-varieties.html#prop-var-twisted-gm">2.1.9</a>, and adding the singular
+point, gives the following table [<a class="ec-cite" href="#bib-Milne20">Mil20</a>, Section II.3].  Here
+\(a \coloneqq q + 1 - \#E_\pi(\kappa(v))\), as in Definition <a href="05-finite-fields.html#def-ff-trace">5.3.7</a> when \(E_\pi\) is
+smooth.
+</p>
+
+<table>
+
+
+<colgroup>
+<col  class="org-left">
+
+<col  class="org-left">
+
+<col  class="org-left">
+
+<col  class="org-left">
+
+<col  class="org-left">
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">reduction</th>
+<th scope="col" class="org-left">singularity</th>
+<th scope="col" class="org-left">\(E_\pi^{\ns}\)</th>
+<th scope="col" class="org-left">\(\#E_\pi^{\ns}(\kappa(v))\)</th>
+<th scope="col" class="org-left">\(a\)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">good</td>
+<td class="org-left">none</td>
+<td class="org-left">\(E_\pi\)</td>
+<td class="org-left">\(q + 1 - a\)</td>
+<td class="org-left">\(\lvert a \rvert \leq 2\sqrt q\)</td>
+</tr>
+
+<tr>
+<td class="org-left">split multiplicative</td>
+<td class="org-left">node</td>
+<td class="org-left">\(\Gm\)</td>
+<td class="org-left">\(q - 1\)</td>
+<td class="org-left">\(1\)</td>
+</tr>
+
+<tr>
+<td class="org-left">nonsplit multiplicative</td>
+<td class="org-left">node</td>
+<td class="org-left">\(\Gm^{(d)}\)</td>
+<td class="org-left">\(q + 1\)</td>
+<td class="org-left">\(-1\)</td>
+</tr>
+
+<tr>
+<td class="org-left">additive</td>
+<td class="org-left">cusp</td>
+<td class="org-left">\(\Ga\)</td>
+<td class="org-left">\(q\)</td>
+<td class="org-left">\(0\)</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+These values of \(a\) at the places of bad reduction are the ones that enter the
+\(L\)-function of an elliptic curve over a number field (Chapter 13).
+</p>
+
+<div class="ec-thm ec-remark" id="rem-lf-types-neron">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Remark 6.3.3</span>.</span> By part <a href="#it-lf-neron-weierstrass">3</a> of Theorem <a href="#thm-lf-neron">6.2.7</a>, \(E_\pi^{\ns}\) is the
+identity component \(\calE^0_\pi\) of the special fiber of the Néron model.  So the reduction
+is good, multiplicative or additive according as \(\calE^0_\pi\) is an elliptic curve, a torus
+(Definition <a href="02-varieties.html#def-var-torus">2.1.10</a>), split exactly when the reduction is, or \(\Ga\).  This is the
+form of the definition that generalizes to abelian varieties.
+</p>
+</div>
+
+<p>
+A Weierstrass equation with coefficients in \(\calO_v\) and \(v(\Delta) < 12\), or with
+\(v(c_4) = 0\), is \(v\)-minimal.  Indeed, another integral equation has discriminant
+\(u^{-12}\Delta\) and invariant \(u^{-4}c_4\) (Proposition <a href="04-ec-algebraic.html#prop-ec-change-of-variables">4.1.7</a>), both
+integral, so \(v(u) \leq 0\) in either case, and its discriminant has valuation at least
+\(v(\Delta)\).  The following is
+[<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Example VII.5.2].
+</p>
+
+<div class="ec-thm ec-example" id="eg-lf-reduction-types">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Example 6.3.4</span>.</span> Let \(k = \Q\) and \(v = p \geq 5\).  Each of the following equations has \(v(\Delta) < 12\),
+so it is \(p\)-minimal.
+</p>
+<ol class="org-ol">
+<li>\(E_1\colon y^2 = x^3 + px^2 + 1\) has \(\Delta = -16(4p^3 + 27)\), a unit: good reduction.</li>
+<li>\(E_2\colon y^2 = x^3 + x^2 + p\) has \(\Delta = -16p(27p + 4)\) and \(c_4 = 16\):
+multiplicative reduction.  The reduction \(y^2 = x^2(x + 1)\) has tangent lines
+\(y = \pm x\) at the node, so it is split; accordingly \(-c_6 = 64 + 864p\) is a square
+modulo \(p\).</li>
+<li>Let \(\varepsilon \in \Z\) be a non-square modulo \(p\).  Then
+\(E_2'\colon y^2 = x^3 + \varepsilon x^2 + p\) has \(\Delta = -16p(4\varepsilon^3 + 27p)\)
+and \(c_4 = 16\varepsilon^2\), and its reduction \(y^2 = x^2(x + \varepsilon)\) has tangent
+slopes \(\pm\sqrt\varepsilon \notin \F_p\): nonsplit multiplicative reduction.</li>
+<li>\(E_3\colon y^2 = x^3 + p\) has \(\Delta = -432p^2\) and \(c_4 = 0\): additive reduction.
+Over \(K' \coloneqq \Q_p(\varpi)\) with \(\varpi^6 = p\), the substitution
+\(x = \varpi^2x'\), \(y = \varpi^3y'\) gives \(y'^2 = x'^3 + 1\), with discriminant
+\(-432\), a unit: \(E_3\) acquires good reduction over \(K'\).</li>
+</ol>
+</div>
+
+<p>
+The last example shows that the reduction type can change under a finite extension.  To
+make sense of this we need the reduction over a finite extension of \(k_v\).
+</p>
+
+<div class="ec-thm ec-remark" id="rem-lf-finite-extensions">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Remark 6.3.5</span>.</span> Let \(K'\) be a finite extension of \(k_v\).  Then \(K'\) is again a local field: it is the
+completion of a finite extension of \(k\) at a place above \(v\).  The valuation \(v\) extends
+uniquely to \(K'\), and the normalized valuation \(v'\) of \(K'\) satisfies \(v' = e\,v\) on
+\(k_v\), where \(e\) is the <dfn class="ec-cdef" id="gls-local-ramification-index" data-gls="local-ramification-index">ramification index</dfn> of \(K'/k_v\); the residue field
+\(\kappa'\) of \(K'\) has degree \(f\) over \(\kappa(v)\), and \(ef = [K' : k_v]\).  The
+extension is <dfn class="ec-cdef" id="gls-unramified-extension" data-gls="unramified-extension">unramified</dfn> if \(e = 1\).  So everything in this
+chapter applies to \(E_{K'}\), with its own minimal Weierstrass equation, reduction
+\((E_{K'})_{\pi'}\), and subgroups \(E_0(K') \supseteq E_1(K')\).
+</p>
+</div>
+
+<div class="ec-thm ec-definition" id="def-lf-potential-good">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Definition 6.3.6</span>.</span> An elliptic curve \(E\) over \(k_v\) has <dfn class="ec-cdef" id="gls-potential-good-reduction" data-gls="potential-good-reduction">potential good reduction</dfn> if \(E_{K'}\) has
+good reduction for some finite extension \(K'\) of \(k_v\).
+</p>
+</div>
+
+<p>
+The following is [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Propositions VII.5.4 and VII.5.5].
+</p>
+
+<div class="ec-thm ec-proposition" id="prop-lf-semistable">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Proposition 6.3.7</span> <span class="ec-thm-title">(Semistable reduction theorem)</span>.</span> Let \(E\) be an elliptic curve over \(k_v\), and \(K'\) a finite extension of \(k_v\).
+</p>
+<ol class="org-ol">
+<li><a id="it-lf-semistable-unramified"></a> If \(K'/k_v\) is unramified, then \(E\) and \(E_{K'}\) have
+the same reduction type, and a minimal Weierstrass equation for \(E\) is minimal for
+\(E_{K'}\).</li>
+<li><a id="it-lf-semistable-stable"></a> If \(E\) has good, respectively multiplicative, reduction, then
+so does \(E_{K'}\).</li>
+<li><a id="it-lf-semistable-exists"></a> There is a finite extension \(K''\) of \(k_v\) such that
+\(E_{K''}\) has good or split multiplicative reduction.</li>
+</ol>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+For part <a href="#it-lf-semistable-stable">2</a>, fix a minimal Weierstrass equation for \(E\), with
+\(\Delta\) and \(c_4\), and let a change of variables <a class="ec-eqref" href="04-ec-algebraic.html#mjx-eqn%3Aeq%3Aec-change-of-variables">(4.1.3)</a> take it
+to a minimal equation for \(E_{K'}\), with \(\Delta'\) and \(c_4'\).  By
+part <a href="#it-lf-minimal-converse">4</a> of Proposition <a href="#prop-lf-minimal">6.1.2</a> over \(K'\), the parameter
+\(u\) lies in the ring of integers of \(K'\), and \(\Delta' = u^{-12}\Delta\),
+\(c_4' = u^{-4}c_4\) are integral, so
+</p>
+\begin{equation*}
+0 \leq v'(u) \leq \min\bigl(v'(\Delta)/12,\ v'(c_4)/4\bigr).
+\end{equation*}
+<p>
+If \(v(\Delta) = 0\) or \(v(c_4) = 0\), then \(v'(u) = 0\), so \(v'(\Delta') = v'(\Delta)\) and
+\(v'(c_4') = v'(c_4)\), and Proposition <a href="#prop-lf-reduction-types">6.3.2</a> over \(K'\) gives the same
+type.
+</p>
+
+<p>
+For part <a href="#it-lf-semistable-unramified">1</a>, assume that \(\operatorname{char}\kappa(v) \geq 5\),
+so that \(E\) has a minimal equation \(y^2 = x^3 + Ax + B\); in characteristic \(2\) and \(3\)
+this follows from Tate's algorithm.  Since \(2\) and \(3\) are units, \(E_{K'}\) also has a
+minimal equation of this short form, and it is obtained from ours by a change of variables
+\(x = u^2x'\), \(y = u^3y'\), the only ones preserving the short form, with \(u\) integral in
+\(K'\) by part <a href="#it-lf-minimal-converse">4</a> of Proposition <a href="#prop-lf-minimal">6.1.2</a>.  Since \(K'/k_v\) is unramified, \(v' = v\) on \(k_v\), and
+\(u_0 \coloneqq \pi_v^{v'(u)} \in k_v\) satisfies \(u/u_0 \in \calO_{K'}^\times\).  The
+substitution \(x = u_0^2x'\), \(y = u_0^3y'\) gives \(u_0^{-4}A = (u/u_0)^4 u^{-4}A\) and
+\(u_0^{-6}B\), both integral, over \(k_v\), with discriminant of valuation
+\(v(\Delta) - 12v'(u)\).  By minimality over \(k_v\), \(v'(u) = 0\).  So the equation is minimal
+over \(K'\), with the same \(v(\Delta)\) and \(v(c_4)\), and
+Proposition <a href="#prop-lf-reduction-types">6.3.2</a> gives the same type.
+</p>
+
+<p>
+For part <a href="#it-lf-semistable-exists">3</a>, assume that \(\operatorname{char}\kappa(v) \neq 2\).
+Over a finite extension of \(k_v\), \(E\) has a Legendre form
+\(y^2 = x(x - 1)(x - \lambda)\) with \(\lambda \neq 0, 1\) [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Proposition III.1.7],
+for which
+</p>
+\begin{equation*}
+c_4 = 16(\lambda^2 - \lambda + 1), \qquad \Delta = 16\lambda^2(\lambda - 1)^2.
+\end{equation*}
+<p>
+Let \(\calO\) be the ring of integers of this extension and \(\pi\) a uniformizer.  If
+\(\lambda \in \calO\) and \(\bar\lambda \neq 0, 1\), then \(\Delta\) is a unit: good reduction.  If
+\(\lambda \in \calO\) and \(\bar\lambda \in \{0, 1\}\), then \(c_4\) is a unit and \(\Delta\) is not:
+multiplicative reduction.  If \(\lambda \notin \calO\), let \(r \geq 1\) with
+\(\mu \coloneqq \pi^r\lambda\) a unit, and adjoin \(\sqrt\pi\) if \(r\) is odd.  The substitution
+\(x = \pi^{-r}x'\), \(y = \pi^{-3r/2}y'\) gives
+\(y'^2 = x'(x' - \pi^r)(x' - \mu)\), whose \(c_4 = 16(\pi^{2r} - \pi^r\mu + \mu^2)\) is a unit
+and whose \(\Delta\) is not: multiplicative reduction.  An equation with \(c_4\) a unit is
+minimal.  In the multiplicative cases, adjoining the tangent slopes at the node, a quadratic
+extension of the residue field, which lifts to an unramified quadratic extension, makes the
+reduction split, by part <a href="#it-lf-semistable-stable">2</a>.
+</p>
+</details>
+
+<div class="ec-thm ec-proposition" id="prop-lf-potential-good">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Proposition 6.3.8</span>.</span> Let \(E\) be an elliptic curve over \(k_v\).  Then \(E\) has potential good reduction if and
+only if \(j(E) \in \calO_v\).
+</p>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+If \(E_{K'}\) has good reduction, with a minimal equation over \(K'\) with \(\Delta'\) a unit,
+then \(j(E) = c_4'^3/\Delta'\) is integral in \(K'\), and it lies in \(k_v\), so
+\(j(E) \in \calO_v\).  Conversely, assume \(\operatorname{char}\kappa(v) \neq 2\) and take a
+Legendre form over a finite extension, as in the proof of Proposition <a href="#prop-lf-semistable">6.3.7</a>.
+Then
+</p>
+\begin{equation*}
+256(\lambda^2 - \lambda + 1)^3 - j\lambda^2(\lambda - 1)^2 = 0.
+\end{equation*}
+<p>
+If \(j\) is integral, this polynomial in \(\lambda\) has integral coefficients and leading
+coefficient \(256\), a unit, so \(\lambda\) is integral; and reducing modulo \(\pi\) at
+\(\bar\lambda = 0\) or \(1\) would give \(256 = 0\).  So \(\bar\lambda \neq 0, 1\), and the
+Legendre form has good reduction.
+</p>
+</details>
+
+<p>
+For instance, \(E_3\) of Example <a href="#eg-lf-reduction-types">6.3.4</a> has \(j = 0\), so potential good
+reduction, as we saw directly; \(E_2\) has \(v(j) = 3v(c_4) - v(\Delta) = -1\), and keeps
+multiplicative reduction over every finite extension.
+</p>
+
+<p>
+Finally, the quotient \(E(k_v)/E_0(k_v)\) of the filtration of Section <a href="#sec-lf-reduction">6.2</a> is
+finite.  The first part below follows from Theorem <a href="#thm-lf-neron">6.2.7</a>: \(E(k_v) = \calE(\calO_v)\)
+and \(E_0(k_v) = \calE^0(\calO_v)\).  Restricting an \(\calO_v\)-point to the special point
+and taking its component gives a homomorphism from \(\calE(\calO_v)\) to the finite group of
+components of \(\calE_\pi\), finite because \(\calE\) is of finite type.  Its kernel is
+\(\calE^0(\calO_v)\): an \(\calO_v\)-point whose special point lies in the open subscheme
+\(\calE^0\) factors through it, since every open subset of \(\Spec \calO_v\) containing the
+special point is everything.  The second part comes from the classification of the special
+fibers of Néron models; we do not prove it.
+</p>
+
+<div class="ec-thm ec-theorem" id="thm-lf-component-group">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Theorem 6.3.9</span> <span class="ec-thm-title">(Kodaira, Néron)</span>.</span> Let \(E\) be an elliptic curve over \(k_v\), and \(\Delta\) the discriminant of a minimal
+Weierstrass equation.
+</p>
+<ol class="org-ol">
+<li><a id="it-lf-component-finite"></a> \(E(k_v)/E_0(k_v)\) is finite.</li>
+<li><a id="it-lf-component-order"></a> If \(E\) has split multiplicative reduction, then
+\(E(k_v)/E_0(k_v)\) is cyclic of order \(v(\Delta)\).  Otherwise it has order at most
+\(4\).</li>
+</ol>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof <span class="ec-proof-cites">(Sil09)</span>.</span></summary>
+<p>
+See [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Theorem VII.6.1 and Corollary VII.6.2].
+</p>
+</details>
+</div>
+</div>
+
+<div id="outline-container-sec-lf-inertia" class="outline-2">
+<h2 id="sec-lf-inertia"><span class="ec-status ec-status-draft"><span class="ec-status-label ec-status-draft">Draft</span><time datetime="2026-10-01">1 Oct 2026</time></span><span class="section-number" id="s6.4">6.4</span> Inertia and the criterion of Néron&#x2013;Ogg&#x2013;Shafarevich</h2>
+<div class="outline-text-2" id="text-sec-lf-inertia">
+<div class="ec-thm ec-situation" id="sit-lf-inertia">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Situation 6.4.1</span>.</span> In addition to Situation <a href="#sit-lf-standing">6.0.2</a>:
+</p>
+<ul class="org-ul">
+<li>\(p \coloneqq \operatorname{char}\kappa(v)\) and \(q \coloneqq \#\kappa(v)\).</li>
+<li>\(k_v^{\operatorname{sep}}\) is a separable closure of \(k_v\), and
+\(\Gal_{k_v} \coloneqq \Gal(k_v^{\operatorname{sep}}/k_v)\).  We use \(k_v^{\operatorname{sep}}\) rather than an
+algebraic closure because \(k_v\) is imperfect when \(\operatorname{char} k = p\).</li>
+<li>\(v\) extends uniquely to \(k_v^{\operatorname{sep}}\) (Remark <a href="#rem-lf-finite-extensions">6.3.5</a>); the residue
+field of its valuation ring is an algebraic closure \(\bar\kappa\) of \(\kappa(v)\).</li>
+<li>\(k_v^{\unr} \subseteq k_v^{\operatorname{sep}}\) is the <dfn class="ec-cdef" id="gls-maximal-unramified-extension" data-gls="maximal-unramified-extension">maximal unramified extension</dfn> of \(k_v\), the
+union of the finite unramified extensions.</li>
+<li>\(I_v \coloneqq \Gal(k_v^{\operatorname{sep}}/k_v^{\unr})\) is the <dfn class="ec-cdef" id="gls-inertia-group" data-gls="inertia-group">inertia group</dfn>.</li>
+</ul>
+</div>
+
+<p>
+Good reduction has a characterization in terms of the Galois action on torsion points,
+which is how it is usually detected in practice.  We first review the inertia group.  The
+unramified extensions of \(k_v\) correspond to the extensions of its residue field: for
+each \(n \geq 1\) there is exactly one unramified extension of degree \(n\) inside
+\(k_v^{\operatorname{sep}}\), its residue field is \(\F_{q^n}\), and it is Galois over \(k_v\) with group
+\(\Gal(\F_{q^n}/\F_q)\), generated by the lift of the Frobenius automorphism
+\(\sigma\colon \alpha \mapsto \alpha^q\).  So there is an exact sequence
+</p>
+\begin{equation}
+\label{eq:lf-inertia}
+1 \to I_v \to \Gal_{k_v} \to \Gal_{\kappa(v)} \to 1, \tag{6.4.1}
+\end{equation}
+<p>
+where the map on the right is the action on \(\bar\kappa\): every \(\tau \in \Gal_{k_v}\)
+preserves the valuation, hence acts on the residue field \(\bar\kappa\).  In other words,
+\(I_v\) is the subgroup of \(\Gal_{k_v}\) acting trivially on \(\bar\kappa\)
+[<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Section VII.4].  The group \(\Gal_{\kappa(v)}\) is topologically generated
+by \(\sigma\), and \(\Gal(k_v^{\unr}/k_v) \cong \Gal_{\kappa(v)}\).
+</p>
+
+<div class="ec-thm ec-remark" id="rem-lf-tame">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Remark 6.4.2</span>.</span> The inertia group has a largest pro-\(p\) subgroup \(P_v\), the wild inertia group, and the
+tame quotient is \(I_v/P_v \cong \prod_{\ell \neq p} \Z_\ell(1)\), with \(\Gal_{\kappa(v)}\)
+acting through the cyclotomic character.  We will not need this.
+</p>
+</div>
+
+<div class="ec-thm ec-definition" id="def-lf-unramified">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Definition 6.4.3</span>.</span> A set \(\Sigma\) with an action of \(\Gal_{k_v}\) is
+<dfn class="ec-cdef" id="gls-unramified-galois-set" data-gls="unramified-galois-set">unramified</dfn> if \(I_v\) acts trivially on \(\Sigma\), and
+<dfn class="ec-cdef" id="gls-ramified-galois-set" data-gls="ramified-galois-set">ramified</dfn> otherwise.
+</p>
+</div>
+
+<p>
+For an elliptic curve \(E\) over \(k_v\) and \(m\) with \(\operatorname{char} k \nmid m\), this
+applies to \(E[m](k_v^{\operatorname{sep}})\) (part <a href="04-ec-algebraic.html#it-ec-torsion-prime-to-p">1</a> of
+Corollary <a href="04-ec-algebraic.html#cor-ec-torsion">4.5.1</a>): \(E[m]\) is unramified exactly when \(I_v \subseteq \ker\bar\rho_{E,m}\),
+that is, when \(E[m](k_v^{\operatorname{sep}}) \subseteq E(k_v^{\unr})\), or again when all the points of
+\(E[m](k_v^{\operatorname{sep}})\) are defined over one finite unramified extension of \(k_v\).  Likewise \(T_\ell(E)\)
+(Definition <a href="04-ec-algebraic.html#def-ec-tate-module">4.5.4</a>) is unramified exactly when every \(E[\ell^n]\) is.
+</p>
+
+<div class="ec-thm ec-example" id="eg-lf-inertia-roots-of-unity">
+<p><span class="ec-thm-head"><span class="ec-thm-name">Example 6.4.4</span>.</span> </p>
+<ol class="org-ol">
+<li><a id="it-lf-inertia-mu-unramified"></a> If \(p \nmid m\), then \(\mu_m(k_v^{\operatorname{sep}})\) is unramified.
+The polynomial \(x^m - 1\) is separable over \(\kappa(v)\), so its \(m\) roots in
+\(\bar\kappa\) lie in a finite field \(\F_{q^n}\); by Hensel's lemma
+[<a class="ec-cite" href="#bib-Poonen2017">Poo17</a>, Theorem 3.5.63] they lift to roots of \(x^m - 1\) in the unramified
+extension of degree \(n\).  In particular \(T_\ell(\Gm)\) is unramified for
+\(\ell \neq p\), and an element \(\tau \in \Gal_{k_v}\) acts on it through
+\(\chi_\ell(\tau)\), which depends only on the image of \(\tau\) in \(\Gal_{\kappa(v)}\):
+\(\chi_\ell(\sigma) = q\).</li>
+<li><a id="it-lf-inertia-mu-ramified"></a> Let \(k_v = \Q_p\).  Then \(\Q_p(\mu_p)\) is generated by a
+root of the Eisenstein polynomial \(((x + 1)^p - 1)/x\), so it is totally ramified of
+degree \(p - 1\), and \(I_p\) acts on \(\mu_p(\Q_p^{\operatorname{sep}})\) through all of
+\((\Z/p\Z)^\times\): \(\mu_p\) is ramified, and so is \(T_p(\Gm)\).</li>
+<li><a id="it-lf-inertia-kummer"></a> For \(m \geq 2\), the extension \(\Q_p(p^{1/m})\) is totally ramified
+of degree \(m\), since \(x^m - p\) is Eisenstein.  It is not contained in \(\Q_p^{\unr}\),
+so some element of \(I_p\) moves \(p^{1/m}\).</li>
+</ol>
+</div>
+
+<p>
+The torsion of an elliptic curve with good reduction behaves like \(\mu_m\) with
+\(p \nmid m\).  The following is [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Proposition VII.4.1].
+</p>
+
+<div class="ec-thm ec-proposition" id="prop-lf-good-unramified">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Proposition 6.4.5</span>.</span> Let \(E\) be an elliptic curve over \(k_v\) with good reduction.
+</p>
+<ol class="org-ol">
+<li><a id="it-lf-good-unram-m"></a> If \(p \nmid m\), then \(E[m]\) is unramified.</li>
+<li><a id="it-lf-good-unram-tate"></a> If \(\ell \neq p\), then \(T_\ell(E)\) is unramified.</li>
+</ol>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+Part <a href="#it-lf-good-unram-tate">2</a> follows from part <a href="#it-lf-good-unram-m">1</a> with \(m = \ell^n\).  For
+part <a href="#it-lf-good-unram-m">1</a>, note that \(\operatorname{char} k \nmid m\), since
+\(\operatorname{char} k\) is \(0\) or \(p\).  Let \(K' \subseteq k_v^{\operatorname{sep}}\) be the finite
+Galois extension of \(k_v\) generated by the coordinates of the points of
+\(E[m](k_v^{\operatorname{sep}})\), with ring of integers \(\calO'\) and residue field \(\kappa'\).  By
+part <a href="#it-lf-semistable-stable">2</a> of Proposition <a href="#prop-lf-semistable">6.3.7</a>, \(E_{K'}\) has good
+reduction; indeed \(v'(\Delta) = e\,v(\Delta) = 0\), so our equation is integral with unit
+discriminant over \(K'\), hence minimal there, and the reduction of \(E_{K'}\) is
+\((E_\pi)_{\kappa'}\).  By part <a href="#it-lf-torsion-good">2</a> of
+Proposition <a href="#prop-lf-torsion">6.2.9</a> over \(K'\), the reduction map
+\(E[m](K') \to E_\pi(\kappa')\) is injective.
+</p>
+
+<p>
+Let \(\tau \in I_v\) and \(P \in E[m](K')\).  Since \(\tau\) preserves the valuation, it maps
+\(\calO'\) to itself, and reduction commutes with it:
+\(\overline{\tau P} = \bar\tau(\bar P)\), where \(\bar\tau\) is the action on \(\kappa'\).  As
+\(\tau \in I_v\), \(\bar\tau\) is the identity, so \(\overline{\tau P - P} = \bar P - \bar P = \bar O\).
+Since \(\tau P - P \in E[m](K')\), injectivity gives \(\tau P = P\).
+</p>
+</details>
+
+<p>
+The converse is the criterion of Néron&#x2013;Ogg&#x2013;Shafarevich [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Theorem VII.7.1].
+Silverman proves it over \(k_v^{\unr}\), which is not complete and has an infinite residue
+field; we work instead over a finite unramified extension, where the results of this chapter
+apply as they stand, and where the finite residue field makes the last step immediate.
+</p>
+
+<div class="ec-thm ec-theorem" id="thm-lf-nos">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Theorem 6.4.6</span> <span class="ec-thm-title">(Néron&ndash;Ogg&ndash;Shafarevich)</span>.</span> Let \(E\) be an elliptic curve over \(k_v\).  The following are equivalent.
+</p>
+<ol class="org-ol">
+<li><a id="it-lf-nos-good"></a> \(E\) has good reduction.</li>
+<li><a id="it-lf-nos-all"></a> \(E[m]\) is unramified for every \(m \geq 1\) with \(p \nmid m\).</li>
+<li><a id="it-lf-nos-tate"></a> \(T_\ell(E)\) is unramified for some prime \(\ell \neq p\).</li>
+<li><a id="it-lf-nos-infinite"></a> \(E[m]\) is unramified for infinitely many \(m \geq 1\) with
+\(p \nmid m\).</li>
+</ol>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+Part <a href="#it-lf-nos-good">1</a> implies part <a href="#it-lf-nos-all">2</a> by Proposition <a href="#prop-lf-good-unramified">6.4.5</a>,
+part <a href="#it-lf-nos-all">2</a> implies part <a href="#it-lf-nos-tate">3</a> trivially, and part <a href="#it-lf-nos-tate">3</a>
+implies part <a href="#it-lf-nos-infinite">4</a> with \(m = \ell^n\).
+</p>
+
+<p>
+Assume part <a href="#it-lf-nos-infinite">4</a>, and let \(\Delta\) be the discriminant of a minimal
+Weierstrass equation for \(E\).  Choose \(m\) with \(p \nmid m\), \(m > \max(4, v(\Delta))\) and
+\(E[m]\) unramified.  The points of \(E[m](k_v^{\operatorname{sep}})\) are defined over a finite unramified extension \(K'\) of
+\(k_v\), with residue field \(\kappa'\), and
+\(E[m](K') \cong (\Z/m\Z)^2\) by Corollary <a href="04-ec-algebraic.html#cor-ec-torsion">4.5.1</a>.
+</p>
+
+<p>
+<b>The component group.</b>  Since \(K'/k_v\) is unramified, \(v' = v\) on \(k_v\), and our minimal
+equation stays integral over \(K'\), so the minimal discriminant of \(E_{K'}\) has valuation at
+most \(v(\Delta)\).  By Theorem <a href="#thm-lf-component-group">6.3.9</a> over \(K'\),
+\(\#E(K')/E_0(K') \leq \max(4, v(\Delta)) < m\).
+</p>
+
+<p>
+<b>An \(\ell\)-torsion subgroup of rank \(2\).</b>  Let \(H \coloneqq E[m](K') \cap E_0(K')\).  Then
+\((\Z/m\Z)^2/H\) injects into \(E(K')/E_0(K')\), so \(H\) has index less than \(m\) in
+\((\Z/m\Z)^2\), and \(\#H > m\).  A subgroup of \((\Z/m\Z)^2\) whose \(\ell\)-parts are all
+cyclic is cyclic of order dividing \(m\); so \(H\) contains a subgroup
+\(H_\ell \cong (\Z/\ell\Z)^2\) for some prime \(\ell \mid m\).  By
+part <a href="#it-lf-torsion-kernel">1</a> of Proposition <a href="#prop-lf-torsion">6.2.9</a> over \(K'\), \(E_1(K')\) contains no
+point of order \(\ell\), so the reduction map of Proposition <a href="#prop-lf-reduction-exact">6.2.8</a> over
+\(K'\) is injective on \(H_\ell\):
+</p>
+\begin{equation*}
+(\Z/\ell\Z)^2 \hookrightarrow (E_{K'})_{\pi'}^{\ns}(\kappa').
+\end{equation*}
+
+<p>
+<b>The reduction type.</b>  If \(E_{K'}\) had bad reduction, then by
+Proposition <a href="#prop-lf-reduction-types">6.3.2</a> over \(K'\) the group
+\((E_{K'})_{\pi'}^{\ns}(\kappa')\) would be \(\Ga(\kappa') = \kappa'\), a \(p\)-group with
+\(\ell \neq p\); or \(\Gm(\kappa') = \kappa'^\times\), cyclic; or \(\Gm^{(d)}(\kappa')\), cyclic
+by part <a href="02-varieties.html#it-var-twisted-gm-finite">4</a> of Proposition <a href="02-varieties.html#prop-var-twisted-gm">2.1.9</a>.  None of these
+contains \((\Z/\ell\Z)^2\).  So \(E_{K'}\) has good reduction, and so does \(E\), by
+part <a href="#it-lf-semistable-unramified">1</a> of Proposition <a href="#prop-lf-semistable">6.3.7</a>.
+</p>
+</details>
+
+<div class="ec-thm ec-corollary" id="cor-lf-isogeny-good">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Corollary 6.4.7</span>.</span> Let \(E_1\) and \(E_2\) be elliptic curves over \(k_v\) that are isogenous over \(k_v\).  Then
+\(E_1\) has good reduction if and only if \(E_2\) does.
+</p>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+Let \(\varphi\colon E_1 \to E_2\) be a non-zero isogeny over \(k_v\), and let \(m\) be prime to
+\(p\) and to \(\deg\varphi\).  The kernel of \(\varphi\) on \(E_1(k_v^{\operatorname{sep}})\) has order
+dividing \(\deg\varphi\) (Theorem <a href="04-ec-algebraic.html#thm-ec-isogeny-kernel">4.3.8</a>), so it meets \(E_1[m](k_v^{\operatorname{sep}})\)
+trivially, and \(\varphi\colon E_1[m](k_v^{\operatorname{sep}}) \to E_2[m](k_v^{\operatorname{sep}})\) is a
+\(\Gal_{k_v}\)-equivariant bijection between sets of order \(m^2\).  So \(E_1[m]\) is
+unramified if and only if \(E_2[m]\) is, and Theorem <a href="#thm-lf-nos">6.4.6</a> applies, with infinitely
+many such \(m\).
+</p>
+</details>
+
+<div class="ec-thm ec-corollary" id="cor-lf-potential-good-inertia">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Corollary 6.4.8</span>.</span> Let \(E\) be an elliptic curve over \(k_v\), and \(\ell \neq p\) a prime.  Then \(E\) has
+potential good reduction if and only if \(I_v\) acts on \(T_\ell(E)\) through a finite
+quotient.
+</p>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+Suppose that \(E_{K'}\) has good reduction, where we may take \(K' \subseteq k_v^{\operatorname{sep}}\)
+finite Galois over \(k_v\), enlarging it by part <a href="#it-lf-semistable-stable">2</a> of
+Proposition <a href="#prop-lf-semistable">6.3.7</a>.  The inertia group of \(K'\) is \(I_v \cap \Gal_{K'}\), and it acts
+trivially on \(T_\ell(E)\) by Theorem <a href="#thm-lf-nos">6.4.6</a> over \(K'\); it has finite index in
+\(I_v\).  Conversely, suppose that \(I_v\) acts through \(I_v/J\) with \(J\) open.  The fixed
+field of \(J\) is a finite extension of \(k_v^{\unr}\), so it is \(K'k_v^{\unr}\) for some
+finite extension \(K'\) of \(k_v\).  The inertia group of \(K'\) is
+\(\Gal(k_v^{\operatorname{sep}}/K'k_v^{\unr}) = J\), which acts trivially on \(T_\ell(E)\); so \(E_{K'}\) has
+good reduction by Theorem <a href="#thm-lf-nos">6.4.6</a> over \(K'\).
+</p>
+</details>
+
+<p>
+This is [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Corollaries VII.7.2 and VII.7.3].  We end with two examples.
+</p>
+
+<div class="ec-thm ec-example" id="eg-lf-nos-examples">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Example 6.4.9</span>.</span> Let \(k = \Q\) and \(v = p\).
+</p>
+<ol class="org-ol">
+<li><a id="it-lf-nos-additive"></a> Let \(p \geq 5\) and \(E\colon y^2 = x^3 + p\), with additive
+reduction (Example <a href="#eg-lf-reduction-types">6.3.4</a>).  Its points of order \(2\) are
+\((-\zeta p^{1/3}, 0)\) for the three cube roots of unity \(\zeta\).  By
+part <a href="#it-lf-inertia-kummer">3</a> of Example <a href="#eg-lf-inertia-roots-of-unity">6.4.4</a>, some
+\(\tau \in I_p\) moves \(p^{1/3}\), hence moves the point \((-p^{1/3}, 0)\) of order \(2\).  So \(E[2]\)
+is ramified, as Theorem <a href="#thm-lf-nos">6.4.6</a> requires.  Since \(E\) acquires good reduction over
+\(\Q_p(p^{1/6})\), inertia acts on \(T_\ell(E)\) through a finite quotient, as
+Corollary <a href="#cor-lf-potential-good-inertia">6.4.8</a> requires.</li>
+<li><a id="it-lf-nos-one-m"></a> Let \(p\) be odd and \(E\colon y^2 = x(x - 1)(x + p)\), the Legendre
+form with \(\lambda = -p\).  Then \(\Delta = 16p^2(p + 1)^2\) and
+\(c_4 = 16(p^2 + p + 1)\), a unit, so \(E\) has multiplicative reduction; its reduction
+\(y^2 = x^2(x - 1)\) has tangent slopes \(\pm\sqrt{-1}\), so it is split exactly when
+\(p \equiv 1 \pmod 4\).  Yet \(E[2](\Q_p^{\operatorname{sep}}) = \{O, (0, 0), (1, 0), (-p, 0)\}\) consists
+of rational points, so \(E[2]\) is unramified.  One value of \(m\) does not suffice in
+Theorem <a href="#thm-lf-nos">6.4.6</a>.  (In Chapter 12 we will see that for this curve, which is a Tate
+curve or an unramified quadratic twist of one, \(E[\ell]\) with \(\ell \neq 2, p\) prime
+is unramified only when \(\ell \mid v(\Delta) = 2\), that is, never.)</li>
+</ol>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org8b1bf18" class="outline-2 ec-references">
+<h2 id="org8b1bf18">References</h2>
+<div class="outline-text-2" id="text-org8b1bf18">
 <dl class="ec-bibliography">
+<dt id="bib-Milne20">[Mil20]</dt>
+<dd>James S. Milne. <i>Elliptic curves</i>. Second. World Scientific Publishing Co. Pte. Ltd., Hackensack, NJ, 2020.</dd>
+<dt id="bib-Poonen08">[Poo08]</dt>
+<dd>Bjorn Poonen. &ldquo;Elliptic curves&rdquo;. In: <i>Algorithmic number theory: lattices, number fields, curves and cryptography</i> 44, pp. 183&ndash;207. Math. Sci. Res. Inst. Publ.. Cambridge Univ. Press, Cambridge, 2008. <a href="https://math.mit.edu/~poonen/papers/elliptic.pdf">https://math.mit.edu/~poonen/papers/elliptic.pdf</a>.</dd>
 <dt id="bib-Poonen2017">[Poo17]</dt>
 <dd>Bjorn Poonen. <i>Rational points on varieties</i>. Vol. 186. Graduate Studies in Mathematics. American Mathematical Society, Providence, RI, 2017. <a href="https://doi.org/10.1090/gsm/186">doi:10.1090/gsm/186</a>.</dd>
 <dt id="bib-Silverman09">[Sil09]</dt>

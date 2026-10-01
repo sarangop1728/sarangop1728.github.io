@@ -255,6 +255,7 @@ window.MathJax = {
       "CC": "\\mathscr{C}",
       "DD": "\\mathbf{D}",
       "Fp": "\\mathbb{F}_p",
+      "Ga": "\\mathbb{G}_\\text{a}",
       "Gm": "\\mathbb{G}_\\text{m}",
       "GrpSch": "\\texttt{GrpSch}",
       "Ht": "\\operatorname{Ht}",

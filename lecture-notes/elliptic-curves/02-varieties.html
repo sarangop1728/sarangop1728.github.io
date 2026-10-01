@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2026-09-29 Tue 08:42 -->
+<!-- 2026-10-01 Thu 08:27 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Algebraic varieties</title>
@@ -33,7 +33,7 @@
 <li class="ec-toc-chapter"><a href="03-curves.html"><span class="ec-toc-num">3</span><span class="ec-toc-text">Algebraic curves<span class="ec-toc-status"><span class="ec-status-progress">0 of 7 sections finished</span></span></span></a></li>
 <li class="ec-toc-chapter"><a href="04-ec-algebraic.html"><span class="ec-toc-num">4</span><span class="ec-toc-text">Elliptic curves as algebraic curves<span class="ec-toc-status"><span class="ec-status-progress">1 of 8 sections finished</span></span></span></a></li>
 <li class="ec-toc-chapter"><a href="05-finite-fields.html"><span class="ec-toc-num">5</span><span class="ec-toc-text">Elliptic curves over finite fields<span class="ec-toc-status"><span class="ec-status-progress">0 of 5 sections finished</span></span></span></a></li>
-<li class="ec-toc-chapter"><a href="06-local-fields.html"><span class="ec-toc-num">6</span><span class="ec-toc-text">Elliptic curves over local fields<span class="ec-toc-status"><span class="ec-status-progress">0 of 2 sections finished</span></span></span></a></li>
+<li class="ec-toc-chapter"><a href="06-local-fields.html"><span class="ec-toc-num">6</span><span class="ec-toc-text">Elliptic curves over local fields<span class="ec-toc-status"><span class="ec-status-progress">0 of 4 sections finished</span></span></span></a></li>
 <li class="ec-toc-chapter"><a href="07-galois-cohomology.html"><span class="ec-toc-num">7</span><span class="ec-toc-text">Galois cohomology<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
 <li class="ec-toc-chapter"><a href="08-mordell-weil.html"><span class="ec-toc-num">8</span><span class="ec-toc-text">The Mordell&ndash;Weil theorem<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
 <li class="ec-toc-chapter"><a href="09-integral-points.html"><span class="ec-toc-num">9</span><span class="ec-toc-text">Integral points<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
@@ -51,7 +51,7 @@
 </div>
 <div id="content" class="content">
 <h1 class="title"><span class="ec-chapter-label">Chapter 2</span>Algebraic varieties</h1>
-<div class="sources" id="orgc54741b">
+<div class="sources" id="orgb20de37">
 <p>
 This chapter follows [<a class="ec-cite" href="#bib-Poonen06">Poo06</a>, Chapter 1] and [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Chapter
 I]. Unlike these sources, we do not assume that the ground field is perfect.
@@ -178,7 +178,7 @@ to \(r^2 \in R = Y(R)\). Indeed, the \(R\)-point \(r\) is the \(k\)-algebra
 homomorphism \(k[x] \to R\), \(x \mapsto r\), and composing it with \(\varphi\)
 gives the commutative diagram of \(k\)-algebras
 </p>
-<div class="ec-diagram"><img class="ec-tikz" src="figures/d617890864f3d00e98fbd5b90560b6d610c9b52a.svg" style="--ec-w: 12.48em" alt=""/></div>
+<div class="ec-diagram"><img class="ec-tikz" src="figures/62cb75fd6213f5eb9218805f9aeb2aa793e8b400.svg" style="--ec-w: 12.48em" alt=""/></div>
 <p>
 whose composite is the \(R\)-point \(r^2\) of \(Y\).
 </p>
@@ -205,6 +205,203 @@ this is the sense in which \(\Gm\) is a group.
 </div>
 
 <p>
+The multiplicative group is our first example of a group variety [<a class="ec-cite" href="#bib-Poonen06">Poo06</a>, Section 1.11].
+</p>
+
+<div class="ec-thm ec-definition" id="def-var-group-variety">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Definition 2.1.7</span>.</span> A <dfn class="ec-cdef" id="gls-group-variety" data-gls="group-variety">group variety</dfn> over \(k\) is a \(k\)-variety \(G\) with morphisms
+\(m\colon G \times G \to G\), \(i\colon G \to G\) and \(e\colon \Spec k \to G\) satisfying
+the group axioms, written as commutative diagrams of morphisms.  A
+<dfn class="ec-cdef" id="gls-homomorphism-of-group-varieties" data-gls="homomorphism-of-group-varieties">homomorphism</dfn> of group varieties is a morphism that
+respects \(m\), \(i\) and \(e\).
+</p>
+</div>
+
+<p>
+Equivalently, by Yoneda's lemma, a group variety is a \(k\)-variety \(G\) with a group
+structure on \(G(R)\) for every \(k\)-algebra \(R\), natural in \(R\); this is how we saw
+that \(\Gm\) is a group variety in Example <a href="#eg-var-gm">2.1.6</a>.
+</p>
+
+<p>
+The group varieties of dimension \(1\) that are not elliptic curves are affine, and there
+are few of them [<a class="ec-cite" href="#bib-Poonen08">Poo08</a>, Section 6.2].  To list them we need a quadratic algebra.
+Fix \(d \in k\), with \(d \neq 0\) if \(\operatorname{char} k \neq 2\), and let
+</p>
+\begin{equation}
+\label{eq:var-quadratic-algebra}
+L_d \coloneqq
+\begin{cases}
+k[t]/(t^2 - d) & \text{if } \operatorname{char} k \neq 2, \\
+k[t]/(t^2 + t + d) & \text{if } \operatorname{char} k = 2.
+\end{cases} \tag{2.1.1}
+\end{equation}
+<p>
+In both cases the polynomial is separable, so \(L_d\) is either a separable quadratic
+extension field of \(k\) or isomorphic to \(k \times k\).  Its non-trivial automorphism sends
+\(t\) to \(-t\), respectively \(t + 1\), and the norm of \(x + yt\) is
+</p>
+\begin{equation}
+\label{eq:var-quadratic-norm}
+\Nm(x + yt) =
+\begin{cases}
+x^2 - dy^2 & \text{if } \operatorname{char} k \neq 2, \\
+x^2 + xy + dy^2 & \text{if } \operatorname{char} k = 2.
+\end{cases} \tag{2.1.2}
+\end{equation}
+
+<div class="ec-thm ec-example" id="eg-var-one-dim-groups">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Example 2.1.8</span>.</span> The following are group varieties of dimension \(1\) over \(k\): the <dfn class="ec-cdef" id="gls-additive-group" data-gls="additive-group">additive group</dfn>
+\(\Ga\), the multiplicative group \(\Gm\) of Example <a href="#eg-var-gm">2.1.6</a>, and the
+<dfn class="ec-cdef" id="gls-twisted-multiplicative-group" data-gls="twisted-multiplicative-group">twisted multiplicative group</dfn> \(\Gm^{(d)}\).
+</p>
+
+<table>
+
+
+<colgroup>
+<col  class="org-left">
+
+<col  class="org-left">
+
+<col  class="org-left">
+
+<col  class="org-left">
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">\(G\)</th>
+<th scope="col" class="org-left">variety</th>
+<th scope="col" class="org-left">\(m\bigl((x_1, y_1), (x_2, y_2)\bigr)\)</th>
+<th scope="col" class="org-left">\(G(k)\)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">\(\Ga\)</td>
+<td class="org-left">\(\AA^1\)</td>
+<td class="org-left">\(x_1 + x_2\)</td>
+<td class="org-left">\(k\), under \(+\)</td>
+</tr>
+
+<tr>
+<td class="org-left">\(\Gm\)</td>
+<td class="org-left">\(xy = 1\)</td>
+<td class="org-left">\((x_1x_2, y_1y_2)\)</td>
+<td class="org-left">\(k^\times\)</td>
+</tr>
+
+<tr>
+<td class="org-left">\(\Gm^{(d)}\)</td>
+<td class="org-left">\(\Nm(x + yt) = 1\)</td>
+<td class="org-left">\((x_1x_2 + dy_1y_2,\ x_1y_2 + x_2y_1)\)</td>
+<td class="org-left">\(\ker(\Nm\colon L_d^\times \to k^\times)\)</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+The group law of \(\Gm^{(d)}\) is multiplication in \(L_d\), with \((x, y)\) standing for
+\(x + yt\); in characteristic \(2\), where \(t^2 = t + d\), its second coordinate is
+\(x_1y_2 + x_2y_1 + y_1y_2\).  The identity is \((1, 0)\) and the inverse is conjugation.
+More generally \(\Ga(R) = R\), \(\Gm(R) = R^\times\) and
+</p>
+\begin{equation*}
+\Gm^{(d)}(R) = \ker\bigl(\Nm\colon (L_d \otimes_k R)^\times \to R^\times\bigr)
+\end{equation*}
+<p>
+for every \(k\)-algebra \(R\); an element of norm \(1\) is a unit, its inverse being its
+conjugate.  Over \(\R\), \(\Gm^{(-1)}\) is the circle group \(x^2 + y^2 = 1\), and over \(\Q\),
+\(\Gm^{(2)}\) is the "Pell equation torus" \(x^2 - 2y^2 = 1\) of
+[<a class="ec-cite" href="#bib-Poonen06">Poo06</a>, Example 1.11.3].
+</p>
+</div>
+
+<div class="ec-thm ec-proposition" id="prop-var-twisted-gm">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Proposition 2.1.9</span>.</span> Let \(d\) and \(L_d\) be as in \eqref{eq:var-quadratic-algebra}.
+</p>
+<ol class="org-ol">
+<li><a id="it-var-twisted-gm-split"></a> If \(L_d \cong k \times k\), then \(\Gm^{(d)} \cong \Gm\).  In
+particular \(\Gm^{(1)} \cong \Gm\) if \(\operatorname{char} k \neq 2\), and
+\(\Gm^{(0)} \cong \Gm\) if \(\operatorname{char} k = 2\).</li>
+<li><a id="it-var-twisted-gm-twist"></a> \((\Gm^{(d)})_{L_d} \cong (\Gm)_{L_d}\).  The isomorphism class
+of \(\Gm^{(d)}\) depends only on the class of \(d\) in \(k^\times/k^{\times 2}\),
+respectively in \(k/\{c^2 + c : c \in k\}\).</li>
+<li><a id="it-var-twisted-gm-nonsplit"></a> If \(L_d\) is a field, then \(\Gm^{(d)} \not\cong \Gm\) over
+\(k\).</li>
+<li><a id="it-var-twisted-gm-finite"></a> If \(k = \F_q\) and \(L_d\) is a field, then \(\Gm^{(d)}(\F_q)\)
+is cyclic of order \(q + 1\).</li>
+</ol>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+For part <a href="#it-var-twisted-gm-split">1</a>, \(L_d \cong k \times k\) means that
+\(t^2 - d\), respectively \(t^2 + t + d\), has a root \(\delta \in k\).  Let \(\delta'\) be
+the other one, \(-\delta\), respectively \(\delta + 1\), so that \(\delta' \neq \delta\).  Then
+\(\Nm(x + yt) = (x + \delta y)(x + \delta' y)\), and \((x, y) \mapsto x + \delta y\), the
+restriction of the ring homomorphism \(L_d \to k\), \(t \mapsto \delta\), is a homomorphism
+\(\Gm^{(d)} \to \Gm\).  Its inverse is
+</p>
+\begin{equation*}
+u \mapsto \left(\frac{\delta'u - \delta u^{-1}}{\delta' - \delta},\
+\frac{u^{-1} - u}{\delta' - \delta}\right),
+\end{equation*}
+<p>
+since \(x + \delta' y = (x + \delta y)^{-1}\) on \(\Gm^{(d)}\).
+</p>
+
+<p>
+For part <a href="#it-var-twisted-gm-twist">2</a>, the image of \(t\) is a root in \(L_d\), and
+\(L_d \otimes_k L_d \cong L_d \times L_d\), so part <a href="#it-var-twisted-gm-split">1</a> applies over
+\(L_d\).  Replacing \(d\) by \(c^2d\) with \(c \in k^\times\), respectively by \(d + c^2 + c\)
+with \(c \in k\), gives an isomorphic group variety, through \((x, y) \mapsto (x, y/c)\),
+respectively \((x, y) \mapsto (x + cy, y)\): both are the isomorphisms
+\(L_{c^2d} \to L_d\), \(t \mapsto ct\), respectively \(L_{d + c^2 + c} \to L_d\),
+\(t \mapsto t + c\), written in coordinates.
+</p>
+
+<p>
+For part <a href="#it-var-twisted-gm-nonsplit">3</a>, the projective closure
+\(\overline{G} \coloneqq V_+(\Nm(X + YT) - Z^2) \subseteq \PP^2_k\) of \(\Gm^{(d)}\), where
+\(\Nm(X + YT)\) is the quadratic form \eqref{eq:var-quadratic-norm} in \(X\) and \(Y\), is a
+smooth conic: its partial derivatives vanish together only at \((0, 0, 0)\).  The complement
+\(\overline{G} - \Gm^{(d)} = V_+(\Nm(X + YT), Z)\) is a single closed point with residue field
+\(L_d\), because \(\Nm(X + YT)\) is irreducible over \(k\).  The complement of \(\Gm\) in its
+projective closure \(\PP^1_k\) is two rational points, \(0\) and \(\infty\).  An isomorphism
+\(\Gm^{(d)} \to \Gm\) and its inverse extend to morphisms between the projective closures
+(Proposition <a href="03-curves.html#prop-crv-extend">3.2.1</a>), inverse to each other, which would match the complements.
+</p>
+
+<p>
+For part <a href="#it-var-twisted-gm-finite">4</a>, \(L_d = \F_{q^2}\), whose non-trivial automorphism is
+\(\alpha \mapsto \alpha^q\), so the norm is \(\alpha \mapsto \alpha^{q + 1}\).  Its kernel in
+the cyclic group \(\F_{q^2}^\times\) of order \(q^2 - 1\) is cyclic of order \(q + 1\).
+</p>
+</details>
+
+<div class="ec-thm ec-definition" id="def-var-torus">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Definition 2.1.10</span>.</span> A group variety \(T\) over \(k\) is a <dfn class="ec-cdef" id="gls-torus" data-gls="torus">torus</dfn> if \(T_{\kbar} \cong (\Gm^n)_{\kbar}\) for
+some \(n \geq 0\), and a <dfn class="ec-cdef" id="gls-split-torus" data-gls="split-torus">split torus</dfn> if \(T \cong \Gm^n\) over \(k\)
+[<a class="ec-cite" href="#bib-Poonen06">Poo06</a>, Definition 1.11.4].
+</p>
+</div>
+
+<p>
+By Proposition <a href="#prop-var-twisted-gm">2.1.9</a>, \(\Gm^{(d)}\) is a torus of dimension \(1\), split
+exactly when \(L_d \cong k \times k\); for \(d = 2\) over \(\Q\) this is
+[<a class="ec-cite" href="#bib-Poonen06">Poo06</a>, Exercise 1.7].  Over a perfect field of characteristic not \(2\), every
+connected group variety of dimension \(1\) is an elliptic curve, \(\Ga\), \(\Gm\) or some
+\(\Gm^{(d)}\) [<a class="ec-cite" href="#bib-Poonen08">Poo08</a>, Section 6.2], [<a class="ec-cite" href="#bib-Milne20">Mil20</a>, Section II.3].  In Chapter 4 the
+last three appear as the nonsingular parts of singular Weierstrass cubics.
+</p>
+
+<p>
 In the complex analytic world, \(\PP^n(\C)\) is the set of lines through the origin in
 \(\C^{n+1}\).  For \(n = 1, 2\) we saw that it is covered by \(n + 1\) copies of \(\C^n\):
 see Example <a href="01-riemann-surfaces.html#eg-rs-riemann-sphere">1.1.4</a> and Section <a href="01-riemann-surfaces.html#sec-rs-plane-curves">1.6</a>.  In the
@@ -216,7 +413,7 @@ it is quite tricky to describe the set \(\PP^n(R)\).
 
 <div class="ec-thm ec-example" id="eg-var-projective">
 <p>
-<span class="ec-thm-head"><span class="ec-thm-name">Example 2.1.7</span>.</span> Projective \(n\)-space is \(\PP^n_k \coloneqq \Proj k[X_0, \dots, X_n]\).  A homogeneous
+<span class="ec-thm-head"><span class="ec-thm-name">Example 2.1.11</span>.</span> Projective \(n\)-space is \(\PP^n_k \coloneqq \Proj k[X_0, \dots, X_n]\).  A homogeneous
 ideal \(I \subseteq k[X_0, \dots, X_n]\) defines the closed subvariety
 \(V_+(I) \coloneqq \Proj k[X_0, \dots, X_n]/I\) of \(\PP^n_k\).
 </p>
@@ -311,7 +508,7 @@ every element of the ideal, not only a set of generators.
 
 <div class="ec-thm ec-example" id="eg-var-twisted-cubic">
 <p>
-<span class="ec-thm-head"><span class="ec-thm-name">Example 2.1.8</span>.</span> The <dfn class="ec-cdef" id="gls-twisted-cubic" data-gls="twisted-cubic">twisted cubic</dfn> is the affine curve \(C \coloneqq V(I) \subseteq \AA^3_k\), where
+<span class="ec-thm-head"><span class="ec-thm-name">Example 2.1.12</span>.</span> The <dfn class="ec-cdef" id="gls-twisted-cubic" data-gls="twisted-cubic">twisted cubic</dfn> is the affine curve \(C \coloneqq V(I) \subseteq \AA^3_k\), where
 </p>
 \begin{equation*}
 I \coloneqq (x_2 - x_1^2,\ x_3 - x_1^3),
@@ -343,7 +540,7 @@ two generators of \(I\).
 
 <div class="ec-thm ec-definition" id="def-var-integral">
 <p>
-<span class="ec-thm-head"><span class="ec-thm-name">Definition 2.1.9</span>.</span> Let \(X\) be a \(k\)-variety.
+<span class="ec-thm-head"><span class="ec-thm-name">Definition 2.1.13</span>.</span> Let \(X\) be a \(k\)-variety.
 </p>
 <ol class="org-ol">
 <li>\(X\) is <dfn class="ec-cdef" id="gls-irreducible-variety" data-gls="irreducible-variety">irreducible</dfn> if its underlying topological space is
@@ -365,7 +562,7 @@ prime.
 
 <div class="ec-thm ec-warning" id="warn-var-not-integral">
 <p>
-<span class="ec-thm-head"><span class="ec-thm-name">Warning 2.1.10</span>.</span> Varieties need not be reduced or irreducible (Definition <a href="#def-var-integral">2.1.9</a>).  The
+<span class="ec-thm-head"><span class="ec-thm-name">Warning 2.1.14</span>.</span> Varieties need not be reduced or irreducible (Definition <a href="#def-var-integral">2.1.13</a>).  The
 variety \(V(x^2) \subseteq \AA^1_k\) is irreducible but not reduced, and
 \(V(xy) \subseteq \AA^2_k\) is reduced but not irreducible. For every field \(L\), both
 \(V(x^2)(L)\) and \(V(x)(L)\) consist of the single \(L\)-point \(0\), but
@@ -380,7 +577,7 @@ The rational points do not determine a variety either.
 
 <div class="ec-thm ec-example" id="eg-var-points-not-determine">
 <p>
-<span class="ec-thm-head"><span class="ec-thm-name">Example 2.1.11</span>.</span> Consider the three closed subvarieties
+<span class="ec-thm-head"><span class="ec-thm-name">Example 2.1.15</span>.</span> Consider the three closed subvarieties
 </p>
 \begin{equation*}
 C_1 \coloneqq V_+(X^2 + Y^2 + Z^2), \qquad
@@ -416,7 +613,7 @@ while \((\sqrt 3 : 0 : 1) \in C_2(\R)\).
 
 <div class="ec-thm ec-example" id="eg-var-points-17">
 <p>
-<span class="ec-thm-head"><span class="ec-thm-name">Example 2.1.12</span>.</span> The cubic \(E \coloneqq V_+(Y^2Z - X^3 - 17Z^3) \subseteq \PP^2_\Q\) is the projective
+<span class="ec-thm-head"><span class="ec-thm-name">Example 2.1.16</span>.</span> The cubic \(E \coloneqq V_+(Y^2Z - X^3 - 17Z^3) \subseteq \PP^2_\Q\) is the projective
 closure of the affine curve \(y^2 = x^3 + 17\), where \(x = X/Z\) and \(y = Y/Z\).
 Setting \(Z = 0\) leaves \(X^3 = 0\), so \(E\) has a single point at infinity,
 \((0 : 1 : 0)\), and
@@ -437,7 +634,7 @@ The Galois group \(\Gal_k\) acts on \(X(\ksep)\) through its action on \(\ksep\)
 
 <div class="ec-thm ec-proposition" id="prop-var-galois-points">
 <p>
-<span class="ec-thm-head"><span class="ec-thm-name">Proposition 2.1.13</span>.</span> Let \(X\) be a \(k\)-variety.  Then \(X(k) = X(\ksep)^{\Gal_k}\).
+<span class="ec-thm-head"><span class="ec-thm-name">Proposition 2.1.17</span>.</span> Let \(X\) be a \(k\)-variety.  Then \(X(k) = X(\ksep)^{\Gal_k}\).
 </p>
 </div>
 
@@ -463,7 +660,7 @@ By Hilbert's Theorem 90 there is \(\alpha \in (\ksep)^\times\) with
 
 <div class="ec-thm ec-warning" id="warn-var-kbar">
 <p>
-<span class="ec-thm-head"><span class="ec-thm-name">Warning 2.1.14</span>.</span> [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>] works with \(\kbar\) instead of \(\ksep\).  The fixed field of
+<span class="ec-thm-head"><span class="ec-thm-name">Warning 2.1.18</span>.</span> [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>] works with \(\kbar\) instead of \(\ksep\).  The fixed field of
 \(\Aut(\kbar/k)\) is the perfect closure \(k^{\perf}\), so
 \(X(\kbar)^{\Aut(\kbar/k)} = X(k^{\perf})\), which can be larger than \(X(k)\) when \(k\)
 is imperfect.  For example, if \(k = \F_p(t)\) and \(X = V(x^p - t) \subseteq
@@ -474,7 +671,7 @@ is imperfect.  For example, if \(k = \F_p(t)\) and \(X = V(x^p - t) \subseteq
 
 <div class="ec-thm ec-remark" id="rem-var-silverman-dictionary">
 <p>
-<span class="ec-thm-head"><span class="ec-thm-name">Remark 2.1.15</span>.</span> In [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Section I.1], whose ground field \(K\) is our \(k\), a variety \(V/K\) is a subset of \(\AA^n(\kbar)\)
+<span class="ec-thm-head"><span class="ec-thm-name">Remark 2.1.19</span>.</span> In [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Section I.1], whose ground field \(K\) is our \(k\), a variety \(V/K\) is a subset of \(\AA^n(\kbar)\)
 or \(\PP^n(\kbar)\), cut out by an ideal \(I(V/K)\) with coefficients in \(K\).  It
 corresponds to the \(k\)-variety \(X \coloneqq V(I(V/K))\) or \(V_+(I(V/K))\): then
 \(V = X(\kbar)\) and \(V(K) = X(k)\).  The standing assumptions of
@@ -508,7 +705,7 @@ varieties.  We have \(X(L) = X_L(L)\) [<a class="ec-cite" href="#bib-Poonen06">P
 <p>
 <span class="ec-thm-head"><span class="ec-thm-name">Definition 2.2.2</span>.</span> A \(k\)-variety \(X\) is geometrically reduced, geometrically irreducible or
 <dfn class="ec-cdef" id="gls-geometrically-integral" data-gls="geometrically-integral">geometrically integral</dfn> if \(X_{\kbar}\) is reduced, irreducible or integral
-(Definition <a href="#def-var-integral">2.1.9</a>), respectively.
+(Definition <a href="#def-var-integral">2.1.13</a>), respectively.
 </p>
 </div>
 
@@ -654,7 +851,7 @@ singular (Example <a href="#eg-var-singular-cubic">2.4.5</a>) [<a class="ec-cite
 <div class="ec-thm ec-example" id="eg-var-twisted-conics">
 <p>
 <span class="ec-thm-head"><span class="ec-thm-name">Example 2.3.6</span>.</span> Let \(C \coloneqq V_+(X^2 + Y^2 - Z^2)\) and \(C_2 \coloneqq V_+(X^2 + Y^2 - 3Z^2)\) in
-\(\PP^2_\Q\).  By Examples <a href="#eg-var-conic">2.3.4</a> and <a href="#eg-var-points-not-determine">2.1.11</a>, \(C(\Q)\)
+\(\PP^2_\Q\).  By Examples <a href="#eg-var-conic">2.3.4</a> and <a href="#eg-var-points-not-determine">2.1.15</a>, \(C(\Q)\)
 is infinite and \(C_2(\Q)\) is empty, so \(C \not\cong C_2\).  But \((X : Y : Z) \mapsto
 (X : Y : \sqrt 3\, Z)\) is an isomorphism \((C_2)_{\Q(\sqrt 3)} \cong C_{\Q(\sqrt 3)}\)
 [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Example I.3.8].
@@ -770,9 +967,9 @@ So \(\calO_{E,P}\) is a discrete valuation ring.
 </div>
 </div>
 
-<div id="outline-container-orge5bade2" class="outline-2 ec-references">
-<h2 id="orge5bade2">References</h2>
-<div class="outline-text-2" id="text-orge5bade2">
+<div id="outline-container-org305ad75" class="outline-2 ec-references">
+<h2 id="org305ad75">References</h2>
+<div class="outline-text-2" id="text-org305ad75">
 <dl class="ec-bibliography">
 <dt id="bib-Hartshorne77">[Har77]</dt>
 <dd>Robin Hartshorne. <i>Algebraic geometry</i>. Vol. No. 52. Graduate Texts in Mathematics. Springer-Verlag, New York-Heidelberg, 1977.</dd>
@@ -780,6 +977,8 @@ So \(\calO_{E,P}\) is a discrete valuation ring.
 <dd>James S. Milne. <i>Elliptic curves</i>. Second. World Scientific Publishing Co. Pte. Ltd., Hackensack, NJ, 2020.</dd>
 <dt id="bib-Poonen06">[Poo06]</dt>
 <dd>Bjorn Poonen. <i>Lectures on rational points on curves</i>. 2006. Lecture notes, March 5, 2006 version.</dd>
+<dt id="bib-Poonen08">[Poo08]</dt>
+<dd>Bjorn Poonen. &ldquo;Elliptic curves&rdquo;. In: <i>Algorithmic number theory: lattices, number fields, curves and cryptography</i> 44, pp. 183&ndash;207. Math. Sci. Res. Inst. Publ.. Cambridge Univ. Press, Cambridge, 2008. <a href="https://math.mit.edu/~poonen/papers/elliptic.pdf">https://math.mit.edu/~poonen/papers/elliptic.pdf</a>.</dd>
 <dt id="bib-Silverman09">[Sil09]</dt>
 <dd>Joseph H. Silverman. <i>The arithmetic of elliptic curves</i>. Second. Vol. 106. Graduate Texts in Mathematics. Springer, Dordrecht, 2009. <a href="https://doi.org/10.1007/978-0-387-09494-6">doi:10.1007/978-0-387-09494-6</a>.</dd>
 <dt id="bib-Vakil23">[Vak23]</dt>

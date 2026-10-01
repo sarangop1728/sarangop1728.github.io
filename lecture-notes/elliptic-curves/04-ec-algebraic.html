@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2026-09-29 Tue 08:42 -->
+<!-- 2026-10-01 Thu 08:27 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Elliptic curves as algebraic curves</title>
@@ -39,7 +39,7 @@
 <li class="ec-toc-level-1"><a href="#s4.8"><span class="ec-toc-num">4.8</span><span class="ec-toc-text">Selmer elliptic curves<span class="ec-toc-status"><span class="ec-status-label ec-status-draft">Draft</span></span></span></a></li>
 </ol></li>
 <li class="ec-toc-chapter"><a href="05-finite-fields.html"><span class="ec-toc-num">5</span><span class="ec-toc-text">Elliptic curves over finite fields<span class="ec-toc-status"><span class="ec-status-progress">0 of 5 sections finished</span></span></span></a></li>
-<li class="ec-toc-chapter"><a href="06-local-fields.html"><span class="ec-toc-num">6</span><span class="ec-toc-text">Elliptic curves over local fields<span class="ec-toc-status"><span class="ec-status-progress">0 of 2 sections finished</span></span></span></a></li>
+<li class="ec-toc-chapter"><a href="06-local-fields.html"><span class="ec-toc-num">6</span><span class="ec-toc-text">Elliptic curves over local fields<span class="ec-toc-status"><span class="ec-status-progress">0 of 4 sections finished</span></span></span></a></li>
 <li class="ec-toc-chapter"><a href="07-galois-cohomology.html"><span class="ec-toc-num">7</span><span class="ec-toc-text">Galois cohomology<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
 <li class="ec-toc-chapter"><a href="08-mordell-weil.html"><span class="ec-toc-num">8</span><span class="ec-toc-text">The Mordell&ndash;Weil theorem<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
 <li class="ec-toc-chapter"><a href="09-integral-points.html"><span class="ec-toc-num">9</span><span class="ec-toc-text">Integral points<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
@@ -57,7 +57,7 @@
 </div>
 <div id="content" class="content">
 <h1 class="title"><span class="ec-chapter-label">Chapter 4</span>Elliptic curves as algebraic curves</h1>
-<div class="sources" id="orgf6577ce">
+<div class="sources" id="orgae17cda">
 <p>
 This chapter follows [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Chapter III], with some material from
 [<a class="ec-cite" href="#bib-Milne20">Mil20</a>, Sections II.1, II.2, II.5 and II.6], and [<a class="ec-cite" href="#bib-Voight21">Voi21</a>, Chapters 2, 3, 5
@@ -854,7 +854,7 @@ Theorem <a href="#thm-ec-automorphisms">4.7.11</a>.
 </div>
 
 <div id="outline-container-sec-ec-group-law" class="outline-2">
-<h2 id="sec-ec-group-law"><span class="ec-status ec-status-draft"><span class="ec-status-label ec-status-draft">Draft</span><time datetime="2026-09-29">29 Sep 2026</time></span><span class="section-number" id="s4.2">4.2</span> The group law</h2>
+<h2 id="sec-ec-group-law"><span class="ec-status ec-status-draft"><span class="ec-status-label ec-status-draft">Draft</span><time datetime="2026-10-01">1 Oct 2026</time></span><span class="section-number" id="s4.2">4.2</span> The group law</h2>
 <div class="outline-text-2" id="text-sec-ec-group-law">
 <p>
 On \(\C/\Lambda\) the group law comes for free from addition in \(\C\).  On an elliptic
@@ -924,7 +924,7 @@ with
 and \(O\) is the identity.  For every field \(L \supseteq k\), the same construction on
 \(E_L\) makes \(E(L)\) a group, and \(E(k) \subseteq E(L)\) is a subgroup.  If \(L/k\) is
 Galois, then \(\Gal(L/k)\) acts on \(E(L)\) by group automorphisms, with fixed points
-\(E(k)\) (Proposition <a href="02-varieties.html#prop-var-galois-points">2.1.13</a>).
+\(E(k)\) (Proposition <a href="02-varieties.html#prop-var-galois-points">2.1.17</a>).
 </p>
 
 <div class="ec-thm ec-corollary" id="cor-ec-principal">
@@ -993,7 +993,7 @@ the roots in \(y\) of \(f(x_0, y) = 0\), whose sum is \(-a_1x_0 - a_3\).  Part <
 </details>
 
 <figure class="ec-figure" id="fig-ec-chord-tangent">
-<img class="ec-tikz" src="figures/3eae2564c62f558e4e7578c97a92813db85ad53f.svg" style="--ec-w: 18.62em" alt=""/>
+<img class="ec-tikz" src="figures/e0a79689b75fc01a11a0dd9969b66ea87155c59f.svg" style="--ec-w: 18.62em" alt=""/>
 <figcaption><span class="ec-thm-name">Figure 4.2.1</span>. The chord-and-tangent law on \(y^2 = x^3 - x + 1\) over \(\R\): the line through \(P = (-1, 1)\) and \(Q = (0, 1)\) meets the curve again at \(R = (1, 1)\), and \(P + Q = -R = (1, -1)\).</figcaption>
 </figure>
 
@@ -1204,30 +1204,176 @@ one shows that \(\tau_Q\) is a morphism for each \(Q\), and then that the ration
 </details>
 
 <p>
-So an elliptic curve is a group variety, an abelian variety of dimension \(1\).  We end
-the section with the singular Weierstrass cubics of Remark <a href="#rem-ec-singular-cubics">4.1.11</a>.
+So an elliptic curve is a group variety (Definition <a href="02-varieties.html#def-var-group-variety">2.1.7</a>), an abelian
+variety of dimension \(1\).  We end the section with the singular Weierstrass cubics of
+Remark <a href="#rem-ec-singular-cubics">4.1.11</a>: removing the singular point leaves one of the group
+varieties \(\Ga\), \(\Gm\), \(\Gm^{(d)}\) of Example <a href="02-varieties.html#eg-var-one-dim-groups">2.1.8</a>.  We follow
+[<a class="ec-cite" href="#bib-Poonen08">Poo08</a>, Section 6.3] and [<a class="ec-cite" href="#bib-Milne20">Mil20</a>, Section II.3].
+</p>
+
+<p>
+Let \(E\) be a Weierstrass cubic \eqref{eq:ec-weierstrass} over \(k\) with \(\Delta = 0\), let
+\(S\) be its singular point, and let \(E^{\ns} \coloneqq E - \{S\}\).  The point \(O\) is
+nonsingular (Proposition <a href="#prop-ec-weierstrass-smooth">4.1.5</a>), so \(S\) is affine.  Suppose that
+\(S \in E(k)\).  The change of variables \eqref{eq:ec-change-of-variables} with \(u = 1\),
+\(r = x(S)\), \(s = 0\) and \(t = y(S)\) moves \(S\) to \((0, 0)\) and does not change
+\(c_4\).  Then \(a_6 = 0\) because \(S\) lies on \(E\), and \(a_4 = a_3 = 0\) because the partial
+derivatives vanish at \(S\), so
+</p>
+\begin{equation}
+\label{eq:ec-singular-normal-form}
+\begin{gathered}
+E\colon y^2 + a_1xy = x^3 + a_2x^2, \\
+b_2 = a_1^2 + 4a_2, \qquad b_4 = 0, \qquad c_4 = b_2^2.
+\end{gathered} \tag{4.2.2}
+\end{equation}
+<p>
+The tangent cone at \(S\) is \(y^2 + a_1xy - a_2x^2 = 0\), and the slopes of the tangent
+lines are the roots of \(T^2 + a_1T - a_2\).  Let
+</p>
+\begin{equation*}
+L \coloneqq k[T]/(T^2 + a_1T - a_2)
+\end{equation*}
+<p>
+be the algebra of tangent slopes, and let \(\alpha\) and \(\alpha' = -a_1 - \alpha\) be the
+images of the roots.  Its discriminant is \(b_2\), so \(L\) is separable exactly when
+\(c_4 \neq 0\): then \(S\) is a node, with two tangent directions, and otherwise a cusp
+(Remark <a href="#rem-ec-singular-cubics">4.1.11</a>).  If \(c_4 \neq 0\), then \(L \cong L_d\)
+<a class="ec-eqref" href="02-varieties.html#mjx-eqn%3Aeq%3Avar-quadratic-algebra">(2.1.1)</a>, with
+</p>
+\begin{equation}
+\label{eq:ec-node-d}
+d \coloneqq b_2 = a_1^2 + 4a_2 \quad\text{if } \operatorname{char} k \neq 2,
+\qquad
+d \coloneqq a_2/a_1^2 \quad\text{if } \operatorname{char} k = 2, \tag{4.2.3}
+\end{equation}
+<p>
+through \(t \mapsto 2\alpha + a_1\), respectively \(t \mapsto \alpha/a_1\).  If \(c_4 = 0\),
+then \(T^2 + a_1T - a_2 = (T - \beta)^2\) over \(\kbar\), and the tangent line at \(S\) is
+\(y = \beta x\).
 </p>
 
 <div class="ec-thm ec-proposition" id="prop-ec-singular-group">
 <p>
-<span class="ec-thm-head"><span class="ec-thm-name">Proposition 4.2.11</span>.</span> Let \(E\) be a Weierstrass cubic with \(\Delta = 0\), singular point \(S\), and
-\(E^{\ns} \coloneqq E - \{S\}\).  The chord-and-tangent construction of
-Proposition <a href="#prop-ec-chord-tangent">4.2.4</a> makes \(E^{\ns}(\kbar)\) an abelian group, and:
+<span class="ec-thm-head"><span class="ec-thm-name">Proposition 4.2.11</span>.</span> Let \(E\) be a Weierstrass cubic over \(k\) with \(\Delta = 0\), whose singular point \(S\) is
+a rational point, put in the form \eqref{eq:ec-singular-normal-form}.  For every field
+\(K \supseteq k\), the chord-and-tangent construction of Proposition <a href="#prop-ec-chord-tangent">4.2.4</a>
+makes \(E^{\ns}(K)\) an abelian group with identity \(O\), and \(E^{\ns}\) is a group variety.
 </p>
 <ol class="org-ol">
-<li>if \(S\) is a node, with tangent lines \(y = \alpha_i x + \beta_i\) for \(i = 1, 2\),
-then \((x, y) \mapsto (y - \alpha_1x - \beta_1)/(y - \alpha_2x - \beta_2)\) is an
-isomorphism \(E^{\ns}(\kbar) \cong \kbar^\times\);</li>
-<li>if \(S\) is a cusp, with tangent line \(y = \alpha x + \beta\), then
-\((x, y) \mapsto (x - x(S))/(y - \alpha x - \beta)\) is an isomorphism
-\(E^{\ns}(\kbar) \cong \kbar\).</li>
+<li><p>
+<a id="it-ec-singular-node"></a> <b>Node.</b>  If \(c_4 \neq 0\), then
+</p>
+\begin{equation*}
+P \mapsto \frac{y - \alpha x}{y - \alpha' x}
+\end{equation*}
+<p>
+is an isomorphism of group varieties \(E^{\ns} \to \Gm^{(d)}\), with \(d\) as in
+\eqref{eq:ec-node-d}.  In particular \(E^{\ns} \cong \Gm\) if the slopes of the tangent
+lines at \(S\) lie in \(k\).
+</p></li>
+<li><p>
+<a id="it-ec-singular-cusp"></a> <b>Cusp.</b>  If \(c_4 = 0\) and the tangent line \(y = \beta x\) at \(S\)
+is defined over \(k\), then
+</p>
+\begin{equation*}
+P \mapsto \frac{x}{y - \beta x}
+\end{equation*}
+<p>
+is an isomorphism of group varieties \(E^{\ns} \to \Ga\).
+</p></li>
 </ol>
+<p>
+Both hypotheses on \(S\) hold if \(k\) is perfect, and the one on the tangent line holds if
+\(\operatorname{char} k \neq 2\), where \(\beta = -a_1/2\).  Over \(\kbar\), these are the
+isomorphisms \(E^{\ns}(\kbar) \cong \kbar^\times\) and \(E^{\ns}(\kbar) \cong \kbar\) of
+[<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Proposition III.2.5].
+</p>
 </div>
 
 <details class="ec-proof">
-<summary><span class="ec-proof-head">Proof <span class="ec-proof-cites">(Sil09)</span>.</span></summary>
+<summary><span class="ec-proof-head">Proof.</span></summary>
 <p>
-See [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Proposition III.2.5].
+<b>The composition law.</b>  Let \(F\) be the cubic form of \(E\).  A line through \(S\) meets
+\(E\) at \(S\) with multiplicity at least \(2\), since all partial derivatives of \(F\) vanish
+at \(S\).  So a line through two points of \(E^{\ns}(K)\), or tangent to \(E\) at one, does
+not pass through \(S\), and its third intersection point with \(E\), counted with
+multiplicity as a root of the restriction of \(F\) to the line, lies in \(E^{\ns}(K)\).  As
+in Proposition <a href="#prop-ec-chord-tangent">4.2.4</a>, define \(-P\) as the third intersection point of the
+line through \(P\) and \(O\), and \(P + Q \coloneqq -R\), where \(R\) is the third
+intersection point of the line through \(P\) and \(Q\).  Suppose that
+\(\varphi\colon E^{\ns}(K) \to G(K)\) is a bijection onto the \(K\)-points of a group
+variety \(G\), written additively, with \(\varphi(O) = 0\), and such that whenever
+\(P_1, P_2, P_3 \in E^{\ns}(K)\) are the three intersection points of a line with \(E\),
+</p>
+\begin{equation}
+\label{eq:ec-singular-collinear}
+\varphi(P_1) + \varphi(P_2) + \varphi(P_3) = 0. \tag{4.2.4}
+\end{equation}
+<p>
+Then \(\varphi(-P) = -\varphi(P)\) and \(\varphi(P + Q) = -\varphi(R) = \varphi(P) + \varphi(Q)\).
+So the composition law is transported from \(G(K)\): it is associative, \(E^{\ns}(K)\) is an
+abelian group, and \(\varphi\) is an isomorphism.  If moreover \(\varphi\) is an
+isomorphism of varieties \(E^{\ns} \to G\), then the group law of \(E^{\ns}\) is given by
+morphisms, and \(\varphi\) is an isomorphism of group varieties.
+</p>
+
+<p>
+<b>The cusp.</b>  Substituting \(y + \beta x\) for \(y\), a change of variables over \(k\), turns
+\eqref{eq:ec-singular-normal-form} into \(y^2 = x^3\), that is, \(Y^2Z = X^3\), and the map
+into \(P \mapsto x/y = X/Y\).  On \(E^{\ns}\) we have \(Y \neq 0\), since \(Y = 0\) forces
+\(X = 0\), which is \(S\).  So \(t \mapsto (t : 1 : t^3)\) is an isomorphism
+\(\Ga \to E^{\ns}\), inverse to \(X/Y\), with \(t = 0\) going to \(O\).  A line
+\(aX + bY + cZ = 0\) not through \(S = (0 : 0 : 1)\) has \(c \neq 0\), and it meets \(E\) at
+the \(\kbar\)-points with parameters the roots of \(ct^3 + at + b\).  Since this cubic has no
+\(t^2\) term, the three roots add up to \(0\), which is \eqref{eq:ec-singular-collinear}
+[<a class="ec-cite" href="#bib-Poonen08">Poo08</a>, Section 6.3].
+</p>
+
+<p>
+<b>The node, split.</b>  Suppose first that \(\alpha, \alpha' \in k\).  The coordinates
+\(U \coloneqq Y - \alpha X\), \(W \coloneqq Y - \alpha' X\) and \(Z\) are projective
+coordinates on \(\PP^2\), since \(\alpha \neq \alpha'\); in them \(S = (0 : 0 : 1)\),
+\(O = (1 : 1 : 0)\), \(X = (U - W)/(\alpha' - \alpha)\), and \(E\) is
+</p>
+\begin{equation*}
+c\,UWZ = (U - W)^3, \qquad c \coloneqq (\alpha' - \alpha)^3,
+\end{equation*}
+<p>
+because \(Y^2 + a_1XY - a_2X^2 = UW\).  On \(E^{\ns}\), \(U\) and \(W\) are non-zero, since
+either one vanishing forces the other to, which is \(S\).  So \(\varphi \coloneqq U/W\) is a
+morphism \(E^{\ns} \to \Gm\), and
+</p>
+\begin{equation*}
+r \mapsto \bigl(c\,r^2 : c\,r : (r - 1)^3\bigr)
+\end{equation*}
+<p>
+is its inverse, with \(r = 1\) going to \(O\).  A line not through \(S\) is
+\(Z = \lambda U + \mu W\), and it meets \(E\) at the \(\kbar\)-points with \(r = U/W\) a root of
+\((r - 1)^3 - c\,r(\lambda r + \mu)\).  This cubic is monic with constant term \(-1\), so
+the product of the three roots is \(1\), which is \eqref{eq:ec-singular-collinear},
+written multiplicatively [<a class="ec-cite" href="#bib-Milne20">Mil20</a>, Section II.3].  Then \(\Gm \cong \Gm^{(d)}\) by
+part <a href="02-varieties.html#it-var-twisted-gm-split">1</a> of Proposition <a href="02-varieties.html#prop-var-twisted-gm">2.1.9</a>, through
+\(x + yt \mapsto x + \delta y\) with \(\delta = 2\alpha + a_1\), respectively
+\(\alpha/a_1\), and the composite is the map of part <a href="#it-ec-singular-node">1</a>.
+</p>
+
+<p>
+<b>The node, in general.</b>  Since \((y - \alpha x)(y - \alpha' x) = x^3\) on \(E\),
+</p>
+\begin{equation*}
+\frac{y - \alpha x}{y - \alpha' x} = \frac{(y - \alpha x)^2}{x^3}
+= \frac{y^2 + a_2x^2}{x^3} - \frac{2y + a_1x}{x^2}\,\alpha,
+\end{equation*}
+<p>
+using \(\alpha^2 = a_2 - a_1\alpha\).  Its coordinates in the basis \(1, \alpha\) of \(L\)
+are rational functions defined over \(k\), and its norm is \(1\).  So it is a morphism
+\(\Phi\colon E^{\ns} \to \Gm^{(d)}\) defined over \(k\).  Over \(L\), where
+\(\alpha, \alpha'\) are rational, \(\Phi\) is the isomorphism of the split case; its
+inverse is invariant under \(\Gal(L/k)\), hence defined over \(k\), and \(\Phi\) is an
+isomorphism.  For a field \(K \supseteq k\), the identity \eqref{eq:ec-singular-collinear}
+for \(\Phi\) holds in \(\Gm^{(d)}(K) \subseteq \Gm^{(d)}(K \otimes_k L)\), where it holds by
+the split case.
 </p>
 </details>
 </div>
@@ -2359,8 +2505,8 @@ first collect what we need about quaternion algebras.
 </p>
 </div>
 
-<div id="outline-container-orgfb60a24" class="outline-3">
-<h3 id="orgfb60a24"><span class="section-number" id="s4.7.1">4.7.1</span> Quaternion algebras</h3>
+<div id="outline-container-org5612137" class="outline-3">
+<h3 id="org5612137"><span class="section-number" id="s4.7.1">4.7.1</span> Quaternion algebras</h3>
 <div class="outline-text-3" id="text-7-1">
 <p>
 We follow [<a class="ec-cite" href="#bib-Voight21">Voi21</a>].  Throughout this subsection, \(F\) is a field with
@@ -2513,8 +2659,8 @@ containing the others.</li>
 </div>
 </div>
 
-<div id="outline-container-org9ff5e88" class="outline-3">
-<h3 id="org9ff5e88"><span class="section-number" id="s4.7.2">4.7.2</span> The endomorphism ring</h3>
+<div id="outline-container-org0a5e11b" class="outline-3">
+<h3 id="org0a5e11b"><span class="section-number" id="s4.7.2">4.7.2</span> The endomorphism ring</h3>
 <div class="outline-text-3" id="text-7-2">
 <div class="ec-thm ec-theorem" id="thm-ec-endomorphism-ring">
 <p>
@@ -3183,14 +3329,16 @@ descent.
 </div>
 </div>
 
-<div id="outline-container-org637cff6" class="outline-2 ec-references">
-<h2 id="org637cff6">References</h2>
-<div class="outline-text-2" id="text-org637cff6">
+<div id="outline-container-org7048a7c" class="outline-2 ec-references">
+<h2 id="org7048a7c">References</h2>
+<div class="outline-text-2" id="text-org7048a7c">
 <dl class="ec-bibliography">
 <dt id="bib-Magma">[BCP97]</dt>
 <dd>Wieb Bosma, John Cannon and Catherine Playoust. &ldquo;The Magma algebra system. I. The user language&rdquo;. In: <i>J. Symbolic Comput.</i> 24.3&ndash;4 (1997), pp. 235&ndash;265. Computational algebra and number theory (London, 1993). <a href="https://doi.org/10.1006/jsco.1996.0125">doi:10.1006/jsco.1996.0125</a>.</dd>
 <dt id="bib-Milne20">[Mil20]</dt>
 <dd>James S. Milne. <i>Elliptic curves</i>. Second. World Scientific Publishing Co. Pte. Ltd., Hackensack, NJ, 2020.</dd>
+<dt id="bib-Poonen08">[Poo08]</dt>
+<dd>Bjorn Poonen. &ldquo;Elliptic curves&rdquo;. In: <i>Algorithmic number theory: lattices, number fields, curves and cryptography</i> 44, pp. 183&ndash;207. Math. Sci. Res. Inst. Publ.. Cambridge Univ. Press, Cambridge, 2008. <a href="https://math.mit.edu/~poonen/papers/elliptic.pdf">https://math.mit.edu/~poonen/papers/elliptic.pdf</a>.</dd>
 <dt id="bib-Selmer-51">[Sel51]</dt>
 <dd>Ernst S. Selmer. &ldquo;The Diophantine equation \(ax^3+by^3+cz^3=0\)&rdquo;. In: <i>Acta Math.</i> 85 (1951), pp. 203&ndash;362 (1 plate). <a href="https://doi.org/10.1007/BF02395746">doi:10.1007/BF02395746</a>.</dd>
 <dt id="bib-Silverman09">[Sil09]</dt>
