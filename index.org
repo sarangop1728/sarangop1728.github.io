@@ -3,7 +3,7 @@
 #+SUBTITLE: Academic Website
 #+AUTHOR: Santiago Arango-Piñeros
 #+EMAIL: santiago.arango.pineros@gmail.com
-#+OPTIONS: toc:t num:nil
+#+OPTIONS: toc:1 num:nil
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="org-css.css"/>
 #+HTML_HEAD:  <link rel="shortcut icon" type="image/x-icon" href="images/umass-favicon.ico">
 # MathJax. Org injects this on its own only when the buffer holds a real LaTeX
