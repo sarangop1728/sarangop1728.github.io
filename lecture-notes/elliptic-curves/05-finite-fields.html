@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2026-10-01 Thu 08:27 -->
+<!-- 2026-10-06 Tue 08:21 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Elliptic curves over finite fields</title>
@@ -37,8 +37,8 @@
 <li class="ec-toc-level-1"><a href="#s5.4"><span class="ec-toc-num">5.4</span><span class="ec-toc-text">The endomorphism ring<span class="ec-toc-status"><span class="ec-status-label ec-status-draft">Draft</span></span></span></a></li>
 <li class="ec-toc-level-1"><a href="#s5.5"><span class="ec-toc-num">5.5</span><span class="ec-toc-text">The Cartier operator and the Hasse invariant<span class="ec-toc-status"><span class="ec-status-label ec-status-draft">Draft</span></span></span></a></li>
 </ol></li>
-<li class="ec-toc-chapter"><a href="06-local-fields.html"><span class="ec-toc-num">6</span><span class="ec-toc-text">Elliptic curves over local fields<span class="ec-toc-status"><span class="ec-status-progress">0 of 4 sections finished</span></span></span></a></li>
-<li class="ec-toc-chapter"><a href="07-galois-cohomology.html"><span class="ec-toc-num">7</span><span class="ec-toc-text">Galois cohomology<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
+<li class="ec-toc-chapter"><a href="06-local-fields.html"><span class="ec-toc-num">6</span><span class="ec-toc-text">Elliptic curves over local fields<span class="ec-toc-status"><span class="ec-status-progress">0 of 5 sections finished</span></span></span></a></li>
+<li class="ec-toc-chapter"><a href="07-galois-cohomology.html"><span class="ec-toc-num">7</span><span class="ec-toc-text">Galois cohomology<span class="ec-toc-status"><span class="ec-status-progress">0 of 10 sections finished</span></span></span></a></li>
 <li class="ec-toc-chapter"><a href="08-mordell-weil.html"><span class="ec-toc-num">8</span><span class="ec-toc-text">The Mordell&ndash;Weil theorem<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
 <li class="ec-toc-chapter"><a href="09-integral-points.html"><span class="ec-toc-num">9</span><span class="ec-toc-text">Integral points<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
 <li class="ec-toc-chapter"><a href="10-selmer-sha.html"><span class="ec-toc-num">10</span><span class="ec-toc-text">Twisting, Selmer, and Tate&ndash;Shafarevich<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
@@ -55,7 +55,7 @@
 </div>
 <div id="content" class="content">
 <h1 class="title"><span class="ec-chapter-label">Chapter 5</span>Elliptic curves over finite fields</h1>
-<div class="sources" id="orgb1d16ec">
+<div class="sources" id="org2e15fdc">
 <p>
 This chapter follows [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Chapter V] and [<a class="ec-cite" href="#bib-Poonen06">Poo06</a>, Chapter 3], with
 [<a class="ec-cite" href="#bib-Milne22">Mil22</a>] for the Galois theory of finite fields, [<a class="ec-cite" href="#bib-Achter-Howe17">AH17</a>] for the
@@ -73,7 +73,7 @@ Cartier operator, and [<a class="ec-cite" href="#bib-Voight21">Voi21</a>] for th
 </div>
 
 <div id="outline-container-sec-ff-frobenius" class="outline-2">
-<h2 id="sec-ff-frobenius"><span class="ec-status ec-status-draft"><span class="ec-status-label ec-status-draft">Draft</span><time datetime="2026-09-26">26 Sep 2026</time></span><span class="section-number" id="s5.1">5.1</span> The Frobenius automorphism</h2>
+<h2 id="sec-ff-frobenius"><span class="ec-status ec-status-draft"><span class="ec-status-label ec-status-draft">Draft</span><time datetime="2026-10-06">6 Oct 2026</time></span><span class="section-number" id="s5.1">5.1</span> The Frobenius automorphism</h2>
 <div class="outline-text-2" id="text-sec-ff-frobenius">
 <p>
 We are in Situation <a href="#sit-ff-standing">5.0.1</a>.  The algebraic closure of \(k\) is
@@ -84,7 +84,7 @@ We are in Situation <a href="#sit-ff-standing">5.0.1</a>.  The algebraic closure
 \end{equation*}
 <p>
 Here \(\F_{q^r}\) is the unique subfield of \(\Fbar_q\) with \(q^r\) elements, and
-\(\F_{q^r} \subseteq \F_{q^s}\) if and only if \(r \mid s\); the direct limit is the union
+\(\F_{q^r} \subseteq \F_{q^s}\) if and only if \(r \mid s\).  The direct limit is the union
 \(\bigcup_{r \geq 1} \F_{q^r}\).
 </p>
 
@@ -123,7 +123,7 @@ For all of this, see [<a class="ec-cite" href="#bib-Milne22">Mil22</a>].
 </div>
 
 <div id="outline-container-sec-ff-hasse" class="outline-2">
-<h2 id="sec-ff-hasse"><span class="ec-status ec-status-draft"><span class="ec-status-label ec-status-draft">Draft</span><time datetime="2026-09-21">21 Sep 2026</time></span><span class="section-number" id="s5.2">5.2</span> Hasse's bound</h2>
+<h2 id="sec-ff-hasse"><span class="ec-status ec-status-draft"><span class="ec-status-label ec-status-draft">Draft</span><time datetime="2026-10-06">6 Oct 2026</time></span><span class="section-number" id="s5.2">5.2</span> Hasse's bound</h2>
 <div class="outline-text-2" id="text-sec-ff-hasse">
 <p>
 Let \(E\) be an elliptic curve over \(\F_q\).  We know from
@@ -178,7 +178,7 @@ E.&nbsp;Artin conjectured, in his thesis, and H.&nbsp;Hasse proved the optimal u
 <details class="ec-proof">
 <summary><span class="ec-proof-head">Proof.</span></summary>
 <p>
-(Sketch; see [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Theorem V.1.1].)  There are three key observations that go
+(Sketch.  See [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Theorem V.1.1].)  There are three key observations that go
 into the proof of Hasse's bound.
 </p>
 <ol class="org-ol">
@@ -209,7 +209,7 @@ give \(\#E(\F_{q^r}) = \deg(1 - \Frob^r)\), and \(\deg \Frob^r = q^r\)
 </div>
 
 <div id="outline-container-sec-ff-weil" class="outline-2">
-<h2 id="sec-ff-weil"><span class="ec-status ec-status-draft"><span class="ec-status-label ec-status-draft">Draft</span><time datetime="2026-10-01">1 Oct 2026</time></span><span class="section-number" id="s5.3">5.3</span> The Weil conjectures</h2>
+<h2 id="sec-ff-weil"><span class="ec-status ec-status-draft"><span class="ec-status-label ec-status-draft">Draft</span><time datetime="2026-10-06">6 Oct 2026</time></span><span class="section-number" id="s5.3">5.3</span> The Weil conjectures</h2>
 <div class="outline-text-2" id="text-sec-ff-weil">
 <p>
 In 1949, Weil made a series of remarkable conjectures about the numbers
@@ -428,7 +428,7 @@ P(T) = \prod_{i=1}^{2g} (1 - \alpha_i T), \qquad \lvert \alpha_i \rvert = \sqrt{
 <summary><span class="ec-proof-head">Proof.</span></summary>
 <p>
 Rationality and the functional equation are due to F.&nbsp;K.&nbsp;Schmidt, from the
-Riemann&#x2013;Roch theorem (Theorem <a href="03-curves.html#thm-crv-rr">3.5.4</a>); the Riemann hypothesis is due to Weil
+Riemann&#x2013;Roch theorem (Theorem <a href="03-curves.html#thm-crv-rr">3.5.4</a>).  The Riemann hypothesis is due to Weil
 [<a class="ec-cite" href="#bib-Weil49">Wei49</a>].  See Remark <a href="#rem-ff-weil-history">5.3.6</a>.  We prove the theorem for elliptic
 curves in Theorem <a href="#thm-ff-weil-ec">5.3.9</a>.
 </p>
@@ -488,7 +488,7 @@ Riemann hypothesis, which Deligne proved in 1973 [<a class="ec-cite" href="#bib-
 <h3 id="sec-ff-weil-ec"><span class="section-number" id="s5.3.3">5.3.3</span> Elliptic curves</h3>
 <div class="outline-text-3" id="text-sec-ff-weil-ec">
 <p>
-We now prove Theorem <a href="#thm-ff-weil">5.3.5</a> for elliptic curves; the result is
+We now prove Theorem <a href="#thm-ff-weil">5.3.5</a> for elliptic curves.  The result is
 Theorem <a href="#thm-ff-weil-ec">5.3.9</a>.  Let \(E\) be an elliptic curve over \(\F_q\), let
 \(\Frob \in \End(E)\) be its \(q\)-th power Frobenius endomorphism
 (Section <a href="#sec-ff-hasse">5.2</a>), let \(\ell \neq p\) be a prime, and let \(\Frob_\ell\) be the map
@@ -678,7 +678,7 @@ In particular, the single number \(\#E(\F_q)\) determines \(\#E(\F_{q^n})\) for 
 <p>
 By \eqref{eq:ff-count}, \(a_n = \alpha^n + \beta^n\) for \(n \geq 1\), and also for
 \(n = 0\).  Since \(\alpha\) is a root of \(T^2 - aT + q\),
-\(\alpha^{n+2} = a\alpha^{n+1} - q\alpha^n\), and likewise for \(\beta\); add the two
+\(\alpha^{n+2} = a\alpha^{n+1} - q\alpha^n\), and likewise for \(\beta\).  Add the two
 [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Exercise 5.13].
 </p>
 </details>
@@ -760,7 +760,7 @@ E5![P[1]^9, P[2]^9, P[3]^9] <span class="org-keyword">eq</span> -3*P;        <sp
 </div>
 <p>
 By Corollary <a href="#cor-ff-supersingular-trace">5.5.7</a>, an elliptic curve over \(\F_q\) is
-supersingular if and only if \(a \equiv 0 \pmod p\); so this curve is supersingular.
+supersingular if and only if \(a \equiv 0 \pmod p\).  So this curve is supersingular.
 </p>
 </div>
 
@@ -794,9 +794,9 @@ E := <span class="org-function-name">EllipticCurve</span>([<span class="org-func
 <span class="ec-thm-head"><span class="ec-thm-name">Proposition 5.3.15</span>.</span> Let \(E_1\) and \(E_2\) be elliptic curves over \(\F_q\).  The following are equivalent:
 </p>
 <ol class="org-ol">
-<li><a id="it-ff-isogeny-zeta-isogenous"></a> \(E_1\) and \(E_2\) are isogenous over \(\F_q\);</li>
-<li><a id="it-ff-isogeny-zeta-count"></a> \(\#E_1(\F_q) = \#E_2(\F_q)\);</li>
-<li><a id="it-ff-isogeny-zeta-zeta"></a> \(Z(E_1/\F_q; T) = Z(E_2/\F_q; T)\);</li>
+<li><a id="it-ff-isogeny-zeta-isogenous"></a> \(E_1\) and \(E_2\) are isogenous over \(\F_q\).</li>
+<li><a id="it-ff-isogeny-zeta-count"></a> \(\#E_1(\F_q) = \#E_2(\F_q)\).</li>
+<li><a id="it-ff-isogeny-zeta-zeta"></a> \(Z(E_1/\F_q; T) = Z(E_2/\F_q; T)\).</li>
 <li><a id="it-ff-isogeny-zeta-closed"></a> \(E_1\) and \(E_2\) have the same number of closed points
 of each degree.</li>
 </ol>
@@ -851,7 +851,7 @@ Proposition <a href="04-ec-algebraic.html#prop-ec-det-trace">4.6.7</a>,
 </div>
 
 <div id="outline-container-sec-ff-endomorphism-ring" class="outline-2">
-<h2 id="sec-ff-endomorphism-ring"><span class="ec-status ec-status-draft"><span class="ec-status-label ec-status-draft">Draft</span><time datetime="2026-09-23">23 Sep 2026</time></span><span class="section-number" id="s5.4">5.4</span> The endomorphism ring</h2>
+<h2 id="sec-ff-endomorphism-ring"><span class="ec-status ec-status-draft"><span class="ec-status-label ec-status-draft">Draft</span><time datetime="2026-10-06">6 Oct 2026</time></span><span class="section-number" id="s5.4">5.4</span> The endomorphism ring</h2>
 <div class="outline-text-2" id="text-sec-ff-endomorphism-ring">
 <p>
 In this section and the next, \(k\) is a field of characteristic \(p > 0\), not necessarily
@@ -905,10 +905,10 @@ conditions are already familiar.  For conditions <a href="#it-ff-ss-torsion">1</
 <a href="#it-ff-ss-verschiebung">2</a>,
 the proof of Corollary <a href="04-ec-algebraic.html#cor-ec-torsion">4.5.1</a> gives
 \(\#E[p^r](\kbar) = \deg_s[p^r] = \deg_s \Versch^r\), because \(\Frob^r\) is purely
-inseparable and \([p^r] = \Versch^r \circ \Frob^r\); so the \(p^r\)-torsion vanishes exactly
+inseparable and \([p^r] = \Versch^r \circ \Frob^r\).  So the \(p^r\)-torsion vanishes exactly
 when \(\Versch^r\) has separable degree \(1\).  Condition <a href="#it-ff-ss-quaternion">4</a> is
 case <a href="04-ec-algebraic.html#it-ec-end-quaternion">3</a> of Theorem <a href="04-ec-algebraic.html#thm-ec-endomorphism-ring">4.7.8</a>, and the ordinary
-case is case <a href="04-ec-algebraic.html#it-ec-end-quadratic">2</a>; compare Remark <a href="04-ec-algebraic.html#rem-ec-supersingular-order">4.7.12</a>.
+case is case <a href="04-ec-algebraic.html#it-ec-end-quadratic">2</a>.  Compare Remark <a href="04-ec-algebraic.html#rem-ec-supersingular-order">4.7.12</a>.
 </p>
 </details>
 
@@ -922,7 +922,7 @@ over \(\Fbar_p\) up to isomorphism, since each has \(j\)-invariant in the finite
 </div>
 
 <div id="outline-container-sec-ff-cartier-hasse" class="outline-2">
-<h2 id="sec-ff-cartier-hasse"><span class="ec-status ec-status-draft"><span class="ec-status-label ec-status-draft">Draft</span><time datetime="2026-09-26">26 Sep 2026</time></span><span class="section-number" id="s5.5">5.5</span> The Cartier operator and the Hasse invariant</h2>
+<h2 id="sec-ff-cartier-hasse"><span class="ec-status ec-status-draft"><span class="ec-status-label ec-status-draft">Draft</span><time datetime="2026-10-06">6 Oct 2026</time></span><span class="section-number" id="s5.5">5.5</span> The Cartier operator and the Hasse invariant</h2>
 <div class="outline-text-2" id="text-sec-ff-cartier-hasse">
 <p>
 None of the conditions of Theorem <a href="#thm-ff-supersingular">5.4.1</a> is easy to check on a given
@@ -965,7 +965,7 @@ The <dfn class="ec-cdef" id="gls-cartier-operator" data-gls="cartier-operator">C
 <p>
 The value \(\calC(\omega)\) does not depend on the uniformizer, the local definitions agree
 on overlaps, and the result extends from differentials regular at \(P\) to all of
-\(\Omega_{k(C)/k}\); see [<a class="ec-cite" href="#bib-Achter-Howe17">AH17</a>, Section 2.2], which follows
+\(\Omega_{k(C)/k}\).  See [<a class="ec-cite" href="#bib-Achter-Howe17">AH17</a>, Section 2.2], which follows
 [<a class="ec-cite" href="#bib-Serre58">Ser58</a>, Section 10].  The operator is due to Cartier [<a class="ec-cite" href="#bib-Cartier57">Car57</a>].  There is a
 second description, the one used in computations: if \(x \in k(C)\) is a separating element,
 so that \(dx\) is a basis of \(\Omega_{k(C)/k}\) (Proposition <a href="03-curves.html#prop-crv-differentials">3.4.2</a>),
@@ -997,7 +997,7 @@ operator on the space of regular differentials of \(C\), which has dimension \(g
 <p>
 Parts <a href="#it-ff-cartier-additive">1</a> to <a href="#it-ff-cartier-exact">3</a> are immediate from
 \eqref{eq:ff-cartier-global}, and part <a href="#it-ff-cartier-regular">4</a> is the statement that
-\(\calC\) acts on \(H^0(C, \Omega_{C/k})\); see [<a class="ec-cite" href="#bib-Achter-Howe17">AH17</a>, Section 2.2] and
+\(\calC\) acts on \(H^0(C, \Omega_{C/k})\).  See [<a class="ec-cite" href="#bib-Achter-Howe17">AH17</a>, Section 2.2] and
 [<a class="ec-cite" href="#bib-Serre58">Ser58</a>, Section 10].  Dividing by a fixed non-zero regular differential identifies
 the space of regular differentials with \(\mcL(K_C)\), whose dimension is the genus
 (Definition <a href="03-curves.html#def-crv-genus">3.5.3</a>).
@@ -1007,7 +1007,7 @@ the space of regular differentials with \(\mcL(K_C)\), whose dimension is the ge
 <p>
 Note that the semilinearity in part <a href="#it-ff-cartier-semilinear">2</a> is for the inverse of the
 \(p\)-th power map, not for the Frobenius automorphism \(\sigma\colon x \mapsto x^q\) of
-Section <a href="#sec-ff-frobenius">5.1</a>; the two agree only when \(q = p\).
+Section <a href="#sec-ff-frobenius">5.1</a>.  The two agree only when \(q = p\).
 </p>
 
 <p>
@@ -1062,11 +1062,11 @@ Only the terms with \(m \equiv p - 1 \pmod p\) survive, and \(f^{(p-1)/2}\) has 
 coordinates \((x, y) \mapsto (u^2x, u^3y)\) of <a class="ec-eqref" href="04-ec-algebraic.html#mjx-eqn%3Aeq%3Aec-change-of-variables">(4.1.3)</a> replaces
 \(A\) by \(u^{-(p-1)}A\).  What is intrinsic is whether \(A\) vanishes, equivalently whether
 \(\calC = 0\) on the regular differentials of \(E\).  Second, the definition asks for
-\(p \geq 3\), although the Cartier operator itself does not; over \(\Fbar_2\) the only
+\(p \geq 3\), although the Cartier operator itself does not.  Over \(\Fbar_2\) the only
 supersingular elliptic curve is \(y^2 + y = x^3\) [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Section V.4].  Third,
 Silverman [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>] uses "Hasse invariant" for the binary invariant of
 Theorem <a href="#thm-ff-supersingular">5.4.1</a>, which is \(0\) for a supersingular curve and \(1\) for an
-ordinary one; here it is the scalar \(A\) attached to an equation.
+ordinary one.  Here it is the scalar \(A\) attached to an equation.
 </p>
 </div>
 
@@ -1146,7 +1146,7 @@ For \(r \geq 1\), let \(A_{p^r}\) be the coefficient of \(x^{p^r-1}\) in
 <details class="ec-proof">
 <summary><span class="ec-proof-head">Proof.</span></summary>
 <p>
-This is [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Theorem V.4.1(a)]; the argument is Manin's [<a class="ec-cite" href="#bib-Manin61">Man61</a>].
+This is [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Theorem V.4.1(a)].  The argument is Manin's [<a class="ec-cite" href="#bib-Manin61">Man61</a>].
 </p>
 
 <p>
@@ -1177,7 +1177,7 @@ f(x)^{(p^{r+1}-1)/2} = \left( f(x)^{(p^r-1)/2} \right)^p f(x)^{(p-1)/2}.
 \end{equation*}
 <p>
 A term of the right-hand side contributing to \(x^{p^{r+1}-1}\) is \(x^{pn}\) times
-\(x^m\) with \(pn + m = p^{r+1} - 1\), so \(m \equiv p - 1 \pmod p\); since
+\(x^m\) with \(pn + m = p^{r+1} - 1\), so \(m \equiv p - 1 \pmod p\).  Since
 \(m \leq 3(p-1)/2 < 2p - 1\), the only possibility is \(m = p - 1\), and then
 \(n = p^r - 1\).  Hence \(A_{p^{r+1}} = A_{p^r}^p\, A\), and by induction \(A_q = 0\) if and
 only if \(A = 0\).
@@ -1195,12 +1195,12 @@ For conditions <a href="#it-ff-hasse-a">3</a> and <a href="#it-ff-hasse-cartier"
 <span class="ec-thm-head"><span class="ec-thm-name">Example 5.5.9</span>.</span> Let \(E\colon y^2 = x^3 - x\), and write \(m \coloneqq (p-1)/2\).  Then
 \(f^{(p-1)/2} = x^m (x^2-1)^m\), whose exponents are all congruent to \(m\) modulo \(2\).
 So the coefficient \(A\) of \(x^{p-1} = x^{2m}\) vanishes unless \(m\) is even, that is,
-unless \(p \equiv 1 \pmod 4\); and when \(p \equiv 1 \pmod 4\) the one surviving term gives
+unless \(p \equiv 1 \pmod 4\).  And when \(p \equiv 1 \pmod 4\) the one surviving term gives
 \(A = (-1)^{m/2}\binom{m}{m/2}\), which is non-zero in \(\F_p\) because
 \(\binom{m}{m/2}\) is a quotient of factorials of integers smaller than \(p\).  Hence \(E\)
 is supersingular exactly when \(p \equiv 3 \pmod 4\).  For \(p = 11\) we get \(A = 0\), and
 for \(p = 13\), \(A = (-1)^3\binom{6}{3} = -20 = 6\) in \(\F_{13}\).  Magma agrees [<a class="ec-cite" href="#bib-Magma">BCP97</a>], and lists
-the supersingular \(j\)-invariants of each characteristic; note \(1728 = 1\) in \(\F_{11}\).
+the supersingular \(j\)-invariants of each characteristic.  Note \(1728 = 1\) in \(\F_{11}\).
 </p>
 <div class="org-src-container">
 <pre class="src src-magma"><span class="org-keyword">for</span> p <span class="org-keyword">in</span> [11, 13] <span class="org-keyword">do</span>
@@ -1248,7 +1248,7 @@ where \(E\) runs over the isomorphism classes of supersingular elliptic curves o
 <details class="ec-proof">
 <summary><span class="ec-proof-head">Proof.</span></summary>
 <p>
-Due to Deuring [<a class="ec-cite" href="#bib-Deuring41">Deu41</a>]; see [<a class="ec-cite" href="#bib-Voight21">Voi21</a>, (42.3.9)] and
+Due to Deuring [<a class="ec-cite" href="#bib-Deuring41">Deu41</a>].  See [<a class="ec-cite" href="#bib-Voight21">Voi21</a>, (42.3.9)] and
 [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Exercise 5.9].  Remark <a href="#rem-ff-deuring-mass">5.5.11</a> explains what a proof
 needs.
 </p>
@@ -1279,10 +1279,10 @@ order.  The count on the quaternionic side is the Eichler mass formula
 w_J \coloneqq \#\left( \calO_L(J)^\times/\{\pm 1\} \right),
 \end{equation*}
 <p>
-which for \(D = p\) gives \((p-1)/12\); the quotient by \(\{\pm 1\}\) accounts for the
+which for \(D = p\) gives \((p-1)/12\).  The quotient by \(\{\pm 1\}\) accounts for the
 factor \(2\) between that and \eqref{eq:ff-deuring-mass}.  The Eichler mass formula is
 proved by analytic means, from the analytic class number formula and the zeta function of
-the order [<a class="ec-cite" href="#bib-Voight21">Voi21</a>, Main Theorem 26.1.5 and Section 26.2]; over \(\Q\) it goes back to
+the order [<a class="ec-cite" href="#bib-Voight21">Voi21</a>, Main Theorem 26.1.5 and Section 26.2].  Over \(\Q\) it goes back to
 Hey and to Brandt.
 </p>
 
@@ -1290,7 +1290,7 @@ Hey and to Brandt.
 The second route is a count.  The supersingular \(j\)-invariants in characteristic \(p\) are
 the roots of an explicit polynomial, and there are \(\lfloor p/12 \rfloor + \varepsilon\) of
 them, with \(\varepsilon \in \{0, 1, 2\}\) depending on \(p \bmod 12\)
-[<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Theorem V.4.1]; this is due to Igusa [<a class="ec-cite" href="#bib-Igusa58">Igu58</a>].  Weighting each by
+[<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Theorem V.4.1].  This is due to Igusa [<a class="ec-cite" href="#bib-Igusa58">Igu58</a>].  Weighting each by
 \(\#\Aut(E)\), which is \(2\), \(4\) or \(6\) according as \(j(E) \neq 0, 1728\), \(j(E) =
 1728\) or \(j(E) = 0\) when \(p \geq 5\) (Theorem <a href="04-ec-algebraic.html#thm-ec-automorphisms">4.7.11</a>), and checking
 \(p = 2, 3\) by hand, gives \eqref{eq:ff-deuring-mass} case by case.
@@ -1299,9 +1299,9 @@ them, with \(\varepsilon \in \{0, 1, 2\}\) depending on \(p \bmod 12\)
 </div>
 </div>
 
-<div id="outline-container-org9d0c69e" class="outline-2 ec-references">
-<h2 id="org9d0c69e">References</h2>
-<div class="outline-text-2" id="text-org9d0c69e">
+<div id="outline-container-orgab124c4" class="outline-2 ec-references">
+<h2 id="orgab124c4">References</h2>
+<div class="outline-text-2" id="text-orgab124c4">
 <dl class="ec-bibliography">
 <dt id="bib-Achter-Howe17">[AH17]</dt>
 <dd>Jeffrey D. Achter and Everett W. Howe. <i>Hasse&ndash;Witt and Cartier&ndash;Manin matrices: a warning and a request</i>. 2017. arXiv:1710.10726.</dd>

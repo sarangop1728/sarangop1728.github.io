@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2026-10-01 Thu 08:27 -->
+<!-- 2026-10-06 Tue 08:21 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Elliptic curves over local fields</title>
@@ -27,14 +27,20 @@
 <li class="ec-toc-chapter"><a href="03-curves.html"><span class="ec-toc-num">3</span><span class="ec-toc-text">Algebraic curves<span class="ec-toc-status"><span class="ec-status-progress">0 of 7 sections finished</span></span></span></a></li>
 <li class="ec-toc-chapter"><a href="04-ec-algebraic.html"><span class="ec-toc-num">4</span><span class="ec-toc-text">Elliptic curves as algebraic curves<span class="ec-toc-status"><span class="ec-status-progress">1 of 8 sections finished</span></span></span></a></li>
 <li class="ec-toc-chapter"><a href="05-finite-fields.html"><span class="ec-toc-num">5</span><span class="ec-toc-text">Elliptic curves over finite fields<span class="ec-toc-status"><span class="ec-status-progress">0 of 5 sections finished</span></span></span></a></li>
-<li class="ec-toc-chapter is-current"><a href="06-local-fields.html" aria-current="page"><span class="ec-toc-num">6</span><span class="ec-toc-text">Elliptic curves over local fields<span class="ec-toc-status"><span class="ec-status-progress">0 of 4 sections finished</span></span></span></a>
+<li class="ec-toc-chapter is-current"><a href="06-local-fields.html" aria-current="page"><span class="ec-toc-num">6</span><span class="ec-toc-text">Elliptic curves over local fields<span class="ec-toc-status"><span class="ec-status-progress">0 of 5 sections finished</span></span></span></a>
 <ol class="ec-toc-sections">
 <li class="ec-toc-level-1"><a href="#s6.1"><span class="ec-toc-num">6.1</span><span class="ec-toc-text">Minimal Weierstrass equations<span class="ec-toc-status"><span class="ec-status-label ec-status-draft">Draft</span></span></span></a></li>
 <li class="ec-toc-level-1"><a href="#s6.2"><span class="ec-toc-num">6.2</span><span class="ec-toc-text">Reduction modulo \(\pi\)<span class="ec-toc-status"><span class="ec-status-label ec-status-draft">Draft</span></span></span></a></li>
 <li class="ec-toc-level-1"><a href="#s6.3"><span class="ec-toc-num">6.3</span><span class="ec-toc-text">Good and bad reduction<span class="ec-toc-status"><span class="ec-status-label ec-status-draft">Draft</span></span></span></a></li>
 <li class="ec-toc-level-1"><a href="#s6.4"><span class="ec-toc-num">6.4</span><span class="ec-toc-text">Inertia and the criterion of Néron&ndash;Ogg&ndash;Shafarevich<span class="ec-toc-status"><span class="ec-status-label ec-status-draft">Draft</span></span></span></a></li>
+<li class="ec-toc-level-1"><a href="#s6.5"><span class="ec-toc-num">6.5</span><span class="ec-toc-text">The Kodaira&ndash;Néron classification and Tate's algorithm<span class="ec-toc-status"><span class="ec-status-label ec-status-draft">Draft</span></span></span></a></li>
+<li class="ec-toc-level-2"><a href="#s6.5.1"><span class="ec-toc-num">6.5.1</span><span class="ec-toc-text">Regular models</span></a></li>
+<li class="ec-toc-level-2"><a href="#s6.5.2"><span class="ec-toc-num">6.5.2</span><span class="ec-toc-text">Blowing up, by hand</span></a></li>
+<li class="ec-toc-level-2"><a href="#s6.5.3"><span class="ec-toc-num">6.5.3</span><span class="ec-toc-text">The Kodaira&ndash;Néron classification</span></a></li>
+<li class="ec-toc-level-2"><a href="#s6.5.4"><span class="ec-toc-num">6.5.4</span><span class="ec-toc-text">Tate's algorithm</span></a></li>
+<li class="ec-toc-level-2"><a href="#s6.5.5"><span class="ec-toc-num">6.5.5</span><span class="ec-toc-text">Examples</span></a></li>
 </ol></li>
-<li class="ec-toc-chapter"><a href="07-galois-cohomology.html"><span class="ec-toc-num">7</span><span class="ec-toc-text">Galois cohomology<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
+<li class="ec-toc-chapter"><a href="07-galois-cohomology.html"><span class="ec-toc-num">7</span><span class="ec-toc-text">Galois cohomology<span class="ec-toc-status"><span class="ec-status-progress">0 of 10 sections finished</span></span></span></a></li>
 <li class="ec-toc-chapter"><a href="08-mordell-weil.html"><span class="ec-toc-num">8</span><span class="ec-toc-text">The Mordell&ndash;Weil theorem<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
 <li class="ec-toc-chapter"><a href="09-integral-points.html"><span class="ec-toc-num">9</span><span class="ec-toc-text">Integral points<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
 <li class="ec-toc-chapter"><a href="10-selmer-sha.html"><span class="ec-toc-num">10</span><span class="ec-toc-text">Twisting, Selmer, and Tate&ndash;Shafarevich<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
@@ -51,11 +57,14 @@
 </div>
 <div id="content" class="content">
 <h1 class="title"><span class="ec-chapter-label">Chapter 6</span>Elliptic curves over local fields</h1>
-<div class="sources" id="orgc72bdc6">
+<div class="sources" id="org8b4dc12">
 <p>
 This chapter follows [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Chapter VII].  For the reduction types we also follow
-[<a class="ec-cite" href="#bib-Poonen08">Poo08</a>, Section 6] and [<a class="ec-cite" href="#bib-Milne20">Mil20</a>, Section II.3]; Silverman's Section VII.4 is
-merged here with its converse, Section VII.7.
+[<a class="ec-cite" href="#bib-Poonen08">Poo08</a>, Section 6] and [<a class="ec-cite" href="#bib-Milne20">Mil20</a>, Section II.3].  Silverman's Section VII.4 is
+merged here with its converse, Section VII.7.  The last section, on the Kodaira&#x2013;Néron
+classification and Tate's algorithm, follows [<a class="ec-cite" href="#bib-Silverman94">Sil94</a>, Chapter IV],
+[<a class="ec-cite" href="#bib-Liu2002">Liu02</a>, Section 10.2] and [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Section C.15], with
+[<a class="ec-cite" href="#bib-Milne20">Mil20</a>, Section II.7] for the motivation.
 </p>
 
 </div>
@@ -85,12 +94,12 @@ the pairs of complex conjugate embeddings of \(k\), and for them \(k_v\) is \(\R
 \(\C\).  There \(v\) is an absolute value but not a valuation, and \(k_v\) has no ring of
 integers in the sense below.</li>
 <li>The non-archimedean places of a number field correspond to the non-zero prime ideals
-\(\pp\) of its ring of integers; a global function field has only non-archimedean places,
+\(\pp\) of its ring of integers.  A global function field has only non-archimedean places,
 and they correspond to the closed points of the nice curve with function field \(k\).</li>
 </ul>
 <p>
 In the non-archimedean case we write \(v\colon k_v^\times \to \Z\) for the normalized
-discrete valuation of the place, extended by \(v(0) = \infty\); then \(k_v\) is complete
+discrete valuation of the place, extended by \(v(0) = \infty\).  Then \(k_v\) is complete
 for \(v\) and its residue field is finite.
 </p>
 </div>
@@ -109,20 +118,22 @@ valuation \(v\colon k_v^\times \to \Z\).</li>
 <li>\(\mm_v \coloneqq \{x \in k_v : v(x) > 0\}\) is the <dfn class="ec-cdef" id="gls-maximal-ideal" data-gls="maximal-ideal">maximal ideal</dfn> of \(\calO_v\).</li>
 <li>\(\pi_v\) is a uniformizer for \(\mm_v\), that is, a generator \(\mm_v = \pi_v\calO_v\).
 Since \(v\) is normalized, \(v(\pi_v) = 1\).</li>
-<li>\(\kappa(v) \coloneqq \calO_v/\mm_v\) is the <dfn class="ec-cdef" id="gls-residue-field" data-gls="residue-field">residue field</dfn>.</li>
+<li>\(\kappa(v) \coloneqq \calO_v/\mm_v\) is the <dfn class="ec-cdef" id="gls-residue-field" data-gls="residue-field">residue field</dfn>, with
+\(q \coloneqq \#\kappa(v)\) elements and characteristic \(p \coloneqq \operatorname{char}\kappa(v)\).</li>
 </ul>
 <p>
-The residue field \(\kappa(v)\) is finite, hence perfect; this is not an extra hypothesis.
-The characteristic of \(k\) is arbitrary.
+The residue field \(\kappa(v)\) is finite, hence perfect.  This is not an extra hypothesis.
+In particular \(p\) is positive.  The characteristic of \(k\) is arbitrary: it is \(0\) or
+\(p\).
 </p>
 </div>
 
 <div id="outline-container-sec-lf-minimal" class="outline-2">
-<h2 id="sec-lf-minimal"><span class="ec-status ec-status-draft"><span class="ec-status-label ec-status-draft">Draft</span><time datetime="2026-09-29">29 Sep 2026</time></span><span class="section-number" id="s6.1">6.1</span> Minimal Weierstrass equations</h2>
+<h2 id="sec-lf-minimal"><span class="ec-status ec-status-draft"><span class="ec-status-label ec-status-draft">Draft</span><time datetime="2026-10-06">6 Oct 2026</time></span><span class="section-number" id="s6.1">6.1</span> Minimal Weierstrass equations</h2>
 <div class="outline-text-2" id="text-sec-lf-minimal">
 <p>
-We are in Situation <a href="#sit-lf-standing">6.0.2</a>.  Given an elliptic curve \(E\) defined over
-\(k_v\), it has a Weierstrass equation
+We are in Situation <a href="#sit-lf-standing">6.0.2</a>.  An elliptic curve \(E\) over \(k_v\) has a
+Weierstrass equation
 </p>
 \begin{equation*}
 y^2 + a_1xy + a_3y = x^3 + a_2x^2 + a_4x + a_6
@@ -165,13 +176,25 @@ polynomial with integer coefficients in the coefficients of the equation
 (Definition <a href="04-ec-algebraic.html#def-ec-weierstrass">4.1.2</a>).
 </p>
 
+<p>
+So integrality costs nothing, and by itself it says little.  The same substitution with
+\(u = \pi_v\) keeps the coefficients integral, multiplies \(\Delta\) by \(\pi_v^{12}\), and
+pushes the equation modulo \(\pi_v\) towards \(y^2 = x^3\): a curve can look singular
+modulo \(\pi_v\) only because its equation was scaled too far (Example
+<a href="#eg-lf-model-dependence">6.2.3</a>).  The useful integral equations are the least scaled ones, in
+the same way that the useful homogeneous coordinates of a \(k_v\)-point are those in
+\(\calO_v\) not all in \(\mm_v\).  Minimizing \(v(\Delta)\) makes this precise, and
+Proposition <a href="#prop-lf-minimal">6.1.2</a> shows that what is left is a change of variables over
+\(\calO_v\), which still makes sense modulo \(\pi_v\).
+</p>
+
 <div class="ec-thm ec-definition" id="def-lf-minimal">
 <p>
 <span class="ec-thm-head"><span class="ec-thm-name">Definition 6.1.1</span>.</span> A Weierstrass equation \((a_1, a_2, a_3, a_4, a_6) \in k_v^5\) for \(E\) is called
-<dfn class="ec-cdef" id="gls-minimal-weierstrass-equation" data-gls="minimal-weierstrass-equation">\(v\)-minimal</dfn> if \(v(\Delta(a_1, \dots, a_6))\) is
-minimized subject to the constraint \((a_1, a_2, a_3, a_4, a_6) \in \calO_v^5\).  This
-minimal value of \(v(\Delta)\) is the <dfn class="ec-cdef" id="gls-valuation-of-the-minimal-discriminant" data-gls="valuation-of-the-minimal-discriminant">valuation of the minimal discriminant</dfn> of
-\(E\) at \(v\).
+<dfn class="ec-cdef" id="gls-minimal-weierstrass-equation" data-gls="minimal-weierstrass-equation">\(v\)-minimal</dfn> if its coefficients lie in \(\calO_v\)
+and \(v(\Delta(a_1, \dots, a_6))\) is minimal among all Weierstrass equations for \(E\)
+with coefficients in \(\calO_v\).  This minimal value of \(v(\Delta)\) is the
+<dfn class="ec-cdef" id="gls-valuation-of-the-minimal-discriminant" data-gls="valuation-of-the-minimal-discriminant">valuation of the minimal discriminant</dfn> of \(E\) at \(v\).
 </p>
 </div>
 
@@ -186,16 +209,15 @@ formulas <a class="ec-eqref" href="04-ec-algebraic.html#mjx-eqn%3Aeq%3Aec-cov-co
 </p>
 <ol class="org-ol">
 <li><a id="it-lf-minimal-exists"></a> \(E\) has a \(v\)-minimal Weierstrass equation.</li>
+<li><a id="it-lf-minimal-converse"></a> If a Weierstrass equation for \(E\) has coefficients in
+\(\calO_v\), then any change of variables <a class="ec-eqref" href="04-ec-algebraic.html#mjx-eqn%3Aeq%3Aec-change-of-variables">(4.1.3)</a> taking it to
+a \(v\)-minimal Weierstrass equation has \(u, r, s, t \in \calO_v\).</li>
 <li><a id="it-lf-minimal-unique"></a> Any two \(v\)-minimal Weierstrass equations for \(E\) are related
 by a change of variables <a class="ec-eqref" href="04-ec-algebraic.html#mjx-eqn%3Aeq%3Aec-change-of-variables">(4.1.3)</a> with \(u \in \calO_v^\times\)
 and \(r, s, t \in \calO_v\).</li>
 <li><a id="it-lf-minimal-differential"></a> The invariant differential \(\omega\) of a \(v\)-minimal
 Weierstrass equation for \(E\) is unique up to multiplication by an element of
 \(\calO_v^\times\).</li>
-<li><a id="it-lf-minimal-converse"></a> Conversely, if a Weierstrass equation for \(E\) has
-coefficients in \(\calO_v\), then any change of variables
-<a class="ec-eqref" href="04-ec-algebraic.html#mjx-eqn%3Aeq%3Aec-change-of-variables">(4.1.3)</a> taking it to a \(v\)-minimal Weierstrass equation has
-\(u, r, s, t \in \calO_v\).</li>
 </ol>
 </div>
 
@@ -209,7 +231,7 @@ so the minimum is attained.
 </p>
 
 <p>
-For part <a href="#it-lf-minimal-converse">4</a>, let the unprimed equation have coefficients in
+For part <a href="#it-lf-minimal-converse">2</a>, let the unprimed equation have coefficients in
 \(\calO_v\) and let the primed one, obtained by <a class="ec-eqref" href="04-ec-algebraic.html#mjx-eqn%3Aeq%3Aec-change-of-variables">(4.1.3)</a>, be
 \(v\)-minimal.  By minimality \(v(\Delta') \leq v(\Delta)\), and
 \(u^{12}\Delta' = \Delta\) by Proposition <a href="04-ec-algebraic.html#prop-ec-change-of-variables">4.1.7</a>, so
@@ -248,16 +270,16 @@ so \(t \in \calO_v\).
 </p>
 
 <p>
-For part <a href="#it-lf-minimal-unique">2</a>, two Weierstrass equations for \(E\) are related by some
+For part <a href="#it-lf-minimal-unique">3</a>, two Weierstrass equations for \(E\) are related by some
 change of variables <a class="ec-eqref" href="04-ec-algebraic.html#mjx-eqn%3Aeq%3Aec-change-of-variables">(4.1.3)</a> with \(u \in k_v^\times\) and
 \(r, s, t \in k_v\), by part <a href="04-ec-algebraic.html#it-ec-model-uniqueness">2</a> of Theorem
 <a href="04-ec-algebraic.html#thm-ec-weierstrass-model">4.1.6</a>.  If both are \(v\)-minimal, the first has coefficients in
-\(\calO_v\), so \(u, r, s, t \in \calO_v\) by part <a href="#it-lf-minimal-converse">4</a>.  Moreover
+\(\calO_v\), so \(u, r, s, t \in \calO_v\) by part <a href="#it-lf-minimal-converse">2</a>.  Moreover
 \(v(\Delta) = v(\Delta')\), so \(v(u) = 0\) and \(u \in \calO_v^\times\).
 </p>
 
 <p>
-Part <a href="#it-lf-minimal-differential">3</a> follows from part <a href="#it-lf-minimal-unique">2</a>, since
+Part <a href="#it-lf-minimal-differential">4</a> follows from part <a href="#it-lf-minimal-unique">3</a>, since
 \(\omega = u^{-1}\omega'\) by Proposition <a href="04-ec-algebraic.html#prop-ec-change-of-variables">4.1.7</a>.
 </p>
 </details>
@@ -265,7 +287,7 @@ Part <a href="#it-lf-minimal-differential">3</a> follows from part <a href="#it-
 </div>
 
 <div id="outline-container-sec-lf-reduction" class="outline-2">
-<h2 id="sec-lf-reduction"><span class="ec-status ec-status-draft"><span class="ec-status-label ec-status-draft">Draft</span><time datetime="2026-10-01">1 Oct 2026</time></span><span class="section-number" id="s6.2">6.2</span> Reduction modulo \(\pi\)</h2>
+<h2 id="sec-lf-reduction"><span class="ec-status ec-status-draft"><span class="ec-status-label ec-status-draft">Draft</span><time datetime="2026-10-06">6 Oct 2026</time></span><span class="section-number" id="s6.2">6.2</span> Reduction modulo \(\pi\)</h2>
 <div class="outline-text-2" id="text-sec-lf-reduction">
 <p>
 We are in Situation <a href="#sit-lf-standing">6.0.2</a>.  The scheme \(\Spec \calO_v\) has two prime ideals: the
@@ -320,7 +342,7 @@ If the equation is \(v\)-minimal (Definition <a href="#def-lf-minimal">6.1.1</a>
 
 <p>
 The generic fiber of \(\calW\) is the curve in \(\PP^2_{k_v}\) cut out by the same
-equation, which is \(E\), so \(\calW\) is an integral model of \(E\); it is proper over
+equation, which is \(E\), so \(\calW\) is an integral model of \(E\).  It is proper over
 \(\calO_v\), being closed in \(\PP^2_{\calO_v}\).  Write \(a \mapsto \bar a\) for the
 reduction \(\calO_v \to \kappa(v)\).  The special fiber of \(\calW\) is the Weierstrass
 cubic
@@ -353,9 +375,8 @@ The next example shows that the first way is not an option, even among Weierstra
 <div class="ec-thm ec-example" id="eg-lf-model-dependence">
 <p>
 <span class="ec-thm-head"><span class="ec-thm-name">Example 6.2.3</span>.</span> Let \(k = \Q\) and let \(v = p\) be a prime with \(p \geq 5\), so that \(k_v = \Q_p\),
-\(\calO_v = \Z_p\), \(\pi_v = p\) and \(\kappa(v) = \F_p\).  Recall that \(\Spec \Z_p\)
-has two prime ideals: the generic point \((0)\) and the special point \(p\Z_p\), its only closed
-point.
+\(\calO_v = \Z_p\), \(\pi_v = p\) and \(\kappa(v) = \F_p\).  The generic point of
+\(\Spec \Z_p\) is \((0)\) and its special point is \(p\Z_p\).
 </p>
 
 <p>
@@ -402,18 +423,18 @@ over \(\F_p\).  The equation of \(\calW\) has discriminant \(\Delta = -2^4 3^3\)
 \(\Z_p\) since \(p \geq 5\), so \(\calW_p\) is an elliptic curve over \(\F_p\).  The
 equation of \(\calW'\) has discriminant \(p^{12}\Delta\), and \(\calW'_p\) has a cusp at the
 rational point \((0 : 0 : 1)\).  So \(\calW_p \not\cong \calW'_p\), although
-\(\calW_{\Q_p} \cong \calW'_{\Q_p}\); see Figure <a href="#fig-lf-two-models">6.2.1</a>.  The first equation
+\(\calW_{\Q_p} \cong \calW'_{\Q_p}\).  See Figure <a href="#fig-lf-two-models">6.2.1</a>.  The first equation
 is \(p\)-minimal, and the second is not.
 </p>
 </div>
 
 <figure class="ec-figure" id="fig-lf-two-models">
-<img class="ec-tikz" src="figures/4f2242687dc0f0307426bb4d42bef0168cb1fe00.svg" style="--ec-w: 30.63em" alt=""/>
+<img class="ec-tikz" src="figures/b66b939746ede5aec1d228547c92c268541df9ca.svg" style="--ec-w: 30.63em" alt=""/>
 <figcaption><span class="ec-thm-name">Figure 6.2.1</span>. The models \(\calW\) and \(\calW'\) of Example <a href="#eg-lf-model-dependence">6.2.3</a> over \(\Spec \Z_p\): the same generic fiber \(E\) over \((0)\), and non-isomorphic special fibers over \(p\Z_p\).</figcaption>
 </figure>
 
 <p>
-So we take the second way.  By part <a href="#it-lf-minimal-unique">2</a> of
+So we take the second way.  By part <a href="#it-lf-minimal-unique">3</a> of
 Proposition <a href="#prop-lf-minimal">6.1.2</a>, a minimal Weierstrass model of \(E\) is unique up to a
 change of variables with \(u \in \calO_v^\times\) and \(r, s, t \in \calO_v\), and we follow
 [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Section VII.2] in defining the reduction by it.
@@ -430,7 +451,7 @@ E_\pi \coloneqq \calW_\pi,
 \end{equation*}
 <p>
 a Weierstrass cubic over \(\kappa(v)\).  We write \(E_\pi^{\ns}\) for its nonsingular part,
-as in Proposition <a href="04-ec-algebraic.html#prop-ec-singular-group">4.2.11</a>; it is \(E_\pi\) if \(E_\pi\) is smooth.
+as in Proposition <a href="04-ec-algebraic.html#prop-ec-singular-group">4.2.11</a>.  It is \(E_\pi\) if \(E_\pi\) is smooth.
 </p>
 </div>
 
@@ -439,7 +460,7 @@ as in Proposition <a href="04-ec-algebraic.html#prop-ec-singular-group">4.2.11</
 <span class="ec-thm-head"><span class="ec-thm-name">Remark 6.2.5</span>.</span> The reduction \(E_\pi\) is well defined up to isomorphism over \(\kappa(v)\).  Two minimal
 Weierstrass equations for \(E\) are related by a change of variables
 <a class="ec-eqref" href="04-ec-algebraic.html#mjx-eqn%3Aeq%3Aec-change-of-variables">(4.1.3)</a> with \(u \in \calO_v^\times\) and \(r, s, t \in \calO_v\)
-(part <a href="#it-lf-minimal-unique">2</a> of Proposition <a href="#prop-lf-minimal">6.1.2</a>).  The formulas
+(part <a href="#it-lf-minimal-unique">3</a> of Proposition <a href="#prop-lf-minimal">6.1.2</a>).  The formulas
 <a class="ec-eqref" href="04-ec-algebraic.html#mjx-eqn%3Aeq%3Aec-cov-coeffs">(4.1.4)</a> express each \(u^ia_i'\) as a polynomial with integer coefficients
 in the \(a_j\), \(r\), \(s\) and \(t\), so they remain true after reduction, and the change of
 variables with parameters \(\bar u \neq 0\), \(\bar r\), \(\bar s\), \(\bar t\)
@@ -500,8 +521,9 @@ regular proper model of \(E\) constructed there, and it is its own smooth locus,
 Part <a href="#it-lf-neron-weierstrass">3</a> of Theorem <a href="#thm-lf-neron">6.2.7</a> is how the Néron model is
 constructed from a minimal Weierstrass model [<a class="ec-cite" href="#bib-Poonen2017">Poo17</a>, Section 5.7.6].  Blowing up
 the non-regular closed points of \(\calW\) repeatedly yields a regular proper integral model
-of \(E\), in fact the minimal one; removing the closed points of its special fiber at which
-it is not smooth over \(\calO_v\) yields \(\calE\).  Removing only the singular point of
+of \(E\), in fact the minimal one.  Removing the closed subset of its special fiber where it
+is not smooth over \(\calO_v\), which may contain entire components (those of multiplicity
+greater than \(1\)), yields \(\calE\).  Removing only the singular point of
 \(E_\pi\) from \(\calW\), if there is one, yields \(\calE^0\).
 </p>
 
@@ -509,8 +531,10 @@ it is not smooth over \(\calO_v\) yields \(\calE\).  Removing only the singular 
 So the special fiber \(\calE_\pi\) of the Néron model and the reduction \(E_\pi\) of
 Definition <a href="#def-lf-reduction">6.2.4</a> agree when \(E_\pi\) is smooth, by part <a href="#it-lf-neron-good">4</a>
 of Theorem <a href="#thm-lf-neron">6.2.7</a>, but not in general, despite the notation.  When \(E_\pi\) is
-singular, \(E_\pi\) is proper and not smooth, while \(\calE_\pi\) is smooth, and possibly
-neither connected nor proper.  What they share is
+singular, \(E_\pi\) is proper and not smooth, while \(\calE_\pi\) is smooth but not proper,
+since its identity component is the affine curve \(E_\pi^{\ns}\) (Section
+<a href="#sec-lf-types">6.3</a>), and possibly not connected (Theorem <a href="#thm-lf-component-group">6.3.9</a>).  What
+they share is
 </p>
 \begin{equation*}
 E_\pi^{\ns} \cong \calW^{\smooth}_\pi \cong \calE^0_\pi,
@@ -546,12 +570,12 @@ E_1(k_v) &\coloneqq \{P \in E(k_v) : \bar P = \bar O\}
 \end{align*}
 <p>
 of \(k_v\)-points with nonsingular reduction, and the <dfn class="ec-cdef" id="gls-kernel-of-reduction" data-gls="kernel-of-reduction">kernel of reduction</dfn>.  Since
-\(\bar O = (0 : 1 : 0)\) is a smooth point of \(E_\pi\) by
+\(\bar O = (0 : 1 : 0)\) is a smooth \(\kappa(v)\)-point of \(E_\pi\) by
 Proposition <a href="04-ec-algebraic.html#prop-ec-weierstrass-smooth">4.1.5</a>, \(E_1(k_v) \subseteq E_0(k_v)\).  Neither set
 depends on the choice of minimal Weierstrass equation: the change of variables of
 Remark <a href="#rem-lf-reduction-well-defined">6.2.5</a> has coefficients in \(\calO_v\), so it commutes with
-reduction of \(k_v\)-points, and its reduction maps nonsingular points of one reduced cubic to
-nonsingular points of the other.  An \(\calO_v\)-point of \(\calW\) lies in
+reduction of \(k_v\)-points, and its reduction maps nonsingular \(\kappa(v)\)-points of one
+reduced cubic to nonsingular \(\kappa(v)\)-points of the other.  An \(\calO_v\)-point of \(\calW\) lies in
 \(\calW^{\smooth}\) exactly when its restriction to the special point does, so
 \(E_0(k_v) = \calW^{\smooth}(\calO_v)\), which is \(\calE^0(\calO_v)\) by
 Theorem <a href="#thm-lf-neron">6.2.7</a>.
@@ -608,7 +632,7 @@ coordinates: lift \(\beta\) to \(y_0 \in \calO_v\) and apply Hensel's lemma to
 <b>Lines and reduction.</b>  Let \(L\) be a line in \(\PP^2\) defined over \(k_v\).  Write it as
 \(aX + bY + cZ = 0\) with \(a, b, c \in \calO_v\), not all in \(\mm_v\).  Then the linear form
 \(\calO_v^3 \to \calO_v\) given by \((a, b, c)\) is surjective, so its kernel \(M\) is a
-direct summand of \(\calO_v^3\), free of rank \(2\); let \(w, w'\) be a basis of \(M\).  The
+direct summand of \(\calO_v^3\), free of rank \(2\).  Let \(w, w'\) be a basis of \(M\).  The
 map sending \((s : t)\) to \(sw + tw'\), from \(\PP^1\) to \(L\), is an isomorphism over \(k_v\), and since
 \(M\) is a direct summand, \(\bar w, \bar w'\) is a basis of the kernel of
 \((\bar a, \bar b, \bar c)\), so its reduction is an isomorphism \(\PP^1 \to \bar L\)
@@ -618,9 +642,9 @@ over \(\kappa(v)\), compatible with the reduction of \(k_v\)-points.  The binary
 G(s, t) \coloneqq F(sw + tw') \in \calO_v[s, t]
 \end{equation*}
 <p>
-is the restriction of \(F\) to \(L\).  It is nonzero, because \(E\) contains no line; we
-count the intersection points of \(L\) and \(E\) with multiplicity as the roots of \(G\) in
-\(\PP^1\).  Suppose that \(G\) has three roots \((s_i : t_i) \in \PP^1(k_v)\), with
+is the restriction of \(F\) to \(L\).  It is nonzero, because \(E\) contains no line.  We
+count the \(k_v\)-points of \(L \cap E\) with multiplicity as the roots of \(G\) in
+\(\PP^1(k_v)\).  Suppose that \(G\) has three roots \((s_i : t_i) \in \PP^1(k_v)\), with
 \(s_i, t_i \in \calO_v\) not both in \(\mm_v\), corresponding to
 \(P_1, P_2, P_3 \in E(k_v)\).  Then
 </p>
@@ -640,13 +664,13 @@ multiplicity.
 <p>
 <b>The group law.</b>  Let \(P_1, P_2 \in E_0(k_v)\), let \(L\) be the line through them (the
 tangent line to \(E\) at \(P_1\) if \(P_1 = P_2\)), and let \(P_3\) be the third
-intersection point of \(L\) and \(E\), so that \(P_3 \in E(k_v)\) and
+\(k_v\)-point of \(L \cap E\), counted with multiplicity, so that \(P_3 \in E(k_v)\) and
 \(P_1 + P_2 + P_3 = O\) by part <a href="04-ec-algebraic.html#it-ec-chord-rule">1</a> of Proposition <a href="04-ec-algebraic.html#prop-ec-chord-tangent">4.2.4</a>.
 By the previous step \(\bar L\) meets \(E_\pi\) in \(\bar P_1, \bar P_2, \bar P_3\).
 If \(E_\pi\) has a singular point \(S\), every line through \(S\) meets \(E_\pi\) at \(S\)
 with multiplicity at least \(2\), since all partial derivatives of \(\bar F\) vanish at
-\(S\).  As \(\bar P_1, \bar P_2 \neq S\), the case \(\bar P_3 = S\) would give
-\(\bar G\), of degree \(3\), at least \(4\) roots.  So \(\bar P_3 \in
+\(S\).  As \(\bar P_1, \bar P_2 \neq S\), if \(\bar P_3 = S\) the factorization of
+\(\bar G\) would give \(S\) multiplicity exactly \(1\), a contradiction.  So \(\bar P_3 \in
 E_\pi^{\ns}(\kappa(v))\), that is, \(P_3 \in E_0(k_v)\), and
 </p>
 \begin{equation*}
@@ -671,8 +695,7 @@ surjective by the first step.
 
 <p>
 The following is [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Proposition VII.3.1], the local input to the weak
-Mordell&#x2013;Weil theorem.  Let \(p\) be the characteristic of \(\kappa(v)\), which is positive
-since \(\kappa(v)\) is finite.
+Mordell&#x2013;Weil theorem.
 </p>
 
 <div class="ec-thm ec-proposition" id="prop-lf-torsion">
@@ -681,8 +704,8 @@ since \(\kappa(v)\) is finite.
 \(p \nmid m\).
 </p>
 <ol class="org-ol">
-<li><a id="it-lf-torsion-kernel"></a> The kernel of reduction \(E_1(k_v)\) contains no \(k_v\)-point of
-order \(m\) other than \(O\).</li>
+<li><a id="it-lf-torsion-kernel"></a> The kernel of reduction \(E_1(k_v)\) contains no \(k_v\)-point
+killed by \(m\) other than \(O\): \(E_1(k_v) \cap E[m](k_v) = \{O\}\).</li>
 <li><a id="it-lf-torsion-good"></a> If \(E_\pi\) is smooth, then the reduction map
 \(E[m](k_v) \to E_\pi(\kappa(v))\) is injective.</li>
 </ol>
@@ -710,7 +733,7 @@ homomorphism \(E(k_v) \to E_\pi(\kappa(v))\) with kernel \(E_1(k_v)\).  Its rest
 
 <p>
 The next result, due to Cassels, bounds the denominators of the coordinates of a torsion
-\(k_v\)-point; it is [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Theorem VII.3.4].  Unlike
+\(k_v\)-point.  It is [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Theorem VII.3.4].  Unlike
 Proposition <a href="#prop-lf-torsion">6.2.9</a>, the Weierstrass equation need not be \(v\)-minimal.
 </p>
 
@@ -740,14 +763,14 @@ r \coloneqq \left\lfloor \frac{v(p)}{p^n - p^{n-1}} \right\rfloor.
 </div>
 
 <p>
-Here \(v(p)\) is the ramification index of \(k_v\) over \(\Q_p\); it is \(1\) for
-\(k_v = \Q_p\).
+In part <a href="#it-lf-denominators-p-power">2</a>, where \(\operatorname{char} k = 0\), \(v(p)\) is the
+ramification index of \(k_v\) over \(\Q_p\).  It is \(1\) for \(k_v = \Q_p\).
 </p>
 
 <details class="ec-proof">
 <summary><span class="ec-proof-head">Proof.</span></summary>
 <p>
-Write \(x \coloneqq x(P)\) and \(y \coloneqq y(P)\); since \(m \geq 2\), \(P \neq O\) is
+Write \(x \coloneqq x(P)\) and \(y \coloneqq y(P)\).  Since \(m \geq 2\), \(P \neq O\) is
 affine.
 </p>
 
@@ -769,7 +792,7 @@ v(x) = -2s, \qquad v(y) = -3s \qquad\text{for an integer } s \geq 1.
 \end{equation*}
 
 <p>
-<b>Reduction to a \(v\)-minimal equation.</b>  By part <a href="#it-lf-minimal-converse">4</a> of
+<b>Reduction to a \(v\)-minimal equation.</b>  By part <a href="#it-lf-minimal-converse">2</a> of
 Proposition <a href="#prop-lf-minimal">6.1.2</a>, a change of variables <a class="ec-eqref" href="04-ec-algebraic.html#mjx-eqn%3Aeq%3Aec-change-of-variables">(4.1.3)</a>,
 </p>
 \begin{equation*}
@@ -778,7 +801,7 @@ x = u^2x' + r_0, \qquad y = u^3y' + s_0u^2x' + t_0,
 <p>
 with \(u, r_0, s_0, t_0 \in \calO_v\), takes the equation to a \(v\)-minimal one, with
 coordinates \(x', y'\).  Suppose that \(v(x) < 0\).  Then \(v(x'(P)) < 0\), for otherwise
-\(x \in \calO_v\); so by the previous step, applied to the \(v\)-minimal equation,
+\(x \in \calO_v\).  So by the previous step, applied to the \(v\)-minimal equation,
 \(v(y'(P)) < v(x'(P)) < 0\), and therefore
 </p>
 \begin{equation*}
@@ -829,14 +852,14 @@ part <a href="#it-lf-denominators-prime-to-p">1</a>.  If \(m = p^n\), then \(v(p
 r = \left\lfloor \frac{1}{p^n - p^{n-1}} \right\rfloor = 0
 \end{equation*}
 <p>
-unless \(p^n - p^{n-1} = 1\), that is, \(p = 2\) and \(n = 1\), which \(m \geq 3\) excludes;
-so \(x(P), y(P) \in \Z_p\) by part <a href="#it-lf-denominators-p-power">2</a>.  Hence
+unless \(p^n - p^{n-1} = 1\), that is, \(p = 2\) and \(n = 1\), which \(m \geq 3\) excludes.
+So \(x(P), y(P) \in \Z_p\) by part <a href="#it-lf-denominators-p-power">2</a>.  Hence
 \(x(P), y(P) \in \Z\): a rational torsion point of order at least \(3\) has integer
 coordinates.
 </p>
 
 <p>
-This fails for points of order \(2\).  The curve
+This fails for rational points of order \(2\).  The curve
 </p>
 \begin{equation*}
 E\colon y^2 + xy = x^3 + 4x + 1
@@ -852,16 +875,16 @@ has discriminant \(-65^2 \neq 0\), and \(P = (-1/4, 1/8) \in E(\Q)\): both sides
 </div>
 
 <div id="outline-container-sec-lf-types" class="outline-2">
-<h2 id="sec-lf-types"><span class="ec-status ec-status-draft"><span class="ec-status-label ec-status-draft">Draft</span><time datetime="2026-10-01">1 Oct 2026</time></span><span class="section-number" id="s6.3">6.3</span> Good and bad reduction</h2>
+<h2 id="sec-lf-types"><span class="ec-status ec-status-draft"><span class="ec-status-label ec-status-draft">Draft</span><time datetime="2026-10-06">6 Oct 2026</time></span><span class="section-number" id="s6.3">6.3</span> Good and bad reduction</h2>
 <div class="outline-text-2" id="text-sec-lf-types">
 <p>
-We are in Situation <a href="#sit-lf-standing">6.0.2</a>, and \(q \coloneqq \#\kappa(v)\).  By
+We are in Situation <a href="#sit-lf-standing">6.0.2</a>.  By
 Proposition <a href="04-ec-algebraic.html#prop-ec-weierstrass-smooth">4.1.5</a> and Remark <a href="04-ec-algebraic.html#rem-ec-singular-cubics">4.1.11</a>, the
 reduction \(E_\pi\) of an elliptic curve \(E\) over \(k_v\) (Definition <a href="#def-lf-reduction">6.2.4</a>)
 is smooth, or has a node, or has a cusp.  Since \(\kappa(v)\) is perfect, its singular point
-is a rational point and the tangent lines at a cusp are defined over \(\kappa(v)\), so
+is a rational point and the tangent line at a cusp is defined over \(\kappa(v)\), so
 Proposition <a href="04-ec-algebraic.html#prop-ec-singular-group">4.2.11</a> applies to \(E_\pi\) with no further hypothesis.  The
-following is [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Section VII.5]; compare [<a class="ec-cite" href="#bib-Poonen08">Poo08</a>, Section 6.4] and
+following is [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Section VII.5].  Compare [<a class="ec-cite" href="#bib-Poonen08">Poo08</a>, Section 6.4] and
 [<a class="ec-cite" href="#bib-Milne20">Mil20</a>, Section II.3].
 </p>
 
@@ -892,13 +915,14 @@ The reduction type does not depend on the choice of minimal Weierstrass equation
 <div class="ec-thm ec-proposition" id="prop-lf-reduction-types">
 <p>
 <span class="ec-thm-head"><span class="ec-thm-name">Proposition 6.3.2</span>.</span> Let \(E\) be an elliptic curve over \(k_v\), given by a minimal Weierstrass equation with
-discriminant \(\Delta\) and invariant \(c_4\).
+discriminant \(\Delta\) and invariants \(c_4\), \(c_6\).
 </p>
 <ol class="org-ol">
 <li><a id="it-lf-types-good"></a> \(E\) has good reduction if and only if \(v(\Delta) = 0\).</li>
 <li><a id="it-lf-types-mult"></a> \(E\) has multiplicative reduction if and only if \(v(\Delta) > 0\) and
 \(v(c_4) = 0\).  Then \(E_\pi^{\ns} \cong \Gm\) if the reduction is split, and
-\(E_\pi^{\ns} \cong \Gm^{(d)}\) with \(L_d = \F_{q^2}\) if it is nonsplit.</li>
+\(E_\pi^{\ns} \cong \Gm^{(d)}\), with \(d\) as in <a class="ec-eqref" href="04-ec-algebraic.html#mjx-eqn%3Aeq%3Aec-node-d">(4.2.3)</a> for the singular
+normal form of \(E_\pi\) and \(L_d = \F_{q^2}\), if it is nonsplit.</li>
 <li><a id="it-lf-types-add"></a> \(E\) has additive reduction if and only if \(v(\Delta) > 0\) and
 \(v(c_4) > 0\).  Then \(E_\pi^{\ns} \cong \Ga\).</li>
 </ol>
@@ -915,7 +939,7 @@ The reduced equation has discriminant \(\bar\Delta\) and invariants \(\bar c_4\)
 because these are polynomials with integer coefficients in the \(a_i\).  So the three cases
 follow from Proposition <a href="04-ec-algebraic.html#prop-ec-weierstrass-smooth">4.1.5</a> and
 Remark <a href="04-ec-algebraic.html#rem-ec-singular-cubics">4.1.11</a>, and the descriptions of \(E_\pi^{\ns}\) from
-Proposition <a href="04-ec-algebraic.html#prop-ec-singular-group">4.2.11</a> over \(\kappa(v)\); in the nonsplit case \(L_d\) is a
+Proposition <a href="04-ec-algebraic.html#prop-ec-singular-group">4.2.11</a> over \(\kappa(v)\).  In the nonsplit case \(L_d\) is a
 quadratic extension of \(\kappa(v)\), which is \(\F_{q^2}\).  For the last statement, move the
 node to \((0, 0)\) as in <a class="ec-eqref" href="04-ec-algebraic.html#mjx-eqn%3Aeq%3Aec-singular-normal-form">(4.2.2)</a>, a change of variables with
 \(u = 1\), which does not change \(c_6\).  There \(b_4 = b_6 = 0\), so
@@ -1021,19 +1045,21 @@ integral, so \(v(u) \leq 0\) in either case, and its discriminant has valuation 
 so it is \(p\)-minimal.
 </p>
 <ol class="org-ol">
-<li>\(E_1\colon y^2 = x^3 + px^2 + 1\) has \(\Delta = -16(4p^3 + 27)\), a unit: good reduction.</li>
-<li>\(E_2\colon y^2 = x^3 + x^2 + p\) has \(\Delta = -16p(27p + 4)\) and \(c_4 = 16\):
-multiplicative reduction.  The reduction \(y^2 = x^2(x + 1)\) has tangent lines
-\(y = \pm x\) at the node, so it is split; accordingly \(-c_6 = 64 + 864p\) is a square
-modulo \(p\).</li>
-<li>Let \(\varepsilon \in \Z\) be a non-square modulo \(p\).  Then
-\(E_2'\colon y^2 = x^3 + \varepsilon x^2 + p\) has \(\Delta = -16p(4\varepsilon^3 + 27p)\)
+<li><a id="it-lf-types-eg-good"></a> \(E\colon y^2 = x^3 + px^2 + 1\) has \(\Delta = -16(4p^3 + 27)\),
+a unit: good reduction.</li>
+<li><a id="it-lf-types-eg-split"></a> \(E\colon y^2 = x^3 + x^2 + p\) has \(\Delta = -16p(27p + 4)\)
+and \(c_4 = 16\): multiplicative reduction.  The reduction \(y^2 = x^2(x + 1)\) has
+tangent lines \(y = \pm x\) at the node, so it is split.  Accordingly
+\(-c_6 = 64 + 864p\) is a square modulo \(p\).</li>
+<li><a id="it-lf-types-eg-nonsplit"></a> Let \(\varepsilon \in \Z\) be a non-square modulo \(p\).  Then
+\(E\colon y^2 = x^3 + \varepsilon x^2 + p\) has \(\Delta = -16p(4\varepsilon^3 + 27p)\)
 and \(c_4 = 16\varepsilon^2\), and its reduction \(y^2 = x^2(x + \varepsilon)\) has tangent
 slopes \(\pm\sqrt\varepsilon \notin \F_p\): nonsplit multiplicative reduction.</li>
-<li>\(E_3\colon y^2 = x^3 + p\) has \(\Delta = -432p^2\) and \(c_4 = 0\): additive reduction.
-Over \(K' \coloneqq \Q_p(\varpi)\) with \(\varpi^6 = p\), the substitution
-\(x = \varpi^2x'\), \(y = \varpi^3y'\) gives \(y'^2 = x'^3 + 1\), with discriminant
-\(-432\), a unit: \(E_3\) acquires good reduction over \(K'\).</li>
+<li><a id="it-lf-types-eg-additive"></a> \(E\colon y^2 = x^3 + p\) has \(\Delta = -432p^2\) and
+\(c_4 = 0\): additive reduction.  Over \(K' \coloneqq \Q_p(\varpi)\) with
+\(\varpi^6 = p\), the substitution \(x = \varpi^2x'\), \(y = \varpi^3y'\) gives
+\(y'^2 = x'^3 + 1\), with discriminant \(-432\), a unit: \(E\) acquires good reduction
+over \(K'\).</li>
 </ol>
 </div>
 
@@ -1045,13 +1071,20 @@ make sense of this we need the reduction over a finite extension of \(k_v\).
 <div class="ec-thm ec-remark" id="rem-lf-finite-extensions">
 <p>
 <span class="ec-thm-head"><span class="ec-thm-name">Remark 6.3.5</span>.</span> Let \(K'\) be a finite extension of \(k_v\).  Then \(K'\) is again a local field: it is the
-completion of a finite extension of \(k\) at a place above \(v\).  The valuation \(v\) extends
-uniquely to \(K'\), and the normalized valuation \(v'\) of \(K'\) satisfies \(v' = e\,v\) on
-\(k_v\), where \(e\) is the <dfn class="ec-cdef" id="gls-local-ramification-index" data-gls="local-ramification-index">ramification index</dfn> of \(K'/k_v\); the residue field
-\(\kappa'\) of \(K'\) has degree \(f\) over \(\kappa(v)\), and \(ef = [K' : k_v]\).  The
-extension is <dfn class="ec-cdef" id="gls-unramified-extension" data-gls="unramified-extension">unramified</dfn> if \(e = 1\).  So everything in this
-chapter applies to \(E_{K'}\), with its own minimal Weierstrass equation, reduction
-\((E_{K'})_{\pi'}\), and subgroups \(E_0(K') \supseteq E_1(K')\).
+completion of a finite extension of \(k\) at a place above \(v\).  We write \(v'\) for its
+normalized valuation, \(\calO'\) for its ring of integers, \(\mm'\) for the maximal ideal,
+\(\pi'\) for a uniformizer and \(\kappa'\) for the residue field.  The valuation \(v\)
+extends uniquely to \(K'\), and \(v' = e\,v\) on \(k_v\), where \(e\) is the
+<dfn class="ec-cdef" id="gls-local-ramification-index" data-gls="local-ramification-index">ramification index</dfn> of \(K'/k_v\).  The residue field
+\(\kappa'\) has degree \(f\) over \(\kappa(v)\), and \(ef = [K' : k_v]\).  The extension is
+<dfn class="ec-cdef" id="gls-unramified-extension" data-gls="unramified-extension">unramified</dfn> if \(e = 1\).  In general one also asks that the
+residue extension \(\kappa'/\kappa(v)\) be separable.  Here it is an extension of finite
+fields, so this is automatic and we omit it.  If \(K'/k_v\) is unramified, then \(v' = v\)
+on \(k_v\), \(\pi_v\) is also a uniformizer of \(K'\), and \([K' : k_v] = [\kappa' : \kappa(v)]\).
+Every finite extension of \(\kappa(v)\) arises in this way from exactly one unramified
+extension of \(k_v\) (Section <a href="#sec-lf-inertia">6.4</a>).  The results of this chapter so far apply
+to \(E_{K'}\), with its own minimal Weierstrass equation, reduction \((E_{K'})_{\pi'}\), and
+subgroups \(E_0(K') \supseteq E_1(K')\).
 </p>
 </div>
 
@@ -1071,15 +1104,26 @@ The following is [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Proposit
 <span class="ec-thm-head"><span class="ec-thm-name">Proposition 6.3.7</span> <span class="ec-thm-title">(Semistable reduction theorem)</span>.</span> Let \(E\) be an elliptic curve over \(k_v\), and \(K'\) a finite extension of \(k_v\).
 </p>
 <ol class="org-ol">
-<li><a id="it-lf-semistable-unramified"></a> If \(K'/k_v\) is unramified, then \(E\) and \(E_{K'}\) have
-the same reduction type, and a minimal Weierstrass equation for \(E\) is minimal for
-\(E_{K'}\).</li>
+<li><a id="it-lf-semistable-unramified"></a> If \(K'/k_v\) is unramified, then a minimal Weierstrass
+equation for \(E\) is minimal for \(E_{K'}\), and \(E_{K'}\) has good, multiplicative or
+additive reduction according as \(E\) does.</li>
 <li><a id="it-lf-semistable-stable"></a> If \(E\) has good, respectively multiplicative, reduction, then
-so does \(E_{K'}\).</li>
+a minimal Weierstrass equation for \(E\) is minimal for \(E_{K'}\), and \(E_{K'}\) has
+good, respectively multiplicative, reduction.</li>
 <li><a id="it-lf-semistable-exists"></a> There is a finite extension \(K''\) of \(k_v\) such that
 \(E_{K''}\) has good or split multiplicative reduction.</li>
 </ol>
 </div>
+
+<p>
+When a minimal Weierstrass equation for \(E\) stays minimal for \(E_{K'}\), as in
+parts <a href="#it-lf-semistable-unramified">1</a> and <a href="#it-lf-semistable-stable">2</a>, the reduction
+\((E_{K'})_{\pi'}\) is the base change \((E_\pi)_{\kappa'}\): both are cut out by the same
+reduced equation.  Whether a multiplicative reduction is split can therefore change: it is
+split over \(K'\) exactly when \(\kappa'\) contains the slopes of the tangent lines at the
+node.  For instance, nonsplit multiplicative reduction becomes split over the unramified
+extension of degree \(2\).
+</p>
 
 <details class="ec-proof">
 <summary><span class="ec-proof-head">Proof.</span></summary>
@@ -1087,27 +1131,28 @@ so does \(E_{K'}\).</li>
 For part <a href="#it-lf-semistable-stable">2</a>, fix a minimal Weierstrass equation for \(E\), with
 \(\Delta\) and \(c_4\), and let a change of variables <a class="ec-eqref" href="04-ec-algebraic.html#mjx-eqn%3Aeq%3Aec-change-of-variables">(4.1.3)</a> take it
 to a minimal equation for \(E_{K'}\), with \(\Delta'\) and \(c_4'\).  By
-part <a href="#it-lf-minimal-converse">4</a> of Proposition <a href="#prop-lf-minimal">6.1.2</a> over \(K'\), the parameter
-\(u\) lies in the ring of integers of \(K'\), and \(\Delta' = u^{-12}\Delta\),
-\(c_4' = u^{-4}c_4\) are integral, so
+part <a href="#it-lf-minimal-converse">2</a> of Proposition <a href="#prop-lf-minimal">6.1.2</a> over \(K'\), the parameter
+\(u\) lies in \(\calO'\), and \(\Delta' = u^{-12}\Delta\), \(c_4' = u^{-4}c_4\) are integral, so
 </p>
 \begin{equation*}
 0 \leq v'(u) \leq \min\bigl(v'(\Delta)/12,\ v'(c_4)/4\bigr).
 \end{equation*}
 <p>
-If \(v(\Delta) = 0\) or \(v(c_4) = 0\), then \(v'(u) = 0\), so \(v'(\Delta') = v'(\Delta)\) and
-\(v'(c_4') = v'(c_4)\), and Proposition <a href="#prop-lf-reduction-types">6.3.2</a> over \(K'\) gives the same
-type.
+If \(v(\Delta) = 0\) or \(v(c_4) = 0\), then \(v'(u) = 0\), so \(v'(\Delta') = v'(\Delta)\): our
+equation, integral over \(K'\), is minimal for \(E_{K'}\).  Its \(v'(\Delta)\) and
+\(v'(c_4)\) are zero exactly when \(v(\Delta)\) and \(v(c_4)\) are, and
+Proposition <a href="#prop-lf-reduction-types">6.3.2</a> over \(K'\) gives the same type.
 </p>
 
 <p>
-For part <a href="#it-lf-semistable-unramified">1</a>, assume that \(\operatorname{char}\kappa(v) \geq 5\),
-so that \(E\) has a minimal equation \(y^2 = x^3 + Ax + B\); in characteristic \(2\) and \(3\)
-this follows from Tate's algorithm.  Since \(2\) and \(3\) are units, \(E_{K'}\) also has a
-minimal equation of this short form, and it is obtained from ours by a change of variables
-\(x = u^2x'\), \(y = u^3y'\), the only ones preserving the short form, with \(u\) integral in
-\(K'\) by part <a href="#it-lf-minimal-converse">4</a> of Proposition <a href="#prop-lf-minimal">6.1.2</a>.  Since \(K'/k_v\) is unramified, \(v' = v\) on \(k_v\), and
-\(u_0 \coloneqq \pi_v^{v'(u)} \in k_v\) satisfies \(u/u_0 \in \calO_{K'}^\times\).  The
+We prove part <a href="#it-lf-semistable-unramified">1</a> only when \(p \geq 5\).  For \(p = 2, 3\) it
+follows from Tate's algorithm (Corollary <a href="#cor-lf-tate-unramified">6.5.13</a>).  Since \(2\) and \(3\) are units in
+\(\calO_v\), \(E\) has a minimal equation \(y^2 = x^3 + Ax + B\), and \(E_{K'}\) also has a
+minimal equation of this short form.  It is obtained from ours by a change of variables
+\(x = u^2x'\), \(y = u^3y'\), the only ones preserving the short form, with \(u \in \calO'\)
+by part <a href="#it-lf-minimal-converse">2</a> of Proposition <a href="#prop-lf-minimal">6.1.2</a>.  Since \(K'/k_v\) is
+unramified, \(v' = v\) on \(k_v\) (Remark <a href="#rem-lf-finite-extensions">6.3.5</a>), and
+\(u_0 \coloneqq \pi_v^{v'(u)} \in k_v\) satisfies \(u/u_0 \in \calO'^\times\).  The
 substitution \(x = u_0^2x'\), \(y = u_0^3y'\) gives \(u_0^{-4}A = (u/u_0)^4 u^{-4}A\) and
 \(u_0^{-6}B\), both integral, over \(k_v\), with discriminant of valuation
 \(v(\Delta) - 12v'(u)\).  By minimality over \(k_v\), \(v'(u) = 0\).  So the equation is minimal
@@ -1116,26 +1161,28 @@ Proposition <a href="#prop-lf-reduction-types">6.3.2</a> gives the same type.
 </p>
 
 <p>
-For part <a href="#it-lf-semistable-exists">3</a>, assume that \(\operatorname{char}\kappa(v) \neq 2\).
-Over a finite extension of \(k_v\), \(E\) has a Legendre form
-\(y^2 = x(x - 1)(x - \lambda)\) with \(\lambda \neq 0, 1\) [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Proposition III.1.7],
-for which
+We prove part <a href="#it-lf-semistable-exists">3</a> only when \(p \neq 2\).  Over a finite extension
+\(K''\) of \(k_v\), \(E\) has a Legendre form \(y^2 = x(x - 1)(x - \lambda)\) with
+\(\lambda \neq 0, 1\) [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Proposition III.1.7], for which
 </p>
 \begin{equation*}
 c_4 = 16(\lambda^2 - \lambda + 1), \qquad \Delta = 16\lambda^2(\lambda - 1)^2.
 \end{equation*}
 <p>
-Let \(\calO\) be the ring of integers of this extension and \(\pi\) a uniformizer.  If
-\(\lambda \in \calO\) and \(\bar\lambda \neq 0, 1\), then \(\Delta\) is a unit: good reduction.  If
-\(\lambda \in \calO\) and \(\bar\lambda \in \{0, 1\}\), then \(c_4\) is a unit and \(\Delta\) is not:
-multiplicative reduction.  If \(\lambda \notin \calO\), let \(r \geq 1\) with
-\(\mu \coloneqq \pi^r\lambda\) a unit, and adjoin \(\sqrt\pi\) if \(r\) is odd.  The substitution
-\(x = \pi^{-r}x'\), \(y = \pi^{-3r/2}y'\) gives
-\(y'^2 = x'(x' - \pi^r)(x' - \mu)\), whose \(c_4 = 16(\pi^{2r} - \pi^r\mu + \mu^2)\) is a unit
-and whose \(\Delta\) is not: multiplicative reduction.  An equation with \(c_4\) a unit is
-minimal.  In the multiplicative cases, adjoining the tangent slopes at the node, a quadratic
-extension of the residue field, which lifts to an unramified quadratic extension, makes the
-reduction split, by part <a href="#it-lf-semistable-stable">2</a>.
+Let \(\calO''\) be the ring of integers of \(K''\) and \(\pi''\) a uniformizer.  If
+\(\lambda \in \calO''\) and \(\bar\lambda \neq 0, 1\), then \(\Delta\) is a unit: good reduction.
+If \(\lambda \in \calO''\) and \(\bar\lambda \in \{0, 1\}\), then \(c_4\) is a unit and \(\Delta\)
+is not: multiplicative reduction.  If \(\lambda \notin \calO''\), let \(r \geq 1\) with
+\(\mu \coloneqq \pi''^r\lambda\) a unit, and adjoin a square root \(\varpi\) of \(\pi''\), a
+separable extension since \(p \neq 2\).  The substitution \(x = \pi''^{-r}x'\),
+\(y = \varpi^{-3r}y'\) gives
+\(y'^2 = x'(x' - \pi''^r)(x' - \mu)\), whose \(c_4 = 16(\pi''^{2r} - \pi''^r\mu + \mu^2)\) is a
+unit and whose \(\Delta\) is not: multiplicative reduction.  In the multiplicative cases
+\(c_4\) is a unit, so the equation is minimal over every finite extension (see before
+Example <a href="#eg-lf-reduction-types">6.3.4</a>), and its reduction over an extension is the base change of
+the nodal cubic.  The slopes of the tangent lines at the node generate an extension of
+degree at most \(2\) of the residue field, which comes from an unramified extension
+(Remark <a href="#rem-lf-finite-extensions">6.3.5</a>).  Over it the reduction is split.
 </p>
 </details>
 
@@ -1151,37 +1198,40 @@ only if \(j(E) \in \calO_v\).
 <p>
 If \(E_{K'}\) has good reduction, with a minimal equation over \(K'\) with \(\Delta'\) a unit,
 then \(j(E) = c_4'^3/\Delta'\) is integral in \(K'\), and it lies in \(k_v\), so
-\(j(E) \in \calO_v\).  Conversely, assume \(\operatorname{char}\kappa(v) \neq 2\) and take a
-Legendre form over a finite extension, as in the proof of Proposition <a href="#prop-lf-semistable">6.3.7</a>.
-Then
+\(j(E) \in \calO_v\).  We prove the converse only when \(p \neq 2\).  Take a Legendre form
+over a finite extension \(K''\) of \(k_v\), as in the proof of Proposition <a href="#prop-lf-semistable">6.3.7</a>.
+Here \(K''\) is separable over \(k_v\), since it is obtained by adjoining the roots of the
+separable cubic \(4x^3 + b_2x^2 + 2b_4x + b_6\) and square roots, and \(p \neq 2\).  Then
 </p>
 \begin{equation*}
 256(\lambda^2 - \lambda + 1)^3 - j\lambda^2(\lambda - 1)^2 = 0.
 \end{equation*}
 <p>
 If \(j\) is integral, this polynomial in \(\lambda\) has integral coefficients and leading
-coefficient \(256\), a unit, so \(\lambda\) is integral; and reducing modulo \(\pi\) at
+coefficient \(256\), a unit, so \(\lambda\) is integral.  And reducing modulo \(\pi''\) at
 \(\bar\lambda = 0\) or \(1\) would give \(256 = 0\).  So \(\bar\lambda \neq 0, 1\), and the
 Legendre form has good reduction.
 </p>
 </details>
 
 <p>
-For instance, \(E_3\) of Example <a href="#eg-lf-reduction-types">6.3.4</a> has \(j = 0\), so potential good
-reduction, as we saw directly; \(E_2\) has \(v(j) = 3v(c_4) - v(\Delta) = -1\), and keeps
-multiplicative reduction over every finite extension.
+For instance, the curve of part <a href="#it-lf-types-eg-additive">4</a> of
+Example <a href="#eg-lf-reduction-types">6.3.4</a> has \(j = 0\), so potential good reduction, as we saw
+directly.  The curve of part <a href="#it-lf-types-eg-split">2</a> has \(v(j) = 3v(c_4) - v(\Delta) = -1\),
+and keeps multiplicative reduction over every finite extension.
 </p>
 
 <p>
 Finally, the quotient \(E(k_v)/E_0(k_v)\) of the filtration of Section <a href="#sec-lf-reduction">6.2</a> is
 finite.  The first part below follows from Theorem <a href="#thm-lf-neron">6.2.7</a>: \(E(k_v) = \calE(\calO_v)\)
 and \(E_0(k_v) = \calE^0(\calO_v)\).  Restricting an \(\calO_v\)-point to the special point
-and taking its component gives a homomorphism from \(\calE(\calO_v)\) to the finite group of
-components of \(\calE_\pi\), finite because \(\calE\) is of finite type.  Its kernel is
+and taking its component gives a homomorphism from \(\calE(\calO_v)\) to the group of
+components of \(\calE_\pi\) defined over \(\kappa(v)\) (the \(\kappa(v)\)-points of its
+component group), finite because \(\calE\) is of finite type.  Its kernel is
 \(\calE^0(\calO_v)\): an \(\calO_v\)-point whose special point lies in the open subscheme
 \(\calE^0\) factors through it, since every open subset of \(\Spec \calO_v\) containing the
 special point is everything.  The second part comes from the classification of the special
-fibers of Néron models; we do not prove it.
+fibers of Néron models, Theorem <a href="#thm-lf-kodaira">6.5.8</a>.  It is Corollary <a href="#cor-lf-component-order">6.5.9</a>.
 </p>
 
 <div class="ec-thm ec-theorem" id="thm-lf-component-group">
@@ -1207,29 +1257,33 @@ See [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Theorem VII.6.1 and C
 </div>
 
 <div id="outline-container-sec-lf-inertia" class="outline-2">
-<h2 id="sec-lf-inertia"><span class="ec-status ec-status-draft"><span class="ec-status-label ec-status-draft">Draft</span><time datetime="2026-10-01">1 Oct 2026</time></span><span class="section-number" id="s6.4">6.4</span> Inertia and the criterion of Néron&#x2013;Ogg&#x2013;Shafarevich</h2>
+<h2 id="sec-lf-inertia"><span class="ec-status ec-status-draft"><span class="ec-status-label ec-status-draft">Draft</span><time datetime="2026-10-06">6 Oct 2026</time></span><span class="section-number" id="s6.4">6.4</span> Inertia and the criterion of Néron&#x2013;Ogg&#x2013;Shafarevich</h2>
 <div class="outline-text-2" id="text-sec-lf-inertia">
 <div class="ec-thm ec-situation" id="sit-lf-inertia">
 <p>
 <span class="ec-thm-head"><span class="ec-thm-name">Situation 6.4.1</span>.</span> In addition to Situation <a href="#sit-lf-standing">6.0.2</a>:
 </p>
 <ul class="org-ul">
-<li>\(p \coloneqq \operatorname{char}\kappa(v)\) and \(q \coloneqq \#\kappa(v)\).</li>
+<li>\(\kappa(v)\) is identified with \(\F_q\).</li>
 <li>\(k_v^{\operatorname{sep}}\) is a separable closure of \(k_v\), and
 \(\Gal_{k_v} \coloneqq \Gal(k_v^{\operatorname{sep}}/k_v)\).  We use \(k_v^{\operatorname{sep}}\) rather than an
 algebraic closure because \(k_v\) is imperfect when \(\operatorname{char} k = p\).</li>
-<li>\(v\) extends uniquely to \(k_v^{\operatorname{sep}}\) (Remark <a href="#rem-lf-finite-extensions">6.3.5</a>); the residue
-field of its valuation ring is an algebraic closure \(\bar\kappa\) of \(\kappa(v)\).</li>
+<li>\(v\) extends uniquely to \(k_v^{\operatorname{sep}}\) (Remark <a href="#rem-lf-finite-extensions">6.3.5</a>).  The
+residue field of its valuation ring is an algebraic closure \(\Fbar_q\) of \(\F_q\): since
+\(\F_q\) is perfect, each of its finite extensions is separable, and is the residue field
+of an unramified extension of \(k_v\) inside \(k_v^{\operatorname{sep}}\) (see below).</li>
 <li>\(k_v^{\unr} \subseteq k_v^{\operatorname{sep}}\) is the <dfn class="ec-cdef" id="gls-maximal-unramified-extension" data-gls="maximal-unramified-extension">maximal unramified extension</dfn> of \(k_v\), the
 union of the finite unramified extensions.</li>
-<li>\(I_v \coloneqq \Gal(k_v^{\operatorname{sep}}/k_v^{\unr})\) is the <dfn class="ec-cdef" id="gls-inertia-group" data-gls="inertia-group">inertia group</dfn>.</li>
+<li>\(I_v \coloneqq \Gal(k_v^{\operatorname{sep}}/k_v^{\unr})\) is the <dfn class="ec-cdef" id="gls-inertia-group" data-gls="inertia-group">inertia group</dfn>.  When
+\(k = \Q\) and \(v = p\), we write \(I_p\) for \(I_v\).</li>
 </ul>
 </div>
 
 <p>
-Good reduction has a characterization in terms of the Galois action on torsion points,
-which is how it is usually detected in practice.  We first review the inertia group.  The
-unramified extensions of \(k_v\) correspond to the extensions of its residue field: for
+Good reduction has a characterization in terms of the Galois action on torsion points
+alone, without Weierstrass equations.  For instance, it shows at once that good reduction is
+an isogeny invariant (Corollary <a href="#cor-lf-isogeny-good">6.4.8</a>).  We first review the inertia group.
+The unramified extensions of \(k_v\) correspond to the extensions of its residue field: for
 each \(n \geq 1\) there is exactly one unramified extension of degree \(n\) inside
 \(k_v^{\operatorname{sep}}\), its residue field is \(\F_{q^n}\), and it is Galois over \(k_v\) with group
 \(\Gal(\F_{q^n}/\F_q)\), generated by the lift of the Frobenius automorphism
@@ -1237,20 +1291,20 @@ each \(n \geq 1\) there is exactly one unramified extension of degree \(n\) insi
 </p>
 \begin{equation}
 \label{eq:lf-inertia}
-1 \to I_v \to \Gal_{k_v} \to \Gal_{\kappa(v)} \to 1, \tag{6.4.1}
+1 \to I_v \to \Gal_{k_v} \to \Gal_{\F_q} \to 1, \tag{6.4.1}
 \end{equation}
 <p>
-where the map on the right is the action on \(\bar\kappa\): every \(\tau \in \Gal_{k_v}\)
-preserves the valuation, hence acts on the residue field \(\bar\kappa\).  In other words,
-\(I_v\) is the subgroup of \(\Gal_{k_v}\) acting trivially on \(\bar\kappa\)
-[<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Section VII.4].  The group \(\Gal_{\kappa(v)}\) is topologically generated
-by \(\sigma\), and \(\Gal(k_v^{\unr}/k_v) \cong \Gal_{\kappa(v)}\).
+where the map on the right is the action on \(\Fbar_q\): every \(\tau \in \Gal_{k_v}\)
+preserves the valuation, hence acts on the residue field \(\Fbar_q\).  In other words,
+\(I_v\) is the subgroup of \(\Gal_{k_v}\) acting trivially on \(\Fbar_q\)
+[<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Section VII.4].  The group \(\Gal_{\F_q}\) is topologically generated
+by \(\sigma\), and \(\Gal(k_v^{\unr}/k_v) \cong \Gal_{\F_q}\).
 </p>
 
 <div class="ec-thm ec-remark" id="rem-lf-tame">
 <p>
 <span class="ec-thm-head"><span class="ec-thm-name">Remark 6.4.2</span>.</span> The inertia group has a largest pro-\(p\) subgroup \(P_v\), the wild inertia group, and the
-tame quotient is \(I_v/P_v \cong \prod_{\ell \neq p} \Z_\ell(1)\), with \(\Gal_{\kappa(v)}\)
+tame quotient is \(I_v/P_v \cong \prod_{\ell \neq p} \Z_\ell(1)\), with \(\Gal_{\F_q}\)
 acting through the cyclotomic character.  We will not need this.
 </p>
 </div>
@@ -1263,30 +1317,68 @@ acting through the cyclotomic character.  We will not need this.
 </p>
 </div>
 
+<div class="ec-thm ec-remark" id="rem-lf-unramified-why">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Remark 6.4.4</span>.</span> By \eqref{eq:lf-inertia}, \(\Sigma\) is unramified exactly when the action of
+\(\Gal_{k_v}\) factors through \(\Gal_{k_v}/I_v \cong \Gal_{\F_q}\): it is then determined by
+the action of a single element, any lift of \(\sigma\), and it can be read off on the
+residue field.  The name comes from fields.  If \(\Sigma\) is finite and the action is
+continuous, that is, every element of \(\Sigma\) has an open stabilizer, as for
+\(E[m](k_v^{\operatorname{sep}})\), then the kernel of the action is an open normal subgroup
+of \(\Gal_{k_v}\), and its fixed field \(L\), the field cut
+out by \(\Sigma\), is a finite Galois extension of \(k_v\).  Then \(\Sigma\) is unramified
+exactly when \(L \subseteq k_v^{\unr}\), that is, when \(L/k_v\) is unramified.  For
+instance, the set of roots in \(k_v^{\operatorname{sep}}\) of a separable polynomial \(f \in k_v[x]\) is
+unramified exactly when the splitting field of \(f\) is unramified over \(k_v\).
+</p>
+
+<p>
+There is also a geometric picture.  Think of \(\Spec \calO_v\) as a small disc, with the
+special point as its center and \(\Spec k_v\) as the punctured disc.  Finite
+\(\Gal_{k_v}\)-sets play the role of finite covering spaces of the punctured disc, and
+\(I_v\) the role of the loop around the center: a covering extends across the center
+exactly when this loop acts trivially on its fibers.  A family of elliptic curves over the
+whole disc has no monodromy, by Ehresmann's theorem, so good reduction, which extends \(E\)
+to a smooth family over \(\Spec \calO_v\), should force \(E[m](k_v^{\operatorname{sep}})\) to be
+unramified.  This is Proposition <a href="#prop-lf-good-unramified">6.4.6</a>, and Theorem <a href="#thm-lf-nos">6.4.7</a> is
+its converse.  In the language of schemes, a finite étale \(k_v\)-scheme \(X\) has
+\(X(k_v^{\operatorname{sep}})\) unramified exactly when \(X\) extends to a finite étale
+\(\calO_v\)-scheme.
+</p>
+</div>
+
 <p>
 For an elliptic curve \(E\) over \(k_v\) and \(m\) with \(\operatorname{char} k \nmid m\), this
 applies to \(E[m](k_v^{\operatorname{sep}})\) (part <a href="04-ec-algebraic.html#it-ec-torsion-prime-to-p">1</a> of
-Corollary <a href="04-ec-algebraic.html#cor-ec-torsion">4.5.1</a>): \(E[m]\) is unramified exactly when \(I_v \subseteq \ker\bar\rho_{E,m}\),
-that is, when \(E[m](k_v^{\operatorname{sep}}) \subseteq E(k_v^{\unr})\), or again when all the points of
-\(E[m](k_v^{\operatorname{sep}})\) are defined over one finite unramified extension of \(k_v\).  Likewise \(T_\ell(E)\)
-(Definition <a href="04-ec-algebraic.html#def-ec-tate-module">4.5.4</a>) is unramified exactly when every \(E[\ell^n]\) is.
+Corollary <a href="04-ec-algebraic.html#cor-ec-torsion">4.5.1</a>): \(E[m](k_v^{\operatorname{sep}})\) is unramified exactly when
+\(I_v \subseteq \ker\bar\rho_{E,m}\), that is, when
+\(E[m](k_v^{\operatorname{sep}}) \subseteq E(k_v^{\unr})\), or again when all the points of
+\(E[m](k_v^{\operatorname{sep}})\) are defined over one finite unramified extension of \(k_v\).
+Likewise \(T_\ell(E)\) (Definition <a href="04-ec-algebraic.html#def-ec-tate-module">4.5.4</a>) is unramified exactly when every
+\(E[\ell^n](k_v^{\operatorname{sep}})\) is.
 </p>
 
 <div class="ec-thm ec-example" id="eg-lf-inertia-roots-of-unity">
-<p><span class="ec-thm-head"><span class="ec-thm-name">Example 6.4.4</span>.</span> </p>
+<p><span class="ec-thm-head"><span class="ec-thm-name">Example 6.4.5</span>.</span> </p>
 <ol class="org-ol">
 <li><a id="it-lf-inertia-mu-unramified"></a> If \(p \nmid m\), then \(\mu_m(k_v^{\operatorname{sep}})\) is unramified.
-The polynomial \(x^m - 1\) is separable over \(\kappa(v)\), so its \(m\) roots in
-\(\bar\kappa\) lie in a finite field \(\F_{q^n}\); by Hensel's lemma
-[<a class="ec-cite" href="#bib-Poonen2017">Poo17</a>, Theorem 3.5.63] they lift to roots of \(x^m - 1\) in the unramified
-extension of degree \(n\).  In particular \(T_\ell(\Gm)\) is unramified for
-\(\ell \neq p\), and an element \(\tau \in \Gal_{k_v}\) acts on it through
-\(\chi_\ell(\tau)\), which depends only on the image of \(\tau\) in \(\Gal_{\kappa(v)}\):
-\(\chi_\ell(\sigma) = q\).</li>
-<li><a id="it-lf-inertia-mu-ramified"></a> Let \(k_v = \Q_p\).  Then \(\Q_p(\mu_p)\) is generated by a
-root of the Eisenstein polynomial \(((x + 1)^p - 1)/x\), so it is totally ramified of
-degree \(p - 1\), and \(I_p\) acts on \(\mu_p(\Q_p^{\operatorname{sep}})\) through all of
-\((\Z/p\Z)^\times\): \(\mu_p\) is ramified, and so is \(T_p(\Gm)\).</li>
+The polynomial \(x^m - 1\) is separable over \(\F_q\), so its \(m\) roots in
+\(\Fbar_q\) lie in a finite field \(\F_{q^n}\).  By Hensel's lemma
+[<a class="ec-cite" href="#bib-Poonen2017">Poo17</a>, Theorem 3.5.63] they lift to \(m\) distinct roots of \(x^m - 1\), hence
+to all of them, in the unramified extension of degree \(n\).  In particular
+\(T_\ell(\Gm)\) is unramified for \(\ell \neq p\), and an element \(\tau \in \Gal_{k_v}\)
+acts on it through \(\chi_\ell(\tau)\), which depends only on the image of \(\tau\) in
+\(\Gal_{\F_q}\): \(\chi_\ell(\tau) = q\) for every \(\tau\) lifting \(\sigma\), because
+reduction is injective on \(\mu_{\ell^n}(k_v^{\operatorname{sep}})\) and
+\(\overline{\tau\zeta} = \bar\zeta^q\).</li>
+<li><a id="it-lf-inertia-mu-ramified"></a> Let \(k_v = \Q_p\) with \(p\) odd.  Then \(\Q_p(\mu_p)\) is
+generated by a root of the Eisenstein polynomial \(((x + 1)^p - 1)/x\), so it is totally
+ramified of degree \(p - 1\), and \(I_p\) acts on \(\mu_p(\Q_p^{\operatorname{sep}})\) through all of
+\((\Z/p\Z)^\times\): \(\mu_p(\Q_p^{\operatorname{sep}})\) is ramified, and so is \(T_p(\Gm)\).  For
+\(p = 2\), \(\mu_2(\Q_2^{\operatorname{sep}}) = \{\pm 1\}\) is unramified, but
+\(\mu_4(\Q_2^{\operatorname{sep}})\) generates \(\Q_2(i)\), totally ramified because
+\(-1 + i\) is a root of the Eisenstein polynomial \(x^2 + 2x + 2\).  So
+\(\mu_4(\Q_2^{\operatorname{sep}})\) and \(T_2(\Gm)\) are ramified.</li>
 <li><a id="it-lf-inertia-kummer"></a> For \(m \geq 2\), the extension \(\Q_p(p^{1/m})\) is totally ramified
 of degree \(m\), since \(x^m - p\) is Eisenstein.  It is not contained in \(\Q_p^{\unr}\),
 so some element of \(I_p\) moves \(p^{1/m}\).</li>
@@ -1295,15 +1387,22 @@ so some element of \(I_p\) moves \(p^{1/m}\).</li>
 
 <p>
 The torsion of an elliptic curve with good reduction behaves like \(\mu_m\) with
-\(p \nmid m\).  The following is [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Proposition VII.4.1].
+\(p \nmid m\).  The hypothesis \(p \nmid m\) cannot be dropped.  Let \(m\) be prime to
+\(\operatorname{char} k\).  If \(E[m](k_v^{\operatorname{sep}})\) is unramified, the field \(L\) it cuts out is unramified, and
+\(\mu_m(k_v^{\operatorname{sep}}) \subseteq L\) by Corollary <a href="04-ec-algebraic.html#cor-ec-weil-roots-of-unity">4.6.5</a> over \(L\).  So
+\(\mu_m(k_v^{\operatorname{sep}})\) is unramified too.  For \(k_v = \Q_p\) with \(p\) odd,
+part <a href="#it-lf-inertia-mu-ramified">2</a> of Example <a href="#eg-lf-inertia-roots-of-unity">6.4.5</a> therefore shows
+that \(E[p](\Q_p^{\operatorname{sep}})\) is ramified, whatever the reduction of \(E\).  (Over a field
+containing \(\mu_p(k_v^{\operatorname{sep}})\), such as \(\Q_p(\mu_p)\), this argument says
+nothing.)  The following is [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Proposition VII.4.1].
 </p>
 
 <div class="ec-thm ec-proposition" id="prop-lf-good-unramified">
 <p>
-<span class="ec-thm-head"><span class="ec-thm-name">Proposition 6.4.5</span>.</span> Let \(E\) be an elliptic curve over \(k_v\) with good reduction.
+<span class="ec-thm-head"><span class="ec-thm-name">Proposition 6.4.6</span>.</span> Let \(E\) be an elliptic curve over \(k_v\) with good reduction.
 </p>
 <ol class="org-ol">
-<li><a id="it-lf-good-unram-m"></a> If \(p \nmid m\), then \(E[m]\) is unramified.</li>
+<li><a id="it-lf-good-unram-m"></a> If \(p \nmid m\), then \(E[m](k_v^{\operatorname{sep}})\) is unramified.</li>
 <li><a id="it-lf-good-unram-tate"></a> If \(\ell \neq p\), then \(T_\ell(E)\) is unramified.</li>
 </ol>
 </div>
@@ -1313,13 +1412,14 @@ The torsion of an elliptic curve with good reduction behaves like \(\mu_m\) with
 <p>
 Part <a href="#it-lf-good-unram-tate">2</a> follows from part <a href="#it-lf-good-unram-m">1</a> with \(m = \ell^n\).  For
 part <a href="#it-lf-good-unram-m">1</a>, note that \(\operatorname{char} k \nmid m\), since
-\(\operatorname{char} k\) is \(0\) or \(p\).  Let \(K' \subseteq k_v^{\operatorname{sep}}\) be the finite
-Galois extension of \(k_v\) generated by the coordinates of the points of
-\(E[m](k_v^{\operatorname{sep}})\), with ring of integers \(\calO'\) and residue field \(\kappa'\).  By
-part <a href="#it-lf-semistable-stable">2</a> of Proposition <a href="#prop-lf-semistable">6.3.7</a>, \(E_{K'}\) has good
-reduction; indeed \(v'(\Delta) = e\,v(\Delta) = 0\), so our equation is integral with unit
-discriminant over \(K'\), hence minimal there, and the reduction of \(E_{K'}\) is
-\((E_\pi)_{\kappa'}\).  By part <a href="#it-lf-torsion-good">2</a> of
+\(\operatorname{char} k\) is \(0\) or \(p\).  Fix a minimal Weierstrass equation for \(E\) (the
+proof used its \(\Delta\) without fixing one).  Its
+discriminant is a unit by part <a href="#it-lf-types-good">1</a> of Proposition <a href="#prop-lf-reduction-types">6.3.2</a>.
+Let \(K' \subseteq k_v^{\operatorname{sep}}\) be the finite Galois extension of \(k_v\) generated by the
+coordinates of the points of \(E[m](k_v^{\operatorname{sep}})\), with ring of integers \(\calO'\) and
+residue field \(\kappa'\).  By part <a href="#it-lf-semistable-stable">2</a> of
+Proposition <a href="#prop-lf-semistable">6.3.7</a>, our equation is minimal for \(E_{K'}\), so the reduction of
+\(E_{K'}\) is the elliptic curve \((E_\pi)_{\kappa'}\).  By part <a href="#it-lf-torsion-good">2</a> of
 Proposition <a href="#prop-lf-torsion">6.2.9</a> over \(K'\), the reduction map
 \(E[m](K') \to E_\pi(\kappa')\) is injective.
 </p>
@@ -1336,27 +1436,30 @@ Since \(\tau P - P \in E[m](K')\), injectivity gives \(\tau P = P\).
 <p>
 The converse is the criterion of Néron&#x2013;Ogg&#x2013;Shafarevich [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Theorem VII.7.1].
 Silverman proves it over \(k_v^{\unr}\), which is not complete and has an infinite residue
-field; we work instead over a finite unramified extension, where the results of this chapter
-apply as they stand, and where the finite residue field makes the last step immediate.
+field.  We work instead over a finite unramified extension, where the results of this chapter
+apply as they stand, and where the last step needs only that \(\kappa'^\times\) and
+\(\Gm^{(d)}(\kappa')\) are cyclic, instead of the \(\ell\)-torsion of \(\Fbar_q^\times\) and
+\(\Fbar_q\).
 </p>
 
 <div class="ec-thm ec-theorem" id="thm-lf-nos">
 <p>
-<span class="ec-thm-head"><span class="ec-thm-name">Theorem 6.4.6</span> <span class="ec-thm-title">(Néron&ndash;Ogg&ndash;Shafarevich)</span>.</span> Let \(E\) be an elliptic curve over \(k_v\).  The following are equivalent.
+<span class="ec-thm-head"><span class="ec-thm-name">Theorem 6.4.7</span> <span class="ec-thm-title">(Néron&ndash;Ogg&ndash;Shafarevich)</span>.</span> Let \(E\) be an elliptic curve over \(k_v\).  The following are equivalent.
 </p>
 <ol class="org-ol">
 <li><a id="it-lf-nos-good"></a> \(E\) has good reduction.</li>
-<li><a id="it-lf-nos-all"></a> \(E[m]\) is unramified for every \(m \geq 1\) with \(p \nmid m\).</li>
-<li><a id="it-lf-nos-tate"></a> \(T_\ell(E)\) is unramified for some prime \(\ell \neq p\).</li>
-<li><a id="it-lf-nos-infinite"></a> \(E[m]\) is unramified for infinitely many \(m \geq 1\) with
+<li><a id="it-lf-nos-all"></a> \(E[m](k_v^{\operatorname{sep}})\) is unramified for every \(m \geq 1\) with
 \(p \nmid m\).</li>
+<li><a id="it-lf-nos-tate"></a> \(T_\ell(E)\) is unramified for some prime \(\ell \neq p\).</li>
+<li><a id="it-lf-nos-infinite"></a> \(E[m](k_v^{\operatorname{sep}})\) is unramified for infinitely many
+\(m \geq 1\) with \(p \nmid m\).</li>
 </ol>
 </div>
 
 <details class="ec-proof">
 <summary><span class="ec-proof-head">Proof.</span></summary>
 <p>
-Part <a href="#it-lf-nos-good">1</a> implies part <a href="#it-lf-nos-all">2</a> by Proposition <a href="#prop-lf-good-unramified">6.4.5</a>,
+Part <a href="#it-lf-nos-good">1</a> implies part <a href="#it-lf-nos-all">2</a> by Proposition <a href="#prop-lf-good-unramified">6.4.6</a>,
 part <a href="#it-lf-nos-all">2</a> implies part <a href="#it-lf-nos-tate">3</a> trivially, and part <a href="#it-lf-nos-tate">3</a>
 implies part <a href="#it-lf-nos-infinite">4</a> with \(m = \ell^n\).
 </p>
@@ -1364,15 +1467,16 @@ implies part <a href="#it-lf-nos-infinite">4</a> with \(m = \ell^n\).
 <p>
 Assume part <a href="#it-lf-nos-infinite">4</a>, and let \(\Delta\) be the discriminant of a minimal
 Weierstrass equation for \(E\).  Choose \(m\) with \(p \nmid m\), \(m > \max(4, v(\Delta))\) and
-\(E[m]\) unramified.  The points of \(E[m](k_v^{\operatorname{sep}})\) are defined over a finite unramified extension \(K'\) of
-\(k_v\), with residue field \(\kappa'\), and
+\(E[m](k_v^{\operatorname{sep}})\) unramified.  The points of \(E[m](k_v^{\operatorname{sep}})\) are defined over
+a finite unramified extension \(K'\) of \(k_v\), with residue field \(\kappa'\), and
 \(E[m](K') \cong (\Z/m\Z)^2\) by Corollary <a href="04-ec-algebraic.html#cor-ec-torsion">4.5.1</a>.
 </p>
 
 <p>
-<b>The component group.</b>  Since \(K'/k_v\) is unramified, \(v' = v\) on \(k_v\), and our minimal
-equation stays integral over \(K'\), so the minimal discriminant of \(E_{K'}\) has valuation at
-most \(v(\Delta)\).  By Theorem <a href="#thm-lf-component-group">6.3.9</a> over \(K'\),
+<b>The component group.</b>  Since \(v' = v\) on \(k_v\) (Remark <a href="#rem-lf-finite-extensions">6.3.5</a>), our
+minimal equation stays integral over \(K'\), with the same \(v(\Delta)\), so the minimal
+discriminant of \(E_{K'}\) has valuation at most \(v(\Delta)\).  By
+Theorem <a href="#thm-lf-component-group">6.3.9</a> over \(K'\),
 \(\#E(K')/E_0(K') \leq \max(4, v(\Delta)) < m\).
 </p>
 
@@ -1380,11 +1484,11 @@ most \(v(\Delta)\).  By Theorem <a href="#thm-lf-component-group">6.3.9</a> over
 <b>An \(\ell\)-torsion subgroup of rank \(2\).</b>  Let \(H \coloneqq E[m](K') \cap E_0(K')\).  Then
 \((\Z/m\Z)^2/H\) injects into \(E(K')/E_0(K')\), so \(H\) has index less than \(m\) in
 \((\Z/m\Z)^2\), and \(\#H > m\).  A subgroup of \((\Z/m\Z)^2\) whose \(\ell\)-parts are all
-cyclic is cyclic of order dividing \(m\); so \(H\) contains a subgroup
+cyclic is cyclic of order dividing \(m\).  So \(H\) contains a subgroup
 \(H_\ell \cong (\Z/\ell\Z)^2\) for some prime \(\ell \mid m\).  By
-part <a href="#it-lf-torsion-kernel">1</a> of Proposition <a href="#prop-lf-torsion">6.2.9</a> over \(K'\), \(E_1(K')\) contains no
-point of order \(\ell\), so the reduction map of Proposition <a href="#prop-lf-reduction-exact">6.2.8</a> over
-\(K'\) is injective on \(H_\ell\):
+part <a href="#it-lf-torsion-kernel">1</a> of Proposition <a href="#prop-lf-torsion">6.2.9</a> over \(K'\),
+\(E_1(K') \cap E[\ell](K') = \{O\}\), so the reduction map of
+Proposition <a href="#prop-lf-reduction-exact">6.2.8</a> over \(K'\) is injective on \(H_\ell\):
 </p>
 \begin{equation*}
 (\Z/\ell\Z)^2 \hookrightarrow (E_{K'})_{\pi'}^{\ns}(\kappa').
@@ -1397,13 +1501,14 @@ Proposition <a href="#prop-lf-reduction-types">6.3.2</a> over \(K'\) the group
 \(\ell \neq p\); or \(\Gm(\kappa') = \kappa'^\times\), cyclic; or \(\Gm^{(d)}(\kappa')\), cyclic
 by part <a href="02-varieties.html#it-var-twisted-gm-finite">4</a> of Proposition <a href="02-varieties.html#prop-var-twisted-gm">2.1.9</a>.  None of these
 contains \((\Z/\ell\Z)^2\).  So \(E_{K'}\) has good reduction, and so does \(E\), by
-part <a href="#it-lf-semistable-unramified">1</a> of Proposition <a href="#prop-lf-semistable">6.3.7</a>.
+part <a href="#it-lf-semistable-unramified">1</a> of Proposition <a href="#prop-lf-semistable">6.3.7</a>.  When
+\(p \in \{2, 3\}\), this last step is the only one that uses Tate's algorithm.
 </p>
 </details>
 
 <div class="ec-thm ec-corollary" id="cor-lf-isogeny-good">
 <p>
-<span class="ec-thm-head"><span class="ec-thm-name">Corollary 6.4.7</span>.</span> Let \(E_1\) and \(E_2\) be elliptic curves over \(k_v\) that are isogenous over \(k_v\).  Then
+<span class="ec-thm-head"><span class="ec-thm-name">Corollary 6.4.8</span>.</span> Let \(E_1\) and \(E_2\) be elliptic curves over \(k_v\) that are isogenous over \(k_v\).  Then
 \(E_1\) has good reduction if and only if \(E_2\) does.
 </p>
 </div>
@@ -1415,15 +1520,15 @@ Let \(\varphi\colon E_1 \to E_2\) be a non-zero isogeny over \(k_v\), and let \(
 \(p\) and to \(\deg\varphi\).  The kernel of \(\varphi\) on \(E_1(k_v^{\operatorname{sep}})\) has order
 dividing \(\deg\varphi\) (Theorem <a href="04-ec-algebraic.html#thm-ec-isogeny-kernel">4.3.8</a>), so it meets \(E_1[m](k_v^{\operatorname{sep}})\)
 trivially, and \(\varphi\colon E_1[m](k_v^{\operatorname{sep}}) \to E_2[m](k_v^{\operatorname{sep}})\) is a
-\(\Gal_{k_v}\)-equivariant bijection between sets of order \(m^2\).  So \(E_1[m]\) is
-unramified if and only if \(E_2[m]\) is, and Theorem <a href="#thm-lf-nos">6.4.6</a> applies, with infinitely
-many such \(m\).
+\(\Gal_{k_v}\)-equivariant bijection between sets of order \(m^2\).  So
+\(E_1[m](k_v^{\operatorname{sep}})\) is unramified if and only if \(E_2[m](k_v^{\operatorname{sep}})\) is, and
+Theorem <a href="#thm-lf-nos">6.4.7</a> applies, with infinitely many such \(m\).
 </p>
 </details>
 
 <div class="ec-thm ec-corollary" id="cor-lf-potential-good-inertia">
 <p>
-<span class="ec-thm-head"><span class="ec-thm-name">Corollary 6.4.8</span>.</span> Let \(E\) be an elliptic curve over \(k_v\), and \(\ell \neq p\) a prime.  Then \(E\) has
+<span class="ec-thm-head"><span class="ec-thm-name">Corollary 6.4.9</span>.</span> Let \(E\) be an elliptic curve over \(k_v\), and \(\ell \neq p\) a prime.  Then \(E\) has
 potential good reduction if and only if \(I_v\) acts on \(T_\ell(E)\) through a finite
 quotient.
 </p>
@@ -1432,15 +1537,18 @@ quotient.
 <details class="ec-proof">
 <summary><span class="ec-proof-head">Proof.</span></summary>
 <p>
-Suppose that \(E_{K'}\) has good reduction, where we may take \(K' \subseteq k_v^{\operatorname{sep}}\)
-finite Galois over \(k_v\), enlarging it by part <a href="#it-lf-semistable-stable">2</a> of
-Proposition <a href="#prop-lf-semistable">6.3.7</a>.  The inertia group of \(K'\) is \(I_v \cap \Gal_{K'}\), and it acts
-trivially on \(T_\ell(E)\) by Theorem <a href="#thm-lf-nos">6.4.6</a> over \(K'\); it has finite index in
-\(I_v\).  Conversely, suppose that \(I_v\) acts through \(I_v/J\) with \(J\) open.  The fixed
-field of \(J\) is a finite extension of \(k_v^{\unr}\), so it is \(K'k_v^{\unr}\) for some
-finite extension \(K'\) of \(k_v\).  The inertia group of \(K'\) is
-\(\Gal(k_v^{\operatorname{sep}}/K'k_v^{\unr}) = J\), which acts trivially on \(T_\ell(E)\); so \(E_{K'}\) has
-good reduction by Theorem <a href="#thm-lf-nos">6.4.6</a> over \(K'\).
+Suppose that \(E\) has potential good reduction.  Then \(E_{K'}\) has good reduction for
+some finite extension \(K' \subseteq k_v^{\operatorname{sep}}\): if \(\operatorname{char} k = 0\) every
+finite extension is separable, and if \(p \neq 2\) the proof of
+Proposition <a href="#prop-lf-potential-good">6.3.8</a> gives good reduction over a finite separable
+extension.  Enlarging \(K'\) by part <a href="#it-lf-semistable-stable">2</a> of
+Proposition <a href="#prop-lf-semistable">6.3.7</a>, we may take it finite Galois over \(k_v\).  The inertia
+group of \(K'\) is \(I_v \cap \Gal_{K'}\), and it acts trivially on \(T_\ell(E)\) by
+Theorem <a href="#thm-lf-nos">6.4.7</a> over \(K'\).  It has finite index in \(I_v\).  Conversely, suppose that
+\(I_v\) acts through \(I_v/J\) with \(J\) open.  The fixed field of \(J\) is a finite extension
+of \(k_v^{\unr}\), so it is \(K'k_v^{\unr}\) for some finite extension \(K'\) of \(k_v\).  The
+inertia group of \(K'\) is \(\Gal(k_v^{\operatorname{sep}}/K'k_v^{\unr}) = J\), which acts trivially on
+\(T_\ell(E)\).  So \(E_{K'}\) has good reduction by Theorem <a href="#thm-lf-nos">6.4.7</a> over \(K'\).
 </p>
 </details>
 
@@ -1450,35 +1558,882 @@ This is [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Corollaries VII.7
 
 <div class="ec-thm ec-example" id="eg-lf-nos-examples">
 <p>
-<span class="ec-thm-head"><span class="ec-thm-name">Example 6.4.9</span>.</span> Let \(k = \Q\) and \(v = p\).
+<span class="ec-thm-head"><span class="ec-thm-name">Example 6.4.10</span>.</span> Let \(k = \Q\) and \(v = p\).
 </p>
 <ol class="org-ol">
 <li><a id="it-lf-nos-additive"></a> Let \(p \geq 5\) and \(E\colon y^2 = x^3 + p\), with additive
-reduction (Example <a href="#eg-lf-reduction-types">6.3.4</a>).  Its points of order \(2\) are
-\((-\zeta p^{1/3}, 0)\) for the three cube roots of unity \(\zeta\).  By
-part <a href="#it-lf-inertia-kummer">3</a> of Example <a href="#eg-lf-inertia-roots-of-unity">6.4.4</a>, some
-\(\tau \in I_p\) moves \(p^{1/3}\), hence moves the point \((-p^{1/3}, 0)\) of order \(2\).  So \(E[2]\)
-is ramified, as Theorem <a href="#thm-lf-nos">6.4.6</a> requires.  Since \(E\) acquires good reduction over
-\(\Q_p(p^{1/6})\), inertia acts on \(T_\ell(E)\) through a finite quotient, as
-Corollary <a href="#cor-lf-potential-good-inertia">6.4.8</a> requires.</li>
+reduction (part <a href="#it-lf-types-eg-additive">4</a> of Example <a href="#eg-lf-reduction-types">6.3.4</a>).  Its
+\(\Q_p^{\operatorname{sep}}\)-points of order \(2\) are \((-\zeta p^{1/3}, 0)\) for the three cube
+roots of unity \(\zeta\).  By part <a href="#it-lf-inertia-kummer">3</a> of
+Example <a href="#eg-lf-inertia-roots-of-unity">6.4.5</a>, some \(\tau \in I_p\) moves \(p^{1/3}\), hence
+moves the \(\Q_p^{\operatorname{sep}}\)-point \((-p^{1/3}, 0)\).  So \(E[2](\Q_p^{\operatorname{sep}})\) is
+ramified, and so is \(E[m](\Q_p^{\operatorname{sep}})\) for every even \(m\), consistent with
+Theorem <a href="#thm-lf-nos">6.4.7</a>.  Part <a href="#it-lf-nos-one-m">2</a> shows that \(m = 2\) alone need not detect
+bad reduction.  Since \(E\) acquires good reduction over \(\Q_p(p^{1/6})\), inertia acts on
+\(T_\ell(E)\) through a finite quotient for every \(\ell \neq p\), as
+Corollary <a href="#cor-lf-potential-good-inertia">6.4.9</a> predicts.</li>
 <li><a id="it-lf-nos-one-m"></a> Let \(p\) be odd and \(E\colon y^2 = x(x - 1)(x + p)\), the Legendre
 form with \(\lambda = -p\).  Then \(\Delta = 16p^2(p + 1)^2\) and
-\(c_4 = 16(p^2 + p + 1)\), a unit, so \(E\) has multiplicative reduction; its reduction
+\(c_4 = 16(p^2 + p + 1)\), a unit, so \(E\) has multiplicative reduction.  Its reduction
 \(y^2 = x^2(x - 1)\) has tangent slopes \(\pm\sqrt{-1}\), so it is split exactly when
-\(p \equiv 1 \pmod 4\).  Yet \(E[2](\Q_p^{\operatorname{sep}}) = \{O, (0, 0), (1, 0), (-p, 0)\}\) consists
-of rational points, so \(E[2]\) is unramified.  One value of \(m\) does not suffice in
-Theorem <a href="#thm-lf-nos">6.4.6</a>.  (In Chapter 12 we will see that for this curve, which is a Tate
-curve or an unramified quadratic twist of one, \(E[\ell]\) with \(\ell \neq 2, p\) prime
-is unramified only when \(\ell \mid v(\Delta) = 2\), that is, never.)</li>
+\(p \equiv 1 \pmod 4\).  Yet \(E[2](\Q_p^{\operatorname{sep}}) = \{O, (0, 0), (1, 0), (-p, 0)\}\)
+consists of rational points, so \(E[2](\Q_p^{\operatorname{sep}})\) is unramified.  One value of
+\(m\) does not suffice in Theorem <a href="#thm-lf-nos">6.4.7</a>.  (In Chapter 12 we will see that for this
+curve, which is a Tate curve or an unramified quadratic twist of one,
+\(E[\ell](\Q_p^{\operatorname{sep}})\) with \(\ell \neq 2, p\) prime is unramified only when
+\(\ell \mid v(\Delta) = 2\), that is, never.)</li>
 </ol>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org8b1bf18" class="outline-2 ec-references">
-<h2 id="org8b1bf18">References</h2>
-<div class="outline-text-2" id="text-org8b1bf18">
+<div id="outline-container-sec-lf-kodaira" class="outline-2">
+<h2 id="sec-lf-kodaira"><span class="ec-status ec-status-draft"><span class="ec-status-label ec-status-draft">Draft</span><time datetime="2026-10-06">6 Oct 2026</time></span><span class="section-number" id="s6.5">6.5</span> The Kodaira&#x2013;Néron classification and Tate's algorithm</h2>
+<div class="outline-text-2" id="text-sec-lf-kodaira">
+<div class="ec-thm ec-situation" id="sit-lf-kodaira">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Situation 6.5.1</span>.</span> In addition to Situation <a href="#sit-lf-standing">6.0.2</a>:
+</p>
+<ul class="org-ul">
+<li>\(\bar\kappa\) is an algebraic closure of \(\kappa(v)\).</li>
+<li>\(E\) is an elliptic curve over \(k_v\), with a minimal Weierstrass equation, its minimal
+Weierstrass model \(\calW\) (Definition <a href="#def-lf-weierstrass-model">6.2.2</a>) and its Néron model
+\(\calE\) (Definition <a href="#def-lf-neron">6.2.6</a>).</li>
+<li>\(\calC\) is the minimal regular proper model of \(E\) (Definition <a href="#def-lf-regular-model">6.5.3</a>),
+with special fiber \(\calC_\pi\).</li>
+</ul>
+<p>
+The residue field \(\kappa(v)\) is perfect.  The classification over \(\kappa(v)\) and Tate's
+algorithm use this.  Over an imperfect residue field both need more
+care [<a class="ec-cite" href="#bib-Liu2002">Liu02</a>, Remark 10.2.3].
+</p>
+</div>
+
+<p>
+The reduction type of Section <a href="#sec-lf-types">6.3</a> is read off from \(E_\pi\), a plane cubic,
+and it is coarse.  Let \(k = \Q\) and \(p \geq 5\).  The curves
+</p>
+\begin{equation*}
+E\colon y^2 = x^3 + p
+\qquad\text{and}\qquad
+E'\colon y^2 = x^3 + p^2
+\end{equation*}
+<p>
+have \(v(\Delta) = 2\) and \(4\), so both equations are minimal, and both reduce to the
+cuspidal cubic \(y^2 = x^3\): both have additive reduction.  Yet \(E(\Q_p)/E_0(\Q_p)\) is
+trivial, while \(E'(\Q_p)/E'_0(\Q_p)\) has order \(3\) (Example <a href="#eg-lf-ladders">6.5.14</a>).  By the
+discussion before Theorem <a href="#thm-lf-component-group">6.3.9</a>, this quotient is the group of components
+of the special fiber of the Néron model, and the Néron model is built from the minimal
+Weierstrass model by blowing up (Theorem <a href="#thm-lf-neron">6.2.7</a> and the paragraph after it).  What
+tells \(E\) and \(E'\) apart is that the minimal Weierstrass model of \(E\) is regular and that
+of \(E'\) is not.
+</p>
+
+<p>
+This section describes the special fibers that arise.  For elliptic surfaces over \(\C\) they
+were classified by Kodaira, and Néron found the same list over discrete valuation rings.
+Tate's algorithm then finds the fiber of a given curve from a Weierstrass equation, by a
+short list of divisibility tests.  We prove little: the aim is to see where the fibers come
+from, by computing blow-ups in examples, and to be able to run the algorithm.
+</p>
+</div>
+
+<div id="outline-container-orgf049634" class="outline-3">
+<h3 id="orgf049634"><span class="section-number" id="s6.5.1">6.5.1</span> Regular models</h3>
+<div class="outline-text-3" id="text-5-1">
+<p>
+Recall that a Noetherian local ring \((A, \mm)\) is regular if
+\(\dim_{A/\mm} \mm/\mm^2 = \dim A\) (Definition <a href="02-varieties.html#def-var-smooth">2.4.1</a>), and that a Noetherian
+scheme is regular if and only if its local rings at closed points are
+[<a class="ec-cite" href="#bib-Liu2002">Liu02</a>, Corollary 4.2.17].  The Weierstrass model \(\calW\) of an integral equation is
+an integral scheme of dimension \(2\), flat and projective over \(\calO_v\): it is a
+<dfn class="ec-cdef" id="gls-fibered-surface" data-gls="fibered-surface">fibered surface</dfn> [<a class="ec-cite" href="#bib-Liu2002">Liu02</a>, Definition 8.3.1], fibered over the curve-like base
+\(\Spec \calO_v\) with two fibers, the generic fiber \(E\) and the special fiber
+\(\calW_\pi\).  Liu calls the regular fibered surfaces arithmetic surfaces
+[<a class="ec-cite" href="#bib-Liu2002">Liu02</a>, Definition 8.3.14], and his intersection theory is for those.  Since \(\calW\) is proper
+over \(\calO_v\), its closed points all lie on \(\calW_\pi\), so its regularity is decided
+there.
+</p>
+
+<div class="ec-thm ec-lemma" id="lem-lf-regular-weierstrass">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Lemma 6.5.2</span>.</span> Let \(\calW\) be the Weierstrass model of a Weierstrass equation with coefficients in
+\(\calO_v\), and let
+</p>
+\begin{equation*}
+f(x, y) \coloneqq y^2 + a_1xy + a_3y - x^3 - a_2x^2 - a_4x - a_6.
+\end{equation*}
+<ol class="org-ol">
+<li><a id="it-lf-regular-smooth"></a> \(\calW\) is regular at every closed point at which the cubic
+\(\calW_\pi\) is nonsingular.</li>
+<li><a id="it-lf-regular-singular"></a> If \(\calW_\pi\) has a singular point, it is a rational point.
+Lift it to \((\alpha, \beta) \in \calO_v^2\).  Then \(\calW\) is regular at this closed
+point if and only if \(v(f(\alpha, \beta)) = 1\).</li>
+</ol>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+Let \(P\) be a closed point of \(\calW\), and \(A \coloneqq \calO_{\calW, P}\), with maximal
+ideal \(\mm\).  The scheme \(\calW\) is integral and \(\pi_v \neq 0\) in \(A\), so
+\(\dim A/\pi_vA = \dim A - 1\) [<a class="ec-cite" href="#bib-Liu2002">Liu02</a>, Theorem 2.5.15], and \(A/\pi_vA\) is the local
+ring of the curve \(\calW_\pi\) at \(P\), of dimension \(1\).  So \(\dim A = 2\).
+</p>
+
+<p>
+For part <a href="#it-lf-regular-smooth">1</a>, \(\calW_\pi\) is regular at \(P\), since \(\kappa(v)\) is
+perfect (part <a href="02-varieties.html#it-var-smooth-perfect">2</a> of Proposition <a href="02-varieties.html#prop-var-smooth-regular">2.4.2</a>): the
+maximal ideal of \(A/\pi_vA\) is generated by one element \(\bar t\).  Then
+\(\mm = (\pi_v, t)\) is generated by \(\dim A = 2\) elements, and \(A\) is regular.
+</p>
+
+<p>
+For part <a href="#it-lf-regular-singular">2</a>, the singular point is a rational point by
+Remark <a href="04-ec-algebraic.html#rem-ec-singular-cubics">4.1.11</a>, since \(\kappa(v)\) is perfect, and it is affine, since
+\(\bar O\) is a nonsingular point of \(\calW_\pi\) (Proposition <a href="04-ec-algebraic.html#prop-ec-weierstrass-smooth">4.1.5</a>).
+So \(P\) corresponds to the maximal ideal \(\mm_P = (\pi_v, x - \alpha, y - \beta)\) of
+\(B \coloneqq \calO_v[x, y]\), and \(A = B_{\mm_P}/(f)\).  The local ring \(B_{\mm_P}\) is
+regular of dimension \(3\), with \(\mm_P\) generated by three elements, so \(A\) is regular if
+and only if \(f \notin \mm_P^2B_{\mm_P}\) [<a class="ec-cite" href="#bib-Liu2002">Liu02</a>, Corollary 4.2.12 and Example 4.2.13].
+Expand
+</p>
+\begin{equation*}
+f = f(\alpha, \beta) + f_x(\alpha, \beta)\,(x - \alpha) + f_y(\alpha, \beta)\,(y - \beta)
+  + (\text{terms in } \mm_P^2),
+\end{equation*}
+<p>
+where \(f_x, f_y\) are the partial derivatives.  Since \(P\) is a singular point of the
+reduced cubic, \(f(\alpha, \beta)\), \(f_x(\alpha, \beta)\) and \(f_y(\alpha, \beta)\) lie in
+\(\mm_v\), so modulo \(\mm_P^2\) only \(f(\alpha, \beta)\) survives, and it lies in
+\(\mm_P^2\) if and only if \(\pi_v^2 \mid f(\alpha, \beta)\), because \(\pi_v, x - \alpha,
+y - \beta\) are a basis of \(\mm_P/\mm_P^2\).
+</p>
+</details>
+
+<p>
+The condition does not depend on the lift: changing \(\alpha\) by an element of \(\mm_v\)
+changes \(f(\alpha, \beta)\) by \(f_x(\alpha, \beta)\) times it, plus terms in \(\mm_v^2\), and
+\(f_x(\alpha, \beta) \in \mm_v\).  For \(y^2 = x^3 + p\) the singular point is \((0, 0)\) and
+\(f(0, 0) = -p\): the model is regular, and in the local ring at the cusp
+\(p = y^2 - x^3\) is not a new generator.  For \(y^2 = x^3 + p^2\), \(f(0, 0) = -p^2\) and the
+model is not regular at the cusp.  The fibers are the same, and only the surface sees the
+difference.  See Figure <a href="#fig-lf-regular-or-not">6.5.1</a>.  This is the arithmetic analogue of
+Kodaira's family \(y^2 = x^3 + t\) versus \(y^2 = x^3 + t^2\) over \(\C[t]\)
+[<a class="ec-cite" href="#bib-Milne20">Mil20</a>, Example II.7.1].
+</p>
+
+<figure class="ec-figure" id="fig-lf-regular-or-not">
+<img class="ec-tikz" src="figures/bd6978420ef8d9ef21d7fcb19f75ee8894df9b09.svg" style="--ec-w: 32.76em" alt=""/>
+<figcaption><span class="ec-thm-name">Figure 6.5.1</span>. The Weierstrass models of \(y^2 = x^3 + p\) and \(y^2 = x^3 + p^2\) over \(\Spec \Z_p\), with \(p \geq 5\).  The special fibers are the same cuspidal cubic; the first surface is regular at the cusp, and the second is not.</figcaption>
+</figure>
+
+<p>
+Every elliptic curve has a regular model, and among the regular ones there is a smallest.
+The following is [<a class="ec-cite" href="#bib-Liu2002">Liu02</a>, Definition 9.3.12 and Proposition 10.1.8].  See also
+[<a class="ec-cite" href="#bib-Poonen2017">Poo17</a>, Section 9.3.1.6].
+</p>
+
+<div class="ec-thm ec-definition" id="def-lf-regular-model">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Definition 6.5.3</span>.</span> A <dfn class="ec-cdef" id="gls-regular-proper-model" data-gls="regular-proper-model">regular proper model</dfn> of \(E\) is an integral model \(\calX\) of \(E\)
+(Definition <a href="#def-lf-model">6.2.1</a>) which is an integral regular scheme, flat and proper over
+\(\calO_v\).  It is a <dfn class="ec-cdef" id="gls-minimal-regular-proper-model" data-gls="minimal-regular-proper-model">minimal regular proper model</dfn> if for every regular proper model
+\(\calX'\) of \(E\), the identity of \(E\) extends to a morphism \(\calX' \to \calX\) of
+\(\calO_v\)-schemes.
+</p>
+</div>
+
+<p>
+A minimal regular proper model exists and is unique up to unique isomorphism
+[<a class="ec-cite" href="#bib-Liu2002">Liu02</a>, Proposition 10.1.8].  For an elliptic curve it is constructed from the minimal
+Weierstrass model \(\calW\) by blowing up non-regular closed points until the result is
+regular [<a class="ec-cite" href="#bib-Poonen2017">Poo17</a>, Section 5.7.6], and its smooth locus is the Néron model
+\(\calE\) [<a class="ec-cite" href="#bib-Liu2002">Liu02</a>, Theorem 10.2.14].  So the Néron model, and the group
+\(E(k_v)/E_0(k_v)\), are visible in the special fiber \(\calC_\pi\).
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgf3bec43" class="outline-3">
+<h3 id="orgf3bec43"><span class="section-number" id="s6.5.2">6.5.2</span> Blowing up, by hand</h3>
+<div class="outline-text-3" id="text-5-2">
+<p>
+The blow-up of \(\AA^2_{\calO_v}\) at the closed point \((\pi_v, x, y)\) is covered by three
+affine charts, one for each generator of the ideal, in which that generator divides the other
+two [<a class="ec-cite" href="#bib-Liu2002">Liu02</a>, Section 8.1].  In the chart of \(\pi_v\), the coordinates are \(x_1, y_1\)
+with \(x = \pi_vx_1\) and \(y = \pi_vy_1\).  In the chart of \(x\) they are \(y_2, \varpi_2\) with
+\(y = xy_2\) and \(\pi_v = x\varpi_2\).  The chart of \(y\) is similar.  The blow-up of
+\(\calW\) at that closed point is its strict transform: substitute, and divide \(f\) by the
+largest power of the chosen generator that divides it.  The new special fiber is cut out by
+\(\pi_v\), which now factors, and the exponents of its factors are the multiplicities of the
+components.  The curve lying over the closed point that was blown up is the
+<dfn class="ec-cdef" id="gls-exceptional-curve" data-gls="exceptional-curve">exceptional curve</dfn>.
+</p>
+
+<p>
+We work over \(k_v = \Q_p\) with \(p \geq 5\), and write \(p\) for \(\pi_v\).
+</p>
+
+<div class="ec-thm ec-example" id="eg-lf-blowup-in">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Example 6.5.4</span>.</span> Let \(E\colon y^2 = x^3 + x^2 + p^2\).  Here \(\Delta = -16p^2(27p^2 + 4)\) and \(c_4 = 16\),
+so the reduction is multiplicative, with the node at \((0, 0)\), and \(v(f(0, 0)) = 2\): the
+model is not regular there.  In the chart \(x = px_1\), \(y = py_1\), dividing by \(p^2\) gives
+</p>
+\begin{equation*}
+y_1^2 = x_1^2 + 1 + px_1^3,
+\end{equation*}
+<p>
+with special fiber the conic \(y_1^2 - x_1^2 = 1\): the exceptional curve \(\Gamma_1\), smooth of
+multiplicity \(1\).  Its two closed points at infinity are the directions \(y_1 = \pm x_1\), the
+two tangent lines at the node, and that is where the strict transform \(\Gamma_0\) of the
+nodal cubic meets it: blowing up separates the two branches through the node.  Checking the
+other two charts with the criterion \(f \notin \mm^2\) from the proof of
+Lemma <a href="#lem-lf-regular-weierstrass">6.5.2</a>, the blown-up surface is regular.  So \(\calC_\pi\) consists of two smooth rational curves meeting transversally in two
+closed points, Figure <a href="#fig-lf-blowup-in">6.5.2</a>: type \(\mathrm{I}_2\).
+</p>
+
+<p>
+The same chart for \(y^2 = x^3 + x^2 + p^n\) with \(n \geq 3\) gives
+\(y_1^2 = x_1^2 + p^{n-2} + px_1^3\).  Now the exceptional curve is the pair of lines
+\(y_1 = \pm x_1\), each meeting \(\Gamma_0\) at infinity, and they cross at the origin, where
+the equation has the same shape with \(n - 2\) in place of \(n\).  So each blow-up adds two
+components, or one when it reaches \(n = 2\), and lowers \(n\) by \(2\).  In the end \(\calC_\pi\) is a cycle of \(n\) smooth
+rational curves: type \(\mathrm{I}_n\).  For \(n = 1\) the model is already regular, and
+\(\calC_\pi = E_\pi\) is the nodal cubic.
+</p>
+</div>
+
+<figure class="ec-figure" id="fig-lf-blowup-in">
+<img class="ec-tikz" src="figures/0617428d64c07a59a67d531f4445a5cbaf0e5a43.svg" style="--ec-w: 29.99em" alt=""/>
+<figcaption><span class="ec-thm-name">Figure 6.5.2</span>. Blowing up the node of the special fiber of \(y^2 = x^3 + x^2 + p^2\), where the surface is not regular, separates its two branches: type \(\mathrm{I}_2\).  The strict transform \(\Gamma_0\) of the nodal cubic is blue.</figcaption>
+</figure>
+
+<div class="ec-thm ec-example" id="eg-lf-blowup-iii-iv">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Example 6.5.5</span>.</span> Blow up the cusp of the special fiber.
+</p>
+<ol class="org-ol">
+<li><p>
+<a id="it-lf-blowup-iii"></a> Let \(E\colon y^2 = x^3 + px\), with \(\Delta = -64p^3\).  At the cusp
+\(f(0, 0) = 0\), so the model is not regular there.  In the chart \(y = xy_2\),
+\(p = x\varpi_2\), dividing by \(x^2\) gives
+</p>
+\begin{equation*}
+y_2^2 = x + \varpi_2,
+\end{equation*}
+<p>
+a regular surface, on which \(y_2\) and \(\varpi_2\) are local coordinates at the origin.  The
+special fiber is \(p = x\varpi_2 = (y_2^2 - \varpi_2)\,\varpi_2\): the strict transform
+\(\Gamma_0 = \{\varpi_2 = 0\}\) of the cusp and the exceptional curve
+\(\Gamma_1 = \{\varpi_2 = y_2^2\}\), both of multiplicity \(1\), tangent at one closed point.
+The other charts are regular, and this is type \(\mathrm{III}\).
+</p></li>
+<li><a id="it-lf-blowup-iv"></a> Let \(E\colon y^2 = x^3 + p^2\), with \(\Delta = -432p^4\).  The same chart
+gives \(y_2^2 = x + \varpi_2^2\), and the special fiber is
+\(p = (y_2^2 - \varpi_2^2)\,\varpi_2\): three lines \(\varpi_2 = 0\) and
+\(y_2 = \pm\varpi_2\), through one closed point, pairwise transversal since \(p \neq 2\).
+This is type \(\mathrm{IV}\).</li>
+</ol>
+<p>
+See Figure <a href="#fig-lf-blowup-iii-iv">6.5.3</a>.  For \(y^2 = x^3 + p\) the model is already regular, and
+\(\calC_\pi\) is the cuspidal cubic: type \(\mathrm{II}\).
+</p>
+</div>
+
+<figure class="ec-figure" id="fig-lf-blowup-iii-iv">
+<img class="ec-tikz" src="figures/18da46eae630cbd5007794d28757e75ce293b8c0.svg" style="--ec-w: 15.64em" alt=""/>
+<img class="ec-tikz" src="figures/795f855f1c8cdecee708c53eb958193966d5ab91.svg" style="--ec-w: 15.64em" alt=""/>
+<figcaption><span class="ec-thm-name">Figure 6.5.3</span>. Blowing up the cusp of \(y^2 = x^3 + px\) gives two curves tangent at one closed point, type \(\mathrm{III}\) (left); for \(y^2 = x^3 + p^2\) it gives three concurrent lines, type \(\mathrm{IV}\) (right).</figcaption>
+</figure>
+
+<div class="ec-thm ec-example" id="eg-lf-blowup-i0star">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Example 6.5.6</span>.</span> Let \(E\colon y^2 = (x - ap)(x - bp)(x - cp)\) with \(a, b, c \in \Z\) distinct modulo \(p\),
+so that \(v(\Delta) = 6\).  In the chart \(x = px_1\), \(y = py_1\), dividing by \(p^2\) gives
+</p>
+\begin{equation*}
+y_1^2 = p\,g(x_1), \qquad g(x_1) \coloneqq (x_1 - a)(x_1 - b)(x_1 - c).
+\end{equation*}
+<p>
+Away from the roots of \(g\), the function \(p = y_1^2/g(x_1)\) vanishes to order \(2\) along
+the exceptional curve \(y_1 = 0\): a line of multiplicity \(2\).  At the three closed points
+\((p, y_1, x_1 - a)\), and likewise for \(b\) and \(c\), the surface \(y_1^2 = p\,(x_1 - a)\,u\),
+with \(u\) a unit, is not regular.  Blowing up such a closed point, in the chart \(p = (x_1 - a)p'\),
+\(y_1 = (x_1 - a)y'\), gives the regular surface \(y'^2 = p'u\), on which
+\(p = (x_1 - a)\,y'^2/u\): a new exceptional curve \(x_1 = a\) of multiplicity \(1\), crossing
+the double line \(y' = 0\).  With the strict transform of the cusp, which crosses the double line
+in the chart of \(x\), the special fiber is four lines of multiplicity \(1\) crossing a line of
+multiplicity \(2\), Figure <a href="#fig-lf-blowup-i0star">6.5.4</a>: type \(\mathrm{I}_0^*\).  This is the first
+fiber that is not reduced.
+</p>
+</div>
+
+<figure class="ec-figure" id="fig-lf-blowup-i0star">
+<img class="ec-tikz" src="figures/1b5eb47bd9fc3bb377cff7e1c8eed48bb8080fbd.svg" style="--ec-w: 34.91em" alt=""/>
+<figcaption><span class="ec-thm-name">Figure 6.5.4</span>. Type \(\mathrm{I}_0^*\) in two blow-ups.  The first produces a double line with three non-regular closed points (red), and blowing those up adds three simple lines.  The strict transform of the cusp is blue.</figcaption>
+</figure>
+</div>
+</div>
+
+<div id="outline-container-org64bc063" class="outline-3">
+<h3 id="org64bc063"><span class="section-number" id="s6.5.3">6.5.3</span> The Kodaira&#x2013;Néron classification</h3>
+<div class="outline-text-3" id="text-5-3">
+<p>
+Let \(\calX\) be a regular proper model of \(E\).  Its special fiber is the divisor of the
+function \(\pi_v\),
+</p>
+\begin{equation*}
+\calX_\pi = \sum_i d_i\Gamma_i,
+\end{equation*}
+<p>
+where the \(\Gamma_i\) are the irreducible components and \(d_i \geq 1\) is the
+<dfn class="ec-cdef" id="gls-multiplicity-of-a-component" data-gls="multiplicity-of-a-component">multiplicity</dfn> of \(\Gamma_i\): the valuation of \(\pi_v\) in
+the discrete valuation ring \(\calO_{\calX, \Gamma_i}\), the local ring at the generic point of
+\(\Gamma_i\).  A regular surface proper over \(\calO_v\) carries an intersection pairing between
+divisors supported on the special fiber [<a class="ec-cite" href="#bib-Liu2002">Liu02</a>, Section 9.1.2].  For \(i \neq j\),
+\(\Gamma_i \cdot \Gamma_j \geq 0\) counts the closed points of \(\Gamma_i \cap \Gamma_j\) with
+multiplicities and degrees.  A transversal crossing at a rational point counts \(1\), the
+tangency of type \(\mathrm{III}\) counts \(2\).
+</p>
+
+<p>
+To see the fiber over \(\bar\kappa\), let \(K'\) be a finite unramified extension of \(k_v\),
+with residue field \(\kappa'\).  Then \(\calC \times_{\calO_v} \calO_{K'}\) is the minimal
+regular proper model of \(E_{K'}\) [<a class="ec-cite" href="#bib-Liu2002">Liu02</a>, Proposition 10.1.17], with special fiber
+\(\calC_\pi \times_{\kappa(v)} \kappa'\).  Taking \(\kappa'\) large enough, every component of
+\(\calC_{\bar\kappa} \coloneqq \calC_\pi \times_{\kappa(v)} \bar\kappa\) and every crossing
+point is defined over \(\kappa'\).  So, replacing \(k_v\) by \(K'\), the components of
+\(\calC_\pi\) may be assumed geometrically irreducible with a rational point, and then they and
+their intersection numbers are those of \(\calC_{\bar\kappa}\).  We use three facts.
+</p>
+
+<div class="ec-thm ec-proposition" id="prop-lf-fiber-intersection">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Proposition 6.5.7</span>.</span> Let \(\calX\) be a regular proper model of \(E\), with special fiber \(\sum_i d_i\Gamma_i\).
+</p>
+<ol class="org-ol">
+<li><a id="it-lf-fiber-zero"></a> \(\Gamma_i \cdot \calX_\pi = 0\) for every \(i\), that is,
+\(\sum_j d_j\,\Gamma_i \cdot \Gamma_j = 0\).</li>
+<li><a id="it-lf-fiber-identity"></a> The closure of the rational point \(O\) meets exactly one component,
+\(\Gamma_0\), and \(d_0 = 1\).</li>
+<li><a id="it-lf-fiber-minus-two"></a> If \(\calX = \calC\), \(\calC_\pi\) has at least two components,
+and they are geometrically irreducible with a rational point, then every \(\Gamma_i\) is
+isomorphic to \(\PP^1_{\kappa(v)}\), and \(\Gamma_i \cdot \Gamma_i = -2\).</li>
+</ol>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+Part <a href="#it-lf-fiber-zero">1</a> holds because \(\calX_\pi\) is the divisor of the function
+\(\pi_v\) [<a class="ec-cite" href="#bib-Liu2002">Liu02</a>, Proposition 9.1.21].  For part <a href="#it-lf-fiber-identity">2</a>, \(O\) extends to
+a section \(\sigma\colon \Spec \calO_v \to \calX\), since \(\calX\) is proper.  Pulling back
+the divisor of \(\pi_v\) along \(\sigma\) gives
+\(1 = v(\pi_v) = \sum_i d_i\,(\sigma \cdot \Gamma_i)\), with every \(\sigma \cdot \Gamma_i\) a
+non-negative integer, positive when \(\sigma\) meets \(\Gamma_i\).  Part
+<a href="#it-lf-fiber-minus-two">3</a> is the adjunction formula: on the minimal model the relative canonical
+divisor is trivial [<a class="ec-cite" href="#bib-Liu2002">Liu02</a>, Corollary 9.3.27], and a component with trivial canonical
+degree in a fiber with several components is a conic over its field of constants, which is
+\(\kappa(v)\) here, with self-intersection \(-2\) [<a class="ec-cite" href="#bib-Liu2002">Liu02</a>, Proposition 9.4.8].  A
+geometrically irreducible conic over a perfect field is smooth
+[<a class="ec-cite" href="#bib-Liu2002">Liu02</a>, Section 10.2.1], and a smooth conic with a rational point is \(\PP^1\).
+</p>
+</details>
+
+<p>
+So over \(\bar\kappa\) every component is a copy of \(\PP^1\) with self-intersection
+\(-2\), unless \(\calC_{\bar\kappa}\) is irreducible.  This is a strong constraint.  Let \(\Gamma_0, \dots, \Gamma_{m-1}\) be the components of
+\(\calC_{\bar\kappa}\), with \(m \geq 2\), and form the symmetric matrix
+\(A \coloneqq (-\Gamma_i \cdot \Gamma_j)_{i,j}\).  It has \(2\) on the diagonal and entries
+\(\leq 0\) off it, the special fiber is connected [<a class="ec-cite" href="#bib-Liu2002">Liu02</a>, Corollary 8.3.6], and
+\(A\,(d_0, \dots, d_{m-1})^{\mathsf T} = 0\) by part <a href="#it-lf-fiber-zero">1</a> of
+Proposition <a href="#prop-lf-fiber-intersection">6.5.7</a>, with every \(d_i > 0\).  Encode \(A\) in the
+<dfn class="ec-cdef" id="gls-dual-graph" data-gls="dual-graph">dual graph</dfn> of the fiber: one vertex for each component, and \(\Gamma_i \cdot \Gamma_j\)
+edges between \(\Gamma_i\) and \(\Gamma_j\).  A connected graph whose matrix of this form has a
+kernel vector with positive entries is one of the extended Dynkin diagrams
+\(\tilde A_{m-1}\), \(\tilde D_{m-1}\), \(\tilde E_6\), \(\tilde E_7\), \(\tilde E_8\), and the
+kernel vector is unique up to scaling [<a class="ec-cite" href="#bib-Liu2002">Liu02</a>, Section 10.2.1].  So the multiplicities
+\(d_i\) are forced, once \(d_0 = 1\) on the component \(\Gamma_0\) meeting \(O\), by part
+<a href="#it-lf-fiber-identity">2</a> of Proposition <a href="#prop-lf-fiber-intersection">6.5.7</a>.  For instance, for
+\(\tilde D_4\), with a central vertex joined to four others, the equations say
+\(2d_{\mathrm{end}} = d_{\mathrm{center}}\) at each end and
+\(2d_{\mathrm{center}} = \sum d_{\mathrm{end}}\) at the center: so \(d = 1\) at the ends and
+\(d = 2\) at the center, which is type \(\mathrm{I}_0^*\).  Figure <a href="#fig-lf-dual-graphs">6.5.5</a> shows
+the others.
+</p>
+
+<figure class="ec-figure" id="fig-lf-dual-graphs">
+<img class="ec-tikz" src="figures/02b5eedcdc03de0f19692c982cd14b2d076d9d7a.svg" style="--ec-w: 26.44em" alt=""/>
+<figcaption><span class="ec-thm-name">Figure 6.5.5</span>. The dual graphs of the special fibers with at least two components over \(\bar\kappa\), labeled by the multiplicities \(d_i\).  The component \(\Gamma_0\) meeting \(O\) is blue.  A cycle of two vertices joined by a double edge is \(\tilde A_1\).</figcaption>
+</figure>
+
+<p>
+The dual graph does not determine the fiber.  Types \(\mathrm{I}_2\) and \(\mathrm{III}\) both
+have dual graph \(\tilde A_1\), two vertices joined by two edges: in \(\mathrm{I}_2\) the two
+curves cross at two closed points, and in \(\mathrm{III}\) they are tangent at one.  Types
+\(\mathrm{I}_3\) and \(\mathrm{IV}\) both have \(\tilde A_2\): a triangle of three crossing
+points, or three lines through one.  And when \(\calC_{\bar\kappa}\) is irreducible it is a
+smooth, nodal or cuspidal cubic, types \(\mathrm{I}_0\), \(\mathrm{I}_1\) and
+\(\mathrm{II}\).  With this caveat the list is complete, which is the theorem of Kodaira and
+Néron.
+</p>
+
+<p>
+The Néron model \(\calE\) is the smooth locus of \(\calC\), so its special fiber is obtained
+from \(\calC_\pi\) by removing the components of multiplicity greater than \(1\) and all
+singular points of the reduced fiber, among them the crossing points.  The identity component
+\(\calE^0_\pi\) is what remains of \(\Gamma_0\), which is \(E_\pi^{\ns}\)
+(Theorem <a href="#thm-lf-neron">6.2.7</a>).
+</p>
+
+<div class="ec-thm ec-theorem" id="thm-lf-kodaira">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Theorem 6.5.8</span> <span class="ec-thm-title">(Kodaira, Néron)</span>.</span> Let \(\calE^0_\pi\) be the identity component of the special fiber of the Néron model, and
+</p>
+\begin{equation*}
+\Phi \coloneqq \calE_\pi/\calE^0_\pi,
+\end{equation*}
+<p>
+the <dfn class="ec-cdef" id="gls-component-group" data-gls="component-group">component group</dfn> of \(E\), a finite étale group scheme over \(\kappa(v)\).
+</p>
+<ol class="org-ol">
+<li><a id="it-lf-kodaira-fiber"></a> The special fiber \(\calC_{\bar\kappa}\) is one of the ten
+configurations of Figure <a href="#fig-lf-kodaira-table">6.5.6</a>, with the multiplicities shown there.</li>
+<li><a id="it-lf-kodaira-group"></a> \(\Phi(\bar\kappa)\) is the group in the corresponding row.  Its
+order is the number of components of multiplicity \(1\).</li>
+<li><a id="it-lf-kodaira-tamagawa"></a> \(E(k_v)/E_0(k_v) \cong \Phi(\kappa(v))\), the subgroup of
+\(\Phi(\bar\kappa)\) fixed by the Frobenius automorphism of \(\bar\kappa\).</li>
+<li><a id="it-lf-kodaira-discriminant"></a> If \(p \geq 5\), then \(v(\Delta)\) and \(j(E)\) are as in the
+last two columns of Figure <a href="#fig-lf-kodaira-table">6.5.6</a>.</li>
+</ol>
+</div>
+
+<p>
+The configuration is the <dfn class="ec-cdef" id="gls-kodaira-type" data-gls="kodaira-type">Kodaira type</dfn> of \(E\), written with Kodaira's symbols
+\(\mathrm{I}_n\), \(\mathrm{II}\), \(\dots\), \(\mathrm{II}^*\), and the integer
+</p>
+\begin{equation*}
+c_v \coloneqq \#\Phi(\kappa(v)) = [E(k_v) : E_0(k_v)]
+\end{equation*}
+<p>
+is the <dfn class="ec-cdef" id="gls-tamagawa-number" data-gls="tamagawa-number">Tamagawa number</dfn> of \(E\) at \(v\).
+</p>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+Parts <a href="#it-lf-kodaira-fiber">1</a>, <a href="#it-lf-kodaira-group">2</a> and <a href="#it-lf-kodaira-discriminant">4</a> are
+[<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Theorem C.15.2 and Table 15.1], proved in
+[<a class="ec-cite" href="#bib-Silverman94">Sil94</a>, Sections IV.8 and IV.9].  Part <a href="#it-lf-kodaira-fiber">1</a> is also
+[<a class="ec-cite" href="#bib-Liu2002">Liu02</a>, Section 10.2.1].  The order of \(\Phi(\bar\kappa)\) counts the components of
+\(\calE_{\bar\kappa}\), which are the components of multiplicity \(1\) of \(\calC_{\bar\kappa}\)
+with their singular points removed.  For part <a href="#it-lf-kodaira-tamagawa">3</a>, \(E(k_v) = \calE(\calO_v)\)
+and \(E_0(k_v) = \calE^0(\calO_v)\) by Theorem <a href="#thm-lf-neron">6.2.7</a>, and reduction maps them onto
+\(\calE_\pi(\kappa(v))\) and \(\calE^0_\pi(\kappa(v))\) by Hensel's lemma
+[<a class="ec-cite" href="#bib-Poonen2017">Poo17</a>, Theorem 3.5.63], since both schemes are smooth over \(\calO_v\), with the same
+kernel.  So \(E(k_v)/E_0(k_v) \cong \calE_\pi(\kappa(v))/\calE^0_\pi(\kappa(v))\), and this is
+\(\Phi(\kappa(v))\) because \(H^1(\kappa(v), \calE^0_\pi) = 0\), by Lang's theorem for the
+smooth connected group \(\calE^0_\pi\) over the finite field \(\kappa(v)\)
+[<a class="ec-cite" href="#bib-Poonen2017">Poo17</a>, Theorem 5.12.19].  Compare [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Theorem C.15.1].
+</p>
+</details>
+
+<figure class="ec-figure" id="fig-lf-kodaira-table">
+<img class="ec-tikz" src="figures/3b87a0d5082a01c3865e8244c8b8495aad054b6f.svg" style="--ec-w: 44.70em" alt=""/>
+<figcaption><span class="ec-thm-name">Figure 6.5.6</span>. The Kodaira types.  For each, the special fiber of the minimal regular proper model over \(\bar\kappa\): every component is a smooth rational curve except in types \(\mathrm{I}_0\), \(\mathrm{I}_1\) and \(\mathrm{II}\), the numbers are the multiplicities, and the component \(\Gamma_0\) meeting \(O\) is blue.  Then the number \(m\) of components, the dual graph, the group \(\Phi(\bar\kappa)\), and, valid only when \(p \geq 5\), the valuation of the minimal discriminant and the behavior of \(j\) (\(\bar\jmath\) is the reduction of \(j \in \calO_v\)).  After [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Table 15.1].</figcaption>
+</figure>
+
+<div class="ec-thm ec-corollary" id="cor-lf-component-order">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Corollary 6.5.9</span>.</span> \(c_v \leq 4\) unless \(E\) has multiplicative reduction, of type \(\mathrm{I}_n\) with
+\(n = v(\Delta)\).  Then \(c_v = n\) if the reduction is split, and \(c_v = \#(\Z/n\Z)[2]\), which
+is \(1\) or \(2\), if it is nonsplit.
+</p>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+For the additive types, \(\#\Phi(\bar\kappa) \leq 4\) by the table.  For type \(\mathrm{I}_n\),
+the components form an \(n\)-gon, and \(\Phi(\bar\kappa) = \Z/n\Z\) numbers them around it,
+starting from \(\Gamma_0\).  Frobenius fixes \(\Gamma_0\), and it preserves or reverses the
+direction around the cycle according as it fixes or swaps the two branches of \(E_\pi\) at the
+node, that is, according as the reduction is split or nonsplit.  So it acts on \(\Z/n\Z\) by
+\(1\) or by \(-1\), with fixed subgroup \(\Z/n\Z\) or \((\Z/n\Z)[2]\).
+</p>
+</details>
+
+<p>
+This is the second part of Theorem <a href="#thm-lf-component-group">6.3.9</a>.  Over \(\kappa(v)\) itself the
+components of \(\calC_\pi\) need not be geometrically irreducible, nor the crossing points
+rational, and Liu refines Kodaira's symbols to record this: \(\mathrm{I}_{n,2}\) for nonsplit
+multiplicative reduction, \(\mathrm{IV}_2\), \(\mathrm{I}^*_{0,2}\), \(\mathrm{I}^*_{0,3}\),
+\(\mathrm{I}^*_{n,2}\) and \(\mathrm{IV}^*_2\) [<a class="ec-cite" href="#bib-Liu2002">Liu02</a>, Section 10.2.1].  The Tamagawa
+number \(c_v\) is the number of Frobenius-fixed elements of \(\Phi(\bar\kappa)\), and Tate's
+algorithm below computes it.
+</p>
+
+<div class="ec-thm ec-remark" id="rem-lf-kodaira-large-p">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Remark 6.5.10</span>.</span> Let \(p \geq 5\).  A Weierstrass equation with coefficients in \(\calO_v\) is minimal if and
+only if \(v(\Delta) < 12\) or \(v(c_4) < 4\) [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Remark C.15.3].  The Kodaira
+type of \(E\) is then read off from \(v(\Delta)\) and \(v(j)\) by the table: if
+\(v(j) \geq 0\), the values \(v(\Delta) = 0, 2, 3, 4, 6, 8, 9, 10\) give
+\(\mathrm{I}_0, \mathrm{II}, \mathrm{III}, \mathrm{IV}, \mathrm{I}_0^*, \mathrm{IV}^*,
+\mathrm{III}^*, \mathrm{II}^*\); if \(v(j) = -n < 0\), the type is \(\mathrm{I}_n\) or
+\(\mathrm{I}_n^*\) according as \(v(\Delta) = n\) or \(n + 6\).  Both \(v(j) \geq 0\) and
+\(v(j) < 0\) occur with \(v(\Delta) = 8\): types \(\mathrm{IV}^*\) and \(\mathrm{I}_2^*\).
+</p>
+</div>
+
+<div class="ec-thm ec-remark" id="rem-lf-kodaira-twist">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Remark 6.5.11</span>.</span> Let \(p \geq 5\), and let \(E\colon y^2 = x^3 + Ax + B\) be minimal.  Its quadratic twist by
+\(\pi_v\), \(E^{(\pi)}\colon y^2 = x^3 + \pi_v^2Ax + \pi_v^3B\), has \(\Delta\) multiplied by
+\(\pi_v^6\), \(c_4\) by \(\pi_v^2\), and the same \(j\).  By Remark <a href="#rem-lf-kodaira-large-p">6.5.10</a>,
+after rescaling by \(\pi_v^{-12}\) when the new equation is not minimal, twisting exchanges
+</p>
+\begin{equation*}
+\mathrm{I}_0 \leftrightarrow \mathrm{I}_0^*, \qquad
+\mathrm{I}_n \leftrightarrow \mathrm{I}_n^*, \qquad
+\mathrm{II} \leftrightarrow \mathrm{IV}^*, \qquad
+\mathrm{III} \leftrightarrow \mathrm{III}^*, \qquad
+\mathrm{IV} \leftrightarrow \mathrm{II}^*.
+\end{equation*}
+<p>
+This explains the second half of the table: the starred types are the twists of the
+unstarred ones, and their \(v(\Delta)\) is shifted by \(6\) modulo \(12\).
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org6c89a16" class="outline-3">
+<h3 id="org6c89a16"><span class="section-number" id="s6.5.4">6.5.4</span> Tate's algorithm</h3>
+<div class="outline-text-3" id="text-5-4">
+<p>
+When \(p \geq 5\), Remark <a href="#rem-lf-kodaira-large-p">6.5.10</a> finds the Kodaira type from \(v(\Delta)\)
+and \(v(j)\).  When \(p = 2\) or \(3\) this fails twice over.  Minimality is no longer visible
+from \(v(\Delta)\) and \(v(c_4)\): \(y^2 = x^3 + 16\) over \(\Q_2\) has \(v(\Delta) = 12\) and
+\(c_4 = 0\), and it turns out to be far from minimal.  And the type is not determined by
+\(v(\Delta)\): over \(\Q_3\), \(y^2 + y = x^3\) has type \(\mathrm{II}\) with \(v(\Delta) = 3\),
+and over \(\Q_2\), \(y^2 = x^3 - x\) has type \(\mathrm{III}\) with \(v(\Delta) = 6\)
+(Example <a href="#eg-lf-tate-small-primes">6.5.16</a>).
+</p>
+
+<p>
+Tate's algorithm works for every residue field that is perfect.  It takes a Weierstrass
+equation with coefficients in \(\calO_v\) and runs through a list of tests, each a divisibility
+condition on the coefficients or a question about the roots of a polynomial over
+\(\kappa(v)\), changing variables along the way.  It stops at the Kodaira type, together with
+\(c_v\), or it finds that the equation is not minimal, scales it, and starts again.  We state
+it as in [<a class="ec-cite" href="#bib-Silverman94">Sil94</a>, Section IV.9], and Figure <a href="#fig-lf-tate-flowchart">6.5.7</a> draws it.
+</p>
+
+<div class="ec-thm ec-theorem" id="thm-lf-tate">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Theorem 6.5.12</span> <span class="ec-thm-title">(Tate's algorithm)</span>.</span> Let \(E\) be given by a Weierstrass equation with coefficients \(a_i \in \calO_v\), with
+\(b_2, b_6, b_8\) and \(\Delta\) as in Definition <a href="04-ec-algebraic.html#def-ec-weierstrass">4.1.2</a>.  Write
+\(a_{i,j} \coloneqq \pi_v^{-j}a_i\) whenever \(\pi_v^j \mid a_i\).  Go through the following
+items in order.  The changes of variables they prescribe are of the form
+<a class="ec-eqref" href="04-ec-algebraic.html#mjx-eqn%3Aeq%3Aec-change-of-variables">(4.1.3)</a> with \(u = 1\) and \(r, s, t \in \calO_v\), and every root of
+a polynomial over \(\kappa(v)\) that they move is in \(\kappa(v)\).  The first test that holds
+gives the Kodaira type of \(E\) and \(c_v\), and then the current equation is minimal.
+</p>
+<ol class="org-ol">
+<li><a id="it-lf-tate-good"></a> If \(\pi_v \nmid \Delta\), the type is \(\mathrm{I}_0\), and
+\(c_v = 1\).</li>
+<li><a id="it-lf-tate-mult"></a> Otherwise the reduced cubic is singular.  Move its singular point to
+\((0, 0)\), so that \(\pi_v \mid a_3, a_4, a_6\).  If \(\pi_v \nmid b_2\), the type is
+\(\mathrm{I}_n\) with \(n = v(\Delta)\).  And \(c_v = n\) if \(T^2 + a_1T - a_2\) splits into
+linear factors over \(\kappa(v)\), otherwise \(c_v = 1\) if \(n\) is odd and \(c_v = 2\) if
+\(n\) is even.</li>
+<li><a id="it-lf-tate-ii"></a> If \(\pi_v^2 \nmid a_6\), the type is \(\mathrm{II}\), and \(c_v = 1\).</li>
+<li><a id="it-lf-tate-iii"></a> If \(\pi_v^3 \nmid b_8\), the type is \(\mathrm{III}\), and \(c_v = 2\).</li>
+<li><a id="it-lf-tate-iv"></a> If \(\pi_v^3 \nmid b_6\), the type is \(\mathrm{IV}\).  And \(c_v = 3\) if
+\(T^2 + a_{3,1}T - a_{6,2}\) splits over \(\kappa(v)\), otherwise \(c_v = 1\).</li>
+<li><p>
+<a id="it-lf-tate-i0star"></a> Otherwise change variables so that \(\pi_v \mid a_1, a_2\),
+\(\pi_v^2 \mid a_3, a_4\) and \(\pi_v^3 \mid a_6\), and let
+</p>
+\begin{equation*}
+P(T) \coloneqq T^3 + a_{2,1}T^2 + a_{4,2}T + a_{6,3}.
+\end{equation*}
+<p>
+If its reduction has three distinct roots in \(\bar\kappa\), the type is
+\(\mathrm{I}_0^*\), and \(c_v = 1 + \#\{\text{roots in } \kappa(v)\}\).
+</p></li>
+<li><p>
+<a id="it-lf-tate-instar"></a> If it has a simple root and a double root, move the double root to
+\(T = 0\), so that \(\pi_v^2 \nmid a_2\), \(\pi_v^3 \mid a_4\) and \(\pi_v^4 \mid a_6\).  The type
+is \(\mathrm{I}_n^*\) for some \(n \geq 1\), found as follows.  For \(n = 1, 2, \dots\) in turn,
+consider the quadratic polynomial
+</p>
+\begin{equation*}
+Q_n \coloneqq
+\begin{cases}
+Y^2 + a_{3,(n+3)/2}\,Y - a_{6,n+3} & \text{if } n \text{ is odd}, \\
+a_{2,1}X^2 + a_{4,(n+4)/2}\,X + a_{6,n+3} & \text{if } n \text{ is even}.
+\end{cases}
+\end{equation*}
+<p>
+If its reduction has distinct roots in \(\bar\kappa\), the type is \(\mathrm{I}_n^*\), and
+\(c_v = 4\) if the roots lie in \(\kappa(v)\), otherwise \(c_v = 2\).  If it has a double
+root, move it to \(0\), which makes \(\pi_v^{(n+5)/2} \mid a_3\) and \(\pi_v^{n+4} \mid a_6\)
+if \(n\) is odd, and \(\pi_v^{(n+6)/2} \mid a_4\) and \(\pi_v^{n+4} \mid a_6\) if \(n\) is
+even, and go on to \(n + 1\).  This stops after finitely many steps.
+</p></li>
+<li><a id="it-lf-tate-ivstar"></a> If \(P\) has a triple root, move it to \(T = 0\), so that
+\(\pi_v^2 \mid a_2\), \(\pi_v^3 \mid a_4\) and \(\pi_v^4 \mid a_6\).  If the reduction of
+\(Y^2 + a_{3,2}Y - a_{6,4}\) has distinct roots in \(\bar\kappa\), the type is
+\(\mathrm{IV}^*\).  And \(c_v = 3\) if they lie in \(\kappa(v)\), otherwise \(c_v = 1\).</li>
+<li><a id="it-lf-tate-iiistar"></a> Otherwise move its double root to \(0\), so that
+\(\pi_v^3 \mid a_3\) and \(\pi_v^5 \mid a_6\).  If \(\pi_v^4 \nmid a_4\), the type is
+\(\mathrm{III}^*\), and \(c_v = 2\).</li>
+<li><a id="it-lf-tate-iistar"></a> If \(\pi_v^6 \nmid a_6\), the type is \(\mathrm{II}^*\), and
+\(c_v = 1\).</li>
+<li><a id="it-lf-tate-nonminimal"></a> Otherwise \(\pi_v^i \mid a_i\) for every \(i\), and the equation
+is not minimal.  Replace each \(a_i\) by \(\pi_v^{-i}a_i\), which is the substitution
+\(x = \pi_v^2x'\), \(y = \pi_v^3y'\) of Section <a href="#sec-lf-minimal">6.1</a>, and start again.</li>
+</ol>
+<p>
+In particular, an integral Weierstrass equation is minimal if and only if the algorithm,
+started on it, does not reach part <a href="#it-lf-tate-nonminimal">11</a>.
+</p>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof <span class="ec-proof-cites">(Sil94, Tat75)</span>.</span></summary>
+<p>
+See [<a class="ec-cite" href="#bib-Silverman94">Sil94</a>, Section IV.9], and Tate's original letter [<a class="ec-cite" href="#bib-Tate75">Tat75</a>].
+</p>
+</details>
+
+<figure class="ec-figure" id="fig-lf-tate-flowchart">
+<img class="ec-tikz" src="figures/c305d9121440ddeb8cc6f2baa31d8d537cabc4f1.svg" style="--ec-w: 34.82em" alt=""/>
+<figcaption><span class="ec-thm-name">Figure 6.5.7</span>. Tate's algorithm (Theorem <a href="#thm-lf-tate">6.5.12</a>).  A downward arrow means that the test failed; the gray notes are the changes of variables made on the way.  The type \(\mathrm{I}_n^*\) calls the subprocedure of part <a href="#it-lf-tate-instar">7</a>, and the red box sends a non-minimal equation back to the start.</figcaption>
+</figure>
+
+<p>
+The roots that the algorithm moves are in \(\kappa(v)\) because \(\kappa(v)\) is perfect: the
+singular point of a cubic, a double or triple root of a cubic, and a double root of a
+quadratic over a perfect field are all rational.  This is where perfectness is used.
+</p>
+
+<p>
+Why does it work?  Each test is a question about the model at hand, and Silverman's proof
+answers it with the blow-ups of the previous subsections, written for a general Weierstrass
+equation.  Part <a href="#it-lf-tate-mult">2</a> asks whether the singular point is a node or a cusp: after
+moving it to \((0, 0)\), the quadratic part of \(f\) is \(y^2 + a_1xy - a_2x^2\) modulo
+\(\pi_v\), a product of two distinct lines exactly when \(b_2 = a_1^2 + 4a_2\) is a unit.  Part
+<a href="#it-lf-tate-ii">3</a> is Lemma <a href="#lem-lf-regular-weierstrass">6.5.2</a>, since \(f(0, 0) = -a_6\): if
+\(v(a_6) = 1\) the Weierstrass model is regular, \(\calC = \calW\), and the fiber is the
+cuspidal cubic.  Parts <a href="#it-lf-tate-iii">4</a> and <a href="#it-lf-tate-iv">5</a> look at the exceptional curve of
+the first blow-up, as in Example <a href="#eg-lf-blowup-iii-iv">6.5.5</a>, whose computations they generalize.
+Part <a href="#it-lf-tate-i0star">6</a> finds the double line of Example <a href="#eg-lf-blowup-i0star">6.5.6</a>, with \(P\)
+recording where the surface fails to be regular on it.  Each further part blows up again, and
+the polynomials \(Q_n\) record the new non-regular closed points.
+</p>
+
+<p>
+Here is the payoff promised in the proof of Proposition <a href="#prop-lf-semistable">6.3.7</a>.
+</p>
+
+<div class="ec-thm ec-corollary" id="cor-lf-tate-unramified">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Corollary 6.5.13</span>.</span> Let \(K'\) be a finite unramified extension of \(k_v\).  A minimal Weierstrass equation for
+\(E\) is minimal for \(E_{K'}\), and \(E\) and \(E_{K'}\) have the same Kodaira type.
+</p>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+Run Tate's algorithm on the same equation over \(k_v\) and over \(K'\).  Since \(K'/k_v\) is
+unramified, \(\pi_v\) is a uniformizer of \(K'\), and the valuation of \(K'\) restricts to
+\(v\).  So every divisibility test has the same answer over both fields.  The roots that the
+algorithm moves are in \(\kappa(v)\), so the same changes of variables, with coefficients in
+\(\calO_v\), serve over both.  And whether a polynomial over \(\kappa(v)\) has distinct roots in
+\(\bar\kappa\) does not depend on the field.  So the algorithm takes the same path over \(k_v\)
+and over \(K'\), and stops at the same type.  Over \(k_v\) it does not reach part
+<a href="#it-lf-tate-nonminimal">11</a>, since the equation is minimal, so it does not over \(K'\) either.
+Alternatively, the minimal regular proper model is compatible with unramified base change
+[<a class="ec-cite" href="#bib-Liu2002">Liu02</a>, Proposition 10.1.17].
+</p>
+</details>
+
+<p>
+Only \(c_v\) can change over \(K'\): the tests "splits over \(\kappa(v)\)" become tests over
+the larger residue field.  For instance, a nonsplit \(\mathrm{I}_n\) becomes split over the
+unramified quadratic extension, and \(c_v\) grows from \(1\) or \(2\) to \(n\).
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgff1cd72" class="outline-3">
+<h3 id="orgff1cd72"><span class="section-number" id="s6.5.5">6.5.5</span> Examples</h3>
+<div class="outline-text-3" id="text-5-5">
+<p>
+The examples below were checked with Magma's <code>LocalInformation</code> [<a class="ec-cite" href="#bib-Magma">BCP97</a>], which runs
+Tate's algorithm.
+</p>
+
+<div class="ec-thm ec-example" id="eg-lf-ladders">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Example 6.5.14</span>.</span> Let \(k = \Q\) and \(p \geq 5\).  The curves \(y^2 = x^3 + p^k\), with \(j = 0\), and
+\(y^2 = x^3 + p^kx\), with \(j = 1728\), have \(v(\Delta) = 2k\) and \(3k\), and \(c_4 = 0\),
+respectively \(v(c_4) = k\).  For \(k = 1, \dots, 5\), respectively \(k = 1, 2, 3\), the
+equations are minimal, and Remark <a href="#rem-lf-kodaira-large-p">6.5.10</a> gives the types in the following
+table.  For \(k = 6\), respectively \(k = 4\), they are not minimal: the substitution
+\(x = p^2x'\), \(y = p^3y'\) gives \(y'^2 = x'^3 + 1\), respectively \(y'^2 = x'^3 + x'\), with
+good reduction.
+</p>
+
+<p>
+The Tamagawa numbers come from Theorem <a href="#thm-lf-tate">6.5.12</a>.  For \(y^2 = x^3 + p^2\), part
+<a href="#it-lf-tate-iv">5</a> looks at \(T^2 - 1\), which splits, so \(c_v = 3\): this is the curve \(E'\)
+from the start of the section.  For \(y^2 = x^3 + p^3\), part <a href="#it-lf-tate-i0star">6</a> looks at
+\(P(T) = T^3 + 1\), whose roots in \(\F_p\) are \(-1\) and, when \(p \equiv 1 \pmod 3\), two more.
+So \(c_v = 4\) or \(2\).  For \(y^2 = x^3 + p^2x\), \(P(T) = T^3 + T\), and \(c_v = 4\) or \(2\)
+according as \(p \equiv 1\) or \(3 \pmod 4\).
+</p>
+</div>
+
+<table>
+
+
+<colgroup>
+<col  class="org-left">
+
+<col  class="org-left">
+
+<col  class="org-left">
+
+<col  class="org-left">
+
+<col  class="org-left">
+
+<col  class="org-left">
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">\(k\)</th>
+<th scope="col" class="org-left">1</th>
+<th scope="col" class="org-left">2</th>
+<th scope="col" class="org-left">3</th>
+<th scope="col" class="org-left">4</th>
+<th scope="col" class="org-left">5</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">\(y^2 = x^3 + p^k\)</td>
+<td class="org-left">\(\mathrm{II}\), 1</td>
+<td class="org-left">\(\mathrm{IV}\), 3</td>
+<td class="org-left">\(\mathrm{I}_0^*\), 4 or 2</td>
+<td class="org-left">\(\mathrm{IV}^*\), 3</td>
+<td class="org-left">\(\mathrm{II}^*\), 1</td>
+</tr>
+
+<tr>
+<td class="org-left">\(y^2 = x^3 + p^kx\)</td>
+<td class="org-left">\(\mathrm{III}\), 2</td>
+<td class="org-left">\(\mathrm{I}_0^*\), 4 or 2</td>
+<td class="org-left">\(\mathrm{III}^*\), 2</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+Each entry is the Kodaira type and \(c_v\).  Moving three places along the first row, or two
+along the second, is the quadratic twist by \(p\), as in Remark <a href="#rem-lf-kodaira-twist">6.5.11</a>.
+</p>
+
+<div class="ec-thm ec-example" id="eg-lf-tate-instar">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Example 6.5.15</span>.</span> Let \(k = \Q\), \(p \geq 5\) and \(n \geq 1\).  The curve \(y^2 = x^3 + x^2 + p^n\) has split
+multiplicative reduction of type \(\mathrm{I}_n\), with \(c_v = n\), by part
+<a href="#it-lf-tate-mult">2</a> of Theorem <a href="#thm-lf-tate">6.5.12</a>: \(T^2 - 1\) splits.  Its quadratic twist by \(p\)
+is \(y^2 = x^3 + px^2 + p^{n+3}\), with \(v(\Delta) = n + 6\).  Run Tate's algorithm on it.  It
+is already in the shape of part <a href="#it-lf-tate-i0star">6</a>, with
+\(P(T) = T^3 + T^2 + p^n \equiv T^2(T + 1)\): a double root at \(0\), so we are in part
+<a href="#it-lf-tate-instar">7</a>.  For \(m < n\) the polynomial \(Q_m\) is \(Y^2\) or \(X^2\) modulo \(p\),
+with a double root at \(0\) and nothing to move, and \(Q_n\) is \(Y^2 - 1\) if \(n\) is odd and
+\(X^2 + 1\) if \(n\) is even.  So the type is \(\mathrm{I}_n^*\), with \(c_v = 4\) if \(n\) is odd
+or \(p \equiv 1 \pmod 4\), and \(c_v = 2\) otherwise.
+</p>
+</div>
+
+<div class="ec-thm ec-example" id="eg-lf-tate-small-primes">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Example 6.5.16</span>.</span> Three curves over \(\Q\) at \(p = 2\) and \(p = 3\), where Remark <a href="#rem-lf-kodaira-large-p">6.5.10</a> does
+not apply.
+</p>
+<ol class="org-ol">
+<li><a id="it-lf-tate-eg-16"></a> \(y^2 = x^3 + 16\) at \(p = 2\), with \(\Delta = -2^{12}3^3\).  The
+reduction \(y^2 = x^3\) is singular at \((0, 0)\), and \(b_2 = 0\), \(a_6 = 16\),
+\(b_8 = 0\), \(b_6 = 64\) are divisible by \(2\), \(4\), \(8\), \(8\): we reach part
+<a href="#it-lf-tate-i0star">6</a>, with nothing to change, and \(P(T) = T^3 + 2 \equiv T^3\), a triple
+root at \(0\).  In part <a href="#it-lf-tate-ivstar">8</a>, \(Y^2 + a_{3,2}Y - a_{6,4} = Y^2 - 1 \equiv
+   (Y + 1)^2\) modulo \(2\), a double root at \(1\).  Moving it to \(0\) with \(y = y' + 4\) gives
+\(y'^2 + 8y' = x^3\), so \(a_3 = 8\) and \(a_4 = a_6 = 0\): both tests of parts
+<a href="#it-lf-tate-iiistar">9</a> and <a href="#it-lf-tate-iistar">10</a> fail, and the equation is not minimal.
+Scaling gives \(y^2 + y = x^3\), with \(\Delta = -27\): good reduction at \(2\).</li>
+<li><p>
+<a id="it-lf-tate-eg-27"></a> \(y^2 + y = x^3\) at \(p = 3\), with \(\Delta = -27\).  Modulo \(3\),
+\(\partial f/\partial y = 2y + 1\) vanishes at \(y = 1\), \(\partial f/\partial x = -3x^2\)
+vanishes identically, and the equation forces \(x^3 = 2\), so the singular point is \((2, 1)\).
+With \(x = x' + 2\), \(y = y' + 1\) the equation becomes
+</p>
+\begin{equation*}
+y'^2 + 3y' = x'^3 + 6x'^2 + 12x' + 6,
+\end{equation*}
+<p>
+with \(b_2 = 24\), divisible by \(3\), and \(a_6 = 6\), not divisible by \(9\): type
+\(\mathrm{II}\) by part <a href="#it-lf-tate-ii">3</a>, with \(v(\Delta) = 3\), not the \(2\) of the
+table.
+</p></li>
+<li><a id="it-lf-tate-eg-32"></a> \(y^2 = x^3 - x\) at \(p = 2\), with \(\Delta = 64\).  The reduction
+\(y^2 = x^3 + x\) is singular at \((1, 0)\), and \(x = x' + 1\) gives
+\(y^2 = x'^3 + 3x'^2 + 2x'\), with \(b_2 = 12\), \(a_6 = 0\) and
+\(b_8 = -a_4^2 = -4\), not divisible by \(8\): type \(\mathrm{III}\) by part
+<a href="#it-lf-tate-iii">4</a>, with \(c_v = 2\) and \(v(\Delta) = 6\).</li>
+</ol>
+</div>
+
+<div class="ec-thm ec-remark" id="rem-lf-conductor">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Remark 6.5.17</span>.</span> The exponent of the conductor of \(E\) at \(v\) is an integer \(f_v \geq 0\) measuring
+the ramification of the Galois action on the torsion of \(E\).  It enters the \(L\)-function in
+Chapter 13.  It is \(0\) for good reduction and \(1\) for multiplicative reduction, and if
+\(p \geq 5\) it is \(2\) for additive reduction [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Table 15.1].  Ogg's formula
+</p>
+\begin{equation*}
+f_v = v(\Delta) + 1 - m,
+\end{equation*}
+<p>
+with \(\Delta\) minimal and \(m\) the number of components of \(\calC_{\bar\kappa}\), computes it
+in general.  In Example <a href="#eg-lf-tate-small-primes">6.5.16</a> it gives \(f_3 = 3 + 1 - 1 = 3\) for
+\(y^2 + y = x^3\) and \(f_2 = 6 + 1 - 2 = 5\) for \(y^2 = x^3 - x\), so these curves have
+conductors \(27\) and \(32\).
+</p>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org894f21c" class="outline-2 ec-references">
+<h2 id="org894f21c">References</h2>
+<div class="outline-text-2" id="text-org894f21c">
 <dl class="ec-bibliography">
+<dt id="bib-Magma">[BCP97]</dt>
+<dd>Wieb Bosma, John Cannon and Catherine Playoust. &ldquo;The Magma algebra system. I. The user language&rdquo;. In: <i>J. Symbolic Comput.</i> 24.3&ndash;4 (1997), pp. 235&ndash;265. Computational algebra and number theory (London, 1993). <a href="https://doi.org/10.1006/jsco.1996.0125">doi:10.1006/jsco.1996.0125</a>.</dd>
+<dt id="bib-Liu2002">[Liu02]</dt>
+<dd>Qing Liu. <i>Algebraic geometry and arithmetic curves</i>. Vol. 6. Oxford Graduate Texts in Mathematics. Oxford University Press, Oxford, 2002. Translated from the French by Reinie Ern\'ée, Oxford Science Publications.</dd>
 <dt id="bib-Milne20">[Mil20]</dt>
 <dd>James S. Milne. <i>Elliptic curves</i>. Second. World Scientific Publishing Co. Pte. Ltd., Hackensack, NJ, 2020.</dd>
 <dt id="bib-Poonen08">[Poo08]</dt>
@@ -1487,6 +2442,10 @@ is unramified only when \(\ell \mid v(\Delta) = 2\), that is, never.)</li>
 <dd>Bjorn Poonen. <i>Rational points on varieties</i>. Vol. 186. Graduate Studies in Mathematics. American Mathematical Society, Providence, RI, 2017. <a href="https://doi.org/10.1090/gsm/186">doi:10.1090/gsm/186</a>.</dd>
 <dt id="bib-Silverman09">[Sil09]</dt>
 <dd>Joseph H. Silverman. <i>The arithmetic of elliptic curves</i>. Second. Vol. 106. Graduate Texts in Mathematics. Springer, Dordrecht, 2009. <a href="https://doi.org/10.1007/978-0-387-09494-6">doi:10.1007/978-0-387-09494-6</a>.</dd>
+<dt id="bib-Silverman94">[Sil94]</dt>
+<dd>Joseph H. Silverman. <i>Advanced topics in the arithmetic of elliptic curves</i>. Vol. 151. Graduate Texts in Mathematics. Springer-Verlag, New York, 1994. <a href="https://doi.org/10.1007/978-1-4612-0851-8">doi:10.1007/978-1-4612-0851-8</a>.</dd>
+<dt id="bib-Tate75">[Tat75]</dt>
+<dd>J. Tate. &ldquo;Algorithm for determining the type of a singular fiber in an elliptic pencil&rdquo;. In: <i>Modular functions of one variable, IV (Proc. Internat. Summer School, Univ. Antwerp, Antwerp, 1972)</i> 476, pp. 33&ndash;52. Lecture Notes in Math.. Springer, Berlin, 1975.</dd>
 </dl>
 </div>
 </div>

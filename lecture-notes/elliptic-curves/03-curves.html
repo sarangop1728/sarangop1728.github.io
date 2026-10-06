@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2026-10-01 Thu 08:27 -->
+<!-- 2026-10-06 Tue 08:21 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Algebraic curves</title>
@@ -36,8 +36,8 @@
 </ol></li>
 <li class="ec-toc-chapter"><a href="04-ec-algebraic.html"><span class="ec-toc-num">4</span><span class="ec-toc-text">Elliptic curves as algebraic curves<span class="ec-toc-status"><span class="ec-status-progress">1 of 8 sections finished</span></span></span></a></li>
 <li class="ec-toc-chapter"><a href="05-finite-fields.html"><span class="ec-toc-num">5</span><span class="ec-toc-text">Elliptic curves over finite fields<span class="ec-toc-status"><span class="ec-status-progress">0 of 5 sections finished</span></span></span></a></li>
-<li class="ec-toc-chapter"><a href="06-local-fields.html"><span class="ec-toc-num">6</span><span class="ec-toc-text">Elliptic curves over local fields<span class="ec-toc-status"><span class="ec-status-progress">0 of 4 sections finished</span></span></span></a></li>
-<li class="ec-toc-chapter"><a href="07-galois-cohomology.html"><span class="ec-toc-num">7</span><span class="ec-toc-text">Galois cohomology<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
+<li class="ec-toc-chapter"><a href="06-local-fields.html"><span class="ec-toc-num">6</span><span class="ec-toc-text">Elliptic curves over local fields<span class="ec-toc-status"><span class="ec-status-progress">0 of 5 sections finished</span></span></span></a></li>
+<li class="ec-toc-chapter"><a href="07-galois-cohomology.html"><span class="ec-toc-num">7</span><span class="ec-toc-text">Galois cohomology<span class="ec-toc-status"><span class="ec-status-progress">0 of 10 sections finished</span></span></span></a></li>
 <li class="ec-toc-chapter"><a href="08-mordell-weil.html"><span class="ec-toc-num">8</span><span class="ec-toc-text">The Mordell&ndash;Weil theorem<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
 <li class="ec-toc-chapter"><a href="09-integral-points.html"><span class="ec-toc-num">9</span><span class="ec-toc-text">Integral points<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
 <li class="ec-toc-chapter"><a href="10-selmer-sha.html"><span class="ec-toc-num">10</span><span class="ec-toc-text">Twisting, Selmer, and Tate&ndash;Shafarevich<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
@@ -54,7 +54,7 @@
 </div>
 <div id="content" class="content">
 <h1 class="title"><span class="ec-chapter-label">Chapter 3</span>Algebraic curves</h1>
-<div class="sources" id="org3b0a5e2">
+<div class="sources" id="orgec313b4">
 <p>
 This chapter follows [<a class="ec-cite" href="#bib-Poonen06">Poo06</a>, Chapter 2] and [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Chapter II],
 with material on plane curves from [<a class="ec-cite" href="#bib-Milne20">Mil20</a>, Sections I.1 and I.6].  Unlike these
@@ -80,11 +80,11 @@ denote nice curves over \(k\).
 
 <p>
 Remarks point out where a curve that is only regular behaves
-differently; the basic example is Example <a href="02-varieties.html#eg-var-regular-not-smooth">2.4.6</a>.
+differently.  The basic example is Example <a href="02-varieties.html#eg-var-regular-not-smooth">2.4.6</a>.
 </p>
 
 <div id="outline-container-sec-crv-points" class="outline-2">
-<h2 id="sec-crv-points"><span class="ec-status ec-status-draft"><span class="ec-status-label ec-status-draft">Draft</span><time datetime="2026-09-21">21 Sep 2026</time></span><span class="section-number" id="s3.1">3.1</span> Closed points and local rings</h2>
+<h2 id="sec-crv-points"><span class="ec-status ec-status-draft"><span class="ec-status-label ec-status-draft">Draft</span><time datetime="2026-10-06">6 Oct 2026</time></span><span class="section-number" id="s3.1">3.1</span> Closed points and local rings</h2>
 <div class="outline-text-2" id="text-sec-crv-points">
 <div class="ec-thm ec-definition" id="def-crv-closed-point">
 <p>
@@ -177,7 +177,7 @@ See [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Proposition II.1.2]. 
 <div class="ec-thm ec-example" id="eg-crv-uniformizer">
 <p>
 <span class="ec-thm-head"><span class="ec-thm-name">Example 3.1.8</span>.</span> Let \(f(x, y) = 0\) be an affine patch of \(C\), and \(P = (a, b) \in C(k)\).  If
-\(\partial f/\partial x(P) \neq 0\), then \(y - b\) is a uniformizer at \(P\); if
+\(\partial f/\partial x(P) \neq 0\), then \(y - b\) is a uniformizer at \(P\).  If
 \(\partial f/\partial y(P) \neq 0\), then \(x - a\) is [<a class="ec-cite" href="#bib-Poonen06">Poo06</a>, Example 1.8.5].  For
 instance, on \(y^2 = x^3 + x\) with \(\operatorname{char} k \neq 2\), the function \(y\) is a
 uniformizer at \(P = (0, 0)\).  Since \(x = y^2/(x^2 + 1)\), we get \(\ord_P(x) = 2\), and
@@ -211,7 +211,7 @@ The hypothesis \(P \in C(k)\) cannot be dropped: see Warning <a href="#warn-crv-
 </div>
 
 <div id="outline-container-sec-crv-maps" class="outline-2">
-<h2 id="sec-crv-maps"><span class="ec-status ec-status-draft"><span class="ec-status-label ec-status-draft">Draft</span><time datetime="2026-09-21">21 Sep 2026</time></span><span class="section-number" id="s3.2">3.2</span> Morphisms of curves</h2>
+<h2 id="sec-crv-maps"><span class="ec-status ec-status-draft"><span class="ec-status-label ec-status-draft">Draft</span><time datetime="2026-10-06">6 Oct 2026</time></span><span class="section-number" id="s3.2">3.2</span> Morphisms of curves</h2>
 <div class="outline-text-2" id="text-sec-crv-maps">
 <div class="ec-thm ec-proposition" id="prop-crv-extend">
 <p>
@@ -289,7 +289,7 @@ function field.
 <span class="ec-thm-head"><span class="ec-thm-name">Definition 3.2.5</span>.</span> Let \(\varphi\colon C_1 \to C_2\) be a non-constant morphism, and
 \(\varphi^*\colon k(C_2) \hookrightarrow k(C_1)\) the induced embedding.  The
 <dfn class="ec-cdef" id="gls-degree-of-a-morphism" data-gls="degree-of-a-morphism">degree</dfn> of \(\varphi\) is \(\deg\varphi \coloneqq [k(C_1) :
-\varphi^* k(C_2)]\); a constant morphism has degree \(0\).  The morphism \(\varphi\) is
+\varphi^* k(C_2)]\).  A constant morphism has degree \(0\).  The morphism \(\varphi\) is
 separable, inseparable or purely inseparable if the extension \(k(C_1)/\varphi^*k(C_2)\)
 is, and \(\deg_s \varphi\) and \(\deg_i \varphi\) are its separable and inseparable degrees
 [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Section II.2], [<a class="ec-cite" href="#bib-Poonen06">Poo06</a>, Definition 2.1.4].  The norm gives
@@ -306,7 +306,7 @@ is, and \(\deg_s \varphi\) and \(\deg_i \varphi\) are its separable and insepara
 <details class="ec-proof">
 <summary><span class="ec-proof-head">Proof.</span></summary>
 <p>
-This follows from Theorem <a href="#thm-crv-function-fields">3.2.3</a>; compare
+This follows from Theorem <a href="#thm-crv-function-fields">3.2.3</a>.  Compare
 [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Corollary II.2.4.1].
 </p>
 </details>
@@ -349,7 +349,7 @@ Over \(\kbar\) all residue degrees are \(1\), and this is
 <p>
 <span class="ec-thm-head"><span class="ec-thm-name">Example 3.2.9</span>.</span> The morphism \(\varphi\colon \PP^1_k \to \PP^1_k\) given by
 \(\varphi = (X^3(X - Y)^2 : Y^5)\) has degree \(5\).  The fiber over \((0 : 1)\) consists of
-\((0 : 1)\), with \(e_\varphi = 3\), and \((1 : 1)\), with \(e_\varphi = 2\); and indeed
+\((0 : 1)\), with \(e_\varphi = 3\), and \((1 : 1)\), with \(e_\varphi = 2\).  And indeed
 \(3 + 2 = 5\) [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Example II.2.9].
 </p>
 </div>
@@ -365,7 +365,7 @@ irreducible factor \(g\) of \(p\) lies only the closed point \(V(g, y)\), with r
 index \(2\).  All other closed points are unramified.  In characteristic \(2\) the
 extension \(k(x, y)/k(x)\) defined by \(y^2 = p(x)\) is purely inseparable
 [<a class="ec-cite" href="#bib-Milne20">Mil20</a>, Example I.4.25], but in that case this curve is singular, again by
-Example <a href="#eg-crv-y-squared-h">3.7.9</a>; see Example <a href="#eg-crv-wild">3.6.4</a> instead.
+Example <a href="#eg-crv-y-squared-h">3.7.9</a>.  See Example <a href="#eg-crv-wild">3.6.4</a> instead.
 </p>
 </div>
 
@@ -461,7 +461,7 @@ endomorphism of \(E\) of degree \(q\).
 </div>
 
 <div id="outline-container-sec-crv-divisors" class="outline-2">
-<h2 id="sec-crv-divisors"><span class="ec-status ec-status-draft"><span class="ec-status-label ec-status-draft">Draft</span><time datetime="2026-09-21">21 Sep 2026</time></span><span class="section-number" id="s3.3">3.3</span> Divisors</h2>
+<h2 id="sec-crv-divisors"><span class="ec-status ec-status-draft"><span class="ec-status-label ec-status-draft">Draft</span><time datetime="2026-10-06">6 Oct 2026</time></span><span class="section-number" id="s3.3">3.3</span> Divisors</h2>
 <div class="outline-text-2" id="text-sec-crv-divisors">
 <div class="ec-thm ec-definition" id="def-crv-divisor">
 <p>
@@ -490,7 +490,7 @@ linearly equivalent if their difference is principal.  The <dfn class="ec-cdef" 
 <summary><span class="ec-proof-head">Proof.</span></summary>
 <p>
 See [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Proposition II.3.1 and Remark II.3.4], and
-[<a class="ec-cite" href="#bib-Poonen06">Poo06</a>, Section 2.2.2]; the first statement is
+[<a class="ec-cite" href="#bib-Poonen06">Poo06</a>, Section 2.2.2].  The first statement is
 Proposition <a href="#prop-crv-zeros-poles">3.1.7</a>.
 </p>
 </details>
@@ -539,7 +539,7 @@ f(\div g) = g(\div f).
 <summary><span class="ec-proof-head">Proof.</span></summary>
 <p>
 See [<a class="ec-cite" href="#bib-Poonen06">Poo06</a>, Theorem 1.9.5] and [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Exercise 2.11].  Poonen states
-<dfn class="ec-cdef" id="gls-weil-reciprocity" data-gls="weil-reciprocity">Weil reciprocity</dfn> over an algebraically closed field; since divisors on
+<dfn class="ec-cdef" id="gls-weil-reciprocity" data-gls="weil-reciprocity">Weil reciprocity</dfn> over an algebraically closed field.  Since divisors on
 \(C_{\kbar}\) are supported on the points of \(C(\kbar)\), that is exactly the statement
 above.
 </p>
@@ -550,7 +550,7 @@ The content of the theorem is already visible on \(\PP^1\).  If \(f\) and \(g\) 
 polynomials in \(k[x]\) with no common root, then the affine zeros contribute
 \(\prod_{g(\beta) = 0} f(\beta)\) to the left side and \(\prod_{f(\alpha) = 0} g(\alpha)\)
 to the right, and both products are the resultant \(\Res(f, g)\) up to the sign
-\((-1)^{\deg f \deg g}\) and the leading coefficients; the poles at \(\infty\)
+\((-1)^{\deg f \deg g}\) and the leading coefficients.  The poles at \(\infty\)
 supply exactly those factors.  So reciprocity is a geometric form of the symmetry of
 the resultant.  We use
 Theorem <a href="#thm-crv-weil-reciprocity">3.3.4</a> to construct the Weil pairing in
@@ -601,7 +601,7 @@ Part <a href="#it-crv-pullback-degree">1</a> follows from Proposition <a href="#
 [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Section II.3] works with divisors on \(C_{\kbar}\).  His
 \(\Div_k(C)\) consists of the \(\Aut(\kbar/k)\)-invariant divisors on \(C_{\kbar}\), and
 \(\Pic_k(C) \coloneqq (\Pic C_{\kbar})^{\Aut(\kbar/k)}\).  The dictionary with our
-groups is as follows; compare [<a class="ec-cite" href="#bib-Poonen06">Poo06</a>, Warning 1.9.6].
+groups is as follows.  Compare [<a class="ec-cite" href="#bib-Poonen06">Poo06</a>, Warning 1.9.6].
 </p>
 
 <div class="ec-thm ec-proposition" id="prop-crv-divisors-descent">
@@ -673,7 +673,7 @@ of degree \(3\).
 </div>
 
 <div id="outline-container-sec-crv-differentials" class="outline-2">
-<h2 id="sec-crv-differentials"><span class="ec-status ec-status-draft"><span class="ec-status-label ec-status-draft">Draft</span><time datetime="2026-09-21">21 Sep 2026</time></span><span class="section-number" id="s3.4">3.4</span> Differentials</h2>
+<h2 id="sec-crv-differentials"><span class="ec-status ec-status-draft"><span class="ec-status-label ec-status-draft">Draft</span><time datetime="2026-10-06">6 Oct 2026</time></span><span class="section-number" id="s3.4">3.4</span> Differentials</h2>
 <div class="outline-text-2" id="text-sec-crv-differentials">
 <div class="ec-thm ec-definition" id="def-crv-differentials">
 <p>
@@ -798,7 +798,7 @@ residues, are \(1\) and \(-1\), and they sum to \(0\).
 </ol>
 <p>
 This is the algebraic form of Example <a href="01-riemann-surfaces.html#eg-rs-invariant-differential-cstar">1.5.4</a>.  The invariant
-differential of \(\Gm\) has poles at the two points of \(\PP^1_k - \Gm\); by contrast, the
+differential of \(\Gm\) has poles at the two points of \(\PP^1_k - \Gm\).  By contrast, the
 invariant differential of an elliptic curve has no poles at all
 (Example <a href="#eg-crv-div-dx-y">3.4.9</a>), because an elliptic curve is already projective.
 </p>
@@ -851,7 +851,7 @@ At \(O\), \(\ord_O(x) = -2\) and \(\ord_O(y) = -3\), so \(\ord_O(dx) = -3\) and
 </div>
 
 <div id="outline-container-sec-crv-rr" class="outline-2">
-<h2 id="sec-crv-rr"><span class="ec-status ec-status-draft"><span class="ec-status-label ec-status-draft">Draft</span><time datetime="2026-09-21">21 Sep 2026</time></span><span class="section-number" id="s3.5">3.5</span> The Riemann&#x2013;Roch theorem</h2>
+<h2 id="sec-crv-rr"><span class="ec-status ec-status-draft"><span class="ec-status-label ec-status-draft">Draft</span><time datetime="2026-10-06">6 Oct 2026</time></span><span class="section-number" id="s3.5">3.5</span> The Riemann&#x2013;Roch theorem</h2>
 <div class="outline-text-2" id="text-sec-crv-rr">
 <div class="ec-thm ec-definition" id="def-crv-rr-space">
 <p>
@@ -862,7 +862,7 @@ At \(O\), \(\ord_O(x) = -2\) and \(\ord_O(y) = -3\), so \(\ord_O(dx) = -3\) and
 \end{equation*}
 <p>
 a finite-dimensional \(k\)-vector space, and \(\ell(D) \coloneqq \dim_k \mcL(D)\).  If
-\(\deg D < 0\), then \(\mcL(D) = 0\); if \(D \sim D'\), then \(\ell(D) = \ell(D')\)
+\(\deg D < 0\), then \(\mcL(D) = 0\).  If \(D \sim D'\), then \(\ell(D) = \ell(D')\)
 [<a class="ec-cite" href="#bib-Poonen06">Poo06</a>, Definition 2.4.1], [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Proposition II.5.2].
 </p>
 </div>
@@ -1028,7 +1028,7 @@ give the impossible value \(2 \cdot (-2) + 1\).
 </div>
 
 <div id="outline-container-sec-crv-plane-curves" class="outline-2">
-<h2 id="sec-crv-plane-curves"><span class="ec-status ec-status-draft"><span class="ec-status-label ec-status-draft">Draft</span><time datetime="2026-09-21">21 Sep 2026</time></span><span class="section-number" id="s3.7">3.7</span> Plane curves</h2>
+<h2 id="sec-crv-plane-curves"><span class="ec-status ec-status-draft"><span class="ec-status-label ec-status-draft">Draft</span><time datetime="2026-10-06">6 Oct 2026</time></span><span class="section-number" id="s3.7">3.7</span> Plane curves</h2>
 <div class="outline-text-2" id="text-sec-crv-plane-curves">
 <p>
 We follow [<a class="ec-cite" href="#bib-Milne20">Mil20</a>, Section I.1], and use coordinates \((X : Y : Z)\) on
@@ -1238,7 +1238,7 @@ affine curve is singular exactly at the \(\kbar\)-points \((e, 0)\) with \(e\) a
 \(h = x^3 + Ax + B\) this says \(4A^3 + 27B^2 \neq 0\) [<a class="ec-cite" href="#bib-Milne20">Mil20</a>, Example I.1.5].
 If \(\operatorname{char} k = 2\), the condition \(2\beta = 0\) is vacuous.  When \(n\) is
 odd, \(h'\) has degree \(n - 1 \geq 2\), hence a root \(\alpha \in \kbar\), and any
-\(\beta\) with \(\beta^2 = h(\alpha)\) gives a singular point; for
+\(\beta\) with \(\beta^2 = h(\alpha)\) gives a singular point.  For
 \(h = x^3 + Ax + B\) it is the \(\kbar\)-point with \(\alpha^2 = A\) and
 \(\beta^2 = \alpha^3 + A\alpha + B\).
 </p></li>
@@ -1256,12 +1256,12 @@ meets the line \(L \coloneqq V_+(Z)\) only at \(O \coloneqq (0 : 1 : 0)\), and
 The partial derivatives of \(H\) are homogeneous of degree \(n - 1 \geq 2\) in
 \((X, Z)\), so they vanish at \(O\), as does \(\partial F/\partial Y\).  For \(n = 3\)
 the remaining derivative is \(\partial F/\partial Z = Y^2 - \partial H/\partial Z\),
-with value \(1\) at \(O\); for \(n \geq 4\) it vanishes at \(O\) as well.  So \(O\) is a
+with value \(1\) at \(O\).  For \(n \geq 4\) it vanishes at \(O\) as well.  So \(O\) is a
 smooth point of \(C\) if \(n = 3\), and a singular point if \(n \geq 4\), in every
 characteristic.
 </p></li>
 <li><a id="it-crv-y2h-conclusion"></a> <b>Conclusion.</b>  If \(\operatorname{char} k \neq 2\), then \(C\) is smooth if and only if
-\(n = 3\) and \(h\) is separable; it is then nice by
+\(n = 3\) and \(h\) is separable.  It is then nice by
 Corollary <a href="#cor-crv-smooth-plane-nice">3.7.5</a> and of genus \(1\) by
 Corollary <a href="#cor-crv-plane-genus">3.7.7</a>.  If \(\operatorname{char} k = 2\), then \(C\) is
 singular: by part <a href="#it-crv-y2h-affine">2</a> when \(n\) is odd, and by part <a href="#it-crv-y2h-infinity">3</a> when \(n\) is even, since then
@@ -1277,9 +1277,9 @@ Section <a href="04-ec-algebraic.html#sec-ec-weierstrass">4.1</a>.
 </div>
 </div>
 
-<div id="outline-container-orgcbe78f2" class="outline-2 ec-references">
-<h2 id="orgcbe78f2">References</h2>
-<div class="outline-text-2" id="text-orgcbe78f2">
+<div id="outline-container-orgdd585c0" class="outline-2 ec-references">
+<h2 id="orgdd585c0">References</h2>
+<div class="outline-text-2" id="text-orgdd585c0">
 <dl class="ec-bibliography">
 <dt id="bib-Hartshorne77">[Har77]</dt>
 <dd>Robin Hartshorne. <i>Algebraic geometry</i>. Vol. No. 52. Graduate Texts in Mathematics. Springer-Verlag, New York-Heidelberg, 1977.</dd>

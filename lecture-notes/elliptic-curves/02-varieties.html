@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2026-10-01 Thu 08:27 -->
+<!-- 2026-10-06 Tue 08:21 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Algebraic varieties</title>
@@ -33,8 +33,8 @@
 <li class="ec-toc-chapter"><a href="03-curves.html"><span class="ec-toc-num">3</span><span class="ec-toc-text">Algebraic curves<span class="ec-toc-status"><span class="ec-status-progress">0 of 7 sections finished</span></span></span></a></li>
 <li class="ec-toc-chapter"><a href="04-ec-algebraic.html"><span class="ec-toc-num">4</span><span class="ec-toc-text">Elliptic curves as algebraic curves<span class="ec-toc-status"><span class="ec-status-progress">1 of 8 sections finished</span></span></span></a></li>
 <li class="ec-toc-chapter"><a href="05-finite-fields.html"><span class="ec-toc-num">5</span><span class="ec-toc-text">Elliptic curves over finite fields<span class="ec-toc-status"><span class="ec-status-progress">0 of 5 sections finished</span></span></span></a></li>
-<li class="ec-toc-chapter"><a href="06-local-fields.html"><span class="ec-toc-num">6</span><span class="ec-toc-text">Elliptic curves over local fields<span class="ec-toc-status"><span class="ec-status-progress">0 of 4 sections finished</span></span></span></a></li>
-<li class="ec-toc-chapter"><a href="07-galois-cohomology.html"><span class="ec-toc-num">7</span><span class="ec-toc-text">Galois cohomology<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
+<li class="ec-toc-chapter"><a href="06-local-fields.html"><span class="ec-toc-num">6</span><span class="ec-toc-text">Elliptic curves over local fields<span class="ec-toc-status"><span class="ec-status-progress">0 of 5 sections finished</span></span></span></a></li>
+<li class="ec-toc-chapter"><a href="07-galois-cohomology.html"><span class="ec-toc-num">7</span><span class="ec-toc-text">Galois cohomology<span class="ec-toc-status"><span class="ec-status-progress">0 of 10 sections finished</span></span></span></a></li>
 <li class="ec-toc-chapter"><a href="08-mordell-weil.html"><span class="ec-toc-num">8</span><span class="ec-toc-text">The Mordell&ndash;Weil theorem<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
 <li class="ec-toc-chapter"><a href="09-integral-points.html"><span class="ec-toc-num">9</span><span class="ec-toc-text">Integral points<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
 <li class="ec-toc-chapter"><a href="10-selmer-sha.html"><span class="ec-toc-num">10</span><span class="ec-toc-text">Twisting, Selmer, and Tate&ndash;Shafarevich<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
@@ -51,7 +51,7 @@
 </div>
 <div id="content" class="content">
 <h1 class="title"><span class="ec-chapter-label">Chapter 2</span>Algebraic varieties</h1>
-<div class="sources" id="orgb20de37">
+<div class="sources" id="orgfb09cf7">
 <p>
 This chapter follows [<a class="ec-cite" href="#bib-Poonen06">Poo06</a>, Chapter 1] and [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Chapter
 I]. Unlike these sources, we do not assume that the ground field is perfect.
@@ -178,7 +178,7 @@ to \(r^2 \in R = Y(R)\). Indeed, the \(R\)-point \(r\) is the \(k\)-algebra
 homomorphism \(k[x] \to R\), \(x \mapsto r\), and composing it with \(\varphi\)
 gives the commutative diagram of \(k\)-algebras
 </p>
-<div class="ec-diagram"><img class="ec-tikz" src="figures/62cb75fd6213f5eb9218805f9aeb2aa793e8b400.svg" style="--ec-w: 12.48em" alt=""/></div>
+<div class="ec-diagram"><img class="ec-tikz" src="figures/4f613f72be12b16471675ce813e1f28891071c2f.svg" style="--ec-w: 12.48em" alt=""/></div>
 <p>
 whose composite is the \(R\)-point \(r^2\) of \(Y\).
 </p>
@@ -199,8 +199,8 @@ k[x, x^{-1}] \cong k[x, y]/(xy - 1),
 \Gm(R) = R^\times
 \end{equation*}
 <p>
-for every \(k\)-algebra \(R\).  The group structure on \(R^\times\) is natural in \(R\);
-this is the sense in which \(\Gm\) is a group.
+for every \(k\)-algebra \(R\).  The group structure on \(R^\times\) is natural in \(R\).
+This is the sense in which \(\Gm\) is a group.
 </p>
 </div>
 
@@ -220,7 +220,7 @@ respects \(m\), \(i\) and \(e\).
 
 <p>
 Equivalently, by Yoneda's lemma, a group variety is a \(k\)-variety \(G\) with a group
-structure on \(G(R)\) for every \(k\)-algebra \(R\), natural in \(R\); this is how we saw
+structure on \(G(R)\) for every \(k\)-algebra \(R\), natural in \(R\).  This is how we saw
 that \(\Gm\) is a group variety in Example <a href="#eg-var-gm">2.1.6</a>.
 </p>
 
@@ -304,7 +304,7 @@ x^2 + xy + dy^2 & \text{if } \operatorname{char} k = 2.
 
 <p>
 The group law of \(\Gm^{(d)}\) is multiplication in \(L_d\), with \((x, y)\) standing for
-\(x + yt\); in characteristic \(2\), where \(t^2 = t + d\), its second coordinate is
+\(x + yt\).  In characteristic \(2\), where \(t^2 = t + d\), its second coordinate is
 \(x_1y_2 + x_2y_1 + y_1y_2\).  The identity is \((1, 0)\) and the inverse is conjugation.
 More generally \(\Ga(R) = R\), \(\Gm(R) = R^\times\) and
 </p>
@@ -312,7 +312,7 @@ More generally \(\Ga(R) = R\), \(\Gm(R) = R^\times\) and
 \Gm^{(d)}(R) = \ker\bigl(\Nm\colon (L_d \otimes_k R)^\times \to R^\times\bigr)
 \end{equation*}
 <p>
-for every \(k\)-algebra \(R\); an element of norm \(1\) is a unit, its inverse being its
+for every \(k\)-algebra \(R\).  An element of norm \(1\) is a unit, its inverse being its
 conjugate.  Over \(\R\), \(\Gm^{(-1)}\) is the circle group \(x^2 + y^2 = 1\), and over \(\Q\),
 \(\Gm^{(2)}\) is the "Pell equation torus" \(x^2 - 2y^2 = 1\) of
 [<a class="ec-cite" href="#bib-Poonen06">Poo06</a>, Example 1.11.3].
@@ -394,7 +394,7 @@ some \(n \geq 0\), and a <dfn class="ec-cdef" id="gls-split-torus" data-gls="spl
 
 <p>
 By Proposition <a href="#prop-var-twisted-gm">2.1.9</a>, \(\Gm^{(d)}\) is a torus of dimension \(1\), split
-exactly when \(L_d \cong k \times k\); for \(d = 2\) over \(\Q\) this is
+exactly when \(L_d \cong k \times k\).  For \(d = 2\) over \(\Q\) this is
 [<a class="ec-cite" href="#bib-Poonen06">Poo06</a>, Exercise 1.7].  Over a perfect field of characteristic not \(2\), every
 connected group variety of dimension \(1\) is an elliptic curve, \(\Ga\), \(\Gm\) or some
 \(\Gm^{(d)}\) [<a class="ec-cite" href="#bib-Poonen08">Poo08</a>, Section 6.2], [<a class="ec-cite" href="#bib-Milne20">Mil20</a>, Section II.3].  In Chapter 4 the
@@ -481,9 +481,9 @@ homogeneous coordinates.
 
 <p>
 The open subschemes \(U_i \coloneqq \{X_i \neq 0\}\) of \(\PP^n_k\) are isomorphic to
-\(\AA^n_k\), and cover it; the affine coordinates on \(U_0\) are the ratios
+\(\AA^n_k\), and cover it.  The affine coordinates on \(U_0\) are the ratios
 \(x_i = X_i/X_0\).  For a closed subvariety \(X \subseteq \PP^n_k\), the \(X \cap U_i\)
-are the standard affine patches of \(X\); the equations of \(X \cap U_0\) are obtained by
+are the standard affine patches of \(X\).  The equations of \(X \cap U_0\) are obtained by
 setting \(X_0 = 1\) (dehomogenization).
 </p>
 </div>
@@ -519,7 +519,7 @@ quadric surface \(V_+(X_0X_2 - X_1^2)\) and the cubic surface \(V_+(X_0^2X_3 - X
 \(\PP^3_k\).  On the hyperplane \(X_0 = 0\) both equations reduce to \(X_1 = 0\), so their
 intersection contains the whole line \(\{X_0 = X_1 = 0\}\).  But \(\overline{C}\) meets
 \(X_0 = 0\) only in \((0 : 0 : 0 : 1)\), the limit of the points \((1 : t : t^2 : t^3)\) of
-\(C\) for large \(t\); the projective closure is therefore strictly smaller.
+\(C\) for large \(t\).  The projective closure is therefore strictly smaller.
 </p>
 
 <p>
@@ -628,7 +628,7 @@ which contains for instance \((-2, 3)\) and \((5234, 378661)\)
 </div>
 
 <p>
-The Galois group \(\Gal_k\) acts on \(X(\ksep)\) through its action on \(\ksep\); on
+The Galois group \(\Gal_k\) acts on \(X(\ksep)\) through its action on \(\ksep\).  On
 \(\ksep\)-points of \(\AA^n\) or \(\PP^n\) it acts on coordinates.
 </p>
 
@@ -761,7 +761,7 @@ contains the inseparable extension \(k(a^{1/p})\) of \(k\).
 </div>
 
 <div id="outline-container-sec-var-maps" class="outline-2">
-<h2 id="sec-var-maps"><span class="ec-status ec-status-draft"><span class="ec-status-label ec-status-draft">Draft</span><time datetime="2026-09-21">21 Sep 2026</time></span><span class="section-number" id="s2.3">2.3</span> Morphisms and rational maps</h2>
+<h2 id="sec-var-maps"><span class="ec-status ec-status-draft"><span class="ec-status-label ec-status-draft">Draft</span><time datetime="2026-10-06">6 Oct 2026</time></span><span class="section-number" id="s2.3">2.3</span> Morphisms and rational maps</h2>
 <div class="outline-text-2" id="text-sec-var-maps">
 <div class="ec-thm ec-definition" id="def-var-rational-map">
 <p>
@@ -779,8 +779,8 @@ intersection of their domains.  It is dominant if its image is dense.  Integral
 Explicitly, a rational map \(\varphi\colon X \dashrightarrow \PP^n_k\) is a tuple
 \((f_0 : \dots : f_n)\) of elements of \(k(X)\), not all zero, modulo multiplication by
 \(k(X)^\times\).  It is regular at a point \(P\) of \(X\) if there is \(g \in k(X)^\times\)
-such that every \(gf_i\) lies in \(\calO_{X,P}\) and some \((gf_i)(P) \in k(P)\) is non-zero;
-then \(\varphi(P) \coloneqq ((gf_0)(P) : \dots : (gf_n)(P))\).  A rational map to a closed
+such that every \(gf_i\) lies in \(\calO_{X,P}\) and some \((gf_i)(P) \in k(P)\) is non-zero.
+Then \(\varphi(P) \coloneqq ((gf_0)(P) : \dots : (gf_n)(P))\).  A rational map to a closed
 subvariety \(Y \subseteq \PP^n_k\) is one whose image lies in \(Y\), and it is a morphism
 if it is regular at every point [<a class="ec-cite" href="#bib-Poonen06">Poo06</a>, Definitions 1.5.8 and 1.5.9],
 [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Section I.3].  For \(X \subseteq \PP^m_k\), clearing denominators writes
@@ -861,7 +861,7 @@ is infinite and \(C_2(\Q)\) is empty, so \(C \not\cong C_2\).  But \((X : Y : Z)
 </div>
 
 <div id="outline-container-sec-var-smooth" class="outline-2">
-<h2 id="sec-var-smooth"><span class="ec-status ec-status-draft"><span class="ec-status-label ec-status-draft">Draft</span><time datetime="2026-09-21">21 Sep 2026</time></span><span class="section-number" id="s2.4">2.4</span> Dimension, regularity and smoothness</h2>
+<h2 id="sec-var-smooth"><span class="ec-status ec-status-draft"><span class="ec-status-label ec-status-draft">Draft</span><time datetime="2026-10-06">6 Oct 2026</time></span><span class="section-number" id="s2.4">2.4</span> Dimension, regularity and smoothness</h2>
 <div class="outline-text-2" id="text-sec-var-smooth">
 <p>
 The dimension of a \(k\)-variety is its dimension as a topological space.  If \(X\) is
@@ -957,8 +957,8 @@ point [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Example I.1.6].
 \end{equation*}
 <p>
 and \(F\) vanishes at \((s : 0 : 1)\) too, so this is a singular point and \(E\) is not smooth.
-Over \(\kbar\) the equation is \(y^2 = (x - s)^3\), a cuspidal cubic, which is integral;
-so \(E\) is geometrically integral.  Yet \(E\) is regular.  Every other \(\kbar\)-point is smooth, and the
+Over \(\kbar\) the equation is \(y^2 = (x - s)^3\), a cuspidal cubic, which is integral.
+So \(E\) is geometrically integral.  Yet \(E\) is regular.  Every other \(\kbar\)-point is smooth, and the
 closed point \(P \coloneqq V(y, x^3 - t)\), with residue field \(k(s)\) of degree \(3\), has
 maximal ideal \((y, x^3 - t) = (y)\) in \(\calO_{E, P}\), because \(x^3 - t = y^2\) there.
 So \(\calO_{E,P}\) is a discrete valuation ring.
@@ -967,9 +967,9 @@ So \(\calO_{E,P}\) is a discrete valuation ring.
 </div>
 </div>
 
-<div id="outline-container-org305ad75" class="outline-2 ec-references">
-<h2 id="org305ad75">References</h2>
-<div class="outline-text-2" id="text-org305ad75">
+<div id="outline-container-org8a206f0" class="outline-2 ec-references">
+<h2 id="org8a206f0">References</h2>
+<div class="outline-text-2" id="text-org8a206f0">
 <dl class="ec-bibliography">
 <dt id="bib-Hartshorne77">[Har77]</dt>
 <dd>Robin Hartshorne. <i>Algebraic geometry</i>. Vol. No. 52. Graduate Texts in Mathematics. Springer-Verlag, New York-Heidelberg, 1977.</dd>
