@@ -59,11 +59,6 @@ We will use the remaining time to solve homework problems.
 + ~[S]~ J. H. Silverman, /The Arithmetic of Elliptic Curves/, 2nd edition,
   Graduate Texts in Mathematics 106, Springer, 2009. ([[https://www.math.brown.edu/johsilve/AEC/AECErrata.pdf][errata]])
 
-** Lecture notes
-
-+ [[https://sarangop1728.github.io/lecture-notes/elliptic-curves/index.html][Lecture notes]], with the worksheets and a PDF. They are a work in progress,
-  updated during the semester.
-
 ** Other references
 
 - Milne, [[https://www.jmilne.org/math/Books/EC2.pdf][/Elliptic Curves/]].
