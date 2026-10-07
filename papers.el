@@ -24,7 +24,8 @@
 (defconst sap/papers
   '((:title "\\(7\\)-adic Galois representations of elliptic curves over the rationals via Kummer descent"
     :authors (("David Zureick-Brown" . "https://dmzb.github.io/"))
-    :links ((extra "html" "https://sarangop1728.github.io/7-adic-settlers-of-cartan/" "code")
+    :links ((arxiv . "2610.06521")
+            (extra "html" "https://sarangop1728.github.io/7-adic-settlers-of-cartan/" "code")
             (extra "code" "https://github.com/sarangop1728/7-adic-settlers-of-cartan" "code"))
     :image (:src "images/thumbs/7-adic-settlers-of-cartan.svg" :href "images/7-adic-settlers-of-cartan.jpg"
             :alt "7-adic Settlers of Catan"))
