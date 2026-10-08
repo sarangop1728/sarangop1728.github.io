@@ -65,7 +65,9 @@ We will use the remaining time to solve homework problems.
 - Diamond & Shurman, [[https://link.springer.com/book/10.1007/978-0-387-27226-9][/A first course in modular forms/]].
 - Poonen, [[https://math.mit.edu/~poonen/papers/curves.pdf][/Lectures on rational points on curves/]].
 - Poonen, [[https://bookstore.ams.org/gsm-186][/Rational points on varieties/]]. ([[https://math.mit.edu/~poonen/papers/Qpoints-errata.pdf][errata]])
-- Poonen, [[https://math.mit.edu/~poonen/papers/elliptic.pdf][/Elliptic curves/]]. 
+- Poonen, [[https://math.mit.edu/~poonen/papers/elliptic.pdf][/Elliptic curves/]].
+- Poonen, /[[https://math.mit.edu/~poonen/f01/weakmw.pdf][The Selmer group, the
+  Shafarevich--Tate group, and the Weak Mordell--Weil theorem]]/.
 - Siksek, [[https://samirsiksek.github.io/siksek.github.io/modcurves2.pdf][/Explicit arithmetic of modular curves/]].
 - Silverman, [[https://link.springer.com/book/10.1007/978-1-4612-0851-8][/Advanced topics in the arithmetic of elliptic curves/]]. ([[https://www.math.brown.edu/johsilve/ATAEC/ATAECErrata.pdf][errata]])
 - Sutherland, [[https://math.mit.edu/classes/18.783/2017/lectures.html][MIT Math 18.783 - Elliptic Curves]].
@@ -129,24 +131,24 @@ of the algebraic geometry background, I recommend Chapters I and II in
 |  9  | <2026-10-06 Tue> |                                                           | VII.6, VII.7                 |
 | 10  | <2026-10-08 Thu> | Galois cohomology                                         | B.1, B.2, B.3 (appendix)     |
 | 11  | <2026-10-13 Tue> | The Mordell--Weil theorem                                 | VIII.1, VIII.2               |
-| 12  | <2026-10-15 Thu> |                                                           | VIII.3, VIII.4               |
-| 13  | <2026-10-20 Tue> |                                                           | VIII.5, VIII.6               |
-| 14  | <2026-10-22 Thu> |                                                           | VIII.7, VIII.8               |
-| 15  | <2026-10-27 Tue> |                                                           | VIII.9, VIII.10              |
-| 16  | <2026-10-29 Thu> |                                                           | VIII.11                      |
+| 12  | <2026-10-15 Thu> |                                                           | VIII.3                       |
+| 13  | <2026-10-20 Tue> |                                                           | VIII.4, VIII.5               |
+| 14  | <2026-10-22 Thu> |                                                           | VIII.6                       |
+| 15  | <2026-10-27 Tue> |                                                           | VIII.7, VIII.8               |
+| 16  | <2026-10-29 Thu> |                                                           | VIII.9                       |
 |     | <2026-11-03 Tue> | @@html:<span style="color:red">@@No class@@html:</span>@@ | (Election Day)               |
-| 17  | <2026-11-05 Thu> | Integral points                                           | IX.1, IX.2, IX.3             |
-| 18  | <2026-11-10 Tue> |                                                           | IX.4, IX.6, IX.7             |
-| 19  | <2026-11-12 Thu> | Twisting, Selmer, and Ш                                   | X.1, X.2                     |
-| 20  | <2026-11-17 Tue> |                                                           | X.3, X.4                     |
-| 21  | <2026-11-19 Thu> |                                                           | X.5, X.6                     |
+| 17  | <2026-11-05 Thu> |                                                           | VIII.10, VIII.11             |
+| 18  | <2026-11-10 Tue> | Integral points                                           | IX.1, IX.2                   |
+| 19  | <2026-11-12 Thu> |                                                           | IX.3, IX.4                   |
+| 20  | <2026-11-17 Tue> |                                                           | IX.5, IX.6                   |
+| 21  | <2026-11-19 Thu> |                                                           | IX.7, IX.8                   |
 |     | <2026-11-24 Tue> | @@html:<span style="color:red">@@No class@@html:</span>@@ | (Wednesday schedule)         |
 |     | <2026-11-26 Thu> | @@html:<span style="color:red">@@No class@@html:</span>@@ | (Thanksgiving)               |
-| 22  | <2026-12-01 Tue> | Complex multiplication                                    | C.11                         |
-| 23  | <2026-12-03 Thu> | The Tate curve                                            | C.14                         |
-| 24  | <2026-12-08 Tue> | The \(L\)-function and BSD                                | C.16                         |
-| 25  | <2026-12-10 Thu> | The Sato--Tate conjecture                                 | C.21                         |
-| 26  | <2026-12-15 Tue> | Intro to modular curves                                   | ([[https://samirsiksek.github.io/siksek.github.io/modcurves2.pdf][Siksek]]) Chapters 2, 3, 4.   |
+| 22  | <2026-12-01 Tue> | Twisting, Selmer, and Ш                                   | X.1, X.2                     |
+| 23  | <2026-12-03 Thu> |                                                           | X.3                          |
+| 24  | <2026-12-08 Tue> |                                                           | X.4                          |
+| 25  | <2026-12-10 Thu> |                                                           | X.5                          |
+| 26  | <2026-12-15 Tue> |                                                           | X.6                          |
 |-----+------------------+-----------------------------------------------------------+------------------------------|
 
 * Reading, participation, collaboration, and engagement
