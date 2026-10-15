@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2026-10-13 Tue 08:36 -->
+<!-- 2026-10-15 Thu 08:28 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Algebraic curves</title>
@@ -38,9 +38,9 @@
 <li class="ec-toc-chapter"><a href="05-finite-fields.html"><span class="ec-toc-num">5</span><span class="ec-toc-text">Elliptic curves over finite fields<span class="ec-toc-status"><span class="ec-status-progress">0 of 5 sections finished</span></span></span></a></li>
 <li class="ec-toc-chapter"><a href="06-local-fields.html"><span class="ec-toc-num">6</span><span class="ec-toc-text">Elliptic curves over local fields<span class="ec-toc-status"><span class="ec-status-progress">0 of 5 sections finished</span></span></span></a></li>
 <li class="ec-toc-chapter"><a href="07-galois-cohomology.html"><span class="ec-toc-num">7</span><span class="ec-toc-text">Galois cohomology<span class="ec-toc-status"><span class="ec-status-progress">0 of 10 sections finished</span></span></span></a></li>
-<li class="ec-toc-chapter"><a href="08-mordell-weil.html"><span class="ec-toc-num">8</span><span class="ec-toc-text">The Mordell&ndash;Weil theorem<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
-<li class="ec-toc-chapter"><a href="09-integral-points.html"><span class="ec-toc-num">9</span><span class="ec-toc-text">Integral points<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
-<li class="ec-toc-chapter"><a href="10-selmer-sha.html"><span class="ec-toc-num">10</span><span class="ec-toc-text">Twisting, Selmer, and Tate&ndash;Shafarevich<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
+<li class="ec-toc-chapter"><a href="08-mordell-weil.html"><span class="ec-toc-num">8</span><span class="ec-toc-text">The Mordell&ndash;Weil theorem<span class="ec-toc-status"><span class="ec-status-progress">0 of 4 sections finished</span></span></span></a></li>
+<li class="ec-toc-chapter"><a href="09-selmer-sha.html"><span class="ec-toc-num">9</span><span class="ec-toc-text">Twisting, Selmer, and Tate&ndash;Shafarevich<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
+<li class="ec-toc-chapter"><a href="10-integral-points.html"><span class="ec-toc-num">10</span><span class="ec-toc-text">Integral points<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
 <li class="ec-toc-chapter"><a href="11-complex-multiplication.html"><span class="ec-toc-num">11</span><span class="ec-toc-text">Complex multiplication<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
 <li class="ec-toc-chapter"><a href="12-tate-curve.html"><span class="ec-toc-num">12</span><span class="ec-toc-text">The Tate curve<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
 <li class="ec-toc-chapter"><a href="13-l-functions-bsd.html"><span class="ec-toc-num">13</span><span class="ec-toc-text">The \(L\)-function and BSD<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
@@ -54,7 +54,7 @@
 </div>
 <div id="content" class="content">
 <h1 class="title"><span class="ec-chapter-label">Chapter 3</span>Algebraic curves</h1>
-<div class="sources" id="orgc702c86">
+<div class="sources" id="orgcace466">
 <p>
 This chapter follows [<a class="ec-cite" href="#bib-Poonen06">Poo06</a>, Chapter 2] and [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Chapter II],
 with material on plane curves from [<a class="ec-cite" href="#bib-Milne20">Mil20</a>, Sections I.1 and I.6].  Unlike these
@@ -461,7 +461,7 @@ endomorphism of \(E\) of degree \(q\).
 </div>
 
 <div id="outline-container-sec-crv-divisors" class="outline-2">
-<h2 id="sec-crv-divisors"><span class="ec-status ec-status-draft"><span class="ec-status-label ec-status-draft">Draft</span><time datetime="2026-10-13">13 Oct 2026</time></span><span class="section-number" id="s3.3">3.3</span> Divisors</h2>
+<h2 id="sec-crv-divisors"><span class="ec-status ec-status-draft"><span class="ec-status-label ec-status-draft">Draft</span><time datetime="2026-10-14">14 Oct 2026</time></span><span class="section-number" id="s3.3">3.3</span> Divisors</h2>
 <div class="outline-text-2" id="text-sec-crv-divisors">
 <div class="ec-thm ec-definition" id="def-crv-divisor">
 <p>
@@ -521,7 +521,7 @@ the Galois action: for \(\sigma \in \Aut(\kbar/k)\),
 \sigma\bigl(f(D)\bigr) = f^\sigma(\sigma D),
 \end{equation*}
 <p>
-because \(\sigma(f(P)) = f^\sigma(\sigma P)\) on each factor.  In particular, if \(f\) is
+because \(\sigma(f(P)) = f^\sigma(\sigma(P))\) on each factor.  In particular, if \(f\) is
 defined over \(k\), then \(\sigma(f(D)) = f(\sigma D)\).
 </p>
 
@@ -766,7 +766,7 @@ rational point, and \(dt = -s^{-2}\,ds\), so \(\div(dt) = -2\infty\).  In partic
 
 <p>
 The next two examples start the comparison of elliptic curves with the multiplicative
-group \(\Gm\) of Example <a href="02-varieties.html#eg-var-gm">2.1.6</a>, which runs through Chapter 4.
+group \(\Gm\) of Example <a href="02-varieties.html#eg-var-gm">2.1.6</a>, which runs through Chapter <a href="04-ec-algebraic.html">4</a>.
 </p>
 
 <div class="ec-thm ec-example" id="eg-crv-gm-differential">
@@ -1277,9 +1277,9 @@ Section <a href="04-ec-algebraic.html#sec-ec-weierstrass">4.1</a>.
 </div>
 </div>
 
-<div id="outline-container-org6e16603" class="outline-2 ec-references">
-<h2 id="org6e16603">References</h2>
-<div class="outline-text-2" id="text-org6e16603">
+<div id="outline-container-orgdba86e2" class="outline-2 ec-references">
+<h2 id="orgdba86e2">References</h2>
+<div class="outline-text-2" id="text-orgdba86e2">
 <dl class="ec-bibliography">
 <dt id="bib-Hartshorne77">[Har77]</dt>
 <dd>Robin Hartshorne. <i>Algebraic geometry</i>. Vol. No. 52. Graduate Texts in Mathematics. Springer-Verlag, New York-Heidelberg, 1977.</dd>

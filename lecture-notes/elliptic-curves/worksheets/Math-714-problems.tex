@@ -245,6 +245,7 @@ breaklinks=true}
 \newcommand{\calN}{{\mathcal N}}
 \newcommand{\calO}{{\mathcal O}}
 \newcommand{\calP}{{\mathcal P}}
+\newcommand{\Places}{\mathcal{P}} % set of places of a global field
 \newcommand{\calQ}{{\mathcal Q}}
 \newcommand{\calR}{{\mathcal R}}
 \newcommand{\calS}{{\mathcal S}}
@@ -786,7 +787,7 @@ breaklinks=true}
 \AddToShipoutPictureFG*{%
   \put(\LenToUnit{1.1cm},\LenToUnit{.5\paperheight}){%
     \rotatebox{90}{\makebox[0pt][c]{\small\sffamily\color{black!50}%
-      DRAFT \textemdash{} last edited October 13, 2026}}}}
+      DRAFT \textemdash{} last edited October 15, 2026}}}}
 
 %% ---- shared machinery of the worksheets ----
 
@@ -836,6 +837,14 @@ breaklinks=true}
 \Crefname{wslemma}{Lemma}{Lemmas}
 \crefname{wsdefinition}{Definition}{Definitions}
 \Crefname{wsdefinition}{Definition}{Definitions}
+
+\newcommand{\wsstatementcounter}{wsstatement}
+\usepackage{etoolbox}
+\newcommand{\wsaliascounter}[1]{%
+  \AtBeginEnvironment{#1}{\crefalias{\wsstatementcounter}{#1}}}
+\wsaliascounter{wsexample}\wsaliascounter{wswarning}\wsaliascounter{wsremark}
+\wsaliascounter{wstheorem}\wsaliascounter{wscorollary}\wsaliascounter{wsproposition}
+\wsaliascounter{wslemma}\wsaliascounter{wsdefinition}
 
 \newenvironment{problem}[1][]%
   {\needspace{6\baselineskip}%
@@ -1772,7 +1781,7 @@ The Weil pairing $e_N$ is
   \item\label{weil-end-aut:it:weil-bilinear} bilinear;
   \item\label{weil-end-aut:it:weil-alt} alternating: $e_N(T, T) = 1$, so $e_N(S, T) = e_N(T, S)^{-1}$;
   \item\label{weil-end-aut:it:weil-nondeg} non-degenerate: if $e_N(S, T) = 1$ for all $S \in E[N](\ksep)$, then $T = O$;
-  \item\label{weil-end-aut:it:weil-galois} Galois equivariant: $\sigma\bigl(e_N(S, T)\bigr) = e_N(\sigma S, \sigma T)$ for $\sigma \in \Gal_k$;
+  \item\label{weil-end-aut:it:weil-galois} Galois equivariant: $\sigma\bigl(e_N(S, T)\bigr) = e_N(\sigma(S), \sigma(T))$ for $\sigma \in \Gal_k$;
   \item\label{weil-end-aut:it:weil-compat} compatible: $e_{NN'}(S, T) = e_N([N']S, T)$;
   \item\label{weil-end-aut:it:weil-adjoint} adjoint for isogenies: $e_N(\varphi S, T) = e_N(S, \hat\varphi T)$.
 \end{enumerate}
@@ -1804,9 +1813,9 @@ $\det\varphi_\ell = \deg\varphi$.
 \begin{solution}
 % Write your solution here.
 \end{solution}
-  \item\label{weil-end-aut:it:weil-det} Write $\sigma S = aS + cT$ and $\sigma T = bS + dT$, so that
+  \item\label{weil-end-aut:it:weil-det} Write $\sigma(S) = aS + cT$ and $\sigma(T) = bS + dT$, so that
         $\bar\rho_{E,N}(\sigma) = \smallmat{a}{b}{c}{d}$ in the basis $S, T$. Expand
-        $e_N(\sigma S, \sigma T)$ and deduce
+        $e_N(\sigma(S), \sigma(T))$ and deduce
         \[
           \det \bar\rho_{E,N} = \chi_N .
         \]
@@ -2497,7 +2506,7 @@ Let $m \geq 1$ with $\Char k \nmid m$. There is a pairing
   e_m\colon E[m](\ksep) \times E[m](\ksep) \to \mu_m(\ksep)
 \]
 that is bilinear, alternating ($e_m(P, P) = 1$), non-degenerate, and Galois equivariant:
-$\sigma\bigl(e_m(P, Q)\bigr) = e_m(\sigma P, \sigma Q)$ for every
+$\sigma\bigl(e_m(P, Q)\bigr) = e_m(\sigma(P), \sigma(Q))$ for every
 $\sigma \in \Gal_k$.
 Here $E[m](\ksep) = E[m](\kbar)$, since $\Char k \nmid m$. It follows that if $(P, Q)$ is
 a basis of $E[m](\ksep)$ over $\Z/m\Z$, then $e_m(P, Q)$ is a primitive $m$-th root of
@@ -4534,8 +4543,9 @@ failure is measured by $H^1(k, E)$.
         group with a left action of $G$, written $a \mapsto ga$, such that $G \times A \to A$
         is continuous for the discrete topology on $A$. (Silverman writes right actions,
         $a \mapsto a^\sigma$.)
-  \item Elements $g, h$ of $G$. The letter $\sigma$ is kept for a generator of a cyclic
-        group.
+  \item Elements $g, h$ of $G$, and elements $\sigma, \tau, \gamma$ of a Galois group such as
+        $\Gal_k$ or $\Gal(L/k)$. Where $\sigma$ is a generator of a cyclic group, it keeps
+        that meaning.
   \item An integer $m \geq 1$ with $\Char k \nmid m$, and the algebraic group $\mu_m$ of
         $m$-th roots of unity, the kernel of $x \mapsto x^m$ on $\Gm$. For a field $L$
         containing $k$, $\mu_m(L)$ is the group of $m$-th roots of unity in $L$.
@@ -4639,8 +4649,8 @@ $a_1 = \dots = a_r = 0$.
 \begin{wsdefinition}[Norm and trace]
 \label{kummer:def:norm}
 Let $L/k$ be a finite Galois extension with group $G$. The \defi{norm} and the
-\defi{trace} of $a \in L$ are $N_{L/k}(a) \coloneqq \prod_{g \in G} g(a)$ and
-$\Tr_{L/k}(a) \coloneqq \sum_{g \in G} g(a)$. Both lie in $k$.
+\defi{trace} of $a \in L$ are $N_{L/k}(a) \coloneqq \prod_{\sigma \in G} \sigma(a)$ and
+$\Tr_{L/k}(a) \coloneqq \sum_{\sigma \in G} \sigma(a)$. Both lie in $k$.
 \end{wsdefinition}
 
 \begin{wsproposition}[Infinite Galois theory]
@@ -4677,10 +4687,10 @@ is \defi{inflated} from $G/H$.
         $\xi\colon G \to L^\times$ a $1$-cocycle. Show that there is a $c \in L^\times$
         with
         \[
-        b \coloneqq \sum_{h \in G} \xi_h \cdot h(c) \neq 0,
+        b \coloneqq \sum_{\tau \in G} \xi_\tau \cdot \tau(c) \neq 0,
         \]
-        and that then $\xi_g = b/g(b)$ for every $g \in G$. Deduce that $H^1(G, L^\times) = 1$.
-        \hint{compute $g(b)$ with the cocycle condition.}
+        and that then $\xi_\sigma = b/\sigma(b)$ for every $\sigma \in G$. Deduce that $H^1(G, L^\times) = 1$.
+        \hint{compute $\sigma(b)$ with the cocycle condition.}
 \begin{solution}
 % Write your solution here.
 \end{solution}
@@ -4704,7 +4714,7 @@ is \defi{inflated} from $G/H$.
         \begin{enumerate}
           \item\label{kummer:it:h90-limit-factor} Show that there is a finite Galois extension
                 $L$ of $k$ inside $\ksep$ such that $\xi$ takes values in $L^\times$ and
-                $\xi_{gh} = \xi_g$ for all $g \in \Gal_k$ and $h \in \Gal_L$. So $\xi$ is
+                $\xi_{\sigma\tau} = \xi_\sigma$ for all $\sigma \in \Gal_k$ and $\tau \in \Gal_L$. So $\xi$ is
                 inflated from a $1$-cocycle $\Gal(L/k) \to L^\times$.\hint{$\Gal_k$ is
                 compact, and $\xi^{-1}(1)$ is open.}
 \begin{solution}
@@ -4775,7 +4785,7 @@ Recall that $\Char k \nmid m$, so $m \neq 0$ in $k$.
 \end{solution}
   \item\label{kummer:it:kseq-delta} Let $a \in k^\times$ and $\alpha \in \ksep$ with
         $\alpha^m = a$. Check directly, without \cref{kummer:prop:les}, that
-        $\xi_g \coloneqq g(\alpha)/\alpha$ is a continuous $1$-cocycle with values in
+        $\xi_\sigma \coloneqq \sigma(\alpha)/\alpha$ is a continuous $1$-cocycle with values in
         $\mu_m(\ksep)$, whose class does not depend on the choice of $\alpha$. Show that
         $a \mapsto [\xi]$ is a homomorphism $k^\times \to H^1(k, \mu_m)$ with kernel
         $k^{\times m}$. This is the map $\delta$ of \ref{kummer:it:kseq-exact}.
@@ -4791,7 +4801,7 @@ Recall that $\Char k \nmid m$, so $m \neq 0$ in $k$.
   \item\label{kummer:it:kseq-quadratic} Let $m = 2$, with $\Char k \neq 2$. Show that
         $H^1(k, \mu_2) = \Hom_{\mathrm{conts}}(\Gal_k, \{\pm 1\})$, and that for
         $d \in k^\times - k^{\times 2}$, $\delta(d)$ is the homomorphism
-        $\chi_d\colon g \mapsto g(\sqrt d)/\sqrt d$, with kernel $\Gal_{k(\sqrt d)}$. Deduce
+        $\chi_d\colon \sigma \mapsto \sigma(\sqrt d)/\sqrt d$, with kernel $\Gal_{k(\sqrt d)}$. Deduce
         that $d \mapsto k(\sqrt d)$ is a bijection from the nontrivial elements of
         $k^\times/k^{\times 2}$ to the quadratic extensions of $k$ inside $\ksep$.
 \begin{solution}
@@ -4846,7 +4856,7 @@ same order as $B$.
         that
         \[
         \langle\ ,\ \rangle\colon \Gal(L/k) \times \Delta/k^{\times m} \to \mu_m(\ksep), \qquad
-        \langle g, a \rangle \coloneqq g(\alpha)/\alpha \quad (\alpha^m = a),
+        \langle \sigma, a \rangle \coloneqq \sigma(\alpha)/\alpha \quad (\alpha^m = a),
         \]
         is a well defined bilinear pairing, and that it is perfect: the induced maps
         \[
@@ -5326,6 +5336,206 @@ So $E(\Q) = E[2](\Qbar)$.
 \end{enumerate}
 \end{problem}
 
+\bigskip
+
+\part[Heights on abelian groups]{Heights on abelian groups}
+\label{heights:part}
+\noindent
+The Mordell--Weil theorem has two steps. The weak Mordell--Weil theorem says that
+$E(K)/mE(K)$ is finite, and a height function turns this into finite generation
+\cite{Silverman09}*{\S VIII.3}. The second step does not use the curve: it works for any
+abelian group with a height that is quadratic up to a bounded error. This worksheet is
+about such heights on an abstract abelian group: which functions are heights of which kind,
+what their $O(1)$ constants are, and how a quadratic height behaves. \Cref{heights:prob:heights}
+sets up the definitions and the first estimates. \Cref{heights:prob:descent}, the heart of the
+worksheet, proves the descent theorem and shows, on $\Q$ and on a direct sum of copies of
+$\Z$, that its hypotheses are needed.
+\Cref{heights:prob:pairing} is the algebra of quadratic heights.
+
+\subsection*{Standing notation}
+\begin{itemize}
+  \item An abelian group $A$, written additively, with elements $P, Q, R$, torsion subgroup
+        $A_\tors$, and, for an integer $m \geq 2$, the quotient $A/m \coloneqq A/mA$.
+  \item For real functions $f, g$ on a set $X$, the notation $f = g + O(1)$, meaning that
+        $f - g$ is bounded on $X$. An inequality $f \leq g + c$ that holds for one constant
+        $c$ holds for every larger one, so the constants that bound heights are taken
+        non-negative, and a lower bound is written $-c$ with $c \geq 0$.
+\end{itemize}
+
+\section{Heights and the parallelogram law}
+\label{heights:sec:heights}
+
+This section is the vocabulary of \cite{Silverman09}*{\S VIII.3}, and the estimates
+\cite{Silverman09}*{Corollary~VIII.6.4} that the heights on an elliptic curve satisfy, proved
+here for any height that satisfies the parallelogram law up to a bounded error
+\cite{Hindry&Silverman00}*{\S B.4}.
+
+\begin{wsdefinition}[{Heights \cite{Silverman09}*{\S\S VIII.3, VIII.6}}]
+\label{heights:def:heights}
+A \defi{height} on a set $X$ is a function $h\colon X \to \R$. Two heights $h, h'$ on $X$ are
+\defi{equivalent}, written $h = h' + O(1)$, if $h - h'$ is bounded on $X$. A height $h$ has
+the \defi{Northcott property} if $\{x \in X : h(x) \leq C\}$ is finite for every $C \in \R$.
+The \defi{defect} of a height $h$ on $A$ is the function
+\[
+\delta_h(P, Q) \coloneqq h(P + Q) + h(P - Q) - 2h(P) - 2h(Q)
+\]
+on $A \times A$. The height $h$ is \defi{quasi-quadratic} if $\delta_h$ is bounded, and
+\defi{quadratic} if $\delta_h = 0$ (the parallelogram law).
+\end{wsdefinition}
+
+\begin{problem}[Heights and the parallelogram law]
+\label{heights:prob:heights}
+\begin{enumerate}
+  \item\label{heights:it:ht-relation} Show that equivalence of heights on a set $X$ is an
+        equivalence relation. Show that the Northcott property depends only on the
+        equivalence class, and that a height with the Northcott property is bounded
+        below. Give a height on $\Z$ that is bounded below and does not have the Northcott
+        property.
+\begin{solution}
+% Write your solution here.
+\end{solution}
+  \item\label{heights:it:ht-constants} Let $h$ be a quasi-quadratic height on $A$, and let $c \geq 0$
+        be a constant with $\lvert \delta_h \rvert \leq c$. Show that
+        $\lvert h(0) \rvert \leq c/2$, that
+        $\lvert h(-P) - h(P) \rvert \leq 2c$, and that $\lvert h(2P) - 4h(P) \rvert \leq 3c/2$
+        for every $P \in A$.
+\begin{solution}
+% Write your solution here.
+\end{solution}
+  \item\label{heights:it:ht-multiple} Let $h$ be a quasi-quadratic height on $A$, and let $c \geq 0$
+        be a constant with $\lvert \delta_h \rvert \leq c$. Show that for every $n \in \Z$
+        there is a constant $d_n \geq 0$ with $\lvert h(nP) - n^2 h(P) \rvert \leq d_n$ for all $P \in A$, and
+        give a recursion for $d_n$ in terms of $c$.\hint{apply the parallelogram law to the
+        pair $(nP, P)$ and induct on $n \geq 0$.} Suppose moreover that $h \geq -c'$ for a
+        constant $c' \geq 0$. Show that for every $Q \in A$ there is a constant $C(Q) \geq 0$
+        with $h(P + Q) \leq 2h(P) + C(Q)$ for all $P \in A$, and give $C(Q)$ explicitly.
+\begin{solution}
+% Write your solution here.
+\end{solution}
+  \item\label{heights:it:ht-squares} Let $f\colon A \to \R$ be a homomorphism. Show that the height
+        $f^2$ on $A$ is quadratic. Show that a sum of quadratic heights on $A$ is quadratic.
+\begin{solution}
+% Write your solution here.
+\end{solution}
+  \item\label{heights:it:ht-nonequivalent} Let $A = \Z^2$, $q(x, y) \coloneqq x^2 + y^2$ and
+        $q'(x, y) \coloneqq x^2 + (x + y)^2$. Show that $q$ and $q'$ are quadratic heights
+        with the Northcott property, that $q \leq 3q'$ and $q' \leq 3q$, and that they are
+        not equivalent.
+\begin{solution}
+% Write your solution here.
+\end{solution}
+\end{enumerate}
+\end{problem}
+
+
+\section{The descent theorem}
+\label{heights:sec:descent}
+
+This section is \cite{Silverman09}*{Theorem~VIII.3.1} and its proof, for an abstract
+abelian group, and the examples of groups that fail one of its hypotheses. The count of
+rational numbers of bounded height is \cite{Hindry&Silverman00}*{Theorem~B.2.3}.
+
+\begin{wstheorem}[{Descent theorem \cite{Silverman09}*{Theorem~VIII.3.1}}]
+\label{heights:thm:descent}
+Let $h$ be a height on $A$ with the following properties.
+\begin{enumerate}
+  \item\label{heights:it:descent-sum} For every $Q \in A$ there is a constant $C_1(Q)$ with
+        $h(P + Q) \leq 2h(P) + C_1(Q)$ for all $P \in A$.
+  \item\label{heights:it:descent-multiple} There are an integer $m \geq 2$ and a constant $C_2$ with
+        $h(mP) \geq m^2 h(P) - C_2$ for all $P \in A$.
+  \item\label{heights:it:descent-northcott} The height $h$ has the Northcott property.
+\end{enumerate}
+If $A/m$ is finite for the $m$ of \ref{heights:it:descent-multiple}, then $A$ is finitely generated.
+\end{wstheorem}
+
+\begin{problem}[The descent theorem]
+\label{heights:prob:descent}
+\begin{enumerate}
+  \item\label{heights:it:desc-hypotheses} Let $h$ be a quasi-quadratic height on $A$ with the
+        Northcott property. Show that $h$ satisfies the hypotheses of \cref{heights:thm:descent} for
+        every $m \geq 2$.
+\begin{solution}
+% Write your solution here.
+\end{solution}
+  \item\label{heights:it:desc-ab} Let $h$ be a height on $A$ with the Northcott property, let
+        $m \geq 2$ be an integer, and let $0 < a < b$ be real numbers. Suppose that for every
+        $Q \in A$ there is a constant $C_1(Q) \geq 0$ with $h(P + Q) \leq a\,h(P) + C_1(Q)$
+        for all $P$, and that there is a constant $C_2 \geq 0$ with
+        $h(mP) \geq b\,h(P) - C_2$ for all $P$. Suppose also that $A/m$ is finite, let
+        $Q_1, \dots, Q_s$ represent its cosets, and let
+        $C \coloneqq \max_i C_1(-Q_i) + C_2$. Show that $A$ is generated by
+        $Q_1, \dots, Q_s$ and the finitely many $P \in A$ with $h(P) \leq 1 + C/(b - a)$.
+\begin{solution}
+% Write your solution here.
+\end{solution}
+  \item\label{heights:it:desc-rationals} Let $A = \Q$, as an additive group, with the
+        logarithmic Weil height
+        \[
+        h(u/w) \coloneqq \log \max(\lvert u \rvert, \lvert w \rvert),
+        \]
+        for $u/w$ in lowest terms. Show that $h$ has the Northcott property, that
+        $h(x + y) \leq h(x) + h(y) + \log 2$, with equality for $x = y = 1$, that
+        $h(mx) \leq h(x) + \log m$ and $\Q/m = 0$ for every integer $m \geq 2$. Which
+        hypothesis of \ref{heights:it:desc-ab} fails, for every $m \geq 2$ and every $b > 1$? Is $h$
+        quasi-quadratic?
+\begin{solution}
+% Write your solution here.
+\end{solution}
+  \item\label{heights:it:desc-infinite} Let $A = \bigoplus_{i \geq 1} \Z$, let $w_1, w_2, \dots$ be
+        positive real numbers, and $h(x) \coloneqq \sum_i w_i x_i^2$. Show that $h$ is
+        quadratic. For which weights $w_i$ does $h$ have the Northcott property? For such
+        weights, which hypothesis of \cref{heights:thm:descent} fails for $A$?
+\begin{solution}
+% Write your solution here.
+\end{solution}
+\end{enumerate}
+\end{problem}
+
+
+\section{Quadratic heights and their pairing}
+\label{heights:sec:pairing}
+
+This section is \cite{Hindry&Silverman00}*{Lemma~B.5.2}, the algebra of a height that
+satisfies the parallelogram law exactly, which \cite{Silverman09}*{Theorem~VIII.9.3(c)}
+states for the canonical height on an elliptic curve.
+
+\begin{wsdefinition}[{The pairing of a quadratic height \cite{Hindry&Silverman00}*{\S B.5}}]
+\label{heights:def:pairing}
+Let $q$ be a quadratic height on $A$. Its \defi{pairing} is
+\[
+\langle P, Q \rangle_q \coloneqq q(P + Q) - q(P) - q(Q).
+\]
+\end{wsdefinition}
+
+\begin{problem}[Quadratic heights and their pairing]
+\label{heights:prob:pairing}
+Let $q$ be a quadratic height on $A$.
+\begin{enumerate}
+  \item\label{heights:it:pair-bilinear} Show that $q(0) = 0$, $q(-P) = q(P)$ and $q(2P) = 4q(P)$, and
+        that $\langle\ ,\ \rangle_q$ is symmetric and bilinear.\hint{write the parallelogram
+        law for the pairs $(P + R, Q)$, $(P, R - Q)$, $(P + Q, R)$ and $(R, Q)$.} Deduce that
+        $\langle P, P \rangle_q = 2q(P)$ and $q(nP) = n^2 q(P)$ for every $n \in \Z$.
+        Conversely, show that for a symmetric bilinear map $B\colon A \times A \to \R$, the
+        function $P \mapsto \frac12 B(P, P)$ is a quadratic height with pairing $B$.
+\begin{solution}
+% Write your solution here.
+\end{solution}
+  \item\label{heights:it:pair-torsion} Let $T \in A_\tors$. Show that $q(T) = 0$, that
+        $\langle P, T \rangle_q = 0$ for every $P \in A$, and that $q(P + T) = q(P)$. So $q$
+        and its pairing factor through $A/A_\tors$.
+\begin{solution}
+% Write your solution here.
+\end{solution}
+  \item\label{heights:it:pair-gram} Let $A = \Z^r$ with standard basis $e_1, \dots, e_r$. Show that
+        every quadratic height on $A$ is $q(x) = \frac12 x^{\mathsf T} G x$ for a unique real
+        symmetric $r \times r$ matrix $G$, and that every symmetric $G$ arises. Show that if
+        $G$ is positive definite, then $q$ has the Northcott property.
+\begin{solution}
+% Write your solution here.
+\end{solution}
+\end{enumerate}
+\end{problem}
+
 
 % \bib, bibdiv, biblist are defined by the amsrefs package.
 \begin{bibdiv}
@@ -5356,6 +5566,20 @@ So $E(\Q) = E[2](\Qbar)$.
       volume={No. 52},
         ISBN={0-387-90244-9},
       review={\MR{463157}},
+}
+
+\bib{Hindry&Silverman00}{book}{
+      author={Hindry, Marc},
+      author={Silverman, Joseph~H.},
+       title={Diophantine geometry},
+      series={Graduate Texts in Mathematics},
+   publisher={Springer-Verlag, New York},
+        date={2000},
+      volume={201},
+        ISBN={0-387-98975-7; 0-387-98981-1},
+         url={https://doi.org/10.1007/978-1-4612-1210-2},
+        note={An introduction},
+      review={\MR{1745599}},
 }
 
 \bib{lmfdb}{misc}{

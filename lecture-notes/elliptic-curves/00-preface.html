@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2026-10-13 Tue 08:36 -->
+<!-- 2026-10-15 Thu 08:28 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Preface</title>
@@ -37,9 +37,9 @@
 <li class="ec-toc-chapter"><a href="05-finite-fields.html"><span class="ec-toc-num">5</span><span class="ec-toc-text">Elliptic curves over finite fields<span class="ec-toc-status"><span class="ec-status-progress">0 of 5 sections finished</span></span></span></a></li>
 <li class="ec-toc-chapter"><a href="06-local-fields.html"><span class="ec-toc-num">6</span><span class="ec-toc-text">Elliptic curves over local fields<span class="ec-toc-status"><span class="ec-status-progress">0 of 5 sections finished</span></span></span></a></li>
 <li class="ec-toc-chapter"><a href="07-galois-cohomology.html"><span class="ec-toc-num">7</span><span class="ec-toc-text">Galois cohomology<span class="ec-toc-status"><span class="ec-status-progress">0 of 10 sections finished</span></span></span></a></li>
-<li class="ec-toc-chapter"><a href="08-mordell-weil.html"><span class="ec-toc-num">8</span><span class="ec-toc-text">The Mordell&ndash;Weil theorem<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
-<li class="ec-toc-chapter"><a href="09-integral-points.html"><span class="ec-toc-num">9</span><span class="ec-toc-text">Integral points<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
-<li class="ec-toc-chapter"><a href="10-selmer-sha.html"><span class="ec-toc-num">10</span><span class="ec-toc-text">Twisting, Selmer, and Tate&ndash;Shafarevich<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
+<li class="ec-toc-chapter"><a href="08-mordell-weil.html"><span class="ec-toc-num">8</span><span class="ec-toc-text">The Mordell&ndash;Weil theorem<span class="ec-toc-status"><span class="ec-status-progress">0 of 4 sections finished</span></span></span></a></li>
+<li class="ec-toc-chapter"><a href="09-selmer-sha.html"><span class="ec-toc-num">9</span><span class="ec-toc-text">Twisting, Selmer, and Tate&ndash;Shafarevich<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
+<li class="ec-toc-chapter"><a href="10-integral-points.html"><span class="ec-toc-num">10</span><span class="ec-toc-text">Integral points<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
 <li class="ec-toc-chapter"><a href="11-complex-multiplication.html"><span class="ec-toc-num">11</span><span class="ec-toc-text">Complex multiplication<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
 <li class="ec-toc-chapter"><a href="12-tate-curve.html"><span class="ec-toc-num">12</span><span class="ec-toc-text">The Tate curve<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
 <li class="ec-toc-chapter"><a href="13-l-functions-bsd.html"><span class="ec-toc-num">13</span><span class="ec-toc-text">The \(L\)-function and BSD<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
@@ -56,7 +56,7 @@
 <p>
 These are the notes for Math 714, a first graduate course on the arithmetic of elliptic
 curves.  The main reference is [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>], which we follow closely from
-Chapter 4 on.
+Chapter <a href="04-ec-algebraic.html">4</a> on.
 </p>
 
 <div id="outline-container-sec-pref-prerequisites" class="outline-2">
@@ -75,15 +75,15 @@ topology; modules over a principal ideal domain; basic commutative algebra
 rings of integers; Dedekind domains; the decomposition of primes; and the
 finiteness of the class group and of the unit rank.</li>
 <li><b>Complex analysis.</b> Holomorphic and meromorphic functions, Liouville's theorem, the
-residue theorem, and analytic continuation.  Chapter 1 builds the theory of Riemann
+residue theorem, and analytic continuation.  Chapter <a href="01-riemann-surfaces.html">1</a> builds the theory of Riemann
 surfaces it needs.</li>
 </ul>
 
 <p>
 No algebraic geometry is assumed. In the spirit of [<a class="ec-cite" href="#bib-Poonen06">Poo06</a>], we use the
 language of scheme theory and explain how to think concretely about
-scheme-theoretic constructions in terms of commutative algebra. Chapters 2
-and 3 collect what we use from the theory of algebraic varieties and algebraic
+scheme-theoretic constructions in terms of commutative algebra. Chapters
+<a href="02-varieties.html">2</a> and <a href="03-curves.html">3</a> collect what we use from the theory of algebraic varieties and algebraic
 curves.
 </p>
 </div>
@@ -107,7 +107,10 @@ in a Situation at its start. For a field \(k\), we fix an algebraic closure \(\k
 separable closure of \(k\) in \(\kbar\). We write \(\Gal_k \coloneqq
 \Gal(\ksep/k)\) for the absolute Galois group of \(k\). The group \(\Gal_k\)
 acts on \(X(\ksep)\). Since restriction \(\Aut(\kbar/k) \to \Gal_k\) is an
-isomorphism, this also determines the action on \(X(\kbar)\).
+isomorphism, this also determines the action on \(X(\kbar)\). Elements of Galois groups are
+\(\sigma, \tau, \gamma\), and they act on points through their coordinates, written
+\(\sigma(Q)\). The letters \(g, h\) are kept for elements of an abstract group. The set of
+places of a global field \(k\) is \(\Places_k\).
 </p>
 
 <p>
@@ -259,32 +262,37 @@ The notes fall into four parts.
 </p>
 
 <ul class="org-ul">
-<li><b>Foundations (Chapters 1&#x2013;4).</b> Chapter 1 treats elliptic curves over \(\C\)
-as complex tori \(\C/\Lambda\), as a source of geometric intuition for what
-follows. Chapters 2 and 3 develop varieties and curves over an arbitrary
-field, and Chapter 4 uses them to set up the general theory: Weierstrass
+<li><b>Foundations (Chapters <a href="01-riemann-surfaces.html">1</a>&#x2013;<a href="04-ec-algebraic.html">4</a>).</b> Chapter
+<a href="01-riemann-surfaces.html">1</a> treats elliptic curves over \(\C\) as complex tori
+\(\C/\Lambda\), as a source of geometric intuition for what follows. Chapters
+<a href="02-varieties.html">2</a> and <a href="03-curves.html">3</a> develop varieties and curves over an arbitrary
+field, and Chapter <a href="04-ec-algebraic.html">4</a> uses them to set up the general theory: Weierstrass
 equations, the group law, isogenies, the Tate module and the Weil pairing.</li>
-<li><b>Local theory (Chapters 5 and 6).</b> Elliptic curves over finite fields, including the
+<li><b>Local theory (Chapters <a href="05-finite-fields.html">5</a> and <a href="06-local-fields.html">6</a>).</b> Elliptic curves over finite fields, including the
 Hasse bound, and over local fields: minimal models, reduction and the formal group.</li>
-<li><b>Global theory (Chapters 7&#x2013;10).</b> Galois cohomology, the Mordell&#x2013;Weil theorem,
-integral points; twists, Selmer groups, and the Tate&#x2013;Shafarevich group.</li>
-<li><b>Further topics (Chapters 11&#x2013;15).</b> Complex multiplication, the Tate curve, the
-\(L\)-function and the conjecture of Birch and Swinnerton-Dyer, the Sato&#x2013;Tate
-conjecture, and an introduction to modular curves.</li>
+<li><b>Global theory (Chapters <a href="07-galois-cohomology.html">7</a>&#x2013;<a href="10-integral-points.html">10</a>).</b> Galois
+cohomology, the Mordell&#x2013;Weil theorem; twists, Selmer groups, and the
+Tate&#x2013;Shafarevich group; integral points.</li>
+<li><b>Further topics (Chapters <a href="11-complex-multiplication.html">11</a>&#x2013;<a href="15-modular-curves.html">15</a>).</b>
+Complex multiplication, the Tate curve, the \(L\)-function and the conjecture of
+Birch and Swinnerton-Dyer, the Sato&#x2013;Tate conjecture, and an introduction to modular
+curves.</li>
 </ul>
 
 <p>
 A thread running through the notes is the comparison of an elliptic curve with the
 multiplicative group \(\Gm\): over \(\C\), the torus \(\C/\Lambda\) against
 \(\C^\times = \C/2\pi i\Z\); over an arbitrary field, their invariant differentials, torsion
-points and Tate modules; and in Chapter 12, the Tate curve, which realizes an elliptic curve
+points and Tate modules; and in Chapter <a href="12-tate-curve.html">12</a>, the Tate curve, which realizes an elliptic curve
 over a \(p\)-adic field as a quotient of \(\Gm\).
 </p>
 
 <p>
-Chapter 1 can be read independently of Chapters 2 and 3, and Chapter 4 relies on Chapters 2 and 3.
-After Chapter 4, the main line runs through Chapters 5 to 8. Chapters 9 and 10 build on
-Chapter 8, and each of the further topics can be read after the chapters it
+Chapter <a href="01-riemann-surfaces.html">1</a> can be read independently of Chapters <a href="02-varieties.html">2</a>
+and <a href="03-curves.html">3</a>, and Chapter <a href="04-ec-algebraic.html">4</a> relies on Chapters <a href="02-varieties.html">2</a>
+and <a href="03-curves.html">3</a>.  After Chapter <a href="04-ec-algebraic.html">4</a>, the main line runs through
+Chapters <a href="05-finite-fields.html">5</a> to <a href="08-mordell-weil.html">8</a>.  Chapters <a href="09-selmer-sha.html">9</a> and
+<a href="10-integral-points.html">10</a> build on Chapter <a href="08-mordell-weil.html">8</a>, and each of the further topics can be read after the chapters it
 cites. The worksheets for the problem sessions, with their solutions, are
 linked from the web page of the notes. Each one says which sections it draws
 on.
@@ -327,9 +335,9 @@ who takes full responsibility for the accuracy and content of this work.
 </div>
 </div>
 
-<div id="outline-container-org2c7b1aa" class="outline-2 ec-references">
-<h2 id="org2c7b1aa">References</h2>
-<div class="outline-text-2" id="text-org2c7b1aa">
+<div id="outline-container-org3828ebb" class="outline-2 ec-references">
+<h2 id="org3828ebb">References</h2>
+<div class="outline-text-2" id="text-org3828ebb">
 <dl class="ec-bibliography">
 <dt id="bib-Milne20">[Mil20]</dt>
 <dd>James S. Milne. <i>Elliptic curves</i>. Second. World Scientific Publishing Co. Pte. Ltd., Hackensack, NJ, 2020.</dd>

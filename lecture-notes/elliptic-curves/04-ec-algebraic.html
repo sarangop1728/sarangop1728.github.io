@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2026-10-13 Tue 08:36 -->
+<!-- 2026-10-15 Thu 08:28 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Elliptic curves as algebraic curves</title>
@@ -41,9 +41,9 @@
 <li class="ec-toc-chapter"><a href="05-finite-fields.html"><span class="ec-toc-num">5</span><span class="ec-toc-text">Elliptic curves over finite fields<span class="ec-toc-status"><span class="ec-status-progress">0 of 5 sections finished</span></span></span></a></li>
 <li class="ec-toc-chapter"><a href="06-local-fields.html"><span class="ec-toc-num">6</span><span class="ec-toc-text">Elliptic curves over local fields<span class="ec-toc-status"><span class="ec-status-progress">0 of 5 sections finished</span></span></span></a></li>
 <li class="ec-toc-chapter"><a href="07-galois-cohomology.html"><span class="ec-toc-num">7</span><span class="ec-toc-text">Galois cohomology<span class="ec-toc-status"><span class="ec-status-progress">0 of 10 sections finished</span></span></span></a></li>
-<li class="ec-toc-chapter"><a href="08-mordell-weil.html"><span class="ec-toc-num">8</span><span class="ec-toc-text">The Mordell&ndash;Weil theorem<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
-<li class="ec-toc-chapter"><a href="09-integral-points.html"><span class="ec-toc-num">9</span><span class="ec-toc-text">Integral points<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
-<li class="ec-toc-chapter"><a href="10-selmer-sha.html"><span class="ec-toc-num">10</span><span class="ec-toc-text">Twisting, Selmer, and Tate&ndash;Shafarevich<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
+<li class="ec-toc-chapter"><a href="08-mordell-weil.html"><span class="ec-toc-num">8</span><span class="ec-toc-text">The Mordell&ndash;Weil theorem<span class="ec-toc-status"><span class="ec-status-progress">0 of 4 sections finished</span></span></span></a></li>
+<li class="ec-toc-chapter"><a href="09-selmer-sha.html"><span class="ec-toc-num">9</span><span class="ec-toc-text">Twisting, Selmer, and Tate&ndash;Shafarevich<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
+<li class="ec-toc-chapter"><a href="10-integral-points.html"><span class="ec-toc-num">10</span><span class="ec-toc-text">Integral points<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
 <li class="ec-toc-chapter"><a href="11-complex-multiplication.html"><span class="ec-toc-num">11</span><span class="ec-toc-text">Complex multiplication<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
 <li class="ec-toc-chapter"><a href="12-tate-curve.html"><span class="ec-toc-num">12</span><span class="ec-toc-text">The Tate curve<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
 <li class="ec-toc-chapter"><a href="13-l-functions-bsd.html"><span class="ec-toc-num">13</span><span class="ec-toc-text">The \(L\)-function and BSD<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
@@ -57,7 +57,7 @@
 </div>
 <div id="content" class="content">
 <h1 class="title"><span class="ec-chapter-label">Chapter 4</span>Elliptic curves as algebraic curves</h1>
-<div class="sources" id="org35c9505">
+<div class="sources" id="orged0acb6">
 <p>
 This chapter follows [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Chapter III], with some material from
 [<a class="ec-cite" href="#bib-Milne20">Mil20</a>, Sections II.1, II.2, II.5 and II.6], and [<a class="ec-cite" href="#bib-Voight21">Voi21</a>, Chapters 2, 3, 5
@@ -68,14 +68,14 @@ do not assume that the ground field is perfect.
 </div>
 
 <p>
-In Chapter 1 we met complex tori \(\C/\Lambda\): compact Riemann surfaces that are also
+In Chapter <a href="01-riemann-surfaces.html">1</a> we met complex tori \(\C/\Lambda\): compact Riemann surfaces that are also
 abelian groups.  The uniformization theorem (Theorem <a href="01-riemann-surfaces.html#thm-rs-uniformization">1.7.1</a>) identifies
 each of them with a smooth plane cubic \(E_{A,B}(\C)\), and under this identification
 the isogenies of Section <a href="01-riemann-surfaces.html#sec-rs-isogenies">1.3</a> and the torsion subgroups
 \((\C/\Lambda)[m] \cong (\Z/m\Z)^2\) of Example <a href="01-riemann-surfaces.html#eg-rs-mult-by-m">1.3.4</a> become statements about
 cubic curves.  The goal of this chapter is to recover that whole picture over an
 arbitrary field \(k\), where there is no lattice to divide by.  The tools are the ones
-developed in Chapters 2 and 3: the Riemann&#x2013;Roch theorem replaces the Weierstrass
+developed in Chapters <a href="02-varieties.html">2</a> and <a href="03-curves.html">3</a>: the Riemann&#x2013;Roch theorem replaces the Weierstrass
 \(\wp\)-function, the Picard group replaces the quotient \(\C/\Lambda\), and the
 invariant differential replaces \(dz\).  Alongside, we compare \(E\) with the multiplicative
 group \(\Gm\), whose invariant differential, torsion points and Tate module are elementary
@@ -110,7 +110,7 @@ have one: by a theorem of Selmer [<a class="ec-cite" href="#bib-Selmer-51">Sel51
 \(3X^3 + 4Y^3 + 5Z^3 = 0\) over \(\Q\), which has genus \(1\) by Corollary
 <a href="03-curves.html#cor-crv-plane-genus">3.7.7</a>, has no rational points, although it has points over \(\R\)
 and over every \(\Q_p\). Such curves will reappear in Section <a href="#sec-ec-selmer">4.8</a>
-and in Chapter 10.
+and in Chapter <a href="09-selmer-sha.html">9</a>.
 </p>
 
 <p>
@@ -462,7 +462,7 @@ That is \(A' = u^{-4}A\) and \(B' = u^{-6}B\).
 
 <div class="ec-thm ec-remark" id="rem-ec-complex-normalization">
 <p>
-<span class="ec-thm-head"><span class="ec-thm-name">Remark 4.1.8</span>.</span> Chapter 1 uses the short form \eqref{eq:ec-short-weierstrass}
+<span class="ec-thm-head"><span class="ec-thm-name">Remark 4.1.8</span>.</span> Chapter <a href="01-riemann-surfaces.html">1</a> uses the short form \eqref{eq:ec-short-weierstrass}
 (Example <a href="01-riemann-surfaces.html#eg-rs-weierstrass-curve">1.6.3</a>), and the discriminant of Lemma <a href="#lem-ec-short-form">4.1.4</a>
 explains the condition \(4A^3 + 27B^2 \neq 0\) there.  Under the isomorphism of
 Theorem <a href="01-riemann-surfaces.html#thm-rs-uniformization">1.7.1</a> we have \(x = \wp_\Lambda(z)\) and
@@ -493,7 +493,7 @@ a change of variables \(x = u^2x'\), \(y = u^3y'\) with \(u^4 = d^{-2}\) and
 exactly when \(d \in k^{\times 2}\), and the quadratic twists of \(E\) are indexed by
 \(d \in k^\times/k^{\times 2}\).  They all share one \(j\)-invariant.  For \(j = 0\) and
 \(j = 1728\) the curve has extra automorphisms and there are more twists than these. See
-Theorem <a href="#thm-ec-automorphisms">4.7.11</a> and Chapter 10.
+Theorem <a href="#thm-ec-automorphisms">4.7.11</a> and Chapter <a href="09-selmer-sha.html">9</a>.
 </p>
 
 <div class="ec-thm ec-example" id="eg-ec-quadratic-twist">
@@ -524,8 +524,8 @@ twists, the extra twists that \(j = 1728\) admits.
 </div>
 
 <p>
-Twists in general are the subject of Chapter 7, and those of elliptic curves of
-Chapter 10. The cubic twists of
+Twists in general are the subject of Chapter <a href="07-galois-cohomology.html">7</a>, and those of elliptic curves of
+Chapter <a href="09-selmer-sha.html">9</a>. The cubic twists of
 Section <a href="#sec-ec-selmer">4.8</a> are the other case we meet in this chapter.
 </p>
 
@@ -624,7 +624,7 @@ tangent direction) if \(c_4 = 0\) [<a class="ec-cite" href="#bib-Silverman09">Si
 cases the curve is birational to \(\PP^1\), as for the nodal cubic of
 Example <a href="02-varieties.html#eg-var-nodal-cubic">2.3.5</a> [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Proposition III.1.6].  These curves
 matter to us because an elliptic curve over \(\Q\) acquires such a singularity when its
-equation is reduced modulo a prime dividing \(\Delta\) (Chapter 6). See
+equation is reduced modulo a prime dividing \(\Delta\) (Chapter <a href="06-local-fields.html">6</a>). See
 Proposition <a href="#prop-ec-singular-group">4.2.11</a>.
 </p>
 </div>
@@ -994,7 +994,7 @@ the roots in \(y\) of \(f(x_0, y) = 0\), whose sum is \(-a_1x_0 - a_3\).  Part <
 </details>
 
 <figure class="ec-figure" id="fig-ec-chord-tangent">
-<img class="ec-tikz" src="figures/c2ae1f9594a7aded3439a408fd857a51df24ad4d.svg" style="--ec-w: 18.62em" alt=""/>
+<img class="ec-tikz" src="figures/8b2b6f730bc9e4a78569719583ec3d94a26381ff.svg" style="--ec-w: 18.62em" alt=""/>
 <figcaption><span class="ec-thm-name">Figure 4.2.1</span>. The chord-and-tangent law on \(y^2 = x^3 - x + 1\) over \(\R\): the line through \(P = (-1, 1)\) and \(Q = (0, 1)\) meets the curve again at \(R = (1, 1)\), and \(P + Q = -R = (1, -1)\).</figcaption>
 </figure>
 
@@ -1150,7 +1150,7 @@ Proposition <a href="#prop-ec-addition-formulas">4.2.6</a> [<a class="ec-cite" h
 \(P_2 \coloneqq (-1, 4)\).  The line through them has \(\lambda = 1\), \(\nu = 5\), so
 \(x_3 = 1 + 2 + 1 = 4\), \(y_3 = -4 - 5 = -9\), and \(P_1 + P_2 = (4, -9)\).  Likewise
 \([2]P_1 = (8, -23)\) and \([2]P_2 = (137/64, -2651/512)\).  Denominators appear quickly.
-The Mordell&#x2013;Weil theorem (Chapter 8) says that nonetheless \(E(\Q)\) is finitely generated.
+The Mordell&#x2013;Weil theorem (Chapter <a href="08-mordell-weil.html">8</a>) says that nonetheless \(E(\Q)\) is finitely generated.
 </p>
 </div>
 
@@ -1527,7 +1527,7 @@ the extension is Galois [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, T
 If \(\varphi\) is separable, the scheme-theoretic fiber \(\varphi^{-1}(O_2)\) is étale over
 \(k\), so \(\ker\varphi \subseteq E_1(\ksep)\), and it is a \(\Gal_k\)-stable subgroup.  So
 an isogeny determines a finite \(\Gal_k\)-module.  Conversely, every finite subgroup is a
-kernel. This replaces the lattice \(\Lambda_2 \supseteq \Lambda_1\) of Chapter 1.
+kernel. This replaces the lattice \(\Lambda_2 \supseteq \Lambda_1\) of Chapter <a href="01-riemann-surfaces.html">1</a>.
 </p>
 
 <div class="ec-thm ec-proposition" id="prop-ec-quotient">
@@ -2259,7 +2259,7 @@ We summarize the comparison between the multiplicative group and an elliptic cur
 </div>
 
 <div id="outline-container-sec-ec-weil" class="outline-2">
-<h2 id="sec-ec-weil"><span class="ec-status ec-status-draft"><span class="ec-status-label ec-status-draft">Draft</span><time datetime="2026-10-13">13 Oct 2026</time></span><span class="section-number" id="s4.6">4.6</span> The Weil pairing</h2>
+<h2 id="sec-ec-weil"><span class="ec-status ec-status-draft"><span class="ec-status-label ec-status-draft">Draft</span><time datetime="2026-10-14">14 Oct 2026</time></span><span class="section-number" id="s4.6">4.6</span> The Weil pairing</h2>
 <div class="outline-text-2" id="text-sec-ec-weil">
 <p>
 In Example <a href="01-riemann-surfaces.html#eg-rs-mult-by-m">1.3.4</a> we compared \((\C/\Lambda)[N]\) with the group \(\mu_N(\C)\) of
@@ -2374,7 +2374,7 @@ defined, and neither fact needs \(e^{2\pi i t}\).
 <li><a id="it-ec-weil-bilinear"></a> bilinear;</li>
 <li><a id="it-ec-weil-alternating"></a> alternating: \(e_N(T, T) = 1\), so \(e_N(S, T) = e_N(T, S)^{-1}\);</li>
 <li><a id="it-ec-weil-non-degenerate"></a> non-degenerate: if \(e_N(S, T) = 1\) for all \(S \in E[N](\ksep)\), then \(T = O\);</li>
-<li><a id="it-ec-weil-galois"></a> Galois equivariant: \(\sigma(e_N(S, T)) = e_N(\sigma S, \sigma T)\) for
+<li><a id="it-ec-weil-galois"></a> Galois equivariant: \(\sigma(e_N(S, T)) = e_N(\sigma(S), \sigma(T))\) for
 \(\sigma \in \Gal_k\);</li>
 <li><a id="it-ec-weil-compatible"></a> compatible: \(e_{NN'}(S, T) = e_N([N']S, T)\) for \(S \in E[NN'](\ksep)\) and \(T \in E[N](\ksep)\);</li>
 <li><a id="it-ec-weil-adjoint"></a> adjoint for isogenies: \(e_N(\varphi S, T) = e_N(S, \hat\varphi T)\) for
@@ -2394,7 +2394,7 @@ same divisor, and reciprocity kills the resulting factor exactly as in
 Lemma <a href="#lem-ec-weil-well-defined">4.6.2</a>.  Part <a href="#it-ec-weil-galois">4</a> is the Galois equivariance of evaluation noted
 after Definition <a href="03-curves.html#def-crv-eval-divisor">3.3.3</a>: applying \(\sigma\) carries a choice of
 \(D_S\), \(D_T\), \(f_S\), \(f_T\) for the pair \((S, T)\) to one for
-\((\sigma S, \sigma T)\).  Swapping \(S\) and \(T\) inverts the defining ratio, which gives
+\((\sigma(S), \sigma(T))\).  Swapping \(S\) and \(T\) inverts the defining ratio, which gives
 the second half of part <a href="#it-ec-weil-alternating">2</a>. The first half, \(e_N(T, T) = 1\), is stronger in characteristic
 \(2\) and is proved from the construction of Remark <a href="#rem-ec-weil-silverman">4.6.4</a>.  For that,
 and for parts <a href="#it-ec-weil-non-degenerate">3</a>, <a href="#it-ec-weil-compatible">5</a> and <a href="#it-ec-weil-adjoint">6</a>, see [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Propositions III.8.1 and III.8.2].
@@ -2506,8 +2506,8 @@ first collect what we need about quaternion algebras.
 </p>
 </div>
 
-<div id="outline-container-orgf5cc43d" class="outline-3">
-<h3 id="orgf5cc43d"><span class="section-number" id="s4.7.1">4.7.1</span> Quaternion algebras</h3>
+<div id="outline-container-org9b8fb68" class="outline-3">
+<h3 id="org9b8fb68"><span class="section-number" id="s4.7.1">4.7.1</span> Quaternion algebras</h3>
 <div class="outline-text-3" id="text-7-1">
 <p>
 We follow [<a class="ec-cite" href="#bib-Voight21">Voi21</a>].  Throughout this subsection, \(F\) is a field with
@@ -2660,8 +2660,8 @@ containing the others.</li>
 </div>
 </div>
 
-<div id="outline-container-orgaad962a" class="outline-3">
-<h3 id="orgaad962a"><span class="section-number" id="s4.7.2">4.7.2</span> The endomorphism ring</h3>
+<div id="outline-container-org1fc449e" class="outline-3">
+<h3 id="org1fc449e"><span class="section-number" id="s4.7.2">4.7.2</span> The endomorphism ring</h3>
 <div class="outline-text-3" id="text-7-2">
 <div class="ec-thm ec-theorem" id="thm-ec-endomorphism-ring">
 <p>
@@ -2731,7 +2731,7 @@ Corollary <a href="#cor-ec-c-phi-ring">4.4.6</a>, which rules out case <a href="
 </details>
 
 <p>
-The endomorphism ring of \(E_{\kbar}\) will be the subject of Chapter 11 in
+The endomorphism ring of \(E_{\kbar}\) will be the subject of Chapter <a href="11-complex-multiplication.html">11</a> in
 characteristic \(0\), where \(E\) has complex multiplication if \(\End(E_{\kbar}) \neq \Z\),
 and of Section <a href="05-finite-fields.html#sec-ff-endomorphism-ring">5.4</a> in characteristic \(p\), where
 case <a href="#it-ec-end-quaternion">3</a> happens exactly for supersingular curves.
@@ -3180,7 +3180,7 @@ and doubling \([2]P\) gives \([4]P = (-1256 : 1265 : 183)\).  By
 Examples <a href="#eg-ec-selmer-2-torsion-q">4.8.6</a> and <a href="#eg-ec-selmer-3-torsion-q">4.8.7</a>, \(C_7(\Q)\) has no
 points of order \(2\) or \(3\).  The
 growth of the coordinates suggests that \(P\) has infinite order. This will follow from the
-Nagell&#x2013;Lutz theorem in Chapter 8.  Under \(\varphi\), \(P\) maps to
+Nagell&#x2013;Lutz theorem in Chapter <a href="08-mordell-weil.html">8</a>.  Under \(\varphi\), \(P\) maps to
 \((21, 126) \in E_7(\Q)\).
 </p>
 </div>
@@ -3312,7 +3312,7 @@ Proposition <a href="#prop-ec-j-invariant">4.1.10</a>, since \(j = 0\).
 
 <p>
 The \(C_d\) are the <dfn class="ec-cdef" id="gls-cubic-twist" data-gls="cubic-twist">cubic twists</dfn> of the Fermat cubic \(C_1\). Twists in
-general are the subject of Chapter 7, and these return in Chapter 10.
+general are the subject of Chapter <a href="07-galois-cohomology.html">7</a>, and these return in Chapter <a href="09-selmer-sha.html">9</a>.
 </p>
 
 <div class="ec-thm ec-remark" id="rem-ec-selmer-name">
@@ -3323,16 +3323,16 @@ curve of genus \(1\) with no rational point, so not an elliptic curve over \(\Q\
 Jacobian, an elliptic curve over \(\Q\), and in general the Jacobian of
 \(aX^3 + bY^3 + cZ^3 = 0\) is \(y^2 = x^3 - 432(abc)^2\), that is, the Selmer curve
 \(C_{abc}\).  So Selmer's counterexample to the Hasse principle is a torsor under
-\(C_{60}\).  We return to this in Chapter 10, where the \(C_d\) are the first examples for
+\(C_{60}\).  We return to this in Chapter <a href="09-selmer-sha.html">9</a>, where the \(C_d\) are the first examples for
 descent.
 </p>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orga27dc91" class="outline-2 ec-references">
-<h2 id="orga27dc91">References</h2>
-<div class="outline-text-2" id="text-orga27dc91">
+<div id="outline-container-org4cd0fd2" class="outline-2 ec-references">
+<h2 id="org4cd0fd2">References</h2>
+<div class="outline-text-2" id="text-org4cd0fd2">
 <dl class="ec-bibliography">
 <dt id="bib-Magma">[BCP97]</dt>
 <dd>Wieb Bosma, John Cannon and Catherine Playoust. &ldquo;The Magma algebra system. I. The user language&rdquo;. In: <i>J. Symbolic Comput.</i> 24.3&ndash;4 (1997), pp. 235&ndash;265. Computational algebra and number theory (London, 1993). <a href="https://doi.org/10.1006/jsco.1996.0125">doi:10.1006/jsco.1996.0125</a>.</dd>

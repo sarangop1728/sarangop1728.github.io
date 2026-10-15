@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2026-10-13 Tue 08:36 -->
+<!-- 2026-10-15 Thu 08:28 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Galois cohomology</title>
@@ -41,9 +41,9 @@
 <li class="ec-toc-level-1"><a href="#s7.9"><span class="ec-toc-num">7.9</span><span class="ec-toc-text">Cup products and the Brauer group<span class="ec-toc-status"><span class="ec-status-label ec-status-draft">Draft</span></span></span></a></li>
 <li class="ec-toc-level-1"><a href="#s7.10"><span class="ec-toc-num">7.10</span><span class="ec-toc-text">Étale cohomology and the geometric point of view<span class="ec-toc-status"><span class="ec-status-label ec-status-draft">Draft</span></span></span></a></li>
 </ol></li>
-<li class="ec-toc-chapter"><a href="08-mordell-weil.html"><span class="ec-toc-num">8</span><span class="ec-toc-text">The Mordell&ndash;Weil theorem<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
-<li class="ec-toc-chapter"><a href="09-integral-points.html"><span class="ec-toc-num">9</span><span class="ec-toc-text">Integral points<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
-<li class="ec-toc-chapter"><a href="10-selmer-sha.html"><span class="ec-toc-num">10</span><span class="ec-toc-text">Twisting, Selmer, and Tate&ndash;Shafarevich<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
+<li class="ec-toc-chapter"><a href="08-mordell-weil.html"><span class="ec-toc-num">8</span><span class="ec-toc-text">The Mordell&ndash;Weil theorem<span class="ec-toc-status"><span class="ec-status-progress">0 of 4 sections finished</span></span></span></a></li>
+<li class="ec-toc-chapter"><a href="09-selmer-sha.html"><span class="ec-toc-num">9</span><span class="ec-toc-text">Twisting, Selmer, and Tate&ndash;Shafarevich<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
+<li class="ec-toc-chapter"><a href="10-integral-points.html"><span class="ec-toc-num">10</span><span class="ec-toc-text">Integral points<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
 <li class="ec-toc-chapter"><a href="11-complex-multiplication.html"><span class="ec-toc-num">11</span><span class="ec-toc-text">Complex multiplication<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
 <li class="ec-toc-chapter"><a href="12-tate-curve.html"><span class="ec-toc-num">12</span><span class="ec-toc-text">The Tate curve<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
 <li class="ec-toc-chapter"><a href="13-l-functions-bsd.html"><span class="ec-toc-num">13</span><span class="ec-toc-text">The \(L\)-function and BSD<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
@@ -57,7 +57,7 @@
 </div>
 <div id="content" class="content">
 <h1 class="title"><span class="ec-chapter-label">Chapter 7</span>Galois cohomology</h1>
-<div class="sources" id="orgd3717d2">
+<div class="sources" id="org6c3fed1">
 <p>
 This chapter follows [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Appendix B] and [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Section VIII.2],
 with the left actions of [<a class="ec-cite" href="#bib-Poonen02">Poo02</a>, Sections 2&#x2013;6].  For the point of view on twists,
@@ -73,8 +73,10 @@ torsors, Brauer groups and étale cohomology we follow
 <li>\(k\) is a field, not assumed perfect, with a separable closure \(\ksep\)
 and absolute Galois group \(\Gal_k \coloneqq \Gal(\ksep/k)\).  For an extension \(L\) of
 \(k\) inside \(\ksep\), \(\Gal_L \coloneqq \Gal(\ksep/L)\).</li>
-<li>\(G\) is a profinite group, often finite or \(\Gal_k\), with elements \(g, h\).  The letter
-\(\sigma\) is kept for a generator of a cyclic or procyclic group.</li>
+<li>\(G\) is a profinite group, often finite or \(\Gal_k\), with elements \(g, h\).  Elements of
+a Galois group, such as \(\Gal_k\) or \(\Gal(L/k)\), are \(\sigma, \tau, \gamma\).  Where
+\(\sigma\) is introduced as a generator of a cyclic or procyclic group, such as a Frobenius
+automorphism, it keeps that meaning, and other Galois elements there are \(\tau, \gamma\).</li>
 <li>\(A\) is a discrete \(G\)-module, written additively, with the left action
 \(a \mapsto ga\) (Definition <a href="#def-gc-discrete-module">7.1.2</a>).</li>
 <li>For a discrete \(\Gal_k\)-module \(A\) we write \(H^i(k, A) \coloneqq H^i(\Gal_k, A)\).
@@ -92,7 +94,7 @@ multiplicatively.</li>
 </div>
 
 <div id="outline-container-sec-gc-profinite" class="outline-2">
-<h2 id="sec-gc-profinite"><span class="ec-status ec-status-draft"><span class="ec-status-label ec-status-draft">Draft</span><time datetime="2026-10-13">13 Oct 2026</time></span><span class="section-number" id="s7.1">7.1</span> Profinite groups and discrete modules</h2>
+<h2 id="sec-gc-profinite"><span class="ec-status ec-status-draft"><span class="ec-status-label ec-status-draft">Draft</span><time datetime="2026-10-14">14 Oct 2026</time></span><span class="section-number" id="s7.1">7.1</span> Profinite groups and discrete modules</h2>
 <div class="outline-text-2" id="text-sec-gc-profinite">
 <p>
 We are in Situation <a href="#sit-gc-standing">7.0.1</a>.  Galois cohomology studies the group \(\Gal_k\)
@@ -137,7 +139,7 @@ See [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Section B.2] and [<a 
 <p>
 In every profinite group the open normal subgroups form a basis of open neighborhoods of
 \(1\), and an open subgroup has finite index, since its cosets form an open cover of a
-compact group.  We met a first example in Chapter 5: by <a class="ec-eqref" href="05-finite-fields.html#mjx-eqn%3Aeq%3Aff-zhat">(5.1.1)</a>,
+compact group.  We met a first example in Chapter <a href="05-finite-fields.html">5</a>: by <a class="ec-eqref" href="05-finite-fields.html#mjx-eqn%3Aeq%3Aff-zhat">(5.1.1)</a>,
 \(\Gal_{\F_q} \cong \Zhat\), and the Frobenius automorphism \(\sigma\colon \alpha \mapsto
 \alpha^q\) generates a dense subgroup \(\sigma^{\Z}\) of \(\Gal_{\F_q}\).  We say that
 \(\sigma\) is a topological generator.
@@ -186,13 +188,13 @@ automorphism group is \((\Z/m\Z)^\times\), and the action is the
 <dfn class="ec-cdef" id="gls-cyclotomic-character" data-gls="cyclotomic-character">cyclotomic character</dfn>
 </p>
 \begin{equation*}
-\chi_m\colon \Gal_k \to (\Z/m\Z)^\times, \qquad g(\zeta) = \zeta^{\chi_m(g)} \quad
+\chi_m\colon \Gal_k \to (\Z/m\Z)^\times, \qquad \sigma(\zeta) = \zeta^{\chi_m(\sigma)} \quad
 \text{for } \zeta \in \mu_m(\ksep).
 \end{equation*}
 <p>
 Its kernel is \(\Gal_{k(\mu_m)}\), where \(k(\mu_m)\) is the extension of \(k\) generated by
 \(\mu_m(\ksep)\).  Likewise, the action on \(E[m](\ksep) \cong (\Z/m\Z)^2\) is the mod \(m\)
-representation \(\bar\rho_{E,m}\colon \Gal_k \to \GL_2(\Z/m\Z)\) of Chapter 4, after the choice
+representation \(\bar\rho_{E,m}\colon \Gal_k \to \GL_2(\Z/m\Z)\) of Chapter <a href="04-ec-algebraic.html">4</a>, after the choice
 of a basis.  Its kernel is \(\Gal_{k(E[m])}\), where \(k(E[m])\) is the extension of \(k\)
 generated by the coordinates of the torsion points in \(E[m](\ksep)\).  Both kernels are open, and
 \(k(\mu_m)\) and \(k(E[m])\) are finite Galois extensions of \(k\).
@@ -208,22 +210,22 @@ generated by the coordinates of the torsion points in \(E[m](\ksep)\).  Both ker
 <details class="ec-proof">
 <summary><span class="ec-proof-head">Proof.</span></summary>
 <p>
-Let \((S, T)\) be the chosen basis of \(E[m](\ksep)\), and \(g \in \Gal_k\) with
-\(gS = aS + cT\) and \(gT = bS + dT\).  The Weil pairing \(e_m\) is bilinear and alternating,
+Let \((S, T)\) be the chosen basis of \(E[m](\ksep)\), and \(\sigma \in \Gal_k\) with
+\(\sigma(S) = aS + cT\) and \(\sigma(T) = bS + dT\).  The Weil pairing \(e_m\) is bilinear and alternating,
 by parts <a href="04-ec-algebraic.html#it-ec-weil-bilinear">1</a> and <a href="04-ec-algebraic.html#it-ec-weil-alternating">2</a> of
 Proposition <a href="04-ec-algebraic.html#prop-ec-weil-pairing">4.6.3</a>, so
 </p>
 \begin{equation*}
-e_m(gS, gT) = e_m(S, T)^{ad} e_m(T, S)^{cb} = e_m(S, T)^{ad - bc}.
+e_m(\sigma(S), \sigma(T)) = e_m(S, T)^{ad} e_m(T, S)^{cb} = e_m(S, T)^{ad - bc}.
 \end{equation*}
 <p>
-By part <a href="04-ec-algebraic.html#it-ec-weil-galois">4</a> of the same proposition, \(e_m(gS, gT) = g\,e_m(S, T)\), which
-is \(e_m(S, T)^{\chi_m(g)}\).  The root of unity \(e_m(S, T)\) has order \(m\): if it had
+By part <a href="04-ec-algebraic.html#it-ec-weil-galois">4</a> of the same proposition, \(e_m(\sigma(S), \sigma(T)) = \sigma(e_m(S, T))\), which
+is \(e_m(S, T)^{\chi_m(\sigma)}\).  The root of unity \(e_m(S, T)\) has order \(m\): if it had
 order \(d\), then \(e_m(S, [d]T) = e_m(S, T)^d = 1\) and \(e_m(T, [d]T) = 1\), so
 \(e_m(S', [d]T) = 1\) for every \(S' \in E[m](\ksep)\), and \([d]T = O\) by
 part <a href="04-ec-algebraic.html#it-ec-weil-non-degenerate">3</a> of Proposition <a href="04-ec-algebraic.html#prop-ec-weil-pairing">4.6.3</a>.  So \(d = m\).  Hence
-\(ad - bc \equiv \chi_m(g) \pmod m\).  If \(g\) acts trivially on \(E[m](\ksep)\), then
-\(\chi_m(g) = \det 1 = 1\).
+\(ad - bc \equiv \chi_m(\sigma) \pmod m\).  If \(\sigma\) acts trivially on \(E[m](\ksep)\), then
+\(\chi_m(\sigma) = \det 1 = 1\).
 </p>
 </details>
 
@@ -727,7 +729,7 @@ This is how Theorem <a href="#thm-gc-finiteness">7.8.6</a> will be proved.
 </div>
 
 <div id="outline-container-sec-gc-hilbert-90" class="outline-2">
-<h2 id="sec-gc-hilbert-90"><span class="ec-status ec-status-draft"><span class="ec-status-label ec-status-draft">Draft</span><time datetime="2026-10-13">13 Oct 2026</time></span><span class="section-number" id="s7.4">7.4</span> Hilbert 90 and Kummer theory</h2>
+<h2 id="sec-gc-hilbert-90"><span class="ec-status ec-status-draft"><span class="ec-status-label ec-status-draft">Draft</span><time datetime="2026-10-14">14 Oct 2026</time></span><span class="section-number" id="s7.4">7.4</span> Hilbert 90 and Kummer theory</h2>
 <div class="outline-text-2" id="text-sec-gc-hilbert-90">
 <p>
 We are in Situation <a href="#sit-gc-standing">7.0.1</a>.  This section computes the cohomology of the
@@ -776,31 +778,31 @@ Proposition <a href="#prop-gc-limit">7.3.6</a>, since \(L^\times = ((\ksep)^\tim
 
 <p>
 For part <a href="#it-gc-h90-mult">1</a>, let \(\xi\colon G \to L^\times\) be a cocycle.  The elements of
-\(G\) restrict to distinct homomorphisms \(L^\times \to L^\times\), and the \(\xi_h\) are
+\(G\) restrict to distinct homomorphisms \(L^\times \to L^\times\), and the \(\xi_\tau\) are
 non-zero, so by Theorem <a href="#thm-gc-dedekind">7.4.1</a> there is \(c \in L^\times\) with
 </p>
 \begin{equation*}
-b \coloneqq \sum_{h \in G} \xi_h \cdot h(c) \neq 0.
+b \coloneqq \sum_{\tau \in G} \xi_\tau \cdot \tau(c) \neq 0.
 \end{equation*}
 <p>
-The cocycle condition gives \(g(\xi_h) = \xi_g^{-1}\xi_{gh}\), so
+The cocycle condition gives \(\sigma(\xi_\tau) = \xi_\sigma^{-1}\xi_{\sigma\tau}\), so
 </p>
 \begin{equation*}
-g(b) = \sum_{h \in G} g(\xi_h) \cdot (gh)(c) = \xi_g^{-1}\sum_{h \in G} \xi_{gh} \cdot (gh)(c)
-= \xi_g^{-1}b,
+\sigma(b) = \sum_{\tau \in G} \sigma(\xi_\tau) \cdot (\sigma\tau)(c) = \xi_\sigma^{-1}\sum_{\tau \in G} \xi_{\sigma\tau} \cdot (\sigma\tau)(c)
+= \xi_\sigma^{-1}b,
 \end{equation*}
 <p>
-since \(gh\) runs over \(G\) with \(h\).  So \(\xi_g = b/g(b) = g(b^{-1})/b^{-1}\), the
+since \(\sigma\tau\) runs over \(G\) with \(\tau\).  So \(\xi_\sigma = b/\sigma(b) = \sigma(b^{-1})/b^{-1}\), the
 coboundary of \(b^{-1}\).
 </p>
 
 <p>
 For part <a href="#it-gc-h90-add">2</a>, Theorem <a href="#thm-gc-dedekind">7.4.1</a> with all coefficients \(1\) gives
 \(c \in L\) with \(t \coloneqq \Tr_{L/k}(c) \neq 0\).  For a cocycle \(\xi\colon G \to L\), let
-\(b \coloneqq t^{-1}\sum_h \xi_h \cdot h(c)\).  Then \(g(\xi_h) = \xi_{gh} - \xi_g\), so
+\(b \coloneqq t^{-1}\sum_\tau \xi_\tau \cdot \tau(c)\).  Then \(\sigma(\xi_\tau) = \xi_{\sigma\tau} - \xi_\sigma\), so
 </p>
 \begin{equation*}
-g(b) = t^{-1}\sum_{h \in G} (\xi_{gh} - \xi_g) \cdot (gh)(c) = b - \xi_g,
+\sigma(b) = t^{-1}\sum_{\tau \in G} (\xi_{\sigma\tau} - \xi_\sigma) \cdot (\sigma\tau)(c) = b - \xi_\sigma,
 \end{equation*}
 <p>
 and \(\xi\) is the coboundary of \(-b\).
@@ -808,15 +810,15 @@ and \(\xi\) is the coboundary of \(-b\).
 
 <p>
 For part <a href="#it-gc-h90-gln">3</a>, let \(\xi\colon G \to \GL_n(L)\) be a cocycle, and let \(W\) be
-\(L^n\) with the action \(g * w \coloneqq \xi_g \cdot gw\), where \(gw\) is the action on
+\(L^n\) with the action \(\sigma * w \coloneqq \xi_\sigma \cdot \sigma(w)\), where \(\sigma(w)\) is the action on
 coordinates.  The cocycle condition says exactly that this is an action, and it is
-semilinear: \(g * (\lambda w) = (g\lambda)(g * w)\) for \(\lambda \in L\).  By Galois
+semilinear: \(\sigma * (\lambda w) = (\sigma(\lambda))(\sigma * w)\) for \(\lambda \in L\).  By Galois
 descent for vector spaces, every \(n\)-dimensional \(L\)-vector space with a semilinear
 action of \(G\) is isomorphic to \(L^n\) with the action on coordinates
 [<a class="ec-cite" href="#bib-Poonen2017">Poo17</a>, Corollary 1.3.12].  So there is \(\varphi \in \GL_n(L)\) with
-\(\varphi(gw) = g * \varphi(w) = \xi_g \cdot (g\varphi)(gw)\) for all \(w\), that is,
-\(\xi_g = \varphi\,(g\varphi)^{-1}\).  With \(b \coloneqq \varphi^{-1}\) this is
-\(\xi_g = b^{-1}\,gb\), so \(\xi\) is cohomologous to the trivial cocycle
+\(\varphi(\sigma(w)) = \sigma * \varphi(w) = \xi_\sigma \cdot (\sigma(\varphi))(\sigma(w))\) for all \(w\), that is,
+\(\xi_\sigma = \varphi\,(\sigma(\varphi))^{-1}\).  With \(b \coloneqq \varphi^{-1}\) this is
+\(\xi_\sigma = b^{-1}\,\sigma(b)\), so \(\xi\) is cohomologous to the trivial cocycle
 [<a class="ec-cite" href="#bib-Poonen2017">Poo17</a>, Proposition 1.3.15].
 </p>
 </details>
@@ -891,7 +893,7 @@ is exact.
 </p>
 \begin{equation*}
 \delta\colon k^\times/k^{\times m} \to H^1(k, \mu_m), \qquad
-\delta(a) = \text{the class of } g \mapsto g(\alpha)/\alpha,
+\delta(a) = \text{the class of } \sigma \mapsto \sigma(\alpha)/\alpha,
 \end{equation*}
 <p>
 for any \(\alpha \in \ksep\) with \(\alpha^m = a\).
@@ -923,7 +925,7 @@ which are parts <a href="#it-gc-kummer-h1">2</a> and <a href="#it-gc-kummer-h2">
 <p>
 The proof shows more: injectivity of \(\delta\) on \(k^\times/k^{\times m}\) is elementary,
 and only its surjectivity uses Hilbert 90.  If \(\mu_m(\ksep) \subseteq k\), then
-\(\delta(a)\) is the homomorphism \(g \mapsto g(\alpha)/\alpha\), and this is Kummer theory.
+\(\delta(a)\) is the homomorphism \(\sigma \mapsto \sigma(\alpha)/\alpha\), and this is Kummer theory.
 </p>
 
 <div class="ec-thm ec-corollary" id="cor-gc-kummer-extensions">
@@ -954,7 +956,7 @@ homomorphisms to the cyclic group \(\mu_m(\ksep)\) as elements
 
 <p>
 Part <a href="#it-gc-kummer-cyclic">1</a> is part <a href="#it-gc-kummer-h1">2</a> of Corollary <a href="#cor-gc-kummer">7.4.6</a> and
-Proposition <a href="#prop-gc-trivial">7.2.3</a>.  The kernel of \(\chi \coloneqq \delta(a)\) is the set of \(g\)
+Proposition <a href="#prop-gc-trivial">7.2.3</a>.  The kernel of \(\chi \coloneqq \delta(a)\) is the set of \(\sigma\)
 fixing \(\alpha\), which is \(\Gal_{k(\alpha)}\).  It is normal, so \(k(\alpha)/k\) is Galois
 with group \(\Gal_k/\ker\chi \cong \chi(\Gal_k)\), a subgroup of the cyclic group
 \(\mu_m(\ksep)\), of order the order of \(\chi\), which is the order of \(a\).
@@ -995,10 +997,10 @@ restriction of \(\delta(a)\) to \(\Gal_L\) is given by the same formula.
 \(k^\times/k^{\times 2}\) to the quadratic extensions of \(k\) inside \(\ksep\).  For
 \(k = \Q\), the quadratic fields are the \(\Q(\sqrt d)\) with \(d \neq 1\) a squarefree
 integer, each obtained once.  The homomorphism \(\delta(d)\) is the quadratic character
-\(\chi_d\colon g \mapsto g(\sqrt d)/\sqrt d\).</li>
+\(\chi_d\colon \sigma \mapsto \sigma(\sqrt d)/\sqrt d\).</li>
 <li>Without the roots of unity, part <a href="#it-gc-kummer-cyclic">1</a> of
 Corollary <a href="#cor-gc-kummer-extensions">7.4.7</a> fails: \(2 \notin \Q^{\times 3}\), but
-\(\Q(\sqrt[3]{2})/\Q\) is not Galois.  The cocycle \(g \mapsto g(\sqrt[3]{2})/\sqrt[3]{2}\) is
+\(\Q(\sqrt[3]{2})/\Q\) is not Galois.  The cocycle \(\sigma \mapsto \sigma(\sqrt[3]{2})/\sqrt[3]{2}\) is
 not a homomorphism, because complex conjugation acts non-trivially on \(\mu_3(\Qbar)\).</li>
 </ol>
 </div>
@@ -1006,7 +1008,7 @@ not a homomorphism, because complex conjugation acts non-trivially on \(\mu_3(\Q
 <p>
 The same argument with the trivial \(\Gal_k\)-modules
 \(0 \to \Z \to \Q \to \Q/\Z \to 0\) computes \(H^2(k, \Z)\).  It is needed for cyclic
-algebras in Section <a href="#sec-gc-cup">7.9</a> and for the Tate curve in Chapter 12.
+algebras in Section <a href="#sec-gc-cup">7.9</a> and for the Tate curve in Chapter <a href="12-tate-curve.html">12</a>.
 </p>
 
 <div class="ec-thm ec-proposition" id="prop-gc-h2-z">
@@ -1045,7 +1047,7 @@ part <a href="#it-gc-h90-add">2</a> of Theorem <a href="#thm-gc-hilbert-90">7.4.
 gives an isomorphism
 \(k/\wp(k) \to H^1(k, \Z/p\Z) = \Hom_{\mathrm{conts}}(\Gal_k, \Z/p\Z)\), where
 \(\wp(k) \coloneqq \{c^p - c : c \in k\}\), mapping
-\(a\) to \(g \mapsto g(\alpha) - \alpha\) for a root \(\alpha\) of \(x^p - x - a\).  So the cyclic
+\(a\) to \(\sigma \mapsto \sigma(\alpha) - \alpha\) for a root \(\alpha\) of \(x^p - x - a\).  So the cyclic
 extensions of \(k\) of degree \(p\) are the \(k(\alpha)\) with \(a \notin \wp(k)\).
 For \(p = 2\) these are the quadratic algebras \(k[t]/(t^2 + t + d)\) of
 Proposition <a href="02-varieties.html#prop-var-twisted-gm">2.1.9</a> that are fields.  The group \(k^\times/k^{\times p}\) does not
@@ -1057,12 +1059,12 @@ disappear: it is \(H^1\) of the group scheme \(\mu_p\) for the fppf topology
 </div>
 
 <div id="outline-container-sec-gc-kummer-ec" class="outline-2">
-<h2 id="sec-gc-kummer-ec"><span class="ec-status ec-status-draft"><span class="ec-status-label ec-status-draft">Draft</span><time datetime="2026-10-13">13 Oct 2026</time></span><span class="section-number" id="s7.5">7.5</span> The Kummer sequence of an elliptic curve</h2>
+<h2 id="sec-gc-kummer-ec"><span class="ec-status ec-status-draft"><span class="ec-status-label ec-status-draft">Draft</span><time datetime="2026-10-14">14 Oct 2026</time></span><span class="section-number" id="s7.5">7.5</span> The Kummer sequence of an elliptic curve</h2>
 <div class="outline-text-2" id="text-sec-gc-kummer-ec">
 <p>
 We are in Situation <a href="#sit-gc-standing">7.0.1</a>.  The multiplication map \([m]\) on \(E\) plays the
 role of \(x \mapsto x^m\) on \(\Gm\).  The arithmetic use of the resulting sequence is the
-subject of Chapters 8 and 10.
+subject of Chapters <a href="08-mordell-weil.html">8</a> and <a href="09-selmer-sha.html">9</a>.
 </p>
 
 <div class="ec-thm ec-proposition" id="prop-gc-kummer-ec">
@@ -1085,7 +1087,7 @@ is exact.
    0 \to E(k)/m \xrightarrow{\delta} H^1(k, E[m]) \to H^1(k, E)[m] \to 0, \tag{7.5.1}
 \end{equation}
 <p>
-where \(\delta(P)\) is the class of \(g \mapsto gQ - Q\), for any \(Q \in E(\ksep)\) with
+where \(\delta(P)\) is the class of \(\sigma \mapsto \sigma(Q) - Q\), for any \(Q \in E(\ksep)\) with
 \([m]Q = P\).
 </p></li>
 </ol>
@@ -1116,7 +1118,7 @@ from which \eqref{eq:gc-kummer-ec} is extracted, and \(\delta\) is given by
 We call \(\delta\) the <dfn class="ec-cdef" id="gls-kummer-map" data-gls="kummer-map">Kummer map</dfn> of \(E\).  Unlike \(H^1(k, \Gm)\), the group
 \(H^1(k, E)\) is not zero in general, and the image of \(\delta\) is a subgroup of
 \(H^1(k, E[m])\) that is hard to determine.  The group \(H^1(k, E)\) classifies the torsors
-under \(E\) of Section <a href="#sec-gc-etale">7.10</a>, studied in Chapter 10.  Over a finite field, however,
+under \(E\) of Section <a href="#sec-gc-etale">7.10</a>, studied in Chapter <a href="09-selmer-sha.html">9</a>.  Over a finite field, however,
 \(H^1(\F_q, E) = 0\) by Lang's theorem [<a class="ec-cite" href="#bib-Poonen2017">Poo17</a>, Theorem 5.12.19], and the two
 families behave alike.
 </p>
@@ -1144,7 +1146,7 @@ Example <a href="04-ec-algebraic.html#eg-ec-2-isogeny">4.3.13</a>.  Then \(E_1[\
 \(\Gal_k\)-modules.  By Corollary <a href="#cor-gc-kummer">7.4.6</a>,
 \(H^1(k, E_1[\varphi]) \cong H^1(k, \mu_2) \cong k^\times/k^{\times 2}\).  So the Kummer map of
 \(\varphi\) is a homomorphism \(E_2(k)/\varphi(E_1(k)) \to k^\times/k^{\times 2}\).  It is
-the Kummer map of \(\Gm\) in disguise.  Its explicit formula is in Chapter 10.
+the Kummer map of \(\Gm\) in disguise.  Its explicit formula is in Chapter <a href="09-selmer-sha.html">9</a>.
 </p>
 </div>
 
@@ -1198,14 +1200,14 @@ the Kummer map of \(\Gm\) in disguise.  Its explicit formula is in Chapter 10.
 <tr>
 <td class="org-left">torsors</td>
 <td class="org-left">all trivial</td>
-<td class="org-left">genus one curves with Jacobian \(E\) (Chapter 10)</td>
+<td class="org-left">genus one curves with Jacobian \(E\) (Chapter <a href="09-selmer-sha.html">9</a>)</td>
 </tr>
 </tbody>
 </table>
 
 <p>
 Over a number field \(k\), the group \(k^\times/m\) is infinite, while \(E(k)/m\) is finite
-(Chapter 8).  The difference comes from the local fields, and Sections <a href="#sec-gc-local">7.7</a>
+(Chapter <a href="08-mordell-weil.html">8</a>).  The difference comes from the local fields, and Sections <a href="#sec-gc-local">7.7</a>
 and <a href="#sec-gc-global">7.8</a> prepare it.
 </p>
 </div>
@@ -1213,20 +1215,20 @@ and <a href="#sec-gc-global">7.8</a> prepare it.
 </div>
 
 <div id="outline-container-sec-gc-twists" class="outline-2">
-<h2 id="sec-gc-twists"><span class="ec-status ec-status-draft"><span class="ec-status-label ec-status-draft">Draft</span><time datetime="2026-10-13">13 Oct 2026</time></span><span class="section-number" id="s7.6">7.6</span> Non-abelian \(H^1\) and twists</h2>
+<h2 id="sec-gc-twists"><span class="ec-status ec-status-draft"><span class="ec-status-label ec-status-draft">Draft</span><time datetime="2026-10-14">14 Oct 2026</time></span><span class="section-number" id="s7.6">7.6</span> Non-abelian \(H^1\) and twists</h2>
 <div class="outline-text-2" id="text-sec-gc-twists">
 <p>
 We are in Situation <a href="#sit-gc-standing">7.0.1</a>.  Varieties that become isomorphic over \(\ksep\) are
 classified by a non-abelian \(H^1\).  This section gives the general principle and its
 simplest examples.  The quartic, sextic and cubic twists of elliptic curves, and the
-torsors under \(E\), are in Chapter 10.
+torsors under \(E\), are in Chapter <a href="09-selmer-sha.html">9</a>.
 </p>
 
 <p>
 Let \(X\) and \(Y\) be \(k\)-varieties.  The group \(\Gal_k\) acts on the morphisms
-\(\varphi\colon X_{\ksep} \to Y_{\ksep}\) by \(g\varphi \coloneqq g \circ \varphi \circ g^{-1}\),
-where \(g\) acts on \(\ksep\)-points through its action on \(\ksep\).  So
-\((g\varphi)(gP) = g(\varphi(P))\) for \(P \in X(\ksep)\).  A morphism is defined over \(k\)
+\(\varphi\colon X_{\ksep} \to Y_{\ksep}\) by \({}^\sigma\varphi \coloneqq \sigma \circ \varphi \circ \sigma^{-1}\),
+where \(\sigma\) acts on \(\ksep\)-points through its action on \(\ksep\).  So
+\(({}^\sigma\varphi)(\sigma(P)) = \sigma(\varphi(P))\) for \(P \in X(\ksep)\).  A morphism is defined over \(k\)
 exactly when it is fixed by \(\Gal_k\) [<a class="ec-cite" href="#bib-Poonen2017">Poo17</a>, Section 4.4], and every \(\varphi\) is defined over a finite
 extension of \(k\), so this makes \(\Aut(X_{\ksep})\) a \(\Gal_k\)-group.
 </p>
@@ -1244,7 +1246,7 @@ class of \(X\).
 <p>
 <span class="ec-thm-head"><span class="ec-thm-name">Theorem 7.6.2</span> <span class="ec-thm-title">(Twisting principle)</span>.</span> Let \(X\) be a quasi-projective \(k\)-variety.  For a twist \(Y\) of \(X\), choose an
 isomorphism \(\varphi\colon X_{\ksep} \to Y_{\ksep}\).  Then
-\(\xi_g \coloneqq \varphi^{-1} \circ g\varphi\) is a \(1\)-cocycle with values in
+\(\xi_\sigma \coloneqq \varphi^{-1} \circ {}^\sigma\varphi\) is a \(1\)-cocycle with values in
 \(\Aut(X_{\ksep})\), and \(Y \mapsto [\xi]\) is a well defined bijection of pointed sets
 </p>
 \begin{equation*}
@@ -1255,16 +1257,16 @@ isomorphism \(\varphi\colon X_{\ksep} \to Y_{\ksep}\).  Then
 <details class="ec-proof">
 <summary><span class="ec-proof-head">Proof.</span></summary>
 <p>
-Since \(g(\varphi^{-1} \circ h\varphi) = (g\varphi)^{-1} \circ gh\varphi\),
+Since \(\sigma(\varphi^{-1} \circ {}^\tau\varphi) = ({}^\sigma\varphi)^{-1} \circ {}^{\sigma\tau}\varphi\),
 </p>
 \begin{equation*}
-\xi_{gh} = \varphi^{-1} \circ gh\varphi
-= (\varphi^{-1} \circ g\varphi) \circ (g\varphi)^{-1} \circ gh\varphi = \xi_g \cdot g\xi_h.
+\xi_{\sigma\tau} = \varphi^{-1} \circ {}^{\sigma\tau}\varphi
+= (\varphi^{-1} \circ {}^\sigma\varphi) \circ ({}^\sigma\varphi)^{-1} \circ {}^{\sigma\tau}\varphi = \xi_\sigma \cdot {}^\sigma\xi_\tau.
 \end{equation*}
 <p>
-If \(\varphi\) is defined over a finite Galois extension \(L\), then \(\xi_{gh} = \xi_g\) for
-\(h \in \Gal_L\), so \(\xi\) is continuous.  Another choice \(\varphi \circ \alpha\), with
-\(\alpha \in \Aut(X_{\ksep})\), replaces \(\xi_g\) by \(\alpha^{-1}\,\xi_g\,g\alpha\), a
+If \(\varphi\) is defined over a finite Galois extension \(L\), then \(\xi_{\sigma\tau} = \xi_\sigma\) for
+\(\tau \in \Gal_L\), so \(\xi\) is continuous.  Another choice \(\varphi \circ \alpha\), with
+\(\alpha \in \Aut(X_{\ksep})\), replaces \(\xi_\sigma\) by \(\alpha^{-1}\,\xi_\sigma\,{}^\sigma\alpha\), a
 cohomologous cocycle, and composing \(\varphi\) with a \(k\)-isomorphism \(Y \to Y'\) does
 not change \(\xi\).  So the map is well defined, and it maps \(X\) to the trivial class.
 </p>
@@ -1272,9 +1274,9 @@ not change \(\xi\).  So the map is well defined, and it maps \(X\) to the trivia
 <p>
 Injectivity: suppose that \(Y\) and \(Y'\), with \(\varphi\) and \(\varphi'\), give
 cohomologous cocycles.  Changing \(\varphi\) by an automorphism of \(X_{\ksep}\), we may assume
-that the cocycles are equal: \(\varphi^{-1} \circ g\varphi = \varphi'^{-1} \circ g\varphi'\) for
-all \(g\).  Then \(\psi \coloneqq \varphi' \circ \varphi^{-1}\colon Y_{\ksep} \to Y'_{\ksep}\)
-satisfies \(g\psi = \psi\) for all \(g\), so it is defined over \(k\), and \(Y \cong Y'\).
+that the cocycles are equal: \(\varphi^{-1} \circ {}^\sigma\varphi = \varphi'^{-1} \circ {}^\sigma\varphi'\) for
+all \(\sigma\).  Then \(\psi \coloneqq \varphi' \circ \varphi^{-1}\colon Y_{\ksep} \to Y'_{\ksep}\)
+satisfies \({}^\sigma\psi = \psi\) for all \(\sigma\), so it is defined over \(k\), and \(Y \cong Y'\).
 Surjectivity is Galois descent: a cocycle defines a descent datum on \(X_L\) for a finite
 Galois extension \(L\), and quasi-projectivity makes it effective.  Its proof generalizes the
 descent for vector spaces used for part <a href="#it-gc-h90-gln">3</a> of Theorem <a href="#thm-gc-hilbert-90">7.4.2</a>.  See
@@ -1287,7 +1289,7 @@ descent for vector spaces used for part <a href="#it-gc-h90-gln">3</a> of Theore
 The same proof applies to varieties with extra structure, with \(\Aut\) replaced by the
 automorphisms preserving that structure.  For an algebraic group, these are the
 automorphisms of algebraic groups.  For an elliptic curve \(E\), they are the automorphisms
-of \(E_{\ksep}\) fixing \(O\), the group \(\Aut(E_{\ksep})\) of Chapter 4.  A twist of \(E\) in
+of \(E_{\ksep}\) fixing \(O\), the group \(\Aut(E_{\ksep})\) of Chapter <a href="04-ec-algebraic.html">4</a>.  A twist of \(E\) in
 this sense is an elliptic curve \(E'\) over \(k\) with \(E'_{\ksep} \cong E_{\ksep}\) as
 elliptic curves [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Proposition X.5.3], [<a class="ec-cite" href="#bib-Poonen02">Poo02</a>, Section 5].
 </p>
@@ -1316,15 +1318,15 @@ Example <a href="02-varieties.html#eg-var-one-dim-groups">2.1.8</a>.  Suppose \(
 square, so that \(L_d = k(\sqrt d)\).  The homomorphism
 \(\psi\colon \Gm^{(d)} \to \Gm\), \((x, y) \mapsto x + \sqrt d\,y\), of the proof of
 Proposition <a href="02-varieties.html#prop-var-twisted-gm">2.1.9</a> is an isomorphism over \(L_d\).  For
-\((x, y) \in \Gm^{(d)}(\ksep)\) and \(g \in \Gal_k\),
+\((x, y) \in \Gm^{(d)}(\ksep)\) and \(\sigma \in \Gal_k\),
 </p>
 \begin{equation*}
-(g\psi)(x, y) = x + g(\sqrt d)\,y = \psi(x, y)^{\chi_d(g)},
+({}^\sigma\psi)(x, y) = x + \sigma(\sqrt d)\,y = \psi(x, y)^{\chi_d(\sigma)},
 \end{equation*}
 <p>
 since \(x - \sqrt d\,y = (x + \sqrt d\,y)^{-1}\) on \(\Gm^{(d)}\), where \(\chi_d\) is the
 quadratic character of Example <a href="#eg-gc-quadratic">7.4.8</a>.  So for \(\varphi \coloneqq \psi^{-1}\), the
-cocycle \(\varphi^{-1} \circ g\varphi\) is \(t \mapsto t^{\chi_d(g)}\), the class
+cocycle \(\varphi^{-1} \circ {}^\sigma\varphi\) is \(t \mapsto t^{\chi_d(\sigma)}\), the class
 \(\chi_d = \delta(d)\).  The twisting principle therefore says that
 \(\Gm^{(d)} \cong \Gm^{(d')}\) exactly when \(d/d' \in k^{\times 2}\), and that
 \(\Gm^{(d)} \not\cong \Gm\) when \(d \notin k^{\times 2}\).  These are
@@ -1342,20 +1344,20 @@ Theorem <a href="04-ec-algebraic.html#thm-ec-automorphisms">4.7.11</a>, \(\Aut(E
 \(\Gal_k\), since \([-1]\) is defined over \(k\).  So the twists of \(E\) as an elliptic curve
 are classified by \(\Hom_{\mathrm{conts}}(\Gal_k, \{\pm 1\})\).  Suppose
 \(\operatorname{char} k \neq 2, 3\), so that \(E\) has a short Weierstrass model.  Then this group is \(H^1(k, \mu_2) \cong k^\times/k^{\times 2}\),
-and the class of \(d\) is the quadratic twist \(E^d\) of Chapter 4.  Indeed, for
+and the class of \(d\) is the quadratic twist \(E^d\) of Chapter <a href="04-ec-algebraic.html">4</a>.  Indeed, for
 \(E\colon y^2 = x^3 + Ax + B\), the isomorphism \(\varphi\colon E \to E^d\),
 \((x, y) \mapsto (dx, d^{3/2}y)\), satisfies
 </p>
 \begin{equation*}
-(g\varphi)(x, y) = \bigl(dx, g(d^{3/2})\,y\bigr) = \bigl(dx, \chi_d(g)\,d^{3/2}y\bigr)
-= \varphi([\chi_d(g)](x, y)),
+({}^\sigma\varphi)(x, y) = \bigl(dx, \sigma(d^{3/2})\,y\bigr) = \bigl(dx, \chi_d(\sigma)\,d^{3/2}y\bigr)
+= \varphi([\chi_d(\sigma)](x, y)),
 \end{equation*}
 <p>
-as \(g(d^{3/2}) = d \cdot g(\sqrt d)\).  So \(\varphi^{-1} \circ g\varphi = [\chi_d(g)]\), the class
+as \(\sigma(d^{3/2}) = d \cdot \sigma(\sqrt d)\).  So \(\varphi^{-1} \circ {}^\sigma\varphi = [\chi_d(\sigma)]\), the class
 \(\delta(d)\).  This explains the computation before Example <a href="04-ec-algebraic.html#eg-ec-quadratic-twist">4.1.9</a>: \(E^d\)
 and \(E^{d'}\) are isomorphic over \(k\) exactly when \(d/d' \in k^{\times 2}\), and every twist of
 \(E\) is one of them.  For \(j(E) = 0\) or \(1728\), and in characteristic \(2\) and \(3\),
-\(\Aut(E_{\ksep})\) is larger, and so is the set of twists (Chapter 10).
+\(\Aut(E_{\ksep})\) is larger, and so is the set of twists (Chapter <a href="09-selmer-sha.html">9</a>).
 </p>
 </div>
 
@@ -1375,7 +1377,7 @@ it has a rational point [<a class="ec-cite" href="#bib-Poonen2017">Poo17</a>, Pr
 </div>
 
 <div id="outline-container-sec-gc-local" class="outline-2">
-<h2 id="sec-gc-local"><span class="ec-status ec-status-draft"><span class="ec-status-label ec-status-draft">Draft</span><time datetime="2026-10-13">13 Oct 2026</time></span><span class="section-number" id="s7.7">7.7</span> Local fields: unramified classes</h2>
+<h2 id="sec-gc-local"><span class="ec-status ec-status-draft"><span class="ec-status-label ec-status-draft">Draft</span><time datetime="2026-10-14">14 Oct 2026</time></span><span class="section-number" id="s7.7">7.7</span> Local fields: unramified classes</h2>
 <div class="outline-text-2" id="text-sec-gc-local">
 <div class="ec-thm ec-situation" id="sit-gc-local">
 <p>
@@ -1454,7 +1456,7 @@ For the multiplicative group, unramified classes are those of units.
 <summary><span class="ec-proof-head">Proof.</span></summary>
 <p>
 Let \(\alpha \in k_v^{\operatorname{sep}}\) with \(\alpha^m = a\).  The restriction of \(\delta(a)\)
-to \(I_v\) is the cocycle \(g \mapsto g(\alpha)/\alpha\), with values in
+to \(I_v\) is the cocycle \(\tau \mapsto \tau(\alpha)/\alpha\), with values in
 \(\mu_m(k_v^{\operatorname{sep}})\), on which \(I_v\) acts trivially by
 part <a href="06-local-fields.html#it-lf-inertia-mu-unramified">1</a> of Example <a href="06-local-fields.html#eg-lf-inertia-roots-of-unity">6.4.5</a>.  So it is a
 homomorphism, and it is trivial if and only if \(I_v\) fixes \(\alpha\), that is,
@@ -1487,27 +1489,27 @@ H^1_{\unr}(k_v, E[m]) \cong E[m](k_v^{\operatorname{sep}})/(\sigma - 1)E[m](k_v^
 \end{equation*}
 <p>
 of order \(\#E(k_v)[m]\).  Which classes come from \(E(k_v)\) under the Kummer map is
-the subject of Chapter 8.
+the subject of Chapter <a href="08-mordell-weil.html">8</a>.
 </p>
 </div>
 </div>
 
 <div id="outline-container-sec-gc-global" class="outline-2">
-<h2 id="sec-gc-global"><span class="ec-status ec-status-draft"><span class="ec-status-label ec-status-draft">Draft</span><time datetime="2026-10-13">13 Oct 2026</time></span><span class="section-number" id="s7.8">7.8</span> Global fields: classes unramified outside \(S\)</h2>
+<h2 id="sec-gc-global"><span class="ec-status ec-status-draft"><span class="ec-status-label ec-status-draft">Draft</span><time datetime="2026-10-14">14 Oct 2026</time></span><span class="section-number" id="s7.8">7.8</span> Global fields: classes unramified outside \(S\)</h2>
 <div class="outline-text-2" id="text-sec-gc-global">
 <div class="ec-thm ec-situation" id="sit-gc-global">
 <p>
 <span class="ec-thm-head"><span class="ec-thm-name">Situation 7.8.1</span>.</span> In addition to Situation <a href="#sit-gc-standing">7.0.1</a>:
 </p>
 <ul class="org-ul">
-<li>\(k\) is a global field, with set of places \(\Omega_k\) and completions \(k_v\).</li>
-<li>For each \(v \in \Omega_k\), we fix a \(k\)-embedding \(\ksep \to k_v^{\operatorname{sep}}\).
+<li>\(k\) is a global field, with set of places \(\Places_k\) and completions \(k_v\).</li>
+<li>For each \(v \in \Places_k\), we fix a \(k\)-embedding \(\ksep \to k_v^{\operatorname{sep}}\).
 Restriction to \(\ksep\) is then an injection \(\Gal_{k_v} \to \Gal_k\), whose image is a
 decomposition group at \(v\).  Another embedding changes it by conjugation.</li>
 <li>For a discrete \(\Gal_k\)-module \(A\), \(\operatorname{res}_v\colon H^1(k, A) \to H^1(k_v, A)\) is the
 restriction along \(\Gal_{k_v} \to \Gal_k\).  For a commutative algebraic group \(A\) over
 \(k\), it is composed with \(A(\ksep) \to A(k_v^{\operatorname{sep}})\).</li>
-<li>\(S \subseteq \Omega_k\) is a finite non-empty set of places containing the archimedean
+<li>\(S \subseteq \Places_k\) is a finite non-empty set of places containing the archimedean
 ones and the non-archimedean \(v\) with \(v(m) > 0\), so that \(m\) is a unit outside \(S\).</li>
 <li>\(\calO_S \coloneqq \{a \in k : v(a) \geq 0 \text{ for all non-archimedean } v \notin S\}\) is the
 ring of \(S\)-integers, with unit group \(\calO_S^\times\) and ideal class group
@@ -1519,15 +1521,15 @@ ring of \(S\)-integers, with unit group \(\calO_S^\times\) and ideal class group
 A class \(\xi \in H^1(k, A)\) is
 unramified at a non-archimedean place \(v\) if \(\operatorname{res}_v(\xi)\) is unramified in
 the sense of Definition <a href="#def-gc-unramified-class">7.7.2</a>.  This does not depend on the
-embedding: conjugating \(I_v\) by \(g \in \Gal_k\) replaces the restriction of \(\xi\) by
-\(g \cdot \xi\), which is cohomologous to it by the proof of Proposition <a href="#prop-gc-inf-res">7.3.5</a>
+embedding: conjugating \(I_v\) by \(\gamma \in \Gal_k\) replaces the restriction of \(\xi\) by
+\(\gamma \cdot \xi\), which is cohomologous to it by the proof of Proposition <a href="#prop-gc-inf-res">7.3.5</a>
 [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Section VIII.2 and Exercise B.6].
 </p>
 
 <div class="ec-thm ec-definition" id="def-gc-unramified-outside">
 <p>
 <span class="ec-thm-head"><span class="ec-thm-name">Definition 7.8.2</span>.</span> Let \(A\) be a discrete \(\Gal_k\)-module, or a commutative algebraic group over \(k\), and
-\(T \subseteq \Omega_k\) a finite set of places.  The group of classes
+\(T \subseteq \Places_k\) a finite set of places.  The group of classes
 <dfn class="ec-cdef" id="gls-unramified-outside" data-gls="unramified-outside">unramified outside</dfn> \(T\) is
 </p>
 \begin{equation*}
@@ -1636,7 +1638,7 @@ Mordell&#x2013;Weil theorem.
 <div class="ec-thm ec-theorem" id="thm-gc-finiteness">
 <p>
 <span class="ec-thm-head"><span class="ec-thm-name">Theorem 7.8.6</span>.</span> Suppose \(k\) is a number field.  Let \(A\) be a finite discrete \(\Gal_k\)-module with
-\(mA = 0\), and \(T \subseteq \Omega_k\) a finite set of places.  Then \(H^1(k, A; T)\) is
+\(mA = 0\), and \(T \subseteq \Places_k\) a finite set of places.  Then \(H^1(k, A; T)\) is
 finite.
 </p>
 </div>
@@ -1668,7 +1670,7 @@ Theorem <a href="#thm-gc-s-units">7.8.4</a> over \(L\) [<a class="ec-cite" href=
 </details>
 
 <p>
-For \(A = E[m](\ksep)\) this says that \(H^1(k, E[m]; T)\) is finite.  Chapter 8 shows that
+For \(A = E[m](\ksep)\) this says that \(H^1(k, E[m]; T)\) is finite.  Chapter <a href="08-mordell-weil.html">8</a> shows that
 the image of the Kummer map \(E(k)/m \to H^1(k, E[m])\) lies in such a group, for \(T\)
 containing the places of bad reduction.  The same theorem for \(\mu_m\), with the infinite
 group \(k^\times/k^{\times m}\) in place of \(E(k)/m\), only says that the elements of
@@ -1710,13 +1712,13 @@ that such failures occur only for \(8 \mid m\) and in a precise special case.
 </div>
 
 <div id="outline-container-sec-gc-cup" class="outline-2">
-<h2 id="sec-gc-cup"><span class="ec-status ec-status-draft"><span class="ec-status-label ec-status-draft">Draft</span><time datetime="2026-10-13">13 Oct 2026</time></span><span class="section-number" id="s7.9">7.9</span> Cup products and the Brauer group</h2>
+<h2 id="sec-gc-cup"><span class="ec-status ec-status-draft"><span class="ec-status-label ec-status-draft">Draft</span><time datetime="2026-10-14">14 Oct 2026</time></span><span class="section-number" id="s7.9">7.9</span> Cup products and the Brauer group</h2>
 <div class="outline-text-2" id="text-sec-gc-cup">
 <p>
 We are in Situation <a href="#sit-gc-standing">7.0.1</a>.  Silverman does not treat cup products.  We define
 them in the degrees we need, prove the one property we use, and state the results on
 Brauer groups of local and global fields.  Tate local duality and the Cassels&#x2013;Tate pairing,
-which are built from them, are in Chapter 10.
+which are built from them, are in Chapter <a href="09-selmer-sha.html">9</a>.
 </p>
 
 <p>
@@ -1823,7 +1825,7 @@ by-products of class field theory, and we only state them.
 <a id="it-gc-br-global"></a> If \(k\) is a global field, the sequence
 </p>
 \begin{equation*}
-0 \to \Br(k) \to \bigoplus_{v \in \Omega_k} \Br(k_v) \xrightarrow{\sum_v \inv_v} \Q/\Z \to 0
+0 \to \Br(k) \to \bigoplus_{v \in \Places_k} \Br(k_v) \xrightarrow{\sum_v \inv_v} \Q/\Z \to 0
 \end{equation*}
 <p>
 is exact, where \(\inv_v\) is the inclusion of part <a href="#it-gc-br-local">1</a> for archimedean \(v\).
@@ -1878,13 +1880,13 @@ cup product for \(e_m\) itself.  Proposition <a href="#prop-gc-cup">7.9.2</a> th
 
 <p>
 Combined with \(\inv_v\) over a local field, this pairing is Tate local duality, and over a
-global field it underlies the Cassels&#x2013;Tate pairing.  Both are in Chapter 10.
+global field it underlies the Cassels&#x2013;Tate pairing.  Both are in Chapter <a href="09-selmer-sha.html">9</a>.
 </p>
 </div>
 </div>
 
 <div id="outline-container-sec-gc-etale" class="outline-2">
-<h2 id="sec-gc-etale"><span class="ec-status ec-status-draft"><span class="ec-status-label ec-status-draft">Draft</span><time datetime="2026-10-13">13 Oct 2026</time></span><span class="section-number" id="s7.10">7.10</span> Étale cohomology and the geometric point of view</h2>
+<h2 id="sec-gc-etale"><span class="ec-status ec-status-draft"><span class="ec-status-label ec-status-draft">Draft</span><time datetime="2026-10-14">14 Oct 2026</time></span><span class="section-number" id="s7.10">7.10</span> Étale cohomology and the geometric point of view</h2>
 <div class="outline-text-2" id="text-sec-gc-etale">
 <p>
 We are in Situation <a href="#sit-gc-standing">7.0.1</a>.  This section is a survey, without proofs, of the
@@ -1921,7 +1923,7 @@ It is trivial if it is isomorphic to \(G\) with this action
 </p>
 <ol class="org-ol">
 <li><a id="it-gc-torsors-class"></a> For a \(G\)-torsor \(X\) and \(x \in X(\ksep)\), there is a unique
-\(\xi_g \in G(\ksep)\) with \(gx = x\,\xi_g\), and \(\xi\) is a \(1\)-cocycle.  Its class
+\(\xi_\sigma \in G(\ksep)\) with \(\sigma(x) = x\,\xi_\sigma\), and \(\xi\) is a \(1\)-cocycle.  Its class
 \([X] \in H^1(k, G)\) does not depend on \(x\), and \(X \mapsto [X]\) is a bijection from
 the isomorphism classes of \(G\)-torsors to \(H^1(k, G)\).</li>
 <li><a id="it-gc-torsors-trivial"></a> A \(G\)-torsor \(X\) is trivial if and only if \(X(k)\) is non-empty,
@@ -1933,7 +1935,7 @@ if and only if \([X]\) is the distinguished element.</li>
 <summary><span class="ec-proof-head">Proof.</span></summary>
 <p>
 See [<a class="ec-cite" href="#bib-Poonen2017">Poo17</a>, Section 5.12.4, Remark 5.12.13 and Proposition 5.12.14].  The cocycle
-condition is the computation \(x\,\xi_{gh} = g(hx) = g(x\,\xi_h) = x\,\xi_g\,g\xi_h\).
+condition is the computation \(x\,\xi_{\sigma\tau} = \sigma(\tau(x)) = \sigma(x\,\xi_\tau) = x\,\xi_\sigma\,\sigma(\xi_\tau)\).
 </p>
 </details>
 
@@ -1944,17 +1946,17 @@ condition is the computation \(x\,\xi_{gh} = g(hx) = g(x\,\xi_h) = x\,\xi_g\,g\x
 Theorem <a href="#thm-gc-hilbert-90">7.4.2</a>.  This is Hilbert 90 restated.</li>
 <li>For \(a \in k^\times\), the curve \(X_a\colon x^m = a\) in \(\Gm\), with \(\mu_m\) acting by
 multiplication, is a \(\mu_m\)-torsor.  For a root \(\alpha \in X_a(\ksep)\),
-\(g(\alpha) = \alpha \cdot g(\alpha)/\alpha\), so \([X_a] = \delta(a)\).  By
+\(\sigma(\alpha) = \alpha \cdot \sigma(\alpha)/\alpha\), so \([X_a] = \delta(a)\).  By
 Corollary <a href="#cor-gc-kummer">7.4.6</a>, every \(\mu_m\)-torsor is some \(X_a\).</li>
 <li>For \(P \in E(k)\), the fiber \([m]^{-1}(P) \subseteq E\), with \(E[m]\) acting by
-translation, is an \(E[m]\)-torsor.  For \(Q\) in it, \(gQ = Q + (gQ - Q)\), so its class is
+translation, is an \(E[m]\)-torsor.  For \(Q\) in it, \(\sigma(Q) = Q + (\sigma(Q) - Q)\), so its class is
 \(\delta(P)\): the Kummer map of Proposition <a href="#prop-gc-kummer-ec">7.5.1</a> sends \(P\) to this
 torsor, which is trivial exactly when \(P \in mE(k)\).</li>
 </ol>
 <p>
 Torsors under \(E\) itself are the genus one curves with Jacobian \(E\)
 [<a class="ec-cite" href="#bib-Poonen2017">Poo17</a>, Example 5.12.12], and they form the group \(H^1(k, E)\), the
-Weil&#x2013;Châtelet group of Chapter 10.
+Weil&#x2013;Châtelet group of Chapter <a href="09-selmer-sha.html">9</a>.
 </p>
 </div>
 
@@ -2007,9 +2009,9 @@ This is the setting for \(p\)-descent in characteristic \(p\).
 </div>
 </div>
 
-<div id="outline-container-orga8ca05f" class="outline-2 ec-references">
-<h2 id="orga8ca05f">References</h2>
-<div class="outline-text-2" id="text-orga8ca05f">
+<div id="outline-container-org2f4709e" class="outline-2 ec-references">
+<h2 id="org2f4709e">References</h2>
+<div class="outline-text-2" id="text-org2f4709e">
 <dl class="ec-bibliography">
 <dt id="bib-Milne20">[Mil20]</dt>
 <dd>James S. Milne. <i>Elliptic curves</i>. Second. World Scientific Publishing Co. Pte. Ltd., Hackensack, NJ, 2020.</dd>

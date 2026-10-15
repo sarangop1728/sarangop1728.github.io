@@ -79,6 +79,7 @@ window.MathJax = {
       "calN": "{\\mathcal N}",
       "calO": "{\\mathcal O}",
       "calP": "{\\mathcal P}",
+      "Places": "\\mathcal{P}",
       "calQ": "{\\mathcal Q}",
       "calR": "{\\mathcal R}",
       "calS": "{\\mathcal S}",

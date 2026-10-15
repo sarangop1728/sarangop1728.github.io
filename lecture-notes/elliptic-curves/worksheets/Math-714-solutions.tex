@@ -245,6 +245,7 @@ breaklinks=true}
 \newcommand{\calN}{{\mathcal N}}
 \newcommand{\calO}{{\mathcal O}}
 \newcommand{\calP}{{\mathcal P}}
+\newcommand{\Places}{\mathcal{P}} % set of places of a global field
 \newcommand{\calQ}{{\mathcal Q}}
 \newcommand{\calR}{{\mathcal R}}
 \newcommand{\calS}{{\mathcal S}}
@@ -786,7 +787,7 @@ breaklinks=true}
 \AddToShipoutPictureFG*{%
   \put(\LenToUnit{1.1cm},\LenToUnit{.5\paperheight}){%
     \rotatebox{90}{\makebox[0pt][c]{\small\sffamily\color{black!50}%
-      DRAFT \textemdash{} last edited October 13, 2026}}}}
+      DRAFT \textemdash{} last edited October 15, 2026}}}}
 
 %% ---- shared machinery of the worksheets ----
 
@@ -836,6 +837,14 @@ breaklinks=true}
 \Crefname{wslemma}{Lemma}{Lemmas}
 \crefname{wsdefinition}{Definition}{Definitions}
 \Crefname{wsdefinition}{Definition}{Definitions}
+
+\newcommand{\wsstatementcounter}{wsstatement}
+\usepackage{etoolbox}
+\newcommand{\wsaliascounter}[1]{%
+  \AtBeginEnvironment{#1}{\crefalias{\wsstatementcounter}{#1}}}
+\wsaliascounter{wsexample}\wsaliascounter{wswarning}\wsaliascounter{wsremark}
+\wsaliascounter{wstheorem}\wsaliascounter{wscorollary}\wsaliascounter{wsproposition}
+\wsaliascounter{wslemma}\wsaliascounter{wsdefinition}
 
 \newenvironment{problem}[1][]%
   {\needspace{6\baselineskip}%
@@ -2142,7 +2151,7 @@ The Weil pairing $e_N$ is
   \item\label{weil-end-aut:it:weil-bilinear} bilinear;
   \item\label{weil-end-aut:it:weil-alt} alternating: $e_N(T, T) = 1$, so $e_N(S, T) = e_N(T, S)^{-1}$;
   \item\label{weil-end-aut:it:weil-nondeg} non-degenerate: if $e_N(S, T) = 1$ for all $S \in E[N](\ksep)$, then $T = O$;
-  \item\label{weil-end-aut:it:weil-galois} Galois equivariant: $\sigma\bigl(e_N(S, T)\bigr) = e_N(\sigma S, \sigma T)$ for $\sigma \in \Gal_k$;
+  \item\label{weil-end-aut:it:weil-galois} Galois equivariant: $\sigma\bigl(e_N(S, T)\bigr) = e_N(\sigma(S), \sigma(T))$ for $\sigma \in \Gal_k$;
   \item\label{weil-end-aut:it:weil-compat} compatible: $e_{NN'}(S, T) = e_N([N']S, T)$;
   \item\label{weil-end-aut:it:weil-adjoint} adjoint for isogenies: $e_N(\varphi S, T) = e_N(S, \hat\varphi T)$.
 \end{enumerate}
@@ -2188,9 +2197,9 @@ $e_N(X, [m]T) = 1$ for every $X \in E[N](\ksep)$. Non-degeneracy
 (\ref{weil-end-aut:it:weil-nondeg}, in the first variable, via \ref{weil-end-aut:it:weil-alt}) forces
 $[m]T = O$. But $T$ has order $N$, so $N \mid m$, and hence $m = N$.
 \end{solution}
-  \item\label{weil-end-aut:it:weil-det} Write $\sigma S = aS + cT$ and $\sigma T = bS + dT$, so that
+  \item\label{weil-end-aut:it:weil-det} Write $\sigma(S) = aS + cT$ and $\sigma(T) = bS + dT$, so that
         $\bar\rho_{E,N}(\sigma) = \smallmat{a}{b}{c}{d}$ in the basis $S, T$. Expand
-        $e_N(\sigma S, \sigma T)$ and deduce
+        $e_N(\sigma(S), \sigma(T))$ and deduce
         \[
           \det \bar\rho_{E,N} = \chi_N .
         \]
@@ -2198,12 +2207,12 @@ $[m]T = O$. But $T$ has order $N$, so $N \mid m$, and hence $m = N$.
 Using bilinearity and then $e_N(S,S) = e_N(T,T) = 1$ and
 $e_N(T,S) = e_N(S,T)^{-1}$,
 \[
-  e_N(\sigma S, \sigma T) = e_N(aS + cT,\, bS + dT)
+  e_N(\sigma(S), \sigma(T)) = e_N(aS + cT,\, bS + dT)
   = e_N(S,S)^{ab}e_N(S,T)^{ad}e_N(T,S)^{cb}e_N(T,T)^{cd}
   = \zeta^{ad - bc} .
 \]
 On the other hand Galois equivariance gives
-$e_N(\sigma S, \sigma T) = \sigma(\zeta) = \zeta^{\chi_N(\sigma)}$. So
+$e_N(\sigma(S), \sigma(T)) = \sigma(\zeta) = \zeta^{\chi_N(\sigma)}$. So
 $\zeta^{ad-bc} = \zeta^{\chi_N(\sigma)}$, and since $\zeta$ has order exactly $N$ by
 \ref{weil-end-aut:it:weil-primitive}, we get $ad - bc \equiv \chi_N(\sigma) \pmod N$, i.e.~
 $\det\bar\rho_{E,N}(\sigma) = \chi_N(\sigma)$.
@@ -3318,7 +3327,7 @@ Let $m \geq 1$ with $\Char k \nmid m$. There is a pairing
   e_m\colon E[m](\ksep) \times E[m](\ksep) \to \mu_m(\ksep)
 \]
 that is bilinear, alternating ($e_m(P, P) = 1$), non-degenerate, and Galois equivariant:
-$\sigma\bigl(e_m(P, Q)\bigr) = e_m(\sigma P, \sigma Q)$ for every
+$\sigma\bigl(e_m(P, Q)\bigr) = e_m(\sigma(P), \sigma(Q))$ for every
 $\sigma \in \Gal_k$.
 Here $E[m](\ksep) = E[m](\kbar)$, since $\Char k \nmid m$. It follows that if $(P, Q)$ is
 a basis of $E[m](\ksep)$ over $\Z/m\Z$, then $e_m(P, Q)$ is a primitive $m$-th root of
@@ -3606,13 +3615,13 @@ be the number of closed points of $C$ of degree $d$.
 \begin{solution}
 Embed $C$ in $\PP^N$ over $\F_q$ and write a point of $C(\Fbar_q)$
 as $Q = [x_0 : \cdots : x_N]$ with some $x_i = 1$. Then
-$\sigma^n Q = [x_0^{q^n} : \cdots : x_N^{q^n}]$, again with $i$-th coordinate $1$, so
-$\sigma^n Q = Q$ if and only if every $x_j$ lies in $\F_{q^n}$, the fixed field of
+$\sigma^n(Q) = [x_0^{q^n} : \cdots : x_N^{q^n}]$, again with $i$-th coordinate $1$, so
+$\sigma^n(Q) = Q$ if and only if every $x_j$ lies in $\F_{q^n}$, the fixed field of
 $\sigma^n$, that is, $Q \in C(\F_{q^n})$. The coordinates of $Q$ lie in some finite field
 $\F_{q^m}$, so the action of $\Gal_{\F_q}$ on the orbit of $Q$ factors through
 $\Gal(\F_{q^m}/\F_q)$, which is generated by the image of $\sigma$. Hence the orbit is
-$\brk{Q, \sigma Q, \dots, \sigma^{e-1}Q}$, where $\sigma^e$ generates the stabilizer of $Q$
-in $\langle\sigma\rangle$, and it has $e$ elements. So $e = d$. Thus $\sigma^nQ = Q$ if and
+$\brk{Q, \sigma(Q), \dots, \sigma^{e-1}(Q)}$, where $\sigma^e$ generates the stabilizer of $Q$
+in $\langle\sigma\rangle$, and it has $e$ elements. So $e = d$. Thus $\sigma^n(Q) = Q$ if and
 only if $d \mid n$, and since $\langle\sigma\rangle$ is abelian, every element of the orbit
 has the same stabilizer.
 \end{solution}
@@ -3829,7 +3838,7 @@ homomorphism $\End(E) \to \End\bigl(T_\ell(E)\bigr)$.
 For $Q = (x_0, y_0)$ with $x_0, y_0 \in \Fbar_q$,
 $\Frob(Q) = (x_0^q, y_0^q) = \sigma(Q)$, and both fix $O$. So the
 $\Gal_{\F_q}$-orbits are the $\Frob$-orbits (\cref{zeta:prob:euler}\ref{zeta:it:euler-orbit}: the
-orbit of $Q$ is $\brk{Q, \sigma Q, \sigma^2 Q, \dots}$), and \cref{zeta:prop:closed}
+orbit of $Q$ is $\brk{Q, \sigma(Q), \sigma^2(Q), \dots}$), and \cref{zeta:prop:closed}
 identifies them with the closed points. By
 \cref{zeta:prob:euler}\ref{zeta:it:euler-orbit}, $Q \in E(\F_{q^n})$ if and only if
 $\Frob^n(Q) = \sigma^n(Q) = Q$, that is, $Q \in \ker(1 - \Frob^n)$.
@@ -6288,8 +6297,9 @@ failure is measured by $H^1(k, E)$.
         group with a left action of $G$, written $a \mapsto ga$, such that $G \times A \to A$
         is continuous for the discrete topology on $A$. (Silverman writes right actions,
         $a \mapsto a^\sigma$.)
-  \item Elements $g, h$ of $G$. The letter $\sigma$ is kept for a generator of a cyclic
-        group.
+  \item Elements $g, h$ of $G$, and elements $\sigma, \tau, \gamma$ of a Galois group such as
+        $\Gal_k$ or $\Gal(L/k)$. Where $\sigma$ is a generator of a cyclic group, it keeps
+        that meaning.
   \item An integer $m \geq 1$ with $\Char k \nmid m$, and the algebraic group $\mu_m$ of
         $m$-th roots of unity, the kernel of $x \mapsto x^m$ on $\Gm$. For a field $L$
         containing $k$, $\mu_m(L)$ is the group of $m$-th roots of unity in $L$.
@@ -6433,8 +6443,8 @@ $a_1 = \dots = a_r = 0$.
 \begin{wsdefinition}[Norm and trace]
 \label{kummer:def:norm}
 Let $L/k$ be a finite Galois extension with group $G$. The \defi{norm} and the
-\defi{trace} of $a \in L$ are $N_{L/k}(a) \coloneqq \prod_{g \in G} g(a)$ and
-$\Tr_{L/k}(a) \coloneqq \sum_{g \in G} g(a)$. Both lie in $k$.
+\defi{trace} of $a \in L$ are $N_{L/k}(a) \coloneqq \prod_{\sigma \in G} \sigma(a)$ and
+$\Tr_{L/k}(a) \coloneqq \sum_{\sigma \in G} \sigma(a)$. Both lie in $k$.
 \end{wsdefinition}
 
 \begin{wsproposition}[Infinite Galois theory]
@@ -6471,20 +6481,20 @@ is \defi{inflated} from $G/H$.
         $\xi\colon G \to L^\times$ a $1$-cocycle. Show that there is a $c \in L^\times$
         with
         \[
-        b \coloneqq \sum_{h \in G} \xi_h \cdot h(c) \neq 0,
+        b \coloneqq \sum_{\tau \in G} \xi_\tau \cdot \tau(c) \neq 0,
         \]
-        and that then $\xi_g = b/g(b)$ for every $g \in G$. Deduce that $H^1(G, L^\times) = 1$.
-        \hint{compute $g(b)$ with the cocycle condition.}
+        and that then $\xi_\sigma = b/\sigma(b)$ for every $\sigma \in G$. Deduce that $H^1(G, L^\times) = 1$.
+        \hint{compute $\sigma(b)$ with the cocycle condition.}
 \begin{solution}
 The elements of $G$ restrict to distinct homomorphisms $L^\times \to L^\times$, and the
-coefficients $\xi_h$ are nonzero. By \cref{kummer:thm:dedekind}, $\sum_h \xi_h \cdot h$ is not
-the zero function on $L^\times$, so some $c \in L^\times$ has $b \neq 0$. For $g \in G$,
-the cocycle condition gives $g(\xi_h) = \xi_g^{-1}\xi_{gh}$, so
+coefficients $\xi_\tau$ are nonzero. By \cref{kummer:thm:dedekind}, $\sum_\tau \xi_\tau \cdot \tau$ is not
+the zero function on $L^\times$, so some $c \in L^\times$ has $b \neq 0$. For $\sigma \in G$,
+the cocycle condition gives $\sigma(\xi_\tau) = \xi_\sigma^{-1}\xi_{\sigma\tau}$, so
 \[
-g(b) = \sum_{h \in G} g(\xi_h) \cdot (gh)(c) = \xi_g^{-1}\sum_{h \in G} \xi_{gh} \cdot (gh)(c)
-= \xi_g^{-1}b,
+\sigma(b) = \sum_{\tau \in G} \sigma(\xi_\tau) \cdot (\sigma\tau)(c) = \xi_\sigma^{-1}\sum_{\tau \in G} \xi_{\sigma\tau} \cdot (\sigma\tau)(c)
+= \xi_\sigma^{-1}b,
 \]
-since $gh$ runs over $G$ with $h$. So $\xi_g = b/g(b) = g(b^{-1})/b^{-1}$, the coboundary
+since $\sigma\tau$ runs over $G$ with $\tau$. So $\xi_\sigma = b/\sigma(b) = \sigma(b^{-1})/b^{-1}$, the coboundary
 of $b^{-1}$.
 \end{solution}
   \item\label{kummer:it:h90-cyclic} Suppose moreover that $G = \langle \sigma \rangle$ is cyclic.
@@ -6515,7 +6525,7 @@ x + iy = \frac{u + iv}{u - iv} = \frac{(u + iv)^2}{u^2 + v^2}
         \begin{enumerate}
           \item\label{kummer:it:h90-limit-factor} Show that there is a finite Galois extension
                 $L$ of $k$ inside $\ksep$ such that $\xi$ takes values in $L^\times$ and
-                $\xi_{gh} = \xi_g$ for all $g \in \Gal_k$ and $h \in \Gal_L$. So $\xi$ is
+                $\xi_{\sigma\tau} = \xi_\sigma$ for all $\sigma \in \Gal_k$ and $\tau \in \Gal_L$. So $\xi$ is
                 inflated from a $1$-cocycle $\Gal(L/k) \to L^\times$.\hint{$\Gal_k$ is
                 compact, and $\xi^{-1}(1)$ is open.}
 \begin{solution}
@@ -6525,8 +6535,8 @@ contains $1$, because $\xi_1 = \xi_1 \cdot \xi_1$. By part \ref{kummer:it:galois
 The fibers of $\xi$ are open and cover the compact group $\Gal_k$, so $\xi$ takes finitely
 many values, and they lie in some finite extension of $k$ inside $\ksep$. Let $L$ be the
 Galois closure of the compositum of this extension and $L_0$, a finite Galois extension
-of $k$ with $\Gal_L \subseteq \Gal_{L_0}$. For $h \in \Gal_L$, $\xi_h = 1$, so
-$\xi_{gh} = \xi_g \cdot g(\xi_h) = \xi_g$. So $\xi$ factors through
+of $k$ with $\Gal_L \subseteq \Gal_{L_0}$. For $\tau \in \Gal_L$, $\xi_\tau = 1$, so
+$\xi_{\sigma\tau} = \xi_\sigma \cdot \sigma(\xi_\tau) = \xi_\sigma$. So $\xi$ factors through
 $\Gal_k/\Gal_L \cong \Gal(L/k)$ (\cref{kummer:prop:galois}), with values in
 $L^\times = ((\ksep)^\times)^{\Gal_L}$, and the cocycle condition for $\xi$ is the one for the
 induced map $\Gal(L/k) \to L^\times$.
@@ -6534,7 +6544,7 @@ induced map $\Gal(L/k) \to L^\times$.
           \item\label{kummer:it:h90-limit-zero} Deduce that $H^1(k, \Gm) = 1$.
 \begin{solution}
 By \ref{kummer:it:h90-limit-factor} and \ref{kummer:it:h90-finite}, there is $b \in L^\times$ with
-$\xi_g = b/g(b)$ for every $g \in \Gal_k$ (the action of $g$ on $L$ is that of its image in
+$\xi_\sigma = b/\sigma(b)$ for every $\sigma \in \Gal_k$ (the action of $\sigma$ on $L$ is that of its image in
 $\Gal(L/k)$). So $\xi$ is the coboundary of $b^{-1}$.
 \begin{solremark}
 The same argument shows that $H^1(\Gal_k, A) = \varinjlim_L H^1(\Gal(L/k), A^{\Gal_L})$ for every
@@ -6547,14 +6557,14 @@ discrete $\Gal_k$-module $A$ \cite{Silverman09}*{Exercise~B.4}.
         $H^1(G, L) = 0$, by a variant of \ref{kummer:it:h90-finite}.
         \hint{take $c \in L$ with $\Tr_{L/k}(c) \neq 0$.}
 \begin{solution}
-By \cref{kummer:thm:dedekind} with all coefficients $1$, $\Tr_{L/k} = \sum_h h$ is not
+By \cref{kummer:thm:dedekind} with all coefficients $1$, $\Tr_{L/k} = \sum_\tau \tau$ is not
 the zero function, so some $c \in L$ has $t \coloneqq \Tr_{L/k}(c) \neq 0$, and $t \in k$.
-Let $b \coloneqq t^{-1}\sum_h \xi_h \cdot h(c)$. Then $g(\xi_h) = \xi_{gh} - \xi_g$, so
+Let $b \coloneqq t^{-1}\sum_\tau \xi_\tau \cdot \tau(c)$. Then $\sigma(\xi_\tau) = \xi_{\sigma\tau} - \xi_\sigma$, so
 \[
-g(b) = t^{-1}\sum_{h \in G} (\xi_{gh} - \xi_g) \cdot (gh)(c)
-= b - \xi_g t^{-1}\sum_{h \in G} (gh)(c) = b - \xi_g.
+\sigma(b) = t^{-1}\sum_{\tau \in G} (\xi_{\sigma\tau} - \xi_\sigma) \cdot (\sigma\tau)(c)
+= b - \xi_\sigma t^{-1}\sum_{\tau \in G} (\sigma\tau)(c) = b - \xi_\sigma.
 \]
-So $\xi_g = g(-b) - (-b)$.
+So $\xi_\sigma = \sigma(-b) - (-b)$.
 \begin{solremark}
 \cite{Poonen2017}*{Proposition~1.3.15(i)} deduces this, and the vanishing of all the higher
 groups, from the normal basis theorem. As in \ref{kummer:it:h90-limit}, it gives
@@ -6615,7 +6625,7 @@ is separable: its derivative $mx^{m - 1}$ vanishes only at $0$, since $m \neq 0$
 and $0$ is not a root. So it has $m$ distinct roots, all in $\ksep$. For $a = 1$ this shows
 that $\mu_m(\ksep)$ has order $m$. It is cyclic by \cref{kummer:prop:cyclic}. For general $a$ it shows that $x \mapsto x^m$
 is surjective on $(\ksep)^\times$. Its kernel is $\mu_m(\ksep)$, and it commutes with the action of
-$\Gal_k$, as $g(x^m) = (gx)^m$. The long exact sequence reads
+$\Gal_k$, as $\sigma(x^m) = (\sigma(x))^m$. The long exact sequence reads
 \[
 k^\times \xrightarrow{m} k^\times \xrightarrow{\delta} H^1(k, \mu_m) \to H^1(k, \Gm) = 1,
 \]
@@ -6623,19 +6633,19 @@ so $\delta$ is surjective with kernel $k^{\times m}$.
 \end{solution}
   \item\label{kummer:it:kseq-delta} Let $a \in k^\times$ and $\alpha \in \ksep$ with
         $\alpha^m = a$. Check directly, without \cref{kummer:prop:les}, that
-        $\xi_g \coloneqq g(\alpha)/\alpha$ is a continuous $1$-cocycle with values in
+        $\xi_\sigma \coloneqq \sigma(\alpha)/\alpha$ is a continuous $1$-cocycle with values in
         $\mu_m(\ksep)$, whose class does not depend on the choice of $\alpha$. Show that
         $a \mapsto [\xi]$ is a homomorphism $k^\times \to H^1(k, \mu_m)$ with kernel
         $k^{\times m}$. This is the map $\delta$ of \ref{kummer:it:kseq-exact}.
 \begin{solution}
-Since $(g(\alpha))^m = g(a) = a$, $\xi_g \in \mu_m(\ksep)$. The cocycle condition holds:
-$\xi_{gh} = (gh)(\alpha)/\alpha = (g(\alpha)/\alpha) \cdot g(h(\alpha)/\alpha) = \xi_g \cdot g(\xi_h)$.
-And $\xi_{gh} = \xi_g$ for $h$ in the open subgroup $\Gal_{k(\alpha)}$, so $\xi$ is locally
+Since $(\sigma(\alpha))^m = \sigma(a) = a$, $\xi_\sigma \in \mu_m(\ksep)$. The cocycle condition holds:
+$\xi_{\sigma\tau} = (\sigma\tau)(\alpha)/\alpha = (\sigma(\alpha)/\alpha) \cdot \sigma(\tau(\alpha)/\alpha) = \xi_\sigma \cdot \sigma(\xi_\tau)$.
+And $\xi_{\sigma\tau} = \xi_\sigma$ for $\tau$ in the open subgroup $\Gal_{k(\alpha)}$, so $\xi$ is locally
 constant, that is, continuous. The other choices of $\alpha$ are the $\zeta\alpha$ with
-$\zeta \in \mu_m(\ksep)$, and they replace $\xi$ by $\xi \cdot (g \mapsto g(\zeta)/\zeta)$, which
+$\zeta \in \mu_m(\ksep)$, and they replace $\xi$ by $\xi \cdot (\sigma \mapsto \sigma(\zeta)/\zeta)$, which
 differs from it by a coboundary. If $\beta^m = b$, then $(\alpha\beta)^m = ab$ and
-$g(\alpha\beta)/(\alpha\beta) = \xi_g \cdot g(\beta)/\beta$, so the map is a homomorphism.
-Its kernel: if $g(\alpha)/\alpha = g(\zeta)/\zeta$ for some $\zeta \in \mu_m(\ksep)$ and every $g$,
+$\sigma(\alpha\beta)/(\alpha\beta) = \xi_\sigma \cdot \sigma(\beta)/\beta$, so the map is a homomorphism.
+Its kernel: if $\sigma(\alpha)/\alpha = \sigma(\zeta)/\zeta$ for some $\zeta \in \mu_m(\ksep)$ and every $\sigma$,
 then $\alpha/\zeta \in (\ksep)^{\Gal_k} = k$ (\cref{kummer:prop:galois}), and
 $a = (\alpha/\zeta)^m \in k^{\times m}$. Conversely, if $a = c^m$ with $c \in k^\times$,
 choose $\alpha = c$, and $\xi = 1$. Finally, $\alpha$ lifts $a$ along $x \mapsto x^m$, so
@@ -6646,8 +6656,8 @@ by \cref{kummer:prop:les} this is the formula for $\delta$.
         \ref{kummer:it:kseq-delta}.
 \begin{solution}
 View $\xi$ as a $1$-cocycle with values in $(\ksep)^\times$. By Hilbert 90 it is a
-coboundary there: $\xi_g = g(\beta)/\beta$ for some $\beta \in (\ksep)^\times$. Then
-$g(\beta^m)/\beta^m = \xi_g^m = 1$ for every $g$, so $a \coloneqq \beta^m \in k^\times$,
+coboundary there: $\xi_\sigma = \sigma(\beta)/\beta$ for some $\beta \in (\ksep)^\times$. Then
+$\sigma(\beta^m)/\beta^m = \xi_\sigma^m = 1$ for every $\sigma$, so $a \coloneqq \beta^m \in k^\times$,
 and $\xi$ is the cocycle of \ref{kummer:it:kseq-delta} for $a$ and $\alpha = \beta$.
 \begin{solremark}
 So only surjectivity needs Hilbert 90. In the analogous sequence for an elliptic curve,
@@ -6657,13 +6667,13 @@ $H^1(k, E)$ replaces $H^1(k, \Gm)$, and it is not zero in general.
   \item\label{kummer:it:kseq-quadratic} Let $m = 2$, with $\Char k \neq 2$. Show that
         $H^1(k, \mu_2) = \Hom_{\mathrm{conts}}(\Gal_k, \{\pm 1\})$, and that for
         $d \in k^\times - k^{\times 2}$, $\delta(d)$ is the homomorphism
-        $\chi_d\colon g \mapsto g(\sqrt d)/\sqrt d$, with kernel $\Gal_{k(\sqrt d)}$. Deduce
+        $\chi_d\colon \sigma \mapsto \sigma(\sqrt d)/\sqrt d$, with kernel $\Gal_{k(\sqrt d)}$. Deduce
         that $d \mapsto k(\sqrt d)$ is a bijection from the nontrivial elements of
         $k^\times/k^{\times 2}$ to the quadratic extensions of $k$ inside $\ksep$.
 \begin{solution}
 The action of $\Gal_k$ on $\mu_2(\ksep) = \{\pm 1\} \subseteq k$ is trivial, so the first claim is
 \cref{kummer:prop:trivial}. The formula for $\delta(d)$ is \ref{kummer:it:kseq-delta}, and
-$\chi_d(g) = 1$ exactly when $g$ fixes $\sqrt d$, that is, when $g \in \Gal_{k(\sqrt d)}$.
+$\chi_d(\sigma) = 1$ exactly when $\sigma$ fixes $\sqrt d$, that is, when $\sigma \in \Gal_{k(\sqrt d)}$.
 A nontrivial continuous homomorphism $\Gal_k \to \{\pm 1\}$ is determined by its kernel, an
 open subgroup of index $2$, and every such subgroup is the kernel of exactly one. By
 \cref{kummer:prop:galois}, these subgroups correspond to the extensions of degree $2$ inside
@@ -6685,7 +6695,7 @@ squarefree integer other than $1$, each obtained once.
 \begin{solution}
 \ans{$\{\pm 1\}$, of order $2$, as \cref{kummer:prop:inf-res} predicts.}
 The field $\ksep$ is also a separable closure of $L$, with $\Gal_L \subseteq \Gal_k$. For
-$a \in k^\times$ and $\alpha^m = a$, the restriction of $g \mapsto g(\alpha)/\alpha$ to
+$a \in k^\times$ and $\alpha^m = a$, the restriction of $\sigma \mapsto \sigma(\alpha)/\alpha$ to
 $\Gal_L$ is the same formula, which is $\delta_L(a)$. So $\Res \circ \delta_k = \delta_L$ on
 $k^\times$, and since $\delta_L$ is injective, the kernel of $\Res$ is the image of the
 classes $a$ with $a \in L^{\times m}$.
@@ -6733,8 +6743,8 @@ Now $\Gal_k$ acts trivially on $\mu_m(\ksep)$, so
 H^1(k, \mu_m) = \Hom_{\mathrm{conts}}(\Gal_k, \mu_m(\ksep))
 \]
 by \cref{kummer:prop:trivial}, and \cref{kummer:prob:kseq}\ref{kummer:it:kseq-exact} gives the isomorphism. The
-homomorphism $\chi \coloneqq \delta(a)$, $g \mapsto g(\alpha)/\alpha$, has kernel the
-$g$ fixing $\alpha$, that is, $\Gal_{k(\alpha)}$. This kernel is normal, so $k(\alpha)/k$ is
+homomorphism $\chi \coloneqq \delta(a)$, $\sigma \mapsto \sigma(\alpha)/\alpha$, has kernel the
+$\sigma$ fixing $\alpha$, that is, $\Gal_{k(\alpha)}$. This kernel is normal, so $k(\alpha)/k$ is
 Galois with group $\Gal_k/\Gal_{k(\alpha)} \cong \chi(\Gal_k)$ (\cref{kummer:prop:galois}), a subgroup of
 the cyclic group $\mu_m(\ksep)$. A homomorphism into a cyclic group has order equal to the order
 of its image, and $\delta$ is an isomorphism, so $[k(\alpha) : k] = \#\chi(\Gal_k)$ is the
@@ -6747,7 +6757,7 @@ order of $a$.
         that
         \[
         \langle\ ,\ \rangle\colon \Gal(L/k) \times \Delta/k^{\times m} \to \mu_m(\ksep), \qquad
-        \langle g, a \rangle \coloneqq g(\alpha)/\alpha \quad (\alpha^m = a),
+        \langle \sigma, a \rangle \coloneqq \sigma(\alpha)/\alpha \quad (\alpha^m = a),
         \]
         is a well defined bilinear pairing, and that it is perfect: the induced maps
         \[
@@ -6765,15 +6775,15 @@ of the separable polynomials $x^m - a_i$. All the roots of $x^m - a_i$ are $\zet
 with $\zeta \in \mu_m(\ksep) \subseteq k$, so $L$ is the splitting field of
 $\prod_i (x^m - a_i)$: finite and Galois.
 
-The value $g(\alpha)/\alpha$ lies in $\mu_m(\ksep)$, and does not depend on $\alpha$, since $g$ fixes
+The value $\sigma(\alpha)/\alpha$ lies in $\mu_m(\ksep)$, and does not depend on $\alpha$, since $\sigma$ fixes
 $\mu_m(\ksep) \subseteq k$. Replacing $a$ by $ac^m$ replaces $\alpha$ by $\alpha c$, with the
 same value. So the pairing is well defined. It is multiplicative in $a$, as in
-\cref{kummer:prob:kseq}\ref{kummer:it:kseq-delta}, and in $g$, since
-$(gh)(\alpha)/\alpha = g(h(\alpha)/\alpha) \cdot g(\alpha)/\alpha$ and $h(\alpha)/\alpha \in k$ is
-fixed by $g$.
+\cref{kummer:prob:kseq}\ref{kummer:it:kseq-delta}, and in $\sigma$, since
+$(\sigma\tau)(\alpha)/\alpha = \sigma(\tau(\alpha)/\alpha) \cdot \sigma(\alpha)/\alpha$ and $\tau(\alpha)/\alpha \in k$ is
+fixed by $\sigma$.
 
-If $\langle g, a \rangle = 1$ for every $a$, then $g$ fixes all the generators of $L$, so
-$g = 1$. If $\langle g, a \rangle = 1$ for every $g$, then $\alpha \in L^{\Gal(L/k)} = k$,
+If $\langle \sigma, a \rangle = 1$ for every $a$, then $\sigma$ fixes all the generators of $L$, so
+$\sigma = 1$. If $\langle \sigma, a \rangle = 1$ for every $\sigma$, then $\alpha \in L^{\Gal(L/k)} = k$,
 so $a \in k^{\times m}$. So both induced maps are injective. The first embeds $\Gal(L/k)$
 in an abelian group of exponent dividing $m$, so $\Gal(L/k)$ is one too. By
 \cref{kummer:prop:characters}, the two injections give
@@ -6816,8 +6826,8 @@ $\Q^\times/\Q^{\times 2}$ \cite{Milne22}*{Example~5.31}.
 The real field $\Q(\sqrt[3]2)$ does not contain the other roots $\zeta\sqrt[3]2$,
 $\zeta^2\sqrt[3]2$ of the irreducible polynomial $x^3 - 2$, so it is not normal. In
 \ref{kummer:it:kth-cyclic}, \cref{kummer:prop:trivial} no longer applies: complex conjugation inverts
-$\zeta$. The set $\{g : g(\alpha) = \alpha\} = \Gal_{\Q(\alpha)}$, for $\alpha = \sqrt[3]2$, is
-still the set where the cocycle $\xi_g = g(\alpha)/\alpha$ is $1$, and it is still a
+$\zeta$. The set $\{\sigma : \sigma(\alpha) = \alpha\} = \Gal_{\Q(\alpha)}$, for $\alpha = \sqrt[3]2$, is
+still the set where the cocycle $\xi_\sigma = \sigma(\alpha)/\alpha$ is $1$, and it is still a
 subgroup, but no longer the kernel of a homomorphism, and it is not normal.
 \end{solution}
           \item\label{kummer:it:kth-cube-inj} Show that $\Q^\times/\Q^{\times 3} \to
@@ -6854,14 +6864,14 @@ S<y> := PolynomialRing(F);
 The field $L$ is generated by the roots $\alpha, \zeta\alpha, \zeta^2\alpha$ of $x^3 - a$,
 so it is its splitting field, Galois over $\Q$. By \ref{kummer:it:kth-cube-inj}, $a$ is not a cube
 in $F$, so $[L : F] = 3$ by \ref{kummer:it:kth-cyclic} over $F$, and $[L : \Q] = 6$. Let
-$g \in \Gal(L/F)$ and $\omega \coloneqq g(\alpha)/\alpha \in \mu_3(F)$. The element
+$\gamma \in \Gal(L/F)$ and $\omega \coloneqq \gamma(\alpha)/\alpha \in \mu_3(F)$. The element
 $\beta \coloneqq \tau^{-1}\alpha$ is another cube root of $a$, so
-$g(\beta)/\beta = \omega$ too, as $g$ fixes $\mu_3(F) \subseteq F$. Then
+$\gamma(\beta)/\beta = \omega$ too, as $\gamma$ fixes $\mu_3(F) \subseteq F$. Then
 \[
-(\tau g\tau^{-1})(\alpha) = \tau(g(\beta)) = \tau(\omega\beta) = \tau(\omega)\,\alpha
+(\tau \gamma\tau^{-1})(\alpha) = \tau(\gamma(\beta)) = \tau(\omega\beta) = \tau(\omega)\,\alpha
 = \omega^{-1}\alpha.
 \]
-So $\tau g\tau^{-1}$ corresponds to $\omega^{-1}$. Hence $\Gal(L/\Q)$, of order $6$, is
+So $\tau \gamma\tau^{-1}$ corresponds to $\omega^{-1}$. Hence $\Gal(L/\Q)$, of order $6$, is
 nonabelian, so it is $S_3$. \Magma\ agrees for $a = 2$: the group has order $6$ over $\Q$,
 is not abelian, and has order $3$ over $F$.
 \begin{solremark}
@@ -7028,7 +7038,7 @@ $S$.
 \begin{solution}
 The action of $I_p$ on $\mu_2(\Qbar_p) = \{\pm 1\}$ is trivial, so $H^1(I_p, \mu_2(\Qbar_p)) = \Hom_{\mathrm{conts}}(I_p,
 \{\pm 1\})$ (\cref{kummer:prop:trivial}), and the restriction of $\delta(a)$ is the homomorphism
-$g \mapsto g(\sqrt a)/\sqrt a$. It is trivial if and only if $I_p = \Gal(\Qbar_p/\Qp^{\unr})$
+$\sigma \mapsto \sigma(\sqrt a)/\sqrt a$. It is trivial if and only if $I_p = \Gal(\Qbar_p/\Qp^{\unr})$
 fixes $\sqrt a$, that is, if and only if $\sqrt a \in \Qp^{\unr}$ (\cref{kummer:prop:galois} over
 $\Qp$), that is, by \cref{kummer:def:unramified}, if and only if $\Qp(\sqrt a)/\Qp$ is
 unramified. By \cref{kummer:prop:kummer-unramified}, with $p \nmid 2$, this happens exactly
@@ -7505,6 +7515,363 @@ coordinate records the action of $\Gal(L/\Q)$ on a square root, which matches th
 $\kappa(T_1, \cdot)$ sees only $\sqrt{-1}$, $\kappa(T_2, \cdot)$ only $\sqrt 2$. Deciding
 which of the $16$ classes of $\Q(S, 2)^2$ come from rational points is the descent problem of
 \cite{Silverman09}*{\S X.1}.
+\end{solremark}
+\end{solution}
+\end{enumerate}
+\end{problem}
+
+\bigskip
+
+\part[Heights on abelian groups]{Heights on abelian groups}
+\label{heights:part}
+\noindent
+The Mordell--Weil theorem has two steps. The weak Mordell--Weil theorem says that
+$E(K)/mE(K)$ is finite, and a height function turns this into finite generation
+\cite{Silverman09}*{\S VIII.3}. The second step does not use the curve: it works for any
+abelian group with a height that is quadratic up to a bounded error. This worksheet is
+about such heights on an abstract abelian group: which functions are heights of which kind,
+what their $O(1)$ constants are, and how a quadratic height behaves. \Cref{heights:prob:heights}
+sets up the definitions and the first estimates. \Cref{heights:prob:descent}, the heart of the
+worksheet, proves the descent theorem and shows, on $\Q$ and on a direct sum of copies of
+$\Z$, that its hypotheses are needed.
+\Cref{heights:prob:pairing} is the algebra of quadratic heights.
+
+\subsection*{Standing notation}
+\begin{itemize}
+  \item An abelian group $A$, written additively, with elements $P, Q, R$, torsion subgroup
+        $A_\tors$, and, for an integer $m \geq 2$, the quotient $A/m \coloneqq A/mA$.
+  \item For real functions $f, g$ on a set $X$, the notation $f = g + O(1)$, meaning that
+        $f - g$ is bounded on $X$. An inequality $f \leq g + c$ that holds for one constant
+        $c$ holds for every larger one, so the constants that bound heights are taken
+        non-negative, and a lower bound is written $-c$ with $c \geq 0$.
+\end{itemize}
+
+\section{Heights and the parallelogram law}
+\label{heights:sec:heights}
+
+This section is the vocabulary of \cite{Silverman09}*{\S VIII.3}, and the estimates
+\cite{Silverman09}*{Corollary~VIII.6.4} that the heights on an elliptic curve satisfy, proved
+here for any height that satisfies the parallelogram law up to a bounded error
+\cite{Hindry&Silverman00}*{\S B.4}.
+
+\begin{wsdefinition}[{Heights \cite{Silverman09}*{\S\S VIII.3, VIII.6}}]
+\label{heights:def:heights}
+A \defi{height} on a set $X$ is a function $h\colon X \to \R$. Two heights $h, h'$ on $X$ are
+\defi{equivalent}, written $h = h' + O(1)$, if $h - h'$ is bounded on $X$. A height $h$ has
+the \defi{Northcott property} if $\{x \in X : h(x) \leq C\}$ is finite for every $C \in \R$.
+The \defi{defect} of a height $h$ on $A$ is the function
+\[
+\delta_h(P, Q) \coloneqq h(P + Q) + h(P - Q) - 2h(P) - 2h(Q)
+\]
+on $A \times A$. The height $h$ is \defi{quasi-quadratic} if $\delta_h$ is bounded, and
+\defi{quadratic} if $\delta_h = 0$ (the parallelogram law).
+\end{wsdefinition}
+
+\begin{problem}[Heights and the parallelogram law]
+\label{heights:prob:heights}
+\begin{enumerate}
+  \item\label{heights:it:ht-relation} Show that equivalence of heights on a set $X$ is an
+        equivalence relation. Show that the Northcott property depends only on the
+        equivalence class, and that a height with the Northcott property is bounded
+        below. Give a height on $\Z$ that is bounded below and does not have the Northcott
+        property.
+\begin{solution}
+\ans{If $\lvert h - h' \rvert \leq c$, then $\{h' \leq C\} \subseteq \{h \leq C + c\}$.}
+The difference $h - h$ is zero, $h' - h$ is bounded when $h - h'$ is, and if
+$\lvert h - h' \rvert \leq c$ and $\lvert h' - h'' \rvert \leq c'$, then
+$\lvert h - h'' \rvert \leq c + c'$. If $\lvert h - h' \rvert \leq c$ and $h'(x) \leq C$,
+then $h(x) \leq C + c$, which gives the inclusion of the answer. So if $h$ has the Northcott
+property, the set $\{h' \leq C\}$ is contained in a finite set. For the lower bound, let
+$x_0 \in X$. The set $\{h \leq h(x_0)\}$ is finite and contains $x_0$, so it has a minimum,
+and that minimum is a lower bound for $h$ on $X$. The zero height on $\Z$ is bounded below,
+and $\{h \leq 0\} = \Z$. A more interesting example is the number $\omega(n)$ of distinct
+prime divisors of $n \neq 0$, with $\omega(0) \coloneqq 0$. It is non-negative, and the set
+$\{\omega \leq 1\}$ contains every prime power, so it is infinite.
+\end{solution}
+  \item\label{heights:it:ht-constants} Let $h$ be a quasi-quadratic height on $A$, and let $c \geq 0$
+        be a constant with $\lvert \delta_h \rvert \leq c$. Show that
+        $\lvert h(0) \rvert \leq c/2$, that
+        $\lvert h(-P) - h(P) \rvert \leq 2c$, and that $\lvert h(2P) - 4h(P) \rvert \leq 3c/2$
+        for every $P \in A$.
+\begin{solution}
+By definition, $\delta_h(0, 0) = -2h(0)$, $\delta_h(0, P) = h(-P) - h(P) - 2h(0)$ and
+$\delta_h(P, P) = h(2P) - 4h(P) + h(0)$, using $h(P - 0) = h(P)$ and $h(P - P) = h(0)$. The first gives $\lvert h(0) \rvert \leq c/2$. The second gives
+$\lvert h(-P) - h(P) \rvert \leq c + 2\lvert h(0) \rvert \leq 2c$, and the third gives
+$\lvert h(2P) - 4h(P) \rvert \leq c + \lvert h(0) \rvert \leq 3c/2$.
+\end{solution}
+  \item\label{heights:it:ht-multiple} Let $h$ be a quasi-quadratic height on $A$, and let $c \geq 0$
+        be a constant with $\lvert \delta_h \rvert \leq c$. Show that for every $n \in \Z$
+        there is a constant $d_n \geq 0$ with $\lvert h(nP) - n^2 h(P) \rvert \leq d_n$ for all $P \in A$, and
+        give a recursion for $d_n$ in terms of $c$.\hint{apply the parallelogram law to the
+        pair $(nP, P)$ and induct on $n \geq 0$.} Suppose moreover that $h \geq -c'$ for a
+        constant $c' \geq 0$. Show that for every $Q \in A$ there is a constant $C(Q) \geq 0$
+        with $h(P + Q) \leq 2h(P) + C(Q)$ for all $P \in A$, and give $C(Q)$ explicitly.
+\begin{solution}
+\ans{$d_{n+1} = 2d_n + d_{n-1} + c$, $d_0 = c/2$, $d_1 = 0$, $C(Q) = 2h(Q) + 2c' + c$.}
+Fix $P \in A$, and let $e_n \coloneqq h(nP) - n^2 h(P)$ for $n \in \Z$. By
+\ref{heights:it:ht-constants}, $\lvert e_0 \rvert = \lvert h(0) \rvert \leq c/2$, and $e_1 = 0$. So
+$d_0 = c/2$ and $d_1 = 0$ work.
+
+Let $n \geq 1$. Since $(n + 1)^2 + (n - 1)^2 = 2n^2 + 2$, the defect at $(nP, P)$ is
+\[
+\delta_h(nP, P) = h((n + 1)P) + h((n - 1)P) - 2h(nP) - 2h(P) = e_{n+1} + e_{n-1} - 2e_n.
+\]
+So $e_{n+1} = 2e_n - e_{n-1} + \delta_h(nP, P)$, and
+$\lvert e_{n+1} \rvert \leq 2d_n + d_{n-1} + c$. By induction on $n$, the recursion of the
+answer gives a constant $d_n$ for every $n \geq 0$. For negative multiples,
+\ref{heights:it:ht-constants} applied to $nP$ gives $\lvert h(-nP) - h(nP) \rvert \leq 2c$, so
+$\lvert e_{-n} \rvert \leq \lvert e_n \rvert + 2c$, and $d_{-n} \coloneqq d_n + 2c$ works.
+None of these bounds depends on $P$.
+
+For the last claim, the defect at $(P, Q)$ gives
+\[
+h(P + Q) = 2h(P) + 2h(Q) - h(P - Q) + \delta_h(P, Q) \leq 2h(P) + 2h(Q) + c' + c,
+\]
+since $h(P - Q) \geq -c'$ and $\delta_h \leq c$. The constant $2h(Q) + c' + c$ can be
+negative. Enlarging it to $C(Q) \coloneqq 2h(Q) + 2c' + c$ makes it at least $c \geq 0$,
+since $h(Q) \geq -c'$.
+\begin{solremark}
+The recursion gives $d_2 = 3c/2$, $d_3 = 4c$ and $d_4 = 21c/2$, and in general $d_n$ grows
+like $(1 + \sqrt 2)^n$. A bound of the order of $n^2$ is true, and comes with the
+canonical height, in a later worksheet.
+\end{solremark}
+\end{solution}
+  \item\label{heights:it:ht-squares} Let $f\colon A \to \R$ be a homomorphism. Show that the height
+        $f^2$ on $A$ is quadratic. Show that a sum of quadratic heights on $A$ is quadratic.
+\begin{solution}
+\ans{$\delta_{f^2} = 0$, and $\delta_{h + h'} = \delta_h + \delta_{h'}$.}
+Let $a \coloneqq f(P)$ and $b \coloneqq f(Q)$. Then $f(P \pm Q) = a \pm b$, and
+\[
+\delta_{f^2}(P, Q) = (a + b)^2 + (a - b)^2 - 2a^2 - 2b^2 = 0,
+\]
+which is the parallelogram law in $\R$. Each term of the defect is linear in the height, so
+$\delta_{h + h'} = \delta_h + \delta_{h'}$, and a sum of heights with zero defect has zero
+defect.
+\end{solution}
+  \item\label{heights:it:ht-nonequivalent} Let $A = \Z^2$, $q(x, y) \coloneqq x^2 + y^2$ and
+        $q'(x, y) \coloneqq x^2 + (x + y)^2$. Show that $q$ and $q'$ are quadratic heights
+        with the Northcott property, that $q \leq 3q'$ and $q' \leq 3q$, and that they are
+        not equivalent.
+\begin{solution}
+\ans{$q' - q = x(x + 2y)$ is unbounded.}
+By \ref{heights:it:ht-squares}, applied to the homomorphisms $x$, $y$ and $x + y$, both $q$ and
+$q'$ are quadratic. If $q \leq C$ then $\lvert x \rvert, \lvert y \rvert \leq \sqrt C$,
+so $q$ has the Northcott property. From $(x + y)^2 \leq 2x^2 + 2y^2$ we get
+$q' \leq 3x^2 + 2y^2 \leq 3q$, and from $y^2 = ((x + y) - x)^2 \leq 2(x + y)^2 + 2x^2$ we get
+$q \leq 3q'$. So $q'$ has the Northcott property as well. But
+$q'(n, n) - q(n, n) = 3n^2$ is unbounded.
+\begin{solremark}
+Two heights with $q \leq 3q'$ and $q' \leq 3q$ are comparable, which is weaker than
+equivalent. So a quadratic height is far from determined by its equivalence class, although
+an equivalence class contains at most one quadratic height, as a later worksheet shows.
+\end{solremark}
+\end{solution}
+\end{enumerate}
+\end{problem}
+
+
+\section{The descent theorem}
+\label{heights:sec:descent}
+
+This section is \cite{Silverman09}*{Theorem~VIII.3.1} and its proof, for an abstract
+abelian group, and the examples of groups that fail one of its hypotheses. The count of
+rational numbers of bounded height is \cite{Hindry&Silverman00}*{Theorem~B.2.3}.
+
+\begin{wstheorem}[{Descent theorem \cite{Silverman09}*{Theorem~VIII.3.1}}]
+\label{heights:thm:descent}
+Let $h$ be a height on $A$ with the following properties.
+\begin{enumerate}
+  \item\label{heights:it:descent-sum} For every $Q \in A$ there is a constant $C_1(Q)$ with
+        $h(P + Q) \leq 2h(P) + C_1(Q)$ for all $P \in A$.
+  \item\label{heights:it:descent-multiple} There are an integer $m \geq 2$ and a constant $C_2$ with
+        $h(mP) \geq m^2 h(P) - C_2$ for all $P \in A$.
+  \item\label{heights:it:descent-northcott} The height $h$ has the Northcott property.
+\end{enumerate}
+If $A/m$ is finite for the $m$ of \ref{heights:it:descent-multiple}, then $A$ is finitely generated.
+\end{wstheorem}
+
+\begin{problem}[The descent theorem]
+\label{heights:prob:descent}
+\begin{enumerate}
+  \item\label{heights:it:desc-hypotheses} Let $h$ be a quasi-quadratic height on $A$ with the
+        Northcott property. Show that $h$ satisfies the hypotheses of \cref{heights:thm:descent} for
+        every $m \geq 2$.
+\begin{solution}
+\ans{$C_1(Q) = C(Q)$ and $C_2 = d_m$, from \cref{heights:prob:heights}\ref{heights:it:ht-multiple}.}
+By \cref{heights:prob:heights}\ref{heights:it:ht-relation}, $h \geq -c'$ for some $c' \geq 0$. Then
+\cref{heights:prob:heights}\ref{heights:it:ht-multiple} gives $h(P + Q) \leq 2h(P) + C(Q)$, which is
+\ref{heights:it:descent-sum}, and $h(mP) \geq m^2 h(P) - d_m$, which is \ref{heights:it:descent-multiple},
+for every $m \geq 2$.
+\end{solution}
+  \item\label{heights:it:desc-ab} Let $h$ be a height on $A$ with the Northcott property, let
+        $m \geq 2$ be an integer, and let $0 < a < b$ be real numbers. Suppose that for every
+        $Q \in A$ there is a constant $C_1(Q) \geq 0$ with $h(P + Q) \leq a\,h(P) + C_1(Q)$
+        for all $P$, and that there is a constant $C_2 \geq 0$ with
+        $h(mP) \geq b\,h(P) - C_2$ for all $P$. Suppose also that $A/m$ is finite, let
+        $Q_1, \dots, Q_s$ represent its cosets, and let
+        $C \coloneqq \max_i C_1(-Q_i) + C_2$. Show that $A$ is generated by
+        $Q_1, \dots, Q_s$ and the finitely many $P \in A$ with $h(P) \leq 1 + C/(b - a)$.
+\begin{solution}
+\ans{If $P_{j-1} = mP_j + Q_{i_j}$, then $h(P_j) \leq \rho\,h(P_{j-1}) + C/b$ with
+$\rho \coloneqq a/b < 1$.}
+Given $P_0 \coloneqq P$, choose $P_j$ and $i_j$ with $P_{j-1} = mP_j + Q_{i_j}$. Then
+\[
+b\,h(P_j) \leq h(mP_j) + C_2 = h(P_{j-1} - Q_{i_j}) + C_2 \leq a\,h(P_{j-1}) + C.
+\]
+Since $\rho > 0$, induction gives
+\[
+h(P_n) \leq \rho^n h(P) + \frac{C}{b}\bigl(1 + \rho + \dots + \rho^{n-1}\bigr)
+\leq \rho^n h(P) + \frac{C}{b - a},
+\]
+where the last step uses $C \geq 0$. For $n$ large, $\rho^n h(P) \leq 1$, so
+$h(P_n) \leq 1 + C/(b - a)$, and $P = m^n P_n + \sum_{j=1}^{n} m^{j-1} Q_{i_j}$. The set
+$\{h \leq 1 + C/(b - a)\}$ is finite by the Northcott property. No lower bound on $h$ is
+needed.
+\begin{solremark}
+Silverman's case is $a = 2$ and $b = m^2 \geq 4$, where $C/(b - a) \leq C/2$ recovers his
+bound $1 + \frac12(C_1 + C_2)$ \cite{Silverman09}*{proof of Theorem~VIII.3.1}.
+\end{solremark}
+\end{solution}
+  \item\label{heights:it:desc-rationals} Let $A = \Q$, as an additive group, with the
+        logarithmic Weil height
+        \[
+        h(u/w) \coloneqq \log \max(\lvert u \rvert, \lvert w \rvert),
+        \]
+        for $u/w$ in lowest terms. Show that $h$ has the Northcott property, that
+        $h(x + y) \leq h(x) + h(y) + \log 2$, with equality for $x = y = 1$, that
+        $h(mx) \leq h(x) + \log m$ and $\Q/m = 0$ for every integer $m \geq 2$. Which
+        hypothesis of \ref{heights:it:desc-ab} fails, for every $m \geq 2$ and every $b > 1$? Is $h$
+        quasi-quadratic?
+\begin{solution}
+\ans{The second, since $h(mx) \leq h(x) + \log m$. Not quasi-quadratic: $\delta_h(n, n) = \log 2 - 3\log n$.}
+There are at most $(2e^C + 1)^2$ pairs $(u, w)$ of integers with
+$\lvert u \rvert, \lvert w \rvert \leq e^C$, so $\{h \leq C\}$ is finite. From
+$u/w + u'/w' = (uw' + u'w)/(ww')$, before canceling,
+$\max(\lvert uw' + u'w \rvert, \lvert ww' \rvert) \leq 2\max(\lvert u \rvert, \lvert w \rvert)\max(\lvert u' \rvert, \lvert w' \rvert)$,
+and canceling only lowers the height. For $x = y = 1$ both sides are $\log 2$. So the first
+hypothesis holds with $a = 1$ and $C_1(Q) = h(Q) + \log 2$, since $h \geq 0$. Likewise
+$h(mu/w) \leq \log(m\max(\lvert u \rvert, \lvert w \rvert))$. Every rational number is $m$
+times a rational number, so $\Q/m = 0$. But $\Q$ is not finitely generated: a finitely
+generated subgroup of $\Q$ has a common denominator. So the second hypothesis fails, and
+directly: if $h(mx) \geq b\,h(x) - C_2$ with $b > 1$, then $(b - 1)h(x) \leq C_2 + \log m$
+for every $x$, contradicting the Northcott property on the infinite set $\Q$. Finally
+$\delta_h(n, n) = h(2n) + h(0) - 4h(n) = \log(2n) - 4\log n$ for $n \geq 1$, which is
+unbounded.
+\end{solution}
+  \item\label{heights:it:desc-infinite} Let $A = \bigoplus_{i \geq 1} \Z$, let $w_1, w_2, \dots$ be
+        positive real numbers, and $h(x) \coloneqq \sum_i w_i x_i^2$. Show that $h$ is
+        quadratic. For which weights $w_i$ does $h$ have the Northcott property? For such
+        weights, which hypothesis of \cref{heights:thm:descent} fails for $A$?
+\begin{solution}
+\ans{Northcott if and only if $w_i \to \infty$. The quotient $A/m$ is infinite.}
+Each map $x \mapsto \sqrt{w_i}\,x_i$ is a homomorphism $A \to \R$, so each
+$w_i x_i^2$ satisfies the parallelogram law, by \cref{heights:prob:heights}\ref{heights:it:ht-squares}, and the sums are
+finite. Suppose $w_i \to \infty$ and let $C \in \R$. Only finitely many $i$ have $w_i \leq C$.
+If $h(x) \leq C$ and $x_i \neq 0$, then $w_i \leq w_i x_i^2 \leq C$, so $x$ is supported on
+those $i$, with $\lvert x_i \rvert \leq \sqrt{C/w_i}$. So $\{h \leq C\}$ is finite. If $w_i$
+does not tend to infinity, then $w_i \leq C$ for infinitely many $i$, and the corresponding
+basis vectors $e_i$ have $h(e_i) = w_i \leq C$. For $w_i = i$, the height $h$ satisfies every
+hypothesis on $h$, by \ref{heights:it:desc-hypotheses}, but $A/m \cong \bigoplus_{i \geq 1} \Z/m\Z$ is
+infinite, and $A$ is not finitely generated.
+\begin{solremark}
+Conversely, let $A$ be finitely generated, and choose an isomorphism
+$A \cong A_\tors \times \Z^r$. The sum of the squares of the $r$ coordinates is a quadratic
+height on $A$, and $\{h \leq C\}$ is the preimage of finitely many elements of $\Z^r$, each
+preimage a coset of the finite group $A_\tors$. So $A$ is finitely generated if and only if
+$A/2$ is finite and $A$ has a quasi-quadratic height with the Northcott property.
+\end{solremark}
+\end{solution}
+\end{enumerate}
+\end{problem}
+
+
+\section{Quadratic heights and their pairing}
+\label{heights:sec:pairing}
+
+This section is \cite{Hindry&Silverman00}*{Lemma~B.5.2}, the algebra of a height that
+satisfies the parallelogram law exactly, which \cite{Silverman09}*{Theorem~VIII.9.3(c)}
+states for the canonical height on an elliptic curve.
+
+\begin{wsdefinition}[{The pairing of a quadratic height \cite{Hindry&Silverman00}*{\S B.5}}]
+\label{heights:def:pairing}
+Let $q$ be a quadratic height on $A$. Its \defi{pairing} is
+\[
+\langle P, Q \rangle_q \coloneqq q(P + Q) - q(P) - q(Q).
+\]
+\end{wsdefinition}
+
+\begin{problem}[Quadratic heights and their pairing]
+\label{heights:prob:pairing}
+Let $q$ be a quadratic height on $A$.
+\begin{enumerate}
+  \item\label{heights:it:pair-bilinear} Show that $q(0) = 0$, $q(-P) = q(P)$ and $q(2P) = 4q(P)$, and
+        that $\langle\ ,\ \rangle_q$ is symmetric and bilinear.\hint{write the parallelogram
+        law for the pairs $(P + R, Q)$, $(P, R - Q)$, $(P + Q, R)$ and $(R, Q)$.} Deduce that
+        $\langle P, P \rangle_q = 2q(P)$ and $q(nP) = n^2 q(P)$ for every $n \in \Z$.
+        Conversely, show that for a symmetric bilinear map $B\colon A \times A \to \R$, the
+        function $P \mapsto \frac12 B(P, P)$ is a quadratic height with pairing $B$.
+\begin{solution}
+\ans{The four laws combine to $\langle P + Q, R \rangle_q = \langle P, R \rangle_q + \langle Q, R \rangle_q$.}
+The parallelogram law with $P = Q = 0$ gives $2q(0) = 4q(0)$, with $P = 0$ it gives
+$q(Q) + q(-Q) = 2q(Q)$, and with $Q = P$ it gives $q(2P) = 4q(P)$. The pairing is symmetric
+by definition. The parallelogram law for the pairs
+$(X, Y) = (P + R, Q)$, $(P, R - Q)$, $(P + Q, R)$ and $(R, Q)$ gives
+\begin{align}
+q(P + R + Q) + q(P + R - Q) &= 2q(P + R) + 2q(Q),\label{heights:eq:pl-a}\\
+q(P + R - Q) + q(P - R + Q) &= 2q(P) + 2q(R - Q),\label{heights:eq:pl-b}\\
+q(P + Q + R) + q(P + Q - R) &= 2q(P + Q) + 2q(R),\label{heights:eq:pl-c}\\
+q(R + Q) + q(R - Q) &= 2q(R) + 2q(Q).\label{heights:eq:pl-d}
+\end{align}
+Take
+\[
+\eqref{heights:eq:pl-a} - \eqref{heights:eq:pl-b} + \eqref{heights:eq:pl-c} - 2\,\eqref{heights:eq:pl-d}.
+\]
+On the left, the two terms $q(P + R - Q)$ cancel, $q(P - R + Q)$ cancels against
+$q(P + Q - R)$, and $q(P + R + Q)$ and $q(P + Q + R)$ add up. The term $2q(R - Q)$ appears
+on both sides. Dividing by $2$ gives
+\[
+q(P + Q + R) - q(P + Q) - q(P + R) - q(Q + R) + q(P) + q(Q) + q(R) = 0,
+\]
+which says that
+$\langle P + Q, R \rangle_q = \langle P, R \rangle_q + \langle Q, R \rangle_q$. Then
+$\langle P, P \rangle_q = q(2P) - 2q(P) = 2q(P)$, and by bilinearity
+$q(nP) = \frac12 \langle nP, nP \rangle_q = n^2 q(P)$. Conversely, for
+$q(P) \coloneqq \frac12 B(P, P)$, expanding $B(P \pm Q, P \pm Q)$ gives
+$q(P + Q) + q(P - Q) = B(P, P) + B(Q, Q) = 2q(P) + 2q(Q)$ and
+$q(P + Q) - q(P) - q(Q) = B(P, Q)$.
+\begin{solremark}
+So $q \mapsto \langle\ ,\ \rangle_q$ and $B \mapsto \frac12 B(P, P)$ are inverse bijections
+between quadratic heights on $A$ and symmetric bilinear maps $A \times A \to \R$.
+\end{solremark}
+\end{solution}
+  \item\label{heights:it:pair-torsion} Let $T \in A_\tors$. Show that $q(T) = 0$, that
+        $\langle P, T \rangle_q = 0$ for every $P \in A$, and that $q(P + T) = q(P)$. So $q$
+        and its pairing factor through $A/A_\tors$.
+\begin{solution}
+\ans{$n\langle P, T \rangle_q = \langle P, nT \rangle_q = \langle P, 0 \rangle_q = 0$.}
+Let $n \geq 1$ with $nT = 0$. By \ref{heights:it:pair-bilinear}, $n^2 q(T) = q(nT) = q(0) = 0$, and
+$\langle P, 0 \rangle_q = q(P) - q(P) - q(0) = 0$, which gives the answer. Then
+$q(P + T) = q(P) + q(T) + \langle P, T \rangle_q = q(P)$.
+\end{solution}
+  \item\label{heights:it:pair-gram} Let $A = \Z^r$ with standard basis $e_1, \dots, e_r$. Show that
+        every quadratic height on $A$ is $q(x) = \frac12 x^{\mathsf T} G x$ for a unique real
+        symmetric $r \times r$ matrix $G$, and that every symmetric $G$ arises. Show that if
+        $G$ is positive definite, then $q$ has the Northcott property.
+\begin{solution}
+\ans{$G_{ij} = \langle e_i, e_j \rangle_q$, and $q(x) \geq \frac12 \lambda \lvert x \rvert^2$ for the least eigenvalue $\lambda$ of $G$.}
+By bilinearity, $\langle x, y \rangle_q = \sum_{i,j} x_i y_j \langle e_i, e_j \rangle_q = x^{\mathsf T} G y$
+with $G_{ij} \coloneqq \langle e_i, e_j \rangle_q$, which is symmetric, and
+$q(x) = \frac12 \langle x, x \rangle_q$. The matrix is unique because $G_{ij}$ is determined
+by $q$. Conversely, $(x, y) \mapsto x^{\mathsf T} G y$ is symmetric and bilinear for every
+symmetric $G$, so \ref{heights:it:pair-bilinear} applies. If $G$ is positive definite, then
+$x^{\mathsf T} G x \geq \lambda \lvert x \rvert^2$, so $\{q \leq C\}$ is contained in the finite
+set $\{x \in \Z^r : \lvert x \rvert^2 \leq 2C/\lambda\}$.
+\begin{solremark}
+The converse holds: a quadratic height on $\Z^r$ with the Northcott property is positive
+definite \cite{Silverman09}*{Lemma~VIII.9.5}. Its proof needs Minkowski's theorem, and
+\cite{Silverman09}*{Exercise~8.16} shows why: $q(x, y) = (x - \sqrt 2\, y)^2$ is positive on
+$\Z^2 \setminus \{0\}$ without being positive definite. That is for next time. Note that a
+quadratic height can be negative, as $G = -1$ on $\Z$ shows.
 \end{solremark}
 \end{solution}
 \end{enumerate}

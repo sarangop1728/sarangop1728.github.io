@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2026-10-13 Tue 08:36 -->
+<!-- 2026-10-15 Thu 08:28 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Elliptic curves over local fields</title>
@@ -41,9 +41,9 @@
 <li class="ec-toc-level-2"><a href="#s6.5.5"><span class="ec-toc-num">6.5.5</span><span class="ec-toc-text">Examples</span></a></li>
 </ol></li>
 <li class="ec-toc-chapter"><a href="07-galois-cohomology.html"><span class="ec-toc-num">7</span><span class="ec-toc-text">Galois cohomology<span class="ec-toc-status"><span class="ec-status-progress">0 of 10 sections finished</span></span></span></a></li>
-<li class="ec-toc-chapter"><a href="08-mordell-weil.html"><span class="ec-toc-num">8</span><span class="ec-toc-text">The Mordell&ndash;Weil theorem<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
-<li class="ec-toc-chapter"><a href="09-integral-points.html"><span class="ec-toc-num">9</span><span class="ec-toc-text">Integral points<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
-<li class="ec-toc-chapter"><a href="10-selmer-sha.html"><span class="ec-toc-num">10</span><span class="ec-toc-text">Twisting, Selmer, and Tate&ndash;Shafarevich<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
+<li class="ec-toc-chapter"><a href="08-mordell-weil.html"><span class="ec-toc-num">8</span><span class="ec-toc-text">The Mordell&ndash;Weil theorem<span class="ec-toc-status"><span class="ec-status-progress">0 of 4 sections finished</span></span></span></a></li>
+<li class="ec-toc-chapter"><a href="09-selmer-sha.html"><span class="ec-toc-num">9</span><span class="ec-toc-text">Twisting, Selmer, and Tate&ndash;Shafarevich<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
+<li class="ec-toc-chapter"><a href="10-integral-points.html"><span class="ec-toc-num">10</span><span class="ec-toc-text">Integral points<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
 <li class="ec-toc-chapter"><a href="11-complex-multiplication.html"><span class="ec-toc-num">11</span><span class="ec-toc-text">Complex multiplication<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
 <li class="ec-toc-chapter"><a href="12-tate-curve.html"><span class="ec-toc-num">12</span><span class="ec-toc-text">The Tate curve<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
 <li class="ec-toc-chapter"><a href="13-l-functions-bsd.html"><span class="ec-toc-num">13</span><span class="ec-toc-text">The \(L\)-function and BSD<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
@@ -57,7 +57,7 @@
 </div>
 <div id="content" class="content">
 <h1 class="title"><span class="ec-chapter-label">Chapter 6</span>Elliptic curves over local fields</h1>
-<div class="sources" id="org0259a91">
+<div class="sources" id="org36923ee">
 <p>
 This chapter follows [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Chapter VII].  For the reduction types we also follow
 [<a class="ec-cite" href="#bib-Poonen08">Poo08</a>, Section 6] and [<a class="ec-cite" href="#bib-Milne20">Mil20</a>, Section II.3].  Silverman's Section VII.4 is
@@ -78,9 +78,9 @@ function field.
 </p>
 
 <p>
-For \(k\) a global field, we let \(\Omega_k\) denote the set of <dfn class="ec-cdef" id="gls-place" data-gls="place">places</dfn> of
+For \(k\) a global field, we let \(\Places_k\) denote the set of <dfn class="ec-cdef" id="gls-place" data-gls="place">places</dfn> of
 \(k\): equivalence classes of non-trivial absolute values on \(k\).  For
-\(v \in \Omega_k\), we denote by \(k_v\) the <dfn class="ec-cdef" id="gls-completion" data-gls="completion">completion</dfn> of \(k\) at \(v\).  A
+\(v \in \Places_k\), we denote by \(k_v\) the <dfn class="ec-cdef" id="gls-completion" data-gls="completion">completion</dfn> of \(k\) at \(v\).  A
 <dfn class="ec-cdef" id="gls-local-field" data-gls="local-field">local field</dfn> is the completion of a global field at a place.
 </p>
 
@@ -108,7 +108,7 @@ for \(v\) and its residue field is finite.
 <p><span class="ec-thm-head"><span class="ec-thm-name">Situation 6.0.2</span>.</span> </p>
 <ul class="org-ul">
 <li>\(k\) is a global field.</li>
-<li>\(v \in \Omega_k\) is a non-archimedean place, identified with its normalized discrete
+<li>\(v \in \Places_k\) is a non-archimedean place, identified with its normalized discrete
 valuation \(v\colon k_v^\times \to \Z\).</li>
 <li>\(k_v\) is the local field, the completion of \(k\) at \(v\).</li>
 <li>\(\calO_v \coloneqq \{x \in k_v : v(x) \geq 0\}\) is the <dfn class="ec-cdef" id="gls-ring-of-integers" data-gls="ring-of-integers">ring of integers</dfn> of
@@ -429,7 +429,7 @@ is \(p\)-minimal, and the second is not.
 </div>
 
 <figure class="ec-figure" id="fig-lf-two-models">
-<img class="ec-tikz" src="figures/b66b939746ede5aec1d228547c92c268541df9ca.svg" style="--ec-w: 30.63em" alt=""/>
+<img class="ec-tikz" src="figures/96f5b7c6c91eee3294a2b0a8585c3d43b5ec8f62.svg" style="--ec-w: 30.63em" alt=""/>
 <figcaption><span class="ec-thm-name">Figure 6.2.1</span>. The models \(\calW\) and \(\calW'\) of Example <a href="#eg-lf-model-dependence">6.2.3</a> over \(\Spec \Z_p\): the same generic fiber \(E\) over \((0)\), and non-isomorphic special fibers over \(p\Z_p\).</figcaption>
 </figure>
 
@@ -1017,7 +1017,7 @@ smooth.
 
 <p>
 These values of \(a\) at the places of bad reduction are the ones that enter the
-\(L\)-function of an elliptic curve over a number field (Chapter 13).
+\(L\)-function of an elliptic curve over a number field (Chapter <a href="13-l-functions-bsd.html">13</a>).
 </p>
 
 <div class="ec-thm ec-remark" id="rem-lf-types-neron">
@@ -1257,7 +1257,7 @@ See [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Theorem VII.6.1 and C
 </div>
 
 <div id="outline-container-sec-lf-inertia" class="outline-2">
-<h2 id="sec-lf-inertia"><span class="ec-status ec-status-draft"><span class="ec-status-label ec-status-draft">Draft</span><time datetime="2026-10-13">13 Oct 2026</time></span><span class="section-number" id="s6.4">6.4</span> Inertia and the criterion of Néron&#x2013;Ogg&#x2013;Shafarevich</h2>
+<h2 id="sec-lf-inertia"><span class="ec-status ec-status-draft"><span class="ec-status-label ec-status-draft">Draft</span><time datetime="2026-10-14">14 Oct 2026</time></span><span class="section-number" id="s6.4">6.4</span> Inertia and the criterion of Néron&#x2013;Ogg&#x2013;Shafarevich</h2>
 <div class="outline-text-2" id="text-sec-lf-inertia">
 <div class="ec-thm ec-situation" id="sit-lf-inertia">
 <p>
@@ -1427,9 +1427,9 @@ Proposition <a href="#prop-lf-torsion">6.2.9</a> over \(K'\), the reduction map
 <p>
 Let \(\tau \in I_v\) and \(P \in E[m](K')\).  Since \(\tau\) preserves the valuation, it maps
 \(\calO'\) to itself, and reduction commutes with it:
-\(\overline{\tau P} = \bar\tau(\bar P)\), where \(\bar\tau\) is the action on \(\kappa'\).  As
-\(\tau \in I_v\), \(\bar\tau\) is the identity, so \(\overline{\tau P - P} = \bar P - \bar P = \bar O\).
-Since \(\tau P - P \in E[m](K')\), injectivity gives \(\tau P = P\).
+\(\overline{\tau(P)} = \bar\tau(\bar P)\), where \(\bar\tau\) is the action on \(\kappa'\).  As
+\(\tau \in I_v\), \(\bar\tau\) is the identity, so \(\overline{\tau(P) - P} = \bar P - \bar P = \bar O\).
+Since \(\tau(P) - P \in E[m](K')\), injectivity gives \(\tau(P) = P\).
 </p>
 </details>
 
@@ -1578,7 +1578,7 @@ form with \(\lambda = -p\).  Then \(\Delta = 16p^2(p + 1)^2\) and
 \(y^2 = x^2(x - 1)\) has tangent slopes \(\pm\sqrt{-1}\), so it is split exactly when
 \(p \equiv 1 \pmod 4\).  Yet \(E[2](\Q_p^{\operatorname{sep}}) = \{O, (0, 0), (1, 0), (-p, 0)\}\)
 consists of rational points, so \(E[2](\Q_p^{\operatorname{sep}})\) is unramified.  One value of
-\(m\) does not suffice in Theorem <a href="#thm-lf-nos">6.4.7</a>.  (In Chapter 12 we will see that for this
+\(m\) does not suffice in Theorem <a href="#thm-lf-nos">6.4.7</a>.  (In Chapter <a href="12-tate-curve.html">12</a> we will see that for this
 curve, which is a Tate curve or an unramified quadratic twist of one,
 \(E[\ell](\Q_p^{\operatorname{sep}})\) with \(\ell \neq 2, p\) prime is unramified only when
 \(\ell \mid v(\Delta) = 2\), that is, never.)</li>
@@ -1638,8 +1638,8 @@ from, by computing blow-ups in examples, and to be able to run the algorithm.
 </p>
 </div>
 
-<div id="outline-container-org380a047" class="outline-3">
-<h3 id="org380a047"><span class="section-number" id="s6.5.1">6.5.1</span> Regular models</h3>
+<div id="outline-container-org7f0a0bd" class="outline-3">
+<h3 id="org7f0a0bd"><span class="section-number" id="s6.5.1">6.5.1</span> Regular models</h3>
 <div class="outline-text-3" id="text-5-1">
 <p>
 Recall that a Noetherian local ring \((A, \mm)\) is regular if
@@ -1724,7 +1724,7 @@ Kodaira's family \(y^2 = x^3 + t\) versus \(y^2 = x^3 + t^2\) over \(\C[t]\)
 </p>
 
 <figure class="ec-figure" id="fig-lf-regular-or-not">
-<img class="ec-tikz" src="figures/bd6978420ef8d9ef21d7fcb19f75ee8894df9b09.svg" style="--ec-w: 32.76em" alt=""/>
+<img class="ec-tikz" src="figures/78c4ab9675d2fa3e8a21d4f98dabedacf441f2e2.svg" style="--ec-w: 32.76em" alt=""/>
 <figcaption><span class="ec-thm-name">Figure 6.5.1</span>. The Weierstrass models of \(y^2 = x^3 + p\) and \(y^2 = x^3 + p^2\) over \(\Spec \Z_p\), with \(p \geq 5\).  The special fibers are the same cuspidal cubic; the first surface is regular at the cusp, and the second is not.</figcaption>
 </figure>
 
@@ -1755,8 +1755,8 @@ regular [<a class="ec-cite" href="#bib-Poonen2017">Poo17</a>, Section 5.7.6], an
 </div>
 </div>
 
-<div id="outline-container-org7451647" class="outline-3">
-<h3 id="org7451647"><span class="section-number" id="s6.5.2">6.5.2</span> Blowing up, by hand</h3>
+<div id="outline-container-orgee31352" class="outline-3">
+<h3 id="orgee31352"><span class="section-number" id="s6.5.2">6.5.2</span> Blowing up, by hand</h3>
 <div class="outline-text-3" id="text-5-2">
 <p>
 The blow-up of \(\AA^2_{\calO_v}\) at the closed point \((\pi_v, x, y)\) is covered by three
@@ -1806,7 +1806,7 @@ rational curves: type \(\mathrm{I}_n\).  For \(n = 1\) the model is already regu
 </div>
 
 <figure class="ec-figure" id="fig-lf-blowup-in">
-<img class="ec-tikz" src="figures/0617428d64c07a59a67d531f4445a5cbaf0e5a43.svg" style="--ec-w: 29.99em" alt=""/>
+<img class="ec-tikz" src="figures/d6469bdac29a8539c6fa2f4ec09c2df5579dfe5f.svg" style="--ec-w: 29.99em" alt=""/>
 <figcaption><span class="ec-thm-name">Figure 6.5.2</span>. Blowing up the node of the special fiber of \(y^2 = x^3 + x^2 + p^2\), where the surface is not regular, separates its two branches: type \(\mathrm{I}_2\).  The strict transform \(\Gamma_0\) of the nodal cubic is blue.</figcaption>
 </figure>
 
@@ -1843,8 +1843,8 @@ See Figure <a href="#fig-lf-blowup-iii-iv">6.5.3</a>.  For \(y^2 = x^3 + p\) the
 </div>
 
 <figure class="ec-figure" id="fig-lf-blowup-iii-iv">
-<img class="ec-tikz" src="figures/18da46eae630cbd5007794d28757e75ce293b8c0.svg" style="--ec-w: 15.64em" alt=""/>
-<img class="ec-tikz" src="figures/795f855f1c8cdecee708c53eb958193966d5ab91.svg" style="--ec-w: 15.64em" alt=""/>
+<img class="ec-tikz" src="figures/05b040e31793b92811492e1c1282c24988c247ef.svg" style="--ec-w: 15.64em" alt=""/>
+<img class="ec-tikz" src="figures/c47287095668dc7174ed6d27766e74cc82a78a82.svg" style="--ec-w: 15.64em" alt=""/>
 <figcaption><span class="ec-thm-name">Figure 6.5.3</span>. Blowing up the cusp of \(y^2 = x^3 + px\) gives two curves tangent at one closed point, type \(\mathrm{III}\) (left); for \(y^2 = x^3 + p^2\) it gives three concurrent lines, type \(\mathrm{IV}\) (right).</figcaption>
 </figure>
 
@@ -1871,14 +1871,14 @@ fiber that is not reduced.
 </div>
 
 <figure class="ec-figure" id="fig-lf-blowup-i0star">
-<img class="ec-tikz" src="figures/1b5eb47bd9fc3bb377cff7e1c8eed48bb8080fbd.svg" style="--ec-w: 34.91em" alt=""/>
+<img class="ec-tikz" src="figures/b308d392385f3e87b47e7aca56f5b30df32d04c3.svg" style="--ec-w: 34.91em" alt=""/>
 <figcaption><span class="ec-thm-name">Figure 6.5.4</span>. Type \(\mathrm{I}_0^*\) in two blow-ups.  The first produces a double line with three non-regular closed points (red), and blowing those up adds three simple lines.  The strict transform of the cusp is blue.</figcaption>
 </figure>
 </div>
 </div>
 
-<div id="outline-container-orga4e5291" class="outline-3">
-<h3 id="orga4e5291"><span class="section-number" id="s6.5.3">6.5.3</span> The Kodaira&#x2013;Néron classification</h3>
+<div id="outline-container-org44a6a18" class="outline-3">
+<h3 id="org44a6a18"><span class="section-number" id="s6.5.3">6.5.3</span> The Kodaira&#x2013;Néron classification</h3>
 <div class="outline-text-3" id="text-5-3">
 <p>
 Let \(\calX\) be a regular proper model of \(E\).  Its special fiber is the divisor of the
@@ -1965,7 +1965,7 @@ the others.
 </p>
 
 <figure class="ec-figure" id="fig-lf-dual-graphs">
-<img class="ec-tikz" src="figures/02b5eedcdc03de0f19692c982cd14b2d076d9d7a.svg" style="--ec-w: 26.44em" alt=""/>
+<img class="ec-tikz" src="figures/f7a3eeb527da3057afb0f000410688fe402f9ec4.svg" style="--ec-w: 26.44em" alt=""/>
 <figcaption><span class="ec-thm-name">Figure 6.5.5</span>. The dual graphs of the special fibers with at least two components over \(\bar\kappa\), labeled by the multiplicities \(d_i\).  The component \(\Gamma_0\) meeting \(O\) is blue.  A cycle of two vertices joined by a double edge is \(\tilde A_1\).</figcaption>
 </figure>
 
@@ -2041,7 +2041,7 @@ smooth connected group \(\calE^0_\pi\) over the finite field \(\kappa(v)\)
 </details>
 
 <figure class="ec-figure" id="fig-lf-kodaira-table">
-<img class="ec-tikz" src="figures/3b87a0d5082a01c3865e8244c8b8495aad054b6f.svg" style="--ec-w: 44.70em" alt=""/>
+<img class="ec-tikz" src="figures/7de68c85b6f8543ab9373acdd42c524b5f2e03bc.svg" style="--ec-w: 44.70em" alt=""/>
 <figcaption><span class="ec-thm-name">Figure 6.5.6</span>. The Kodaira types.  For each, the special fiber of the minimal regular proper model over \(\bar\kappa\): every component is a smooth rational curve except in types \(\mathrm{I}_0\), \(\mathrm{I}_1\) and \(\mathrm{II}\), the numbers are the multiplicities, and the component \(\Gamma_0\) meeting \(O\) is blue.  Then the number \(m\) of components, the dual graph, the group \(\Phi(\bar\kappa)\), and, valid only when \(p \geq 5\), the valuation of the minimal discriminant and the behavior of \(j\) (\(\bar\jmath\) is the reduction of \(j \in \calO_v\)).  After [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Table 15.1].</figcaption>
 </figure>
 
@@ -2110,8 +2110,8 @@ unstarred ones, and their \(v(\Delta)\) is shifted by \(6\) modulo \(12\).
 </div>
 </div>
 
-<div id="outline-container-org4ca95dc" class="outline-3">
-<h3 id="org4ca95dc"><span class="section-number" id="s6.5.4">6.5.4</span> Tate's algorithm</h3>
+<div id="outline-container-org7d67167" class="outline-3">
+<h3 id="org7d67167"><span class="section-number" id="s6.5.4">6.5.4</span> Tate's algorithm</h3>
 <div class="outline-text-3" id="text-5-4">
 <p>
 When \(p \geq 5\), Remark <a href="#rem-lf-kodaira-large-p">6.5.10</a> finds the Kodaira type from \(v(\Delta)\)
@@ -2212,7 +2212,7 @@ See [<a class="ec-cite" href="#bib-Silverman94">Sil94</a>, Section IV.9], and Ta
 </details>
 
 <figure class="ec-figure" id="fig-lf-tate-flowchart">
-<img class="ec-tikz" src="figures/c305d9121440ddeb8cc6f2baa31d8d537cabc4f1.svg" style="--ec-w: 34.82em" alt=""/>
+<img class="ec-tikz" src="figures/144b4f26a0959ac4df16c598ad23e94e134db9a8.svg" style="--ec-w: 34.82em" alt=""/>
 <figcaption><span class="ec-thm-name">Figure 6.5.7</span>. Tate's algorithm (Theorem <a href="#thm-lf-tate">6.5.12</a>).  A downward arrow means that the test failed; the gray notes are the changes of variables made on the way.  The type \(\mathrm{I}_n^*\) calls the subprocedure of part <a href="#it-lf-tate-instar">7</a>, and the red box sends a non-minimal equation back to the start.</figcaption>
 </figure>
 
@@ -2272,8 +2272,8 @@ unramified quadratic extension, and \(c_v\) grows from \(1\) or \(2\) to \(n\).
 </div>
 </div>
 
-<div id="outline-container-org3836018" class="outline-3">
-<h3 id="org3836018"><span class="section-number" id="s6.5.5">6.5.5</span> Examples</h3>
+<div id="outline-container-orgead1f08" class="outline-3">
+<h3 id="orgead1f08"><span class="section-number" id="s6.5.5">6.5.5</span> Examples</h3>
 <div class="outline-text-3" id="text-5-5">
 <p>
 The examples below were checked with Magma's <code>LocalInformation</code> [<a class="ec-cite" href="#bib-Magma">BCP97</a>], which runs
@@ -2409,7 +2409,7 @@ table.
 <p>
 <span class="ec-thm-head"><span class="ec-thm-name">Remark 6.5.17</span>.</span> The exponent of the conductor of \(E\) at \(v\) is an integer \(f_v \geq 0\) measuring
 the ramification of the Galois action on the torsion of \(E\).  It enters the \(L\)-function in
-Chapter 13.  It is \(0\) for good reduction and \(1\) for multiplicative reduction, and if
+Chapter <a href="13-l-functions-bsd.html">13</a>.  It is \(0\) for good reduction and \(1\) for multiplicative reduction, and if
 \(p \geq 5\) it is \(2\) for additive reduction [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Table 15.1].  Ogg's formula
 </p>
 \begin{equation*}
@@ -2426,9 +2426,9 @@ conductors \(27\) and \(32\).
 </div>
 </div>
 
-<div id="outline-container-org322a060" class="outline-2 ec-references">
-<h2 id="org322a060">References</h2>
-<div class="outline-text-2" id="text-org322a060">
+<div id="outline-container-org3a0b565" class="outline-2 ec-references">
+<h2 id="org3a0b565">References</h2>
+<div class="outline-text-2" id="text-org3a0b565">
 <dl class="ec-bibliography">
 <dt id="bib-Magma">[BCP97]</dt>
 <dd>Wieb Bosma, John Cannon and Catherine Playoust. &ldquo;The Magma algebra system. I. The user language&rdquo;. In: <i>J. Symbolic Comput.</i> 24.3&ndash;4 (1997), pp. 235&ndash;265. Computational algebra and number theory (London, 1993). <a href="https://doi.org/10.1006/jsco.1996.0125">doi:10.1006/jsco.1996.0125</a>.</dd>

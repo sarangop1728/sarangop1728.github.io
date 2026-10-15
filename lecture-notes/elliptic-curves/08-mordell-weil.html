@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2026-10-13 Tue 08:36 -->
+<!-- 2026-10-15 Thu 08:28 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>The Mordell&#x2013;Weil theorem</title>
@@ -29,9 +29,21 @@
 <li class="ec-toc-chapter"><a href="05-finite-fields.html"><span class="ec-toc-num">5</span><span class="ec-toc-text">Elliptic curves over finite fields<span class="ec-toc-status"><span class="ec-status-progress">0 of 5 sections finished</span></span></span></a></li>
 <li class="ec-toc-chapter"><a href="06-local-fields.html"><span class="ec-toc-num">6</span><span class="ec-toc-text">Elliptic curves over local fields<span class="ec-toc-status"><span class="ec-status-progress">0 of 5 sections finished</span></span></span></a></li>
 <li class="ec-toc-chapter"><a href="07-galois-cohomology.html"><span class="ec-toc-num">7</span><span class="ec-toc-text">Galois cohomology<span class="ec-toc-status"><span class="ec-status-progress">0 of 10 sections finished</span></span></span></a></li>
-<li class="ec-toc-chapter is-current"><a href="08-mordell-weil.html" aria-current="page"><span class="ec-toc-num">8</span><span class="ec-toc-text">The Mordell&ndash;Weil theorem<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
-<li class="ec-toc-chapter"><a href="09-integral-points.html"><span class="ec-toc-num">9</span><span class="ec-toc-text">Integral points<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
-<li class="ec-toc-chapter"><a href="10-selmer-sha.html"><span class="ec-toc-num">10</span><span class="ec-toc-text">Twisting, Selmer, and Tate&ndash;Shafarevich<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
+<li class="ec-toc-chapter is-current"><a href="08-mordell-weil.html" aria-current="page"><span class="ec-toc-num">8</span><span class="ec-toc-text">The Mordell&ndash;Weil theorem<span class="ec-toc-status"><span class="ec-status-progress">0 of 4 sections finished</span></span></span></a>
+<ol class="ec-toc-sections">
+<li class="ec-toc-level-1"><a href="#s8.1"><span class="ec-toc-num">8.1</span><span class="ec-toc-text">The case \(m = 2\) over \(\Q\) with rational \(2\)-torsion<span class="ec-toc-status"><span class="ec-status-label ec-status-draft">Draft</span></span></span></a></li>
+<li class="ec-toc-level-1"><a href="#s8.2"><span class="ec-toc-num">8.2</span><span class="ec-toc-text">The weak Mordell&ndash;Weil theorem<span class="ec-toc-status"><span class="ec-status-label ec-status-draft">Draft</span></span></span></a></li>
+<li class="ec-toc-level-1"><a href="#s8.3"><span class="ec-toc-num">8.3</span><span class="ec-toc-text">The Kummer pairing via cohomology<span class="ec-toc-status"><span class="ec-status-label ec-status-draft">Draft</span></span></span></a></li>
+<li class="ec-toc-level-2"><a href="#s8.3.1"><span class="ec-toc-num">8.3.1</span><span class="ec-toc-text">The Kummer image at a good place</span></a></li>
+<li class="ec-toc-level-1"><a href="#s8.4"><span class="ec-toc-num">8.4</span><span class="ec-toc-text">Heights on abelian groups<span class="ec-toc-status"><span class="ec-status-label ec-status-draft">Draft</span></span></span></a></li>
+<li class="ec-toc-level-2"><a href="#s8.4.1"><span class="ec-toc-num">8.4.1</span><span class="ec-toc-text">Heights and finite generation</span></a></li>
+<li class="ec-toc-level-2"><a href="#s8.4.2"><span class="ec-toc-num">8.4.2</span><span class="ec-toc-text">The canonical height</span></a></li>
+<li class="ec-toc-level-2"><a href="#s8.4.3"><span class="ec-toc-num">8.4.3</span><span class="ec-toc-text">Lattices and Minkowski's theorem</span></a></li>
+<li class="ec-toc-level-2"><a href="#s8.4.4"><span class="ec-toc-num">8.4.4</span><span class="ec-toc-text">Néron's counting theorem</span></a></li>
+<li class="ec-toc-level-2"><a href="#s8.4.5"><span class="ec-toc-num">8.4.5</span><span class="ec-toc-text">The multiplicative group</span></a></li>
+</ol></li>
+<li class="ec-toc-chapter"><a href="09-selmer-sha.html"><span class="ec-toc-num">9</span><span class="ec-toc-text">Twisting, Selmer, and Tate&ndash;Shafarevich<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
+<li class="ec-toc-chapter"><a href="10-integral-points.html"><span class="ec-toc-num">10</span><span class="ec-toc-text">Integral points<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
 <li class="ec-toc-chapter"><a href="11-complex-multiplication.html"><span class="ec-toc-num">11</span><span class="ec-toc-text">Complex multiplication<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
 <li class="ec-toc-chapter"><a href="12-tate-curve.html"><span class="ec-toc-num">12</span><span class="ec-toc-text">The Tate curve<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
 <li class="ec-toc-chapter"><a href="13-l-functions-bsd.html"><span class="ec-toc-num">13</span><span class="ec-toc-text">The \(L\)-function and BSD<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
@@ -41,13 +53,1416 @@
 <a class="ec-toc-glossary" href="glossary.html">Glossary</a>
 </nav>
 <button class="ec-menu" type="button" aria-controls="ec-sidebar" aria-expanded="false">Contents</button>
-<nav class="ec-pager ec-pager-top" aria-label="Chapters"><a class="ec-pager-prev" rel="prev" href="07-galois-cohomology.html"><span class="ec-pager-label">Previous</span><span class="ec-pager-title">7. Galois cohomology</span></a><a class="ec-pager-next" rel="next" href="09-integral-points.html"><span class="ec-pager-label">Next</span><span class="ec-pager-title">9. Integral points</span></a></nav>
+<nav class="ec-pager ec-pager-top" aria-label="Chapters"><a class="ec-pager-prev" rel="prev" href="07-galois-cohomology.html"><span class="ec-pager-label">Previous</span><span class="ec-pager-title">7. Galois cohomology</span></a><a class="ec-pager-next" rel="next" href="09-selmer-sha.html"><span class="ec-pager-label">Next</span><span class="ec-pager-title">9. Twisting, Selmer, and Tate&ndash;Shafarevich</span></a></nav>
 </div>
 <div id="content" class="content">
 <h1 class="title"><span class="ec-chapter-label">Chapter 8</span>The Mordell&#x2013;Weil theorem</h1>
+<div class="sources" id="orgcac2391">
+<p>
+This chapter follows [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Sections VIII.1&#x2013;VIII.3 and VIII.9], with the point
+of view of [<a class="ec-cite" href="#bib-Poonen02">Poo02</a>, Sections 8&#x2013;10].  The counting of elements of bounded height
+follows [<a class="ec-cite" href="#bib-Hindry-Silverman00">HS00</a>, Sections B.4&#x2013;B.6].
+</p>
+
+</div>
+
+<p>
+The Mordell&#x2013;Weil theorem says that the group \(E(k)\) of rational points of an elliptic
+curve over a number field is finitely generated.  Its proof has two steps of a very
+different nature.  The first, the weak Mordell&#x2013;Weil theorem, says that \(E(k)/mE(k)\) is
+finite for every \(m \geq 2\), and the second step needs it for a single \(m\).  It is an algebraic statement, and it is proved with the
+Galois cohomology of Chapter <a href="07-galois-cohomology.html">7</a> and the local fields of
+Chapter <a href="06-local-fields.html">6</a>.  The second is a theory of heights.  This chapter starts
+with the first step, first in a case where everything is explicit.
+</p>
+
+<div class="ec-thm ec-situation" id="sit-mw-standing">
+<p><span class="ec-thm-head"><span class="ec-thm-name">Situation 8.0.1</span>.</span> </p>
+<ul class="org-ul">
+<li>\(k\) is a number field, with set of places \(\Places_k\) and completions \(k_v\).  For a
+non-archimedean place \(v\) we use the notation of Situations <a href="06-local-fields.html#sit-lf-standing">6.0.2</a> and
+<a href="06-local-fields.html#sit-lf-inertia">6.4.1</a>: the ring of integers \(\calO_v\), the residue field \(\kappa(v)\) of
+characteristic \(p\), and the inertia group \(I_v\).</li>
+<li>Since \(\operatorname{char} k = 0\), separable closures are algebraic closures.  We
+write \(\kbar\) and \(\overline{k_v}\) for the \(\ksep\) and \(k_v^{\operatorname{sep}}\)
+of Chapters <a href="06-local-fields.html">6</a> and <a href="07-galois-cohomology.html">7</a>, and
+\(\Gal_k \coloneqq \Gal(\kbar/k)\).  For an extension \(F\) of \(k\) inside \(\kbar\),
+\(\Gal_F \coloneqq \Gal(\kbar/F)\).</li>
+<li>Elements of Galois groups are \(\sigma, \tau, \gamma\).  For a \(\kbar\)-point \(Q\) of a
+variety over \(k\), \(\sigma(Q)\) is obtained by applying \(\sigma\) to the coordinates of
+\(Q\).</li>
+<li>As in Situation <a href="07-galois-cohomology.html#sit-gc-global">7.8.1</a>, for each \(v \in \Places_k\) we fix a \(k\)-embedding
+\(\kbar \to \overline{k_v}\).  Restriction to \(\kbar\) then identifies \(\Gal_{k_v}\) with
+a decomposition group in \(\Gal_k\), and \(I_v\) with a subgroup of it.</li>
+<li>\(E\) is an elliptic curve over \(k\), and \(m \geq 2\) is an integer.  For an abelian
+group \(B\), \(B/m \coloneqq B/mB\) and \(B[m]\) is its \(m\)-torsion subgroup.</li>
+<li>For a non-archimedean place \(v\), \(E\) has good (respectively bad) reduction at \(v\) if
+\(E_{k_v}\) has good (respectively bad) reduction (Definition <a href="06-local-fields.html#def-lf-reduction-types">6.3.1</a>).</li>
+</ul>
+</div>
+
+<p>
+Extensions of \(k\) are compared with inertia in the same way as cohomology classes in
+Section <a href="07-galois-cohomology.html#sec-gc-global">7.8</a>.
+</p>
+
+<div class="ec-thm ec-definition" id="def-mw-unramified">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Definition 8.0.2</span>.</span> Let \(F\) be a Galois extension of \(k\) inside \(\kbar\), possibly infinite, and let \(v\)
+be a non-archimedean place of \(k\).  Then \(F\) is
+<dfn class="ec-cdef" id="gls-unramified-at-a-place" data-gls="unramified-at-a-place">unramified at</dfn> \(v\) if \(I_v \subseteq \Gal_F\), that is, if \(I_v\) fixes \(F\).  For a finite set
+\(T \subseteq \Places_k\), \(F\) is unramified outside \(T\) if it is unramified at every
+non-archimedean \(v \notin T\).
+</p>
+</div>
+
+<p>
+Another embedding \(\kbar \to \overline{k_v}\) replaces \(I_v\) by a conjugate
+\(\gamma I_v\gamma^{-1}\), with \(\gamma \in \Gal_k\), and \(\Gal_F\) is normal, so the condition
+does not depend on the embedding.  A compositum of Galois extensions unramified at \(v\) is
+unramified at \(v\), since \(\Gal_{FF'} = \Gal_F \cap \Gal_{F'}\), and so is a Galois
+subextension \(F'' \subseteq F\), since \(\Gal_F \subseteq \Gal_{F''}\).  Let \(\chi\colon \Gal_k \to A\) be a continuous
+homomorphism to a finite abelian group, a class of \(H^1(k, A)\) for the trivial action
+(Proposition <a href="07-galois-cohomology.html#prop-gc-trivial">7.2.3</a>).  The fixed field of \(\ker\chi\) is unramified at \(v\)
+exactly when \(\chi\) is trivial on \(I_v\), that is, when the class \(\chi\) is unramified at
+\(v\) in the sense of Section <a href="07-galois-cohomology.html#sec-gc-global">7.8</a>.  For a quadratic field this is the familiar
+criterion: if \(p\) is an odd prime and \(d \in \Q^\times\), then \(\Q(\sqrt d)\) is unramified
+at \(p\) if and only if \(v_p(d)\) is even, by Proposition <a href="07-galois-cohomology.html#prop-gc-unramified-kummer">7.7.4</a>
+applied to the class \(\delta(d)\colon \sigma \mapsto \sigma(\sqrt d)/\sqrt d\).
+</p>
+
+<div id="outline-container-sec-mw-two-torsion" class="outline-2">
+<h2 id="sec-mw-two-torsion"><span class="ec-status ec-status-draft"><span class="ec-status-label ec-status-draft">Draft</span><time datetime="2026-10-14">14 Oct 2026</time></span><span class="section-number" id="s8.1">8.1</span> The case \(m = 2\) over \(\Q\) with rational \(2\)-torsion</h2>
+<div class="outline-text-2" id="text-sec-mw-two-torsion">
+<p>
+The proof of the weak Mordell&#x2013;Weil theorem is easier to see in a special case, where the
+class group and the unit theorem disappear and the local input is elementary.  This section
+follows [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Section VIII.1] for \(m = 2\) and \(k = \Q\).
+</p>
+
+<div class="ec-thm ec-situation" id="sit-mw-two-torsion">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Situation 8.1.1</span>.</span> In addition to Situation <a href="#sit-mw-standing">8.0.1</a>:
+</p>
+<ul class="org-ul">
+<li>\(k = \Q\) and \(m = 2\).  For a prime \(p\), \(I_p \subseteq \Gal_{\Q_p} \subseteq \Gal_\Q\) is
+the inertia group at \(p\).</li>
+<li><p>
+\(E\) is given by
+</p>
+\begin{equation*}
+y^2 = (x - e_1)(x - e_2)(x - e_3)
+\end{equation*}
+<p>
+with distinct \(e_1, e_2, e_3 \in \Z\).  Its points of order two are
+\(T_i \coloneqq (e_i, 0)\), so \(E[2](\Qbar) = \{O, T_1, T_2, T_3\} \subseteq E(\Q)\).
+</p></li>
+<li>\(S \coloneqq \{\infty, 2\} \cup \{p : p \mid (e_1 - e_2)(e_1 - e_3)(e_2 - e_3)\}\), a
+finite set of places of \(\Q\).</li>
+<li>\(L\) is the compositum inside \(\Qbar\) of the fields \(\Q(Q)\), for the \(\Qbar\)-points
+\(Q\) of \(E\) with \(2Q \in E(\Q)\).  Silverman [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>] writes
+\(L = \Q([2]^{-1}E(\Q))\).</li>
+</ul>
+</div>
+
+<p>
+The group law of \(E\) and the map \([2]\) are given by rational functions with coefficients
+in \(\Q\) (Algorithm <a href="04-ec-algebraic.html#alg-ec-group-law">4.2.7</a>), so every \(\sigma \in \Gal_\Q\) acts on \(E(\Qbar)\)
+by group automorphisms that commute with \([2]\).
+</p>
+
+<div class="ec-thm ec-definition" id="def-mw-kummer-pairing-two">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Definition 8.1.2</span>.</span> Let \(P \in E(\Q)\) and \(\sigma \in \Gal_\Q\), and choose a \(\Qbar\)-point \(Q\) of \(E\) with
+\(2Q = P\).  The <dfn class="ec-cdef" id="gls-kummer-pairing" data-gls="kummer-pairing">Kummer pairing</dfn> of \(E\) is the map
+</p>
+\begin{equation*}
+\kappa\colon E(\Q) \times \Gal_\Q \to E[2](\Qbar), \qquad
+\kappa(P, \sigma) \coloneqq \sigma(Q) - Q.
+\end{equation*}
+</div>
+
+<p>
+Such a \(\Qbar\)-point \(Q\) exists, since \([2]\) is surjective on \(E(\Qbar)\)
+(part <a href="07-galois-cohomology.html#it-gc-kummer-ec-exact">1</a> of Proposition <a href="07-galois-cohomology.html#prop-gc-kummer-ec">7.5.1</a>).
+</p>
+
+<div class="ec-thm ec-proposition" id="prop-mw-pairing-two">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Proposition 8.1.3</span>.</span> Let \(P, P' \in E(\Q)\) and \(\sigma, \tau \in \Gal_\Q\).
+</p>
+<ol class="org-ol">
+<li><a id="it-mw-two-defined"></a> \(\kappa(P, \sigma)\) lies in \(E[2](\Qbar)\) and does not depend on
+the choice of \(Q\).</li>
+<li><a id="it-mw-two-bilinear"></a> \(\kappa(P + P', \sigma) = \kappa(P, \sigma) + \kappa(P', \sigma)\) and
+\(\kappa(P, \sigma\tau) = \kappa(P, \sigma) + \kappa(P, \tau)\).</li>
+<li><a id="it-mw-two-left"></a> \(\kappa(P, \sigma) = O\) for every \(\sigma \in \Gal_\Q\) if and only if
+\(P \in 2E(\Q)\).</li>
+<li><a id="it-mw-two-right"></a> \(\kappa(P, \sigma) = O\) for every \(P \in E(\Q)\) if and only if
+\(\sigma \in \Gal_L\).</li>
+<li><p>
+<a id="it-mw-two-perfect"></a> \(L/\Q\) is Galois, \(\Gal(L/\Q)\) is abelian of exponent dividing
+\(2\), and \(\kappa\) induces a pairing
+</p>
+\begin{equation*}
+E(\Q)/2 \times \Gal(L/\Q) \to E[2](\Qbar)
+\end{equation*}
+<p>
+for which \(E(\Q)/2 \to \Hom_{\mathrm{conts}}(\Gal(L/\Q), E[2](\Qbar))\) and
+\(\Gal(L/\Q) \to \Hom(E(\Q)/2, E[2](\Qbar))\) are injective.  In particular
+\(E(\Q)/2\) is finite if and only if \(L/\Q\) is finite.
+</p></li>
+</ol>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+For part <a href="#it-mw-two-defined">1</a>, \(2(\sigma(Q) - Q) = \sigma(2Q) - 2Q = \sigma(P) - P = O\), as
+\(P\) is a rational point.  Another choice of \(Q\) is \(Q + T\) with \(T \in E[2](\Qbar)\),
+and \(\sigma(T) = T\) because \(T\) is a rational point.  So
+\(\sigma(Q + T) - (Q + T) = \sigma(Q) - Q\).
+</p>
+
+<p>
+For part <a href="#it-mw-two-bilinear">2</a>, if \(2Q = P\) and \(2Q' = P'\), then \(2(Q + Q') = P + P'\),
+and \(\sigma(Q + Q') - (Q + Q') = (\sigma(Q) - Q) + (\sigma(Q') - Q')\).  Next,
+</p>
+\begin{equation*}
+(\sigma\tau)(Q) - Q = \bigl(\sigma(Q) - Q\bigr) + \sigma\bigl(\tau(Q) - Q\bigr)
+= \kappa(P, \sigma) + \sigma\bigl(\kappa(P, \tau)\bigr),
+\end{equation*}
+<p>
+and \(\kappa(P, \tau)\) is a point of order dividing two, hence rational, hence fixed by
+\(\sigma\).  This and part <a href="#it-mw-two-defined">1</a> are the two places where we use that
+\(E[2](\Qbar) \subseteq E(\Q)\).
+</p>
+
+<p>
+For part <a href="#it-mw-two-left">3</a>, if \(P = 2Q\) with \(Q \in E(\Q)\), then \(\sigma(Q) = Q\) for every
+\(\sigma\).  Conversely, if \(\sigma(Q) = Q\) for every \(\sigma\), then the coordinates of \(Q\)
+lie in \(\Qbar^{\Gal_\Q} = \Q\) (Proposition <a href="07-galois-cohomology.html#prop-gc-galois">7.1.1</a>), so \(P = 2Q \in 2E(\Q)\).
+</p>
+
+<p>
+For part <a href="#it-mw-two-right">4</a>, if \(\sigma \in \Gal_L\) and \(2Q \in E(\Q)\), then the coordinates
+of \(Q\) lie in \(L\), so \(\sigma(Q) = Q\).  Conversely, if \(\kappa(\cdot, \sigma) = O\), then
+\(\sigma\) fixes every \(\Qbar\)-point \(Q\) with \(2Q \in E(\Q)\), hence every field \(\Q(Q)\), hence
+their compositum \(L\).
+</p>
+
+<p>
+For part <a href="#it-mw-two-perfect">5</a>, by part <a href="#it-mw-two-bilinear">2</a> the map
+\(\sigma \mapsto \kappa(\cdot, \sigma)\) is a homomorphism from \(\Gal_\Q\) to the abelian group
+\(\Hom(E(\Q), E[2](\Qbar))\), which is killed by \(2\).  Its kernel is \(\Gal_L\) by
+part <a href="#it-mw-two-right">4</a>.  So \(\Gal_L\) is normal, \(L/\Q\) is Galois by
+Proposition <a href="07-galois-cohomology.html#prop-gc-galois">7.1.1</a>, and \(\Gal(L/\Q) \cong \Gal_\Q/\Gal_L\) embeds in
+\(\Hom(E(\Q), E[2](\Qbar))\).  It is therefore abelian of exponent dividing \(2\).  The
+pairing factors through \(E(\Q)/2\) and \(\Gal(L/\Q)\), and parts <a href="#it-mw-two-left">3</a>
+and <a href="#it-mw-two-right">4</a> say that the two induced maps are injective.  Each
+\(\kappa(P, \cdot)\) is continuous, being constant on the cosets of \(\Gal_{\Q(Q)}\).  If
+\(E(\Q)/2\) is finite, \(\Gal(L/\Q)\) embeds in a finite group, and if \(L/\Q\) is finite,
+\(E(\Q)/2\) does.
+</p>
+</details>
+
+<p>
+In the language of Chapter <a href="07-galois-cohomology.html">7</a>, \(\kappa(P, \cdot)\) is the cocycle
+of Proposition <a href="07-galois-cohomology.html#prop-gc-kummer-ec">7.5.1</a> representing the Kummer class \(\delta(P)\).  As
+\(\Gal_\Q\) acts trivially on \(E[2](\Qbar)\), cocycles are homomorphisms
+(Proposition <a href="07-galois-cohomology.html#prop-gc-trivial">7.2.3</a>), and part <a href="#it-mw-two-left">3</a> is the injectivity of
+\(\delta\) on \(E(\Q)/2\).
+</p>
+
+<div class="ec-thm ec-remark" id="rem-mw-strange-field">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Remark 8.1.4</span>.</span> Part <a href="#it-mw-two-perfect">5</a> of Proposition <a href="#prop-mw-pairing-two">8.1.3</a> turns the finiteness of
+\(E(\Q)/2\) into the finiteness of the field \(L\).  This should be surprising.  The same
+construction for the multiplicative group, with \(\sqrt a\) in place of a half of \(P\), is
+the pairing
+</p>
+\begin{equation*}
+\Q^\times/\Q^{\times 2} \times \Gal_\Q \to \mu_2(\Qbar), \qquad
+(a, \sigma) \mapsto \sigma(\sqrt a)/\sqrt a,
+\end{equation*}
+<p>
+which is perfect in the same sense (part <a href="07-galois-cohomology.html#it-gc-kummer-cyclic">1</a> of
+Corollary <a href="07-galois-cohomology.html#cor-gc-kummer-extensions">7.4.7</a>, and [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Remark VIII.1.2.1]).  There
+the analogue of \(L\) is \(\Q(\sqrt a : a \in \Q^\times)\), the compositum of all quadratic
+fields, which is an infinite extension of \(\Q\): the classes of \(-1\) and of the primes are
+independent in \(\Q^\times/\Q^{\times 2}\), by unique factorization.  For \(E\), by contrast,
+\(E(\Q)\) may be infinite, and the coordinates of the multiples of a rational point of
+infinite order involve more and more primes (Example <a href="04-ec-algebraic.html#eg-ec-points-17">4.2.8</a>).  One would expect
+the halves of these rational points to generate more and more quadratic fields, as
+\(\sqrt p\) does for each prime \(p\).  They do not, and Proposition <a href="#prop-mw-two-unramified">8.1.5</a>
+explains why.
+</p>
+</div>
+
+<div class="ec-thm ec-proposition" id="prop-mw-two-unramified">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Proposition 8.1.5</span>.</span> Let \(p \notin S\) be a prime, \(Q \in E(\Qbar)\) a \(\Qbar\)-point with \(2Q \in E(\Q)\), and
+\(\tau \in I_p\).  Then \(\tau(Q) = Q\).  Hence \(L/\Q\) is unramified outside \(S\).
+</p>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+Through the embedding \(\Qbar \to \overline{\Q_p}\), \(Q\) is a \(\overline{\Q_p}\)-point of
+\(E\).  Let \(K'\) be the finite Galois extension of \(\Q_p\) generated by the coordinates of
+\(Q\) and their conjugates, with ring of integers \(\calO'\) and residue field \(\kappa'\).
+The discriminant of the equation of \(E\) is
+</p>
+\begin{equation*}
+\Delta = 16(e_1 - e_2)^2(e_1 - e_3)^2(e_2 - e_3)^2,
+\end{equation*}
+<p>
+and \(p \nmid \Delta\) because \(p \notin S\).  So the equation is minimal at \(p\) and \(E\) has
+good reduction at \(p\) (part <a href="06-local-fields.html#it-lf-types-good">1</a> of
+Proposition <a href="06-local-fields.html#prop-lf-reduction-types">6.3.2</a>).  Let \(E_p\) be its reduction modulo \(p\), the
+\(E_\pi\) of Definition <a href="06-local-fields.html#def-lf-reduction">6.2.4</a> with \(\pi = p\), an elliptic curve over \(\F_p\).
+By part <a href="06-local-fields.html#it-lf-semistable-stable">2</a> of Proposition <a href="06-local-fields.html#prop-lf-semistable">6.3.7</a>, the equation is
+minimal for \(E_{K'}\), and the reduction of \(E_{K'}\) is the elliptic curve
+\((E_p)_{\kappa'}\).  By Proposition <a href="06-local-fields.html#prop-lf-reduction-exact">6.2.8</a> over \(K'\), reduction
+\(R \mapsto \bar R\) is a homomorphism \(E(K') \to E_p(\kappa')\).
+</p>
+
+<p>
+The element \(\tau\) maps \(K'\) to itself and preserves the valuation, so it maps \(\calO'\)
+to itself, and \(\overline{\tau(R)} = \bar\tau(\bar R)\), where \(\bar\tau\) is the action of
+\(\tau\) on \(\kappa'\).  As \(\tau \in I_p\), \(\bar\tau\) is the identity, so
+</p>
+\begin{equation*}
+\overline{\tau(Q) - Q} = \bar\tau(\bar Q) - \bar Q = \bar O.
+\end{equation*}
+<p>
+By part <a href="#it-mw-two-defined">1</a> of Proposition <a href="#prop-mw-pairing-two">8.1.3</a>,
+\(\tau(Q) - Q \in E[2](\Qbar) = \{O, T_1, T_2, T_3\}\).  The reductions
+\(\bar T_i = (\bar e_i, 0)\) are affine, so they differ from \(\bar O = (0 : 1 : 0)\), and
+they are distinct because \(p \nmid e_i - e_j\) for \(i \neq j\).  So reduction is injective
+on \(E[2](\Qbar)\), and \(\tau(Q) = Q\).  Thus \(I_p\) fixes each field \(\Q(Q)\), hence their
+compositum \(L\).
+</p>
+</details>
+
+<div class="ec-thm ec-remark" id="rem-mw-two-why">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Remark 8.1.6</span>.</span> Let us see where the same argument fails for the multiplicative group.  Let \(p\) be an odd
+prime, \(a \in \Q^\times\), \(\alpha \coloneqq \sqrt a\) and \(\tau \in I_p\).  Then
+\(\tau(\alpha)/\alpha \in \mu_2(\Qbar)\), and \(\mu_2(\Qbar) = \{\pm 1\}\) injects into
+\(\F_p^\times\) under reduction.  If \(v_p(a) = 0\), then \(\alpha\) is a unit, it reduces to an
+element of \(\Fbar_p^\times\), the reduction of \(\tau(\alpha)/\alpha\) is \(1\), and \(\tau\)
+fixes \(\alpha\).  But if \(v_p(a)\) is odd, \(\alpha\) reduces to \(0\), which is not in
+\(\Gm(\Fbar_p)\).  The argument has nothing to say, and indeed \(\Q_p(\sqrt p)\) is ramified
+(part <a href="06-local-fields.html#it-lf-inertia-kummer">3</a> of Example <a href="06-local-fields.html#eg-lf-inertia-roots-of-unity">6.4.5</a>).  For \(E\), every
+\(\overline{\Q_p}\)-point reduces to a point of \(E_p(\Fbar_p)\), because \(E\) is projective.  No
+rational point of \(E\) escapes the group under reduction, as \(p\) escapes \(\Gm\).  We return
+to this in Remark <a href="#rem-mw-why-gm-differs">8.3.5</a>.
+</p>
+
+<p>
+The proposition has an elementary shadow.  Let \(P = (x_0, y_0) \in E(\Q)\), and let
+\(p \notin S\).  If \(v_p(x_0) < 0\), then \(2v_p(y_0) = 3v_p(x_0)\), so
+\(v_p(x_0 - e_i) = v_p(x_0)\) is even.  If \(v_p(x_0) \geq 0\), then at most one of the three
+factors \(x_0 - e_i\) is divisible by \(p\), as their differences \(e_j - e_i\) are prime to
+\(p\).  That factor has the valuation of \(y_0^2\), which is even.  So in all cases
+\(v_p(x_0 - e_i)\) is even when \(x_0 \neq e_i\): the class of \(x_0 - e_i\) in
+\(\Q^\times/\Q^{\times 2}\) lies in the finite group \(\Q(S, 2)\) of Example <a href="07-galois-cohomology.html#eg-gc-QS2">7.8.5</a>,
+however large the numerator and denominator of \(x_0\).  The map
+\(P \mapsto (x_0 - e_1, x_0 - e_2)\), corrected at \(T_1\) and \(T_2\), is an explicit form of
+the Kummer map \(E(\Q)/2 \to \Q(S, 2)^2\) [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Proposition X.1.4], and it is
+the starting point of the descent in Chapter <a href="09-selmer-sha.html">9</a>.
+</p>
+</div>
+
+<div class="ec-thm ec-theorem" id="thm-mw-two-weak">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Theorem 8.1.7</span>.</span> In Situation <a href="#sit-mw-two-torsion">8.1.1</a>, \([L : \Q] \leq 2^{\#S}\) and
+\(\#E(\Q)/2E(\Q) \leq 4^{\#S}\).
+</p>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+We do not know yet that \(L\) is finite.  Let \(F \subseteq L\) be a finite extension of
+\(\Q\).  As \(\Gal(L/\Q)\) is abelian of exponent dividing \(2\) (part <a href="#it-mw-two-perfect">5</a> of
+Proposition <a href="#prop-mw-pairing-two">8.1.3</a>), \(F/\Q\) is Galois, abelian of exponent dividing \(2\).
+Since \(\mu_2(\Qbar) \subseteq \Q\), part <a href="07-galois-cohomology.html#it-gc-kummer-bijection">2</a> of
+Corollary <a href="07-galois-cohomology.html#cor-gc-kummer-extensions">7.4.7</a> gives \(F = \Q(\Delta^{1/2})\) for a subgroup
+\(\Q^{\times 2} \subseteq \Delta \subseteq \Q^\times\) with \([F : \Q] = (\Delta : \Q^{\times 2})\).
+For \(d \in \Delta\), the field \(\Q(\sqrt d) \subseteq L\) is unramified outside \(S\) by
+Proposition <a href="#prop-mw-two-unramified">8.1.5</a>, so the class \(\delta(d)\) of
+Corollary <a href="07-galois-cohomology.html#cor-gc-kummer">7.4.6</a> lies in \(H^1(\Q, \mu_2; S)\), and the class of \(d\) lies in
+\(\Q(S, 2)\) by part <a href="07-galois-cohomology.html#it-gc-kSm-kummer">1</a> of Proposition <a href="07-galois-cohomology.html#prop-gc-kSm">7.8.3</a>.  So
+\(\Delta/\Q^{\times 2} \subseteq \Q(S, 2)\), a group of order \(2^{\#S}\)
+(Example <a href="07-galois-cohomology.html#eg-gc-QS2">7.8.5</a>), and \([F : \Q] \leq 2^{\#S}\).
+</p>
+
+<p>
+Choose such an \(F_0\) of maximal degree.  For any other \(F\), the compositum \(F_0F\) is a
+finite extension inside \(L\), of degree at most \([F_0 : \Q]\), so \(F \subseteq F_0\).  As
+\(L\) is the union of its finite subextensions, \(L = F_0\) and \([L : \Q] \leq 2^{\#S}\).
+So \(\Gal(L/\Q) \cong (\Z/2\Z)^t\) with \(t \leq \#S\), and by part <a href="#it-mw-two-perfect">5</a> of
+Proposition <a href="#prop-mw-pairing-two">8.1.3</a>,
+</p>
+\begin{equation*}
+\#E(\Q)/2E(\Q) \leq \#\Hom\bigl((\Z/2\Z)^t, (\Z/2\Z)^2\bigr) = 4^t \leq 4^{\#S}.
+\end{equation*}
+</details>
+
+<p>
+Granting the Mordell&#x2013;Weil theorem, \(E(\Q) \cong \Z^r \times E(\Q)_{\mathrm{tors}}\) for some
+\(r \geq 0\), and \(E(\Q)_{\mathrm{tors}}/2\) has the order of
+\(E(\Q)_{\mathrm{tors}}[2] = E[2](\Qbar)\), which is \(4\).  So \(\#E(\Q)/2E(\Q) = 2^{r + 2}\), and
+Theorem <a href="#thm-mw-two-weak">8.1.7</a> bounds the rank: \(r \leq 2\#S - 2\).
+</p>
+
+<div class="ec-thm ec-example" id="eg-mw-x3-x">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Example 8.1.8</span>.</span> Let \(E\colon y^2 = x^3 - x\), with \((e_1, e_2, e_3) = (0, 1, -1)\).  The differences
+\(e_i - e_j\) are \(\pm 1\) and \(\pm 2\), so \(S = \{\infty, 2\}\), \(\Q(S, 2) = \langle -1, 2 \rangle\),
+\(L \subseteq \Q(i, \sqrt 2)\), and \(\#E(\Q)/2E(\Q) \leq 16\).  The halves of \(T_1 = (0, 0)\)
+are \((i, \pm(1 - i))\) and \((-i, \pm(1 + i))\), defined over \(\Q(i)\).  The halves of \(T_2\)
+and \(T_3\) generate \(\Q(\sqrt 2)\) and \(\Q(\sqrt 2, \sqrt{-2})\).  So
+\(L = \Q(i, \sqrt 2) = \Q(\zeta_8)\), ramified only at \(2\), and the bound on \([L : \Q]\) is
+attained.  Here \(E(\Q) = E[2](\Qbar)\), so \(\#E(\Q)/2E(\Q) = 4\), and only \(4\) of the \(16\)
+homomorphisms \(\Gal(L/\Q) \to E[2](\Qbar)\) come from rational points.
+</p>
+</div>
+
+<div class="ec-thm ec-example" id="eg-mw-x3-25x">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Example 8.1.9</span>.</span> Let \(E\colon y^2 = x^3 - 25x\), with \((e_1, e_2, e_3) = (0, 5, -5)\).  The differences
+\(e_i - e_j\) are \(\pm 5\) and \(\pm 10\), so \(S = \{\infty, 2, 5\}\), \(\Q(S, 2) = \langle -1,
+2, 5 \rangle\) and \(L \subseteq \Q(i, \sqrt 2, \sqrt 5)\).  Magma finds that \(E(\Q)\) is
+generated by \(T_1\), \(T_2\) and \(P \coloneqq (-4, 6)\), of infinite order, so
+\(\#E(\Q)/2E(\Q) = 8\), against the bound \(64\).  The multiples of \(P\) have
+</p>
+\begin{gather*}
+x(2P) = \Bigl(\frac{41}{12}\Bigr)^2, \qquad
+x(3P) = -\frac{2439844}{5094049} = -\Bigl(\frac{2 \cdot 11 \cdot 71}{37 \cdot 61}\Bigr)^2, \\
+x(4P) = \frac{11183412793921}{2234116132416} = \Bigl(\frac{3344161}{2^3 \cdot 3 \cdot 7^2
+\cdot 31 \cdot 41}\Bigr)^2,
+\end{gather*}
+<p>
+and \(x(3P) - 5 = -(3^2 \cdot 587/2257)^2\), \(x(3P) + 5 = (4799/2257)^2\).  The primes in
+these coordinates grow, but each appears to an even power, as Remark <a href="#rem-mw-two-why">8.1.6</a>
+predicts.  So the classes of \(x(nP) - e_i\) never leave \(\langle -1, 2, 5 \rangle\).  For
+instance, \(Q \coloneqq (2 + i, 7i - 1)\) satisfies \(2Q = P\), and the halves of \(3P\) are
+the \(Q + P + T\) with \(T \in E[2](\Qbar)\), all defined over \(\Q(i)\).  Magma also finds that
+the halves of \(T_1\) generate \(\Q(i, \sqrt 5)\), those of \(T_2\) generate \(\Q(\sqrt 2, \sqrt
+5)\), and \(L = \Q(i, \sqrt 2, \sqrt 5)\), of degree \(8 = 2^{\#S}\).
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-mw-weak" class="outline-2">
+<h2 id="sec-mw-weak"><span class="ec-status ec-status-draft"><span class="ec-status-label ec-status-draft">Draft</span><time datetime="2026-10-14">14 Oct 2026</time></span><span class="section-number" id="s8.2">8.2</span> The weak Mordell&#x2013;Weil theorem</h2>
+<div class="outline-text-2" id="text-sec-mw-weak">
+<p>
+We are in Situation <a href="#sit-mw-standing">8.0.1</a>.  This section is [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Section VIII.1]:
+the argument of Section <a href="#sec-mw-two-torsion">8.1</a> for any \(m\) and any number field.
+</p>
+
+<div class="ec-thm ec-theorem" id="thm-mw-weak">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Theorem 8.2.1</span> <span class="ec-thm-title">(Weak Mordell&ndash;Weil)</span>.</span> The group \(E(k)/mE(k)\) is finite.
+</p>
+</div>
+
+<p>
+We call Theorem <a href="#thm-mw-weak">8.2.1</a> the <dfn class="ec-cdef" id="gls-weak-mordell-weil-theorem" data-gls="weak-mordell-weil-theorem">weak Mordell--Weil theorem</dfn>.  The first step
+reduces it to the case \(E[m](\kbar) \subseteq E(k)\), which made the Kummer pairing bilinear
+in Section <a href="#sec-mw-two-torsion">8.1</a>.
+</p>
+
+<div class="ec-thm ec-lemma" id="lem-mw-reduction">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Lemma 8.2.2</span>.</span> Let \(K\) be a finite Galois extension of \(k\) inside \(\kbar\).  If \(E(K)/mE(K)\) is finite,
+then \(E(k)/mE(k)\) is finite.
+</p>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+Let \(\Phi\) be the kernel of \(E(k)/m \to E(K)/m\), so that
+\(0 \to \Phi \to E(k)/m \to E(K)/m\) is exact, and it suffices to show that \(\Phi\) is finite.
+Let \(\delta_k\colon E(k)/m \to H^1(k, E[m])\) and \(\delta_K\colon E(K)/m \to H^1(K, E[m])\)
+be the Kummer maps, injective by Proposition <a href="07-galois-cohomology.html#prop-gc-kummer-ec">7.5.1</a>.  For \(P \in E(k)\), the
+cocycle \(\sigma \mapsto \sigma(Q) - Q\) restricted to \(\Gal_K\) represents \(\delta_K(P)\), so
+\(\Res \circ \delta_k = \delta_K\) on \(E(k)/m\).  Hence \(\delta_k\) maps \(\Phi\) into the kernel
+of \(\Res\colon H^1(k, E[m]) \to H^1(K, E[m])\).  By Proposition <a href="07-galois-cohomology.html#prop-gc-inf-res">7.3.5</a>, with
+\(G = \Gal_k\) and \(H = \Gal_K\), this kernel is the image of
+\(H^1(\Gal(K/k), E[m](K))\).  The cocycles defining this group are maps between the finite
+sets \(\Gal(K/k)\) and \(E[m](K)\), so it is finite, and so is \(\Phi\)
+[<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Lemma VIII.1.1.1 and Section VIII.2].
+</p>
+</details>
+
+<p>
+The field \(K \coloneqq k(E[m])\) is a finite Galois extension of \(k\), a number field, with
+\(E[m](\kbar) \subseteq E(K)\) (the discussion after Example <a href="07-galois-cohomology.html#eg-gc-modules">7.1.3</a>).  By
+Lemma <a href="#lem-mw-reduction">8.2.2</a>, it suffices to prove Theorem <a href="#thm-mw-weak">8.2.1</a> when
+\(E[m](\kbar) \subseteq E(k)\).  Then Definition <a href="#def-mw-kummer-pairing-two">8.1.2</a> generalizes
+word for word.  For \(P \in E(k)\) and \(\sigma \in \Gal_k\), choose a \(\kbar\)-point \(Q\)
+with \(mQ = P\), and let
+</p>
+\begin{equation*}
+\kappa\colon E(k) \times \Gal_k \to E[m](\kbar), \qquad
+\kappa(P, \sigma) \coloneqq \sigma(Q) - Q,
+\end{equation*}
+<p>
+and let \(L \coloneqq k([m]^{-1}E(k))\) be the compositum inside \(\kbar\) of the fields
+\(k(Q)\), for the \(\kbar\)-points \(Q\) of \(E\) with \(mQ \in E(k)\).
+</p>
+
+<div class="ec-thm ec-proposition" id="prop-mw-kummer-pairing">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Proposition 8.2.3</span>.</span> Suppose that \(E[m](\kbar) \subseteq E(k)\).  Then \(\kappa\) is well defined and bilinear, its
+left kernel is \(mE(k)\), and its right kernel is \(\Gal_L\).  So \(L/k\) is Galois,
+\(\Gal(L/k)\) is abelian of exponent dividing \(m\), and \(\kappa\) induces a pairing
+</p>
+\begin{equation*}
+E(k)/m \times \Gal(L/k) \to E[m](\kbar)
+\end{equation*}
+<p>
+for which both induced maps are injective.  In particular \(E(k)/m\) is finite if and only if
+\(L/k\) is finite.
+</p>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+The proof of Proposition <a href="#prop-mw-pairing-two">8.1.3</a> applies with \(2\) replaced by \(m\) and \(\Q\)
+by \(k\) [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Proposition VIII.1.2].
+</p>
+</details>
+
+<p>
+Let \(S \subseteq \Places_k\) be the set of the archimedean places, the non-archimedean places
+\(v\) with \(v(m) > 0\), and the places of bad reduction of \(E\).
+</p>
+
+<div class="ec-thm ec-remark" id="rem-mw-bad-places">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Remark 8.2.4</span>.</span> The set \(S\) is finite [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Remark VIII.1.3].  Fix a Weierstrass equation for
+\(E\) over \(k\), with coefficients \(a_1, \dots, a_6\) and discriminant \(\Delta \neq 0\).  A
+non-zero element of \(k\) has valuation \(0\) at all but finitely many places, so for all but
+finitely many non-archimedean \(v\), \(v(a_i) \geq 0\) for every \(i\) and \(v(\Delta) = 0\).  At
+such \(v\) the equation is minimal, and \(E\) has good reduction by
+part <a href="06-local-fields.html#it-lf-types-good">1</a> of Proposition <a href="06-local-fields.html#prop-lf-reduction-types">6.3.2</a>.  Only finitely many
+places divide \(m\), and there are finitely many archimedean places.  A single equation need
+not be minimal at every place at once.
+</p>
+</div>
+
+<p>
+The local input is the following lemma.  It is the proof of
+Proposition <a href="#prop-mw-two-unramified">8.1.5</a>, with the injectivity of reduction on torsion taken
+from Chapter <a href="06-local-fields.html">6</a>, and it needs no hypothesis on \(E[m](\kbar)\).
+</p>
+
+<div class="ec-thm ec-lemma" id="lem-mw-local-unramified">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Lemma 8.2.5</span>.</span> Let \(v\) be a non-archimedean place of \(k\) with \(v(m) = 0\), and \(E'\) an elliptic curve
+over \(k_v\) with good reduction.  Let \(Q \in E'(\overline{k_v})\) be a
+\(\overline{k_v}\)-point with \(mQ \in E'(k_v)\).  Then \(\tau(Q) = Q\) for every
+\(\tau \in I_v\), that is, \(Q \in E'(k_v^{\unr})\).
+</p>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+Let \(K'\) be the finite Galois extension of \(k_v\) generated by the coordinates of \(Q\) and
+their conjugates, with residue field \(\kappa'\).  Fix a minimal Weierstrass equation for
+\(E'\).  By part <a href="06-local-fields.html#it-lf-semistable-stable">2</a> of Proposition <a href="06-local-fields.html#prop-lf-semistable">6.3.7</a>, it is
+minimal for \(E'_{K'}\), whose reduction is \((E'_\pi)_{\kappa'}\), an elliptic curve.  As in
+the proof of Proposition <a href="#prop-mw-two-unramified">8.1.5</a>, reduction \(E'(K') \to E'_\pi(\kappa')\)
+is a homomorphism commuting with \(\tau\), and \(\tau(Q) - Q\) reduces to \(\bar O\).  Also
+\(m(\tau(Q) - Q) = \tau(mQ) - mQ = O\), as \(mQ\) is a \(k_v\)-point.  The residue
+characteristic \(p\) does not divide \(m\), since \(v(m) = 0\), so reduction is injective on
+\(E'[m](K')\) by part <a href="06-local-fields.html#it-lf-torsion-good">2</a> of Proposition <a href="06-local-fields.html#prop-lf-torsion">6.2.9</a> over \(K'\).
+Hence \(\tau(Q) = Q\).  A \(\overline{k_v}\)-point fixed by \(I_v\) has its coordinates in the
+fixed field \(k_v^{\unr}\) of \(I_v\).
+</p>
+</details>
+
+<div class="ec-thm ec-proposition" id="prop-mw-unramified">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Proposition 8.2.6</span>.</span> Let \(Q \in E(\kbar)\) be a \(\kbar\)-point with \(mQ \in E(k)\), and \(v \notin S\) a
+non-archimedean place.  Then \(I_v\) fixes \(Q\).  Hence, if \(E[m](\kbar) \subseteq E(k)\),
+then \(L/k\) is abelian of exponent dividing \(m\) and unramified outside \(S\).
+</p>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+Apply Lemma <a href="#lem-mw-local-unramified">8.2.5</a> to \(E' = E_{k_v}\), through the embedding
+\(\kbar \to \overline{k_v}\): \(v \notin S\) means that \(v(m) = 0\) and that \(E\) has good
+reduction at \(v\).  Then \(I_v\) fixes each \(k(Q)\), hence \(L\).  The rest is
+Proposition <a href="#prop-mw-kummer-pairing">8.2.3</a> [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Proposition VIII.1.5].
+</p>
+</details>
+
+<p>
+It remains to show that an extension like \(L\) is finite.  In Section <a href="#sec-mw-two-torsion">8.1</a>
+this was an explicit computation with quadratic fields.  In general it is
+Theorem <a href="07-galois-cohomology.html#thm-gc-finiteness">7.8.6</a>, which packages Kummer theory, the finiteness of the class
+group and Dirichlet's \(S\)-unit theorem.
+</p>
+
+<div class="ec-thm ec-proposition" id="prop-mw-finite-extension">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Proposition 8.2.7</span>.</span> Let \(T \subseteq \Places_k\) be a finite set of places, and \(F\) an abelian extension of \(k\)
+inside \(\kbar\), of exponent dividing \(m\) and unramified outside \(T\).  Then \(F/k\) is
+finite.
+</p>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+Let \(\chi\colon \Gal(F/k) \to \Z/m\Z\) be a continuous homomorphism, and \(\tilde\chi\) its
+composite with \(\Gal_k \to \Gal(F/k)\).  It is trivial on \(I_v\) for every non-archimedean
+\(v \notin T\), since \(I_v \subseteq \Gal_F\).  So \(\tilde\chi\) is a class of
+\(H^1(k, \Z/m\Z; T)\), for the trivial action (Proposition <a href="07-galois-cohomology.html#prop-gc-trivial">7.2.3</a>), and
+\(\chi \mapsto \tilde\chi\) is injective.  By Theorem <a href="07-galois-cohomology.html#thm-gc-finiteness">7.8.6</a>, there are only
+finitely many such \(\chi\), say \(\chi_1, \dots, \chi_n\).  They separate the elements of
+\(\Gal(F/k)\): if \(\sigma \neq 1\), some open normal subgroup \(U\) does not contain \(\sigma\),
+and the finite abelian group \(\Gal(F/k)/U\) of exponent dividing \(m\) has a homomorphism to
+\(\Z/m\Z\) that is non-zero on the image of \(\sigma\).  So
+\((\chi_1, \dots, \chi_n)\colon \Gal(F/k) \to (\Z/m\Z)^n\) is injective, and \(F/k\) is
+finite.
+</p>
+</details>
+
+<p>
+Silverman proves Proposition <a href="#prop-mw-finite-extension">8.2.7</a> directly
+[<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Proposition VIII.1.6]: over \(k(\mu_m)\), such an \(F\) is generated by
+\(m\)-th roots of the elements of a group like \(k(T, m)\), which is finite by the class
+group and the \(S\)-unit theorem.  That is the proof of Theorem <a href="07-galois-cohomology.html#thm-gc-finiteness">7.8.6</a>, and it
+is what the proof of Theorem <a href="#thm-mw-two-weak">8.1.7</a> did by hand.  We can now prove
+Theorem <a href="#thm-mw-weak">8.2.1</a>.
+</p>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+By Lemma <a href="#lem-mw-reduction">8.2.2</a> with \(K = k(E[m])\) we may
+assume that \(E[m](\kbar) \subseteq E(k)\).  The set \(S\) is finite by
+Remark <a href="#rem-mw-bad-places">8.2.4</a>.  By Proposition <a href="#prop-mw-unramified">8.2.6</a>, \(L/k\) is abelian of
+exponent dividing \(m\) and unramified outside \(S\), so it is finite by
+Proposition <a href="#prop-mw-finite-extension">8.2.7</a>.  By Proposition <a href="#prop-mw-kummer-pairing">8.2.3</a>,
+\(E(k)/m\) embeds in the finite group \(\Hom(\Gal(L/k), E[m](\kbar))\).
+</p>
+</details>
+
+<div class="ec-thm ec-remark" id="rem-mw-minkowski">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Remark 8.2.8</span>.</span> Instead of Proposition <a href="#prop-mw-finite-extension">8.2.7</a>, one can use the theorem of
+Hermite and Minkowski: a number field has only finitely many extensions of bounded degree
+unramified outside a finite set of places [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Remark VIII.1.7].  Here each
+\(k(Q)\) has degree at most \(m^2\) over \(k\), since the conjugates of \(Q\) are among the
+\(Q + T\) with \(T \in E[m](\kbar)\), so there are only finitely many fields \(k(Q)\).
+</p>
+</div>
+
+<div class="ec-thm ec-remark" id="rem-mw-effectivity">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Remark 8.2.9</span>.</span> Everything in the proof is effective except one step [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Remark VIII.1.8].
+The field \(L\), or rather the largest abelian extension of exponent \(m\) unramified outside
+\(S\), can be computed, and with it the finite group \(\Hom(\Gal(L/k), E[m](\kbar))\) into
+which \(E(k)/m\) embeds.  No algorithm is known to decide which of its elements come from
+rational points.  This is the descent problem of Chapter <a href="09-selmer-sha.html">9</a>.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-mw-cohomology" class="outline-2">
+<h2 id="sec-mw-cohomology"><span class="ec-status ec-status-draft"><span class="ec-status-label ec-status-draft">Draft</span><time datetime="2026-10-14">14 Oct 2026</time></span><span class="section-number" id="s8.3">8.3</span> The Kummer pairing via cohomology</h2>
+<div class="outline-text-2" id="text-sec-mw-cohomology">
+<p>
+We are in Situation <a href="#sit-mw-standing">8.0.1</a>.  This section is
+[<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Section VIII.2]: it restates the previous one with the Kummer map
+\(\delta\colon E(k)/m \to H^1(k, E[m])\) of Proposition <a href="07-galois-cohomology.html#prop-gc-kummer-ec">7.5.1</a>, and adds the
+local picture that Chapter <a href="09-selmer-sha.html">9</a> needs.  With \(mQ = P\), the class \(\delta(P)\)
+is represented by the cocycle \(\sigma \mapsto \sigma(Q) - Q\), which is \(\kappa(P, \cdot)\).
+If \(E[m](\kbar) \subseteq E(k)\), then \(\Gal_k\) acts trivially on \(E[m](\kbar)\), so
+\(H^1(k, E[m]) = \Hom_{\mathrm{conts}}(\Gal_k, E[m](\kbar))\) (Proposition <a href="07-galois-cohomology.html#prop-gc-trivial">7.2.3</a>),
+\(\delta(P) = \kappa(P, \cdot)\), and the injectivity of \(\delta\) is the statement about the
+left kernel in Proposition <a href="#prop-mw-kummer-pairing">8.2.3</a>.  The field \(L\) is the fixed field of
+the intersection of the kernels of the \(\delta(P)\).  In general \(\delta(P)\) is only a
+cocycle, and \(L\) plays no role.  The ramification condition survives.
+</p>
+
+<div class="ec-thm ec-proposition" id="prop-mw-image-unramified">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Proposition 8.3.1</span>.</span> The image of \(\delta\colon E(k)/m \to H^1(k, E[m])\) lies in \(H^1(k, E[m]; S)\).
+</p>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+Let \(P \in E(k)\), \(Q \in E(\kbar)\) with \(mQ = P\), and \(v \notin S\) non-archimedean.  The
+restriction of \(\operatorname{res}_v\delta(P)\) to \(I_v\) is the cocycle
+\(\tau \mapsto \tau(Q) - Q\), which is \(0\) by Proposition <a href="#prop-mw-unramified">8.2.6</a>
+[<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Proposition VIII.2.1].
+</p>
+</details>
+
+<p>
+This gives a second proof of Theorem <a href="#thm-mw-weak">8.2.1</a>, without Lemma <a href="#lem-mw-reduction">8.2.2</a> and
+without the field \(L\): \(\delta\) embeds \(E(k)/m\) in \(H^1(k, E[m]; S)\), which is finite by
+Theorem <a href="07-galois-cohomology.html#thm-gc-finiteness">7.8.6</a> with \(A = E[m](\kbar)\).  The reduction to
+\(E[m](\kbar) \subseteq E(k)\) has not disappeared: it is the inflation&#x2013;restriction step in
+the proof of Theorem <a href="07-galois-cohomology.html#thm-gc-finiteness">7.8.6</a>.
+</p>
+</div>
+
+<div id="outline-container-orgfa94f26" class="outline-3">
+<h3 id="orgfa94f26"><span class="section-number" id="s8.3.1">8.3.1</span> The Kummer image at a good place</h3>
+<div class="outline-text-3" id="text-3-1">
+<p>
+The Kummer map exists over \(k_v\) too, by Proposition <a href="07-galois-cohomology.html#prop-gc-kummer-ec">7.5.1</a> over \(k_v\):
+</p>
+\begin{equation*}
+\delta_v\colon E(k_v)/m \to H^1(k_v, E[m]),
+\end{equation*}
+<p>
+and \(\operatorname{res}_v \circ \delta = \delta_v\) on \(E(k)\), with the same cocycle.  At the
+places outside \(S\) its image is exactly the group of unramified classes of
+Definition <a href="07-galois-cohomology.html#def-gc-unramified-class">7.7.2</a>.  We first count \(E(k_v)/m\).
+</p>
+
+<div class="ec-thm ec-proposition" id="prop-mw-local-count">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Proposition 8.3.2</span>.</span> Let \(v\) be a non-archimedean place of \(k\) with \(v(m) = 0\), and \(E'\) an elliptic curve
+over \(k_v\).  Then \(\#E'(k_v)/mE'(k_v) = \#E'(k_v)[m]\), and both are finite.
+</p>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+Fix a minimal Weierstrass equation for \(E'\).  The kernel of reduction \(E'_1(k_v)\) is
+isomorphic to the group \(\hat E'(\mm_v)\) of the formal group of \(E'\)
+[<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Proposition VII.2.2].  Since \(m \in \calO_v^\times\), multiplication by
+\(m\) is an isomorphism of the formal group [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Proposition IV.2.3(b)], so it
+is bijective on \(\hat E'(\mm_v)\), and \(E'_1(k_v)\) is uniquely \(m\)-divisible.  The quotient
+\(B \coloneqq E'(k_v)/E'_1(k_v)\) is finite, since \(E'(k_v)/E'_0(k_v)\) is finite by
+part <a href="06-local-fields.html#it-lf-component-finite">1</a> of Theorem <a href="06-local-fields.html#thm-lf-component-group">6.3.9</a>, and
+\(E'_0(k_v)/E'_1(k_v) \cong (E'_\pi)^{\ns}(\kappa(v))\) is finite by
+Proposition <a href="06-local-fields.html#prop-lf-reduction-exact">6.2.8</a>.  The snake lemma for multiplication by \(m\) on
+\(0 \to E'_1(k_v) \to E'(k_v) \to B \to 0\) gives an exact sequence
+</p>
+\begin{equation*}
+0 \to E'_1(k_v)[m] \to E'(k_v)[m] \to B[m] \to E'_1(k_v)/m \to E'(k_v)/m \to B/m \to 0,
+\end{equation*}
+<p>
+whose terms \(E'_1(k_v)[m]\) and \(E'_1(k_v)/m\) are \(0\).  So
+\(\#E'(k_v)[m] = \#B[m]\) and \(\#E'(k_v)/m = \#B/m\).  For a finite abelian group \(B\),
+\(\#B[m] = \#B/m\), as both are the order of the kernel and of the cokernel of
+\(m\colon B \to B\).
+</p>
+</details>
+
+<div class="ec-thm ec-remark" id="rem-mw-local-count-general">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Remark 8.3.3</span>.</span> When \(v(m) > 0\), the formal group contributes: \(E'(k_v)\) contains a subgroup of finite
+index isomorphic to \(\calO_v\) [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Proposition VII.6.3].  This subgroup has
+no \(m\)-torsion, and \(\#\calO_v/m\calO_v = q^{v(m)}\).  The snake
+lemma for it, as in the proof of Proposition <a href="#prop-mw-local-count">8.3.2</a>, gives
+</p>
+\begin{equation*}
+\#E'(k_v)/mE'(k_v) = q^{v(m)}\,\#E'(k_v)[m],
+\end{equation*}
+<p>
+which Chapter <a href="09-selmer-sha.html">9</a> needs.
+</p>
+</div>
+
+<div class="ec-thm ec-proposition" id="prop-mw-local-image">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Proposition 8.3.4</span>.</span> Let \(v\) be a non-archimedean place of \(k\) with \(v(m) = 0\), and \(E'\) an elliptic curve
+over \(k_v\) with good reduction.  Then \(\delta_v(E'(k_v)/m) = H^1_{\unr}(k_v, E'[m])\).
+</p>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+Let \(P \in E'(k_v)\) and \(Q \in E'(\overline{k_v})\) with \(mQ = P\).  The restriction of
+\(\delta_v(P)\) to \(I_v\) is \(\tau \mapsto \tau(Q) - Q\), which is \(0\) by
+Lemma <a href="#lem-mw-local-unramified">8.2.5</a>.  So the image lies in \(H^1_{\unr}(k_v, E'[m])\).  The map
+\(\delta_v\) is injective, and by Proposition <a href="#prop-mw-local-count">8.3.2</a> and
+part <a href="07-galois-cohomology.html#it-gc-unr-count">3</a> of Proposition <a href="07-galois-cohomology.html#prop-gc-unramified">7.7.3</a>, applied to the finite module
+\(E'[m](\overline{k_v})\),
+</p>
+\begin{equation*}
+\#E'(k_v)/m = \#E'(k_v)[m] = \#E'[m](\overline{k_v})^{\Gal_{k_v}}
+= \#H^1_{\unr}(k_v, E'[m]).
+\end{equation*}
+<p>
+So the image is all of \(H^1_{\unr}(k_v, E'[m])\).
+</p>
+</details>
+
+<p>
+Good reduction enters only through the containment.  For bad reduction the image still has
+\(\#E'(k_v)[m]\) elements, but they need not be unramified classes.
+</p>
+
+<div class="ec-thm ec-remark" id="rem-mw-why-gm-differs">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Remark 8.3.5</span>.</span> We can now say why \(E\) differs from \(\Gm\), the question of
+Remark <a href="#rem-mw-strange-field">8.1.4</a>.  For \(\Gm\) the Kummer map
+\(\delta\colon k^\times/k^{\times m} \to H^1(k, \mu_m)\) is an isomorphism
+(Corollary <a href="07-galois-cohomology.html#cor-gc-kummer">7.4.6</a>), and its image is not unramified outside any finite set: if
+\(v(m) = 0\) and \(a \in k^\times\) has \(v(a) = 1\), then \(\delta(a)\) is ramified at \(v\)
+(Proposition <a href="07-galois-cohomology.html#prop-gc-unramified-kummer">7.7.4</a>).  Locally, the unramified classes of
+\(H^1(k_v, \mu_m)\) are the image of the units \(\calO_v^\times\), and the class of
+\(\pi_v\) is the difference between \(k_v^\times\) and \(\calO_v^\times\).
+</p>
+
+<p>
+For \(E\) there is no such difference.  The group \(\Gm(k_v) = k_v^\times\) is larger than the
+group \(\Gm(\calO_v) = \calO_v^\times\) of \(\calO_v\)-points of the model
+\(\Spec \calO_v[t, t^{-1}]\).  But \(E\) is proper, so every \(k_v\)-point of \(E\) extends to
+an \(\calO_v\)-point of a Weierstrass model, as in Section <a href="06-local-fields.html#sec-lf-reduction">6.2</a>: \(E(k_v)\)
+consists of integral points.  By Proposition <a href="#prop-mw-local-image">8.3.4</a>, at a good place
+\(v \notin S\) the classes of \(E(k_v)\) are exactly the unramified ones, the analogue of
+\(\calO_v^\times\), and nothing like \(\pi_v\) exists.  So the analogue of \(E(k)\) in this proof
+is not \(k^\times\) but the group \(\calO_S^\times\) of \(S\)-units, the \(a \in k^\times\) with
+\(v(a) = 0\) at every non-archimedean \(v \notin S\).  For it, weak
+Mordell&#x2013;Weil holds: \(\calO_S^\times/\calO_S^{\times m}\) is finite, and lands in \(k(S, m)\)
+(Proposition <a href="07-galois-cohomology.html#prop-gc-kSm">7.8.3</a> and Theorem <a href="07-galois-cohomology.html#thm-gc-s-units">7.8.4</a>).  Integral points return in
+Chapter <a href="10-integral-points.html">10</a>.  The descent from \(\calO_S^\times/\calO_S^{\times m}\) to
+finite generation, which works for \(\calO_S^\times\) and \(E(k)\) alike, is
+Remark <a href="#rem-mw-units-descent">8.4.19</a>.
+</p>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-mw-heights" class="outline-2">
+<h2 id="sec-mw-heights"><span class="ec-status ec-status-draft"><span class="ec-status-label ec-status-draft">Draft</span><time datetime="2026-10-15">15 Oct 2026</time></span><span class="section-number" id="s8.4">8.4</span> Heights on abelian groups</h2>
+<div class="outline-text-2" id="text-sec-mw-heights">
+<p>
+This section is [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Section VIII.3], with the parts of
+[<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Section VIII.9] and [<a class="ec-cite" href="#bib-Hindry-Silverman00">HS00</a>, Sections B.4&#x2013;B.6] that do
+not depend on the curve.  The weak Mordell&#x2013;Weil theorem says that \(E(k)/m\) is finite.  A
+height turns this into finite generation, and once the group is finitely generated, the same
+height counts its elements.  Neither step uses the curve, so this section works with an
+abstract abelian group.
+</p>
+
+<div class="ec-thm ec-situation" id="sit-mw-heights">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Situation 8.4.1</span>.</span> In this section, independently of Situation <a href="#sit-mw-standing">8.0.1</a>:
+</p>
+<ul class="org-ul">
+<li>\(A\) is an abelian group, written additively, with elements \(P, Q, R\), and torsion
+subgroup \(A_\tors\).  We write \(A_\R \coloneqq A \otimes_\Z \R\).</li>
+<li>\(m \geq 2\) is an integer, and \(A/m \coloneqq A/mA\).</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org1a3d954" class="outline-3">
+<h3 id="org1a3d954"><span class="section-number" id="s8.4.1">8.4.1</span> Heights and finite generation</h3>
+<div class="outline-text-3" id="text-4-1">
+<div class="ec-thm ec-definition" id="def-mw-height">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Definition 8.4.2</span>.</span> Let \(X\) be a set.  A <dfn class="ec-cdef" id="gls-height-function" data-gls="height-function">height</dfn> on \(X\) is a function
+\(h\colon X \to \R\).  Two heights \(h\) and \(h'\) on \(X\) are equivalent, written
+\(h = h' + O(1)\), if \(\lvert h - h' \rvert\) is bounded on \(X\).  A height \(h\) has the
+<dfn class="ec-cdef" id="gls-northcott-property" data-gls="northcott-property">Northcott property</dfn> if the set \(\{x \in X : h(x) \leq C\}\) is finite for every
+\(C \in \R\).
+</p>
+</div>
+
+<p>
+An inequality \(f \leq g + c\) that holds for one constant \(c\) holds for every larger one.  So
+the constants that bound heights in this section are taken non-negative, and a lower bound
+is written \(-c\) with \(c \geq 0\).
+</p>
+
+<p>
+The Northcott property depends only on the equivalence class: if
+\(\lvert h - h' \rvert \leq c\) on \(X\), with \(c \geq 0\), then \(\{h' \leq C\} \subseteq \{h \leq C + c\}\).  A height with the Northcott
+property is bounded below.  Indeed, if \(X\) is non-empty and \(x_0 \in X\), the set
+\(\{h \leq h(x_0)\}\) is finite and non-empty, and its minimum is a lower bound for \(h\).
+</p>
+
+<div class="ec-thm ec-definition" id="def-mw-quasi-quadratic">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Definition 8.4.3</span>.</span> A height \(h\) on \(A\) is <dfn class="ec-cdef" id="gls-quasi-quadratic" data-gls="quasi-quadratic">quasi-quadratic</dfn> if
+</p>
+\begin{equation}
+\label{eq:mw-quasi-parallelogram}
+h(P + Q) + h(P - Q) = 2h(P) + 2h(Q) + O(1), \tag{8.4.1}
+\end{equation}
+<p>
+that is, if the difference of the two sides is bounded on \(A \times A\).  It is
+<dfn class="ec-cdef" id="gls-quadratic-height" data-gls="quadratic-height">quadratic</dfn> if the two sides are equal for all \(P, Q \in A\) (the
+parallelogram law).  The pairing of a quadratic height \(q\) is
+</p>
+\begin{equation*}
+\langle P, Q \rangle_q \coloneqq q(P + Q) - q(P) - q(Q).
+\end{equation*}
+</div>
+
+<div class="ec-thm ec-lemma" id="lem-mw-quasi-quadratic">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Lemma 8.4.4</span>.</span> Let \(h\) be a quasi-quadratic height on \(A\).
+</p>
+<ol class="org-ol">
+<li><a id="it-mw-qq-multiple"></a> For every \(n \in \Z\), \(h(nP) = n^2 h(P) + O(1)\), with a bound
+depending on \(n\) but not on \(P\).</li>
+<li><a id="it-mw-qq-sum"></a> If \(h\) is bounded below, then for every \(Q \in A\) there is a constant
+\(C(Q) \geq 0\) with \(h(P + Q) \leq 2h(P) + C(Q)\) for all \(P \in A\).</li>
+</ol>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+Let \(c \geq 0\) bound the difference of the two sides of \eqref{eq:mw-quasi-parallelogram}.  With
+\(P = 0\), it gives \(h(-Q) = h(Q) + O(1)\), so it suffices to prove the first part for
+\(n \geq 0\), by induction.  It holds for \(n = 0\) and \(n = 1\).  If it holds for \(n - 1\) and
+\(n\), then \eqref{eq:mw-quasi-parallelogram} for the pair \((nP, P)\) gives
+</p>
+\begin{equation*}
+\begin{aligned}
+h((n + 1)P) &= 2h(nP) + 2h(P) - h((n - 1)P) + O(1)\\
+&= \bigl(2n^2 + 2 - (n - 1)^2\bigr) h(P) + O(1) = (n + 1)^2 h(P) + O(1).
+\end{aligned}
+\end{equation*}
+<p>
+For the second part, let \(c' \geq 0\) with \(h \geq -c'\), and
+\(C(Q) \coloneqq 2h(Q) + 2c' + c\), which is at least \(c \geq 0\).  Then
+</p>
+\begin{equation*}
+h(P + Q) \leq 2h(P) + 2h(Q) - h(P - Q) + c \leq 2h(P) + 2h(Q) + c' + c \leq 2h(P) + C(Q).
+\end{equation*}
+</details>
+
+<div class="ec-thm ec-theorem" id="thm-mw-descent">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Theorem 8.4.5</span>.</span> Let \(h\) be a height on \(A\) with the Northcott property.  Suppose that there are real
+numbers \(0 < a < b\) with the following properties.
+</p>
+<ol class="org-ol">
+<li><a id="it-mw-descent-sum"></a> For every \(Q \in A\) there is a constant \(C_1(Q) \geq 0\) such that
+\(h(P + Q) \leq a\,h(P) + C_1(Q)\) for all \(P \in A\).</li>
+<li><a id="it-mw-descent-multiple"></a> There is a constant \(C_2 \geq 0\) such that
+\(h(mP) \geq b\,h(P) - C_2\) for all \(P \in A\).</li>
+</ol>
+<p>
+If \(A/m\) is finite, then \(A\) is finitely generated.  More precisely, let
+\(Q_1, \dots, Q_s\) represent the cosets of \(mA\) in \(A\), and
+\(C \coloneqq \max_i C_1(-Q_i) + C_2\), so that \(C \geq 0\).  Then \(A\) is generated by \(Q_1, \dots, Q_s\) and
+the finitely many \(P \in A\) with \(h(P) \leq 1 + C/(b - a)\).
+</p>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+Let \(P \in A\) and \(P_0 \coloneqq P\).  For \(j \geq 1\), choose an index \(i_j\) and an element
+\(P_j \in A\) with \(P_{j-1} = mP_j + Q_{i_j}\).  By the two hypotheses,
+</p>
+\begin{equation*}
+b\,h(P_j) \leq h(mP_j) + C_2 = h(P_{j-1} - Q_{i_j}) + C_2 \leq a\,h(P_{j-1}) + C.
+\end{equation*}
+<p>
+Let \(\rho \coloneqq a/b\), so \(0 < \rho < 1\).  Then \(h(P_j) \leq \rho\,h(P_{j-1}) + C/b\), and,
+since \(\rho > 0\), induction on \(n\) gives
+</p>
+\begin{equation*}
+h(P_n) \leq \rho^n h(P) + \frac{C}{b}\bigl(1 + \rho + \dots + \rho^{n-1}\bigr)
+\leq \rho^n h(P) + \frac{C}{b - a},
+\end{equation*}
+<p>
+where the last step uses \(C \geq 0\).  Choose \(n\) with \(\rho^n h(P) \leq 1\).  Then \(h(P_n) \leq 1 + C/(b - a)\), and
+\(P = m^n P_n + \sum_{j=1}^{n} m^{j-1} Q_{i_j}\).  The set of \(P_n\) that can occur is finite by
+the Northcott property.  This is the proof of [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Theorem VIII.3.1], which
+is the case \(a = 2\) and \(b = m^2\).
+</p>
+</details>
+
+<p>
+By Lemma <a href="#lem-mw-quasi-quadratic">8.4.4</a>, a quasi-quadratic height with the Northcott property
+satisfies the hypotheses of Theorem <a href="#thm-mw-descent">8.4.5</a> with \(a = 2\) and \(b = m^2\), for every
+\(m \geq 2\).  The case \(a = 1\) and \(b = m\) is the multiplicative group, in
+Remark <a href="#rem-mw-units-descent">8.4.19</a>.
+</p>
+
+<div class="ec-thm ec-remark" id="rem-mw-descent-effective">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Remark 8.4.6</span>.</span> The proof is effective given three inputs: representatives \(Q_1, \dots, Q_s\) of \(A/m\),
+the constants \(C_1(-Q_i)\) and \(C_2\), and the list of elements of \(A\) of bounded height
+[<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Remark VIII.3.2].  For the heights on \(E(k)\), the constants and the list
+can be computed [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Exercise 8.18].  The representatives are the step that no
+known algorithm guarantees, as in Remark <a href="#rem-mw-effectivity">8.2.9</a>.
+</p>
+</div>
+
+<div class="ec-thm ec-example" id="eg-mw-descent-hypotheses">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Example 8.4.7</span>.</span> No hypothesis of Theorem <a href="#thm-mw-descent">8.4.5</a> can be dropped.
+</p>
+<ol class="org-ol">
+<li><a id="it-mw-eg-rationals"></a> Let \(A = \Q\), as an additive group, and
+\(h(x) \coloneqq \log \max(\lvert u \rvert, \lvert w \rvert)\) for \(x = u/w\) in lowest
+terms.  It has the Northcott property, since there are at most \((2e^C + 1)^2\) such pairs
+\((u, w)\) with \(h(x) \leq C\).  From \(u/w + u'/w' = (uw' + u'w)/(ww')\) we get
+\(h(x + y) \leq h(x) + h(y) + \log 2\), so part <a href="#it-mw-descent-sum">1</a> of Theorem <a href="#thm-mw-descent">8.4.5</a> holds
+with \(a = 1\),
+and \(\Q/m = 0\).  But \(\Q\) is not finitely generated, since a finitely generated subgroup
+of \(\Q\) has bounded denominators.  Here part <a href="#it-mw-descent-multiple">2</a> of Theorem <a href="#thm-mw-descent">8.4.5</a> fails for every
+\(b > 1\): \(h(mx) \leq h(x) + \log m\).</li>
+<li><a id="it-mw-eg-infinite-rank"></a> Let \(A = \bigoplus_{i \geq 1} \Z\) and
+\(h(x) \coloneqq \sum_i i\,x_i^2\).  Each term satisfies the parallelogram law, so \(h\) is
+quadratic.  It has the Northcott property: \(h(x) \leq C\) forces \(x_i = 0\) for \(i > C\)
+and \(\lvert x_i \rvert \leq \sqrt C\).  But \(A/2\) is infinite, and \(A\) is not finitely
+generated.</li>
+<li><a id="it-mw-eg-converse"></a> Conversely, let \(A\) be finitely generated, and choose an
+isomorphism \(A \cong A_\tors \times \Z^r\), with \(r \geq 0\).  For \(P \in A\), let
+\(x_1(P), \dots, x_r(P) \in \Z\) be the coordinates of the image of \(P\) in \(\Z^r\), and
+\(h(P) \coloneqq x_1(P)^2 + \dots + x_r(P)^2\).  Each \(x_i\) is a homomorphism
+\(A \to \Z\), so each \(x_i^2\) satisfies the parallelogram law, and \(h\) is quadratic.
+The set \(\{h \leq C\}\) is the preimage of finitely many elements of \(\Z^r\), and each
+preimage is a coset of the finite group \(A_\tors\).  So \(h\) has the Northcott property.</li>
+</ol>
+<p>
+So an abelian group \(A\) is finitely generated if and only if \(A/2\) is finite and \(A\) has
+a quasi-quadratic height with the Northcott property.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgae04d6a" class="outline-3">
+<h3 id="orgae04d6a"><span class="section-number" id="s8.4.2">8.4.2</span> The canonical height</h3>
+<div class="outline-text-3" id="text-4-2">
+<div class="ec-thm ec-lemma" id="lem-mw-parallelogram">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Lemma 8.4.8</span>.</span> Let \(q\) be a quadratic height on \(A\).  Then \(q(0) = 0\), \(q(-P) = q(P)\), the pairing
+\(\langle\ ,\ \rangle_q\) is symmetric and bilinear, \(\langle P, P \rangle_q = 2q(P)\), and
+\(q(nP) = n^2 q(P)\) for every \(n \in \Z\).
+</p>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+The parallelogram law with \(P = Q = 0\) gives \(2q(0) = 4q(0)\), and with \(P = 0\) it gives
+\(q(Q) + q(-Q) = 2q(Q)\).  The pairing is symmetric by definition.  Apply the parallelogram
+law to the pairs \((P + R, Q)\), \((P, R - Q)\), \((P + Q, R)\) and \((R, Q)\):
+</p>
+\begin{equation*}
+\begin{aligned}
+q(P + Q + R) + q(P + R - Q) &= 2q(P + R) + 2q(Q),\\
+q(P + R - Q) + q(P + Q - R) &= 2q(P) + 2q(R - Q),\\
+q(P + Q + R) + q(P + Q - R) &= 2q(P + Q) + 2q(R),\\
+q(R + Q) + q(R - Q) &= 2q(R) + 2q(Q).
+\end{aligned}
+\end{equation*}
+<p>
+The first minus the second plus the third, minus twice the fourth, is twice
+</p>
+\begin{equation*}
+q(P + Q + R) - q(P + Q) - q(P + R) - q(Q + R) + q(P) + q(Q) + q(R) = 0,
+\end{equation*}
+<p>
+which says that \(\langle P + Q, R \rangle_q = \langle P, R \rangle_q + \langle Q, R \rangle_q\)
+[<a class="ec-cite" href="#bib-Hindry-Silverman00">HS00</a>, Lemma B.5.2].  The parallelogram law with \(Q = P\) gives
+\(q(2P) = 4q(P)\), so \(\langle P, P \rangle_q = q(2P) - 2q(P) = 2q(P)\).  By bilinearity,
+\(q(nP) = \tfrac12 \langle nP, nP \rangle_q = n^2 q(P)\).
+</p>
+</details>
+
+<div class="ec-thm ec-proposition" id="prop-mw-tate">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Proposition 8.4.9</span>.</span> Let \(h\) be a quasi-quadratic height on \(A\).  For every \(P \in A\) the limit
+</p>
+\begin{equation*}
+\hat h(P) \coloneqq \lim_{n \to \infty} 4^{-n} h(2^n P)
+\end{equation*}
+<p>
+exists, and \(\hat h\) is the unique quadratic height on \(A\) with \(\hat h = h + O(1)\).
+</p>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+By part <a href="#it-mw-qq-multiple">1</a> of Lemma <a href="#lem-mw-quasi-quadratic">8.4.4</a>, there is a constant
+\(c \geq 0\) with \(\lvert h(2P) - 4h(P) \rvert \leq c\) for all \(P\).  Applied to \(2^n P\) and divided by
+\(4^{n+1}\), it gives
+</p>
+\begin{equation*}
+\bigl\lvert 4^{-(n+1)} h(2^{n+1} P) - 4^{-n} h(2^n P) \bigr\rvert \leq c\,4^{-(n+1)}.
+\end{equation*}
+<p>
+So the sequence is Cauchy, and summing from \(n = 0\) gives
+\(\lvert \hat h(P) - h(P) \rvert \leq c/3\).  Let \(c' \geq 0\) bound the difference of the two sides of
+\eqref{eq:mw-quasi-parallelogram}.  Applied to \(2^n P\) and \(2^n Q\) and divided by \(4^n\), the
+difference for \(4^{-n} h(2^n\,\cdot)\) is at most \(c'\,4^{-n}\), and tends to \(0\).  So \(\hat h\)
+is quadratic.  If \(q\) and \(q'\) are quadratic with \(q - q'\) bounded, then \(q - q'\) is
+quadratic, and \((q - q')(P) = n^{-2} (q - q')(nP)\) tends to \(0\) by
+Lemma <a href="#lem-mw-parallelogram">8.4.8</a>.  This is Tate's construction
+[<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Proposition VIII.9.1 and Theorem VIII.9.3], [<a class="ec-cite" href="#bib-Hindry-Silverman00">HS00</a>, Theorem B.4.1].
+</p>
+</details>
+
+<p>
+We call \(\hat h\) the <dfn class="ec-cdef" id="gls-canonical-height" data-gls="canonical-height">canonical height</dfn> of \(h\).  Equivalent quasi-quadratic heights
+have the same canonical height, by the uniqueness.
+</p>
+
+<div class="ec-thm ec-corollary" id="cor-mw-canonical-torsion">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Corollary 8.4.10</span>.</span> Let \(h\) be a quasi-quadratic height on \(A\) with the Northcott property.
+</p>
+<ol class="org-ol">
+<li><a id="it-mw-canonical-northcott"></a> The canonical height \(\hat h\) has the Northcott property,
+and \(\hat h(P) \geq 0\) for every \(P \in A\).</li>
+<li><a id="it-mw-canonical-kernel"></a> We have \(\hat h(P) = 0\) if and only if \(P \in A_\tors\), and
+\(A_\tors\) is finite.</li>
+<li><a id="it-mw-canonical-torsion"></a> For \(P \in A\) and \(T \in A_\tors\),
+\(\langle P, T \rangle_{\hat h} = 0\) and \(\hat h(P + T) = \hat h(P)\).</li>
+</ol>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+The Northcott property passes to the equivalent height \(\hat h\), so \(\hat h\) is bounded
+below, say by \(-c\) with \(c \geq 0\).  Then \(\hat h(P) = n^{-2} \hat h(nP) \geq -c\,n^{-2}\) for every
+\(n \geq 1\), so \(\hat h(P) \geq 0\).  If \(nP = 0\) with \(n \geq 1\), then
+\(\hat h(P) = n^{-2} \hat h(0) = 0\).  Conversely, if \(\hat h(P) = 0\), then
+\(\hat h(nP) = 0\) for every \(n\), so the multiples of \(P\) lie in the finite set
+\(\{\hat h \leq 0\}\), and \(P\) is torsion.  That set contains \(A_\tors\).  Finally, if
+\(nT = 0\) with \(n \geq 1\), then \(n \langle P, T \rangle_{\hat h} = \langle P, nT \rangle_{\hat h} = 0\),
+and \(\hat h(P + T) = \hat h(P) + \hat h(T) + \langle P, T \rangle_{\hat h} = \hat h(P)\).
+</p>
+</details>
+</div>
+</div>
+
+<div id="outline-container-orgb85d96d" class="outline-3">
+<h3 id="orgb85d96d"><span class="section-number" id="s8.4.3">8.4.3</span> Lattices and Minkowski's theorem</h3>
+<div class="outline-text-3" id="text-4-3">
+<p>
+Let \(V\) be a real vector space of finite dimension \(r\), with a translation-invariant
+measure \(\vol\): in coordinates, a positive multiple of Lebesgue measure.
+</p>
+
+<div class="ec-thm ec-definition" id="def-mw-lattice">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Definition 8.4.11</span>.</span> A <dfn class="ec-cdef" id="gls-lattice-in-a-real-vector-space" data-gls="lattice-in-a-real-vector-space">lattice</dfn> in \(V\) is a subgroup \(\Lambda\) generated by a
+basis \(\lambda_1, \dots, \lambda_r\) of \(V\).  Its fundamental parallelepiped is
+\(F \coloneqq \{t_1 \lambda_1 + \dots + t_r \lambda_r : 0 \leq t_i < 1\}\), and its covolume is
+\(\covol(\Lambda) \coloneqq \vol(F)\).
+</p>
+</div>
+
+<p>
+The space \(V\) is the disjoint union of the translates \(F + \lambda\), for
+\(\lambda \in \Lambda\).  Two bases of \(\Lambda\) differ by a matrix in \(\GL_r(\Z)\), of
+determinant \(\pm 1\), so the covolume does not depend on the basis.
+</p>
+
+<div class="ec-thm ec-theorem" id="thm-mw-minkowski">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Theorem 8.4.12</span> <span class="ec-thm-title">(Minkowski)</span>.</span> Let \(\Lambda\) be a lattice in \(V\), and \(U \subseteq V\) a convex subset with \(-U = U\).  If
+\(\vol(U) > 2^r \covol(\Lambda)\), then \(U\) contains a non-zero element of \(\Lambda\).
+</p>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+Let \(U' \coloneqq \tfrac12 U\), so \(\vol(U') = 2^{-r} \vol(U) > \vol(F)\).  The sets
+\(U' \cap (F + \lambda)\), for \(\lambda \in \Lambda\), partition \(U'\), and their translates
+\((U' \cap (F + \lambda)) - \lambda\) lie in \(F\).  Their volumes add up to
+\(\vol(U') > \vol(F)\), so two of the translates meet: there are \(\lambda \neq \lambda'\) in
+\(\Lambda\) and \(x, x' \in U'\) with \(x - \lambda = x' - \lambda'\).  Then \(2x\) and \(-2x'\)
+lie in \(U\), and so does their midpoint \(x - x' = \lambda - \lambda'\), a non-zero element of
+\(\Lambda\) [<a class="ec-cite" href="#bib-Hindry-Silverman00">HS00</a>, Theorem B.5.4].
+</p>
+</details>
+
+<div class="ec-thm ec-lemma" id="lem-mw-positive-definite">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Lemma 8.4.13</span>.</span> Let \(\Lambda\) be a lattice in \(V\), and \(q\) a quadratic form on \(V\).  Suppose that
+\(q(\lambda) \neq 0\) for every non-zero \(\lambda \in \Lambda\), and that
+\(\{\lambda \in \Lambda : q(\lambda) \leq C\}\) is finite for every \(C\).  Then \(q\) is
+positive definite.
+</p>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+If \(q(\lambda) < 0\) for some \(\lambda \in \Lambda\), then the multiples \(n\lambda\) satisfy
+\(q(n\lambda) = n^2 q(\lambda) \leq 0\), and they are infinitely many.  So \(q\) is positive on
+\(\Lambda \setminus \{0\}\), and \(\mu \coloneqq \min\{q(\lambda) : \lambda \in \Lambda, \lambda \neq 0\}\)
+exists, by the finiteness hypothesis, and is positive.  Diagonalize \(q\): there are
+coordinates \(x_1, \dots, x_r\) on \(V\) in which
+\(q = x_1^2 + \dots + x_s^2 - x_{s+1}^2 - \dots - x_{s+t}^2\), with \(s + t \leq r\).  Take
+\(\vol\) to be Lebesgue measure in these coordinates.  Suppose that \(s < r\).  For
+\(\delta > 0\), the set
+</p>
+\begin{equation*}
+U_\delta \coloneqq \Bigl\{x \in V : \sum_{i \leq s} x_i^2 \leq \frac{\mu}{2} \text{ and } \sum_{i > s} x_i^2 \leq \delta\Bigr\}
+\end{equation*}
+<p>
+is convex and symmetric, and its volume is a positive multiple of \(\delta^{(r-s)/2}\), which
+tends to infinity.  By Theorem <a href="#thm-mw-minkowski">8.4.12</a>, for \(\delta\) large \(U_\delta\) contains a
+non-zero \(\lambda \in \Lambda\), and \(q(\lambda) \leq \sum_{i \leq s} x_i(\lambda)^2 \leq \mu/2\),
+a contradiction.  So \(s = r\), and \(q\) is positive definite
+[<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Lemma VIII.9.5].
+</p>
+</details>
+
+<div class="ec-thm ec-remark" id="rem-mw-cassels">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Remark 8.4.14</span>.</span> The finiteness hypothesis in Lemma <a href="#lem-mw-positive-definite">8.4.13</a> cannot be dropped
+[<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Remark VIII.9.4 and Exercise 8.16].  On \(V = \R^2\) with
+\(\Lambda = \Z^2\), the form \(q(x, y) \coloneqq (x - \sqrt 2\,y)^2\) is non-zero on
+\(\Lambda \setminus \{0\}\), since \(\sqrt 2\) is irrational, but it vanishes on the line
+\(x = \sqrt 2\,y\).  The positivity of \(\hat h\) on \(A/A_\tors\), from
+Corollary <a href="#cor-mw-canonical-torsion">8.4.10</a>, is the first hypothesis only.  The point, due to
+Cassels, is that the second is needed to conclude that \(\hat h\) is positive definite on
+\(A_\R\).
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org71020d4" class="outline-3">
+<h3 id="org71020d4"><span class="section-number" id="s8.4.4">8.4.4</span> Néron's counting theorem</h3>
+<div class="outline-text-3" id="text-4-4">
+<div class="ec-thm ec-theorem" id="thm-mw-heights-structure">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Theorem 8.4.15</span>.</span> Let \(h\) be a quasi-quadratic height on \(A\) with the Northcott property, and suppose that
+\(A/m\) is finite.
+</p>
+<ol class="org-ol">
+<li><a id="it-mw-structure-fg"></a> The group \(A\) is finitely generated, with \(A_\tors\) finite, so
+\(A \cong A_\tors \times \Z^r\) for some \(r \geq 0\).</li>
+<li><a id="it-mw-structure-lattice"></a> The image \(\Lambda\) of \(A\) in \(A_\R\) is a lattice, and the
+kernel of \(A \to \Lambda\) is \(A_\tors\).</li>
+<li><a id="it-mw-structure-definite"></a> There is a unique quadratic form \(q\) on \(A_\R\) with
+\(\hat h(P) = q(P \otimes 1)\) for all \(P \in A\), and \(q\) is positive definite.</li>
+</ol>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+The group \(A\) is finitely generated by Lemma <a href="#lem-mw-quasi-quadratic">8.4.4</a> and
+Theorem <a href="#thm-mw-descent">8.4.5</a>, and \(A_\tors\) is finite.  Since \(A_\tors \otimes \R = 0\), the
+group \(A_\R\) is \((A/A_\tors) \otimes \R \cong \R^r\), in which \(A/A_\tors \cong \Z^r\) is the
+standard lattice.  By Lemma <a href="#lem-mw-parallelogram">8.4.8</a> and part <a href="#it-mw-canonical-torsion">3</a> of
+Corollary <a href="#cor-mw-canonical-torsion">8.4.10</a>, the pairing \(\langle\ ,\ \rangle_{\hat h}\) is a symmetric
+bilinear form on \(A/A_\tors\).  It extends uniquely to a symmetric bilinear form \(B\) on
+\(A_\R\), and \(q(v) \coloneqq \tfrac12 B(v, v)\) satisfies
+\(q(P \otimes 1) = \tfrac12 \langle P, P \rangle_{\hat h} = \hat h(P)\).  By
+Corollary <a href="#cor-mw-canonical-torsion">8.4.10</a>, \(q\) is non-zero on \(\Lambda \setminus \{0\}\), and
+\(\{\lambda \in \Lambda : q(\lambda) \leq C\}\) is the image of the finite set
+\(\{\hat h \leq C\}\).  So \(q\) is positive definite by Lemma <a href="#lem-mw-positive-definite">8.4.13</a>
+[<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Proposition VIII.9.6].
+</p>
+</details>
+
+<div class="ec-thm ec-definition" id="def-mw-regulator">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Definition 8.4.16</span>.</span> In Theorem <a href="#thm-mw-heights-structure">8.4.15</a>, let \(P_1, \dots, P_r \in A\) map to a basis of
+\(\Lambda\).  The <dfn class="ec-cdef" id="gls-regulator-of-a-quadratic-height" data-gls="regulator-of-a-quadratic-height">regulator</dfn> of \(\hat h\) is
+\(\Reg(\hat h) \coloneqq \det\bigl(\langle P_i, P_j \rangle_{\hat h}\bigr)_{i,j}\).
+</p>
+</div>
+
+<p>
+Another choice replaces the Gram matrix \(G \coloneqq (\langle P_i, P_j \rangle_{\hat h})\) by
+\(U^{\mathsf T} G U\) with \(U \in \GL_r(\Z)\), so \(\Reg(\hat h)\) does not depend on the
+choice, and it is positive since \(q\) is positive definite.  Let
+\(\omega_r \coloneqq \pi^{r/2}/\Gamma(r/2 + 1)\) be the volume of the unit ball in \(\R^r\).
+</p>
+
+<div class="ec-thm ec-lemma" id="lem-mw-lattice-count">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Lemma 8.4.17</span>.</span> Let \(\Lambda\) be a lattice in \(V\), with \(r \geq 1\), and \(\lVert\ \rVert\) a norm on \(V\),
+with unit ball \(B \coloneqq \{v : \lVert v \rVert \leq 1\}\).  Then, as \(T \to \infty\),
+</p>
+\begin{equation*}
+\#\{\lambda \in \Lambda : \lVert \lambda \rVert \leq T\}
+= \frac{\vol(B)}{\covol(\Lambda)}\, T^r + O(T^{r-1}).
+\end{equation*}
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+Let \(F\) be a fundamental parallelepiped of \(\Lambda\), and
+\(D \coloneqq \sup_{y \in F} \lVert y \rVert\), finite since \(F\) is bounded.  Let \(N(T)\) be the
+left side, and \(U_T\) the union of the \(F + \lambda\) with \(\lVert \lambda \rVert \leq T\).  If
+\(\lVert x \rVert \leq T - D\), write \(x = y + \lambda\) with \(y \in F\).  Then
+\(\lVert \lambda \rVert \leq \lVert x \rVert + \lVert y \rVert \leq T\), so \(x \in U_T\).  If
+\(x = y + \lambda \in U_T\), then \(\lVert x \rVert \leq T + D\).  So
+\((T - D)B \subseteq U_T \subseteq (T + D)B\), and taking volumes, for \(T \geq D\),
+</p>
+\begin{equation*}
+\vol(B)(T - D)^r \leq N(T) \covol(\Lambda) \leq \vol(B)(T + D)^r
+\end{equation*}
+<p>
+[<a class="ec-cite" href="#bib-Hindry-Silverman00">HS00</a>, Lemma B.6.4].
+</p>
+</details>
+
+<div class="ec-thm ec-theorem" id="thm-mw-neron">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Theorem 8.4.18</span> <span class="ec-thm-title">(Néron)</span>.</span> Let \(h\) be a quasi-quadratic height on \(A\) with the Northcott property, suppose that
+\(A/m\) is finite, and let \(r \geq 1\) be the rank of \(A\).  Then, as \(T \to \infty\),
+</p>
+\begin{equation}
+\label{eq:mw-neron}
+\#\{P \in A : h(P) \leq T\}
+= \frac{\#A_\tors\, \omega_r\, 2^{r/2}}{\sqrt{\Reg(\hat h)}}\, T^{r/2} + O\bigl(T^{(r-1)/2}\bigr). \tag{8.4.2}
+\end{equation}
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+By Proposition <a href="#prop-mw-tate">8.4.9</a> there is a constant \(c \geq 0\) with
+\(\{\hat h \leq T - c\} \subseteq \{h \leq T\} \subseteq \{\hat h \leq T + c\}\).  By
+Theorem <a href="#thm-mw-heights-structure">8.4.15</a>, the map \(A \to \Lambda\) has fibers of size \(\#A_\tors\),
+and \(\hat h\) is the pullback of \(q\), so
+\(\#\{\hat h \leq T\} = \#A_\tors \cdot \#\{\lambda \in \Lambda : q(\lambda) \leq T\}\).  Use the
+coordinates \(t \mapsto \sum_i t_i (P_i \otimes 1)\) on \(A_\R\), with Lebesgue measure, so that
+\(\covol(\Lambda) = 1\) and \(q(t) = \tfrac12 t^{\mathsf T} G t\).  Apply
+Lemma <a href="#lem-mw-lattice-count">8.4.17</a> to the norm \(\sqrt q\), and \(\sqrt T\) in place of \(T\).  The
+substitution \(t = \sqrt 2\, G^{-1/2} u\) maps the unit ball onto \(\{q \leq 1\}\), so
+\(\vol\{q \leq 1\} = \omega_r 2^{r/2}/\sqrt{\det G}\).  Finally
+\((T \pm c)^{r/2} = T^{r/2} + O(T^{r/2 - 1})\), which is within the error term
+[<a class="ec-cite" href="#bib-Hindry-Silverman00">HS00</a>, Theorem B.6.3].
+</p>
+</details>
+
+<p>
+Let \(N(T)\) be the left side of \eqref{eq:mw-neron}.  Then
+\(r = \lim_{T \to \infty} 2 \log N(T)/\log T\): the rank can be read off from the growth of the
+number of elements of bounded height.  Hindry and Silverman state Theorem <a href="#thm-mw-neron">8.4.18</a> for an abelian variety,
+with the multiplicative height \(e^h\), so that \(T^{r/2}\) becomes \((\log T)^{r/2}\), and for a
+canonical height that may have a linear part.  A quasi-quadratic height has none, since
+\(h(-P) = h(P) + O(1)\).
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgf8ef5b1" class="outline-3">
+<h3 id="orgf8ef5b1"><span class="section-number" id="s8.4.5">8.4.5</span> The multiplicative group</h3>
+<div class="outline-text-3" id="text-4-5">
+<div class="ec-thm ec-remark" id="rem-mw-units-descent">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Remark 8.4.19</span>.</span> Theorem <a href="#thm-mw-descent">8.4.5</a> also applies to the multiplicative group, with a linear height in
+place of a quadratic one.  Let \(k\) be a number field, \(S \subseteq \Places_k\) a finite set
+containing the archimedean places, and \(\calO_S^\times\) the group of \(S\)-units, as in
+Remark <a href="#rem-mw-why-gm-differs">8.3.5</a>.  In these notes \(\calO_S^\times\) is finitely generated by
+Dirichlet's \(S\)-unit theorem, which is only cited (Theorem <a href="07-galois-cohomology.html#thm-gc-s-units">7.8.4</a>), and the
+finiteness of \(\calO_S^\times/\calO_S^{\times m}\) is deduced from it
+(Proposition <a href="07-galois-cohomology.html#prop-gc-kSm">7.8.3</a>).  An independent proof goes as follows.  Enlarging \(S\) enlarges
+\(\calO_S^\times\), and a subgroup of a finitely generated abelian group is finitely generated,
+so we may assume that \(S\) contains the places \(v\) with \(v(m) > 0\).
+</p>
+<ol class="org-ol">
+<li><a id="it-mw-units-weak"></a> The group \(\calO_S^\times/\calO_S^{\times m}\) is finite.  Let
+\(k' \coloneqq k(\mu_m)\), and \(S'\) the set of places of \(k'\) above \(S\).  For
+\(x \in \calO_S^\times\), the extension \(k'(x^{1/m})/k'\) has degree at most \(m\) and is
+unramified outside \(S'\), by Proposition <a href="07-galois-cohomology.html#prop-gc-unramified-kummer">7.7.4</a>.  By Hermite's
+theorem there are only finitely many such extensions
+[<a class="ec-cite" href="#bib-Hindry-Silverman00">HS00</a>, Proposition C.1.6], [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Remark VIII.1.7], so their
+compositum \(F\) is finite over \(k'\).  By Corollary <a href="07-galois-cohomology.html#cor-gc-kummer">7.4.6</a>, the image of
+\(\calO_S^\times\) in \(k'^\times/k'^{\times m}\) embeds in the finite group
+\(\Hom(\Gal(F/k'), \mu_m(k'))\).  The kernel of \(k^\times/k^{\times m} \to k'^\times/k'^{\times m}\)
+is finite, as in Lemma <a href="#lem-mw-reduction">8.2.2</a>, and \(\calO_S^\times \cap k^{\times m} = \calO_S^{\times m}\),
+by valuations.</li>
+<li><a id="it-mw-units-height"></a> For each \(v \in \Places_k\), let \(\lvert\ \rvert_v\) be the absolute value
+on \(k_v\) extending the usual one on \(\Q_p\) or \(\R\), and \(n_v \coloneqq [k_v : \Q_p]\) or
+\([k_v : \R]\).  The Weil height of \(x \in k^\times\) is
+\(h(x) \coloneqq [k : \Q]^{-1} \sum_{v} n_v \log \max(1, \lvert x \rvert_v)\).  It has the
+Northcott property on \(k\), viewed inside \(\PP^1(k)\)
+[<a class="ec-cite" href="#bib-Hindry-Silverman00">HS00</a>, Theorem B.2.3].  Since
+\(\max(1, \lvert xy \rvert_v) \leq \max(1, \lvert x \rvert_v) \max(1, \lvert y \rvert_v)\) and
+\(\max(1, \lvert x^m \rvert_v) = \max(1, \lvert x \rvert_v)^m\), it satisfies
+\(h(xy) \leq h(x) + h(y)\) and \(h(x^m) = m\,h(x)\).</li>
+<li><a id="it-mw-units-descent"></a> These are the hypotheses of Theorem <a href="#thm-mw-descent">8.4.5</a> for
+\(\calO_S^\times\), written multiplicatively, with \(a = 1\), \(b = m\), \(C_1(y) = h(y)\) and
+\(C_2 = 0\).  Here \(C_1(y) \geq 0\), since every term of \(h(y)\) is non-negative.  So \(\calO_S^\times\) is finitely generated.</li>
+</ol>
+<p>
+Hermite's theorem is itself proved with Minkowski's theorem
+[<a class="ec-cite" href="#bib-Hindry-Silverman00">HS00</a>, Theorem C.3.2], so this proof avoids Dirichlet's theorem but not the
+geometry of numbers.  It does not give the rank, \(\#S - 1\)
+[<a class="ec-cite" href="#bib-Hindry-Silverman00">HS00</a>, Theorem C.3.3].
+</p>
+
+<p>
+The analogue of Theorem <a href="#thm-mw-neron">8.4.18</a> is a count of \(S\)-units.  For
+\(x \in \calO_S^\times\), we have \(\lvert x \rvert_v = 1\) for \(v \notin S\), and the product formula
+\(\sum_{v \in S} n_v \log \lvert x \rvert_v = 0\) [<a class="ec-cite" href="#bib-Hindry-Silverman00">HS00</a>, Proposition B.1.2]
+gives
+</p>
+\begin{equation*}
+h(x) = \frac{1}{2[k : \Q]} \sum_{v \in S} n_v\, \bigl\lvert \log \lvert x \rvert_v \bigr\rvert.
+\end{equation*}
+<p>
+Under the logarithmic embedding \(x \mapsto (n_v \log \lvert x \rvert_v)_{v \in S}\), whose kernel is
+the finite group of roots of unity of \(k\) and whose image is a lattice in the hyperplane
+\(\sum_v y_v = 0\) by Dirichlet's theorem, \(h\) is a multiple of the \(\ell^1\) norm.  It is a
+norm, not a quadratic form: \(h(x^n) = \lvert n \rvert h(x)\).  So Lemma <a href="#lem-mw-lattice-count">8.4.17</a>
+applies to \(h\) itself, and, if \(\#S \geq 2\), the number of \(S\)-units with
+\(h(x) \leq T\) is
+\(c\,T^{\#S - 1} + O(T^{\#S - 2})\) for a constant \(c > 0\), with exponent the rank instead of half the rank.  The
+constant \(c\) involves the covolume of the image, the \(S\)-regulator, in place of
+\(\Reg(\hat h)\).
+</p>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgc240433" class="outline-2 ec-references">
+<h2 id="orgc240433">References</h2>
+<div class="outline-text-2" id="text-orgc240433">
+<dl class="ec-bibliography">
+<dt id="bib-Hindry-Silverman00">[HS00]</dt>
+<dd>Marc Hindry and Joseph H. Silverman. <i>Diophantine geometry</i>. Vol. 201. Graduate Texts in Mathematics. Springer-Verlag, New York, 2000. An introduction. <a href="https://doi.org/10.1007/978-1-4612-1210-2">doi:10.1007/978-1-4612-1210-2</a>.</dd>
+<dt id="bib-Poonen02">[Poo02]</dt>
+<dd>Bjorn Poonen. <i>The Selmer group, the Shafarevich&ndash;Tate group, and the weak Mordell&ndash;Weil theorem</i>. 2002. Lecture notes, Arizona Winter School 1999, February 20, 2002 version.</dd>
+<dt id="bib-Silverman09">[Sil09]</dt>
+<dd>Joseph H. Silverman. <i>The arithmetic of elliptic curves</i>. Second. Vol. 106. Graduate Texts in Mathematics. Springer, Dordrecht, 2009. <a href="https://doi.org/10.1007/978-0-387-09494-6">doi:10.1007/978-0-387-09494-6</a>.</dd>
+</dl>
+</div>
+</div>
 </div>
 <div id="postamble" class="status">
-<nav class="ec-pager ec-pager-bottom" aria-label="Chapters"><a class="ec-pager-prev" rel="prev" href="07-galois-cohomology.html"><span class="ec-pager-label">Previous</span><span class="ec-pager-title">7. Galois cohomology</span></a><a class="ec-pager-next" rel="next" href="09-integral-points.html"><span class="ec-pager-label">Next</span><span class="ec-pager-title">9. Integral points</span></a></nav>
+<nav class="ec-pager ec-pager-bottom" aria-label="Chapters"><a class="ec-pager-prev" rel="prev" href="07-galois-cohomology.html"><span class="ec-pager-label">Previous</span><span class="ec-pager-title">7. Galois cohomology</span></a><a class="ec-pager-next" rel="next" href="09-selmer-sha.html"><span class="ec-pager-label">Next</span><span class="ec-pager-title">9. Twisting, Selmer, and Tate&ndash;Shafarevich</span></a></nav>
 </div>
 </body>
 </html>
