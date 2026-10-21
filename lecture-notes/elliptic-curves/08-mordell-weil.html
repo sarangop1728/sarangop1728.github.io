@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2026-10-15 Thu 08:28 -->
+<!-- 2026-10-21 Wed 14:08 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>The Mordell&#x2013;Weil theorem</title>
@@ -29,7 +29,7 @@
 <li class="ec-toc-chapter"><a href="05-finite-fields.html"><span class="ec-toc-num">5</span><span class="ec-toc-text">Elliptic curves over finite fields<span class="ec-toc-status"><span class="ec-status-progress">0 of 5 sections finished</span></span></span></a></li>
 <li class="ec-toc-chapter"><a href="06-local-fields.html"><span class="ec-toc-num">6</span><span class="ec-toc-text">Elliptic curves over local fields<span class="ec-toc-status"><span class="ec-status-progress">0 of 5 sections finished</span></span></span></a></li>
 <li class="ec-toc-chapter"><a href="07-galois-cohomology.html"><span class="ec-toc-num">7</span><span class="ec-toc-text">Galois cohomology<span class="ec-toc-status"><span class="ec-status-progress">0 of 10 sections finished</span></span></span></a></li>
-<li class="ec-toc-chapter is-current"><a href="08-mordell-weil.html" aria-current="page"><span class="ec-toc-num">8</span><span class="ec-toc-text">The Mordell&ndash;Weil theorem<span class="ec-toc-status"><span class="ec-status-progress">0 of 4 sections finished</span></span></span></a>
+<li class="ec-toc-chapter is-current"><a href="08-mordell-weil.html" aria-current="page"><span class="ec-toc-num">8</span><span class="ec-toc-text">The Mordell&ndash;Weil theorem<span class="ec-toc-status"><span class="ec-status-progress">0 of 5 sections finished</span></span></span></a>
 <ol class="ec-toc-sections">
 <li class="ec-toc-level-1"><a href="#s8.1"><span class="ec-toc-num">8.1</span><span class="ec-toc-text">The case \(m = 2\) over \(\Q\) with rational \(2\)-torsion<span class="ec-toc-status"><span class="ec-status-label ec-status-draft">Draft</span></span></span></a></li>
 <li class="ec-toc-level-1"><a href="#s8.2"><span class="ec-toc-num">8.2</span><span class="ec-toc-text">The weak Mordell&ndash;Weil theorem<span class="ec-toc-status"><span class="ec-status-label ec-status-draft">Draft</span></span></span></a></li>
@@ -41,6 +41,11 @@
 <li class="ec-toc-level-2"><a href="#s8.4.3"><span class="ec-toc-num">8.4.3</span><span class="ec-toc-text">Lattices and Minkowski's theorem</span></a></li>
 <li class="ec-toc-level-2"><a href="#s8.4.4"><span class="ec-toc-num">8.4.4</span><span class="ec-toc-text">Néron's counting theorem</span></a></li>
 <li class="ec-toc-level-2"><a href="#s8.4.5"><span class="ec-toc-num">8.4.5</span><span class="ec-toc-text">The multiplicative group</span></a></li>
+<li class="ec-toc-level-1"><a href="#s8.5"><span class="ec-toc-num">8.5</span><span class="ec-toc-text">Heights on projective space<span class="ec-toc-status"><span class="ec-status-label ec-status-draft">Draft</span></span></span></a></li>
+<li class="ec-toc-level-2"><a href="#s8.5.1"><span class="ec-toc-num">8.5.1</span><span class="ec-toc-text">The height of a point of projective space</span></a></li>
+<li class="ec-toc-level-2"><a href="#s8.5.2"><span class="ec-toc-num">8.5.2</span><span class="ec-toc-text">The projective line and the multiplicative group</span></a></li>
+<li class="ec-toc-level-2"><a href="#s8.5.3"><span class="ec-toc-num">8.5.3</span><span class="ec-toc-text">Northcott's theorem and Kronecker's theorem</span></a></li>
+<li class="ec-toc-level-2"><a href="#s8.5.4"><span class="ec-toc-num">8.5.4</span><span class="ec-toc-text">Galois conjugates, morphisms and embeddings</span></a></li>
 </ol></li>
 <li class="ec-toc-chapter"><a href="09-selmer-sha.html"><span class="ec-toc-num">9</span><span class="ec-toc-text">Twisting, Selmer, and Tate&ndash;Shafarevich<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
 <li class="ec-toc-chapter"><a href="10-integral-points.html"><span class="ec-toc-num">10</span><span class="ec-toc-text">Integral points<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
@@ -57,11 +62,12 @@
 </div>
 <div id="content" class="content">
 <h1 class="title"><span class="ec-chapter-label">Chapter 8</span>The Mordell&#x2013;Weil theorem</h1>
-<div class="sources" id="orgcac2391">
+<div class="sources" id="orga81643e">
 <p>
-This chapter follows [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Sections VIII.1&#x2013;VIII.3 and VIII.9], with the point
-of view of [<a class="ec-cite" href="#bib-Poonen02">Poo02</a>, Sections 8&#x2013;10].  The counting of elements of bounded height
-follows [<a class="ec-cite" href="#bib-Hindry-Silverman00">HS00</a>, Sections B.4&#x2013;B.6].
+This chapter follows [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Sections VIII.1&#x2013;VIII.3, VIII.5 and VIII.9], with the
+point of view of [<a class="ec-cite" href="#bib-Poonen02">Poo02</a>, Sections 8&#x2013;10].  The counting of elements of bounded height
+follows [<a class="ec-cite" href="#bib-Hindry-Silverman00">HS00</a>, Sections B.4&#x2013;B.6], and the heights on projective space
+[<a class="ec-cite" href="#bib-Hindry-Silverman00">HS00</a>, Sections B.1, B.2 and B.7].
 </p>
 
 </div>
@@ -728,8 +734,8 @@ the proof of Theorem <a href="07-galois-cohomology.html#thm-gc-finiteness">7.8.6
 </p>
 </div>
 
-<div id="outline-container-orgfa94f26" class="outline-3">
-<h3 id="orgfa94f26"><span class="section-number" id="s8.3.1">8.3.1</span> The Kummer image at a good place</h3>
+<div id="outline-container-orgf3937c0" class="outline-3">
+<h3 id="orgf3937c0"><span class="section-number" id="s8.3.1">8.3.1</span> The Kummer image at a good place</h3>
 <div class="outline-text-3" id="text-3-1">
 <p>
 The Kummer map exists over \(k_v\) too, by Proposition <a href="07-galois-cohomology.html#prop-gc-kummer-ec">7.5.1</a> over \(k_v\):
@@ -855,7 +861,7 @@ Remark <a href="#rem-mw-units-descent">8.4.19</a>.
 </div>
 
 <div id="outline-container-sec-mw-heights" class="outline-2">
-<h2 id="sec-mw-heights"><span class="ec-status ec-status-draft"><span class="ec-status-label ec-status-draft">Draft</span><time datetime="2026-10-15">15 Oct 2026</time></span><span class="section-number" id="s8.4">8.4</span> Heights on abelian groups</h2>
+<h2 id="sec-mw-heights"><span class="ec-status ec-status-draft"><span class="ec-status-label ec-status-draft">Draft</span><time datetime="2026-10-21">21 Oct 2026</time></span><span class="section-number" id="s8.4">8.4</span> Heights on abelian groups</h2>
 <div class="outline-text-2" id="text-sec-mw-heights">
 <p>
 This section is [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Section VIII.3], with the parts of
@@ -878,8 +884,8 @@ subgroup \(A_\tors\).  We write \(A_\R \coloneqq A \otimes_\Z \R\).</li>
 </div>
 </div>
 
-<div id="outline-container-org1a3d954" class="outline-3">
-<h3 id="org1a3d954"><span class="section-number" id="s8.4.1">8.4.1</span> Heights and finite generation</h3>
+<div id="outline-container-org0c28729" class="outline-3">
+<h3 id="org0c28729"><span class="section-number" id="s8.4.1">8.4.1</span> Heights and finite generation</h3>
 <div class="outline-text-3" id="text-4-1">
 <div class="ec-thm ec-definition" id="def-mw-height">
 <p>
@@ -1053,8 +1059,8 @@ a quasi-quadratic height with the Northcott property.
 </div>
 </div>
 
-<div id="outline-container-orgae04d6a" class="outline-3">
-<h3 id="orgae04d6a"><span class="section-number" id="s8.4.2">8.4.2</span> The canonical height</h3>
+<div id="outline-container-orgac8e849" class="outline-3">
+<h3 id="orgac8e849"><span class="section-number" id="s8.4.2">8.4.2</span> The canonical height</h3>
 <div class="outline-text-3" id="text-4-2">
 <div class="ec-thm ec-lemma" id="lem-mw-parallelogram">
 <p>
@@ -1162,8 +1168,8 @@ and \(\hat h(P + T) = \hat h(P) + \hat h(T) + \langle P, T \rangle_{\hat h} = \h
 </div>
 </div>
 
-<div id="outline-container-orgb85d96d" class="outline-3">
-<h3 id="orgb85d96d"><span class="section-number" id="s8.4.3">8.4.3</span> Lattices and Minkowski's theorem</h3>
+<div id="outline-container-org0517bfb" class="outline-3">
+<h3 id="org0517bfb"><span class="section-number" id="s8.4.3">8.4.3</span> Lattices and Minkowski's theorem</h3>
 <div class="outline-text-3" id="text-4-3">
 <p>
 Let \(V\) be a real vector space of finite dimension \(r\), with a translation-invariant
@@ -1253,8 +1259,8 @@ Cassels, is that the second is needed to conclude that \(\hat h\) is positive de
 </div>
 </div>
 
-<div id="outline-container-org71020d4" class="outline-3">
-<h3 id="org71020d4"><span class="section-number" id="s8.4.4">8.4.4</span> Néron's counting theorem</h3>
+<div id="outline-container-org0f08ff0" class="outline-3">
+<h3 id="org0f08ff0"><span class="section-number" id="s8.4.4">8.4.4</span> Néron's counting theorem</h3>
 <div class="outline-text-3" id="text-4-4">
 <div class="ec-thm ec-theorem" id="thm-mw-heights-structure">
 <p>
@@ -1375,8 +1381,8 @@ canonical height that may have a linear part.  A quasi-quadratic height has none
 </div>
 </div>
 
-<div id="outline-container-orgf8ef5b1" class="outline-3">
-<h3 id="orgf8ef5b1"><span class="section-number" id="s8.4.5">8.4.5</span> The multiplicative group</h3>
+<div id="outline-container-org86b324b" class="outline-3">
+<h3 id="org86b324b"><span class="section-number" id="s8.4.5">8.4.5</span> The multiplicative group</h3>
 <div class="outline-text-3" id="text-4-5">
 <div class="ec-thm ec-remark" id="rem-mw-units-descent">
 <p>
@@ -1402,14 +1408,11 @@ compositum \(F\) is finite over \(k'\).  By Corollary <a href="07-galois-cohomol
 \(\Hom(\Gal(F/k'), \mu_m(k'))\).  The kernel of \(k^\times/k^{\times m} \to k'^\times/k'^{\times m}\)
 is finite, as in Lemma <a href="#lem-mw-reduction">8.2.2</a>, and \(\calO_S^\times \cap k^{\times m} = \calO_S^{\times m}\),
 by valuations.</li>
-<li><a id="it-mw-units-height"></a> For each \(v \in \Places_k\), let \(\lvert\ \rvert_v\) be the absolute value
-on \(k_v\) extending the usual one on \(\Q_p\) or \(\R\), and \(n_v \coloneqq [k_v : \Q_p]\) or
-\([k_v : \R]\).  The Weil height of \(x \in k^\times\) is
-\(h(x) \coloneqq [k : \Q]^{-1} \sum_{v} n_v \log \max(1, \lvert x \rvert_v)\).  It has the
-Northcott property on \(k\), viewed inside \(\PP^1(k)\)
-[<a class="ec-cite" href="#bib-Hindry-Silverman00">HS00</a>, Theorem B.2.3].  Since
-\(\max(1, \lvert xy \rvert_v) \leq \max(1, \lvert x \rvert_v) \max(1, \lvert y \rvert_v)\) and
-\(\max(1, \lvert x^m \rvert_v) = \max(1, \lvert x \rvert_v)^m\), it satisfies
+<li><a id="it-mw-units-height"></a> For \(x \in k^\times\), let \(h(x) \coloneqq h([x : 1])\) be the
+logarithmic height of Definition <a href="#def-mw-proj-height">8.5.3</a>, with the absolute values
+\(\lvert\ \rvert_v\) and local degrees \(n_v\) of Situation <a href="#sit-mw-proj-heights">8.5.1</a>.  It has
+the Northcott property on \(k\), viewed inside \(\PP^1(k)\), by
+Theorem <a href="#thm-mw-northcott">8.5.13</a>.  By Proposition <a href="#prop-mw-gm-height">8.5.12</a>, it satisfies
 \(h(xy) \leq h(x) + h(y)\) and \(h(x^m) = m\,h(x)\).</li>
 <li><a id="it-mw-units-descent"></a> These are the hypotheses of Theorem <a href="#thm-mw-descent">8.4.5</a> for
 \(\calO_S^\times\), written multiplicatively, with \(a = 1\), \(b = m\), \(C_1(y) = h(y)\) and
@@ -1424,9 +1427,8 @@ geometry of numbers.  It does not give the rank, \(\#S - 1\)
 
 <p>
 The analogue of Theorem <a href="#thm-mw-neron">8.4.18</a> is a count of \(S\)-units.  For
-\(x \in \calO_S^\times\), we have \(\lvert x \rvert_v = 1\) for \(v \notin S\), and the product formula
-\(\sum_{v \in S} n_v \log \lvert x \rvert_v = 0\) [<a class="ec-cite" href="#bib-Hindry-Silverman00">HS00</a>, Proposition B.1.2]
-gives
+\(x \in \calO_S^\times\), we have \(\lvert x \rvert_v = 1\) for \(v \notin S\), and
+part <a href="#it-mw-gm-symmetric">3</a> of Proposition <a href="#prop-mw-gm-height">8.5.12</a> gives
 </p>
 \begin{equation*}
 h(x) = \frac{1}{2[k : \Q]} \sum_{v \in S} n_v\, \bigl\lvert \log \lvert x \rvert_v \bigr\rvert.
@@ -1447,12 +1449,792 @@ constant \(c\) involves the covolume of the image, the \(S\)-regulator, in place
 </div>
 </div>
 
-<div id="outline-container-orgc240433" class="outline-2 ec-references">
-<h2 id="orgc240433">References</h2>
-<div class="outline-text-2" id="text-orgc240433">
+<div id="outline-container-sec-mw-proj-heights" class="outline-2">
+<h2 id="sec-mw-proj-heights"><span class="ec-status ec-status-draft"><span class="ec-status-label ec-status-draft">Draft</span><time datetime="2026-10-21">21 Oct 2026</time></span><span class="section-number" id="s8.5">8.5</span> Heights on projective space</h2>
+<div class="outline-text-2" id="text-sec-mw-proj-heights">
+<p>
+Theorem <a href="#thm-mw-descent">8.4.5</a> needs a height on \(E(k)\) with the Northcott property.  It will
+come from a height on projective space, restricted to \(E \subseteq \PP^2\).  This section
+constructs that height, following [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Section VIII.5] and
+[<a class="ec-cite" href="#bib-Hindry-Silverman00">HS00</a>, Sections B.1 and B.2].  A point of \(\PP^N(\Qbar)\) has large
+height when its coordinates are large at the archimedean places, or have large
+denominators at the non-archimedean ones.  The main example is the projective line, and
+the multiplicative group inside it.  There the minimal polynomial of an algebraic number
+computes its height, and it shows the valuations of the number at the non-archimedean
+places.
+</p>
+
+<div class="ec-thm ec-situation" id="sit-mw-proj-heights">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Situation 8.5.1</span>.</span> In this section we return to Situation <a href="#sit-mw-standing">8.0.1</a>.  The curve \(E\) plays no role.
+</p>
+<ul class="org-ul">
+<li>As \(k\) is a number field, \(\kbar\) is an algebraic closure of \(\Q\), and we write
+\(\Qbar\) for it.</li>
+<li>\(\Places_k^\infty\) and \(\Places_k^0\) are the sets of archimedean and
+non-archimedean places of \(k\).</li>
+<li>For \(v \in \Places_k\), \(\lvert\ \rvert_v\) is the absolute value on \(k_v\) whose
+restriction to \(\Q\) is the usual absolute value on \(\R\) or the \(p\)-adic absolute
+value, with \(\lvert p \rvert_p = p^{-1}\).  We write \(\Q_v\) for the completion of
+\(\Q\) at this restriction, \(\R\) or \(\Q_p\), and \(n_v \coloneqq [k_v : \Q_v]\) for the
+<dfn class="ec-cdef" id="gls-local-degree" data-gls="local-degree">local degree</dfn> of \(v\).</li>
+<li>For \(v \in \Places_k^0\), \(q_v \coloneqq \#\kappa(v)\), and \(v\colon k_v^\times \to \Z\)
+is the normalized valuation, as in Situation <a href="06-local-fields.html#sit-lf-standing">6.0.2</a>.</li>
+<li>For a point \(P = [x_0 : \dots : x_N]\) of \(\PP^N(k)\) and \(v \in \Places_k\),
+\(\lvert P \rvert_v \coloneqq \max_i \lvert x_i \rvert_v\).  It depends on the choice of
+coordinates.</li>
+</ul>
+</div>
+
+<p>
+The archimedean places correspond to the embeddings \(\tau\colon k \to \C\), up to complex
+conjugation, with \(\lvert x \rvert_v = \lvert \tau(x) \rvert\), and \(n_v\) is \(1\) or \(2\)
+as \(\tau\) is real or not [<a class="ec-cite" href="#bib-Hindry-Silverman00">HS00</a>, Proposition B.1.3].  Let
+\(v \in \Places_k^0\) lie above \(p\), with ramification index \(e\) and residue degree \(f\)
+over \(\Q_p\), so that \(n_v = ef\), \(v(p) = e\) and \(q_v = p^f\)
+(Remark <a href="06-local-fields.html#rem-lf-finite-extensions">6.3.5</a>).  As \(\lvert\ \rvert_v\) and \(v\) define the same
+place, \(\lvert x \rvert_v = c^{v(x)}\) for a constant \(0 < c < 1\), and
+\(\lvert p \rvert_v = p^{-1}\) gives \(c = p^{-1/e}\).  So, for \(x \in k_v^\times\),
+</p>
+\begin{equation}
+\label{eq:mw-normalized}
+\lvert x \rvert_v^{n_v} = q_v^{-v(x)}. \tag{8.5.1}
+\end{equation}
+
+<div class="ec-thm ec-proposition" id="prop-mw-extension-product">
+<p><span class="ec-thm-head"><span class="ec-thm-name">Proposition 8.5.2</span>.</span> </p>
+<ol class="org-ol">
+<li><a id="it-mw-extension-formula"></a> Let \(L\) be a finite extension of \(k\), and
+\(v \in \Places_k\).  Then \(\sum_{w \mid v} n_w = [L : k]\, n_v\), the sum over the places
+\(w \in \Places_L\) above \(v\).</li>
+<li><a id="it-mw-product-formula"></a> Let \(x \in k^\times\).  Then
+\(\prod_{v \in \Places_k} \lvert x \rvert_v^{n_v} = 1\).</li>
+</ol>
+</div>
+
+<p>
+These are the extension formula and the product formula [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, (VIII.5.2) and
+(VIII.5.3)], [<a class="ec-cite" href="#bib-Hindry-Silverman00">HS00</a>, Propositions B.1.1 and B.1.2].  For \(k = \Q\) and
+\(x = \pm\prod_p p^{a_p}\), the product formula says \(\lvert x \rvert \cdot \prod_p p^{-a_p} = 1\).
+Part <a href="#it-mw-extension-formula">1</a>, for \(k = \Q\) and the archimedean place, gives
+\(\sum_{v \in \Places_L^\infty} n_v = [L : \Q]\).
+</p>
+</div>
+
+<div id="outline-container-orgb37ef60" class="outline-3">
+<h3 id="orgb37ef60"><span class="section-number" id="s8.5.1">8.5.1</span> The height of a point of projective space</h3>
+<div class="outline-text-3" id="text-5-1">
+<div class="ec-thm ec-definition" id="def-mw-proj-height">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Definition 8.5.3</span>.</span> The <dfn class="ec-cdef" id="gls-height-relative-to-a-number-field" data-gls="height-relative-to-a-number-field">height relative to</dfn> \(k\) of a point
+\(P \in \PP^N(k)\) is
+</p>
+\begin{equation*}
+H_k(P) \coloneqq \prod_{v \in \Places_k} \lvert P \rvert_v^{n_v}.
+\end{equation*}
+<p>
+Let \(P \in \PP^N(\Qbar)\), and let \(K \subseteq \Qbar\) be a number field with
+\(P \in \PP^N(K)\).  The <dfn class="ec-cdef" id="gls-absolute-height" data-gls="absolute-height">height</dfn> of \(P\) is
+\(H(P) \coloneqq H_K(P)^{1/[K : \Q]}\), and its <dfn class="ec-cdef" id="gls-logarithmic-height" data-gls="logarithmic-height">logarithmic height</dfn> is
+\(h(P) \coloneqq \log H(P)\).
+</p>
+</div>
+
+<p>
+The product is finite.  Fix \(j\) with \(x_j \neq 0\).  At all but finitely many places,
+\(\lvert x_i \rvert_v \leq 1\) for every \(i\) and \(\lvert x_j \rvert_v = 1\), and there
+\(\lvert P \rvert_v = 1\).
+</p>
+
+<div class="ec-thm ec-proposition" id="prop-mw-height-basic">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Proposition 8.5.4</span>.</span> Let \(P \in \PP^N(k)\).
+</p>
+<ol class="org-ol">
+<li><a id="it-mw-hb-coordinates"></a> The height \(H_k(P)\) does not depend on the choice of
+coordinates of \(P\).</li>
+<li><a id="it-mw-hb-one"></a> The height satisfies \(H_k(P) \geq 1\).</li>
+<li><a id="it-mw-hb-extension"></a> Let \(L\) be a finite extension of \(k\).  Then
+\(H_L(P) = H_k(P)^{[L : k]}\).</li>
+</ol>
+<p>
+In particular \(H(P)\) does not depend on the choice of \(K\), and \(h(P) \geq 0\) for every
+\(P \in \PP^N(\Qbar)\).
+</p>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+Other coordinates of \(P\) are \([\lambda x_0 : \dots : \lambda x_N]\) with
+\(\lambda \in k^\times\), and \(\lvert \lambda P \rvert_v = \lvert \lambda \rvert_v \lvert P \rvert_v\).
+By part <a href="#it-mw-product-formula">2</a> of Proposition <a href="#prop-mw-extension-product">8.5.2</a>, the factors
+\(\lvert \lambda \rvert_v^{n_v}\) multiply to \(1\).  For part <a href="#it-mw-hb-one">2</a>, choose coordinates
+with some \(x_j = 1\).  Then every factor \(\lvert P \rvert_v^{n_v}\) is at least \(1\).  For
+part <a href="#it-mw-hb-extension">3</a>, the coordinates lie in \(k\), so \(\lvert P \rvert_w = \lvert P \rvert_v\)
+for \(w \mid v\), and part <a href="#it-mw-extension-formula">1</a> of
+Proposition <a href="#prop-mw-extension-product">8.5.2</a> gives
+</p>
+\begin{equation*}
+H_L(P) = \prod_{v \in \Places_k} \prod_{w \mid v} \lvert P \rvert_v^{n_w}
+= \prod_{v \in \Places_k} \lvert P \rvert_v^{[L : k] n_v} = H_k(P)^{[L : k]}.
+\end{equation*}
+<p>
+Two number fields \(K, K'\) containing the coordinates are contained in their compositum
+\(KK'\), and part <a href="#it-mw-hb-extension">3</a> for \(KK'/K\) and \(KK'/K'\) shows that
+\(H_K(P)^{1/[K : \Q]} = H_{KK'}(P)^{1/[KK' : \Q]} = H_{K'}(P)^{1/[K' : \Q]}\)
+[<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Proposition VIII.5.4].
+</p>
+</details>
+
+<p>
+So \(h\) is a height on \(\PP^N(\Qbar)\) in the sense of Definition <a href="#def-mw-height">8.4.2</a>, and
+\(h \geq 0\).  Over \(\Q\) it has a familiar form.
+</p>
+
+<div class="ec-thm ec-example" id="eg-mw-height-rationals">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Example 8.5.5</span>.</span> Let \(P \in \PP^N(\Q)\), and choose coordinates \(x_0, \dots, x_N \in \Z\) with
+\(\gcd(x_0, \dots, x_N) = 1\).  At every prime \(p\), \(\lvert x_i \rvert_p \leq 1\) for every
+\(i\), with equality for some \(i\), so \(\lvert P \rvert_p = 1\).  Hence
+</p>
+\begin{equation*}
+H_\Q(P) = \max(\lvert x_0 \rvert, \dots, \lvert x_N \rvert)
+\end{equation*}
+<p>
+[<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Example VIII.5.1 and Remark VIII.5.5].  There are at most
+\((2C + 1)^{N + 1}\) such rational points with \(H_\Q(P) \leq C\).  For \(N = 1\) and
+\(P = [u : w]\), this is the height of part <a href="#it-mw-eg-rationals">1</a> of
+Example <a href="#eg-mw-descent-hypotheses">8.4.7</a>, \(h(u/w) = \log\max(\lvert u \rvert, \lvert w \rvert)\).
+</p>
+</div>
+
+<div class="ec-thm ec-remark" id="rem-mw-height-ideals">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Remark 8.5.6</span>.</span> Over a number field, the recipe of Example <a href="#eg-mw-height-rationals">8.5.5</a> may fail.  Let
+\(P = [x_0 : \dots : x_N] \in \PP^N(k)\), and \(\mathfrak b\) the fractional ideal of
+\(\calO_k\) generated by \(x_0, \dots, x_N\).  For \(v \in \Places_k^0\), the exponent of the
+prime ideal of \(v\) in \(\mathfrak b\) is \(\min_i v(x_i)\), and by \eqref{eq:mw-normalized}
+\(\lvert P \rvert_v^{n_v} = q_v^{-\min_i v(x_i)}\).  So
+</p>
+\begin{equation*}
+H_k(P) = \frac{1}{\Nm \mathfrak b} \prod_{v \in \Places_k^\infty} \lvert P \rvert_v^{n_v}
+\end{equation*}
+<p>
+[<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Exercise 8.9].  If \(\mathfrak b = \lambda\calO_k\) is principal, then the
+coordinates \(x_i/\lambda\) lie in \(\calO_k\) and generate the unit ideal, and only the
+archimedean places contribute, as over \(\Q\).  Otherwise no coordinates of \(P\) do: other
+coordinates generate \(\lambda\mathfrak b\), which is not principal.  For instance, in
+\(k = \Q(\sqrt{-5})\), the ideal \(\mathfrak b = (2, 1 + \sqrt{-5})\) has \(\mathfrak b^2 = (2)\),
+so \(\Nm \mathfrak b = 2\), and it is not principal, as \(u^2 + 5w^2 = 2\) has no integer
+solution.  The \(k\)-point \(P = [2 : 1 + \sqrt{-5}]\) has \(\lvert P \rvert_v^2 = \max(4, 6)\) at the
+complex place, and \(H_k(P) = 6/2 = 3\).
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgf6ce04a" class="outline-3">
+<h3 id="orgf6ce04a"><span class="section-number" id="s8.5.2">8.5.2</span> The projective line and the multiplicative group</h3>
+<div class="outline-text-3" id="text-5-2">
+<p>
+For \(x \in \Qbar\) we write \(H(x) \coloneqq H([x : 1])\) and \(h(x) \coloneqq \log H(x)\).
+The multiplicative group \(\Gm = \PP^1 \setminus \{0, \infty\}\) has
+\(\Gm(\Qbar) = \Qbar^\times\), and on it \(h\) behaves like a height on an abelian group, with
+the roots of unity as torsion.  If \(x \in K\), then
+\(\lvert [x : 1] \rvert_v = \max(1, \lvert x \rvert_v)\), so
+</p>
+\begin{equation*}
+H(x)^{[K : \Q]} = \prod_{v \in \Places_K} \max(1, \lvert x \rvert_v)^{n_v},
+\end{equation*}
+<p>
+and only the places where \(x\) is large contribute.  For \(K = \Q(x)\), the archimedean
+factors are \(\max(1, \lvert \tau(x) \rvert)\), over the embeddings \(\tau\colon K \to \C\), a
+complex place counting its two embeddings through \(n_v = 2\).  The non-archimedean factors
+are read from the minimal polynomial of \(x\).  The tool is Gauss's lemma.
+</p>
+
+<div class="ec-thm ec-lemma" id="lem-mw-gauss">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Lemma 8.5.7</span> <span class="ec-thm-title">(Gauss)</span>.</span> Let \(F\) be a field with a non-archimedean absolute value \(\lvert\ \rvert\).  For
+\(g = \sum_i c_i T^i \in F[T]\), let \(\lvert g \rvert \coloneqq \max_i \lvert c_i \rvert\), the
+<dfn class="ec-cdef" id="gls-gauss-norm" data-gls="gauss-norm">Gauss norm</dfn> of \(g\).  Then \(\lvert gg' \rvert = \lvert g \rvert \lvert g' \rvert\) for
+all \(g, g' \in F[T]\).  In particular, if \(g = c\prod_{j=1}^d (T - \beta_j)\) with
+\(c, \beta_j \in F\), then \(\lvert g \rvert = \lvert c \rvert \prod_j \max(1, \lvert \beta_j \rvert)\).
+</p>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+We may assume that \(g, g' \neq 0\).  The norm \(\lvert g \rvert\) is the absolute value of a
+coefficient of \(g\).  Dividing \(g\) and \(g'\) by such coefficients, we may assume that
+\(\lvert g \rvert = \lvert g' \rvert = 1\).  Let \(\calO \coloneqq \{c : \lvert c \rvert \leq 1\}\),
+with maximal ideal \(\mm \coloneqq \{c : \lvert c \rvert < 1\}\).  Then \(g, g' \in \calO[T]\), so
+\(\lvert gg' \rvert \leq 1\) by the ultrametric inequality, and the reductions of \(g\) and \(g'\)
+in \((\calO/\mm)[T]\) are non-zero.  As \((\calO/\mm)[T]\) is a domain, the reduction of \(gg'\)
+is non-zero, so some coefficient of \(gg'\) has absolute value \(1\).  For the last claim,
+\(\lvert T - \beta \rvert = \max(1, \lvert \beta \rvert)\)
+[<a class="ec-cite" href="#bib-Hindry-Silverman00">HS00</a>, proof of Proposition B.7.3].
+</p>
+</details>
+
+<p>
+To pass from \(\Q(x)\) to its completions, we use the following description of the places of
+\(\Q(x)\) above \(p\).
+</p>
+
+<div class="ec-thm ec-proposition" id="prop-mw-local-factors">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Proposition 8.5.8</span>.</span> Let \(x \in \Qbar\), \(K \coloneqq \Q(x)\), \(g \in \Q[T]\) the monic minimal polynomial of
+\(x\), and \(p\) a prime.  Then \(g = \prod_{v \mid p} g_v\) in \(\Q_p[T]\), the product over the
+places \(v \in \Places_K\) above \(p\), where the \(g_v\) are distinct, monic and irreducible
+over \(\Q_p\), \(\deg g_v = n_v\), and \(x\) is a root of \(g_v\) in \(K_v\), with
+\(K_v = \Q_p(x)\).  Every root of \(g_v\) in a finite extension \(L\) of \(\Q_p\) has absolute
+value \(\lvert x \rvert_v\), for the absolute value of \(L\) extending \(\lvert\ \rvert_p\).
+</p>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+The first part is the description of the extensions of \(\lvert\ \rvert_p\) to \(K\)
+[<a class="ec-cite" href="#bib-Neukirch">Neu99</a>, Proposition II.8.2].  For the second, let \(\beta \in L\) be a root of
+\(g_v\).  As \(g_v\) is irreducible, there is a \(\Q_p\)-isomorphism
+\(K_v = \Q_p(x) \to \Q_p(\beta)\) sending \(x\) to \(\beta\).  Through it, the absolute value of
+\(L\) restricts to an absolute value on \(K_v\) extending \(\lvert\ \rvert_p\), which is
+\(\lvert\ \rvert_v\) by uniqueness (Remark <a href="06-local-fields.html#rem-lf-finite-extensions">6.3.5</a>).  So
+\(\lvert \beta \rvert = \lvert x \rvert_v\).
+</p>
+</details>
+
+<p>
+The valuations of the roots of a polynomial over a \(p\)-adic field are read from its
+coefficients.  Let \(F\) be a finite extension of \(\Q_p\), and \(w\colon F^\times \to \Q\) the
+valuation with \(w(p) = 1\), so that \(\lvert c \rvert = p^{-w(c)}\).  The
+<dfn class="ec-cdef" id="gls-newton-polygon" data-gls="newton-polygon">Newton polygon</dfn> of \(g = \sum_{i=0}^d c_i T^i \in F[T]\), with \(c_0c_d \neq 0\), is the
+lower boundary of the convex hull of the points \((i, w(c_i))\) of \(\R^2\), for the \(i\) with
+\(c_i \neq 0\).  It is the graph of a convex piecewise linear function on \([0, d]\), and
+consists of segments of distinct slopes.
+</p>
+
+<div class="ec-thm ec-proposition" id="prop-mw-newton-polygon">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Proposition 8.5.9</span>.</span> Let \(F\) and \(g\) be as above, and let \(L\) be a finite extension of \(F\) over which
+\(g = c_d\prod_{j=1}^d (T - \beta_j)\) splits, with \(w\) extended to \(L\).  If the Newton
+polygon of \(g\) has a segment of slope \(s\) and horizontal length \(\ell\), then exactly
+\(\ell\) of the roots \(\beta_j\), counted with multiplicity, have \(w(\beta_j) = -s\).  Every
+root has this form for some segment.
+</p>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+Dividing \(g\) by \(c_d\) moves the points \((i, w(c_i))\) down by \(w(c_d)\), so we may assume that
+\(c_d = 1\).  Order the roots so that \(w(\beta_1) \leq \dots \leq w(\beta_d)\), and let
+\(r_i \coloneqq w(\beta_1) + \dots + w(\beta_i)\), with \(r_0 = 0\).  Up to sign,
+\(c_{d-i}\) is the \(i\)-th elementary symmetric function of the roots, a sum of products of
+\(i\) distinct roots.  Each product has valuation at least \(r_i\), so
+\(w(c_{d-i}) \geq r_i\).  If \(i \in \{0, d\}\) or \(w(\beta_i) < w(\beta_{i+1})\), then
+\(\beta_1\cdots\beta_i\) is the only product of valuation \(r_i\), so \(w(c_{d-i}) = r_i\) by the
+ultrametric inequality.  Let \(\rho\) be the piecewise linear function with
+\(\rho(d - i) = r_i\).  On \([d - i - 1, d - i]\) its slope is \(-w(\beta_{i+1})\), which
+increases with \(d - i\), so \(\rho\) is convex.  Every point \((j, w(c_j))\) lies on or above
+the graph of \(\rho\), and the vertices of the graph are among these points.  So the graph of
+\(\rho\) is the Newton polygon.  As \(\rho\) has slope \(-w(\beta_{i+1})\) on
+\([d - i - 1, d - i]\), its segment of slope \(s\) has horizontal length the number of \(j\)
+with \(w(\beta_j) = -s\).
+</p>
+</details>
+
+<div class="ec-thm ec-theorem" id="thm-mw-min-poly">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Theorem 8.5.10</span>.</span> Let \(x \in \Qbar^\times\), \(K \coloneqq \Q(x)\) and \(d \coloneqq [K : \Q]\).  Let
+</p>
+\begin{equation*}
+f = a_0T^d + a_1T^{d-1} + \dots + a_d = a_0(T - \alpha_1)\cdots(T - \alpha_d) \in \Z[T]
+\end{equation*}
+<p>
+be the minimal polynomial of \(x\), scaled so that its coefficients are coprime integers and
+\(a_0 > 0\), with roots \(\alpha_j \in \C\).
+</p>
+<ol class="org-ol">
+<li><p>
+<a id="it-mw-mp-finite"></a> For every prime \(p\),
+</p>
+\begin{equation*}
+\prod_{v \mid p} \max(1, \lvert x \rvert_v)^{n_v} = \lvert a_0 \rvert_p^{-1}, \qquad
+\prod_{v \mid p} \lvert x \rvert_v^{n_v} = \lvert a_d/a_0 \rvert_p.
+\end{equation*}
+<p>
+So the non-archimedean places contribute \(a_0\) to \(H_K([x : 1])\).
+</p></li>
+<li><p>
+<a id="it-mw-mp-mahler"></a> The height of \(x\) is
+</p>
+\begin{equation*}
+H(x)^d = a_0\prod_{j=1}^d \max(1, \lvert \alpha_j \rvert).
+\end{equation*}</li>
+<li><a id="it-mw-mp-newton"></a> Let \(p\) be a prime.  If the Newton polygon of \(f\) over \(\Q_p\) has
+a segment of slope \(s\) and horizontal length \(\ell\), then
+\(\sum n_v = \ell\), the sum over the places \(v \mid p\) of \(K\) with
+\(\lvert x \rvert_v = p^s\).</li>
+<li><a id="it-mw-mp-integral"></a> We have \(x \in \Zbar\) if and only if \(a_0 = 1\), if and only if
+\(\lvert x \rvert_v \leq 1\) for every \(v \in \Places_K^0\).  In that case, \(x\) is a unit
+at every place above a prime \(p\) if and only if \(p \nmid a_d\), and
+\(a_d = (-1)^d \Nm_{K/\Q}(x)\).</li>
+</ol>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+Let \(p\) be a prime, \(g \coloneqq f/a_0\), and \(g = \prod_{v \mid p} g_v\) as in
+Proposition <a href="#prop-mw-local-factors">8.5.8</a>.  Let \(L\) be a finite extension of \(\Q_p\) over which
+\(f\) splits.  Each \(g_v\) is the product of \(n_v\) factors \(T - \beta\) with
+\(\lvert \beta \rvert = \lvert x \rvert_v\), so Lemma <a href="#lem-mw-gauss">8.5.7</a> over \(L\) gives
+\(\lvert g_v \rvert = \max(1, \lvert x \rvert_v)^{n_v}\).  The coefficients of \(f\) are coprime
+integers, so \(\lvert f \rvert = 1\), and by Lemma <a href="#lem-mw-gauss">8.5.7</a> again
+</p>
+\begin{equation*}
+1 = \lvert f \rvert = \lvert a_0 \rvert_p \prod_{v \mid p} \lvert g_v \rvert
+= \lvert a_0 \rvert_p \prod_{v \mid p} \max(1, \lvert x \rvert_v)^{n_v}.
+\end{equation*}
+<p>
+Likewise \(\lvert g_v(0) \rvert = \lvert x \rvert_v^{n_v}\), and \(g(0) = a_d/a_0\) is
+the product of the \(g_v(0)\).  The product of the \(\lvert a_0 \rvert_p^{-1}\) over all \(p\) is
+\(a_0\), by unique factorization.  This proves part <a href="#it-mw-mp-finite">1</a>.
+</p>
+
+<p>
+The archimedean factors of \(H_K([x : 1])\) are \(\prod_j \max(1, \lvert \alpha_j \rvert)\), as
+the \(\alpha_j\) are the images \(\tau(x)\) of \(x\) under the embeddings \(\tau\colon K \to \C\).
+With part <a href="#it-mw-mp-finite">1</a> this gives part <a href="#it-mw-mp-mahler">2</a>.  Part <a href="#it-mw-mp-newton">3</a> is
+Proposition <a href="#prop-mw-newton-polygon">8.5.9</a> for \(f\) over \(\Q_p\): the roots of \(f\) in \(L\) are
+those of the \(g_v\), and \(g_v\) has \(n_v\) of them, each with
+\(\lvert \beta \rvert = \lvert x \rvert_v\).
+</p>
+
+<p>
+By part <a href="#it-mw-mp-finite">1</a>, \(a_0 = 1\) if and only if every factor
+\(\max(1, \lvert x \rvert_v)^{n_v}\) with \(v \in \Places_K^0\) is \(1\), that is,
+\(\lvert x \rvert_v \leq 1\) for every \(v \in \Places_K^0\).  This holds if and only if \(x\) lies in
+\(\calO_K = \Zbar \cap K\) [<a class="ec-cite" href="#bib-Hindry-Silverman00">HS00</a>, Section B.1, after Proposition B.1.3].  If \(a_0 = 1\), each
+\(\lvert x \rvert_v^{n_v}\) with \(v \mid p\) is at most \(1\), and their product is
+\(\lvert a_d \rvert_p\).  So they are all \(1\) if and only if \(p \nmid a_d\).  Finally
+\(a_d = (-1)^d\alpha_1\cdots\alpha_d = (-1)^d\Nm_{K/\Q}(x)\).
+</p>
+</details>
+
+<p>
+The right side of part <a href="#it-mw-mp-mahler">2</a> is the <dfn class="ec-cdef" id="gls-mahler-measure" data-gls="mahler-measure">Mahler measure</dfn> \(M(f)\) of \(f\)
+[<a class="ec-cite" href="#bib-Hindry-Silverman00">HS00</a>, Section B.7, after Lemma B.7.3.1].  For an algebraic integer, the
+non-archimedean places contribute nothing to \(H(x)\), and only the conjugates of \(x\)
+outside the unit disc count.  The places where \(x\) is not a unit lie above the primes
+dividing the norm \(\pm a_d\), and the Newton polygons of \(f\) at these primes give the
+values \(\lvert x \rvert_v\).  These values are the non-archimedean contribution to the height
+of \(1/x \in \Gm(\Qbar)\).  Its minimal polynomial is \(\pm(a_dT^d + \dots + a_1T + 1)\), with
+leading coefficient \(\lvert a_d \rvert\), so part <a href="#it-mw-mp-finite">1</a> for \(1/x\) gives
+\(\prod_{v \in \Places_K^0} \max(1, \lvert x \rvert_v^{-1})^{n_v} = \lvert \Nm_{K/\Q}(x) \rvert\).
+</p>
+
+<div class="ec-thm ec-example" id="eg-mw-min-poly">
+<p><span class="ec-thm-head"><span class="ec-thm-name">Example 8.5.11</span>.</span> </p>
+<ol class="org-ol">
+<li><a id="it-mw-eg-1-2i"></a> Let \(x \coloneqq 1 + 2i\), with \(f = T^2 - 2T + 5\), so
+\(x \in \Zbar\) and \(\Nm_{K/\Q}(x) = 5\).  Over \(\Q_5\), the Newton polygon joins
+\((0, 1)\), \((1, 0)\) and \((2, 0)\), with slopes \(-1\) and \(0\), each of length \(1\).  So
+\(5\) has two places above it in \(K = \Q(i)\), each with \(n_v = 1\).  At one,
+\(\lvert x \rvert_v = 5^{-1}\), and at the other \(x\) is a unit.  At every other prime \(x\) is
+a unit.  The conjugates \(1 \pm 2i\) have absolute value \(\sqrt 5\), so \(H(x)^2 = 5\).  The
+minimal polynomial of \(1/x\) is \(5T^2 - 2T + 1\), with roots of absolute value
+\(1/\sqrt 5\).  Its Mahler measure is \(5 \cdot 1 \cdot 1 = 5\) again, now entirely
+non-archimedean.</li>
+<li><a id="it-mw-eg-root-2"></a> Let \(d \geq 1\) and \(x \coloneqq 2^{1/d}\), the real root of
+\(f = T^d - 2\), irreducible by Eisenstein's criterion.  Over \(\Q_2\) the Newton polygon is
+one segment, from \((0, 1)\) to \((d, 0)\), of slope \(-1/d\) and length \(d\).  So
+\(\lvert x \rvert_v = 2^{-1/d}\) at every place \(v \mid 2\), and \(\sum_{v \mid 2} n_v = d\).
+The \(d\) conjugates have absolute value \(2^{1/d}\), so \(H(x)^d = 2\) and
+\(h(x) = (\log 2)/d\).</li>
+<li><a id="it-mw-eg-3-4i"></a> Let \(x \coloneqq (3 + 4i)/5\).  Both conjugates have absolute value
+\(1\), but \(x \notin \Zbar\): from \(x + \bar x = 6/5\) and \(x\bar x = 1\),
+\(f = 5T^2 - 6T + 5\).  Over \(\Q_5\) the Newton polygon joins \((0, 1)\), \((1, 0)\) and
+\((2, 1)\), with slopes \(-1\) and \(1\).  So \(\lvert x \rvert_v = 5^{-1}\) at one place above
+\(5\) and \(\lvert x \rvert_v = 5\) at the other, and \(H(x)^2 = 5\), all from the leading
+coefficient.</li>
+</ol>
+</div>
+
+<div class="ec-thm ec-proposition" id="prop-mw-gm-height">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Proposition 8.5.12</span>.</span> Let \(x, y \in \Qbar^\times\), \(n \in \Z\), and \(K\) a number field containing \(x\).
+</p>
+<ol class="org-ol">
+<li><a id="it-mw-gm-inverse"></a> \(h(x^n) = \lvert n \rvert\, h(x)\).  In particular \(h(1/x) = h(x)\).</li>
+<li><a id="it-mw-gm-product"></a> \(h(xy) \leq h(x) + h(y)\), and \(h(\zeta x) = h(x)\) for every root of
+unity \(\zeta\).</li>
+<li><p>
+<a id="it-mw-gm-symmetric"></a> We have
+</p>
+\begin{equation*}
+h(x) = \frac{1}{2[K : \Q]} \sum_{v \in \Places_K} n_v\, \bigl\lvert \log \lvert x \rvert_v \bigr\rvert.
+\end{equation*}</li>
+<li><a id="it-mw-gm-sum"></a> For \(x_1, \dots, x_r \in \Qbar\),
+\(h(x_1 + \dots + x_r) \leq \log r + h(x_1) + \dots + h(x_r)\), with equality for
+\(x_1 = \dots = x_r = 1\).</li>
+</ol>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+Let \(K\) contain all the elements involved, and \(v \in \Places_K\).  For \(n \geq 0\),
+\(\max(1, \lvert x^n \rvert_v) = \max(1, \lvert x \rvert_v)^n\), so \(h(x^n) = n\,h(x)\).  Also
+\([1/x : 1] = [1 : x]\), and \(\lvert [1 : x] \rvert_v = \lvert [x : 1] \rvert_v\), so
+\(h(1/x) = h(x)\), which gives the case \(n < 0\).  This proves part <a href="#it-mw-gm-inverse">1</a>.  For part <a href="#it-mw-gm-product">2</a>, if \(a, b \geq 0\), then
+\(\max(1, ab) \leq \max(1, a)\max(1, b)\).  If \(\zeta^n = 1\) with \(n \geq 1\), then
+\(\lvert \zeta \rvert_v = 1\) for every \(v\), so \(\max(1, \lvert \zeta x \rvert_v) =
+\max(1, \lvert x \rvert_v)\).  For part <a href="#it-mw-gm-symmetric">3</a>, write
+\(\log\max(1, a) = \tfrac12(\log a + \lvert \log a \rvert)\) for \(a > 0\), and sum over \(v\):
+the terms \(n_v \log \lvert x \rvert_v\) add up to \(0\) by part <a href="#it-mw-product-formula">2</a> of
+Proposition <a href="#prop-mw-extension-product">8.5.2</a>.
+</p>
+
+<p>
+For part <a href="#it-mw-gm-sum">4</a>, let \(\epsilon(v) \coloneqq 1\) if \(v\) is archimedean and
+\(\epsilon(v) \coloneqq 0\) otherwise.  The triangle and ultrametric inequalities read
+\(\lvert x_1 + \dots + x_r \rvert_v \leq r^{\epsilon(v)} \max_i \lvert x_i \rvert_v\), and
+\(\max_i a_i \leq \prod_i \max(1, a_i)\) for \(a_i \geq 0\).  So
+</p>
+\begin{equation*}
+\max(1, \lvert x_1 + \dots + x_r \rvert_v) \leq r^{\epsilon(v)}\prod_{i=1}^r \max(1, \lvert x_i \rvert_v).
+\end{equation*}
+<p>
+Raise to the power \(n_v\) and multiply over \(v\).  The factors \(r^{\epsilon(v) n_v}\)
+multiply to \(r^{[K : \Q]}\), by part <a href="#it-mw-extension-formula">1</a> of
+Proposition <a href="#prop-mw-extension-product">8.5.2</a>.  For \(x_i = 1\), both sides are \(\log r\)
+[<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Exercise 8.8].
+</p>
+</details>
+
+<p>
+The inequality of part <a href="#it-mw-gm-product">2</a> can be strict: \(h(2 \cdot \tfrac12) = 0\), while
+\(h(2) + h(\tfrac12) = 2\log 2\).  On the group \(\Gm(\Qbar)\), part <a href="#it-mw-gm-inverse">1</a> is an
+exact identity, not an estimate up to \(O(1)\) as in Lemma <a href="#lem-mw-quasi-quadratic">8.4.4</a>.  The
+height \(h\) is linear rather than quadratic, and it is already canonical: in the analogue of
+Proposition <a href="#prop-mw-tate">8.4.9</a> for a linear height, \(2^{-n} h(x^{2^n}) = h(x)\) for every
+\(n\), with no limit to take.  Part <a href="#it-mw-gm-symmetric">3</a>
+is the formula of Remark <a href="#rem-mw-units-descent">8.4.19</a> for \(S\)-units.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org72709e9" class="outline-3">
+<h3 id="org72709e9"><span class="section-number" id="s8.5.3">8.5.3</span> Northcott's theorem and Kronecker's theorem</h3>
+<div class="outline-text-3" id="text-5-3">
+<p>
+For \(P = [x_0 : \dots : x_N] \in \PP^N(\Qbar)\), let \(\Q(P)\) be the field generated over
+\(\Q\) by the ratios \(x_i/x_j\) with \(x_j \neq 0\).
+</p>
+
+<div class="ec-thm ec-theorem" id="thm-mw-northcott">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Theorem 8.5.13</span> <span class="ec-thm-title">(Northcott)</span>.</span> Let \(C, D \in \R\).  The set of \(P \in \PP^N(\Qbar)\) with \(H(P) \leq C\) and
+\([\Q(P) : \Q] \leq D\) is finite.  In particular, \(h\) has the Northcott property on
+\(\PP^N(k)\).
+</p>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+Choose coordinates of \(P\) with some \(x_j = 1\), so that \(F \coloneqq \Q(P) = \Q(x_0, \dots,
+x_N)\).  Then \(\lvert P \rvert_v \geq \max(1, \lvert x_i \rvert_v)\) for every \(i\) and every
+\(v \in \Places_F\), so \(H(x_i) \leq H(P) \leq C\), and \([\Q(x_i) : \Q] \leq D\).  So it suffices
+to show that the set of \(x \in \Qbar\) with \(H(x) \leq C\) and \(e \coloneqq [\Q(x) : \Q] \leq D\)
+is finite.  For such an \(x\), let \(f = a_0 T^e + \dots + a_e\) be as in
+Theorem <a href="#thm-mw-min-poly">8.5.10</a>.  By part <a href="#it-mw-mp-mahler">2</a> of that theorem,
+\(a_0 \leq H(x)^e\), and
+</p>
+\begin{equation*}
+\lvert a_i \rvert = a_0 \Bigl\lvert \sum_{j_1 < \dots < j_i} \alpha_{j_1}\cdots\alpha_{j_i} \Bigr\rvert
+\leq \binom{e}{i} a_0 \prod_{j=1}^e \max(1, \lvert \alpha_j \rvert) = \binom{e}{i} H(x)^e,
+\end{equation*}
+<p>
+since each product of \(i\) distinct roots is at most \(\prod_j \max(1, \lvert \alpha_j \rvert)\)
+in absolute value.  So the coefficients of \(f\) are integers bounded by
+\(2^D \max(1, C)^D\).  There are finitely many such \(f\), each with at most \(D\) roots.  For
+the last claim, \([\Q(P) : \Q] \leq [k : \Q]\) for \(P \in \PP^N(k)\), and \(h(P) \leq C\) means
+\(H(P) \leq e^C\) [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Theorem VIII.5.11], [<a class="ec-cite" href="#bib-Hindry-Silverman00">HS00</a>, Theorem B.2.3].
+</p>
+</details>
+
+<div class="ec-thm ec-remark" id="rem-mw-roots-coefficients">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Remark 8.5.14</span>.</span> Silverman bounds the coefficients through a statement for any polynomial
+\(f = a_0(T - \alpha_1)\cdots(T - \alpha_d) \in \Qbar[T]\), not only a minimal polynomial over
+\(\Q\) [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Theorem VIII.5.9]:
+</p>
+\begin{equation*}
+2^{-d}\prod_{j=1}^d H(\alpha_j) \leq H([a_0 : \dots : a_d]) \leq 2^{d-1}\prod_{j=1}^d H(\alpha_j).
+\end{equation*}
+<p>
+Its proof is the computation in the proof of Theorem <a href="#thm-mw-min-poly">8.5.10</a>, place by place.  At a
+non-archimedean place, Lemma <a href="#lem-mw-gauss">8.5.7</a> gives the exact equality
+\(\max_i \lvert a_i \rvert_v = \lvert a_0 \rvert_v \prod_j \max(1, \lvert \alpha_j \rvert_v)\).
+The constants \(2^{\pm d}\) come from the archimedean places alone.  For the minimal polynomial
+with coprime integer coefficients, part <a href="#it-mw-mp-mahler">2</a> of Theorem <a href="#thm-mw-min-poly">8.5.10</a>
+gives the exact value \(H(x)^d = M(f)\), and the bound in the proof above replaces the upper
+inequality.
+</p>
+</div>
+
+<div class="ec-thm ec-theorem" id="thm-mw-kronecker">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Theorem 8.5.15</span> <span class="ec-thm-title">(Kronecker)</span>.</span> Let \(x \in \Qbar^\times\).  Then \(h(x) = 0\) if and only if \(x\) is a root of unity.
+Equivalently, a non-zero \(x \in \Zbar\) whose conjugates all lie in the closed unit disc is a
+root of unity.
+</p>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+If \(\zeta\) is a root of unity, then \(\lvert \zeta \rvert_v = 1\) for every place, so
+\(h(\zeta) = 0\).  Conversely, let \(h(x) = 0\), and \(K \coloneqq \Q(x)\).  By
+part <a href="#it-mw-gm-inverse">1</a> of Proposition <a href="#prop-mw-gm-height">8.5.12</a>, \(h(x^n) = n\,h(x) = 0\) for
+every \(n \geq 1\), and so the \(K\)-points \([x^n : 1]\) of \(\PP^1\) have height \(1\).  By
+Theorem <a href="#thm-mw-northcott">8.5.13</a> there are finitely many of them, so \(x^r = x^s\) for some
+\(1 \leq r < s\), and \(x^{s - r} = 1\) since \(x \neq 0\).  For the second form, the factors
+\(a_0\) and \(\max(1, \lvert \alpha_j \rvert)\) in part <a href="#it-mw-mp-mahler">2</a> of
+Theorem <a href="#thm-mw-min-poly">8.5.10</a> are at least \(1\).  So \(h(x) = 0\) if and only if \(a_0 = 1\) and
+every \(\lvert \alpha_j \rvert \leq 1\), that is, by part <a href="#it-mw-mp-integral">4</a>, \(x \in \Zbar\)
+and its conjugates lie in the closed unit disc [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Exercise 8.6], [<a class="ec-cite" href="#bib-Hindry-Silverman00">HS00</a>, Corollary B.2.3.1].
+</p>
+</details>
+
+<p>
+The hypothesis \(x \neq 0\) is needed, since \(H(0) = H([0 : 1]) = 1\).  So is the integrality:
+the number \((3 + 4i)/5\) of part <a href="#it-mw-eg-3-4i">3</a> of Example <a href="#eg-mw-min-poly">8.5.11</a> has both
+conjugates on the unit circle, and height \(\sqrt 5\).  Kronecker's theorem is the analogue for
+\(\Gm\) of part <a href="#it-mw-canonical-kernel">2</a> of Corollary <a href="#cor-mw-canonical-torsion">8.4.10</a>: the zeros of
+the canonical height on \(\Gm(\Qbar)\) are exactly its torsion.  As there, the finiteness of the
+torsion of \(\Gm(k) = k^\times\) follows from the Northcott property: the roots of unity of
+\(k\) are the \(x \in k^\times\) with \(h(x) = 0\), a finite set by Theorem <a href="#thm-mw-northcott">8.5.13</a>.
+</p>
+
+<div class="ec-thm ec-remark" id="rem-mw-kronecker-original">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Remark 8.5.16</span>.</span> Kronecker's own argument needs no Northcott theorem.  Let \(x \in \Zbar\) be non-zero, with
+conjugates \(\alpha_1, \dots, \alpha_d\) in the closed unit disc.  For \(n \geq 1\), the
+polynomial \(\prod_j (T - \alpha_j^n)\) has integer coefficients, being symmetric in the
+\(\alpha_j\), and its \(i\)-th coefficient is at most \(\binom{d}{i}\) in absolute value.  So
+there are finitely many such polynomials, the powers \(x^n\) take finitely many values, and
+\(x\) is a root of unity.  The same bound makes the case of small degree a finite
+computation: of the \(3159\) monic integer polynomials of degree \(4\) with
+\(\lvert a_i \rvert \leq \binom{4}{i}\), Magma finds \(24\) with non-zero constant term and all
+roots in the closed unit disc, and each is a product of cyclotomic polynomials.
+</p>
+</div>
+
+<div class="ec-thm ec-remark" id="rem-mw-lehmer">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Remark 8.5.17</span>.</span> By part <a href="#it-mw-eg-root-2">2</a> of Example <a href="#eg-mw-min-poly">8.5.11</a>, \(h(2^{1/d}) = (\log 2)/d\), so \(h\)
+takes arbitrarily small positive values on \(\Qbar^\times\), and Kronecker's theorem has no
+quantitative form with a uniform constant.  Lehmer asked whether \([\Q(x) : \Q]\,h(x)\), which
+is \(\log M(f)\) by part <a href="#it-mw-mp-mahler">2</a> of Theorem <a href="#thm-mw-min-poly">8.5.10</a>, is bounded below by
+a positive constant on the \(x \in \Qbar^\times\) that are not roots of unity.  The question is
+open.  The smallest value known is that of a root \(b\) of Lehmer's polynomial
+\(T^{10} + T^9 - T^7 - T^6 - T^5 - T^4 - T^3 + T + 1\), irreducible and not cyclotomic, with
+\(10\,h(b) = \log 1.17628\ldots \approx 0.1624\).
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org9678993" class="outline-3">
+<h3 id="org9678993"><span class="section-number" id="s8.5.4">8.5.4</span> Galois conjugates, morphisms and embeddings</h3>
+<div class="outline-text-3" id="text-5-4">
+<div class="ec-thm ec-proposition" id="prop-mw-height-galois">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Proposition 8.5.18</span>.</span> Let \(P \in \PP^N(\Qbar)\) and \(\sigma \in \Gal_\Q\).  Then
+\(H(\sigma(P)) = H(P)\).
+</p>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+Let \(K\) be a number field with \(P \in \PP^N(K)\).  Then \(\sigma\) restricts to an isomorphism
+\(K \to \sigma(K)\).  For \(v \in \Places_K\), the absolute value
+\(\lvert y \rvert_{\sigma v} \coloneqq \lvert \sigma^{-1}(y) \rvert_v\) on \(\sigma(K)\) restricts to
+the same absolute value on \(\Q\), and \(\sigma\) extends to an isomorphism
+\(K_v \to \sigma(K)_{\sigma v}\), so \(n_{\sigma v} = n_v\).  So \(v \mapsto \sigma v\) is a
+bijection \(\Places_K \to \Places_{\sigma(K)}\), with
+\(\lvert \sigma(P) \rvert_{\sigma v} = \lvert P \rvert_v\), and \(H_{\sigma(K)}(\sigma(P)) = H_K(P)\).
+As \([\sigma(K) : \Q] = [K : \Q]\), this is the claim [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Theorem VIII.5.10].
+</p>
+</details>
+
+<p>
+For \(x \in \Qbar\), this is also visible in part <a href="#it-mw-mp-mahler">2</a> of
+Theorem <a href="#thm-mw-min-poly">8.5.10</a>: conjugates have the same minimal polynomial.  A
+<dfn class="ec-cdef" id="gls-morphism-of-degree-d" data-gls="morphism-of-degree-d">morphism of degree</dfn> \(d\) from \(\PP^N\) to \(\PP^M\) is a map
+\(F = [f_0 : \dots : f_M]\), with \(f_0, \dots, f_M \in \Qbar[X_0, \dots, X_N]\) homogeneous of
+degree \(d\) and without common zero in \(\Qbar^{N + 1}\) other than \(0\).  It sends
+\(P \in \PP^N(\Qbar)\) to \(F(P) \coloneqq [f_0(P) : \dots : f_M(P)]\), which is a point
+of \(\PP^M(\Qbar)\) since some \(f_j(P) \neq 0\).  It is a morphism
+\(\PP^N_{\Qbar} \to \PP^M_{\Qbar}\) in the sense of Section <a href="02-varieties.html#sec-var-maps">2.3</a>.
+</p>
+
+<div class="ec-thm ec-theorem" id="thm-mw-height-morphism">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Theorem 8.5.19</span>.</span> Let \(F\colon \PP^N \to \PP^M\) be a morphism of degree \(d\).  There are constants
+\(C_1, C_2 > 0\), depending on \(F\), such that
+</p>
+\begin{equation*}
+C_1 H(P)^d \leq H(F(P)) \leq C_2 H(P)^d \quad \text{for all } P \in \PP^N(\Qbar).
+\end{equation*}
+<p>
+That is, \(h \circ F = d\,h + O(1)\) on \(\PP^N(\Qbar)\).
+</p>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+Let \(P = [x_0 : \dots : x_N] \in \PP^N(\Qbar)\), and \(K\) a number field containing the
+\(x_i\) and the coefficients of the \(f_j\), together with the coefficients of the polynomials
+\(g_{ij}\) below, which do not depend on \(P\).  For \(v \in \Places_K\), let
+\(\lvert F \rvert_v\) be the largest \(\lvert c \rvert_v\) over the coefficients \(c\) of the
+\(f_j\), \(\lvert F(P) \rvert_v \coloneqq \max_j \lvert f_j(P) \rvert_v\), and \(H(F)\) the height of
+the \(K\)-point of projective space whose coordinates are all these coefficients.  Let
+\(\epsilon(v)\) be as in the proof of Proposition <a href="#prop-mw-gm-height">8.5.12</a>.  Each \(f_j\) has at most
+\(c_1 \coloneqq \binom{N + d}{N}\) monomials, so
+\(\lvert F(P) \rvert_v \leq c_1^{\epsilon(v)} \lvert F \rvert_v \lvert P \rvert_v^d\).  Raise to the
+power \(n_v\), multiply over \(v\), and take the \([K : \Q]\)-th root: as in the proof of
+part <a href="#it-mw-gm-sum">4</a> of Proposition <a href="#prop-mw-gm-height">8.5.12</a>,
+\(H(F(P)) \leq c_1 H(F) H(P)^d\).
+</p>
+
+<p>
+For the lower bound, the \(X_i\) vanish at the only common zero \(0\) of the \(f_j\) in
+\(\Qbar^{N+1}\).  By the Nullstellensatz [<a class="ec-cite" href="#bib-Hartshorne77">Har77</a>, Theorem I.1.3A], there are
+\(e \geq 1\) and polynomials \(g_{ij} \in \Qbar[X_0, \dots, X_N]\) with
+\(X_i^e = \sum_{j=0}^M g_{ij} f_j\) for every \(i\).  Keeping the terms of degree \(e\), we may
+assume that each \(g_{ij}\) is homogeneous of degree \(e - d\).  Let \(\lvert G \rvert_v\) and
+\(H(G)\) be defined from the coefficients of the \(g_{ij}\) as above, and
+\(c_2 \coloneqq (M + 1)\binom{N + e - d}{N}\).  Then
+</p>
+\begin{equation*}
+\lvert x_i \rvert_v^e \leq (M + 1)^{\epsilon(v)} \max_j \lvert g_{ij}(P) \rvert_v \lvert f_j(P) \rvert_v
+\leq c_2^{\epsilon(v)} \lvert G \rvert_v \lvert P \rvert_v^{e - d} \lvert F(P) \rvert_v.
+\end{equation*}
+<p>
+Take the maximum over \(i\), and divide by \(\lvert P \rvert_v^{e - d}\):
+</p>
+\begin{equation*}
+\lvert P \rvert_v^d \leq c_2^{\epsilon(v)} \lvert G \rvert_v \lvert F(P) \rvert_v.
+\end{equation*}
+<p>
+As before, \(H(P)^d \leq c_2 H(G) H(F(P))\) [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Theorem VIII.5.6].
+</p>
+</details>
+
+<p>
+The constant \(C_1\) is hard to make explicit, since it depends on the polynomials \(g_{ij}\)
+given by the Nullstellensatz [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Remark VIII.5.7].  For \(d = 1\), a matrix
+\(A \in \GL_{N+1}(\Qbar)\) acting on \(\PP^N\) satisfies \(h(AP) = h(P) + O(1)\)
+[<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Corollary VIII.5.8].  The upper bound uses only the triangle inequality,
+but the lower bound fails without the hypothesis on common zeros
+[<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Exercise 8.10].  For instance, \(f_0 = X_0^2\) and \(f_1 = X_0X_1\) have
+the common zero \([0 : 1]\), and \([x^2 : x] = [x : 1]\) for \(x \neq 0\), so the height of the
+image is \(H(x)\), not of the order of \(H(x)^2\).
+</p>
+
+<p>
+The following two maps satisfy exact identities, with no constants.
+</p>
+
+<div class="ec-thm ec-definition" id="def-mw-segre-d-uple">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Definition 8.5.20</span>.</span> Let \(N, M \geq 0\) and \(d \geq 1\).
+</p>
+<ol class="org-ol">
+<li><p>
+<a id="it-mw-def-segre"></a> The <dfn class="ec-cdef" id="gls-segre-embedding" data-gls="segre-embedding">Segre embedding</dfn> is the map
+\(S_{N,M}\colon \PP^N \times \PP^M \to \PP^{NM + N + M}\),
+</p>
+\begin{equation*}
+S_{N,M}([x_0 : \dots : x_N], [y_0 : \dots : y_M]) \coloneqq [x_0y_0 : x_0y_1 : \dots :
+x_iy_j : \dots : x_Ny_M],
+\end{equation*}
+<p>
+with the \((N + 1)(M + 1)\) products in lexicographic order of \((i, j)\)
+[<a class="ec-cite" href="#bib-Hartshorne77">Har77</a>, Exercise I.2.14].
+</p></li>
+<li><a id="it-mw-def-d-uple"></a> Let \(N_d \coloneqq \binom{N + d}{N} - 1\), and \(m_0, \dots, m_{N_d}\)
+the monomials of degree \(d\) in \(X_0, \dots, X_N\).  The
+<dfn class="ec-cdef" id="gls-d-uple-embedding" data-gls="d-uple-embedding">\(d\)-uple embedding</dfn> is the morphism of degree \(d\)
+\(\nu_d\colon \PP^N \to \PP^{N_d}\), \(\nu_d(P) \coloneqq [m_0(P) : \dots : m_{N_d}(P)]\)
+[<a class="ec-cite" href="#bib-Hartshorne77">Har77</a>, Exercise I.2.12].</li>
+</ol>
+</div>
+
+<p>
+Both are well defined on \(\Qbar\)-points: if some \(x_i\) and some \(y_j\) are non-zero, then so
+is \(x_iy_j\), and the monomials include the \(X_i^d\).  Rescaling the coordinates of \(P\) and
+\(Q\) by \(\lambda\) and \(\mu\) rescales \(S_{N,M}(P, Q)\) by \(\lambda\mu\), and \(\nu_d(P)\) by
+\(\lambda^d\).
+</p>
+
+<div class="ec-thm ec-proposition" id="prop-mw-segre-d-uple">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Proposition 8.5.21</span>.</span> Let \(P = [x_0 : \dots : x_N] \in \PP^N(\Qbar)\), \(Q \in \PP^M(\Qbar)\), and \(d \geq 1\).
+</p>
+<ol class="org-ol">
+<li><a id="it-mw-segre-height"></a> \(H(S_{N,M}(P, Q)) = H(P)\,H(Q)\).</li>
+<li><a id="it-mw-d-uple-height"></a> \(H(\nu_d(P)) = H(P)^d = H([x_0^d : \dots : x_N^d])\).</li>
+</ol>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+Let \(K\) be a number field containing the coordinates of \(P\) and \(Q\), and
+\(v \in \Places_K\).  The largest \(\lvert x_iy_j \rvert_v = \lvert x_i \rvert_v \lvert y_j \rvert_v\)
+is attained at a pair \((i, j)\) where both factors are largest, so
+\(\lvert S_{N,M}(P, Q) \rvert_v = \lvert P \rvert_v \lvert Q \rvert_v\).  Each monomial \(m_l(P)\) is a
+product of \(d\) coordinates of \(P\), so \(\lvert m_l(P) \rvert_v \leq \lvert P \rvert_v^d\), with
+equality for \(m_l = X_i^d\) when \(\lvert x_i \rvert_v = \lvert P \rvert_v\).  So
+\(\lvert \nu_d(P) \rvert_v = \lvert P \rvert_v^d = \max_i \lvert x_i^d \rvert_v\).  In each case,
+raise to the power \(n_v\), multiply over \(v\), and take the \([K : \Q]\)-th root
+[<a class="ec-cite" href="#bib-Hindry-Silverman00">HS00</a>, Proposition B.2.4].
+</p>
+</details>
+
+<p>
+No triangle inequality enters, so these are equalities, while
+Theorem <a href="#thm-mw-height-morphism">8.5.19</a> only holds up to the constants \(C_1\) and \(C_2\).  For
+\(N = 1\) and \(P = [x : 1]\), part <a href="#it-mw-d-uple-height">2</a> is the identity \(H(x^d) = H(x)^d\) of
+part <a href="#it-mw-gm-inverse">1</a> of Proposition <a href="#prop-mw-gm-height">8.5.12</a>, and in logarithmic form
+part <a href="#it-mw-segre-height">1</a> reads \(h(S_{N,M}(P, Q)) = h(P) + h(Q)\).
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgb8c3542" class="outline-2 ec-references">
+<h2 id="orgb8c3542">References</h2>
+<div class="outline-text-2" id="text-orgb8c3542">
 <dl class="ec-bibliography">
+<dt id="bib-Hartshorne77">[Har77]</dt>
+<dd>Robin Hartshorne. <i>Algebraic geometry</i>. Vol. No. 52. Graduate Texts in Mathematics. Springer-Verlag, New York-Heidelberg, 1977.</dd>
 <dt id="bib-Hindry-Silverman00">[HS00]</dt>
 <dd>Marc Hindry and Joseph H. Silverman. <i>Diophantine geometry</i>. Vol. 201. Graduate Texts in Mathematics. Springer-Verlag, New York, 2000. An introduction. <a href="https://doi.org/10.1007/978-1-4612-1210-2">doi:10.1007/978-1-4612-1210-2</a>.</dd>
+<dt id="bib-Neukirch">[Neu99]</dt>
+<dd>J\"üurgen Neukirch. <i>Algebraic number theory</i>. Vol. 322. Grundlehren der Mathematischen Wissenschaften [Fundamental Principles of Mathematical Sciences]. Springer-Verlag, Berlin, 1999. Translated from the 1992 German original and with a note by Norbert Schappacher, With a foreword by G. Harder. <a href="https://doi.org/10.1007/978-3-662-03983-0">doi:10.1007/978-3-662-03983-0</a>.</dd>
 <dt id="bib-Poonen02">[Poo02]</dt>
 <dd>Bjorn Poonen. <i>The Selmer group, the Shafarevich&ndash;Tate group, and the weak Mordell&ndash;Weil theorem</i>. 2002. Lecture notes, Arizona Winter School 1999, February 20, 2002 version.</dd>
 <dt id="bib-Silverman09">[Sil09]</dt>
