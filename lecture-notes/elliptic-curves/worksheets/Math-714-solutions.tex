@@ -787,7 +787,7 @@ breaklinks=true}
 \AddToShipoutPictureFG*{%
   \put(\LenToUnit{1.1cm},\LenToUnit{.5\paperheight}){%
     \rotatebox{90}{\makebox[0pt][c]{\small\sffamily\color{black!50}%
-      DRAFT \textemdash{} last edited October 19, 2026}}}}
+      DRAFT \textemdash{} last edited October 22, 2026}}}}
 
 %% ---- shared machinery of the worksheets ----
 
@@ -8304,6 +8304,280 @@ the class group is trivial, which is why \cite{Silverman09}*{Example~VIII.5.1} n
 product over the places.
 \end{solremark}
 \end{solution}
+\end{enumerate}
+\end{problem}
+
+\bigskip
+
+\part[Heights and torsion on elliptic curves]{Heights and torsion on elliptic curves}
+\label{ec-torsion-heights:part}
+\noindent
+Kronecker's theorem says that the elements of $\Qbar^\times$ of height $1$ are the
+roots of unity, the torsion of $\Gm$. This worksheet proves its analogue for an
+elliptic curve, for the height $h_x$ of the $x$-coordinate, assuming the
+duplication bound of \cite{Silverman09}*{Corollary~VIII.6.4(b)}. The torsion
+points have bounded height, not height $0$, and that is enough for finiteness.
+First come the valuations of a sum of several terms, and the shape of the
+coordinates of a rational point, over $\Q$ and over a number field: the first step of
+Silverman's proof of the Mordell--Weil theorem over $\Q$.
+
+\subsection*{Standing notation}
+\begin{itemize}
+\item A number field $k$, elements $a, b \in k$ with
+  $\Delta \coloneqq -16(4a^3 + 27b^2) \neq 0$, and the elliptic curve
+  $E_{a,b}\colon y^2 = x^3 + ax + b$ over $k$.
+\item The height $H$ on $\PP^N(\Qbar)$, and $h \coloneqq \log H$. For $t \in \Q$, with $t = u/w$ in lowest terms,
+  $H([t : 1]) = \max(\lvert u \rvert, \lvert w \rvert)$. See   \cite{Silverman09}*{\S VIII.5}.
+\item The $x$-coordinate $x\colon E_{a,b} \to \PP^1$, with $x(O) = [1 : 0]$, and
+  the height $h_x(P) \coloneqq h(x(P))$ of a point $P \in E_{a,b}(\Qbar)$. So
+  $h_x(O) = 0$.
+\end{itemize}
+
+\section{Valuations of sums}
+\label{ec-torsion-heights:sec:ultra}
+
+The proofs below compare the valuations of the terms of a sum. This section makes the
+ultrametric inequality precise: when it is an equality, and what happens when it is not.
+
+\begin{wsdefinition}[Discrete valuations]
+\label{ec-torsion-heights:def:dvr}
+A \defi{discrete valuation} on a field $F$ is a surjective map
+$v\colon F \to \Z \cup \{\infty\}$ with $v(\alpha) = \infty$ only for $\alpha = 0$,
+$v(\alpha\beta) = v(\alpha) + v(\beta)$ and $v(\alpha + \beta) \geq \min(v(\alpha), v(\beta))$.
+Its valuation ring is $\calO_v \coloneqq \{\alpha \in F : v(\alpha) \geq 0\}$, a uniformizer is
+an element $\pi \in F$ with $v(\pi) = 1$, and the residue field is
+$\kappa \coloneqq \calO_v/\pi\calO_v$, with reduction $\alpha \mapsto \bar\alpha$. Examples are
+$v_p$ on $\Q$, and $v_\mfp$ on a number field $k$, for a nonzero prime ideal $\mfp$ of $\calO_k$.
+\end{wsdefinition}
+
+\begin{problem}[The unique minimizer criterion]
+\label{ec-torsion-heights:prob:ultra}
+Let $v$ be a discrete valuation on a field $F$, with uniformizer $\pi$ and residue field
+$\kappa$. Let $\alpha_1, \dots, \alpha_n \in F$, not all $0$,
+$m \coloneqq \min_i v(\alpha_i)$, and $I \coloneqq \{i : v(\alpha_i) = m\}$.
+\begin{enumerate}
+  \item\label{ec-torsion-heights:it:ultra-unique} Show that $v(\alpha_1 + \dots + \alpha_n) \geq m$, with equality
+        if $I$ has one element.
+\begin{solution}
+\ans{The other terms add up to an element of valuation $> m$.}
+The inequality follows from the definition, by induction on $n$. For the equality, first
+let $n = 2$ and $v(\alpha_1) < v(\alpha_2)$. If $v(\alpha_1 + \alpha_2) > v(\alpha_1)$, then
+\[
+v(\alpha_1) = v\bigl((\alpha_1 + \alpha_2) - \alpha_2\bigr)
+\geq \min\bigl(v(\alpha_1 + \alpha_2), v(\alpha_2)\bigr) > v(\alpha_1),
+\]
+a contradiction, since $v(-\alpha_2) = v(\alpha_2)$. In general, let $I = \{1\}$. Then
+$v(\alpha_2 + \dots + \alpha_n) \geq \min_{i \geq 2} v(\alpha_i) > m$, and the case $n = 2$
+applies to $\alpha_1$ and $\alpha_2 + \dots + \alpha_n$.
+\end{solution}
+  \item\label{ec-torsion-heights:it:ultra-residue} Show that $v(\alpha_1 + \dots + \alpha_n) = m$ if and only if
+        $\sum_{i \in I} \overline{\alpha_i/\pi^m} \neq 0$ in $\kappa$. Give an example with
+        $\# I = 2$ where the inequality is strict.
+\begin{solution}
+\ans{Divide by $\pi^m$ and reduce: the terms outside $I$ vanish in $\kappa$.}
+Let $\beta_i \coloneqq \alpha_i/\pi^m$, so that $v(\beta_i) \geq 0$, with equality exactly for
+$i \in I$. Then $v(\alpha_1 + \dots + \alpha_n) = m + v(\beta_1 + \dots + \beta_n)$, and
+$\beta_1 + \dots + \beta_n \in \calO_v$ has valuation $0$ if and only if its reduction is
+nonzero. For $i \notin I$, $v(\beta_i) \geq 1$, so $\bar\beta_i = 0$, and the reduction is
+$\sum_{i \in I} \bar\beta_i$. For an example, take $v = v_p$ and $1 + (p - 1) = p$: both terms
+have valuation $0$, and their residues $1$ and $-1$ cancel.
+\begin{solremark}
+In particular, equality holds when $I$ has one element, since then the sum of residues is a
+single nonzero residue. This is \ref{ec-torsion-heights:it:ultra-unique} again. The criterion is the
+non-archimedean form of the dominant term: for large $\lvert x \rvert$, a polynomial behaves
+like its leading term, up to a constant. Here the dominant term wins exactly.
+\end{solremark}
+\end{solution}
+\end{enumerate}
+\end{problem}
+
+
+\section{The shape of a rational point}
+\label{ec-torsion-heights:sec:shape}
+
+This section is the first step of the proof of
+\cite{Silverman09}*{Lemma~VIII.4.2}, which proves that $h_x$ satisfies the
+hypotheses of the descent theorem over $\Q$. It turns the rational points of
+bounded height into a finite search over integers. The second part is the same argument over
+a number field, where ideals take the place of the integer $d$. The integrality of $a, b$ is
+harmless: if $u^4a, u^6b$ are integral, then $(x, y) \mapsto (u^2x, u^3y)$ is an isomorphism
+onto $E_{u^4a, u^6b}$, and it changes $h_x$ by at most $2\log \lvert u \rvert$ for $u \in \Z$.
+
+\begin{wsdefinition}[{Heights over a number field \cite{Silverman09}*{\S VIII.5}}]
+\label{ec-torsion-heights:def:height-k}
+For $t \in k$,
+\[
+H([t : 1])^{[k : \Q]} = \prod_{v \in \Places_k} \max(1, \lvert t \rvert_v)^{n_v},
+\]
+with $n_v \coloneqq [k_v : \Q_p]$ or $[k_v : \R]$. For the place of a nonzero prime ideal
+$\mfp$ of $\calO_k$, $\lvert t \rvert_v^{n_v} = N(\mfp)^{-v_\mfp(t)}$, where $N(\mfp)$ is the
+order of $\calO_k/\mfp$. The \defi{denominator ideal} of $t$ is
+$\mathfrak{d}(t) \coloneqq \prod_\mfp \mfp^{\max(0, -v_\mfp(t))}$, an ideal of $\calO_k$.
+\end{wsdefinition}
+
+\begin{problem}[The shape of a rational point]
+\label{ec-torsion-heights:prob:shape}
+\begin{enumerate}
+  \item\label{ec-torsion-heights:it:shape-q} Let $a, b \in \Z$, and $P \in E_{a,b}(\Q) \smallsetminus \{O\}$. Show
+        that $x(P) = n/d^2$ and $y(P) = m/d^3$ with $n, m, d \in \Z$, $d \geq 1$ and
+        $\gcd(n, d) = \gcd(m, d) = 1$, and that $H(x(P)) = \max(\lvert n \rvert, d^2)$.\hint{compare
+        $v_p(x)$ and $v_p(y)$ at a prime $p$ with $v_p(x) < 0$.}
+\begin{solution}
+\ans{At a prime $p$ with $v_p(x) < 0$, $3v_p(x) = 2v_p(y)$.}
+Write $x = x(P)$ and $y = y(P)$. Let $p$ be a prime with $v_p(x) < 0$. Since $a, b \in \Z$,
+$v_p(ax) \geq v_p(x) > 3v_p(x)$ and $v_p(b) \geq 0 > 3v_p(x)$, so $x^3$ is the only term of
+smallest valuation in $x^3 + ax + b$, and
+$2v_p(y) = v_p(x^3 + ax + b) = 3v_p(x)$ by \cref{ec-torsion-heights:prob:ultra}\ref{ec-torsion-heights:it:ultra-unique}. Then
+$v_p(x) = -2r$ and $v_p(y) = -3r$ for some integer $r \geq 1$. If $v_p(x) \geq 0$, then
+$v_p(y^2) = v_p(x^3 + ax + b) \geq 0$, so $v_p(y) \geq 0$. Let $d \coloneqq \prod_p p^r$, the
+product over the primes with $v_p(x) < 0$. Then $n \coloneqq d^2x$ and $m \coloneqq d^3y$ are
+integers prime to $d$. As $\gcd(n, d^2) = 1$, the fraction $n/d^2$ is in lowest terms, and
+$H(x(P)) = \max(\lvert n \rvert, d^2)$.
+\begin{solremark}
+So the rational points of $E_{a,b}$ with $H(x) \leq B$ have $\lvert n \rvert \leq B$ and
+$d \leq \sqrt B$, and $m^2 = n^3 + and^4 + bd^6$: a finite search. This is how the descent
+bound of \cite{Silverman09}*{Theorem~VIII.3.1} becomes a list of generators of $E_{a,b}(\Q)$.
+\end{solremark}
+\end{solution}
+  \item\label{ec-torsion-heights:it:shape-k} Let $a, b \in \calO_k$, and $P \in E_{a,b}(k) \smallsetminus \{O\}$.
+        Show that there is an ideal $\mathfrak{d}$ of $\calO_k$ with $\mathfrak{d}(x(P)) = \mathfrak{d}^2$ and
+        $\mathfrak{d}(y(P)) = \mathfrak{d}^3$, and that
+        \[
+        H(x(P))^{[k : \Q]} = N(\mathfrak{d})^2 \prod_{v \mid \infty} \max(1, \lvert x(P) \rvert_v)^{n_v}.
+        \]
+        Check that for $k = \Q$ this is \ref{ec-torsion-heights:it:shape-q}.
+\begin{solution}
+\ans{The argument of \ref{ec-torsion-heights:it:shape-q} works at each prime $\mfp$.}
+Write $x = x(P)$ and $y = y(P)$. At a prime $\mfp$ with $v_\mfp(x) < 0$, the term $x^3$ is again
+the only one of smallest valuation, as $v_\mfp(a), v_\mfp(b) \geq 0$. So
+$v_\mfp(x) = -2r_\mfp$ and $v_\mfp(y) = -3r_\mfp$ with $r_\mfp \geq 1$, and $v_\mfp(y) \geq 0$
+when $v_\mfp(x) \geq 0$. Let $\mathfrak{d} \coloneqq \prod_\mfp \mfp^{r_\mfp}$, over the primes with
+$v_\mfp(x) < 0$. Then $\mathfrak{d}(x) = \mathfrak{d}^2$ and $\mathfrak{d}(y) = \mathfrak{d}^3$. In \cref{ec-torsion-heights:def:height-k}, the
+factor of a prime $\mfp$ is $\max(1, N(\mfp)^{-v_\mfp(x)}) = N(\mfp)^{\max(0, -v_\mfp(x))}$, so
+the product of these factors is $N(\mathfrak{d}(x)) = N(\mathfrak{d})^2$. For $k = \Q$, $\mathfrak{d} = d\Z$ with
+$d \geq 1$, $N(\mathfrak{d}) = d$, and the one archimedean factor is $\max(1, \lvert n \rvert/d^2)$, so
+$H(x) = d^2 \max(1, \lvert n \rvert/d^2) = \max(\lvert n \rvert, d^2)$.
+\begin{solremark}
+If $\mathfrak{d} = d\calO_k$ is principal, then $x = n/d^2$ and $y = m/d^3$ with
+$n \coloneqq d^2x$ and $m \coloneqq d^3y$ in $\calO_k$, as over $\Q$. In general $\mathfrak{d}$ need
+not be principal, and the class group is the obstruction to writing $x$ this way. The
+height still bounds $N(\mathfrak{d})$, which leaves finitely many ideals $\mathfrak{d}$.
+\end{solremark}
+\end{solution}
+\end{enumerate}
+\end{problem}
+
+
+\section{Kronecker's theorem for elliptic curves}
+\label{ec-torsion-heights:sec:kronecker}
+
+Kronecker's theorem \cite{Silverman09}*{Exercise~8.6} says that $\alpha \in \Qbar^\times$ has
+$H(\alpha) = 1$ if and only if $\alpha$ is a root of unity. This section proves the analogue
+for $E_{a,b}$ and $h_x$, from the results below.
+
+\begin{wsproposition}[{The duplication formula \cite{Silverman09}*{Algorithm~III.2.3(d)}}]
+\label{ec-torsion-heights:prop:dup-formula}
+Let $P \in E_{a,b}(\Qbar)$ with $2P \neq O$, and $x \coloneqq x(P)$. Then
+\[
+x(2P) = \frac{x^4 - 2ax^2 - 8bx + a^2}{4(x^3 + ax + b)}.
+\]
+\end{wsproposition}
+
+\begin{wsproposition}[{The duplication bound \cite{Silverman09}*{Corollary~VIII.6.4(b)}}]
+\label{ec-torsion-heights:prop:dup}
+There is a constant $C \geq 0$, depending on $a$ and $b$, with
+$\lvert h_x(2P) - 4h_x(P) \rvert \leq C$ for all $P \in E_{a,b}(\Qbar)$.
+\end{wsproposition}
+
+\begin{wstheorem}[{Northcott \cite{Silverman09}*{Theorem~VIII.5.11}}]
+\label{ec-torsion-heights:thm:northcott}
+For all constants $B$ and $D$, the set of $R \in \PP^N(\Qbar)$ with $H(R) \leq B$ and
+$[\Q(R) : \Q] \leq D$ is finite. Here $\Q(R)$ is the field of definition of $R$.
+\end{wstheorem}
+
+\begin{problem}[Kronecker for elliptic curves]
+\label{ec-torsion-heights:prob:kronecker}
+Let $C$ be the constant of \cref{ec-torsion-heights:prop:dup}. Only its lower bound, $h_x(2P) \geq 4h_x(P) - C$,
+is used.
+\begin{enumerate}
+  \item\label{ec-torsion-heights:it:kron-bound} Show that every torsion point $T \in E_{a,b}(\Qbar)$ has
+        $h_x(T) \leq C/3$.\hint{the multiples of $T$ form a finite set that contains the double
+        of each of its elements. Look at the one of largest height.}
+\begin{solution}
+\ans{The largest height $M$ on the group $\langle T \rangle$ has $4M - C \leq M$.}
+Let $M \coloneqq \max\{h_x(P) : P \in \langle T \rangle\}$,
+attained at $nT$ for some $n \in \Z$. Then $2nT \in \langle T \rangle$, so
+\[
+4M - C = 4h_x(nT) - C \leq h_x(2nT) \leq M,
+\]
+and $M \leq C/3$. In particular, $h_x(T) \leq M \leq C/3$.
+\begin{solremark}
+The argument uses only two properties of $\langle T \rangle$: it is finite, and it contains
+the double of each of its elements. The orbit $\{2^jT : j \geq 0\}$ of $T$ under doubling has
+both, and would do as well.
+\end{solremark}
+\end{solution}
+  \item\label{ec-torsion-heights:it:kron-finite} Show that for every $D \geq 1$ there are only finitely many
+        torsion points $T \in E_{a,b}(\Qbar)$ with $[\Q(T) : \Q] \leq D$. Deduce that the
+        torsion subgroup of $E_{a,b}(K)$ is finite for every number field $K$ containing $k$.
+\begin{solution}
+\ans{Their $x$-coordinates have bounded height and bounded degree.}
+Let $T \neq O$ be a torsion point with $[\Q(T) : \Q] \leq D$. Then
+$x(T) \in \Q(T)$, so $[\Q(x(T)) : \Q] \leq D$, and $H(x(T)) \leq e^{C/3}$ by
+\ref{ec-torsion-heights:it:kron-bound}. By \cref{ec-torsion-heights:thm:northcott}, only finitely many points of $\PP^1(\Qbar)$
+satisfy both conditions, and each is $x(T)$ for at most two points $T$. For a number field
+$K \supseteq k$, every $T \in E_{a,b}(K)$ has $\Q(T) \subseteq K$, so $D = [K : \Q]$ works.
+\begin{solremark}
+For $\Gm$ the same argument, with $h(\alpha^2) = 2h(\alpha)$ in place of \cref{ec-torsion-heights:prop:dup},
+gives $h(\zeta) = 0$ for every root of unity $\zeta$, and the finiteness of the roots of unity
+of bounded degree. On $E_{a,b}$, the error $C$ leaves room for torsion points of positive
+height.
+\end{solremark}
+\end{solution}
+  \item\label{ec-torsion-heights:it:kron-converse} Show that the naive analogue of Kronecker's theorem fails in
+        both directions: a torsion point need not have $h_x = 0$, and a rational point with
+        $h_x = 0$ need not be a torsion point.
+        \begin{enumerate}
+          \item\label{ec-torsion-heights:it:kron-positive} On $y^2 = x^3 + 1$, show that $T = (2, 3)$ is a torsion
+                point of order $6$, with $h_x(T) = \log 2$.
+\begin{solution}
+\ans{Here $x(2T) = 0$ and $x(4T) = 0$, so $4T = -2T$.}
+By \cref{ec-torsion-heights:prop:dup-formula} with $a = 0$ and $b = 1$, $x(2T) = (16 - 16)/(4 \cdot 9) = 0$, so
+$2T = (0, \pm 1)$, and $x(4T) = 0/4 = 0$. So $4T = \pm 2T$. As $y(T) \neq 0$, $2T \neq O$, so
+$4T \neq 2T$, and $4T = -2T$, that is, $6T = O$. The order is not $1$, $2$ or $3$: $T \neq O$,
+$2T \neq O$, and $3T = O$ would mean $x(2T) = x(T) = 2$. So $T$ has order $6$, and
+$h_x(T) = \log H(2) = \log 2$.
+\end{solution}
+          \item\label{ec-torsion-heights:it:kron-zero} On $y^2 = x^3 + x + 1$, the rational point
+                $P = (0, 1)$ has $h_x(P) = 0$. For this curve over $\Q$, one can take
+                $C = \log 619$ in the lower bound $h_x(2P) \geq 4h_x(P) - C$. Show that $P$ has
+                infinite order.\hint{compute $x(2P)$ and $x(4P)$.}
+\begin{solution}
+\ans{Here $x(4P) = -287/1296$, and $1296 > 619^{1/3}$.}
+By \cref{ec-torsion-heights:prop:dup-formula} with $a = b = 1$, $x(2P) = 1/4$, and
+\[
+x(4P) = \frac{(1/4)^4 - 2(1/4)^2 - 8(1/4) + 1}{4\bigl((1/4)^3 + 1/4 + 1\bigr)}
+= \frac{-287/256}{81/16} = -\frac{287}{1296},
+\]
+in lowest terms, as $287 = 7 \cdot 41$. If $P$ were a torsion point, so would be $4P$, and
+\ref{ec-torsion-heights:it:kron-bound}, which uses only the lower bound, would give
+$H(x(4P)) \leq 619^{1/3} < 9$. But $H(x(4P)) = 1296$. So $P$ has infinite order.
+\begin{solremark}
+The constant $\log 619$ comes from the explicit identities of
+\cite{Silverman09}*{Sublemma~VIII.4.3}, as in the proof of \cite{Silverman09}*{Lemma~VIII.4.2}.
+The Lutz--Nagell theorem \cite{Silverman09}*{Corollary~VIII.7.2} gives another proof:
+$x(2P) = 1/4$ is not an integer, so $2P$ is not a torsion point.
+\end{solremark}
+\begin{solremark}
+The canonical height $\hat h(P) \coloneqq \lim_{n \to \infty} 4^{-n} h_x(2^nP)$ gives the exact
+analogue of Kronecker's theorem: $\hat h(mP) = m^2\hat h(P)$, and $\hat h(P) = 0$ if and only
+if $P$ is a torsion point \cite{Silverman09}*{Theorem~VIII.9.3(b), (d)}, where $\hat h$ is
+half of ours. Writing $\hat h - h_x$ as a telescoping series with terms
+$4^{-n-1}\bigl(h_x(2^{n+1}P) - 4h_x(2^nP)\bigr)$ gives $\lvert \hat h - h_x \rvert \leq C/3$.
+So \ref{ec-torsion-heights:it:kron-bound} says that $h_x(T)$ is within $C/3$ of $\hat h(T) = 0$.
+\end{solremark}
+\end{solution}
+        \end{enumerate}
 \end{enumerate}
 \end{problem}
 
