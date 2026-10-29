@@ -252,6 +252,7 @@ window.MathJax = {
       "Tr": "\\operatorname{Tr}",
       "trd": "\\operatorname{trd}",
       "nrd": "\\operatorname{nrd}",
+      "newsharedthm": ["\\newtheorem{#1}[theorem]{#2}\n  \\AddToHook{env/#1/begin}{\\crefalias{theorem}{#1}}",2],
       "sapedit": ["{\\color{santicolor} \\sf  #1}",1],
       "dzbedit": ["{\\color{dzbcolor} \\sf  #1}",1],
       "AbGrps": "\\texttt{AbGrps}",

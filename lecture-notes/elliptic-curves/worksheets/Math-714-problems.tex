@@ -63,7 +63,7 @@ linktoc=page,
 breaklinks=true}
 \usepackage{url} 
 \urlstyle{same}
-\usepackage{cleveref} % automatic referencing
+\usepackage[capitalize]{cleveref} % automatic referencing; capitalize, or \Cref{a,b} gives "Corollary 1.1 and proposition 1.2"
 \usepackage{indentfirst} % to indent the first paragraph of a section
 \usepackage[mathscr]{eucal} % nice caligraphy for sheaves and categories
 \usepackage{colonequals} % correct way to write :=
@@ -119,7 +119,19 @@ breaklinks=true}
     AutomorphismGroup,DefiningEquations,Ideal,Set,Sequence,SetToSequence,
     Sprintf,Random,Abs,Max,Min,Support,Divisor,
     Basis,ChangeRing,Identity,IsNonSingular,IsomorphismData,Place,Places,
-    RiemannRochSpace,TraceOfFrobenius,Type},
+    RiemannRochSpace,TraceOfFrobenius,Type,
+    AbelianGroup,AbsoluteLogarithmicHeight,aInvariants,AllExtensions,Append,
+    Binomial,CanonicalHeight,CartesianProduct,ClassGroup,ComplexField,
+    CPSHeightBounds,Derivative,Determinant,Differential,DivisionPoints,
+    DivisionPolynomial,DualIsogeny,EllipticCurveFromjInvariant,EulerFactor,
+    Floor,GaloisGroup,GaloisRepresentation,GroupName,HeightPairing,
+    HeightPairingMatrix,IdentifyGroup,Include,InertiaGroup,InfinitePlaces,
+    IsAbelian,IsCyclic,IsCyclotomicPolynomial,IsDefinite,IsEllipticCurve,
+    IsMaximal,IsPoint,IsPrincipal,IsSupersingular,LocalDegree,LocalInformation,
+    Log,MaximalOrder,MinimalPolynomial,MultiplicationByMMap,NaiveHeight,Ngens,
+    Norm,pAdicRing,PowerIdeal,PrimesUpTo,pSelmerGroup,Pullback,QuadraticField,
+    QuadraticTwist,QuaternionAlgebra,QuaternionOrder,RamifiedPrimes,RealField,
+    Trace,TwoIsogeny,UnitGroup,WeilPairing,ZetaFunction},
 }
 
 \lstdefinestyle{magmastyle}{%
@@ -478,29 +490,59 @@ breaklinks=true}
 \numberwithin{equation}{subsection}
 \newtheorem{theorem}{Theorem}[section]
 \numberwithin{theorem}{subsection}
-\newtheorem{lemma}[theorem]{Lemma}
-\newtheorem{corollary}[theorem]{Corollary}
-\newtheorem{proposition}[theorem]{Proposition}
+
+%% ----------------------------------------------------------------------
+%% \newsharedthm{<env>}{<Name>}: \newtheorem{<env>}[theorem]{<Name>}, made
+%% safe for cleveref. Use it for every environment numbered with theorem.
+%%
+%% Under TeX Live 2026 the LaTeX first-aid patch for cleveref 0.21.4 (the
+%% `label' hook in latex2e-first-aid-for-external-files.ltx) recomputes each
+%% label's type from \@currentcounter. With \newtheorem{lemma}[theorem]{Lemma}
+%% that counter is `theorem', so \Cref{lemma:x} prints "Theorem 1.1.2". No
+%% warning, no error.
+%%
+%% The patch does honour \crefalias, so inside each environment we alias the
+%% theorem counter to the environment's name. Both \crefalias and the
+%% env/<env>/begin hook are local to the environment's group. The counter is
+%% still theorem, so numbering, the sorting of \Cref{a,b} across subsections
+%% and the hyperref anchors (theorem.1.1.2) are exactly as before. Without the
+%% first-aid patch (older TeX Live), cleveref's own amsthm support already
+%% types the label by environment and the alias is never consulted.
+%%
+%% Same signature as \newsharedthm in
+%% 13-fermat-parametrizations/tex/frontmatter.tex.
+%% ----------------------------------------------------------------------
+\newcommand{\newsharedthm}[2]{%
+  \newtheorem{#1}[theorem]{#2}%
+  \AddToHook{env/#1/begin}{\crefalias{theorem}{#1}}}
+
+\newsharedthm{lemma}{Lemma}
+\newsharedthm{corollary}{Corollary}
+\newsharedthm{proposition}{Proposition}
 
 \theoremstyle{definition}
-\newtheorem{definition}[theorem]{Definition}
-\newtheorem{question}[theorem]{Question}
-\newtheorem{answer}[theorem]{Answer}
-\newtheorem{fact}[theorem]{Fact}
-\newtheorem{conjecture}[theorem]{Conjecture}
-\newtheorem{example}[theorem]{Example}
-\newtheorem{algorithm}[theorem]{Algorithm}
+\newsharedthm{definition}{Definition}
+\newsharedthm{question}{Question}
+\newsharedthm{answer}{Answer}
+\newsharedthm{fact}{Fact}
+\newsharedthm{conjecture}{Conjecture}
+\newsharedthm{example}{Example}
+\newsharedthm{algorithm}{Algorithm}
 %\newtheorem{para}[subsection]{}
 
 %\theoremstyle{remark}
-\newtheorem{remark}[theorem]{Remark}
-\newtheorem{remarks}[theorem]{Remarks}
-\newtheorem{warning}[theorem]{Warning}
+\newsharedthm{remark}{Remark}
+\newsharedthm{remarks}{Remarks}
+\newsharedthm{warning}{Warning}
 
 \newcommand{\labelpar}[1]{\refstepcounter{subsection}\label{#1}\thesubsection.}
 %% Ending here.
 
 
+
+% NB the numbered alternatives below share a counter as \newtheorem{X}[Y]{X},
+% so they have the cleveref bug described above. If you revive one, give each
+% environment X the hook \AddToHook{env/X/begin}{\crefalias{Y}{X}}.
 
 % %%% Uncomment these to number equations by section
 % \numberwithin{equation}{section}
@@ -787,7 +829,7 @@ breaklinks=true}
 \AddToShipoutPictureFG*{%
   \put(\LenToUnit{1.1cm},\LenToUnit{.5\paperheight}){%
     \rotatebox{90}{\makebox[0pt][c]{\small\sffamily\color{black!50}%
-      DRAFT \textemdash{} last edited October 22, 2026}}}}
+      DRAFT \textemdash{} last edited October 29, 2026}}}}
 
 %% ---- shared machinery of the worksheets ----
 
@@ -5992,6 +6034,637 @@ is used.
 \end{enumerate}
 \end{problem}
 
+\bigskip
+
+\part[Kubert--Tate normal form]{The Kubert--Tate normal form and good reduction everywhere}
+\label{kubert-tate:part}
+\noindent
+This worksheet is about two sections of \cite{Silverman09}: torsion points (\S VIII.7),
+and minimal equations and good reduction (\S VIII.8). Mazur's theorem lists the fifteen groups that
+occur as the torsion subgroup of an elliptic curve over $\Q$. The Kubert--Tate normal form
+puts an elliptic curve with a $k$-point $P$ of order $m \geq 4$ in a family with two
+parameters, in which $m$ is cut out by a polynomial condition on the parameters. These
+conditions define curves, the modular curves $Y_1(m)$, whose $k$-points parametrize such
+pairs $(E, P)$. \Cref{kubert-tate:prob:tate} derives the normal form, and finds the conditions for
+$m = 4, 5, 6, 7, 9, 11, 12$. For $m = 11$ the curve has genus one. \Cref{kubert-tate:prob:everywhere}
+shows that every elliptic curve over $\Q$ has bad reduction at some prime.
+
+\subsection*{Standing notation}
+\begin{itemize}
+  \item A field $k$, and an elliptic curve $E$ over $k$ given by a Weierstrass equation
+        \[
+        y^2 + a_1xy + a_3y = x^3 + a_2x^2 + a_4x + a_6
+        \]
+        with coefficients in $k$, discriminant $\Delta$ and point at infinity $O$
+        \cite{Silverman09}*{\S III.1}.
+  \item A change of variables $x = u^2x' + r$, $y = u^3y' + su^2x' + t$, with
+        $u \in k^\times$ and $r, s, t \in k$. It gives a Weierstrass equation for $E$ in
+        $x', y'$, with discriminant $u^{-12}\Delta$. Any two Weierstrass equations for $E$
+        are related by a change of variables \cite{Silverman09}*{Proposition~III.3.1(b)}.
+  \item Coordinates $x(Q)$ and $y(Q)$ of a $\kbar$-point $Q \neq O$ of $E$.
+\end{itemize}
+
+\section{The Kubert--Tate normal form and Mazur's list}
+\label{kubert-tate:sec:tate}
+
+\Cref{kubert-tate:prob:tate} is \cite{Silverman09}*{Exercise~8.13}. Its item \ref{kubert-tate:it:tate-normal} is
+Exercise~8.13(a), the orders $6$, $7$, $9$ and $12$ are Exercise~8.13(b), and the order
+$11$ is Exercise~8.13(c). The normal form, and the conditions for all the orders allowed
+by \cref{kubert-tate:thm:mazur}, are in \cite{Kubert76}. The elliptic curves with a $k$-point of
+order $m \geq 4$ are parametrized by the $k$-points of a modular curve
+\cite{Silverman09}*{Remark~VIII.7.8}.
+
+\begin{wstheorem}[{Mazur \cite{Silverman09}*{Theorem~VIII.7.5}}]
+\label{kubert-tate:thm:mazur}
+Let $E$ be an elliptic curve over $\Q$. Then $E(\Q)_{\tors}$ is isomorphic to one of the
+fifteen groups
+\[
+\Z/N\Z \text{ with } 1 \leq N \leq 10 \text{ or } N = 12, \qquad
+\Z/2\Z \times \Z/2N\Z \text{ with } 1 \leq N \leq 4.
+\]
+Each of them occurs as $E(\Q)_{\tors}$ for some elliptic curve $E$ over $\Q$.
+\end{wstheorem}
+
+\begin{wsproposition}[{The group law \cite{Silverman09}*{Proposition~III.2.2(a) and Algorithm~III.2.3(a)}}]
+\label{kubert-tate:prop:group-law}
+If a line in $\PP^2$ meets $E$ at the $\kbar$-points $P_1, P_2, P_3$, counted with multiplicity, then
+$P_1 + P_2 + P_3 = O$. The negative of a $\kbar$-point $(x_0, y_0)$ is
+$(x_0, -y_0 - a_1x_0 - a_3)$.
+\end{wsproposition}
+
+\begin{wsdefinition}[Kubert--Tate normal form]
+\label{kubert-tate:def:tate}
+A Weierstrass equation is in \defi{Kubert--Tate normal form} if it is
+\begin{equation}
+\label{kubert-tate:eq:tate}
+y^2 + (1 - c)xy - by = x^3 - bx^2
+\end{equation}
+for some $b, c \in k$.
+\end{wsdefinition}
+
+\begin{problem}[The Kubert--Tate normal form and Mazur's list]
+\label{kubert-tate:prob:tate}
+\begin{enumerate}
+  \item\label{kubert-tate:it:tate-normal} Let $P \in E(k)$ be a $k$-point of order $m \geq 4$, possibly
+        infinite. In three steps, show that a change of variables gives a Weierstrass
+        equation for $E$ in Kubert--Tate normal form, in which $P = (0, 0)$. After each
+        change of variables, write again $x, y$ for the coordinates and
+        $a_1, \dots, a_6$ for the coefficients.
+        \begin{enumerate}
+          \item\label{kubert-tate:it:tate-translate} Show that a change of variables with $u = 1$ and
+                $s = 0$ moves $P$ to $(0, 0)$, and that then $a_6 = 0$.
+\begin{solution}
+% Write your solution here.
+\end{solution}
+          \item\label{kubert-tate:it:tate-tangent} Suppose that $P = (0, 0)$, so that $a_6 = 0$. Show
+                that $a_3 \neq 0$, and that the change of variables with $u = 1$, $r = t = 0$
+                and $s = a_4/a_3$ makes $a_4 = 0$. Show that then the tangent line to $E$ at
+                $P$ is $y = 0$.\hint{the tangent line to $E$ at $P$ is $a_3y = a_4x$. If
+                $a_3 = 0$, it passes through $O$.}
+\begin{solution}
+% Write your solution here.
+\end{solution}
+          \item\label{kubert-tate:it:tate-scale} Suppose that $P = (0, 0)$ and $a_4 = a_6 = 0$, with
+                $a_3 \neq 0$. Show that $a_2 \neq 0$, and that the change of variables with
+                $u = a_3/a_2$ and $r = s = t = 0$ gives a Weierstrass equation in
+                Kubert--Tate normal form. Find $b$ and $c$.\hint{if $a_2 = 0$, the tangent
+                line $y = 0$ meets $E$ only at $P$.}
+\begin{solution}
+% Write your solution here.
+\end{solution}
+        \end{enumerate}
+  \item\label{kubert-tate:it:tate-multiples} Conversely, suppose that $E$ is given by an equation in
+        Kubert--Tate normal form. Let $P \coloneqq (0, 0) \in E(k)$, and let $m$ be its
+        order, possibly infinite. Show that $b \neq 0$, that $2P = (b, bc)$ and
+        $3P = (c, b - c)$, and that $m \geq 4$.\hint{find the tangent line to $E$ at $P$,
+        and the line through $P$ and $2P$. Use \cref{kubert-tate:prop:group-law}.}
+\begin{solution}
+% Write your solution here.
+\end{solution}
+  \item\label{kubert-tate:it:tate-uniq} With $E$ and $P$ as in \ref{kubert-tate:it:tate-multiples}, suppose that a
+        change of variables gives another equation for $E$ in Kubert--Tate normal form,
+        with parameters $b'$ and $c'$, in which $P$ is again $(0, 0)$. Show that $b' = b$
+        and $c' = c$. So the pair $(E, P)$ determines $b$ and $c$.\hint{the change of
+        variables takes the $\kbar$-point $(x', y') = (0, 0)$ to $(x, y) = (r, t)$. For
+        $r = t = 0$, compute the new coefficients $a_1', \dots, a_4'$.}
+\begin{solution}
+% Write your solution here.
+\end{solution}
+  \item\label{kubert-tate:it:tate-four-five} With $E$, $P$ and $m$ as in \ref{kubert-tate:it:tate-multiples}, show
+        that $m = 4$ if and only if $c = 0$, and $m = 5$ if and only if $b = c$.
+\begin{solution}
+% Write your solution here.
+\end{solution}
+  \item\label{kubert-tate:it:tate-six} With $E$, $P$ and $m$ as in \ref{kubert-tate:it:tate-multiples}, find the
+        condition on $b$ and $c$ for $m = 6$.
+\begin{solution}
+% Write your solution here.
+\end{solution}
+  \item\label{kubert-tate:it:tate-four-p} With $E$, $P$ and $m$ as in \ref{kubert-tate:it:tate-multiples}, suppose
+        that $m \geq 5$, so that $c \neq 0$, and put $d \coloneqq b/c$. Show
+        that\hint{the line through $P$ and $3P$ is $y = (d - 1)x$.}
+        \[
+        4P = \bigl(d^2 - d,\ d^2(c - d + 1)\bigr).
+        \]
+\begin{solution}
+% Write your solution here.
+\end{solution}
+  \item\label{kubert-tate:it:tate-seven} With $m \geq 5$ and $d$ as in \ref{kubert-tate:it:tate-four-p}, show that
+        $m = 7$ if and only if $P$, $2P$ and $4P$ are collinear, and that this holds if and
+        only if $c = d^2 - d$. Deduce a one-parameter family of elliptic curves with a
+        $k$-point of order $7$.
+\begin{solution}
+% Write your solution here.
+\end{solution}
+  \item\label{kubert-tate:it:tate-nine} With $d$ as in \ref{kubert-tate:it:tate-four-p}, suppose that $m \geq 6$,
+        so that $d \neq 1$, and put $f \coloneqq c/(d - 1)$. Show that $m = 9$ if and only
+        if $2P$, $3P$ and $4P$ are collinear, and that this holds if and only if
+        \[
+        c^2 - (d - 1)c - (d - 1)^3 = 0, \quad\text{that is,}\quad d = f^2 - f + 1.
+        \]
+        Deduce a one-parameter family of elliptic curves with a $k$-point of order
+        $9$.\hint{the line through $2P$ and $3P$ has slope $(cd - d + 1)/(d - 1)$.}
+\begin{solution}
+% Write your solution here.
+\end{solution}
+  \item\label{kubert-tate:it:tate-magma} With $d$ and $f$ as in \ref{kubert-tate:it:tate-nine}, suppose that
+        $m \geq 9$, so that $5P, \dots, 8P$ are not $O$. The following code takes $b = cd$,
+        works over the field $\Q(c, d)$ of rational functions, and factors the numerators
+        of $x(4P) - x(8P)$ and $x(5P) - x(6P)$ after the substitution $c = f(d - 1)$.
+\begin{magma}
+K<c, d> := FunctionField(Rationals(), 2);
+E := EllipticCurve([1 - c, -c*d, -c*d, 0, 0]);    // b = c*d
+P := E![0, 0];
+4*P;                    // (d^2 - d : c*d^2 - d^3 + d^2 : 1)
+R<f, d> := PolynomialRing(Rationals(), 2);
+// the irreducible factors of the numerator of x(iP) - x(jP), with c = f(d - 1)
+Factors := func<i, j | [g[1] : g in Factorization(
+  Evaluate(Numerator((i*P)[1] - (j*P)[1]), [f*(d - 1), d]))]>;
+Factors(4, 8);
+// [ d, d - 1, f - 1, f^2 - f*d^2 - f*d + 3*d^2 - 3*d + 1 ]
+Factors(5, 6);
+// [ d - 1, f, f^3*d - 3*f^2*d + 4*f*d - f - d^2 ]
+\end{magma}
+\begin{solution}
+% Write your solution here.
+\end{solution}
+        \begin{enumerate}
+          \item\label{kubert-tate:it:tate-twelve} Show that $m = 12$ if and only if
+                \[
+                f^2 - (d^2 + d)f + 3d^2 - 3d + 1 = 0.
+                \]
+                Suppose that $\operatorname{char} k \neq 2$. Find a one-parameter family of
+                elliptic curves with a $k$-point of order $12$.\hint{as a polynomial in $f$, its discriminant is
+                $(d - 1)^2(d^2 + 4d - 4)$. Parametrize the conic
+                $(d + 2)^2 - w^2 = 8$ by $d + 2 - w = 2v$.}
+\begin{solution}
+% Write your solution here.
+\end{solution}
+          \item\label{kubert-tate:it:tate-eleven} Show that $m = 11$ if and only if
+                \[
+                d^2 - (f^3 - 3f^2 + 4f)d + f = 0.
+                \]
+                Suppose that $\operatorname{char} k \notin \{2, 11\}$. Show that this curve is
+                birational to the curve
+                \[
+                w^2 = f(f^3 - 4f^2 + 8f - 4),
+                \]
+                and that the latter has genus one.\hint{complete the square in $d$. The
+                discriminant of $f^3 - 4f^2 + 8f - 4$ is $-176$.}
+\begin{solution}
+% Write your solution here.
+\end{solution}
+        \end{enumerate}
+\end{enumerate}
+\end{problem}
+
+
+\section{No good reduction everywhere}
+\label{kubert-tate:sec:everywhere}
+
+This section is \cite{Silverman09}*{Exercise~8.15}, and follows its hint. A Weierstrass
+equation over $\Z$ with $\Delta = \pm 1$ would have good reduction at every prime, and
+congruences modulo $8$ rule it out.
+
+In the following definitions and results, $E$ is an elliptic curve over $\Q$ and $p$ is a
+prime number, with valuation $v_p$. Write $\Z_{(p)}$ for the ring of rational numbers
+whose denominators are prime to $p$.
+
+\begin{wsdefinition}[{Minimal equations \cite{Silverman09}*{\S VII.1}}]
+\label{kubert-tate:def:minimal}
+A Weierstrass equation for $E$ is \defi{minimal at $p$} if its coefficients lie in
+$\Z_{(p)}$ and $v_p(\Delta)$ is as small as possible among such equations for $E$.
+\end{wsdefinition}
+
+\begin{wsproposition}[{Good reduction \cite{Silverman09}*{Proposition~VII.5.1(a)}}]
+\label{kubert-tate:prop:good}
+The curve $E$ has good reduction at $p$ if and only if a Weierstrass equation for $E$
+minimal at $p$ has $v_p(\Delta) = 0$.
+\end{wsproposition}
+
+\begin{wscorollary}[{Global minimal equations \cite{Silverman09}*{Corollary~VIII.8.3}}]
+\label{kubert-tate:cor:global}
+The curve $E$ has a Weierstrass equation with coefficients in $\Z$ that is minimal at
+every prime $p$.
+\end{wscorollary}
+
+\begin{wsproposition}[{Weierstrass formulas \cite{Silverman09}*{\S III.1}}]
+\label{kubert-tate:prop:formulas}
+Put
+\begin{gather*}
+b_2 = a_1^2 + 4a_2, \qquad b_4 = 2a_4 + a_1a_3, \qquad b_6 = a_3^2 + 4a_6, \\
+b_8 = a_1^2a_6 + 4a_2a_6 - a_1a_3a_4 + a_2a_3^2 - a_4^2, \qquad
+c_4 = b_2^2 - 24b_4, \qquad c_6 = -b_2^3 + 36b_2b_4 - 216b_6.
+\end{gather*}
+Then $\Delta = -b_2^2b_8 - 8b_4^3 - 27b_6^2 + 9b_2b_4b_6$, and
+$1728\Delta = c_4^3 - c_6^2$.
+\end{wsproposition}
+
+\begin{problem}[No good reduction everywhere]
+\label{kubert-tate:prob:everywhere}
+Let $E$ be an elliptic curve over $\Q$. Suppose, for a contradiction, that $E$ has good
+reduction at every prime $p$.
+\begin{enumerate}
+  \item\label{kubert-tate:it:everywhere-unit} Show that $E$ has a Weierstrass equation with coefficients
+        in $\Z$ and $\Delta = \pm 1$. Fix such an equation, and put
+        $\varepsilon \coloneqq \Delta$.
+\begin{solution}
+% Write your solution here.
+\end{solution}
+  \item\label{kubert-tate:it:everywhere-odd} Show that $a_1$ is odd.\hint{if $a_1$ is even, show that
+        $\Delta \equiv -27b_6^2 \pmod 8$.}
+\begin{solution}
+% Write your solution here.
+\end{solution}
+  \item\label{kubert-tate:it:everywhere-c4} Show that $c_4 \equiv 1 \pmod 8$.
+\begin{solution}
+% Write your solution here.
+\end{solution}
+  \item\label{kubert-tate:it:everywhere-square} Put $u \coloneqq c_4 - 12\varepsilon$. Show that
+        \[
+        c_6^2 = u\,(u^2 + 36\varepsilon u + 432),
+        \]
+        and deduce that $u$ is a positive square or three times a positive
+        square.\hint{the integer $u$ is odd, and every common divisor of the two factors
+        divides $432 = 2^4 \cdot 3^3$.}
+\begin{solution}
+% Write your solution here.
+\end{solution}
+  \item\label{kubert-tate:it:everywhere-mod8} Show that $u \equiv 5 \pmod 8$, and conclude that $E$ has
+        bad reduction at some prime $p$.
+\begin{solution}
+% Write your solution here.
+\end{solution}
+\end{enumerate}
+\end{problem}
+
+\bigskip
+
+\part[The canonical height and the regulator]{The canonical height and the regulator}
+\label{canonical-height:part}
+\noindent
+In this worksheet we see how the canonical height $\hat h$ on an elliptic curve
+$E$ allows us to think about the Mordell--Weil group $E(\Q)$ as a lattice
+$\Lambda$ in an euclidean space $V$. As a nice application of this, we have N\'eron's
+count of the rational points of bounded height. We use \Magma\ to double check
+our computations.
+
+\subsection*{Standing notation}
+\begin{itemize}
+\item An elliptic curve $E$ over $\Q$, given by a Weierstrass equation.
+\item The height $h_x(P) \coloneqq \log H(x(P))$ of a rational point $P \neq O$, where
+  $H(u/w) \coloneqq \max(\lvert u \rvert, \lvert w \rvert)$ for $u/w$ in lowest terms, and
+  $h_x(O) \coloneqq 0$. \Magma\ calls it \mg{NaiveHeight}.
+\item The canonical height $\hat h(P) \coloneqq \tfrac12 \lim_{n \to \infty} 4^{-n} h_x(2^nP)$
+  of a rational point $P$, and the height pairing
+  $\langle P, Q \rangle \coloneqq \hat h(P + Q) - \hat h(P) - \hat h(Q)$, so that
+  $\langle P, P \rangle = 2\hat h(P)$ \cite{Silverman09}*{\S VIII.9}. The limit exists by
+  \cref{canonical-height:prob:tate}\ref{canonical-height:it:tate-elliptic}. \Magma\ computes them as \mg{CanonicalHeight(P)}, which is $2\hat h(P)$,
+  not $\hat h(P)$, and \mg{HeightPairing(P, Q)}.
+\end{itemize}
+
+
+
+\section{Tate's construction of the canonical height}
+\label{canonical-height:sec:tate}
+
+This section is Tate's construction of the canonical height
+\cite{Silverman09}*{Proposition~VIII.9.1}, first on an abelian group, as in
+\cite{Hindry&Silverman00}*{Theorem~B.4.1}, then on the rational points of an elliptic curve.
+\Cref{canonical-height:prob:tate} asks for the proofs, which need only the following ingredients.
+
+\begin{wsdefinition}[Quadratic heights]
+\label{canonical-height:def:quadratic}
+Let $A$ be an abelian group. A \defi{height} on $A$ is a function $h\colon A \to \R$. Two
+heights satisfy $h = h' + O(1)$ if $\lvert h - h' \rvert$ is bounded on $A$. A height $h$ is
+\defi{quasi-quadratic} if
+\[
+h(P + Q) + h(P - Q) = 2h(P) + 2h(Q) + O(1),
+\]
+that is, if the difference of the two sides is bounded on $A \times A$. It is
+\defi{quadratic} if the two sides are equal for all $P, Q \in A$ (the parallelogram law).
+\end{wsdefinition}
+
+\begin{wsdefinition}[{Heights on an elliptic curve \cite{Silverman09}*{\S VIII.6}}]
+\label{canonical-height:def:hf}
+Let $K$ be a number field, $h$ the absolute logarithmic height on $\Pone(K)$
+\cite{Silverman09}*{\S VIII.5}, $E$ an elliptic curve over $K$, and $f \in K(E)$ a
+nonconstant function. The \defi{height relative to $f$} is the height
+$h_f(P) \coloneqq h(f(P))$ on $E(K)$. The function $f$ is \defi{even} if
+$f(-P) = f(P)$ for all $P$, as $x$ is. Over $\Q$, $h_x$ is the height of the Standing
+notation.
+\end{wsdefinition}
+
+\begin{wstheorem}[{Quasi-parallelogram law \cite{Silverman09}*{Theorem~VIII.6.2}}]
+\label{canonical-height:thm:quasi-parallelogram}
+In \cref{canonical-height:def:hf}, if $f$ is even, then $h_f$ is a quasi-quadratic height on $E(K)$.
+\end{wstheorem}
+
+\begin{wslemma}[{Comparison of heights \cite{Silverman09}*{Lemma~VIII.6.3}}]
+\label{canonical-height:lem:compare}
+In \cref{canonical-height:def:hf}, let $f, g \in K(E)$ be nonconstant even functions. Then
+$(\deg g)\,h_f = (\deg f)\,h_g + O(1)$ on $E(K)$.
+\end{wslemma}
+
+\begin{problem}[Tate's construction]
+\label{canonical-height:prob:tate}
+\begin{enumerate}
+  \item\label{canonical-height:it:tate-abstract} Let $A$ be an abelian group, and $h$ a quasi-quadratic height
+        on $A$. Prove that for every $P \in A$ the limit
+        \[
+        \hat h(P) \coloneqq \lim_{n \to \infty} 4^{-n} h(2^nP)
+        \]
+        exists, and that $\hat h$ is the unique quadratic height on $A$ with
+        $\hat h = h + O(1)$.
+\begin{solution}
+% Write your solution here.
+\end{solution}
+  \item\label{canonical-height:it:tate-elliptic} Let $K$, $E$ and $f$ be as in \cref{canonical-height:def:hf}, with $f$ even.
+        Deduce that for every $P \in E(K)$ the limit
+        \[
+        \frac{1}{\deg f} \lim_{N \to \infty} 4^{-N} h_f(2^NP)
+        \]
+        exists, that it is a quadratic height on $E(K)$, and that it does not depend on $f$.
+\begin{solution}
+% Write your solution here.
+\end{solution}
+\end{enumerate}
+\end{problem}
+
+
+\section{The lattice of rational points}
+\label{canonical-height:sec:lattice}
+
+This section draws \cite{Silverman09}*{Proposition~VIII.9.6} for the curve
+$y^2 = x^3 + 17$ of \cite{Silverman09}*{Example~III.2.4}, after
+\cite{Hindry&Silverman00}*{\S B.5}. The rational points $P_1$ and $P_3$ of
+\cref{canonical-height:prob:generate} carry Silverman's names. He notes that they generate the Mordell--Weil
+group, and that this is true but not so easy to prove. \Cref{canonical-height:prob:generate} proves it with
+\Magma's \mg{CPSHeightBounds}, which returns real numbers $l$ and $u$ with
+$l \leq h_x(P) - 2\hat h(P) \leq u$ for every rational point $P$ \cite{Magma}. First, two
+facts about lattices in general.
+
+\begin{wsdefinition}[{Lattices and covolume \cite{Hindry&Silverman00}*{\S B.5}}]
+\label{canonical-height:def:lattice}
+A \defi{lattice} in a real vector space $V$ of dimension $r$ is a subgroup $\Lambda$
+generated by a basis $\lambda_1, \dots, \lambda_r$ of $V$. If $V$ is Euclidean, the
+\defi{covolume} $\covol(\Lambda)$ is the volume of
+$\{t_1\lambda_1 + \dots + t_r\lambda_r : 0 \leq t_i < 1\}$.
+\end{wsdefinition}
+
+\begin{wsproposition}[{The covolume \cite{Hindry&Silverman00}*{Exercise~B.14(b)}}]
+\label{canonical-height:prop:covolume}
+In \cref{canonical-height:def:lattice}, $\covol(\Lambda)^2 = \det(\lambda_i \cdot \lambda_j)_{i,j}$.
+\end{wsproposition}
+
+From now on, $V$ and $\Lambda$ denote the following.
+
+\begin{wsproposition}[{The height lattice \cite{Silverman09}*{Proposition~VIII.9.6}}]
+\label{canonical-height:prop:height-lattice}
+Let $V \coloneqq E(\Q) \otimes_\Z \R$, let $v_P \coloneqq P \otimes 1$ for a rational point
+$P$, and let $\Lambda$ be the image of $E(\Q)$ in $V$. The pairing extends to an inner
+product on $V$, with $\lvert v_P \rvert^2 = 2\hat h(P)$. Then $\Lambda$ is a lattice in
+$V$, and the kernel of $E(\Q) \to \Lambda$ is $E(\Q)_\tors$.
+\end{wsproposition}
+
+\begin{wsdefinition}[{The elliptic regulator \cite{Silverman09}*{\S VIII.9}}]
+\label{canonical-height:def:regulator}
+Let $r$ be the rank of $E$, and $Q_1, \dots, Q_r$ rational points whose images form a basis
+of $\Lambda$. The \defi{elliptic regulator} of $E$ is
+$R_E \coloneqq \det\bigl(\langle Q_i, Q_j \rangle\bigr)_{1 \leq i, j \leq r}$. By
+\cref{canonical-height:prop:covolume}, $\sqrt{R_E} = \covol(\Lambda)$ is the covolume of $\Lambda$ in $V$.
+\end{wsdefinition}
+
+% ---- lattice-data.tex ----
+\newcommand{\chLatticeMatrix}{0.674253,0,0.539799,0.878122}
+\newcommand{\chLatticeNear}{1/-2/-103/{43},2/-2/-81/{-8/9},-1/-1/-144/{1/4},0/-1/-122/{2},1/-1/-81/{4},2/-1/-47/{-1},3/-1/-31/{52},-2/0/180/{8},-1/0/180/{-2},1/0/0/{-2},2/0/0/{8},-3/1/149/{52},-2/1/133/{-1},-1/1/99/{4},0/1/58/{2},1/1/36/{1/4},-2/2/99/{-8/9},-1/2/77/{43}}
+\newcommand{\chLatticeNearRadius}{1.84391}
+\newcommand{\chLatticeNearT}{3.4}
+\newcommand{\chLatticeRho}{0.561255}
+\newcommand{\chLatticeRhoRadius}{0.749169}
+\newcommand{\chLatticeFar}{2/-4/0,3/-4/0,4/-4/0,5/-4/0,-1/-3/0,0/-3/1,1/-3/1,2/-3/1,3/-3/1,4/-3/1,5/-3/0,6/-3/0,-3/-2/0,-2/-2/1,-1/-2/1,0/-2/1,1/-2/1,2/-2/1,3/-2/1,4/-2/1,5/-2/1,6/-2/0,-4/-1/0,-3/-1/1,-2/-1/1,-1/-1/1,0/-1/1,1/-1/1,2/-1/1,3/-1/1,4/-1/1,5/-1/1,6/-1/0,-5/0/0,-4/0/1,-3/0/1,-2/0/1,-1/0/1,0/0/1,1/0/1,2/0/1,3/0/1,4/0/1,5/0/0,-6/1/0,-5/1/1,-4/1/1,-3/1/1,-2/1/1,-1/1/1,0/1/1,1/1/1,2/1/1,3/1/1,4/1/0,-6/2/0,-5/2/1,-4/2/1,-3/2/1,-2/2/1,-1/2/1,0/2/1,1/2/1,2/2/1,3/2/0,-6/3/0,-5/3/0,-4/3/1,-3/3/1,-2/3/1,-1/3/1,0/3/1,1/3/0,-5/4/0,-4/4/0,-3/4/0,-2/4/0}
+\newcommand{\chLatticeFarRadius}{3.74166}
+\newcommand{\chLatticeInner}{2.96967}
+\newcommand{\chLatticeOuter}{3.41174}
+\newcommand{\chLatticeMid}{3.16228}
+\newcommand{\chLatticeFarT}{14}
+\newcommand{\chLatticeInnerCount}{49}
+\newcommand{\chLatticeRingCount}{10}
+\newcommand{\chLatticeRingFilled}{4}
+\newcommand{\chLatticeT}{10}
+\newcommand{\chLatticeCount}{53}
+\newcommand{\chLatticeRegulator}{0.350554}
+\newcommand{\chLatticeCovolume}{0.592076}
+\newcommand{\chLatticeCPSlow}{-1.63999}
+\newcommand{\chLatticeCPSup}{1.18106}
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[scale=1.5,
+    dot/.style={circle, fill, inner sep=1pt},
+    lab/.style={font=\scriptsize, inner sep=1.5pt}]
+  \draw[black!55, dashed] (0,0) circle (\chLatticeRhoRadius);
+  \begin{scope}[cm/.expanded={\chLatticeMatrix,(0,0)}]
+    \fill[black!10] (-.5,-.5) -- (.5,-.5) -- (.5,.5) -- (-.5,.5) -- cycle;
+    \draw[black!40] (-.5,-.5) -- (.5,-.5) -- (.5,.5) -- (-.5,.5) -- cycle;
+    \foreach \a/\b/\ang/\x in \chLatticeNear
+      \node[dot, label={[lab]\ang:$\x$}] at (\a,\b) {};
+    \coordinate (vone) at (1,0);
+    \coordinate (vthree) at (0,1);
+  \end{scope}
+  \draw[->, thick, shorten >=2.5pt] (0,0) -- (vone);
+  \draw[->, thick, shorten >=2.5pt] (0,0) -- (vthree);
+  \node[dot, label={[lab]200:$O$}] at (0,0) {};
+\end{tikzpicture}
+\caption{The rational points of the curve $E$ of \cref{canonical-height:prob:generate} near the origin of the
+plane $V$. Each dot is the vector $v_P$ of a rational point $P = aP_1 + bP_3$ with $2\hat h(P) \leq \chLatticeNearT$, labeled by
+its $x$-coordinate. Since $\lvert v_P \rvert^2 = 2\hat h(P)$, the labels grow more complicated outward: integers near $O$, and the first denominators, $1/4$
+and $-8/9$, farther out. The rational points $P$ and $-P$ have the same $x$-coordinate and
+sit opposite each other. The arrows are $v_{P_1}$ and $v_{P_3}$. The shaded parallelogram
+$\{s v_{P_1} + t v_{P_3} : \lvert s \rvert, \lvert t \rvert \leq \tfrac12\}$ has area
+$\sqrt{\det G} = \chLatticeCovolume$, and every vector of $V$ is a vector of
+$\Z v_{P_1} + \Z v_{P_3}$ plus a vector in it. The dashed circle $2\hat h = \chLatticeRho$ passes
+through its two farthest corners $\pm\frac12(v_{P_1} + v_{P_3})$, so it contains the
+parallelogram.}
+\label{canonical-height:fig:generate}
+\end{figure}
+
+\begin{problem}[Two rational points generate $E(\Q)$]
+\label{canonical-height:prob:generate}
+Let $E\colon y^2 = x^3 + 17$ over $\Q$, with LMFDB label \eclabel{10404.f2}, and let
+$P_1 = (-2, 3)$ and $P_3 = (2, 5)$ be two of its rational points. Let $g_{ij} \coloneqq \langle P_i, P_j \rangle$ for $i, j \in \{1, 3\}$, and let
+$G \coloneqq (g_{ij})$ be the Gram matrix of $P_1$ and $P_3$. \Magma\ computes the rank and
+the torsion of $E$, the matrix $G$ and its determinant, the bounds $l$ and $u$, and the
+$x$-coordinates of the rational points $P \neq O$ with $H(x(P)) \leq 5$:
+\begin{magma}
+R := RealField(6);
+E := EllipticCurve([0, 0, 0, 0, 17]);
+Rank(E); #TorsionSubgroup(E);                    // 2 true
+                                                 // 1
+P1 := E![-2, 3];  P3 := E![2, 5];
+G := HeightPairingMatrix([P1, P3]);  ChangeRing(G, R);
+// [0.454617 0.363961]
+// [0.363961 1.06248]
+R!Determinant(G), R!Regulator(E);                // 0.350554 0.350554
+l, u := CPSHeightBounds(E);  R!l, R!u;           // -1.63999 1.18106
+X := {a/d : a in [-5..5], d in [1..5] | GCD(a, d) eq 1 and IsPoint(E, a/d)};
+X;                                               // { -2, -1, 1/4, 2, 4 }
+X subset {(m*P1 + n*P3)[1] : m, n in [-2..2] | [m, n] ne [0, 0]};   // true
+\end{magma}
+The items below show that $P_1$ and $P_3$ generate $E(\Q)$.
+\begin{enumerate}
+  \item\label{canonical-height:it:gen-basis} Show that $v_{P_1}$ and $v_{P_3}$ form a basis of $V$.
+\begin{solution}
+% Write your solution here.
+\end{solution}
+  \item\label{canonical-height:it:gen-reduce} Let $P$ be a rational point. Show that there are $m, n \in \Z$
+        such that $Q \coloneqq P - mP_1 - nP_3$ has $v_Q$ in the shaded parallelogram of
+        \cref{canonical-height:fig:generate}. Show that $Q \in \Z P_1 + \Z P_3$ if and only if
+        $P \in \Z P_1 + \Z P_3$.\hint{write $v_P$ in the basis of \ref{canonical-height:it:gen-basis}, and
+        round its coordinates.}
+\begin{solution}
+% Write your solution here.
+\end{solution}
+  \item\label{canonical-height:it:gen-bound} Show that every rational point $Q$ with $v_Q$ in the shaded
+        parallelogram has
+        \[
+        2\hat h(Q) \leq \tfrac14 \max(g_{11} + 2g_{13} + g_{33},\ g_{11} - 2g_{13} + g_{33}),
+        \]
+        and deduce that $H(x(Q)) \leq 5$.\hint{the function $v \mapsto \lvert v \rvert^2$ is
+        convex, so on a parallelogram it is largest at a corner.}
+\begin{solution}
+% Write your solution here.
+\end{solution}
+  \item\label{canonical-height:it:gen-conclude} Conclude that $P_1$ and $P_3$ generate $E(\Q)$.
+\begin{solution}
+% Write your solution here.
+\end{solution}
+\end{enumerate}
+\end{problem}
+
+
+\section{N\'eron's counting theorem}
+\label{canonical-height:sec:neron}
+
+This section is N\'eron's counting theorem \cite{Hindry&Silverman00}*{Theorem~B.6.3} for the
+curve of \cref{canonical-height:prob:generate}, with its constant, through the count of lattice points in
+ellipsoids \cite{Hindry&Silverman00}*{Lemma~B.6.4}.
+
+\begin{wslemma}[{Lattice points in ellipsoids \cite{Hindry&Silverman00}*{Lemma~B.6.4}}]
+\label{canonical-height:lem:lattice-count}
+Let $r$ be the rank of $E$, suppose that $r \geq 1$, and let $q$ be a positive definite
+quadratic form on $V$. Then, as $T \to \infty$,
+\[
+\#\{\lambda \in \Lambda : q(\lambda) \leq T\}
+= \frac{\vol\{v \in V : q(v) \leq 1\}}{\covol(\Lambda)}\, T^{r/2} + O\bigl(T^{(r-1)/2}\bigr).
+\]
+\end{wslemma}
+
+\begin{wstheorem}[{N\'eron's counting theorem \cite{Hindry&Silverman00}*{Theorem~B.6.3}}]
+\label{canonical-height:thm:neron}
+Suppose that $E$ has rank $r \geq 1$. There is a constant $c > 0$ such that, as
+$T \to \infty$,
+\[
+\#\{P \in E(\Q) : h_x(P) \leq T\} = c\,T^{r/2} + O\bigl(T^{(r-1)/2}\bigr).
+\]
+\end{wstheorem}
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[scale=0.75,
+    filled/.style={circle, fill, inner sep=1.1pt},
+    hollow/.style={circle, draw=black!50, fill=white, inner sep=0.9pt}]
+  \draw[black!55] (0,0) circle (\chLatticeInner);
+  \draw[black!45, dotted] (0,0) circle (\chLatticeMid);
+  \draw[black!55, dashed] (0,0) circle (\chLatticeOuter);
+  \begin{scope}[cm/.expanded={\chLatticeMatrix,(0,0)}]
+    \foreach \a/\b/\f in \chLatticeFar {
+      \ifnum\f=1 \node[filled] at (\a,\b) {}; \else \node[hollow] at (\a,\b) {}; \fi
+    }
+  \end{scope}
+\end{tikzpicture}
+\caption{The rational points of the curve $E$ of \cref{canonical-height:prob:generate} counted by N\'eron's
+theorem for $T = \chLatticeT$. Each dot is
+the vector $v_P$ of a rational point $P$ with $\lvert v_P \rvert^2 = 2\hat h(P) \leq \chLatticeFarT$.
+It is filled if $h_x(P) \leq \chLatticeT$, and open
+otherwise. There are $\chLatticeCount$ filled dots. If $h_x$ were equal to $2\hat h$, the filled
+dots would be exactly those inside the dotted circle $2\hat h = \chLatticeT$. Instead,
+$h_x - 2\hat h$ is only known to lie between $l = \chLatticeCPSlow$ and
+$u = \chLatticeCPSup$. So every rational point inside the solid circle
+$2\hat h = \chLatticeT - u$ has $h_x \leq \chLatticeT$: all $\chLatticeInnerCount$ dots there are
+filled. No rational point outside the dashed circle $2\hat h = \chLatticeT - l$ has
+$h_x \leq \chLatticeT$: all dots there are open. In the ring between the two circles, the
+answer depends on $h_x - 2\hat h$, which has no pattern: $\chLatticeRingFilled$ of its
+$\chLatticeRingCount$ dots are filled. The ring has area $\pi(u - l)$ for every $T$, while the
+disc inside it has area about $\pi T$. So, for large $T$, the count is about the area of the
+disc divided by the area $\sqrt{R_E}$ of a fundamental parallelogram.}
+\label{canonical-height:fig:count}
+\end{figure}
+
+\begin{problem}[Counting rational points of bounded height]
+\label{canonical-height:prob:count}
+Let $E$, $P_1$, $P_3$, $G$, $l$ and $u$ be as in \cref{canonical-height:prob:generate}. Continuing its
+listing, \Magma\ counts the rational points with $h_x \leq T$:
+\begin{magma}
+Gi := G^-1;
+count := function(T)
+  N := [Floor(Sqrt((T - l)*Gi[i, i])) : i in [1, 2]];
+  return #[0 : a in [-N[1]..N[1]], b in [-N[2]..N[2]] | NaiveHeight(a*P1 + b*P3) le T];
+end function;
+[<T, count(T)> : T in [10, 20, 50, 100]];
+// [ <10, 53>, <20, 103>, <50, 263>, <100, 529> ]
+\end{magma}
+The function \mg{count} runs over a box that contains every $(a, b) \in \Z^2$ with
+$2\hat h(aP_1 + bP_3) \leq T - l$. The items below prove \cref{canonical-height:thm:neron} for $E$, with
+$c = \pi/\sqrt{R_E}$.
+\begin{enumerate}
+  \item\label{canonical-height:it:cnt-lattice} Show that $P \mapsto v_P$ is a bijection $E(\Q) \to \Lambda$,
+        that $R_E = \det G$, and that $\covol(\Lambda) = \sqrt{R_E}$.
+\begin{solution}
+% Write your solution here.
+\end{solution}
+  \item\label{canonical-height:it:cnt-sandwich} Show that
+        \[
+        \{P : 2\hat h(P) \leq T - u\} \subseteq \{P : h_x(P) \leq T\}
+        \subseteq \{P : 2\hat h(P) \leq T - l\},
+        \]
+        and check it against \cref{canonical-height:fig:count}.
+\begin{solution}
+% Write your solution here.
+\end{solution}
+  \item\label{canonical-height:it:cnt-constant} Deduce that the number of rational points $P$ with
+        $h_x(P) \leq T$ is $cT + O(\sqrt T)$ with $c = \pi/\sqrt{R_E}$, and compare $cT$ with
+        the output.
+\begin{solution}
+% Write your solution here.
+\end{solution}
+  \item\label{canonical-height:it:cnt-rank} Suppose that you did not know the rank of $E$. How would the counts
+        reveal it?
+\begin{solution}
+% Write your solution here.
+\end{solution}
+\end{enumerate}
+\end{problem}
+
 
 % \bib, bibdiv, biblist are defined by the amsrefs package.
 \begin{bibdiv}
@@ -6036,6 +6709,16 @@ is used.
          url={https://doi.org/10.1007/978-1-4612-1210-2},
         note={An introduction},
       review={\MR{1745599}},
+}
+
+\bib{Kubert76}{article}{
+      author={Kubert, D.~S.},
+       title={Universal bounds on the torsion of elliptic curves},
+        date={1976},
+     journal={Proc. London Math. Soc. (3)},
+      volume={33},
+      number={2},
+       pages={193\ndash 237},
 }
 
 \bib{lmfdb}{misc}{
