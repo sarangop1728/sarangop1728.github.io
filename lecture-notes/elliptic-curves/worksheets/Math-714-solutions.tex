@@ -829,7 +829,7 @@ breaklinks=true}
 \AddToShipoutPictureFG*{%
   \put(\LenToUnit{1.1cm},\LenToUnit{.5\paperheight}){%
     \rotatebox{90}{\makebox[0pt][c]{\small\sffamily\color{black!50}%
-      DRAFT \textemdash{} last edited October 29, 2026}}}}
+      DRAFT \textemdash{} last edited November 5, 2026}}}}
 
 %% ---- shared machinery of the worksheets ----
 
@@ -867,6 +867,7 @@ breaklinks=true}
 \newtheorem{wscorollary}[wsstatement]{Corollary}
 \newtheorem{wsproposition}[wsstatement]{Proposition}
 \newtheorem{wslemma}[wsstatement]{Lemma}
+\newtheorem{wsconjecture}[wsstatement]{Conjecture}
 \theoremstyle{definition}
 \newtheorem{wsdefinition}[wsstatement]{Definition}
 \crefname{wstheorem}{Theorem}{Theorems}
@@ -877,6 +878,8 @@ breaklinks=true}
 \Crefname{wsproposition}{Proposition}{Propositions}
 \crefname{wslemma}{Lemma}{Lemmas}
 \Crefname{wslemma}{Lemma}{Lemmas}
+\crefname{wsconjecture}{Conjecture}{Conjectures}
+\Crefname{wsconjecture}{Conjecture}{Conjectures}
 \crefname{wsdefinition}{Definition}{Definitions}
 \Crefname{wsdefinition}{Definition}{Definitions}
 
@@ -886,7 +889,7 @@ breaklinks=true}
   \AtBeginEnvironment{#1}{\crefalias{\wsstatementcounter}{#1}}}
 \wsaliascounter{wsexample}\wsaliascounter{wswarning}\wsaliascounter{wsremark}
 \wsaliascounter{wstheorem}\wsaliascounter{wscorollary}\wsaliascounter{wsproposition}
-\wsaliascounter{wslemma}\wsaliascounter{wsdefinition}
+\wsaliascounter{wslemma}\wsaliascounter{wsconjecture}\wsaliascounter{wsdefinition}
 
 \newenvironment{problem}[1][]%
   {\needspace{6\baselineskip}%
@@ -9579,6 +9582,394 @@ denominator are at most $e^{100} \approx 10^{43}$.
 \end{enumerate}
 \end{problem}
 
+\bigskip
+
+\part[Szpiro and ABC]{Szpiro's conjecture and the ABC conjecture}
+\label{szpiro-abc:part}
+\noindent
+This worksheet is a short version of \cite{Silverman09}*{\S VIII.11}. The minimal
+discriminant $\Delta_E$ of an elliptic curve $E$ over $\Q$ and its conductor $N_E$ are
+divisible by the same primes, the primes of bad reduction. In $N_E$ they appear to small
+powers, while in $\Delta_E$ a prime may appear to a large power. Szpiro's conjecture bounds
+$\lvert \Delta_E \rvert$ by a constant times $N_E^{6 + \varepsilon}$. It would already imply
+Fermat's last theorem for all sufficiently large exponents
+\cite{Silverman09}*{Proposition~VIII.11.2}. It is closely related to the ABC conjecture,
+which bounds the height of a rational point $[A : B : C]$ of the line $X + Y = Z$ by a
+power of the radical of $ABC$. \Cref{szpiro-abc:prob:minimal} computes, with the help of \Magma, the
+minimal discriminant and the reduction types of the curve $y^2 = x(x + A)(x - B)$ attached
+to $A + B = C$. \Cref{szpiro-abc:prob:szpiro-abc,szpiro-abc:prob:abc-szpiro} use it to show that each conjecture
+implies a form of the other.
+
+\subsection*{Standing notation}
+\begin{itemize}
+  \item An elliptic curve $E$ over $\Q$. A Weierstrass equation for $E$ has invariants
+        $c_4$, $c_6$ and discriminant $\Delta$ \cite{Silverman09}*{\S III.1}, which lie in
+        $\Z$ when its coefficients do.
+  \item A prime $p$, with valuation $v_p$ on $\Q$, and the ring $\Z_{(p)}$ of rational
+        numbers whose denominators are prime to $p$.
+\end{itemize}
+
+\section{The minimal discriminant of a Frey curve}
+\label{szpiro-abc:sec:minimal}
+
+\Cref{szpiro-abc:prob:minimal} proves \cite{Silverman09}*{Lemma~VIII.11.3}. Silverman bounds the
+scaling factor $u$ of a change of variables with two identities that write $288A^2$ and
+$288B^2$ in terms of $c_4$ and $c_6$. Here \Magma\ finds identities in terms of $c_4$ and
+$\Delta$ instead, and they give both parts of the lemma at once.
+
+\begin{wsdefinition}[{Minimal equations \cite{Silverman09}*{\S\S VII.1, VII.5}}]
+\label{szpiro-abc:def:minimal}
+A Weierstrass equation for $E$ is \defi{minimal at $p$} if its coefficients lie in
+$\Z_{(p)}$ and $v_p(\Delta)$ is as small as possible among such equations. It is
+\defi{global minimal} if its coefficients lie in $\Z$ and it is minimal at every prime $p$.
+The curve $E$ has \defi{good}, \defi{multiplicative} or \defi{additive reduction} at $p$
+if the reduction modulo $p$ of an equation minimal at $p$ is nonsingular, has a node, or
+has a cusp.
+\end{wsdefinition}
+
+\begin{wsproposition}[{Reduction types \cite{Silverman09}*{Remark~VII.1.1 and Proposition~VII.5.1}}]
+\label{szpiro-abc:prop:types}
+Consider a Weierstrass equation for $E$ with coefficients in $\Z_{(p)}$.
+\begin{enumerate}
+  \item\label{szpiro-abc:it:types-minimal} If $v_p(\Delta) < 12$ or $v_p(c_4) < 4$, then the
+        equation is minimal at $p$.
+  \item\label{szpiro-abc:it:types-type} Suppose that the equation is minimal at $p$. Then $E$ has
+        good reduction at $p$ if $v_p(\Delta) = 0$, multiplicative reduction if
+        $v_p(\Delta) > 0$ and $v_p(c_4) = 0$, and additive reduction if $v_p(\Delta) > 0$
+        and $v_p(c_4) > 0$.
+\end{enumerate}
+\end{wsproposition}
+
+\begin{wsdefinition}[{Minimal discriminant \cite{Silverman09}*{\S VIII.11}}]
+\label{szpiro-abc:def:min-disc}
+The curve $E$ has a global minimal Weierstrass equation
+\cite{Silverman09}*{Corollary~VIII.8.3}. Its discriminant is the \defi{minimal
+discriminant} $\Delta_E$ of $E$. It does not depend on the equation, since two global
+minimal equations are related by a change of variables with $u = \pm 1$
+\cite{Silverman09}*{Proposition~VII.1.3(b)}.
+\end{wsdefinition}
+
+\begin{wsproposition}[{Changes of variables \cite{Silverman09}*{Proposition~III.3.1(b) and Table~3.1}}]
+\label{szpiro-abc:prop:change}
+Any two Weierstrass equations for an elliptic curve over $\Q$ are related by a change of
+variables $x = u^2x' + r$, $y = u^3y' + su^2x' + t$ with $u \in \Q^\times$ and
+$r, s, t \in \Q$. If the first has discriminant $\Delta$ and invariant $c_4$, then the
+second has discriminant $u^{-12}\Delta$ and invariant $u^{-4}c_4$.
+\end{wsproposition}
+
+In this section, $A, B, C$ are nonzero integers with $A + B = C$ and $\gcd(A, B, C) = 1$,
+and $E$ is the elliptic curve
+\begin{equation}
+\label{szpiro-abc:eq:frey}
+E\colon y^2 = x(x + A)(x - B).
+\end{equation}
+The invariant $c_4$ and the discriminant $\Delta$ are those of this equation.
+
+\begin{problem}[The minimal discriminant of a Frey curve]
+\label{szpiro-abc:prob:minimal}
+The following code works in the polynomial ring
+$\Z[A, B]$. It checks that $c_4 = 16F$ and $\Delta = 16G^2$ for the polynomials $F$ and $G$
+below, and writes $A^3$ and $B^3$ as combinations of $F$ and $G$ with coefficients in
+$\Z[A, B]$.
+\begin{magma}
+P<A, B> := PolynomialRing(Integers(), 2);
+// y^2 = x(x + A)(x - B), over the field of fractions of P
+E := EllipticCurve([FieldOfFractions(P) | 0, A - B, 0, -A*B, 0]);
+c4 := P!cInvariants(E)[1];
+Delta := P!Discriminant(E);
+F := A^2 + A*B + B^2;
+G := A*B*(A + B);
+c4 eq 16*F, Delta eq 16*G^2;     // true true
+I := IdealWithFixedBasis([F, G]);
+Coordinates(I, A^3);             // [ A, -1 ]
+Coordinates(I, B^3);             // [ B, -1 ]
+\end{magma}
+\begin{enumerate}
+  \item\label{szpiro-abc:it:minimal-gcd} Show that $A$, $B$, $C$ are pairwise coprime, and that
+        $\gcd(c_4, \Delta) = 16$.\hint{a prime dividing
+        $F(A, B)$ and $G(A, B)$ divides $A^3$ and $B^3$.}
+\begin{solution}
+\ans{Here $c_4 = 16F$ and $\Delta = 16(ABC)^2$, and $F$ is prime to $ABC$.}
+A prime dividing two of $A$, $B$, $C$ divides the third, as $C = A + B$. So, since
+$\gcd(A, B, C) = 1$, they are pairwise coprime. By the output, $c_4 = 16F$ and $\Delta = 16G^2$, where $G = AB(A + B) = ABC$, and
+\[
+A^3 = AF - G, \qquad B^3 = BF - G
+\]
+in $\Z[A, B]$, hence for our integers $A$ and $B$. A prime $p$ dividing $F$ and $G$
+divides $A^3$ and $B^3$, so it divides $A$ and $B$. As $A$ and $B$ are coprime, there is
+no such prime. So $F$ is prime to $G$, hence to $G^2$, and
+\[
+\gcd(c_4, \Delta) = \gcd(16F, 16G^2) = 16\gcd(F, G^2) = 16.
+\]
+\end{solution}
+  \item\label{szpiro-abc:it:minimal-disc} Show that the minimal discriminant of $E$ satisfies
+        $\lvert \Delta_E \rvert = 2^4(ABC)^2$ or $\lvert \Delta_E \rvert = 2^{-8}(ABC)^2$.
+        In particular, $\lvert \Delta_E \rvert \geq 2^{-8}(ABC)^2$.\hint{let a global
+        minimal equation come from \eqref{szpiro-abc:eq:frey} by a change of variables with scaling
+        factor $u$, as in \cref{szpiro-abc:prop:change}. Show that $u \in \Z$ and that $u^4$ divides
+        $\gcd(c_4, \Delta)$.}
+\begin{solution}
+  \ans{The scaling factor is $u = \pm 1$ or $u = \pm 2$.} By \cref{szpiro-abc:prop:change}, a
+  global minimal equation for $E$ comes from \eqref{szpiro-abc:eq:frey} by a change of
+  variables with some $u \in \Q^\times$, and it has discriminant
+  $\Delta_E = u^{-12}\Delta$ and invariant $u^{-4}c_4$. As \eqref{szpiro-abc:eq:frey} has
+  coefficients in $\Z$ and the global minimal equation is minimal at every prime $p$,
+  $v_p(\Delta_E) \leq v_p(\Delta)$, that is, $v_p(u) \geq 0$. So $u \in \Z$. The global
+  minimal equation has coefficients in $\Z$, hence so do $u^{-4}c_4$ and
+  $u^{-12}\Delta$. So $u^4$ divides $c_4$ and $\Delta$. By \ref{szpiro-abc:it:minimal-gcd}, $u^4$ divides
+  $16$, so $u = \pm 1$ or $u = \pm 2$. Hence
+  $\lvert \Delta_E \rvert = \lvert \Delta \rvert/u^{12}$ is
+  $16(ABC)^2 = 2^4(ABC)^2$ or $2^{-12} \cdot 16(ABC)^2 = 2^{-8}(ABC)^2$.
+\end{solution}
+  \item\label{szpiro-abc:it:minimal-mult} Show that $E$ has multiplicative reduction at every odd
+        prime $p$ dividing $ABC$.
+\begin{solution}
+\ans{At an odd prime $p$ dividing $ABC$, $p$ divides $\Delta$ but not $c_4$.}
+Let $p$ be an odd prime dividing $ABC$. Then $p$ divides $\Delta = 16(ABC)^2$. By
+\ref{szpiro-abc:it:minimal-gcd}, $\gcd(c_4, \Delta) = 16$ is a power of $2$, so $p$ does not divide
+$c_4$. So $v_p(c_4) = 0 < 4$, and \eqref{szpiro-abc:eq:frey} is minimal at $p$ by
+\cref{szpiro-abc:prop:types}\ref{szpiro-abc:it:types-minimal}. As $v_p(\Delta) > 0$ and $v_p(c_4) = 0$, the curve
+$E$ has multiplicative reduction at $p$ by \cref{szpiro-abc:prop:types}\ref{szpiro-abc:it:types-type}.
+\end{solution}
+\end{enumerate}
+\end{problem}
+
+
+\section{From Szpiro to ABC}
+\label{szpiro-abc:sec:szpiro-abc}
+
+\Cref{szpiro-abc:prob:szpiro-abc} is the proof of \cite{Silverman09}*{Proposition~VIII.11.5(a)}. It
+applies \cref{szpiro-abc:conj:szpiro} to the curve \eqref{szpiro-abc:eq:frey} of \cref{szpiro-abc:prob:minimal}, whose
+minimal discriminant is large and whose conductor is small. Szpiro made his conjecture in
+1983, and Masser and Oesterl\'e proposed the ABC conjecture in 1985. Silverman's displayed
+definition of the conductor takes $f_p(E) = 2$ at every prime of additive reduction, which
+he notes is not quite correct at $2$ and $3$. At these two primes the correct exponent has a
+technical definition, sketched in \cref{szpiro-abc:rem:f2-f3}. The two conductors differ by a factor
+dividing $2^6 \cdot 3^3$, which the constants in the conjectures absorb.
+
+\begin{wsdefinition}[{Conductor \cite{Silverman09}*{\S VIII.11}}]
+\label{szpiro-abc:def:conductor}
+The \defi{conductor} of $E$ is
+\[
+N_E \coloneqq \prod_p p^{f_p(E)},
+\]
+where the exponent $f_p(E)$ is $0$ if $E$ has good reduction at $p$, $1$ if it has
+multiplicative reduction at $p$, and $2$ if it has additive reduction at $p$ and
+$p \geq 5$. If $E$ has additive reduction at $p = 2$ or $p = 3$, then $f_p(E)$ is defined
+in \cite{Silverman94}*{\S IV.10}, and $2 \leq f_2(E) \leq 8$ and $2 \leq f_3(E) \leq 5$.
+\end{wsdefinition}
+
+\begin{wsremark}[{The exponents $f_2$ and $f_3$ \cite{Silverman09}*{\S C.16}}]
+\label{szpiro-abc:rem:f2-f3}
+Let $p$ be a prime at which $E$ has additive reduction. The inertia group at $p$ acts on
+the Tate modules of $E$, and an integer $\delta_p(E) \geq 0$ measures the wild ramification
+in this action. It vanishes for $p \geq 5$, and $f_p(E) = 2 + \delta_p(E)$.
+
+The exponent can also be computed directly. For any prime $p$, let $m_p$ be the number of
+irreducible components, ignoring multiplicities, of the special fiber of the minimal
+complete Néron model of $E$ at $p$. Then the Ogg--Saito formula
+\cite{Silverman09}*{Proposition~C.16.2} gives
+\[
+f_p(E) = v_p(\Delta_E) + 1 - m_p.
+\]
+\end{wsremark}
+
+\begin{wsdefinition}[Height and radical]
+\label{szpiro-abc:def:height}
+Every rational point $P$ of the line $X + Y = Z$ in $\PP^2$ has coordinates
+$P = [A : B : C]$ with $A, B, C \in \Z$ and $\gcd(A, B, C) = 1$, unique up to sign. Then
+$A + B = C$. The \defi{height} of $P$ is
+\[
+H(P) \coloneqq \max\bigl(\lvert A \rvert, \lvert B \rvert, \lvert C \rvert\bigr).
+\]
+The \defi{radical} of a nonzero integer $n$ is
+\[R(n) \coloneqq \prod_{p \mid n} p.\]
+\end{wsdefinition}
+
+\begin{wsconjecture}[{Szpiro \cite{Silverman09}*{Conjecture~VIII.11.1}}]
+\label{szpiro-abc:conj:szpiro}
+For every $\varepsilon > 0$ there is a constant $\kappa_\varepsilon$ such that every
+elliptic curve $E$ over $\Q$ satisfies
+\[
+\lvert \Delta_E \rvert \leq \kappa_\varepsilon N_E^{6 + \varepsilon}.
+\]
+\end{wsconjecture}
+
+\begin{wsconjecture}[{ABC \cite{Silverman09}*{Conjecture~VIII.11.4}}]
+\label{szpiro-abc:conj:abc}
+For every $\varepsilon > 0$ there is a constant $\lambda_\varepsilon$ with the following
+property. Let $P = [A : B : C]$ be a rational point of the line $X + Y = Z$ in $\PP^2$,
+with $A, B, C \in \Z$ coprime and $ABC \neq 0$. Then
+\[
+H(P) \leq \lambda_\varepsilon R(ABC)^{1 + \varepsilon}.
+\]
+\end{wsconjecture}
+
+\begin{problem}[Szpiro implies ABC with exponent $3/2$]
+\label{szpiro-abc:prob:szpiro-abc}
+Assume \cref{szpiro-abc:conj:szpiro}. Let $P = [A : B : C]$ be a rational point of the line
+$X + Y = Z$ in $\PP^2$, with $A, B, C \in \Z$ coprime and $ABC \neq 0$. You will show that
+for every $\varepsilon > 0$ there is a constant $\lambda_\varepsilon$, independent of $P$,
+with
+\[
+H(P) \leq \lambda_\varepsilon R(ABC)^{3/2 + \varepsilon}.
+\]
+\begin{enumerate}
+  \item\label{szpiro-abc:it:sa-order} Show that the absolute values of $A$, $B$, $C$, suitably
+        ordered, are the coordinates of a rational point $P'$ of the same line with
+        $H(P') = H(P)$, and with the same radical of the product of the coordinates. So you may assume that $0 < A \leq B < C$. Show that then
+        $ABC \geq H(P)^2/2$.\hint{two of $A$, $B$, $-C$ have the same sign.}
+\begin{solution}
+\ans{The largest absolute value is the sum of the other two.}
+The three nonzero integers $A$, $B$, $-C$
+sum to $0$. So two of them, say $x$ and $y$, have the same sign, and the third, $z$, has
+the opposite sign and $\lvert z \rvert = \lvert x \rvert + \lvert y \rvert$. Order $x$ and
+$y$ so that $\lvert x \rvert \leq \lvert y \rvert$. Then
+$P' \coloneqq [\lvert x \rvert : \lvert y \rvert : \lvert z \rvert]$ is a rational point of
+$X + Y = Z$ with coprime coordinates, $H(P') = \lvert z \rvert = H(P)$, and
+$R(\lvert xyz \rvert) = R(ABC)$. Replacing $P$ by $P'$, we may assume that
+$0 < A \leq B < C$. Then $H(P) = C$ and $2B \geq A + B = C$, so
+\[
+ABC \geq 1 \cdot \frac{C}{2} \cdot C = \frac{H(P)^2}{2}.
+\]
+\end{solution}
+  \item\label{szpiro-abc:it:sa-conductor} Let $E$ be the curve \eqref{szpiro-abc:eq:frey}. Show that
+        $N_E \leq 2^7 R(ABC)$.\hint{one of $A$, $B$, $C$ is even.}
+\begin{solution}
+\ans{Odd primes have $f_p(E) \leq 1$, $f_2(E) \leq 8$, and $2 \mid R(ABC)$.}
+Let $p$ be an odd prime. If $p \mid ABC$, then $f_p(E) = 1$ by
+\cref{szpiro-abc:prob:minimal}\ref{szpiro-abc:it:minimal-mult}. If $p \nmid ABC$, then $v_p(\Delta) = 0$ for
+$\Delta = 16(ABC)^2$. So \eqref{szpiro-abc:eq:frey} is minimal at $p$ and $E$ has good reduction at
+$p$ (\cref{szpiro-abc:prop:types}), and $f_p(E) = 0$. Finally $f_2(E) \leq 8$ by
+\cref{szpiro-abc:def:conductor}. If $A$ and $B$ are both odd, then $C = A + B$ is even, so $2$ divides
+$ABC$ and $R(ABC)$. So
+\[
+  N_E \leq 2^8 \prod_{p \mid ABC,\ p \neq 2} p = 2^8 \cdot \frac{R(ABC)}{2} = 2^7 R(ABC).
+\]
+\end{solution}
+\item\label{szpiro-abc:it:sa-conclude} Let $\varepsilon > 0$. Use \cref{szpiro-abc:conj:szpiro} to show that
+  $H(P)^4 \leq \mu_{\varepsilon} R(ABC)^{6 + \varepsilon}$ for a constant $\mu_\varepsilon$ that depends only on
+  $\varepsilon$, and conclude.
+\begin{solution}
+  \ans{Here $\mu_\varepsilon = 2^{52 + 7\varepsilon}\kappa_\varepsilon$.} By \ref{szpiro-abc:it:sa-order},
+  \cref{szpiro-abc:prob:minimal}\ref{szpiro-abc:it:minimal-disc}, \cref{szpiro-abc:conj:szpiro} and
+  \ref{szpiro-abc:it:sa-conductor},
+\[
+\frac{H(P)^4}{4} \leq (ABC)^2 \leq 2^8\lvert \Delta_E \rvert
+\leq 2^8\kappa_\varepsilon N_E^{6 + \varepsilon}
+\leq 2^8\kappa_\varepsilon \cdot 2^{7(6 + \varepsilon)} R(ABC)^{6 + \varepsilon}.
+\]
+So $H(P)^4 \leq 2^{52 + 7\varepsilon}\kappa_\varepsilon R(ABC)^{6 + \varepsilon}$. Taking
+fourth roots and replacing $\varepsilon$ by $4\varepsilon$ gives the statement of the
+problem, with $\lambda_\varepsilon = \bigl(2^{52 + 28\varepsilon}\kappa_{4\varepsilon}\bigr)^{1/4}$.
+\begin{solremark}
+The same argument, applied to the curve $y^2 = x^3 - 2(A - B)x^2 + C^2x$, which is
+$2$-isogenous to $E$ and has discriminant $-2^8ABC^4$, lowers the exponent $3/2$ to $6/5$
+\cite{Silverman09}*{Exercise~8.20}.
+\end{solremark}
+\end{solution}
+\end{enumerate}
+\end{problem}
+
+
+\section{From ABC to Szpiro}
+\label{szpiro-abc:sec:abc-szpiro}
+
+\Cref{szpiro-abc:prob:abc-szpiro} follows the proof of
+\cite{Silverman09}*{Proposition~VIII.11.5(b)}, which assumes that $\gcd(c_4, c_6) = 1$. The
+general case is \cite{Silverman09}*{Exercise~8.21}. The proof applies \cref{szpiro-abc:conj:abc} to
+the rational point $[c_4^3 : -c_6^2 : 1728\Delta]$ of the line $X + Y = Z$. The book has $\Delta$ in place of $1728\Delta$, a misprint
+corrected in its errata.
+
+\begin{wsproposition}[{Weierstrass formulas \cite{Silverman09}*{\S III.1}}]
+\label{szpiro-abc:prop:formulas}
+The invariants and the discriminant of a Weierstrass equation satisfy
+$1728\Delta = c_4^3 - c_6^2$.
+\end{wsproposition}
+
+\begin{problem}[ABC implies Szpiro]
+\label{szpiro-abc:prob:abc-szpiro}
+Assume \cref{szpiro-abc:conj:abc}. Let $E$ be given by a global minimal Weierstrass equation, with
+invariants $c_4$, $c_6$ and discriminant $\Delta = \Delta_E$, and suppose that
+$\gcd(c_4, c_6) = 1$.
+You will show that for every $\delta > 0$ there is a constant $\kappa_\delta$,
+independent of $E$, with
+\[
+\lvert \Delta_E \rvert \leq \kappa_\delta N_E^{6 + \delta}.
+\]
+\begin{enumerate}
+  \item\label{szpiro-abc:it:as-point} Show that $c_4c_6 \neq 0$, and that
+        $P \coloneqq [c_4^3 : -c_6^2 : 1728\Delta]$ is a rational point of the line
+        $X + Y = Z$ in $\PP^2$ with coprime integer coordinates. Deduce that
+        \[
+        H(P) = \max\bigl(\lvert c_4 \rvert^3, \lvert c_6 \rvert^2, 1728\lvert \Delta \rvert\bigr).
+        \]
+\begin{solution}
+\ans{If $c_4 = 0$, then $c_6 = \pm 1$ and $1728\Delta = -1$.}
+By \cref{szpiro-abc:prop:formulas}, $c_4^3 + (-c_6^2) = 1728\Delta$, so $P$ lies on the line. If
+$c_4 = 0$ or $c_6 = 0$, then the other one has absolute value $\gcd(c_4, c_6) = 1$, and
+$1728\Delta = \pm 1$, which is impossible in $\Z$. So $c_4c_6 \neq 0$, and also
+$\Delta \neq 0$. A prime dividing the three coordinates divides the coprime integers $c_4$
+and $c_6$. So the coordinates are coprime, and \cref{szpiro-abc:def:height} gives $H(P)$.
+\end{solution}
+  \item\label{szpiro-abc:it:as-radical} Show that
+        $R(c_4^3c_6^2 \cdot 1728\Delta) \leq 6\lvert c_4c_6 \rvert N_E$.\hint{every
+        prime dividing $\Delta_E$ divides $N_E$.}
+\begin{solution}
+\ans{Every prime dividing $\Delta_E$ is a prime of bad reduction.}
+The primes dividing $c_4^3c_6^2 \cdot 1728\Delta$ divide $c_4$, $c_6$, $6$ or $\Delta$, so
+\[
+R(c_4^3c_6^2 \cdot 1728\Delta) \leq R(c_4)R(c_6) \cdot 6 \cdot R(\Delta)
+\leq 6\lvert c_4c_6 \rvert R(\Delta).
+\]
+As the equation is minimal, every prime $p$ dividing $\Delta = \Delta_E$ is a prime of bad
+reduction by \cref{szpiro-abc:prop:types}\ref{szpiro-abc:it:types-type}. So $f_p(E) \geq 1$, and
+$R(\Delta) \leq N_E$.
+\end{solution}
+  \item\label{szpiro-abc:it:as-conclude} Let $0 < \varepsilon < 1/5$. Use \cref{szpiro-abc:conj:abc} and the
+        inequalities $\lvert c_4 \rvert \leq H(P)^{1/3}$ and
+        $\lvert c_6 \rvert \leq H(P)^{1/2}$ to show that
+        \[
+        H(P)^{(1 - 5\varepsilon)/6} \leq 6^{1 + \varepsilon}\lambda_\varepsilon N_E^{1 + \varepsilon}.
+        \]
+        Deduce the statement of the problem.
+\begin{solution}
+\ans{Take $\varepsilon = \delta/(36 + 5\delta)$.}
+By \cref{szpiro-abc:conj:abc}, \ref{szpiro-abc:it:as-point} and \ref{szpiro-abc:it:as-radical},
+\[
+H(P) \leq \lambda_\varepsilon R(c_4^3c_6^2 \cdot 1728\Delta)^{1 + \varepsilon}
+\leq \lambda_\varepsilon\bigl(6\lvert c_4c_6 \rvert N_E\bigr)^{1 + \varepsilon}
+\leq \lambda_\varepsilon\bigl(6H(P)^{5/6}N_E\bigr)^{1 + \varepsilon}.
+\]
+Dividing by $H(P)^{5(1 + \varepsilon)/6}$ gives the inequality of the statement. As $1 - 5\varepsilon > 0$, raising it to the
+power $6/(1 - 5\varepsilon)$ gives
+\[
+\lvert \Delta_E \rvert < H(P)
+\leq \bigl(6^{1 + \varepsilon}\lambda_\varepsilon\bigr)^{6/(1 - 5\varepsilon)}
+N_E^{6(1 + \varepsilon)/(1 - 5\varepsilon)}.
+\]
+For $\varepsilon = \delta/(36 + 5\delta)$, which lies between $0$ and $1/5$, the exponent
+is exactly $6 + \delta$, and the constant
+$\kappa_\delta = \bigl(6^{1 + \varepsilon}\lambda_\varepsilon\bigr)^{6/(1 - 5\varepsilon)}$
+depends only on $\delta$.
+\begin{solremark}
+Silverman instead writes the inequality of \cref{szpiro-abc:conj:abc} once for each coordinate of $P$:
+\[
+\lvert c_4 \rvert^{2 - \varepsilon} \leq \mu_\varepsilon\lvert c_6N_E \rvert^{1 + \varepsilon}, \qquad
+\lvert c_6 \rvert^{1 - \varepsilon} \leq \mu_\varepsilon\lvert c_4N_E \rvert^{1 + \varepsilon}, \qquad
+\lvert \Delta \rvert \leq \mu_\varepsilon\lvert c_4c_6N_E \rvert^{1 + \varepsilon},
+\]
+with $\mu_\varepsilon = 6^{1 + \varepsilon}\lambda_\varepsilon$. He raises them to the powers
+$2 + 2\varepsilon$, $3 + 3\varepsilon$ and $1 - 5\varepsilon$, and multiplies them. The
+powers of $\lvert c_4 \rvert$ and $\lvert c_6 \rvert$ cancel, and what is left is
+$\lvert \Delta \rvert^{1 - 5\varepsilon} \leq \mu_\varepsilon^6N_E^{6 + 6\varepsilon}$, the bound above.
+Without $\gcd(c_4, c_6) = 1$, one divides the coordinates of $P$ by $\gcd(c_4^3, c_6^2)$,
+which minimality bounds \cite{Silverman09}*{Exercise~8.21}.
+\end{solremark}
+\end{solution}
+\end{enumerate}
+\end{problem}
+
 
 % \bib, bibdiv, biblist are defined by the amsrefs package.
 \begin{bibdiv}
@@ -9739,6 +10130,18 @@ denominator are at most $e^{100} \approx 10^{43}$.
         ISBN={978-0-387-09493-9},
          url={https://doi.org/10.1007/978-0-387-09494-6},
       review={\MR{2514094}},
+}
+
+\bib{Silverman94}{book}{
+      author={Silverman, Joseph~H.},
+       title={Advanced topics in the arithmetic of elliptic curves},
+      series={Graduate Texts in Mathematics},
+   publisher={Springer-Verlag, New York},
+        date={1994},
+      volume={151},
+        ISBN={0-387-94328-5},
+         url={https://doi.org/10.1007/978-1-4612-0851-8},
+      review={\MR{1312368}},
 }
 
 \bib{Voight21}{book}{
