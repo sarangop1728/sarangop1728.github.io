@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2026-11-05 Thu 08:53 -->
+<!-- 2026-11-09 Mon 09:35 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Galois cohomology</title>
@@ -42,8 +42,8 @@
 <li class="ec-toc-level-1"><a href="#s7.10"><span class="ec-toc-num">7.10</span><span class="ec-toc-text">Étale cohomology and the geometric point of view<span class="ec-toc-status"><span class="ec-status-label ec-status-draft">Draft</span></span></span></a></li>
 </ol></li>
 <li class="ec-toc-chapter"><a href="08-mordell-weil.html"><span class="ec-toc-num">8</span><span class="ec-toc-text">The Mordell&ndash;Weil theorem<span class="ec-toc-status"><span class="ec-status-progress">0 of 5 sections finished</span></span></span></a></li>
-<li class="ec-toc-chapter"><a href="09-selmer-sha.html"><span class="ec-toc-num">9</span><span class="ec-toc-text">Twisting, Selmer, and Tate&ndash;Shafarevich<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
-<li class="ec-toc-chapter"><a href="10-integral-points.html"><span class="ec-toc-num">10</span><span class="ec-toc-text">Integral points<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
+<li class="ec-toc-chapter"><a href="09-integral-points.html"><span class="ec-toc-num">9</span><span class="ec-toc-text">Integral points<span class="ec-toc-status"><span class="ec-status-progress">0 of 1 section finished</span></span></span></a></li>
+<li class="ec-toc-chapter"><a href="10-selmer-sha.html"><span class="ec-toc-num">10</span><span class="ec-toc-text">Twisting, Selmer, and Tate&ndash;Shafarevich<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
 <li class="ec-toc-chapter"><a href="11-complex-multiplication.html"><span class="ec-toc-num">11</span><span class="ec-toc-text">Complex multiplication<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
 <li class="ec-toc-chapter"><a href="12-tate-curve.html"><span class="ec-toc-num">12</span><span class="ec-toc-text">The Tate curve<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
 <li class="ec-toc-chapter"><a href="13-l-functions-bsd.html"><span class="ec-toc-num">13</span><span class="ec-toc-text">The \(L\)-function and BSD<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
@@ -57,7 +57,7 @@
 </div>
 <div id="content" class="content">
 <h1 class="title"><span class="ec-chapter-label">Chapter 7</span>Galois cohomology</h1>
-<div class="sources" id="orgb97017e">
+<div class="sources" id="org45eeb31">
 <p>
 This chapter follows [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Appendix B] and [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Section VIII.2],
 with the left actions of [<a class="ec-cite" href="#bib-Poonen02">Poo02</a>, Sections 2&#x2013;6].  For the point of view on twists,
@@ -1064,7 +1064,7 @@ disappear: it is \(H^1\) of the group scheme \(\mu_p\) for the fppf topology
 <p>
 We are in Situation <a href="#sit-gc-standing">7.0.1</a>.  The multiplication map \([m]\) on \(E\) plays the
 role of \(x \mapsto x^m\) on \(\Gm\).  The arithmetic use of the resulting sequence is the
-subject of Chapters <a href="08-mordell-weil.html">8</a> and <a href="09-selmer-sha.html">9</a>.
+subject of Chapters <a href="08-mordell-weil.html">8</a> and <a href="10-selmer-sha.html">10</a>.
 </p>
 
 <div class="ec-thm ec-proposition" id="prop-gc-kummer-ec">
@@ -1118,7 +1118,7 @@ from which \eqref{eq:gc-kummer-ec} is extracted, and \(\delta\) is given by
 We call \(\delta\) the <dfn class="ec-cdef" id="gls-kummer-map" data-gls="kummer-map">Kummer map</dfn> of \(E\).  Unlike \(H^1(k, \Gm)\), the group
 \(H^1(k, E)\) is not zero in general, and the image of \(\delta\) is a subgroup of
 \(H^1(k, E[m])\) that is hard to determine.  The group \(H^1(k, E)\) classifies the torsors
-under \(E\) of Section <a href="#sec-gc-etale">7.10</a>, studied in Chapter <a href="09-selmer-sha.html">9</a>.  Over a finite field, however,
+under \(E\) of Section <a href="#sec-gc-etale">7.10</a>, studied in Chapter <a href="10-selmer-sha.html">10</a>.  Over a finite field, however,
 \(H^1(\F_q, E) = 0\) by Lang's theorem [<a class="ec-cite" href="#bib-Poonen2017">Poo17</a>, Theorem 5.12.19], and the two
 families behave alike.
 </p>
@@ -1146,7 +1146,7 @@ Example <a href="04-ec-algebraic.html#eg-ec-2-isogeny">4.3.13</a>.  Then \(E_1[\
 \(\Gal_k\)-modules.  By Corollary <a href="#cor-gc-kummer">7.4.6</a>,
 \(H^1(k, E_1[\varphi]) \cong H^1(k, \mu_2) \cong k^\times/k^{\times 2}\).  So the Kummer map of
 \(\varphi\) is a homomorphism \(E_2(k)/\varphi(E_1(k)) \to k^\times/k^{\times 2}\).  It is
-the Kummer map of \(\Gm\) in disguise.  Its explicit formula is in Chapter <a href="09-selmer-sha.html">9</a>.
+the Kummer map of \(\Gm\) in disguise.  Its explicit formula is in Chapter <a href="10-selmer-sha.html">10</a>.
 </p>
 </div>
 
@@ -1200,7 +1200,7 @@ the Kummer map of \(\Gm\) in disguise.  Its explicit formula is in Chapter <a hr
 <tr>
 <td class="org-left">torsors</td>
 <td class="org-left">all trivial</td>
-<td class="org-left">genus one curves with Jacobian \(E\) (Chapter <a href="09-selmer-sha.html">9</a>)</td>
+<td class="org-left">genus one curves with Jacobian \(E\) (Chapter <a href="10-selmer-sha.html">10</a>)</td>
 </tr>
 </tbody>
 </table>
@@ -1221,7 +1221,7 @@ and <a href="#sec-gc-global">7.8</a> prepare it.
 We are in Situation <a href="#sit-gc-standing">7.0.1</a>.  Varieties that become isomorphic over \(\ksep\) are
 classified by a non-abelian \(H^1\).  This section gives the general principle and its
 simplest examples.  The quartic, sextic and cubic twists of elliptic curves, and the
-torsors under \(E\), are in Chapter <a href="09-selmer-sha.html">9</a>.
+torsors under \(E\), are in Chapter <a href="10-selmer-sha.html">10</a>.
 </p>
 
 <p>
@@ -1357,7 +1357,7 @@ as \(\sigma(d^{3/2}) = d \cdot \sigma(\sqrt d)\).  So \(\varphi^{-1} \circ {}^\s
 \(\delta(d)\).  This explains the computation before Example <a href="04-ec-algebraic.html#eg-ec-quadratic-twist">4.1.9</a>: \(E^d\)
 and \(E^{d'}\) are isomorphic over \(k\) exactly when \(d/d' \in k^{\times 2}\), and every twist of
 \(E\) is one of them.  For \(j(E) = 0\) or \(1728\), and in characteristic \(2\) and \(3\),
-\(\Aut(E_{\ksep})\) is larger, and so is the set of twists (Chapter <a href="09-selmer-sha.html">9</a>).
+\(\Aut(E_{\ksep})\) is larger, and so is the set of twists (Chapter <a href="10-selmer-sha.html">10</a>).
 </p>
 </div>
 
@@ -1718,7 +1718,7 @@ that such failures occur only for \(8 \mid m\) and in a precise special case.
 We are in Situation <a href="#sit-gc-standing">7.0.1</a>.  Silverman does not treat cup products.  We define
 them in the degrees we need, prove the one property we use, and state the results on
 Brauer groups of local and global fields.  Tate local duality and the Cassels&#x2013;Tate pairing,
-which are built from them, are in Chapter <a href="09-selmer-sha.html">9</a>.
+which are built from them, are in Chapter <a href="10-selmer-sha.html">10</a>.
 </p>
 
 <p>
@@ -1880,7 +1880,7 @@ cup product for \(e_m\) itself.  Proposition <a href="#prop-gc-cup">7.9.2</a> th
 
 <p>
 Combined with \(\inv_v\) over a local field, this pairing is Tate local duality, and over a
-global field it underlies the Cassels&#x2013;Tate pairing.  Both are in Chapter <a href="09-selmer-sha.html">9</a>.
+global field it underlies the Cassels&#x2013;Tate pairing.  Both are in Chapter <a href="10-selmer-sha.html">10</a>.
 </p>
 </div>
 </div>
@@ -1956,7 +1956,7 @@ torsor, which is trivial exactly when \(P \in mE(k)\).</li>
 <p>
 Torsors under \(E\) itself are the genus one curves with Jacobian \(E\)
 [<a class="ec-cite" href="#bib-Poonen2017">Poo17</a>, Example 5.12.12], and they form the group \(H^1(k, E)\), the
-Weil&#x2013;Châtelet group of Chapter <a href="09-selmer-sha.html">9</a>.
+Weil&#x2013;Châtelet group of Chapter <a href="10-selmer-sha.html">10</a>.
 </p>
 </div>
 
@@ -2009,9 +2009,9 @@ This is the setting for \(p\)-descent in characteristic \(p\).
 </div>
 </div>
 
-<div id="outline-container-org02a8540" class="outline-2 ec-references">
-<h2 id="org02a8540">References</h2>
-<div class="outline-text-2" id="text-org02a8540">
+<div id="outline-container-orgc075e89" class="outline-2 ec-references">
+<h2 id="orgc075e89">References</h2>
+<div class="outline-text-2" id="text-orgc075e89">
 <dl class="ec-bibliography">
 <dt id="bib-Milne20">[Mil20]</dt>
 <dd>James S. Milne. <i>Elliptic curves</i>. Second. World Scientific Publishing Co. Pte. Ltd., Hackensack, NJ, 2020.</dd>

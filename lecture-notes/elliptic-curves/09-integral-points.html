@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 2026-11-09 Mon 09:35 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Integral points</title>
+<meta name="generator" content="Org Mode" />
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta name="robots" content="noindex, nofollow"/>
+<link rel="stylesheet" type="text/css" href="org-css.css"/>
+<link rel="stylesheet" type="text/css" href="book.css"/>
+<script src="macros.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-chtml-full.js"></script>
+<script defer src="org-code.js"></script>
+<script defer src="book.js"></script>
+</head>
+<body>
+<div id="preamble" class="status">
+<nav class="ec-sidebar" id="ec-sidebar" aria-label="Contents">
+<a class="ec-book-title" href="index.html">The arithmetic geometry of elliptic curves (DRAFT)</a>
+<p class="ec-book-subtitle">Math 714, Fall 2026</p>
+<ol class="ec-toc">
+<li class="ec-toc-chapter"><a href="00-preface.html"><span class="ec-toc-num"></span><span class="ec-toc-text">Preface</span></a></li>
+<li class="ec-toc-chapter"><a href="01-riemann-surfaces.html"><span class="ec-toc-num">1</span><span class="ec-toc-text">Elliptic curves as Riemann surfaces<span class="ec-toc-status"><span class="ec-status-progress">2 of 8 sections finished</span></span></span></a></li>
+<li class="ec-toc-chapter"><a href="02-varieties.html"><span class="ec-toc-num">2</span><span class="ec-toc-text">Algebraic varieties<span class="ec-toc-status"><span class="ec-status-progress">1 of 4 sections finished</span></span></span></a></li>
+<li class="ec-toc-chapter"><a href="03-curves.html"><span class="ec-toc-num">3</span><span class="ec-toc-text">Algebraic curves<span class="ec-toc-status"><span class="ec-status-progress">0 of 7 sections finished</span></span></span></a></li>
+<li class="ec-toc-chapter"><a href="04-ec-algebraic.html"><span class="ec-toc-num">4</span><span class="ec-toc-text">Elliptic curves as algebraic curves<span class="ec-toc-status"><span class="ec-status-progress">1 of 8 sections finished</span></span></span></a></li>
+<li class="ec-toc-chapter"><a href="05-finite-fields.html"><span class="ec-toc-num">5</span><span class="ec-toc-text">Elliptic curves over finite fields<span class="ec-toc-status"><span class="ec-status-progress">0 of 5 sections finished</span></span></span></a></li>
+<li class="ec-toc-chapter"><a href="06-local-fields.html"><span class="ec-toc-num">6</span><span class="ec-toc-text">Elliptic curves over local fields<span class="ec-toc-status"><span class="ec-status-progress">0 of 5 sections finished</span></span></span></a></li>
+<li class="ec-toc-chapter"><a href="07-galois-cohomology.html"><span class="ec-toc-num">7</span><span class="ec-toc-text">Galois cohomology<span class="ec-toc-status"><span class="ec-status-progress">0 of 10 sections finished</span></span></span></a></li>
+<li class="ec-toc-chapter"><a href="08-mordell-weil.html"><span class="ec-toc-num">8</span><span class="ec-toc-text">The Mordell&ndash;Weil theorem<span class="ec-toc-status"><span class="ec-status-progress">0 of 5 sections finished</span></span></span></a></li>
+<li class="ec-toc-chapter is-current"><a href="09-integral-points.html" aria-current="page"><span class="ec-toc-num">9</span><span class="ec-toc-text">Integral points<span class="ec-toc-status"><span class="ec-status-progress">0 of 1 section finished</span></span></span></a>
+<ol class="ec-toc-sections">
+<li class="ec-toc-level-1"><a href="#s9.1"><span class="ec-toc-num">9.1</span><span class="ec-toc-text">Diophantine approximation<span class="ec-toc-status"><span class="ec-status-label ec-status-draft">Draft</span></span></span></a></li>
+<li class="ec-toc-level-2"><a href="#s9.1.1"><span class="ec-toc-num">9.1.1</span><span class="ec-toc-text">The approximation exponent</span></a></li>
+</ol></li>
+<li class="ec-toc-chapter"><a href="10-selmer-sha.html"><span class="ec-toc-num">10</span><span class="ec-toc-text">Twisting, Selmer, and Tate&ndash;Shafarevich<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
+<li class="ec-toc-chapter"><a href="11-complex-multiplication.html"><span class="ec-toc-num">11</span><span class="ec-toc-text">Complex multiplication<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
+<li class="ec-toc-chapter"><a href="12-tate-curve.html"><span class="ec-toc-num">12</span><span class="ec-toc-text">The Tate curve<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
+<li class="ec-toc-chapter"><a href="13-l-functions-bsd.html"><span class="ec-toc-num">13</span><span class="ec-toc-text">The \(L\)-function and BSD<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
+<li class="ec-toc-chapter"><a href="14-sato-tate.html"><span class="ec-toc-num">14</span><span class="ec-toc-text">The Sato&ndash;Tate conjecture<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
+<li class="ec-toc-chapter"><a href="15-modular-curves.html"><span class="ec-toc-num">15</span><span class="ec-toc-text">Introduction to modular curves<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
+</ol>
+<a class="ec-toc-glossary" href="glossary.html">Glossary</a>
+</nav>
+<button class="ec-menu" type="button" aria-controls="ec-sidebar" aria-expanded="false">Contents</button>
+<nav class="ec-pager ec-pager-top" aria-label="Chapters"><a class="ec-pager-prev" rel="prev" href="08-mordell-weil.html"><span class="ec-pager-label">Previous</span><span class="ec-pager-title">8. The Mordell&ndash;Weil theorem</span></a><a class="ec-pager-next" rel="next" href="10-selmer-sha.html"><span class="ec-pager-label">Next</span><span class="ec-pager-title">10. Twisting, Selmer, and Tate&ndash;Shafarevich</span></a></nav>
+</div>
+<div id="content" class="content">
+<h1 class="title"><span class="ec-chapter-label">Chapter 9</span>Integral points</h1>
+<div class="sources" id="org3d41d30">
+<p>
+This chapter follows [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Chapter IX].  For Diophantine approximation see also
+[<a class="ec-cite" href="#bib-Hindry-Silverman00">HS00</a>, Part D].
+</p>
+
+</div>
+
+<div class="ec-thm ec-situation" id="sit-ip-standing">
+<p><span class="ec-thm-head"><span class="ec-thm-name">Situation 9.0.1</span>.</span> </p>
+<ul class="org-ul">
+<li>Let \(k\) be a number field, with set of places \(\Places_k\) and completions \(k_v\).  As in
+Situation <a href="08-mordell-weil.html#sit-mw-proj-heights">8.5.1</a>, for \(v \in \Places_k\) the absolute value
+\(\lvert\ \rvert_v\) on \(k_v\) restricts to the usual absolute value on \(\R\) or to the
+\(p\)-adic absolute value with \(\lvert p \rvert_p = p^{-1}\), and
+\(n_v \coloneqq [k_v : \Q_v]\) is the local degree.</li>
+<li>We write \(\kbar = \Qbar\), and for each \(v \in \Places_k\) we fix a \(k\)-embedding
+\(\kbar \to \overline{k_v}\), as in Situation <a href="08-mordell-weil.html#sit-mw-standing">8.0.1</a>.  The absolute value
+\(\lvert\ \rvert_v\) extends uniquely to \(\overline{k_v}\) (for a non-archimedean \(v\),
+by Remark <a href="06-local-fields.html#rem-lf-finite-extensions">6.3.5</a>, and for an archimedean \(v\),
+\(\overline{k_v} = \C\)).  Through the embedding, it defines \(\lvert \alpha \rvert_v\) for
+\(\alpha \in \kbar\).</li>
+<li>The height relative to \(k\) is \(H_k\), as in Definition <a href="08-mordell-weil.html#def-mw-proj-height">8.5.3</a>, and
+\(H_k(x) \coloneqq H_k([x : 1])\) for \(x \in k\).</li>
+</ul>
+</div>
+
+<div id="outline-container-sec-ip-diophantine-approximation" class="outline-2">
+<h2 id="sec-ip-diophantine-approximation"><span class="ec-status ec-status-draft"><span class="ec-status-label ec-status-draft">Draft</span><time datetime="2026-11-09">9 Nov 2026</time></span><span class="section-number" id="s9.1">9.1</span> Diophantine approximation</h2>
+<div class="outline-text-2" id="text-sec-ip-diophantine-approximation">
+<p>
+Diophantine approximation asks how well an irrational number can be approximated by rational
+numbers.  For every rational number \(p/q\) the distance \(\lvert p/q - \sqrt 2 \rvert\) is
+positive, and since \(\Q\) is dense in \(\R\), a good choice of \(p/q\) makes it as small as
+we like.  The question is how small it can be made without making \(p\) and \(q\) large.  Two
+elementary results set the scale.  Throughout, a rational number \(p/q\) is written with
+\(p, q \in \Z\) and \(q \geq 1\).
+</p>
+
+<div class="ec-thm ec-proposition" id="prop-ip-dirichlet">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Proposition 9.1.1</span> <span class="ec-thm-title">(Dirichlet)</span>.</span> Let \(\alpha \in \R \setminus \Q\).  There are infinitely many rational numbers \(p/q\), in
+lowest terms, with
+</p>
+\begin{equation}
+\label{eq:ip-dirichlet}
+\Bigl\lvert \frac{p}{q} - \alpha \Bigr\rvert < \frac{1}{q^2}. \tag{9.1.1}
+\end{equation}
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+Let \(N \geq 1\) be an integer.  For \(t \in \R\), let \(\{t\} \coloneqq t - \lfloor t \rfloor \in [0, 1)\)
+be its fractional part.  As \(\alpha\) is irrational, the \(N + 1\) numbers \(\{q\alpha\}\) with
+\(0 \leq q \leq N\) are distinct.  The \(N\) intervals \([j/N, (j + 1)/N)\), for
+\(0 \leq j < N\), cover \([0, 1)\), so by the pigeonhole principle one of them contains
+\(\{q_1\alpha\}\) and \(\{q_2\alpha\}\) for some \(0 \leq q_1 < q_2 \leq N\).  Let
+\(q \coloneqq q_2 - q_1\) and \(p \coloneqq \lfloor q_2\alpha \rfloor - \lfloor q_1\alpha \rfloor\).
+Then \(1 \leq q \leq N\) and \(\lvert q\alpha - p \rvert = \lvert \{q_2\alpha\} - \{q_1\alpha\} \rvert < 1/N\), so
+\[
+\Bigl\lvert \frac{p}{q} - \alpha \Bigr\rvert < \frac{1}{qN} \leq \frac{1}{q^2}.
+\]
+Writing \(p/q = p'/q'\) in lowest terms, \(q' \leq q\), so \(p'/q'\) satisfies
+\eqref{eq:ip-dirichlet} too.
+</p>
+
+<p>
+So there is at least one solution.  Suppose there were only finitely many, \(p_1/q_1, \dots,
+p_r/q_r\).  As \(\alpha\) is irrational,
+\(\delta \coloneqq \min_i \lvert p_i/q_i - \alpha \rvert > 0\).  The construction with
+\(N > 1/\delta\) gives a rational number \(p/q\) satisfying \eqref{eq:ip-dirichlet} with
+\(\lvert p/q - \alpha \rvert < 1/(qN) \leq 1/N < \delta\), so it is none of the \(p_i/q_i\), a
+contradiction [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Proposition IX.1.2].
+</p>
+</details>
+
+<p>
+Proposition <a href="#prop-ip-dirichlet">9.1.1</a> has a picture.  Around each rational number \(p/q\) in lowest
+terms, draw the disk in \(\C\) of radius \(1/q^2\).  An irrational real number lies in
+infinitely many of these disks.  A rational number lies in only finitely many.  Indeed, let
+\(a/b\) be in lowest terms.  For \(p/q \neq a/b\),
+\[
+\Bigl\lvert \frac{p}{q} - \frac{a}{b} \Bigr\rvert = \frac{\lvert pb - aq \rvert}{bq} \geq \frac{1}{bq},
+\]
+and this is at least \(1/q^2\) as soon as \(q \geq b\).  So \(a/b\) lies in its own disk and in
+disks with \(q < b\) only.  In Figure <a href="#fig-ip-dirichlet">9.1.1</a> the disks are translucent, so the
+shade darkens where many of them overlap.  The cusps that point at the integers are made of
+the disks around \(n \pm 1/q\): they come within \(1/q - 1/q^2\) of \(n\), and never reach it.
+</p>
+
+<figure class="ec-figure" id="fig-ip-dirichlet">
+<img class="ec-tikz" src="figures/c5c37320fb41b5efb656479cdbd5acbee72e0960.svg" style="--ec-w: 43.77em" alt=""/>
+<figcaption><span class="ec-thm-name">Figure 9.1.1</span>. The disks of radius \(1/q^2\) around the rational numbers \(p/q\) in lowest terms with \(q \leq 20\), drawn translucent.  Without the bound on \(q\), every irrational real number lies in infinitely many of the disks (Proposition <a href="#prop-ip-dirichlet">9.1.1</a>), and every rational number in finitely many.  After a picture in [<a class="ec-cite" href="#bib-Stange23">Sta23</a>, at 11:02].</figcaption>
+</figure>
+
+<div class="ec-thm ec-remark" id="orge12e907">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Remark 9.1.2</span>.</span> Hurwitz showed that \(1/q^2\) in \eqref{eq:ip-dirichlet} can be replaced by
+\(1/(\sqrt 5\, q^2)\), and that \(\sqrt 5\) cannot be replaced by any larger constant
+[<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Remark IX.1.2.1].
+</p>
+</div>
+
+<p>
+Dirichlet's theorem says how well every irrational number can be approximated.  For
+algebraic numbers there is a bound in the other direction.
+</p>
+
+<div class="ec-thm ec-proposition" id="prop-ip-liouville">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Proposition 9.1.3</span> <span class="ec-thm-title">(Liouville)</span>.</span> Let \(\alpha \in \C\) be algebraic over \(\Q\) of degree \(d \geq 2\).  There is a constant
+\(c > 0\), depending on \(\alpha\), such that every rational number \(p/q\) satisfies
+</p>
+\begin{equation}
+\label{eq:ip-liouville}
+\Bigl\lvert \frac{p}{q} - \alpha \Bigr\rvert \geq \frac{c}{q^d}. \tag{9.1.2}
+\end{equation}
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+If \(\alpha \notin \R\), then \(\lvert p/q - \alpha \rvert \geq \lvert \operatorname{Im} \alpha \rvert \geq \lvert \operatorname{Im} \alpha \rvert/q^d\).
+Suppose that \(\alpha \in \R\).  Let \(f = a_0T^d + a_1T^{d - 1} + \dots + a_d \in \Z[T]\) be a
+minimal polynomial of \(\alpha\), and let
+\[
+c_1 \coloneqq \sup\{\lvert f'(t) \rvert : \alpha - 1 \leq t \leq \alpha + 1\}.
+\]
+Here \(c_1 > 0\), since \(f'\) is a nonzero polynomial.  If \(\lvert p/q - \alpha \rvert \geq 1\),
+then \eqref{eq:ip-liouville} holds with \(c = 1\).  Otherwise, by the mean value theorem,
+\[
+\Bigl\lvert f\Bigl(\frac{p}{q}\Bigr) \Bigr\rvert
+= \Bigl\lvert f\Bigl(\frac{p}{q}\Bigr) - f(\alpha) \Bigr\rvert
+\leq c_1 \Bigl\lvert \frac{p}{q} - \alpha \Bigr\rvert.
+\]
+The number \(q^d f(p/q) = a_0p^d + a_1p^{d - 1}q + \dots + a_dq^d\) is an integer.  It is
+nonzero, since \(f\) is irreducible of degree \(d \geq 2\) and so has no rational root.  So
+\(\lvert f(p/q) \rvert \geq q^{-d}\), and \eqref{eq:ip-liouville} holds with \(c = 1/c_1\).
+So for a real \(\alpha\), \(c \coloneqq \min(1, 1/c_1)\) works
+[<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Proposition IX.1.3].
+</p>
+</details>
+
+<div class="ec-thm ec-remark" id="orgf8cddf7">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Remark 9.1.4</span>.</span> The constant \(c\) in Proposition <a href="#prop-ip-liouville">9.1.3</a> is explicit in terms of \(\alpha\).
+Liouville used his theorem to write down the first transcendental numbers.  Let
+\(\alpha \coloneqq \sum_{n \geq 1} 10^{-n!}\), and for \(N \geq 1\) let \(p_N/q_N\) be the
+partial sum up to \(n = N\), with \(q_N \coloneqq 10^{N!}\).  Then
+\[
+0 < \alpha - \frac{p_N}{q_N} < \frac{2}{10^{(N + 1)!}} = \frac{2}{q_N^{N + 1}}.
+\]
+For every \(d \geq 2\) and \(c > 0\), this contradicts \eqref{eq:ip-liouville} once \(N\) is
+large.  The decimal expansion of \(\alpha\) is not eventually periodic, so \(\alpha\) is not rational
+either.  So \(\alpha\) is transcendental [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Remark IX.1.3.1 and
+Exercise 9.2].
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgfb8b2a9" class="outline-3">
+<h3 id="orgfb8b2a9"><span class="section-number" id="s9.1.1">9.1.1</span> The approximation exponent</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+Dirichlet's theorem approximates every real number to within \(1/q^2\), and Liouville's
+theorem says that an algebraic number of degree \(d\) cannot be approximated to within
+\(c/q^d\).  For quadratic irrationals the two exponents agree.  For \(d \geq 3\) we may ask for
+the best exponent.  There is no reason to restrict the approximations to \(\Q\), or to the
+usual absolute value, so we let them range over a number field \(k\) and measure the distance
+at a place of \(k\).  The size of \(q\) becomes the height \(H_k(x)\).
+</p>
+
+<div class="ec-thm ec-definition" id="def-ip-approximation-exponent">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Definition 9.1.5</span>.</span> Let \(v \in \Places_k\), and let \(\tau\colon \Z_{\geq 1} \to \R_{> 0}\) be a function.  We say
+that \(k\) has <dfn class="ec-cdef" id="gls-approximation-exponent" data-gls="approximation-exponent">approximation exponent</dfn> \(\tau\) at \(v\) if the following holds.  For
+every \(\alpha \in \kbar\), with \(d \coloneqq [k(\alpha) : k]\), and every real number
+\(C > 0\), the set of \(x \in k\) with
+</p>
+\begin{equation}
+\label{eq:ip-approximation}
+\lvert x - \alpha \rvert_v < C\, H_k(x)^{-\tau(d)} \tag{9.1.3}
+\end{equation}
+<p>
+is finite.
+</p>
+</div>
+
+<div class="ec-thm ec-remark" id="rem-ip-approximation-exponent">
+<p><span class="ec-thm-head"><span class="ec-thm-name">Remark 9.1.6</span>.</span> </p>
+<ol class="org-ol">
+<li><a id="it-ip-ae-lower-bound"></a> Equivalently, for every \(\alpha \in \kbar\) and every \(C > 0\),
+all but finitely many \(x \in k\) satisfy
+\[
+   \lvert x - \alpha \rvert_v \geq C\, H_k(x)^{-\tau(d)}.
+   \]
+This is a lower bound for the distance from \(\alpha\) to the elements of \(k\), like
+Liouville's \eqref{eq:ip-liouville}: it says that \(\alpha\) cannot be approximated too
+well.  A smaller \(\tau\) is a stronger statement.  If \(\tau \leq \tau'\) and \(k\) has
+approximation exponent \(\tau\) at \(v\), then it also has approximation exponent
+\(\tau'\) at \(v\), since \(H_k(x) \geq 1\) gives
+\(H_k(x)^{-\tau'(d)} \leq H_k(x)^{-\tau(d)}\).</li>
+<li><a id="it-ip-ae-embedding"></a> The definition does not depend on the embedding
+\(\kbar \to \overline{k_v}\) of Situation <a href="#sit-ip-standing">9.0.1</a>.  Two \(k\)-embeddings
+\(\iota, \iota'\) have the same image, the algebraic closure of \(k\) in
+\(\overline{k_v}\), so \(\iota' = \iota \circ \sigma\) for some \(\sigma \in \Gal_k\).
+Then \(\lvert \iota'(x - \alpha) \rvert = \lvert \iota(x - \sigma(\alpha)) \rvert\) for
+\(x \in k\), and \(\sigma(\alpha)\) has the same degree as \(\alpha\).  Since \(\alpha\)
+ranges over all of \(\kbar\), the definition covers every extension of
+\(\lvert\ \rvert_v\) to \(k(\alpha)\).  This is how [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Section IX.1]
+phrases it.</li>
+<li><a id="it-ip-ae-rationals"></a> For \(k = \Q\) and \(x = p/q\) in lowest terms,
+\([x : 1] = [p : q]\) has \(\lvert [p : q] \rvert_\ell = 1\) at every prime \(\ell\), so
+\(H_\Q(x) = \max(\lvert p \rvert, q)\).</li>
+</ol>
+</div>
+
+<p>
+Let \(\infty\) be the archimedean place of \(\Q\).  In these terms, Liouville's theorem gives
+an approximation exponent of \(\Q\) at \(\infty\).
+</p>
+
+<div class="ec-thm ec-corollary" id="cor-ip-liouville-exponent">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Corollary 9.1.7</span>.</span> For every \(\varepsilon > 0\), \(\Q\) has approximation exponent \(\tau(d) = d + \varepsilon\)
+at \(\infty\).
+</p>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+Let \(\alpha \in \Qbar\), with \(d \coloneqq [\Q(\alpha) : \Q]\), and let \(C > 0\).  Let
+\(x = p/q\) in lowest terms satisfy \eqref{eq:ip-approximation}.  By
+part <a href="#it-ip-ae-rationals">3</a> of Remark <a href="#rem-ip-approximation-exponent">9.1.6</a>,
+\(H_\Q(x) = \max(\lvert p \rvert, q) \geq q\), so
+\[
+\lvert x - \alpha \rvert < C\, H_\Q(x)^{-d - \varepsilon} \leq \frac{C}{q^{d + \varepsilon}}.
+\]
+If \(d \geq 2\), let \(c\) be the constant of Proposition <a href="#prop-ip-liouville">9.1.3</a>.  Then
+\(c/q^d < C/q^{d + \varepsilon}\), that is, \(q^\varepsilon < C/c\).  If \(d = 1\), then
+\(\alpha = a/b\) in lowest terms, and for \(x \neq \alpha\),
+\(\lvert x - \alpha \rvert \geq 1/(bq)\) as in the discussion of
+Figure <a href="#fig-ip-dirichlet">9.1.1</a>, so \(q^\varepsilon < bC\).  In both cases \(q\) is bounded, apart
+from \(x = \alpha\) when \(d = 1\).  Then
+\(\lvert p \rvert \leq q(\lvert \alpha \rvert + C)\) is bounded too, so there are finitely many
+such \(x\).
+</p>
+</details>
+
+<div class="ec-thm ec-remark" id="rem-ip-exponent-two">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Remark 9.1.8</span>.</span> The \(\varepsilon\) in Corollary <a href="#cor-ip-liouville-exponent">9.1.7</a> cannot be removed for
+\(d = 2\).  More generally, Dirichlet's theorem shows that \(\Q\) has no approximation exponent
+\(\tau\) at \(\infty\) with \(\tau(d) \leq 2\) for some \(d \geq 2\).  Let \(\alpha \in \R\) be
+algebraic of degree \(d\), for example \(\alpha = \sqrt[d]{2}\).  By
+Proposition <a href="#prop-ip-dirichlet">9.1.1</a> there are infinitely many \(x = p/q\) in lowest terms with
+\(\lvert x - \alpha \rvert < 1/q^2\).  For them \(\lvert p \rvert < q(\lvert \alpha \rvert + 1)\),
+so \(H_\Q(x) < (\lvert \alpha \rvert + 1)q\), and
+\[
+\lvert x - \alpha \rvert < \frac{1}{q^2} < \frac{(\lvert \alpha \rvert + 1)^2}{H_\Q(x)^2}
+\leq (\lvert \alpha \rvert + 1)^2 H_\Q(x)^{-\tau(d)}.
+\]
+So \eqref{eq:ip-approximation} with \(C = (\lvert \alpha \rvert + 1)^2\) has infinitely many
+solutions.
+</p>
+</div>
+
+<div class="ec-thm ec-remark" id="rem-ip-liouville-p-adic">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Remark 9.1.9</span>.</span> Corollary <a href="#cor-ip-liouville-exponent">9.1.7</a> also holds at every prime \(p\) of \(\Q\), with the
+product formula in place of the mean value theorem.  Let \(\alpha \in \Qbar\) have degree
+\(d\), and let \(f = a_0T^d + \dots + a_d \in \Z[T]\) be a minimal polynomial of
+\(\alpha\) with coprime coefficients.  Let \(x = a/b \in \Q\) in lowest terms, and let
+\(N \coloneqq b^d f(x) = \sum_i a_i a^{d - i} b^i\).  This is an integer, and it is nonzero
+unless \(x = \alpha\), since \(f\) is irreducible.  Let \(x \neq \alpha\), and let \(A \coloneqq \sum_i \lvert a_i \rvert\).  Then
+\(\lvert N \rvert \leq A\, H_\Q(x)^d\).  Since \(\lvert N \rvert_\ell \leq 1\) for every prime
+\(\ell\), the product formula gives
+\[
+\lvert N \rvert_p \geq \frac{1}{\lvert N \rvert} \geq \frac{1}{A\, H_\Q(x)^d}.
+\]
+Now suppose that \(\lvert x - \alpha \rvert_p \leq 1\), so that
+\(\lvert x \rvert_p \leq B \coloneqq \max(1, \lvert \alpha \rvert_p)\).  Write
+\(f(X) - f(Y) = (X - Y)g(X, Y)\) with \(g \in \Z[X, Y]\) of degree \(d - 1\).  As
+\(\lvert\ \rvert_p\) is non-archimedean, \(\lvert g(x, \alpha) \rvert_p \leq B^{d - 1}\), and
+\[
+\lvert N \rvert_p \leq \lvert f(x) \rvert_p = \lvert f(x) - f(\alpha) \rvert_p
+\leq B^{d - 1} \lvert x - \alpha \rvert_p.
+\]
+So \(\lvert x - \alpha \rvert_p \geq c\, H_\Q(x)^{-d}\) with \(c \coloneqq 1/(AB^{d - 1})\).  Let
+\(C > 0\) and \(\varepsilon > 0\), and let \(x\) satisfy \eqref{eq:ip-approximation} with
+\(\tau(d) = d + \varepsilon\).  If \(\lvert x - \alpha \rvert_p > 1\), then
+\(H_\Q(x)^{d + \varepsilon} < C\).  Otherwise \(H_\Q(x)^\varepsilon < C/c\).  In both cases the
+height of \(x\) is bounded, and by part <a href="#it-ip-ae-rationals">3</a> of
+Remark <a href="#rem-ip-approximation-exponent">9.1.6</a> there are finitely many such \(x\).
+</p>
+</div>
+
+<p>
+Liouville's exponent was improved several times [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Section IX.1].
+</p>
+
+<table>
+
+
+<colgroup>
+<col  class="org-right">
+
+<col  class="org-left">
+
+<col  class="org-left">
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right">Year</th>
+<th scope="col" class="org-left">Approximation exponent</th>
+<th scope="col" class="org-left">Due to</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">1851</td>
+<td class="org-left">\(\tau(d) = d + \varepsilon\)</td>
+<td class="org-left">Liouville</td>
+</tr>
+
+<tr>
+<td class="org-right">1909</td>
+<td class="org-left">\(\tau(d) = d/2 + 1 + \varepsilon\)</td>
+<td class="org-left">Thue</td>
+</tr>
+
+<tr>
+<td class="org-right">1921</td>
+<td class="org-left">\(\tau(d) = 2\sqrt d + \varepsilon\)</td>
+<td class="org-left">Siegel</td>
+</tr>
+
+<tr>
+<td class="org-right">1947</td>
+<td class="org-left">\(\tau(d) = \sqrt{2d} + \varepsilon\)</td>
+<td class="org-left">Gelfond, Dyson</td>
+</tr>
+
+<tr>
+<td class="org-right">1955</td>
+<td class="org-left">\(\tau(d) = 2 + \varepsilon\)</td>
+<td class="org-left">Roth</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+By Remark <a href="#rem-ip-exponent-two">9.1.8</a>, Roth's exponent is essentially the best possible.  It is
+conjectured that \(\varepsilon\) can be replaced by some \(\varepsilon(d)\) with
+\(\varepsilon(d) \to 0\) as \(d \to \infty\).  Mahler handled several absolute values at
+once, and Schmidt the simultaneous approximation of several irrational numbers
+[<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Section IX.1].
+</p>
+
+<div class="ec-thm ec-theorem" id="thm-ip-roth">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Theorem 9.1.10</span> <span class="ec-thm-title">(Roth)</span>.</span> Let \(v \in \Places_k\) and \(\varepsilon > 0\).  Then \(k\) has approximation exponent
+\(\tau(d) = 2 + \varepsilon\) at \(v\).
+</p>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+Not proved in these notes.  The ideas are elementary, but the details are long.  See
+[<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Theorem IX.1.4 and Section IX.8] for a sketch, and
+[<a class="ec-cite" href="#bib-Hindry-Silverman00">HS00</a>, Part D] for a proof.
+</p>
+</details>
+
+<p>
+Theorems on Diophantine approximation give finiteness results for Diophantine equations.
+</p>
+
+<div class="ec-thm ec-example" id="eg-ip-thue-cubic">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Example 9.1.11</span>.</span> Let \(a \in \Z\).  We show that the equation \(x^3 - 2y^3 = a\) has finitely many solutions
+\((x, y) \in \Z^2\).  If \(y = 0\), then \(x^3 = a\), which has at most one solution.  Let
+\(\beta \coloneqq \sqrt[3]{2} \in \R\), and let \(\zeta \in \C\) be a primitive cube root of
+\(1\).  For a solution with \(y \neq 0\),
+\[
+\Bigl(\frac{x}{y} - \beta\Bigr)\Bigl(\frac{x}{y} - \zeta\beta\Bigr)\Bigl(\frac{x}{y} - \zeta^2\beta\Bigr) = \frac{a}{y^3}.
+\]
+For \(t \in \R\), \(\lvert t - \zeta\beta \rvert\) and \(\lvert t - \zeta^2\beta \rvert\) are at least
+\(\lvert \operatorname{Im}(\zeta\beta) \rvert = (\sqrt 3/2)\beta\).  So
+\[
+\Bigl\lvert \frac{x}{y} - \beta \Bigr\rvert \leq \frac{c_a}{\lvert y \rvert^3}, \qquad
+c_a \coloneqq \frac{4\lvert a \rvert}{3\beta^2}.
+\]
+If \(\lvert x/y - \beta \rvert \geq 1\), then \(\lvert y \rvert^3 \leq c_a\), and each of these
+finitely many \(y\) has at most one \(x\).  Otherwise \(\lvert x \rvert < (\beta + 1)\lvert y \rvert\).
+Since \(x/y\) need not be in lowest terms, part <a href="#it-ip-ae-rationals">3</a> of
+Remark <a href="#rem-ip-approximation-exponent">9.1.6</a> gives only
+\(H_\Q(x/y) \leq \max(\lvert x \rvert, \lvert y \rvert) < (\beta + 1)\lvert y \rvert\), but this
+suffices:
+\[
+\Bigl\lvert \frac{x}{y} - \beta \Bigr\rvert \leq c_a(\beta + 1)^3 H_\Q(x/y)^{-3}
+< C\, H_\Q(x/y)^{-5/2}, \qquad C \coloneqq c_a(\beta + 1)^3 + 1.
+\]
+As \(\beta\) has degree \(3\) over \(\Q\), Theorem <a href="#thm-ip-roth">9.1.10</a> with \(\varepsilon = 1/2\)
+leaves finitely many values for \(r \coloneqq x/y\).  Thue's exponent
+\(\tau(3) = 5/2 + \varepsilon\) would do as well.  Each value of \(r\) comes from at most one
+solution: \(y^3(r^3 - 2) = a\) with \(r^3 \neq 2\) determines \(y\), and then \(x = ry\).  This
+is [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Example IX.1.5], with the details filled in.
+</p>
+</div>
+
+<div class="ec-thm ec-remark" id="orgcb054d4">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Remark 9.1.12</span>.</span> Theorem <a href="#thm-ip-roth">9.1.10</a> says that a set is finite, but its proof gives no procedure to find
+the elements of the set.  It is ineffective.  So Example <a href="#eg-ip-thue-cubic">9.1.11</a> gives no bound on
+\(\lvert x \rvert\) and \(\lvert y \rvert\) in terms of \(a\), and the finiteness results that
+rely on Roth's theorem are ineffective too.  Liouville's theorem, with its explicit
+constant, is effective, but too weak for these applications.  Effective bounds come from a
+different method, lower bounds for linear forms in logarithms
+[<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Remark IX.1.6 and Section IX.5].
+</p>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org3e1b22d" class="outline-2 ec-references">
+<h2 id="org3e1b22d">References</h2>
+<div class="outline-text-2" id="text-org3e1b22d">
+<dl class="ec-bibliography">
+<dt id="bib-Hindry-Silverman00">[HS00]</dt>
+<dd>Marc Hindry and Joseph H. Silverman. <i>Diophantine geometry</i>. Vol. 201. Graduate Texts in Mathematics. Springer-Verlag, New York, 2000. An introduction. <a href="https://doi.org/10.1007/978-1-4612-1210-2">doi:10.1007/978-1-4612-1210-2</a>.</dd>
+<dt id="bib-Silverman09">[Sil09]</dt>
+<dd>Joseph H. Silverman. <i>The arithmetic of elliptic curves</i>. Second. Vol. 106. Graduate Texts in Mathematics. Springer, Dordrecht, 2009. <a href="https://doi.org/10.1007/978-0-387-09494-6">doi:10.1007/978-0-387-09494-6</a>.</dd>
+<dt id="bib-Stange23">[Sta23]</dt>
+<dd>Katherine E. Stange. <i>Rethinking the real line</i>. <a href="https://www.youtube.com/watch?v=uFWJuZQLKJs">https://www.youtube.com/watch?v=uFWJuZQLKJs</a>. 2023. YouTube video, Summer of Math Exposition 3.</dd>
+</dl>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<nav class="ec-pager ec-pager-bottom" aria-label="Chapters"><a class="ec-pager-prev" rel="prev" href="08-mordell-weil.html"><span class="ec-pager-label">Previous</span><span class="ec-pager-title">8. The Mordell&ndash;Weil theorem</span></a><a class="ec-pager-next" rel="next" href="10-selmer-sha.html"><span class="ec-pager-label">Next</span><span class="ec-pager-title">10. Twisting, Selmer, and Tate&ndash;Shafarevich</span></a></nav>
+</div>
+</body>
+</html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2026-11-05 Thu 08:53 -->
+<!-- 2026-11-09 Mon 09:35 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Elliptic curves as algebraic curves</title>
@@ -42,8 +42,8 @@
 <li class="ec-toc-chapter"><a href="06-local-fields.html"><span class="ec-toc-num">6</span><span class="ec-toc-text">Elliptic curves over local fields<span class="ec-toc-status"><span class="ec-status-progress">0 of 5 sections finished</span></span></span></a></li>
 <li class="ec-toc-chapter"><a href="07-galois-cohomology.html"><span class="ec-toc-num">7</span><span class="ec-toc-text">Galois cohomology<span class="ec-toc-status"><span class="ec-status-progress">0 of 10 sections finished</span></span></span></a></li>
 <li class="ec-toc-chapter"><a href="08-mordell-weil.html"><span class="ec-toc-num">8</span><span class="ec-toc-text">The Mordell&ndash;Weil theorem<span class="ec-toc-status"><span class="ec-status-progress">0 of 5 sections finished</span></span></span></a></li>
-<li class="ec-toc-chapter"><a href="09-selmer-sha.html"><span class="ec-toc-num">9</span><span class="ec-toc-text">Twisting, Selmer, and Tate&ndash;Shafarevich<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
-<li class="ec-toc-chapter"><a href="10-integral-points.html"><span class="ec-toc-num">10</span><span class="ec-toc-text">Integral points<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
+<li class="ec-toc-chapter"><a href="09-integral-points.html"><span class="ec-toc-num">9</span><span class="ec-toc-text">Integral points<span class="ec-toc-status"><span class="ec-status-progress">0 of 1 section finished</span></span></span></a></li>
+<li class="ec-toc-chapter"><a href="10-selmer-sha.html"><span class="ec-toc-num">10</span><span class="ec-toc-text">Twisting, Selmer, and Tate&ndash;Shafarevich<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
 <li class="ec-toc-chapter"><a href="11-complex-multiplication.html"><span class="ec-toc-num">11</span><span class="ec-toc-text">Complex multiplication<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
 <li class="ec-toc-chapter"><a href="12-tate-curve.html"><span class="ec-toc-num">12</span><span class="ec-toc-text">The Tate curve<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
 <li class="ec-toc-chapter"><a href="13-l-functions-bsd.html"><span class="ec-toc-num">13</span><span class="ec-toc-text">The \(L\)-function and BSD<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
@@ -57,7 +57,7 @@
 </div>
 <div id="content" class="content">
 <h1 class="title"><span class="ec-chapter-label">Chapter 4</span>Elliptic curves as algebraic curves</h1>
-<div class="sources" id="org4a31cc3">
+<div class="sources" id="org3a3561a">
 <p>
 This chapter follows [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Chapter III], with some material from
 [<a class="ec-cite" href="#bib-Milne20">Mil20</a>, Sections II.1, II.2, II.5 and II.6], and [<a class="ec-cite" href="#bib-Voight21">Voi21</a>, Chapters 2, 3, 5
@@ -110,7 +110,7 @@ have one: by a theorem of Selmer [<a class="ec-cite" href="#bib-Selmer-51">Sel51
 \(3X^3 + 4Y^3 + 5Z^3 = 0\) over \(\Q\), which has genus \(1\) by Corollary
 <a href="03-curves.html#cor-crv-plane-genus">3.7.7</a>, has no rational points, although it has points over \(\R\)
 and over every \(\Q_p\). Such curves will reappear in Section <a href="#sec-ec-selmer">4.8</a>
-and in Chapter <a href="09-selmer-sha.html">9</a>.
+and in Chapter <a href="10-selmer-sha.html">10</a>.
 </p>
 
 <p>
@@ -493,7 +493,7 @@ a change of variables \(x = u^2x'\), \(y = u^3y'\) with \(u^4 = d^{-2}\) and
 exactly when \(d \in k^{\times 2}\), and the quadratic twists of \(E\) are indexed by
 \(d \in k^\times/k^{\times 2}\).  They all share one \(j\)-invariant.  For \(j = 0\) and
 \(j = 1728\) the curve has extra automorphisms and there are more twists than these. See
-Theorem <a href="#thm-ec-automorphisms">4.7.11</a> and Chapter <a href="09-selmer-sha.html">9</a>.
+Theorem <a href="#thm-ec-automorphisms">4.7.11</a> and Chapter <a href="10-selmer-sha.html">10</a>.
 </p>
 
 <div class="ec-thm ec-example" id="eg-ec-quadratic-twist">
@@ -525,7 +525,7 @@ twists, the extra twists that \(j = 1728\) admits.
 
 <p>
 Twists in general are the subject of Chapter <a href="07-galois-cohomology.html">7</a>, and those of elliptic curves of
-Chapter <a href="09-selmer-sha.html">9</a>. The cubic twists of
+Chapter <a href="10-selmer-sha.html">10</a>. The cubic twists of
 Section <a href="#sec-ec-selmer">4.8</a> are the other case we meet in this chapter.
 </p>
 
@@ -2506,8 +2506,8 @@ first collect what we need about quaternion algebras.
 </p>
 </div>
 
-<div id="outline-container-org88bee65" class="outline-3">
-<h3 id="org88bee65"><span class="section-number" id="s4.7.1">4.7.1</span> Quaternion algebras</h3>
+<div id="outline-container-org3e902fc" class="outline-3">
+<h3 id="org3e902fc"><span class="section-number" id="s4.7.1">4.7.1</span> Quaternion algebras</h3>
 <div class="outline-text-3" id="text-7-1">
 <p>
 We follow [<a class="ec-cite" href="#bib-Voight21">Voi21</a>].  Throughout this subsection, \(F\) is a field with
@@ -2660,8 +2660,8 @@ containing the others.</li>
 </div>
 </div>
 
-<div id="outline-container-org57160eb" class="outline-3">
-<h3 id="org57160eb"><span class="section-number" id="s4.7.2">4.7.2</span> The endomorphism ring</h3>
+<div id="outline-container-org306b20c" class="outline-3">
+<h3 id="org306b20c"><span class="section-number" id="s4.7.2">4.7.2</span> The endomorphism ring</h3>
 <div class="outline-text-3" id="text-7-2">
 <div class="ec-thm ec-theorem" id="thm-ec-endomorphism-ring">
 <p>
@@ -3312,7 +3312,7 @@ Proposition <a href="#prop-ec-j-invariant">4.1.10</a>, since \(j = 0\).
 
 <p>
 The \(C_d\) are the <dfn class="ec-cdef" id="gls-cubic-twist" data-gls="cubic-twist">cubic twists</dfn> of the Fermat cubic \(C_1\). Twists in
-general are the subject of Chapter <a href="07-galois-cohomology.html">7</a>, and these return in Chapter <a href="09-selmer-sha.html">9</a>.
+general are the subject of Chapter <a href="07-galois-cohomology.html">7</a>, and these return in Chapter <a href="10-selmer-sha.html">10</a>.
 </p>
 
 <div class="ec-thm ec-remark" id="rem-ec-selmer-name">
@@ -3323,16 +3323,16 @@ curve of genus \(1\) with no rational point, so not an elliptic curve over \(\Q\
 Jacobian, an elliptic curve over \(\Q\), and in general the Jacobian of
 \(aX^3 + bY^3 + cZ^3 = 0\) is \(y^2 = x^3 - 432(abc)^2\), that is, the Selmer curve
 \(C_{abc}\).  So Selmer's counterexample to the Hasse principle is a torsor under
-\(C_{60}\).  We return to this in Chapter <a href="09-selmer-sha.html">9</a>, where the \(C_d\) are the first examples for
+\(C_{60}\).  We return to this in Chapter <a href="10-selmer-sha.html">10</a>, where the \(C_d\) are the first examples for
 descent.
 </p>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgc8de165" class="outline-2 ec-references">
-<h2 id="orgc8de165">References</h2>
-<div class="outline-text-2" id="text-orgc8de165">
+<div id="outline-container-org7d0ac77" class="outline-2 ec-references">
+<h2 id="org7d0ac77">References</h2>
+<div class="outline-text-2" id="text-org7d0ac77">
 <dl class="ec-bibliography">
 <dt id="bib-Magma">[BCP97]</dt>
 <dd>Wieb Bosma, John Cannon and Catherine Playoust. &ldquo;The Magma algebra system. I. The user language&rdquo;. In: <i>J. Symbolic Comput.</i> 24.3&ndash;4 (1997), pp. 235&ndash;265. Computational algebra and number theory (London, 1993). <a href="https://doi.org/10.1006/jsco.1996.0125">doi:10.1006/jsco.1996.0125</a>.</dd>
