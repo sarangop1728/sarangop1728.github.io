@@ -829,7 +829,7 @@ breaklinks=true}
 \AddToShipoutPictureFG*{%
   \put(\LenToUnit{1.1cm},\LenToUnit{.5\paperheight}){%
     \rotatebox{90}{\makebox[0pt][c]{\small\sffamily\color{black!50}%
-      DRAFT \textemdash{} last edited November 5, 2026}}}}
+      DRAFT \textemdash{} last edited November 10, 2026}}}}
 
 %% ---- shared machinery of the worksheets ----
 
@@ -6945,6 +6945,265 @@ independent of $E$, with
         H(P)^{(1 - 5\varepsilon)/6} \leq 6^{1 + \varepsilon}\lambda_\varepsilon N_E^{1 + \varepsilon}.
         \]
         Deduce the statement of the problem.
+\begin{solution}
+% Write your solution here.
+\end{solution}
+\end{enumerate}
+\end{problem}
+
+\bigskip
+
+\part[Thue's equation]{Thue's equation}
+\label{thue:part}
+\noindent
+This worksheet works through \cite{Silverman09}*{Exercises~9.5 and~9.6(a)--(b)}. In
+1909 Thue proved that an equation $F(x, y) = b$, where $F$ is a binary form of
+degree at least $3$ with integer coefficients and nonzero discriminant and $b$
+is a nonzero integer, has only finitely many integer solutions. His idea was to
+turn the equation into a problem of Diophantine approximation. A solution with
+$y$ large makes $x/y$ very close to a root of $F(T, 1)$, and algebraic numbers
+cannot be approximated too well by rational numbers. \Cref{thue:prob:lower-bound}
+makes the first step quantitative: a polynomial is small only near its roots.
+\Cref{thue:prob:thue} proves Thue's theorem with Roth's theorem, and extends it to the
+$S$-integers of a number field for forms with an irreducible factor of degree at
+least~$3$. One part of each exercise is corrected or restricted, as explained at
+the start of each section.
+
+
+\subsection*{Standing notation}
+\begin{itemize}
+  \item A number field $K$, its set of places $\Places_K$, and the subset $\Places_K^\infty$
+        of archimedean places.
+  \item For $v \in \Places_K$, the completion $K_v$, the absolute value $\lvert\ \rvert_v$ on
+        $K_v$ extending the usual absolute value on $\Q_p$ or $\R$, and the local degree
+        $n_v \coloneqq [K_v : \Q_v]$, where $\Q_v$ is the completion of $\Q$ at the
+        restriction of $v$.
+  \item An algebraic closure $\Kbar$ of $K$. For $v \in \Places_K$, an algebraic closure
+        $\overline{K_v}$ of $K_v$, to which $\lvert\ \rvert_v$ extends uniquely, as $K_v$ is
+        complete, and a $K$-embedding $\iota_v\colon \Kbar \to \overline{K_v}$. Then
+        $\lvert z \rvert_v \coloneqq \lvert \iota_v(z) \rvert_v$ extends $\lvert\ \rvert_v$ to
+        $\Kbar$. The $\iota_v$ are arbitrary, and every statement below holds for every choice
+        of them. For $K = \Q$, the field $\Qbar$ is the algebraic closure of $\Q$ in $\C$,
+        $\iota_\infty$ is the inclusion $\Qbar \subseteq \C$, and $\lvert\ \rvert$ is the usual
+        absolute value.
+  \item The height $H_K(P) \coloneqq \prod_{v \in \Places_K} \max_i \lvert x_i \rvert_v^{n_v}$
+        of a point $P = [x_0 : \dots : x_N]$ of $\PP^N(K)$, which does not depend on the
+        coordinates and satisfies $H_K(P) \geq 1$ \cite{Silverman09}*{\S VIII.5}. For
+        $x \in K$, $H_K(x) \coloneqq H_K([x : 1])$. For coprime integers $p$ and $q$ with
+        $q \neq 0$, $H_\Q(p/q) = \max(\lvert p \rvert, \lvert q \rvert)$.
+  \item The product formula $\prod_{v \in \Places_K}\lvert a \rvert_v^{n_v} = 1$ for
+        $a \in K^\times$ \cite{Silverman09}*{Product Formula~VIII.5.3}.
+\end{itemize}
+
+\section{Polynomials are small only near their roots}
+\label{thue:sec:lower-bound}
+
+\Cref{thue:prob:lower-bound} is \cite{Silverman09}*{Exercise~9.5}. If $t$ is far from every root
+of a polynomial $f$, then $\lvert f(t) \rvert$ is not small. Quantitatively,
+$\lvert f(t) \rvert$ is at least a constant times the distance from $t$ to the nearest root,
+and the constant depends on how close the roots are to each other, which the discriminant
+controls. Silverman's last part asks for a constant that depends only on the degree of $f$
+and on the projective height of its vector of coefficients. No such constant exists:
+dividing $f$ by an integer $N$ leaves this height unchanged, but at an archimedean place it
+divides $\lvert f(t) \rvert_v$ by $N$. So \cref{thue:prob:lower-bound}\ref{thue:it:lb-explicit} asks for a constant that
+depends on the affine height of the coefficients instead.
+
+
+\begin{wsdefinition}[Discriminant]
+\label{thue:def:disc}
+Let $L$ be a field and $f = a_0T^n + a_1T^{n - 1} + \dots + a_n \in L[T]$ with $n \geq 1$ and
+$a_0 \neq 0$. Over an algebraic closure of $L$, $f = a_0\prod_{i = 1}^n (T - \xi_i)$. The
+\defi{discriminant} of $f$ is
+\[
+D(f) \coloneqq a_0^{2n - 2}\prod_{i < j} (\xi_i - \xi_j)^2.
+\]
+It is a polynomial with integer coefficients in $a_0, \dots, a_n$, by the theorem on
+symmetric polynomials, since each $\xi_i$ occurs in $\prod_{i < j}(\xi_i - \xi_j)^2$ to
+degree at most $2n - 2$. So $D(f) \in L$, and $D(f) \in \Z$ when $f \in \Z[T]$. It is nonzero
+if and only if the roots of $f$ are distinct.
+\end{wsdefinition}
+
+\begin{wsdefinition}[{Mahler measure \cite{Hindry&Silverman00}*{\S B.7}}]
+\label{thue:def:mahler}
+The \defi{Mahler measure} of $f = a_0\prod_{i = 1}^n (T - \xi_i) \in \C[T]$, with
+$a_0 \neq 0$, is
+\[
+M(f) \coloneqq \lvert a_0 \rvert\prod_{i = 1}^n \max(1, \lvert \xi_i \rvert).
+\]
+\end{wsdefinition}
+
+\begin{wslemma}[{Mahler measure and coefficients \cite{Hindry&Silverman00}*{Lemma~B.7.3.1 and the formula after it}}]
+\label{thue:lem:mahler}
+Let $f = a_0T^n + \dots + a_n \in \C[T]$ with $a_0 \neq 0$. Then
+$M(f) \leq (n + 1)^{1/2}\max_k \lvert a_k \rvert$.
+\end{wslemma}
+
+\begin{wsproposition}[{Gauss's lemma \cite{Hindry&Silverman00}*{proof of Proposition~B.7.3}}]
+\label{thue:prop:gauss}
+Let $v$ be a non-archimedean place of $K$. For a polynomial $g$ with coefficients in $\Kbar$,
+let $\lvert g \rvert_v$ be the maximum of the absolute values of its coefficients. Then
+$\lvert gh \rvert_v = \lvert g \rvert_v \lvert h \rvert_v$. In particular, if
+$f = a_0\prod_{i = 1}^n (T - \xi_i)$, then
+\[
+\lvert f \rvert_v = \lvert a_0 \rvert_v\prod_{i = 1}^n \max(1, \lvert \xi_i \rvert_v).
+\]
+\end{wsproposition}
+
+\begin{wsproposition}[Hadamard's inequality]
+\label{thue:prop:hadamard}
+For $z = (z_1, \dots, z_m) \in \C^m$, let
+$\lVert z \rVert \coloneqq \bigl(\sum_k \lvert z_k \rvert^2\bigr)^{1/2}$. Let $V$ be an $m \times m$
+complex matrix with rows $r_1, \dots, r_m$. Then
+$\lvert \det V \rvert \leq \prod_{i = 1}^m \lVert r_i \rVert$.
+\end{wsproposition}
+
+\begin{problem}[Polynomials are small only near their roots]
+\label{thue:prob:lower-bound}
+Let $f = a_0T^n + a_1T^{n - 1} + \dots + a_n \in K[T]$ be a polynomial of degree $n \geq 2$,
+with $a_0a_n \neq 0$ and with distinct roots $\xi_1, \dots, \xi_n \in \Kbar$. So
+$f = a_0\prod_{i = 1}^n (T - \xi_i)$, and $D(f) \neq 0$. (Silverman allows $n = 1$, where
+$f(t) = a_0(t - \xi_1)$ and every statement below is immediate.)
+\begin{enumerate}
+  \item\label{thue:it:lb-nearest} Let $v \in \Places_K$, and let $\varepsilon_v \coloneqq 1/2$ if
+        $v$ is archimedean and $\varepsilon_v \coloneqq 1$ if $v$ is non-archimedean. Let
+        $t \in \Kbar$, and let $\xi_i$ be a root of $f$ nearest to $t$, that is,
+        $\lvert t - \xi_i \rvert_v = \min_j \lvert t - \xi_j \rvert_v$. Show that
+        \[
+        \lvert f(t) \rvert_v \geq \varepsilon_v^{n - 1}\lvert f'(\xi_i) \rvert_v \lvert t - \xi_i \rvert_v.
+        \]
+        \hint{for $j \neq i$, compare $\lvert \xi_i - \xi_j \rvert_v$ with
+        $\lvert t - \xi_j \rvert_v$.}
+\begin{solution}
+% Write your solution here.
+\end{solution}
+  \item\label{thue:it:lb-derivative} In this item and the next, $K = \Q$, $f \in \Z[T]$, and
+        $\lvert\ \rvert$ is the usual absolute value on $\C$. Show that every root $\xi_i$
+        of $f$ satisfies
+        \[
+        \lvert f'(\xi_i) \rvert \geq (n - 1)^{-(n - 1)/2}M(f)^{-(n - 2)}.
+        \]
+        \hint{number the roots so that $i = 1$, write $D(f)$ as $f'(\xi_1)^2$ times the
+        square of $a_0^{n - 2}\prod_{2 \leq i < j \leq n}(\xi_i - \xi_j)$, and apply
+        Hadamard's inequality to the Vandermonde matrix of $\xi_2, \dots, \xi_n$.}
+\begin{solution}
+% Write your solution here.
+\end{solution}
+  \item\label{thue:it:lb-rational} Let $A \coloneqq \max(\lvert a_0 \rvert, \dots, \lvert a_n \rvert)$.
+        Show that every rational number $t$ satisfies
+        \[
+        \lvert f(t) \rvert \geq \frac{\min\bigl(\lvert t - \xi_1 \rvert, \dots, \lvert t - \xi_n \rvert\bigr)}{2^{n - 1}(n + 1)^{n - 3/2}A^{n - 2}}.
+        \]
+\begin{solution}
+% Write your solution here.
+\end{solution}
+  \item\label{thue:it:lb-places} Let $S \subseteq \Places_K$ be a finite set of places. Show that
+        there is a constant $C_f > 0$, depending only on $f$, such that every $t \in K$
+        satisfies
+        \[
+        \prod_{v \in S}\min\bigl(1, \lvert f(t) \rvert_v^{n_v}\bigr)
+        \geq C_f\prod_{v \in S}\min_{1 \leq i \leq n}\min\bigl(1, \lvert t - \xi_i \rvert_v^{n_v}\bigr).
+        \]
+\begin{solution}
+% Write your solution here.
+\end{solution}
+  \item\label{thue:it:lb-explicit} Let $H \coloneqq H_K([1 : a_0 : \dots : a_n])$. Find a constant
+        $C_f$ for \ref{thue:it:lb-places} that depends only on $n$, $[K : \Q]$ and
+        $H$.\hint{for $v \in S$, bound $\lvert f'(\xi_i) \rvert_v$ from below as in
+        \ref{thue:it:lb-derivative}, with Gauss's lemma in place of the Mahler measure at the
+        non-archimedean places. Then bound $\prod_{v \in S}\min(1, \lvert D(f) \rvert_v^{n_v})$
+        from below by $H_K(D(f))^{-1}$.}
+\begin{solution}
+% Write your solution here.
+\end{solution}
+\end{enumerate}
+\end{problem}
+
+
+\section{Thue's equation}
+\label{thue:sec:thue}
+
+\Cref{thue:prob:thue} is \cite{Silverman09}*{Exercise~9.6(a)--(b)}, with Roth's theorem in the form
+of \cite{Hindry&Silverman00}*{Theorem~D.2.1}. If $y$ is large, then at each place of $S$ the
+ratio $x/y$ of a solution is close to a root of $F(T, 1)$, and this root may change from place
+to place. \Cref{thue:thm:roth} has a single algebraic number $\xi$, but it holds for every choice
+of the embeddings $\iota_v$, so $\xi$ can stand for a different conjugate at each place. So
+\cref{thue:prob:thue}\ref{thue:it:thue-s} assumes that $F$ has an irreducible factor of degree at least
+$3$, whose roots are conjugate. Silverman states that part for every $F$ of degree at least $3$
+with nonzero discriminant.
+
+
+\begin{wsdefinition}[Binary forms]
+\label{thue:def:forms}
+A \defi{binary form} of degree $d$ over $K$ is a nonzero homogeneous polynomial
+$F \in K[X, Y]$ of degree $d$. Over $\Kbar$ it is a product of linear forms,
+\[
+F = \prod_{i = 1}^d L_i, \qquad L_i = \beta_iX - \alpha_iY.
+\]
+Let $\Delta_{ij} \coloneqq \alpha_i\beta_j - \alpha_j\beta_i$. The \defi{discriminant} of $F$
+is $\prod_{i < j}\Delta_{ij}^2$. It does not depend on the factorization, and if
+$F(1, 0) \neq 0$, it is the discriminant $D(f)$ of $f(T) \coloneqq F(T, 1)$. It is nonzero if
+and only if no two of the $L_i$ are proportional.
+\end{wsdefinition}
+
+\begin{wsdefinition}[{$S$-integers \cite{Silverman09}*{proof of Proposition~VIII.1.6}}]
+\label{thue:def:s-integers}
+Let $S \subseteq \Places_K$ be a finite set containing $\Places_K^\infty$. The \defi{ring of
+$S$-integers} of $K$ is
+\[
+\calO_S \coloneqq \{a \in K : \lvert a \rvert_v \leq 1 \text{ for all } v \notin S\}.
+\]
+\end{wsdefinition}
+
+\begin{wstheorem}[{Roth \cite{Hindry&Silverman00}*{Theorem~D.2.1}}]
+\label{thue:thm:roth}
+Let $S \subseteq \Places_K$ be a finite set, $\xi \in \Kbar$ and $\varepsilon > 0$. Then only finitely many $t \in K$ satisfy
+\[
+\prod_{v \in S}\min\bigl(1, \lvert t - \xi \rvert_v^{n_v}\bigr) \leq H_K(t)^{-(2 + \varepsilon)}.
+\]
+\end{wstheorem}
+
+\begin{wstheorem}[{Northcott \cite{Silverman09}*{Theorem~VIII.5.11}}]
+\label{thue:thm:northcott}
+For every $B > 0$, only finitely many $t \in K$ satisfy $H_K(t) \leq B$.
+\end{wstheorem}
+
+\begin{problem}[Thue's equation]
+\label{thue:prob:thue}
+Let $F \in K[X, Y]$ be a binary form of degree $d \geq 3$ with nonzero discriminant, and let
+$b \in K^\times$.
+\begin{enumerate}
+  \item\label{thue:it:thue-z} Let $K = \Q$, and suppose that $F \in \Z[X, Y]$ and $b \in \Z$. Show
+        that $F(x, y) = b$ has only finitely many solutions
+        $(x, y) \in \Z^2$.\hint{first reach $F(1, 0)F(0, 1) \neq 0$ with changes of variables
+        $(x, y) \mapsto (x, y + mx)$ and $(x, y) \mapsto (x + my, y)$, $m \in \Z$. Then let
+        $f(T) = F(T, 1)$, write $b = y^df(x/y)$ for $y \neq 0$, and use
+        \cref{thue:prob:lower-bound}\ref{thue:it:lb-rational} and Roth's theorem.}
+\begin{solution}
+% Write your solution here.
+\end{solution}
+  \item\label{thue:it:thue-magma} \Magma\ solves Thue equations. The code below lists all the
+        integer solutions of $x^3 - 2y^3 = b$ for $1 \leq b \leq 6$. Explain why the argument
+        of \ref{thue:it:thue-z} could not produce such a list.
+\begin{magma}
+R<x> := PolynomialRing(Integers());
+t := Thue(x^3 - 2);                 // the form X^3 - 2*Y^3
+[ <b, Solutions(t, b)> : b in [1..6] ];
+// [ <1, [[-1, -1], [1, 0]]>, <2, [[0, -1]]>, <3, [[-5, -4], [1, -1]]>,
+//   <4, []>, <5, []>, <6, [[2, 1]]> ]
+\end{magma}
+\begin{solution}
+% Write your solution here.
+\end{solution}
+  \item\label{thue:it:thue-s} Let $S \subseteq \Places_K$ be a finite set containing
+        $\Places_K^\infty$, and suppose that $F$ has an irreducible factor $G \in K[X, Y]$ of
+        degree $g \geq 3$. Show that $F(x, y) = b$ has only finitely many solutions
+        $(x, y) \in \calO_S \times \calO_S$.\hint{reduce to $F(1, 0) \neq 0$ as in
+        \ref{thue:it:thue-z}, and let $\xi_1, \dots, \xi_g$ be the roots of $G(T, 1)$. For a
+        solution with $y \neq 0$, use that $F/G$ evaluated at $(x, y)$ is a nonzero
+        $S$-integer, after enlarging $S$, and the product formula to bound
+        $\prod_{v \in S}\min_i\min(1, \lvert x/y - \xi_i \rvert_v^{n_v})$ by a constant times
+        $H_K(x/y)^{-g}$. Then change the embeddings $\iota_v$ so that one root is the
+        nearest at every $v \in S$.}
 \begin{solution}
 % Write your solution here.
 \end{solution}

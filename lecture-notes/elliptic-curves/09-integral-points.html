@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2026-11-09 Mon 09:35 -->
+<!-- 2026-11-10 Tue 08:58 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Integral points</title>
@@ -30,10 +30,15 @@
 <li class="ec-toc-chapter"><a href="06-local-fields.html"><span class="ec-toc-num">6</span><span class="ec-toc-text">Elliptic curves over local fields<span class="ec-toc-status"><span class="ec-status-progress">0 of 5 sections finished</span></span></span></a></li>
 <li class="ec-toc-chapter"><a href="07-galois-cohomology.html"><span class="ec-toc-num">7</span><span class="ec-toc-text">Galois cohomology<span class="ec-toc-status"><span class="ec-status-progress">0 of 10 sections finished</span></span></span></a></li>
 <li class="ec-toc-chapter"><a href="08-mordell-weil.html"><span class="ec-toc-num">8</span><span class="ec-toc-text">The Mordell&ndash;Weil theorem<span class="ec-toc-status"><span class="ec-status-progress">0 of 5 sections finished</span></span></span></a></li>
-<li class="ec-toc-chapter is-current"><a href="09-integral-points.html" aria-current="page"><span class="ec-toc-num">9</span><span class="ec-toc-text">Integral points<span class="ec-toc-status"><span class="ec-status-progress">0 of 1 section finished</span></span></span></a>
+<li class="ec-toc-chapter is-current"><a href="09-integral-points.html" aria-current="page"><span class="ec-toc-num">9</span><span class="ec-toc-text">Integral points<span class="ec-toc-status"><span class="ec-status-progress">0 of 2 sections finished</span></span></span></a>
 <ol class="ec-toc-sections">
 <li class="ec-toc-level-1"><a href="#s9.1"><span class="ec-toc-num">9.1</span><span class="ec-toc-text">Diophantine approximation<span class="ec-toc-status"><span class="ec-status-label ec-status-draft">Draft</span></span></span></a></li>
 <li class="ec-toc-level-2"><a href="#s9.1.1"><span class="ec-toc-num">9.1.1</span><span class="ec-toc-text">The approximation exponent</span></a></li>
+<li class="ec-toc-level-1"><a href="#s9.2"><span class="ec-toc-num">9.2</span><span class="ec-toc-text">Distance functions and local heights<span class="ec-toc-status"><span class="ec-status-label ec-status-draft">Draft</span></span></span></a></li>
+<li class="ec-toc-level-2"><a href="#s9.2.1"><span class="ec-toc-num">9.2.1</span><span class="ec-toc-text">The chordal distance</span></a></li>
+<li class="ec-toc-level-2"><a href="#s9.2.2"><span class="ec-toc-num">9.2.2</span><span class="ec-toc-text">The \(v\)-adic distance on a curve</span></a></li>
+<li class="ec-toc-level-2"><a href="#s9.2.3"><span class="ec-toc-num">9.2.3</span><span class="ec-toc-text">Local heights</span></a></li>
+<li class="ec-toc-level-2"><a href="#s9.2.4"><span class="ec-toc-num">9.2.4</span><span class="ec-toc-text">Roth's theorem in terms of distances</span></a></li>
 </ol></li>
 <li class="ec-toc-chapter"><a href="10-selmer-sha.html"><span class="ec-toc-num">10</span><span class="ec-toc-text">Twisting, Selmer, and Tate&ndash;Shafarevich<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
 <li class="ec-toc-chapter"><a href="11-complex-multiplication.html"><span class="ec-toc-num">11</span><span class="ec-toc-text">Complex multiplication<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
@@ -49,7 +54,7 @@
 </div>
 <div id="content" class="content">
 <h1 class="title"><span class="ec-chapter-label">Chapter 9</span>Integral points</h1>
-<div class="sources" id="org3d41d30">
+<div class="sources" id="orgedf8e41">
 <p>
 This chapter follows [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Chapter IX].  For Diophantine approximation see also
 [<a class="ec-cite" href="#bib-Hindry-Silverman00">HS00</a>, Part D].
@@ -77,7 +82,7 @@ by Remark <a href="06-local-fields.html#rem-lf-finite-extensions">6.3.5</a>, and
 </div>
 
 <div id="outline-container-sec-ip-diophantine-approximation" class="outline-2">
-<h2 id="sec-ip-diophantine-approximation"><span class="ec-status ec-status-draft"><span class="ec-status-label ec-status-draft">Draft</span><time datetime="2026-11-09">9 Nov 2026</time></span><span class="section-number" id="s9.1">9.1</span> Diophantine approximation</h2>
+<h2 id="sec-ip-diophantine-approximation"><span class="ec-status ec-status-draft"><span class="ec-status-label ec-status-draft">Draft</span><time datetime="2026-11-10">10 Nov 2026</time></span><span class="section-number" id="s9.1">9.1</span> Diophantine approximation</h2>
 <div class="outline-text-2" id="text-sec-ip-diophantine-approximation">
 <p>
 Diophantine approximation asks how well an irrational number can be approximated by rational
@@ -145,7 +150,7 @@ the disks around \(n \pm 1/q\): they come within \(1/q - 1/q^2\) of \(n\), and n
 <figcaption><span class="ec-thm-name">Figure 9.1.1</span>. The disks of radius \(1/q^2\) around the rational numbers \(p/q\) in lowest terms with \(q \leq 20\), drawn translucent.  Without the bound on \(q\), every irrational real number lies in infinitely many of the disks (Proposition <a href="#prop-ip-dirichlet">9.1.1</a>), and every rational number in finitely many.  After a picture in [<a class="ec-cite" href="#bib-Stange23">Sta23</a>, at 11:02].</figcaption>
 </figure>
 
-<div class="ec-thm ec-remark" id="orge12e907">
+<div class="ec-thm ec-remark" id="org5f09b2a">
 <p>
 <span class="ec-thm-head"><span class="ec-thm-name">Remark 9.1.2</span>.</span> Hurwitz showed that \(1/q^2\) in \eqref{eq:ip-dirichlet} can be replaced by
 \(1/(\sqrt 5\, q^2)\), and that \(\sqrt 5\) cannot be replaced by any larger constant
@@ -193,7 +198,7 @@ So for a real \(\alpha\), \(c \coloneqq \min(1, 1/c_1)\) works
 </p>
 </details>
 
-<div class="ec-thm ec-remark" id="orgf8cddf7">
+<div class="ec-thm ec-remark" id="org05ae9f4">
 <p>
 <span class="ec-thm-head"><span class="ec-thm-name">Remark 9.1.4</span>.</span> The constant \(c\) in Proposition <a href="#prop-ip-liouville">9.1.3</a> is explicit in terms of \(\alpha\).
 Liouville used his theorem to write down the first transcendental numbers.  Let
@@ -210,8 +215,8 @@ Exercise 9.2].
 </div>
 </div>
 
-<div id="outline-container-orgfb8b2a9" class="outline-3">
-<h3 id="orgfb8b2a9"><span class="section-number" id="s9.1.1">9.1.1</span> The approximation exponent</h3>
+<div id="outline-container-org78e07af" class="outline-3">
+<h3 id="org78e07af"><span class="section-number" id="s9.1.1">9.1.1</span> The approximation exponent</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 Dirichlet's theorem approximates every real number to within \(1/q^2\), and Liouville's
@@ -463,7 +468,7 @@ is [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Example IX.1.5], with 
 </p>
 </div>
 
-<div class="ec-thm ec-remark" id="orgcb054d4">
+<div class="ec-thm ec-remark" id="orgff65ddc">
 <p>
 <span class="ec-thm-head"><span class="ec-thm-name">Remark 9.1.12</span>.</span> Theorem <a href="#thm-ip-roth">9.1.10</a> says that a set is finite, but its proof gives no procedure to find
 the elements of the set.  It is ineffective.  So Example <a href="#eg-ip-thue-cubic">9.1.11</a> gives no bound on
@@ -478,14 +483,723 @@ different method, lower bounds for linear forms in logarithms
 </div>
 </div>
 
-<div id="outline-container-org3e1b22d" class="outline-2 ec-references">
-<h2 id="org3e1b22d">References</h2>
-<div class="outline-text-2" id="text-org3e1b22d">
+<div id="outline-container-sec-ip-distance" class="outline-2">
+<h2 id="sec-ip-distance"><span class="ec-status ec-status-draft"><span class="ec-status-label ec-status-draft">Draft</span><time datetime="2026-11-10">10 Nov 2026</time></span><span class="section-number" id="s9.2">9.2</span> Distance functions and local heights</h2>
+<div class="outline-text-2" id="text-sec-ip-distance">
+<p>
+A Diophantine inequality \(\lvert x - \alpha \rvert_v < C\, H_k(x)^{-\tau(d)}\) has two parts.
+The height \(H_k(x)\) measures the arithmetic size of \(x\), as in
+Chapter <a href="08-mordell-weil.html">8</a>.  The quantity \(\lvert x - \alpha \rvert_v\) measures how close
+\(x\) is to \(\alpha\) in the \(v\)-adic topology.  This section defines a \(v\)-adic distance
+on a curve, following [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Section IX.2], compares it with an honest metric, and
+restates Theorem <a href="#thm-ip-roth">9.1.10</a> in its terms.  The distance turns out to be one place's share
+of a height: summed over all places, the distances to the poles of a function give its
+height.  This is the theory of local heights.
+</p>
+
+<div class="ec-thm ec-situation" id="sit-ip-distance">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Situation 9.2.1</span>.</span> We keep Situation <a href="#sit-ip-standing">9.0.1</a>.
+</p>
+<ul class="org-ul">
+<li>Fix a place \(v \in \Places_k\) and a nice curve \(C\) over \(k\).  Through
+\(k \subseteq k_v\), \(C(k) \subseteq C(k_v)\), and through the embedding
+\(\kbar \to \overline{k_v}\), \(C(\kbar) \subseteq C(\overline{k_v})\).</li>
+<li>The set \(C(k_v)\) carries its \(v\)-adic topology (Lemma <a href="#lem-ip-topology">9.2.4</a>).  The notation
+\(P \to_v Q\) appears only below a limit, as in \(\lim_{P \to_v Q}\) or
+\(\liminf_{P \in C(k),\ P \to_v Q}\).  There it means that \(P \neq Q\) ranges over
+\(C(k_v)\), or over the subset named below the limit, and tends to \(Q\) in this topology.
+In the text we say that \(P\) is \(v\)-adically close to \(Q\).</li>
+<li>For functions \(f, g\) on a set \(X\) with values in \([0, \infty)\), we write
+\(f \asymp g\) if there is a constant \(c \geq 1\) with \(c^{-1} g \leq f \leq c\, g\) on
+\(X\).</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org995831f" class="outline-3">
+<h3 id="org995831f"><span class="section-number" id="s9.2.1">9.2.1</span> The chordal distance</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+The honest metric comes from projective space.  For a point
+\(P = [x_0 : \dots : x_N]\) of \(\PP^N(\overline{k_v})\) we write \(\lVert P \rVert_v\) for the
+norm of its coordinates: \(\max_i \lvert x_i \rvert_v\) if \(v\) is non-archimedean, written
+\(\lvert P \rvert_v\) in Situation <a href="08-mordell-weil.html#sit-mw-proj-heights">8.5.1</a>, and
+\(\bigl(\sum_i \lvert x_i \rvert_v^2\bigr)^{1/2}\) if \(v\) is archimedean.  For a second point
+\(P' = [x'_0 : \dots : x'_N]\) of \(\PP^N(\overline{k_v})\), we write
+\(\lVert P \wedge P' \rVert_v\) for \(\max_{i < j} \lvert x_ix'_j - x_jx'_i \rvert_v\) if \(v\) is
+non-archimedean, and for \(\bigl(\sum_{i < j} \lvert x_ix'_j - x_jx'_i \rvert_v^2\bigr)^{1/2}\) if
+\(v\) is archimedean.  Both depend on the choice of coordinates.
+</p>
+
+<div class="ec-thm ec-definition" id="def-ip-chordal">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Definition 9.2.2</span>.</span> The <dfn class="ec-cdef" id="gls-chordal-distance" data-gls="chordal-distance">chordal distance</dfn> between \(P_1, P_2 \in \PP^N(\overline{k_v})\) is
+\[
+\delta_v(P_1, P_2) \coloneqq \frac{\lVert P_1 \wedge P_2 \rVert_v}{\lVert P_1 \rVert_v \lVert P_2 \rVert_v}.
+\]
+</p>
+</div>
+
+<p>
+Rescaling the coordinates of \(P_1\) by \(\lambda\) multiplies the numerator and the denominator
+by \(\lvert \lambda \rvert_v\), so \(\delta_v\) does not depend on the coordinates.
+</p>
+
+<div class="ec-thm ec-proposition" id="prop-ip-chordal-metric">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Proposition 9.2.3</span>.</span> The chordal distance \(\delta_v\) is a metric on \(\PP^N(\overline{k_v})\), with values in
+\([0, 1]\).  If \(v\) is non-archimedean, it is an ultrametric:
+\(\delta_v(P_1, P_3) \leq \max(\delta_v(P_1, P_2), \delta_v(P_2, P_3))\).
+</p>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+The minors \(x_ix'_j - x_jx'_i\) all vanish if and only if the coordinate vectors are
+proportional, so \(\delta_v(P_1, P_2) = 0\) if and only if \(P_1 = P_2\).  Symmetry is clear.
+</p>
+
+<p>
+Let \(v\) be non-archimedean.  Choose coordinates \(x, y, w\) of \(P_1, P_2, P_3\) of norm
+\(1\), by dividing by a coordinate of largest absolute value.  Then each minor has absolute
+value at most \(1\), so \(\delta_v \leq 1\).  Choose \(l\) with \(\lvert y_l \rvert_v = 1\).
+Expanding the right-hand side shows that
+\[
+y_l(x_iw_j - x_jw_i) = (x_iy_l - x_ly_i)w_j - (x_jy_l - x_ly_j)w_i + x_l(y_iw_j - y_jw_i).
+\]
+Since \(\lvert w_i \rvert_v, \lvert w_j \rvert_v, \lvert x_l \rvert_v \leq 1\), this gives
+\(\lvert x_iw_j - x_jw_i \rvert_v \leq \max(\lVert P_1 \wedge P_2 \rVert_v, \lVert P_2 \wedge P_3 \rVert_v)\),
+which is the ultrametric inequality.
+</p>
+
+<p>
+Let \(v\) be archimedean, so that \(\overline{k_v} = \C\).  Choose coordinates
+\(p, q \in \C^{N+1}\) of \(P_1, P_2\) of norm \(1\), and let
+\(\langle p, q \rangle \coloneqq \sum_i p_i \bar q_i\).  Lagrange's identity
+\(\lVert p \rVert^2 \lVert q \rVert^2 - \lvert \langle p, q \rangle \rvert^2 = \sum_{i < j} \lvert p_iq_j - p_jq_i \rvert^2\)
+gives \(\delta_v(P_1, P_2)^2 = 1 - \lvert \langle p, q \rangle \rvert^2 \leq 1\).  The Hermitian
+matrix \(\pi_{P_1} \coloneqq p\bar p^{\mathsf T}\), the orthogonal projection onto the line
+\(P_1\), depends only on \(P_1\), and for the Hilbert&#x2013;Schmidt norm
+\(\lVert A \rVert^2 \coloneqq \operatorname{tr}(A\bar A^{\mathsf T})\),
+\[
+\lVert \pi_{P_1} - \pi_{P_2} \rVert^2 = 2 - 2\lvert \langle p, q \rangle \rvert^2 = 2\,\delta_v(P_1, P_2)^2.
+\]
+So \(\sqrt 2\, \delta_v\) is the distance of a norm, restricted to the matrices
+\(\pi_P\), and satisfies the triangle inequality.
+</p>
+</details>
+
+<p>
+For \(N = 1\) and \(v\) archimedean, \(\delta_v\) is the length of the chord between the images
+of \(P_1\) and \(P_2\) on the Riemann sphere of diameter \(1\), whence the name.
+</p>
+
+<div class="ec-thm ec-lemma" id="lem-ip-topology">
+<p><span class="ec-thm-head"><span class="ec-thm-name">Lemma 9.2.4</span>.</span> </p>
+<ol class="org-ol">
+<li><p>
+<a id="it-ip-top-chart"></a> Let \(Q = [1 : a_1 : \dots : a_N] \in \PP^N(k_v)\).  There is a
+constant \(c \geq 1\) such that every \(P = [1 : x_1 : \dots : x_N] \in \PP^N(k_v)\) with
+\(\lvert x_j - a_j \rvert_v \leq 1\) for all \(j\) satisfies
+</p>
+   \begin{equation}
+   \label{eq:ip-chart}
+   c^{-1} \max_j \lvert x_j - a_j \rvert_v \leq \delta_v(P, Q) \leq c \max_j \lvert x_j - a_j \rvert_v. \tag{9.2.1}
+\end{equation}
+<p>
+So \(\delta_v\) induces the topology of \(k_v^N\) on each standard affine chart, and
+\(\PP^N(k_v)\) is compact for it.
+</p></li>
+<li><a id="it-ip-top-curve"></a> Let \(C \subseteq \PP^N\) be a closed embedding.  Then \(C(k_v)\) is a
+compact subset of \(\PP^N(k_v)\).  Its topology does not depend on the embedding, and every
+\(f \in k_v(C)\) defines a continuous map \(C(k_v) \to \PP^1(k_v)\).</li>
+<li><a id="it-ip-top-uniformizer"></a> Let \(Q \in C(k_v)\), and let \(u \in k_v(C)\) be a uniformizer
+at \(Q\).  Then \(u\) maps an open neighborhood of \(Q\) in \(C(k_v)\) homeomorphically onto
+an open neighborhood of \(0\) in \(k_v\).  In particular, \(Q\) is not an isolated point of
+\(C(k_v)\).</li>
+<li><a id="it-ip-top-closed"></a> The set \(C(k_v)\) is closed in \(C(\overline{k_v})\) for \(\delta_v\).</li>
+</ol>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+For part <a href="#it-ip-top-chart">1</a>, the set of coordinate vectors of norm \(1\) is closed and
+bounded in \(k_v^{N+1}\), hence compact, since \(k_v\) is locally compact.  It maps onto
+\(\PP^N(k_v)\), continuously since
+\(\lVert x \wedge y \rVert_v = \lVert x \wedge (y - x) \rVert_v \leq \lVert y - x \rVert_v\) for
+vectors of norm \(1\).  So \(\PP^N(k_v)\) is compact.  For \(P\) as in the statement, the norms
+\(\lVert P \rVert_v\) lie between \(1\) and a constant depending on \(Q\).  The minors of the
+pair \((P, Q)\) are \(a_j - x_j\), and \(x_ia_j - x_ja_i = a_j(x_i - a_i) - a_i(x_j - a_j)\).  So
+\(\lVert P \wedge Q \rVert_v\) is at least \(\max_j \lvert x_j - a_j \rvert_v\) and at most a
+constant times it, which is \eqref{eq:ip-chart}.  Let \(U\) be the set of
+\(P = [1 : x_1 : \dots : x_N]\) with \(\lvert x_j - a_j \rvert_v < 1\) for all \(j\).  Its
+complement is the image of the closed set of coordinate vectors \(x\) of norm \(1\) with
+\(\lvert x_j - a_jx_0 \rvert_v \geq \lvert x_0 \rvert_v\) for some \(j\).  So it is compact, it
+does not contain \(Q\), and \(\delta_v(\cdot, Q)\) is bounded below on it by a positive
+constant.  Hence small \(\delta_v\)-balls around \(Q\) lie in \(U\), where \eqref{eq:ip-chart}
+compares them with the polydiscs of \(k_v^N\) around \((a_1, \dots, a_N)\).  After permuting
+the coordinates, this holds for every \(Q\).
+</p>
+
+<p>
+So \(\delta_v\) defines the analytic topology of [<a class="ec-cite" href="#bib-Poonen2017">Poo17</a>, Section 2.6.2] on
+\(\PP^N(k_v)\).  Part <a href="#it-ip-top-curve">2</a> follows: \(C(k_v)\) is closed, as the common zero
+set of polynomials, the analytic topology of \(C(k_v)\) does not depend on the embedding, and
+morphisms are continuous for it [<a class="ec-cite" href="#bib-Poonen2017">Poo17</a>, Section 2.6.2].  By
+Proposition <a href="03-curves.html#prop-crv-extend">3.2.1</a>, \(f\) is a morphism \(C_{k_v} \to \PP^1\).
+</p>
+
+<p>
+For part <a href="#it-ip-top-uniformizer">3</a>, the uniformizer \(u\) is regular on an open neighborhood
+\(U\) of \(Q\), and \(u\colon U \to \Aff^1\) is étale at \(Q\), since \(\ord_Q(u) = 1\) and the
+residue field of \(Q\) is \(k_v\).  Shrinking \(U\), it is étale on \(U\), and by
+[<a class="ec-cite" href="#bib-Poonen2017">Poo17</a>, Proposition 3.5.73] it is a local homeomorphism \(U(k_v) \to k_v\).  As
+\(k_v\) has no isolated points, neither does \(C(k_v)\).
+</p>
+
+<p>
+For part <a href="#it-ip-top-closed">4</a>, \(\PP^N(k_v)\) is compact, hence closed in the metric space
+\(\PP^N(\overline{k_v})\), and \(C(k_v) = C(\overline{k_v}) \cap \PP^N(k_v)\).
+</p>
+</details>
+</div>
+</div>
+
+<div id="outline-container-orgc1a093d" class="outline-3">
+<h3 id="orgc1a093d"><span class="section-number" id="s9.2.2">9.2.2</span> The \(v\)-adic distance on a curve</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+The chordal distance depends on an embedding into projective space.  Silverman's distance
+uses a single function instead.  By Riemann&#x2013;Roch, a nice curve \(C\) of genus \(g\) over
+\(k_v\) has, for every \(Q \in C(k_v)\) and \(e \geq \max(2g, 1)\), a function \(f \in k_v(C)\)
+with a pole of order \(e\) at \(Q\) and no other poles.  Indeed, part <a href="03-curves.html#it-crv-rr-large-degree">2</a>
+of Corollary <a href="03-curves.html#cor-crv-rr">3.5.5</a> gives \(\ell(eQ) - \ell((e - 1)Q) = 1\).  Then
+\(t_Q \coloneqq 1/f\) has a zero of order \(e\) at \(Q\) and no other zeros in
+\(C(\overline{k_v})\) [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, footnote in Section IX.2].
+</p>
+
+<div class="ec-thm ec-definition" id="def-ip-distance">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Definition 9.2.5</span>.</span> Let \(C\) be a nice curve over \(k_v\), let \(Q \in C(k_v)\), and let \(t_Q \in k_v(C)\) have a
+zero of order \(e \geq 1\) at \(Q\) and no other zeros in \(C(\overline{k_v})\).  The
+<dfn class="ec-cdef" id="gls-v-adic-distance" data-gls="v-adic-distance">\(v\)-adic distance</dfn> from \(P \in C(k_v)\) to \(Q\) is
+\[
+d_v(P, Q) \coloneqq \min\bigl(\lvert t_Q(P) \rvert_v^{1/e}, 1\bigr),
+\]
+with \(d_v(P, Q) \coloneqq 1\) if \(P\) is a pole of \(t_Q\).
+</p>
+</div>
+
+<p>
+For a nice curve over \(k\), we apply the definition to \(C_{k_v}\).  By
+part <a href="#it-ip-top-curve">2</a> of Lemma <a href="#lem-ip-topology">9.2.4</a>, \(d_v(\cdot, Q)\) is continuous on
+\(C(k_v)\), with values in \([0, 1]\), and it vanishes only at \(Q\).  It depends on the
+choice of \(t_Q\), but only up to bounded factors.
+</p>
+
+<div class="ec-thm ec-lemma" id="lem-ip-distance-choice">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Lemma 9.2.6</span>.</span> Let \(d_v\) and \(d'_v\) be defined from two choices \(t_Q\) and \(t'_Q\), with orders \(e\)
+and \(e'\) at \(Q\).  Then \(d_v(\cdot, Q) \asymp d'_v(\cdot, Q)\) on \(C(k_v)\).
+</p>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+The function \(g \coloneqq t'^{\,e}_Q/t_Q^{e'}\) has neither a zero nor a pole at \(Q\).  So
+there is an open neighborhood \(U\) of \(Q\) on which \(\lvert g \rvert_v\) is bounded above
+and below by positive constants, and \(\lvert t_Q \rvert_v, \lvert t'_Q \rvert_v < 1\).  There
+\(d'_v(P, Q)/d_v(P, Q) = \lvert g(P) \rvert_v^{1/(ee')}\) for \(P \neq Q\).  On the compact set
+\(C(k_v) \setminus U\), both functions are continuous with values in \((0, 1]\), so both are
+bounded below by a positive constant.
+</p>
+</details>
+
+<p>
+The class of \(d_v(\cdot, Q)\) under \(\asymp\) contains an honest metric.
+</p>
+
+<div class="ec-thm ec-theorem" id="thm-ip-distance-chordal">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Theorem 9.2.7</span>.</span> Let \(C \subseteq \PP^N\) be a closed embedding of a nice curve over \(k_v\), and let
+\(Q \in C(k_v)\).  Then \(d_v(\cdot, Q) \asymp \delta_v(\cdot, Q)\) on \(C(k_v)\).
+</p>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+Permuting the coordinates, write \(Q = [1 : a_1 : \dots : a_N]\) with \(a_j \in k_v\), and let
+\(x_j \coloneqq X_j/X_0 \in k_v(C)\).  The local ring \(\calO_{C,Q}\) is a quotient of the
+local ring of \(\PP^N_{k_v}\) at \(Q\), whose maximal ideal is generated by the
+\(x_j - a_j\).  So the \(x_j - a_j\) generate the maximal ideal of the discrete valuation ring
+\(\calO_{C,Q}\), and one of them, say \(u \coloneqq x_1 - a_1\), is a uniformizer.  Then
+\(x_j - a_j = u g_j\) with \(g_j\) regular at \(Q\) and \(g_1 = 1\), and \(t_Q = u^e h\) with
+\(h\) regular and non-zero at \(Q\).  On a small open neighborhood of \(Q\), the
+\(\lvert g_j \rvert_v\) are bounded, \(\lvert h \rvert_v\) is bounded above and below by positive
+constants, and \eqref{eq:ip-chart} applies.  There
+\[
+\delta_v(P, Q) \asymp \max_j \lvert u(P) g_j(P) \rvert_v \asymp \lvert u(P) \rvert_v
+\asymp \lvert t_Q(P) \rvert_v^{1/e} = d_v(P, Q).
+\]
+Away from this neighborhood, both functions are continuous and positive on a compact set, as
+in the proof of Lemma <a href="#lem-ip-distance-choice">9.2.6</a>.
+</p>
+</details>
+
+<p>
+Theorem <a href="#thm-ip-distance-chordal">9.2.7</a> makes [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Remark IX.2.2.1] precise.  That
+remark defines a distance from several functions with no other common zero, such as the
+\(x_j - a_j\), and [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Exercise 9.15] compares it with \(d_v\).  The constant in
+\(\asymp\) depends on \(Q\).  A distance with constants uniform in both variables is a function
+on \(C \times C\), and \(-\log\) of it is a local height for the diagonal of \(C \times C\)
+[<a class="ec-cite" href="#bib-Silverman87">Sil87</a>].
+</p>
+
+<div class="ec-thm ec-remark" id="rem-ip-not-metric">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Remark 9.2.8</span>.</span> The \(v\)-adic distance is not a metric, and is not meant to be one.  It is defined one
+\(Q\) at a time, after choosing \(t_Q\), and \(c\, t_Q\) is another choice for every
+\(c \in k_v^\times\).  So it makes no sense to ask whether \(d_v(P, Q) = d_v(Q, P)\), or for
+the triangle inequality, until the choices are coordinated.  Even natural choices fail.  On
+\(\PP^1\), let \(a \in k_v\) with \(\lvert a \rvert_v > 1\), and take \(t_a \coloneqq x - a\)
+and \(t_\infty \coloneqq 1/x\).  The rational point \(\infty\) is a pole of \(t_a\), so
+\(d_v(\infty, a) = 1\), while \(d_v(a, \infty) = \min(\lvert 1/a \rvert_v, 1) = 1/\lvert a \rvert_v\).
+</p>
+
+<p>
+What is well defined is the class of \(d_v(\cdot, Q)\) under \(\asymp\), by
+Lemma <a href="#lem-ip-distance-choice">9.2.6</a>, and by Theorem <a href="#thm-ip-distance-chordal">9.2.7</a> it contains the
+honest metric \(\delta_v(\cdot, Q)\).  The results of this chapter depend only on this class.
+They concern \(\log d_v(P, Q)\) as \(P\) tends to \(Q\), and replacing \(d_v\) by a function
+\(g\) with \(g \asymp d_v\) changes \(\log d_v\) by a bounded amount, which is negligible against
+\(\log d_v \to -\infty\).
+</p>
+</div>
+
+<p>
+The two examples below take \(Q\) at infinity.  The first one is the source of all heights.
+</p>
+
+<div class="ec-thm ec-example" id="eg-ip-distance-p1">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Example 9.2.9</span>.</span> Let \(C = \PP^1\), with affine coordinate \(x\), and let \(Q \coloneqq \infty = [1 : 0]\).  The
+function \(t_\infty \coloneqq 1/x\) has a simple zero at \(\infty\) and no other zeros, so for
+\(P = [x : 1]\) with \(x \in k_v\),
+\[
+d_v(P, \infty) = \min\bigl(1, \lvert x \rvert_v^{-1}\bigr) = \frac{1}{\max(1, \lvert x \rvert_v)}.
+\]
+The chordal distance is
+\(\delta_v(P, \infty) = \lvert x \cdot 0 - 1 \cdot 1 \rvert_v/(\lVert P \rVert_v \cdot 1)\).
+If \(v\) is non-archimedean, this is \(1/\max(1, \lvert x \rvert_v) = d_v(P, \infty)\), so here
+\(d_v(\cdot, \infty)\) is exactly the ultrametric distance to \(\infty\).  If \(v\) is
+archimedean, it is \(1/\sqrt{1 + \lvert x \rvert_v^2}\), and
+\(1 \leq d_v(P, \infty)/\delta_v(P, \infty) \leq \sqrt 2\).
+</p>
+
+<p>
+Now let \(x \in k\).  The height of Definition <a href="08-mordell-weil.html#def-mw-proj-height">8.5.3</a>, computed with the
+coordinates \([x : 1]\), is \(H_k(x) = \prod_v \max(1, \lvert x \rvert_v)^{n_v}\).  So
+</p>
+\begin{equation}
+\label{eq:ip-height-p1}
+\log H_k(x) = \sum_{v \in \Places_k} n_v \bigl(-\log d_v(x, \infty)\bigr). \tag{9.2.2}
+\end{equation}
+<p>
+The height of \(x\) measures how close \(x\) is to \(\infty\), at all places at once.  An
+element of \(k\) has large height when it is very close to \(\infty\) at one place, or
+moderately close at many.
+</p>
+</div>
+
+<div class="ec-thm ec-example" id="eg-ip-distance-elliptic">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Example 9.2.10</span>.</span> Let \(E\) be an elliptic curve over \(k_v\), given by a Weierstrass equation, and let
+\(Q \coloneqq O\).  The function \(x\) has a double pole at \(O\) and no other poles, so we may
+take \(t_O \coloneqq 1/x\), with \(e = 2\):
+\[
+d_v(P, O) = \min\bigl(1, \lvert x(P) \rvert_v^{-1/2}\bigr).
+\]
+The uniformizer \(x/y\) at \(O\) is not allowed, since it also vanishes at some
+\(\overline{k_v}\)-point with \(x = 0\).  For \(P_1, P_2 \in E(k_v)\), let
+\(\hat d_v(P_1, P_2) \coloneqq d_v(P_1 - P_2, O)\).  It is a \(v\)-adic distance to \(P_2\) in the
+sense of Definition <a href="#def-ip-distance">9.2.5</a>, defined by the function \(P \mapsto 1/x(P - P_2)\),
+which has a double zero at \(P_2\) and no other zeros.
+</p>
+
+<p>
+Let \(v\) be non-archimedean, and let the equation be minimal.  A \(k_v\)-point \(P\) with
+\(v(x(P)) < 0\) reduces to \(\bar O\).  So if \(P \notin E_1(k_v)\), then
+\(v(x(P)) \geq 0\), and \(d_v(P, O) = 1\).  If \(P \in E_1(k_v) \setminus \{O\}\), then
+\(3v(x(P)) = 2v(y(P)) = -6r\) for some \(r \geq 1\)
+[<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, proof of Proposition VII.2.2].  Let \(z \coloneqq -x/y\).  Then
+\(\lvert x(P) \rvert_v^{-1/2} = \lvert z(P) \rvert_v\), so
+\[
+d_v(P, O) = \begin{cases} \lvert z(P) \rvert_v, & P \in E_1(k_v), \\ 1, & P \notin E_1(k_v). \end{cases}
+\]
+For non-archimedean \(v\), \(\hat d_v\) is a translation-invariant ultrametric on \(E(k_v)\).
+Indeed, \(z\) identifies \(E_1(k_v)\) with the group \(\hat E(\mm_v)\) of the formal group of
+\(E\), whose group law and inverse are power series \(F(T_1, T_2) = T_1 + T_2 + \cdots\) and
+\(i(T) = -T + \cdots\) with coefficients in \(\calO_v\)
+[<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Section IV.1 and Proposition VII.2.2].  So
+\(\lvert z(P_1 + P_2) \rvert_v \leq \max(\lvert z(P_1) \rvert_v, \lvert z(P_2) \rvert_v)\) and
+\(\lvert z(-P) \rvert_v = \lvert z(P) \rvert_v\) on \(E_1(k_v)\).  If \(P_1 - P_2\) or
+\(P_2 - P_3\) is not in the subgroup \(E_1(k_v)\), the ultrametric inequality reads
+\(\hat d_v(P_1, P_3) \leq 1\).  So on \(E\), the class of every \(d_v(\cdot, Q)\) contains a
+translation-invariant ultrametric, defined by the group law.
+</p>
+
+<p>
+Let \(v\) be archimedean, and let the equation be \(y^2 = x^3 + Ax + B\).  By
+Theorem <a href="01-riemann-surfaces.html#thm-rs-uniformization">1.7.1</a>, \(E(\C) \cong \C/\Lambda\) for a lattice \(\Lambda\).  Let
+\(P \in E(k_v)\) correspond to \(s + \Lambda\), so that \(x(P) = \wp_\Lambda(s)\).  The Laurent
+series \(\wp_\Lambda(s) = s^{-2} + 3G_4(\Lambda)s^2 + \cdots\) [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Theorem VI.3.5]
+gives \(\lvert x(P) \rvert_v^{-1/2} = \lvert s \rvert (1 + O(\lvert s \rvert^4))\) near \(s = 0\).
+By the compactness argument of Lemma <a href="#lem-ip-distance-choice">9.2.6</a>,
+\(d_v(P, O) \asymp \min_{\omega \in \Lambda} \lvert s - \omega \rvert\) on \(E(k_v)\).  The
+right-hand side is the distance from \(s\) to \(\Lambda\), so \(\hat d_v\) is \(\asymp\) to the
+flat metric of the torus \(\C/\Lambda\).
+</p>
+</div>
+
+<p>
+The next result says that \(d_v\) measures the order of vanishing of every function at \(Q\).
+</p>
+
+<div class="ec-thm ec-proposition" id="prop-ip-distance-order">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Proposition 9.2.11</span>.</span> Let \(Q \in C(k_v)\), and let \(F \in k_v(C)\) vanish at \(Q\).  Then
+\[
+\lim_{P \to_v Q} \frac{\log \lvert F(P) \rvert_v}{\log d_v(P, Q)} = \ord_Q(F).
+\]
+In particular, the limit does not depend on the choice of \(t_Q\).
+</p>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+We follow [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Proposition IX.2.2].  Let \(e \coloneqq \ord_Q(t_Q)\) and
+\(m \coloneqq \ord_Q(F) \geq 1\).  The function
+\(g \coloneqq F^e/t_Q^m\) has neither a zero nor a pole at \(Q\), so \(\lvert g \rvert_v\) is
+bounded above and below by positive constants on a neighborhood of \(Q\).  For \(P \neq Q\)
+close to \(Q\), \(F(P) \neq 0\), \(d_v(P, Q) = \lvert t_Q(P) \rvert_v^{1/e} < 1\), and
+\[
+\log \lvert F(P) \rvert_v = m \log d_v(P, Q) + \tfrac1e \log \lvert g(P) \rvert_v.
+\]
+Divide by \(\log d_v(P, Q)\), which tends to \(-\infty\) as \(P\) tends to \(Q\).
+</p>
+</details>
+
+<p>
+The next result is about the effect of a morphism on distances.  It depends on the
+ramification, not on the degree.
+</p>
+
+<div class="ec-thm ec-proposition" id="prop-ip-distance-ramification">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Proposition 9.2.12</span>.</span> Let \(\varphi\colon C_1 \to C_2\) be a non-constant morphism of nice curves over \(k_v\), and
+let \(Q \in C_1(k_v)\).  Then
+\[
+\lim_{P \to_v Q} \frac{\log d_v(\varphi(P), \varphi(Q))}{\log d_v(P, Q)} = e_\varphi(Q).
+\]
+</p>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+We follow [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Proposition IX.2.3].  Let \(t_{\varphi(Q)} \in k_v(C_2)\) define
+\(d_v(\cdot, \varphi(Q))\), with
+\(e_2 \coloneqq \ord_{\varphi(Q)}(t_{\varphi(Q)})\).  Writing \(t_{\varphi(Q)}\) as the \(e_2\)-th
+power of a uniformizer times a unit at \(\varphi(Q)\), Definition <a href="03-curves.html#def-crv-ramification-index">3.2.7</a>
+gives \(\ord_Q(\varphi^* t_{\varphi(Q)}) = e_\varphi(Q) e_2\).  The morphism \(\varphi\) is
+continuous, by part <a href="#it-ip-top-curve">2</a> of Lemma <a href="#lem-ip-topology">9.2.4</a>, and its fibers are finite.
+So for \(P \neq Q\) close to \(Q\), \(\varphi(P) \neq \varphi(Q)\) is close to \(\varphi(Q)\),
+and
+\[
+\log d_v(\varphi(P), \varphi(Q)) = \frac{1}{e_2} \log \lvert (\varphi^* t_{\varphi(Q)})(P) \rvert_v.
+\]
+Apply Proposition <a href="#prop-ip-distance-order">9.2.11</a> to \(F \coloneqq \varphi^* t_{\varphi(Q)}\).
+</p>
+</details>
+
+<p>
+Compare with heights.  For a morphism \(F\colon \PP^N \to \PP^M\) of degree \(d\),
+\(h \circ F = d\,h + O(1)\) by Theorem <a href="08-mordell-weil.html#thm-mw-height-morphism">8.5.19</a>: heights see the degree.
+Proposition <a href="#prop-ip-distance-ramification">9.2.12</a> says that distances see the ramification.  For an
+unramified morphism of large degree, such as the multiplication \([m]\) on an elliptic curve
+over a field of characteristic \(0\), the log-ratio of distances tends to \(1\) while
+heights are multiplied by \(m^2\).  This contrast drives the proof of Siegel's theorem.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-ip-local-heights" class="outline-3">
+<h3 id="sec-ip-local-heights"><span class="section-number" id="s9.2.3">9.2.3</span> Local heights</h3>
+<div class="outline-text-3" id="text-sec-ip-local-heights">
+<p>
+Example <a href="#eg-ip-distance-p1">9.2.9</a> writes the height of \(x \in k\) as a sum over the places of
+\(-\log\) of a distance to \(\infty\).  Local heights generalize this to any divisor on any
+curve [<a class="ec-cite" href="#bib-Hindry-Silverman00">HS00</a>, Section B.8].  Intuitively, the local height of \(P\) for a
+divisor \(D\) is \(-\log\) of the \(v\)-adic distance from \(P\) to \(D\).
+</p>
+
+<div class="ec-thm ec-definition" id="def-ip-local-height">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Definition 9.2.13</span>.</span> Let \(C\) be a nice curve over \(k_v\), and let \(D = \sum_Q n_Q Q\) be a divisor on \(C\).  A
+<dfn class="ec-cdef" id="gls-local-height" data-gls="local-height">local height</dfn> for \(D\) at \(v\) is a continuous function
+\(\lambda\colon C(k_v) \setminus \operatorname{supp} D \to \R\) such that, for each
+\(Q \in C(k_v)\) with \(n_Q \neq 0\) and a uniformizer \(u_Q\) at \(Q\), the function
+\(\lambda + n_Q \log \lvert u_Q \rvert_v\) is bounded on a punctured neighborhood of \(Q\).
+</p>
+</div>
+
+<p>
+The closed points of the support of \(D\) that are not \(k_v\)-points impose no condition,
+since they are not in \(C(k_v)\).
+</p>
+
+<div class="ec-thm ec-proposition" id="prop-ip-local-height">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Proposition 9.2.14</span>.</span> Let \(D = \sum_Q n_Q Q\) be a divisor on a nice curve \(C\) over \(k_v\).
+</p>
+<ol class="org-ol">
+<li><a id="it-ip-lh-unique"></a> Two local heights for \(D\) differ by a bounded function.</li>
+<li><a id="it-ip-lh-distance"></a> The function \(-\sum_{Q \in C(k_v)} n_Q \log d_v(\cdot, Q)\) is a local
+height for \(D\).</li>
+<li><a id="it-ip-lh-principal"></a> Let \(f \in k_v(C)^\times\).  Then \(-\log \lvert f \rvert_v\) is a
+local height for \(\divv(f)\).</li>
+<li><a id="it-ip-lh-poles"></a> Let \(f \in k_v(C)\) be non-constant, with pole divisor
+\(D_\infty \coloneqq \sum_{\ord_Q(f) < 0} (-\ord_Q f) Q\).  Then
+\(\log \max(1, \lvert f \rvert_v)\) is a local height for \(D_\infty\).</li>
+</ol>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+For part <a href="#it-ip-lh-unique">1</a>, the difference of two local heights is continuous on
+\(C(k_v)\) minus the finitely many \(k_v\)-points of \(\operatorname{supp} D\), and bounded on a
+punctured neighborhood of each of them.  The complement of these neighborhoods is compact.
+</p>
+
+<p>
+For part <a href="#it-ip-lh-distance">2</a>, each \(-\log d_v(\cdot, Q)\) is continuous away from \(Q\).
+Near \(Q\), write \(t_Q = u_Q^e h\) with \(h\) a unit at \(Q\).  Then
+\(-\log d_v(\cdot, Q) + \log \lvert u_Q \rvert_v = -\tfrac1e \log \lvert h \rvert_v\) is bounded.
+</p>
+
+<p>
+For part <a href="#it-ip-lh-principal">3</a>, near a \(k_v\)-point \(Q\) with \(n \coloneqq \ord_Q(f)\),
+write \(f = u_Q^n g\) with \(g\) a unit at \(Q\).  Then
+\(-\log \lvert f \rvert_v + n \log \lvert u_Q \rvert_v = -\log \lvert g \rvert_v\) is bounded.
+For part <a href="#it-ip-lh-poles">4</a>, \(\log \max(1, \lvert f \rvert_v)\) is continuous away from the
+poles, and equals \(\log \lvert f \rvert_v\) near a pole.  Conclude as for
+part <a href="#it-ip-lh-principal">3</a>.
+</p>
+</details>
+
+<p>
+Parts <a href="#it-ip-lh-unique">1</a> and <a href="#it-ip-lh-distance">2</a> say that the local heights for \(D\) are
+the functions \(-\sum n_Q \log d_v(\cdot, Q) + O(1)\).  For instance, let \(f \in k_v(C)\) be
+non-constant.  The pole divisor of \(1/f\) is the divisor of zeros of \(f\), and
+\(\log \max(1, \lvert 1/f \rvert_v) = -\log \min(1, \lvert f \rvert_v)\).  So
+part <a href="#it-ip-lh-poles">4</a>, applied to \(1/f\), gives
+\[
+\log \min(1, \lvert f \rvert_v) = \sum_{Q \in C(k_v),\ f(Q) = 0} \ord_Q(f) \log d_v(\cdot, Q) + O(1)
+\]
+on \(C(k_v)\) minus the zeros of \(f\) [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Exercise 9.16].
+</p>
+
+<p>
+The local heights of a rational function add up to its height.
+</p>
+
+<div class="ec-thm ec-proposition" id="prop-ip-height-sum">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Proposition 9.2.15</span>.</span> Let \(C\) be a nice curve over \(k\), let \(f \in k(C)\) be non-constant, and let
+\(P \in C(k)\) not be a pole of \(f\).  Then
+\[
+\log H_k(f(P)) = \sum_{v \in \Places_k} n_v \log \max(1, \lvert f(P) \rvert_v).
+\]
+If the only pole of \(f\) in \(C(\kbar)\) is a \(k\)-point \(Q\), of order \(e\), and
+\(d_v(\cdot, Q)\) is defined by
+\(t_Q \coloneqq 1/f\) at every place \(v\), then
+\(\log H_k(f(P)) = e \sum_{v \in \Places_k} n_v \bigl(-\log d_v(P, Q)\bigr)\).
+</p>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+The first formula is Definition <a href="08-mordell-weil.html#def-mw-proj-height">8.5.3</a> for \([f(P) : 1]\).  For the second,
+\(t_Q = 1/f\) has a zero of order \(e\) at \(Q\) and no other zeros, and
+\(-e \log d_v(P, Q) = -\log \min(\lvert f(P) \rvert_v^{-1}, 1) = \log \max(1, \lvert f(P) \rvert_v)\).
+</p>
+</details>
+
+<p>
+For \(C = \PP^1\) and \(f = x\), this is \eqref{eq:ip-height-p1}.  Each term is a local height
+at \(v\), by part <a href="#it-ip-lh-poles">4</a> of Proposition <a href="#prop-ip-local-height">9.2.14</a>.  The sum is
+finite, since almost all terms vanish.  For an arbitrary choice of local heights, the bounded
+errors at infinitely many places need not add up to a bounded error.  The general theory
+controls them uniformly in \(v\) [<a class="ec-cite" href="#bib-Hindry-Silverman00">HS00</a>, Theorem B.8.1], but we only need
+the exact identity of Proposition <a href="#prop-ip-height-sum">9.2.15</a>.
+</p>
+
+<div class="ec-thm ec-remark" id="rem-ip-base-change">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Remark 9.2.16</span>.</span> Let \(k'\) be a finite extension of \(k\), and \(w\) a place of \(k'\) above \(v\).  The
+absolute values of Situation <a href="#sit-ip-standing">9.0.1</a> are not normalized: \(\lvert\ \rvert_w\)
+restricts to \(\lvert\ \rvert_v\) on \(k_v\).  So a function \(t_Q \in k_v(C)\) that defines
+\(d_v(\cdot, Q)\) also defines \(d_w(\cdot, Q)\), and the two agree on \(C(k_v)\).
+</p>
+</div>
+
+<div class="ec-thm ec-remark" id="rem-ip-neron">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Remark 9.2.17</span>.</span> A local height is defined only up to a bounded function, by part <a href="#it-ip-lh-unique">1</a> of
+Proposition <a href="#prop-ip-local-height">9.2.14</a>.  On an elliptic curve \(E\), the group law selects a
+canonical one, as Tate's limit of Proposition <a href="08-mordell-weil.html#prop-mw-tate">8.4.9</a> selects the canonical height
+among equivalent quasi-quadratic heights.  Néron's local height \(\lambda_v\) is the unique
+continuous function on \(E(k_v) \setminus \{O\}\) such that
+\(\lambda_v(P) - \tfrac12 \log \lvert x(P) \rvert_v\) has a limit as \(P\) tends to \(O\), and that
+satisfies the duplication formula of [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Proposition C.18.1(iii)].  In particular
+it is a local height for the divisor \(O\).  Let \(\hat h\) be the canonical height on \(E(k)\)
+of [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Section VIII.9], not yet constructed in these notes.  It satisfies
+\(\hat h(P) = (2[k : \Q])^{-1} \log H_k(x(P)) + O(1)\), and it is the sum of the local heights:
+\(\hat h(P) = [k : \Q]^{-1} \sum_v n_v \lambda_v(P)\) for \(P \in E(k) \setminus \{O\}\)
+[<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Theorem C.18.2], [<a class="ec-cite" href="#bib-Hindry-Silverman00">HS00</a>, Section B.9].
+Proposition <a href="#prop-ip-height-sum">9.2.15</a>
+with \(f = x\) gives \(\log H_k(x(P)) = 2 \sum_v n_v \bigl(-\log d_v(P, O)\bigr)\), so the
+functions \(-\log d_v(\cdot, O)\) add up to \(\hat h\) as well, up to a bounded function.
+</p>
+
+<p>
+If \(v\) is non-archimedean and \(E\) has good reduction, with a minimal Weierstrass equation,
+then \(\lambda_v(P) = \log \max(1, \lvert x(P) \rvert_v^{1/2}) = -\log d_v(P, O)\), with
+\(t_O = 1/x\) as in Example <a href="#eg-ip-distance-elliptic">9.2.10</a>
+[<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Theorem C.18.3(b)].  So in this case the choice of
+Example <a href="#eg-ip-distance-elliptic">9.2.10</a> is the canonical one.  At a place of split multiplicative
+reduction, let \(N \coloneqq -v(j(E))\), and identify
+\(E(k_v)/E_0(k_v)\) with \(\Z/N\Z\).  A \(k_v\)-point in the class of \(n\), with
+\(1 \leq n \leq N - 1\), has \(\lambda_v = \tfrac12 B_2(n/N) \log \lvert j(E) \rvert_v\), with
+\(B_2(T) \coloneqq T^2 - T + \tfrac16\) [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Theorem C.18.3(c)].  For \(N = 2\)
+and \(n = 1\), \(B_2(1/2) = -1/12\) and \(\lvert j(E) \rvert_v > 1\), so \(\lambda_v < 0\) there.
+Since \(d_v\) and \(\delta_v\) are at most \(1\), \(\lambda_v\) is then neither
+\(-\log d_v(\cdot, O)\), for any choice of \(t_O\), nor \(-\log \delta_v(\cdot, O)\).  Canonical
+does not mean metric.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgb60c463" class="outline-3">
+<h3 id="orgb60c463"><span class="section-number" id="s9.2.4">9.2.4</span> Roth's theorem in terms of distances</h3>
+<div class="outline-text-3" id="text-2-4">
+<p>
+Theorem <a href="#thm-ip-roth">9.1.10</a> says how fast elements of \(k\) can approach an algebraic number.  In
+terms of distances, it says how fast \(k\)-points of a curve can approach a
+\(\kbar\)-point.
+</p>
+
+<div class="ec-thm ec-corollary" id="cor-ip-roth-distance">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Corollary 9.2.18</span>.</span> Let \(C\) be a nice curve over \(k\), let \(f \in k(C)\) be non-constant, and let
+\(Q \in C(\kbar)\).  Then
+\[
+\liminf_{P \in C(k),\ P \to_v Q} \frac{\log d_v(P, Q)}{\log H_k(f(P))} \geq -2.
+\]
+If \(Q \notin C(k_v)\), or if \(Q\) is not a limit of \(k\)-points, the \(\liminf\) is taken to
+be \(0\).
+</p>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+We follow [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Corollary IX.2.4].  If \(Q \notin C(k_v)\), then \(Q\) is not a
+limit of \(k_v\)-points, by
+part <a href="#it-ip-top-closed">4</a> of Lemma <a href="#lem-ip-topology">9.2.4</a>.  So let \(Q \in C(k_v)\), and let
+\((P_i)\) be a sequence of distinct \(k\)-points, different from \(Q\), tending to \(Q\).  We
+may replace \(f\) by \(1/f\).  Indeed \(f\) has finitely many zeros, and
+\(H_k(1/a) = H_k(a)\) for \(a \in k^\times\), since \([1/a : 1] = [1 : a]\) and permuting the
+coordinates does not change the height.  So we may assume that \(f\)
+is regular at \(Q\).  Let \(\alpha \coloneqq f(Q)\).  It lies in \(\kbar\), since
+\(Q \in C(\kbar)\), and in \(k_v\), since \(Q \in C(k_v)\).  Let
+\(e \coloneqq \ord_Q(f - \alpha) \geq 1\).  By Proposition <a href="#prop-ip-distance-order">9.2.11</a>,
+\[
+\lim_{i \to \infty} \frac{\log \lvert f(P_i) - \alpha \rvert_v}{\log d_v(P_i, Q)} = e.
+\]
+The fibers of \(f\) are finite.  So \(f(P_i) \neq \alpha\) for large \(i\), each element of
+\(k\) is \(f(P_i)\) for finitely many \(i\), and \(H_k(f(P_i)) \to \infty\) by
+Theorem <a href="08-mordell-weil.html#thm-mw-northcott">8.5.13</a>.  Let \(\varepsilon > 0\) and \(\tau \coloneqq 2 + \varepsilon\).  By
+Theorem <a href="#thm-ip-roth">9.1.10</a>, in the form of part <a href="#it-ip-ae-lower-bound">1</a> of
+Remark <a href="#rem-ip-approximation-exponent">9.1.6</a> with constant \(1\),
+\(\lvert f(P_i) - \alpha \rvert_v \geq H_k(f(P_i))^{-\tau}\) for all large \(i\).  Then, for
+large \(i\),
+\[
+\frac{\log d_v(P_i, Q)}{\log H_k(f(P_i))}
+= \frac{\log d_v(P_i, Q)}{\log \lvert f(P_i) - \alpha \rvert_v} \cdot
+\frac{\log \lvert f(P_i) - \alpha \rvert_v}{\log H_k(f(P_i))},
+\]
+where the first factor is positive and tends to \(1/e\), and the second lies in
+\([-\tau, 0)\).  So the \(\liminf\) is at least \(-\tau/e \geq -2 - \varepsilon\), for every
+\(\varepsilon > 0\).
+</p>
+</details>
+
+<div class="ec-thm ec-remark" id="rem-ip-roth-rational">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Remark 9.2.19</span>.</span> Corollary <a href="#cor-ip-roth-distance">9.2.18</a> says nothing new for \(Q \in C(k)\).  Then
+\(\alpha = f(Q) \in k\).  For \(w \in \Places_k\), let \(c_w \coloneqq 2\) if \(w\) is archimedean
+and \(c_w \coloneqq 1\) otherwise, so that \(\prod_w c_w^{n_w} = 2^{[k : \Q]}\).  For \(a \in k\)
+with \(a \neq \alpha\), the product formula (part <a href="08-mordell-weil.html#it-mw-product-formula">2</a> of
+Proposition <a href="08-mordell-weil.html#prop-mw-extension-product">8.5.2</a>) gives
+\[ \begin{aligned}
+\lvert a - \alpha \rvert_v^{n_v} = \prod_{w \neq v} \lvert a - \alpha \rvert_w^{-n_w}
+&\geq \prod_{w} \bigl(c_w \max(1, \lvert a \rvert_w) \max(1, \lvert \alpha \rvert_w)\bigr)^{-n_w} \\
+&= \frac{1}{2^{[k : \Q]} H_k(\alpha) H_k(a)},
+\end{aligned} \]
+So the proof gives a \(\liminf\) of at least \(-1/(e\,n_v) \geq -1\), which is better than
+\(-2\).  This is the argument for rational \(\alpha\) in the proof of
+Corollary <a href="#cor-ip-liouville-exponent">9.1.7</a>.  The content of Corollary <a href="#cor-ip-roth-distance">9.2.18</a> is for
+\(\kbar\)-points that are not \(k\)-points.
+</p>
+
+<p>
+Siegel's theorem, in the next section, improves the bound to \(0\) when \(C\) is an elliptic
+curve with infinitely many \(k\)-points.  Let \(S \subseteq \Places_k\) be finite, and let
+\(P\) be a \(k\)-point with \(\lvert x(P) \rvert_w \leq 1\) for all \(w \notin S\).  In
+Proposition <a href="#prop-ip-height-sum">9.2.15</a> for \(f = x\), only the places of \(S\) contribute, so
+\(P\) is \(v\)-adically very close to \(O\) for some \(v \in S\).  Writing
+\(P = [m]P' + R\) with \(R\) in a finite set, Proposition <a href="#prop-ip-distance-ramification">9.2.12</a> for
+the unramified morphism \(P' \mapsto [m]P' + R\) keeps the log-ratio of distances near \(1\),
+while the height of \(P'\) is about \(m^{-2}\) times that of \(P\)
+[<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Section IX.3].
+</p>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org43e0853" class="outline-2 ec-references">
+<h2 id="org43e0853">References</h2>
+<div class="outline-text-2" id="text-org43e0853">
 <dl class="ec-bibliography">
 <dt id="bib-Hindry-Silverman00">[HS00]</dt>
 <dd>Marc Hindry and Joseph H. Silverman. <i>Diophantine geometry</i>. Vol. 201. Graduate Texts in Mathematics. Springer-Verlag, New York, 2000. An introduction. <a href="https://doi.org/10.1007/978-1-4612-1210-2">doi:10.1007/978-1-4612-1210-2</a>.</dd>
+<dt id="bib-Poonen2017">[Poo17]</dt>
+<dd>Bjorn Poonen. <i>Rational points on varieties</i>. Vol. 186. Graduate Studies in Mathematics. American Mathematical Society, Providence, RI, 2017. <a href="https://doi.org/10.1090/gsm/186">doi:10.1090/gsm/186</a>.</dd>
 <dt id="bib-Silverman09">[Sil09]</dt>
 <dd>Joseph H. Silverman. <i>The arithmetic of elliptic curves</i>. Second. Vol. 106. Graduate Texts in Mathematics. Springer, Dordrecht, 2009. <a href="https://doi.org/10.1007/978-0-387-09494-6">doi:10.1007/978-0-387-09494-6</a>.</dd>
+<dt id="bib-Silverman87">[Sil87]</dt>
+<dd>Joseph H. Silverman. &ldquo;Arithmetic distance functions and height functions in Diophantine geometry&rdquo;. In: <i>Math. Ann.</i> 279.2 (1987), pp. 193&ndash;216.</dd>
 <dt id="bib-Stange23">[Sta23]</dt>
 <dd>Katherine E. Stange. <i>Rethinking the real line</i>. <a href="https://www.youtube.com/watch?v=uFWJuZQLKJs">https://www.youtube.com/watch?v=uFWJuZQLKJs</a>. 2023. YouTube video, Summer of Math Exposition 3.</dd>
 </dl>
