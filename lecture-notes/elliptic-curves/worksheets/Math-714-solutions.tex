@@ -829,7 +829,7 @@ breaklinks=true}
 \AddToShipoutPictureFG*{%
   \put(\LenToUnit{1.1cm},\LenToUnit{.5\paperheight}){%
     \rotatebox{90}{\makebox[0pt][c]{\small\sffamily\color{black!50}%
-      DRAFT \textemdash{} last edited November 10, 2026}}}}
+      DRAFT \textemdash{} last edited November 11, 2026}}}}
 
 %% ---- shared machinery of the worksheets ----
 
@@ -10515,6 +10515,424 @@ $S$ and to $-1$ at others, and these roots are not conjugate. Silverman's statem
 for such $F$, but its proof needs a further idea.
 \end{solremark}
 \end{solution}
+\end{enumerate}
+\end{problem}
+
+\bigskip
+
+\part[Siegel's theorem]{Siegel's theorem}
+\label{siegel:part}
+\noindent
+This worksheet works through two proofs of \cite{Silverman09}*{\S\S IX.3--IX.4}. An
+elliptic curve over a number field $K$ can have infinitely many rational points, but
+only finitely many of them have an $S$-integral $x$-coordinate. Siegel gave two proofs.
+In the first, a rational point $P$ of large height with $x(P) \in \calO_S$ is very close to
+$O$ at some place of $S$, and Siegel's theorem says that rational points cannot approach
+$O$ that fast. \Cref{siegel:prob:integral} introduces the distance functions that make this precise,
+and carries out the proof. The second proof works for every equation $y^2 = f(x)$, where $f$ is a polynomial of degree at least
+$3$ with distinct roots. It turns an $S$-integral solution into a solution of
+$u + w = 1$ in units, and this equation has only finitely many solutions.
+\Cref{siegel:prob:hyperelliptic} carries it out, and then runs it on $y^2 = x^3 - 36x$ over
+$\Z[1/6]$. Both rest on Roth's theorem, and neither bounds the solutions.
+
+
+\subsection*{Standing notation}
+\begin{itemize}
+  \item A number field $K$ with algebraic closure $\Kbar$, set of places $\Places_K$ and set
+        of archimedean places $\Places_K^\infty$.
+  \item For $v \in \Places_K$, the completion $K_v$, the absolute value $\lvert\ \rvert_v$ on
+        $K_v$ extending the usual absolute value on $\Q_p$ or $\R$, and the local degree
+        $n_v \coloneqq [K_v : \Q_v]$, where $\Q_v$ is the completion of $\Q$ at the
+        restriction of $v$. If $w$ is a place of a finite extension of $K$ above $v$, then
+        $\lvert a \rvert_w = \lvert a \rvert_v$ for $a \in K$.
+  \item The height $H_K(a) \coloneqq \prod_{v \in \Places_K} \max(1, \lvert a \rvert_v)^{n_v}$
+        of $a \in K$, which satisfies $H_K(a) \geq 1$ \cite{Silverman09}*{\S VIII.5}.
+  \item A finite set $S \subseteq \Places_K$ containing $\Places_K^\infty$. The ring of
+        $S$-integers $\calO_S \coloneqq \{a \in K : \lvert a \rvert_v \leq 1 \text{ for all }
+        v \notin S\}$ and its group of units $\calO_S^\times$, the group of $S$-units.
+\end{itemize}
+
+\section{Integral points and Siegel's theorem}
+\label{siegel:sec:integral}
+
+\Cref{siegel:prob:integral} is the proof of \cite{Silverman09}*{Corollary~IX.3.2.1}. It uses the
+distance function $d_v$ of \cref{siegel:def:distance}, for a place $v$ of $K$. The distance
+$d_v(P, Q)$ is small when the $K_v$-point $P$ of a curve is $v$-adically close to the
+$K_v$-point $Q$. It depends on the choice of a function, but the statement of
+\cref{siegel:thm:siegel} does not \cite{Silverman09}*{Remark~IX.2.1}. With the height $h_f$ of
+\cref{siegel:def:height}, Siegel's theorem says that the rational points $P$ of an elliptic curve
+cannot approach $Q$ quickly, compared with their height: for every $\varepsilon > 0$, all but
+finitely many of them satisfy $d_v(P, Q) \geq e^{-\varepsilon h_f(P)}$.
+
+\begin{wsdefinition}[{The $v$-adic distance \cite{Silverman09}*{\S IX.2}}]
+\label{siegel:def:distance}
+Let $C$ be a smooth projective curve over $K$, let $v \in \Places_K$, and let
+$Q \in C(K_v)$. Choose a function $t_Q \in K_v(C)$ that has a zero of order $e \geq 1$ at
+$Q$ and no other zeros. The \defi{$v$-adic distance} from $P \in C(K_v)$ to $Q$ is
+\[
+d_v(P, Q) \coloneqq \min\bigl(\lvert t_Q(P) \rvert_v^{1/e}, 1\bigr),
+\]
+with $d_v(P, Q) \coloneqq 1$ if $P$ is a pole of $t_Q$.
+\end{wsdefinition}
+
+\begin{wsdefinition}[{Heights on an elliptic curve \cite{Silverman09}*{\S VIII.6}}]
+\label{siegel:def:height}
+Let $E$ be an elliptic curve over $K$, and let $f \in K(E)$ be a nonconstant function. The
+\defi{height relative to $f$} of a rational point $P \in E(K)$ is
+$h_f(P) \coloneqq \tfrac{1}{[K : \Q]}\log H_K(f(P))$, with $h_f(P) \coloneqq 0$ if $P$ is a
+pole of $f$. The function $f$ is \defi{even} if
+$f(-P) = f(P)$ for every $P \in E(\Kbar)$.
+\end{wsdefinition}
+
+\begin{wstheorem}[{Siegel \cite{Silverman09}*{Theorem~IX.3.1}}]
+\label{siegel:thm:siegel}
+Let $E$ be an elliptic curve over $K$ such that $E(K)$ is infinite. Let $Q \in E(\Kbar)$, let
+$f \in K(E)$ be a nonconstant even function, and let $v$ be a place of the field $K(Q)$,
+with $d_v(\cdot, Q)$ defined on $E$ as a curve over $K(Q)$. Then
+\[
+\lim_{\substack{P \in E(K) \\ h_f(P) \to \infty}} \frac{\log d_v(P, Q)}{h_f(P)} = 0.
+\]
+\end{wstheorem}
+
+\begin{problem}[Integral points on elliptic curves]
+\label{siegel:prob:integral}
+Let $E$ be an elliptic curve over $K$, given by a Weierstrass equation with coordinate
+functions $x$ and $y$.
+\begin{enumerate}
+  \item\label{siegel:it:int-distance} Show that $t_O \coloneqq 1/x$ has a zero of order $2$ at $O$
+        and no other zeros. Deduce that, for this choice of $t_O$, every $v \in \Places_K$ and
+        every $P \in E(K_v) \setminus \{O\}$,
+        \[
+        d_v(P, O) = \max\bigl(1, \lvert x(P) \rvert_v\bigr)^{-1/2}.
+        \]
+\begin{solution}
+\ans{The function $x$ has a pole of order $2$ at $O$ and no other poles.}
+The function $x$ is a coordinate on the affine curve, so it is regular away from $O$. The
+map $x\colon E \to \PP^1$ has degree $2$. Indeed $K(E) = K(x, y)$, and $y$ satisfies a
+quadratic equation over $K(x)$, so the degree is at most $2$. It is not $1$, since $E$ has
+genus one and is not isomorphic to $\PP^1$. A nonconstant function has as many poles as its degree,
+counted with multiplicity \cite{Silverman09}*{Proposition~II.2.6}. So $x$ has a pole of order
+$2$ at $O$, and $1/x$ has a zero of order $2$ at $O$ and no other zeros. In
+\cref{siegel:def:distance} we may take $t_O = 1/x$ and $e = 2$. If $x(P) \neq 0$, then
+\[
+d_v(P, O) = \min\bigl(\lvert x(P) \rvert_v^{-1/2}, 1\bigr) = \max\bigl(1, \lvert x(P) \rvert_v\bigr)^{-1/2}.
+\]
+If $x(P) = 0$, then $P$ is a pole of $t_O$, and both sides are $1$.
+\end{solution}
+  \item\label{siegel:it:int-height} Let $P \in E(K) \setminus \{O\}$ be a rational point with
+        $x(P) \in \calO_S$. Show that
+        \[
+        h_x(P) = \frac{1}{[K : \Q]}\sum_{v \in S} n_v\log\max\bigl(1, \lvert x(P) \rvert_v\bigr),
+        \]
+        and that some $v \in S$ satisfies $h_x(P) \leq -2\,\# S\log d_v(P, O)$, with $d_v$
+        as in \ref{siegel:it:int-distance}.
+\begin{solution}
+\ans{The largest of the $\# S$ terms of the sum is at least their average.}
+For $v \notin S$, $\lvert x(P) \rvert_v \leq 1$, so the factor of $H_K(x(P))$ at $v$ is $1$.
+Taking logarithms gives the formula. Let $v \in S$ be a place where the term
+$n_v\log\max(1, \lvert x(P) \rvert_v)$ is largest. The sum has $\# S$ terms, so it is at most
+$\# S$ times this term. As $n_v \leq [K : \Q]$, and by \ref{siegel:it:int-distance},
+\[
+h_x(P) \leq \# S\log\max\bigl(1, \lvert x(P) \rvert_v\bigr) = -2\,\# S\log d_v(P, O).
+\]
+\end{solution}
+  \item\label{siegel:it:int-finite} Show that the set
+        $\{P \in E(K) \setminus \{O\} : x(P) \in \calO_S\}$ is finite.\hint{if not, some
+        place $v \in S$ serves in \ref{siegel:it:int-height} for infinitely many rational points of
+        the set.}
+\begin{solution}
+\ans{Infinitely many such $P$ would be too close to $O$ at one place of $S$.}
+If $E(K)$ is finite, there is nothing to prove. So let $E(K)$ be infinite, and suppose that
+the set is infinite. For each $P$ in the set, \ref{siegel:it:int-height} gives a place of $S$. As
+$S$ is finite, one place $v \in S$ is given for infinitely many $P$. Let $P_1, P_2, \dots$
+be distinct rational points among them, so that
+\[
+h_x(P_i) \leq -2\,\# S\log d_v(P_i, O) \quad\text{for all } i.
+\]
+Only finitely many rational points have $h_x$ below a given bound
+\cite{Silverman09}*{Proposition~VIII.6.1}. So $h_x(P_i) \to \infty$, and for large $i$,
+\[
+\frac{\log d_v(P_i, O)}{h_x(P_i)} \leq -\frac{1}{2\,\# S}.
+\]
+The function $x$ is nonconstant and even, and $K(O) = K$. So \cref{siegel:thm:siegel}, with
+$Q = O$ and $f = x$, says that the left side tends to $0$, a contradiction.
+\begin{solremark}
+In Silverman's proof, ``$d_v(P_i, O) \to \infty$'' should read ``$d_v(P_i, O) \to 0$''. The
+proof gives no bound for the heights of the rational points of the set: Siegel's theorem is
+proved with Roth's theorem, which gives no bound for its exceptions
+\cite{Silverman09}*{Remark~IX.3.4}.
+\end{solremark}
+\end{solution}
+\end{enumerate}
+\end{problem}
+
+
+\section{The equation $y^2 = f(x)$ and the $S$-unit equation}
+\label{siegel:sec:hyperelliptic}
+
+\Cref{siegel:prob:hyperelliptic} is the proof of \cite{Silverman09}*{Theorem~IX.4.3}, Siegel's second
+proof of finiteness. It needs no Diophantine approximation on the curve. Over a large enough
+field, and after enlarging $S$, each factor $x - \alpha_i$ of $f(x)$ is a unit times a
+square. Differences of these factors are differences of roots of $f$, which are units, and
+three roots give two units with sum $1$. Silverman reaches this situation with three
+reductions. A fourth is needed, that the roots of $f$ are $S$-integers, since the proof
+treats $x - \alpha_i$ as an element of $\calO_S$.
+
+
+\begin{wstheorem}[{The $S$-unit equation \cite{Silverman09}*{Theorem~IX.4.1}}]
+\label{siegel:thm:s-unit}
+Let $\lambda, \mu \in K^\times$. Then the equation $\lambda u + \mu w = 1$ has only finitely
+many solutions $(u, w) \in \calO_S^\times \times \calO_S^\times$.
+\end{wstheorem}
+
+\begin{wsdefinition}[Adapted sets of places]
+\label{siegel:def:adapted}
+Let $f \in K[T]$ be a polynomial of degree $d \geq 1$. The set $S$ is \defi{adapted} to $f$
+if the following conditions hold.
+\begin{enumerate}
+  \item\label{siegel:it:ad-split} The polynomial $f$ splits over $K$, as
+        $f = c\prod_{i = 1}^d (T - \alpha_i)$, with $c \in \calO_S^\times$ and
+        $\alpha_1, \dots, \alpha_d \in \calO_S$.
+  \item\label{siegel:it:ad-diff} For all $i \neq j$, $\alpha_i - \alpha_j \in \calO_S^\times$.
+  \item\label{siegel:it:ad-pid} The ring $\calO_S$ is a principal ideal domain.
+\end{enumerate}
+\end{wsdefinition}
+
+\begin{problem}[The equation $y^2 = f(x)$]
+\label{siegel:prob:hyperelliptic}
+Let $f \in K[T]$ be a polynomial of degree $d \geq 3$ with distinct roots in $\Kbar$. A
+\emph{solution} is a pair $(x, y) \in \calO_S \times \calO_S$ with $y^2 = f(x)$. The goal is
+to show that there are only finitely many solutions.
+\begin{enumerate}
+  \item\label{siegel:it:hyp-reduce} Show that it is enough to prove this when $S$ is adapted to
+        $f$.\hint{replace $K$ by a finite extension $K'$ and $S$ by a finite set of places
+        of $K'$ containing the places above $S$. This only adds solutions.}
+\begin{solution}
+\ans{Extending $K$ and enlarging $S$ only add solutions.}
+Let $K'$ be a finite extension of $K$ over which $f$ splits, as
+$f = c\prod_i (T - \alpha_i)$, and let $S'$ be a finite set of places of $K'$ containing the
+places above $S$. Then $S'$ contains the archimedean places of $K'$. If $a \in \calO_S$ and
+$w \notin S'$ lies above $v$, then $v \notin S$, so $\lvert a \rvert_w = \lvert a \rvert_v \leq 1$.
+So $\calO_S \subseteq \calO_{S'}$, and every solution is a solution for $K'$ and $S'$. Hence
+it is enough to find such an $S'$ that is adapted to $f$ over $K'$.
+
+A nonzero element of $K'$ has absolute value $1$ at all but finitely many places of $K'$.
+The elements $c$ and $\alpha_i - \alpha_j$, for $i \neq j$, are nonzero, since the roots are
+distinct. So after adding finitely many places to $S'$, the elements $c$ and
+$\alpha_i - \alpha_j$ are $S'$-units and the $\alpha_i$ are $S'$-integers. These properties
+persist when $S'$ grows. As the class group of $K'$ is finite, we may enlarge $S'$ once
+more so that $\calO_{S'}$ is a principal ideal domain
+\cite{Silverman09}*{proof of Proposition~VIII.1.6}.
+\begin{solremark}
+Silverman's reductions omit $\alpha_i \in \calO_S$. It does not follow from the others. Over
+$\Q$ with $S = \{\infty, 2\}$, the roots $1/3$, $4/3$, $7/3$ have differences $\pm 1$ and
+$\pm 2$, and $\Z[1/2]$ is a principal ideal domain.
+\end{solremark}
+\end{solution}
+  \item\label{siegel:it:hyp-square} From now on, $S$ is adapted to $f$, with $c$ and $\alpha_i$ as
+        in \cref{siegel:def:adapted}. Let $(x, y)$ be a solution. Show that for each $i$ there are
+        $b_i \in \calO_S^\times$ and $z_i \in \calO_S$ with
+        $x - \alpha_i = b_iz_i^2$.\hint{a prime element of $\calO_S$ divides at most one of
+        the $x - \alpha_i$.}
+\begin{solution}
+\ans{Every prime of $\calO_S$ divides $x - \alpha_i$ to an even power.}
+If $x = \alpha_i$, take $b_i \coloneqq 1$ and $z_i \coloneqq 0$. So fix $i$ with
+$x \neq \alpha_i$. As $x$ and the roots lie in $\calO_S$, so do the $x - \alpha_j$. The ring
+$\calO_S$ is a principal ideal domain, by \cref{siegel:def:adapted}\ref{siegel:it:ad-pid}, hence a unique
+factorization domain. Let $\pi$ be a prime element of $\calO_S$ that divides
+$x - \alpha_i$. If $\pi$ also divided $x - \alpha_j$ for some $j \neq i$, it would divide
+$\alpha_i - \alpha_j$, which is a unit by \cref{siegel:def:adapted}\ref{siegel:it:ad-diff}. So $\pi$ divides
+no other factor of
+\[
+y^2 = c\prod_j (x - \alpha_j),
+\]
+and it does not divide the unit $c$. In particular $y \neq 0$. Hence the exponent of $\pi$
+in $x - \alpha_i$ is its
+exponent in $y^2$, which is even. So every prime occurs to an even power in the
+factorization of $x - \alpha_i$, and $x - \alpha_i = b_iz_i^2$ with
+$b_i \in \calO_S^\times$ and $z_i \in \calO_S$.
+\end{solution}
+  \item\label{siegel:it:hyp-field} Let $L \subseteq \Kbar$ be the field obtained from $K$ by
+        adjoining a square root of every element of $\calO_S^\times$. Show that $L$ is a
+        finite extension of $K$. Let $T$ be the set of places of $L$ above $S$, and
+        $\calO_T$ the ring of $T$-integers of $L$. Choose $\beta_i \in L$ with
+        $\beta_i^2 = b_i$. Show that for all $i \neq j$,
+        \[
+        \beta_iz_i + \beta_jz_j \in \calO_T^\times \quad\text{and}\quad
+        \beta_iz_i - \beta_jz_j \in \calO_T^\times.
+        \]
+\begin{solution}
+\ans{Their product is $\alpha_j - \alpha_i$, a unit, and both factors are $T$-integers.}
+By Dirichlet's $S$-unit theorem, $\calO_S^\times$ is generated by finitely many elements
+$\eta_1, \dots, \eta_r$ \cite{Silverman09}*{proof of Proposition~VIII.1.6}. Every $b \in \calO_S^\times$ is a product of powers of the
+$\eta_k$, so it has a square root in $K(\sqrt{\eta_1}, \dots, \sqrt{\eta_r})$. Hence
+$L = K(\sqrt{\eta_1}, \dots, \sqrt{\eta_r})$, of degree at most $2^r$ over $K$.
+
+Let $w \notin T$ be a place of $L$, above the place $v$ of $K$. Then $v \notin S$, so $w$ is
+non-archimedean, and $\lvert \beta_i \rvert_w^2 = \lvert b_i \rvert_v = 1$ and
+$\lvert z_i \rvert_w = \lvert z_i \rvert_v \leq 1$. By the ultrametric inequality,
+$\lvert \beta_iz_i \pm \beta_jz_j \rvert_w \leq 1$. So both elements lie in $\calO_T$. Their
+product is
+\[
+(\beta_iz_i + \beta_jz_j)(\beta_iz_i - \beta_jz_j) = b_iz_i^2 - b_jz_j^2
+= (x - \alpha_i) - (x - \alpha_j) = \alpha_j - \alpha_i,
+\]
+and $\lvert \alpha_j - \alpha_i \rvert_w = 1$ by \cref{siegel:def:adapted}\ref{siegel:it:ad-diff}. Two
+numbers that are at most $1$ and have product $1$ are both $1$. So
+$\lvert \beta_iz_i \pm \beta_jz_j \rvert_w = 1$ for every $w \notin T$.
+\end{solution}
+  \item\label{siegel:it:hyp-identity} Let $\theta \coloneqq \beta_1z_1 - \beta_3z_3$, which is
+        nonzero by \ref{siegel:it:hyp-field}. Verify \emph{Siegel's identities}
+        \[
+        \frac{\beta_1z_1 + \beta_2z_2}{\theta} - \frac{\beta_2z_2 + \beta_3z_3}{\theta} = 1
+        \quad\text{and}\quad
+        \frac{\beta_1z_1 - \beta_2z_2}{\theta} + \frac{\beta_2z_2 - \beta_3z_3}{\theta} = 1.
+        \]
+        Deduce that there is a finite subset of $L$, depending only on $K$, $S$ and $f$,
+        that contains $\theta$ for every solution $(x, y)$ and every choice of the $b_i$,
+        $z_i$ and $\beta_i$.\hint{multiply the first terms of the two identities.}
+\begin{solution}
+\ans{The first terms lie in a finite set, with product $(\alpha_2 - \alpha_1)/\theta^2$.}
+In both identities, the terms $\beta_2z_2$ cancel, and the numerators add up to
+$\beta_1z_1 - \beta_3z_3 = \theta$. Let
+\[
+U \coloneqq \{u \in \calO_T^\times : 1 - u \in \calO_T^\times\}.
+\]
+It is finite, by \cref{siegel:thm:s-unit} applied to the number field $L$, the set $T$ and
+$\lambda = \mu = 1$, and it depends only on $K$ and $S$. By \ref{siegel:it:hyp-field}, every term of
+the two identities lies in $\calO_T^\times$. So
+\[
+u_+ \coloneqq \frac{\beta_1z_1 + \beta_2z_2}{\theta} \quad\text{and}\quad
+u_- \coloneqq \frac{\beta_1z_1 - \beta_2z_2}{\theta}
+\]
+lie in $U$. By the computation in \ref{siegel:it:hyp-field},
+\[
+u_+u_- = \frac{b_1z_1^2 - b_2z_2^2}{\theta^2} = \frac{\alpha_2 - \alpha_1}{\theta^2}.
+\]
+So $\theta$ is a square root of $(\alpha_2 - \alpha_1)/(uu')$ for some $u, u' \in U$. There
+are finitely many such elements of $L$.
+\end{solution}
+  \item\label{siegel:it:hyp-finite} Show that there are only finitely many solutions. Where did
+        the proof use that $d \geq 3$?
+\begin{solution}
+\ans{The value of $\theta$ determines $x$. Siegel's identities need three roots.}
+By the computation in \ref{siegel:it:hyp-field},
+$\theta(\beta_1z_1 + \beta_3z_3) = \alpha_3 - \alpha_1$. So
+\[
+\beta_1z_1 = \frac12\Bigl((\beta_1z_1 - \beta_3z_3) + (\beta_1z_1 + \beta_3z_3)\Bigr)
+= \frac12\Bigl(\theta + \frac{\alpha_3 - \alpha_1}{\theta}\Bigr),
+\]
+and $x = \alpha_1 + b_1z_1^2 = \alpha_1 + (\beta_1z_1)^2$. By \ref{siegel:it:hyp-identity}, $\theta$
+takes finitely many values, so $x$ does too. For each $x$, at most two $y$ satisfy
+$y^2 = f(x)$. The proof used three distinct roots $\alpha_1$, $\alpha_2$, $\alpha_3$ in
+\ref{siegel:it:hyp-identity} and here.
+\begin{solremark}
+For $d = 2$ the statement is false. The equation $y^2 = 2x^2 + 1$ has infinitely many
+solutions in integers, given by $y + x\sqrt 2 = (3 + 2\sqrt 2)^k$ for $k \geq 0$. The proof
+is not effective, because \cref{siegel:thm:s-unit} is proved with Roth's theorem
+\cite{Silverman09}*{Remark~IX.4.2.2}. Every other step is explicit, and effective bounds
+for the $S$-unit equation give effective bounds for the solutions
+\cite{Silverman09}*{\S IX.5}.
+\end{solremark}
+\end{solution}
+  \item\label{siegel:it:hyp-instance} Let $K = \Q$, $S = \{\infty, 2, 3\}$ and
+        $f = T^3 - 36T = T(T - 6)(T + 6)$, with $\alpha_1 = 0$, $\alpha_2 = 6$ and
+        $\alpha_3 = -6$. Here $\calO_S = \Z[1/6]$.
+        \begin{enumerate}
+          \item\label{siegel:it:inst-adapted} Show that $S$ is adapted to $f$. Find $\calO_S^\times$,
+                representatives of $\calO_S^\times/\calO_S^{\times 2}$, and the field $L$.
+\begin{solution}
+\ans{The units are $\pm 2^m3^n$, and $L = \Q(i, \sqrt 2, \sqrt 3)$.}
+Here $c = 1$, the roots $0$, $6$ and $-6$ are integers, and their differences are $\pm 6$
+and $\pm 12$. The ring $\Z[1/6]$ is a principal ideal domain: an ideal $I$ is generated by
+$I \cap \Z$, which is a principal ideal of $\Z$. A rational number is a unit of $\Z[1/6]$ if
+and only if its numerator and denominator are divisible only by $2$ and $3$. So
+$\calO_S^\times$ is generated by $-1$, $2$ and $3$, the differences of the roots are units,
+and $L = \Q(\sqrt{-1}, \sqrt 2, \sqrt 3)$, of degree $8$ over $\Q$. The classes of
+$\calO_S^\times$ modulo squares are represented by $\pm 1$, $\pm 2$, $\pm 3$ and $\pm 6$.
+\end{solution}
+          \item\label{siegel:it:inst-table} For each of the solutions $(-3, 9)$, $(12, 36)$,
+                $(18, 72)$ and $(294, 5040)$, write $x - \alpha_k = b_kz_k^2$ with
+                $b_k \in \{\pm 1, \pm 2, \pm 3, \pm 6\}$ and $z_k$ a positive integer.
+\begin{solution}
+\ans{The triples $(b_1, b_2, b_3)$ are $(-3, -1, 3)$, $(3, 6, 2)$, $(2, 3, 6)$ and
+$(6, 2, 3)$.}
+\[
+\begin{array}{r|lll}
+(x, y) & x & x - 6 & x + 6 \\ \hline
+(-3, 9) & -3 = -3 \cdot 1^2 & -9 = -1 \cdot 3^2 & 3 = 3 \cdot 1^2 \\
+(12, 36) & 12 = 3 \cdot 2^2 & 6 = 6 \cdot 1^2 & 18 = 2 \cdot 3^2 \\
+(18, 72) & 18 = 2 \cdot 3^2 & 12 = 3 \cdot 2^2 & 24 = 6 \cdot 2^2 \\
+(294, 5040) & 294 = 6 \cdot 7^2 & 288 = 2 \cdot 12^2 & 300 = 3 \cdot 10^2
+\end{array}
+\]
+\begin{solremark}
+The product $b_1b_2b_3$ is a square, since $y^2 = b_1b_2b_3(z_1z_2z_3)^2$. On the elliptic
+curve $y^2 = x^3 - 36x$, the map sending a rational point to the classes of $(b_1, b_2)$
+modulo squares is the homomorphism of the complete $2$-descent
+\cite{Silverman09}*{Proposition~X.1.4}. For instance $(12, 36) = (-3, 9) + (0, 0)$. The
+homomorphism sends $(0, 0)$ to the classes of $(-1, -6)$, and indeed $3 = (-3)(-1)$ and
+$6 = (-1)(-6)$.
+\end{solremark}
+\end{solution}
+          \item\label{siegel:it:inst-units} For the solution $(12, 36)$, take $\beta_1 = \sqrt 3$,
+                $\beta_2 = \sqrt 6$ and $\beta_3 = \sqrt 2$. The code below computes the terms
+                $u$ and $w$ of the first of Siegel's identities, and their minimal
+                polynomials over $\Q$. Explain how the output shows that
+                $u, w \in \calO_T^\times$.
+\begin{magma}
+R<t> := PolynomialRing(Rationals());
+L<i, r2, r3> := NumberField([t^2 + 1, t^2 - 2, t^2 - 3] : Abs);
+c1 := 2*r3;  c2 := r2*r3;  c3 := 3*r2;       // beta_k*z_k for (12, 36)
+u := (c1 + c2)/(c1 - c3);
+w := -(c2 + c3)/(c1 - c3);
+u + w;                         // 1
+MinimalPolynomial(u);          // t^4 + 8*t^3 + 2*t^2 - 8*t + 1
+MinimalPolynomial(w);          // t^4 - 12*t^3 + 32*t^2 - 24*t + 4
+\end{magma}
+\begin{solution}
+\ans{Both are monic over $\Z$, and $1$ and $4$ are units of $\Z[1/6]$.}
+An element $\gamma \in L$ that is a root of a monic polynomial
+$t^n + a_1t^{n - 1} + \dots + a_n$ with coefficients in $\Z[1/6]$ lies in $\calO_T$. Indeed,
+if $\lvert \gamma \rvert_w > 1$ for some $w \notin T$, then
+$\lvert \gamma^n \rvert_w > \lvert a_k\gamma^{n - k} \rvert_w$ for all $k \geq 1$, which
+contradicts the ultrametric inequality. So $u, w \in \calO_T$. The first polynomial gives
+$u(u^3 + 8u^2 + 2u - 8) = -1$, so $1/u \in \calO_T$. The second gives
+\[
+w(w^3 - 12w^2 + 32w - 24) = -4,
+\]
+so $1/w = -(w^3 - 12w^2 + 32w - 24)/4 \in \calO_T$, as $4$ is a unit of $\Z[1/6]$. So
+$(u, w)$ is a solution of $u + w = 1$ in $\calO_T^\times$. Note that $1/w$ is not an
+algebraic integer: the place $2$ of $S$ is needed.
+\begin{solremark}
+By hand, $u = (2\sqrt 3 + \sqrt 6)/(2\sqrt 3 - 3\sqrt 2)$ and
+$w = -(\sqrt 6 + 3\sqrt 2)/(2\sqrt 3 - 3\sqrt 2)$, with
+$(2\sqrt 3 + \sqrt 6)(2\sqrt 3 - \sqrt 6) = 6 = \alpha_2 - \alpha_1$ and
+$(2\sqrt 3 - 3\sqrt 2)(2\sqrt 3 + 3\sqrt 2) = -6 = \alpha_3 - \alpha_1$, as in
+\ref{siegel:it:hyp-field}.
+\end{solremark}
+\end{solution}
+          \item\label{siegel:it:inst-list} The intrinsic \mg{SIntegralPoints} returns all the
+                rational points $P \neq O$ of the elliptic curve $y^2 = x^3 - 36x$ with
+                $x(P) \in \Z[1/6]$, one for each pair $\pm P$. The code below lists their
+                $x$-coordinates. One of them is not an integer. Find its $b_k$ and $z_k$.
+                Could the proof above have produced this list?
+\begin{magma}
+E := EllipticCurve([-36, 0]);
+[ Q[1] : Q in SIntegralPoints(E, [2, 3]) ];
+// [ -6, -3, -2, 0, 6, 25/4, 12, 18, 294 ]
+\end{magma}
+\begin{solution}
+\ans{For $x = 25/4$, $b_1 = b_2 = b_3 = 1$ and $(z_1, z_2, z_3) = (5/2, 1/2, 7/2)$. No.}
+Indeed $25/4 = (5/2)^2$, $25/4 - 6 = (1/2)^2$ and $25/4 + 6 = (7/2)^2$. The proof shows that
+the list is finite, but it cannot produce it, since \cref{siegel:thm:s-unit} gives no bound for the
+solutions of the $S$-unit equation.
+\begin{solremark}
+The solutions with $x = 25/4$ are $(25/4, \pm 35/8) = \pm 2(-3, 9)$. Their triple is
+trivial because they are doubles of rational points.
+\end{solremark}
+\end{solution}
+        \end{enumerate}
 \end{enumerate}
 \end{problem}
 
