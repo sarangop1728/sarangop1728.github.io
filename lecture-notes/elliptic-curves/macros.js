@@ -253,6 +253,7 @@ window.MathJax = {
       "trd": "\\operatorname{trd}",
       "nrd": "\\operatorname{nrd}",
       "newsharedthm": ["\\newtheorem{#1}[theorem]{#2}\n  \\AddToHook{env/#1/begin}{\\crefalias{theorem}{#1}}",2],
+      "smalldbend": "\\raisebox{\\depth}{\\scalebox{0.55}{\\mdseries\\textdbend}}\\,",
       "sapedit": ["{\\color{santicolor} \\sf  #1}",1],
       "dzbedit": ["{\\color{dzbcolor} \\sf  #1}",1],
       "AbGrps": "\\texttt{AbGrps}",
@@ -363,7 +364,8 @@ window.MathJax = {
       "sfY": "\\mathsf{Y}",
       "sfu": "\\mathsf{u}",
       "sfv": "\\mathsf{v}",
-      "sfw": "\\mathsf{w}"
+      "sfw": "\\mathsf{w}",
+      "linkedexternaldocument": ["\\usepackage{xr}\n  \\begingroup\n    \\def\\XRL@pdf{#2}\n    \\let\\XRL@orignewlabel\\newlabel\n    \\let\\newlabel\\XRL@newlabel\n    \\externaldocument{#1}\n  \\endgroup\n  \\@for\\XRL@x:=-1,0,1,2,3\\do{\n    \\global\\expandafter\\let\\csname r@tocindent\\XRL@x\\endcsname\\relax}",2]
     }
   }
 };

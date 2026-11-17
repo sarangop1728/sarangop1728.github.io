@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2026-11-12 Thu 08:20 -->
+<!-- 2026-11-17 Tue 07:57 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Integral points</title>
@@ -30,7 +30,7 @@
 <li class="ec-toc-chapter"><a href="06-local-fields.html"><span class="ec-toc-num">6</span><span class="ec-toc-text">Elliptic curves over local fields<span class="ec-toc-status"><span class="ec-status-progress">0 of 5 sections finished</span></span></span></a></li>
 <li class="ec-toc-chapter"><a href="07-galois-cohomology.html"><span class="ec-toc-num">7</span><span class="ec-toc-text">Galois cohomology<span class="ec-toc-status"><span class="ec-status-progress">0 of 10 sections finished</span></span></span></a></li>
 <li class="ec-toc-chapter"><a href="08-mordell-weil.html"><span class="ec-toc-num">8</span><span class="ec-toc-text">The Mordell&ndash;Weil theorem<span class="ec-toc-status"><span class="ec-status-progress">0 of 5 sections finished</span></span></span></a></li>
-<li class="ec-toc-chapter is-current"><a href="09-integral-points.html" aria-current="page"><span class="ec-toc-num">9</span><span class="ec-toc-text">Integral points<span class="ec-toc-status"><span class="ec-status-progress">0 of 2 sections finished</span></span></span></a>
+<li class="ec-toc-chapter is-current"><a href="09-integral-points.html" aria-current="page"><span class="ec-toc-num">9</span><span class="ec-toc-text">Integral points<span class="ec-toc-status"><span class="ec-status-progress">0 of 4 sections finished</span></span></span></a>
 <ol class="ec-toc-sections">
 <li class="ec-toc-level-1"><a href="#s9.1"><span class="ec-toc-num">9.1</span><span class="ec-toc-text">Diophantine approximation<span class="ec-toc-status"><span class="ec-status-label ec-status-draft">Draft</span></span></span></a></li>
 <li class="ec-toc-level-2"><a href="#s9.1.1"><span class="ec-toc-num">9.1.1</span><span class="ec-toc-text">The approximation exponent</span></a></li>
@@ -39,6 +39,15 @@
 <li class="ec-toc-level-2"><a href="#s9.2.2"><span class="ec-toc-num">9.2.2</span><span class="ec-toc-text">The \(v\)-adic distance on a curve</span></a></li>
 <li class="ec-toc-level-2"><a href="#s9.2.3"><span class="ec-toc-num">9.2.3</span><span class="ec-toc-text">Local heights</span></a></li>
 <li class="ec-toc-level-2"><a href="#s9.2.4"><span class="ec-toc-num">9.2.4</span><span class="ec-toc-text">Roth's theorem in terms of distances</span></a></li>
+<li class="ec-toc-level-1"><a href="#s9.3"><span class="ec-toc-num">9.3</span><span class="ec-toc-text">Siegel's theorem<span class="ec-toc-status"><span class="ec-status-label ec-status-draft">Draft</span></span></span></a></li>
+<li class="ec-toc-level-2"><a href="#s9.3.1"><span class="ec-toc-num">9.3.1</span><span class="ec-toc-text">Integral points</span></a></li>
+<li class="ec-toc-level-2"><a href="#s9.3.2"><span class="ec-toc-num">9.3.2</span><span class="ec-toc-text">The theorem</span></a></li>
+<li class="ec-toc-level-2"><a href="#s9.3.3"><span class="ec-toc-num">9.3.3</span><span class="ec-toc-text">The proof</span></a></li>
+<li class="ec-toc-level-1"><a href="#s9.4"><span class="ec-toc-num">9.4</span><span class="ec-toc-text">The \(S\)-unit equation<span class="ec-toc-status"><span class="ec-status-label ec-status-draft">Draft</span></span></span></a></li>
+<li class="ec-toc-level-2"><a href="#s9.4.1"><span class="ec-toc-num">9.4.1</span><span class="ec-toc-text">Covers of the line minus three \(k\)-points</span></a></li>
+<li class="ec-toc-level-2"><a href="#s9.4.2"><span class="ec-toc-num">9.4.2</span><span class="ec-toc-text">The projective line minus three or more \(\kbar\)-points</span></a></li>
+<li class="ec-toc-level-2"><a href="#s9.4.3"><span class="ec-toc-num">9.4.3</span><span class="ec-toc-text">The equation \(y^2 = f(x)\)</span></a></li>
+<li class="ec-toc-level-2"><a href="#s9.4.4"><span class="ec-toc-num">9.4.4</span><span class="ec-toc-text">Siegel's theorem for curves</span></a></li>
 </ol></li>
 <li class="ec-toc-chapter"><a href="10-selmer-sha.html"><span class="ec-toc-num">10</span><span class="ec-toc-text">Twisting, Selmer, and Tate&ndash;Shafarevich<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
 <li class="ec-toc-chapter"><a href="11-complex-multiplication.html"><span class="ec-toc-num">11</span><span class="ec-toc-text">Complex multiplication<span class="ec-toc-status"><span class="ec-status-progress">In preparation</span></span></span></a></li>
@@ -54,7 +63,7 @@
 </div>
 <div id="content" class="content">
 <h1 class="title"><span class="ec-chapter-label">Chapter 9</span>Integral points</h1>
-<div class="sources" id="org821982f">
+<div class="sources" id="orgf187326">
 <p>
 This chapter follows [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Chapter IX].  For Diophantine approximation see also
 [<a class="ec-cite" href="#bib-Hindry-Silverman00">HS00</a>, Part D].
@@ -77,12 +86,18 @@ by Remark <a href="06-local-fields.html#rem-lf-finite-extensions">6.3.5</a>, and
 \(\overline{k_v} = \C\)).  Through the embedding, it defines \(\lvert \alpha \rvert_v\) for
 \(\alpha \in \kbar\).</li>
 <li>The height relative to \(k\) is \(H_k\), as in Definition <a href="08-mordell-weil.html#def-mw-proj-height">8.5.3</a>, and
-\(H_k(x) \coloneqq H_k([x : 1])\) for \(x \in k\).</li>
+\(H_k(x) \coloneqq H_k([x : 1])\) for \(x \in k\).  The logarithmic height is \(h\), and
+\(h(x) = [k : \Q]^{-1} \log H_k(x)\).</li>
+<li>\(S \subseteq \Places_k\) is a finite set of places containing the archimedean ones.  The
+ring of \(S\)-integers is
+\(\calO_S \coloneqq \{a \in k : \lvert a \rvert_v \leq 1 \text{ for all } v \notin S\}\),
+and its group of units \(\calO_S^\times\) is the group of \(S\)-units.  This is the ring of
+Situation <a href="07-galois-cohomology.html#sit-gc-global">7.8.1</a>, without the condition on \(m\).</li>
 </ul>
 </div>
 
 <div id="outline-container-sec-ip-diophantine-approximation" class="outline-2">
-<h2 id="sec-ip-diophantine-approximation"><span class="ec-status ec-status-draft"><span class="ec-status-label ec-status-draft">Draft</span><time datetime="2026-11-10">10 Nov 2026</time></span><span class="section-number" id="s9.1">9.1</span> Diophantine approximation</h2>
+<h2 id="sec-ip-diophantine-approximation"><span class="ec-status ec-status-draft"><span class="ec-status-label ec-status-draft">Draft</span><time datetime="2026-11-13">13 Nov 2026</time></span><span class="section-number" id="s9.1">9.1</span> Diophantine approximation</h2>
 <div class="outline-text-2" id="text-sec-ip-diophantine-approximation">
 <p>
 Diophantine approximation asks how well an irrational number can be approximated by rational
@@ -146,11 +161,11 @@ the disks around \(n \pm 1/q\): they come within \(1/q - 1/q^2\) of \(n\), and n
 </p>
 
 <figure class="ec-figure" id="fig-ip-dirichlet">
-<img class="ec-tikz" src="figures/c5c37320fb41b5efb656479cdbd5acbee72e0960.svg" style="--ec-w: 43.77em" alt=""/>
+<img class="ec-tikz" src="figures/8fb6cf03a9422ce44e8f909f50731920873f806a.svg" style="--ec-w: 43.77em" alt=""/>
 <figcaption><span class="ec-thm-name">Figure 9.1.1</span>. The disks of radius \(1/q^2\) around the rational numbers \(p/q\) in lowest terms with \(q \leq 20\), drawn translucent.  Without the bound on \(q\), every irrational real number lies in infinitely many of the disks (Proposition <a href="#prop-ip-dirichlet">9.1.1</a>), and every rational number in finitely many.  After a picture in [<a class="ec-cite" href="#bib-Stange23">Sta23</a>, at 11:02].</figcaption>
 </figure>
 
-<div class="ec-thm ec-remark" id="orgee5bdd6">
+<div class="ec-thm ec-remark" id="org70f2f57">
 <p>
 <span class="ec-thm-head"><span class="ec-thm-name">Remark 9.1.2</span>.</span> Hurwitz showed that \(1/q^2\) in \eqref{eq:ip-dirichlet} can be replaced by
 \(1/(\sqrt 5\, q^2)\), and that \(\sqrt 5\) cannot be replaced by any larger constant
@@ -198,7 +213,7 @@ So for a real \(\alpha\), \(c \coloneqq \min(1, 1/c_1)\) works
 </p>
 </details>
 
-<div class="ec-thm ec-remark" id="org48ede44">
+<div class="ec-thm ec-remark" id="org29dd753">
 <p>
 <span class="ec-thm-head"><span class="ec-thm-name">Remark 9.1.4</span>.</span> The constant \(c\) in Proposition <a href="#prop-ip-liouville">9.1.3</a> is explicit in terms of \(\alpha\).
 Liouville used his theorem to write down the first transcendental numbers.  Let
@@ -209,14 +224,14 @@ partial sum up to \(n = N\), with \(q_N \coloneqq 10^{N!}\).  Then
 \]
 For every \(d \geq 2\) and \(c > 0\), this contradicts \eqref{eq:ip-liouville} once \(N\) is
 large.  The decimal expansion of \(\alpha\) is not eventually periodic, so \(\alpha\) is not rational
-either.  So \(\alpha\) is transcendental [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Remark IX.1.3.1 and
-Exercise 9.2].
+either.  So \(\alpha\) is transcendental 
+[<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Remark IX.1.3.1 and Exercise 9.2].
 </p>
 </div>
 </div>
 
-<div id="outline-container-org3eb27e3" class="outline-3">
-<h3 id="org3eb27e3"><span class="section-number" id="s9.1.1">9.1.1</span> The approximation exponent</h3>
+<div id="outline-container-orgc4d4253" class="outline-3">
+<h3 id="orgc4d4253"><span class="section-number" id="s9.1.1">9.1.1</span> The approximation exponent</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 Dirichlet's theorem approximates every real number to within \(1/q^2\), and Liouville's
@@ -468,7 +483,7 @@ is [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Example IX.1.5], with 
 </p>
 </div>
 
-<div class="ec-thm ec-remark" id="orgb8e2b6a">
+<div class="ec-thm ec-remark" id="org2cb777d">
 <p>
 <span class="ec-thm-head"><span class="ec-thm-name">Remark 9.1.12</span>.</span> Theorem <a href="#thm-ip-roth">9.1.10</a> says that a set is finite, but its proof gives no procedure to find
 the elements of the set.  It is ineffective.  So Example <a href="#eg-ip-thue-cubic">9.1.11</a> gives no bound on
@@ -484,7 +499,7 @@ different method, lower bounds for linear forms in logarithms
 </div>
 
 <div id="outline-container-sec-ip-distance" class="outline-2">
-<h2 id="sec-ip-distance"><span class="ec-status ec-status-draft"><span class="ec-status-label ec-status-draft">Draft</span><time datetime="2026-11-10">10 Nov 2026</time></span><span class="section-number" id="s9.2">9.2</span> Distance functions and local heights</h2>
+<h2 id="sec-ip-distance"><span class="ec-status ec-status-draft"><span class="ec-status-label ec-status-draft">Draft</span><time datetime="2026-11-13">13 Nov 2026</time></span><span class="section-number" id="s9.2">9.2</span> Distance functions and local heights</h2>
 <div class="outline-text-2" id="text-sec-ip-distance">
 <p>
 A Diophantine inequality \(\lvert x - \alpha \rvert_v < C\, H_k(x)^{-\tau(d)}\) has two parts.
@@ -517,8 +532,8 @@ In the text we say that \(P\) is \(v\)-adically close to \(Q\).</li>
 </div>
 </div>
 
-<div id="outline-container-org13b971e" class="outline-3">
-<h3 id="org13b971e"><span class="section-number" id="s9.2.1">9.2.1</span> The chordal distance</h3>
+<div id="outline-container-org9758738" class="outline-3">
+<h3 id="org9758738"><span class="section-number" id="s9.2.1">9.2.1</span> The chordal distance</h3>
 <div class="outline-text-3" id="text-2-1">
 <p>
 The honest metric comes from projective space.  For a point
@@ -668,8 +683,8 @@ For part <a href="#it-ip-top-closed">4</a>, \(\PP^N(k_v)\) is compact, hence clo
 </div>
 </div>
 
-<div id="outline-container-orgbf8d0b1" class="outline-3">
-<h3 id="orgbf8d0b1"><span class="section-number" id="s9.2.2">9.2.2</span> The \(v\)-adic distance on a curve</h3>
+<div id="outline-container-orgfc6a360" class="outline-3">
+<h3 id="orgfc6a360"><span class="section-number" id="s9.2.2">9.2.2</span> The \(v\)-adic distance on a curve</h3>
 <div class="outline-text-3" id="text-2-2">
 <p>
 The chordal distance depends on an embedding into projective space.  Silverman's distance
@@ -1099,8 +1114,8 @@ does not mean metric.
 </div>
 </div>
 
-<div id="outline-container-org873c200" class="outline-3">
-<h3 id="org873c200"><span class="section-number" id="s9.2.4">9.2.4</span> Roth's theorem in terms of distances</h3>
+<div id="outline-container-org1cd1f81" class="outline-3">
+<h3 id="org1cd1f81"><span class="section-number" id="s9.2.4">9.2.4</span> Roth's theorem in terms of distances</h3>
 <div class="outline-text-3" id="text-2-4">
 <p>
 Theorem <a href="#thm-ip-roth">9.1.10</a> says how fast elements of \(k\) can approach an algebraic number.  In
@@ -1188,9 +1203,1079 @@ while the height of \(P'\) is about \(m^{-2}\) times that of \(P\)
 </div>
 </div>
 
-<div id="outline-container-org3740f6c" class="outline-2 ec-references">
-<h2 id="org3740f6c">References</h2>
-<div class="outline-text-2" id="text-org3740f6c">
+<div id="outline-container-sec-ip-siegel" class="outline-2">
+<h2 id="sec-ip-siegel"><span class="ec-status ec-status-draft"><span class="ec-status-label ec-status-draft">Draft</span><time datetime="2026-11-13">13 Nov 2026</time></span><span class="section-number" id="s9.3">9.3</span> Siegel's theorem</h2>
+<div class="outline-text-2" id="text-sec-ip-siegel">
+<p>
+An elliptic curve over a number field can have infinitely many rational points.  Siegel's
+theorem says that only finitely many of them are integral.  This section is
+[<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Section IX.3], preceded by what "integral" means geometrically, which
+Silverman does not discuss.  The proof combines the three ingredients of the previous
+sections and chapters: the weak Mordell&#x2013;Weil theorem, the quadratic growth of heights under
+\([m]\), and Roth's theorem in the form of Corollary <a href="#cor-ip-roth-distance">9.2.18</a>.
+</p>
+
+<div class="ec-thm ec-situation" id="sit-ip-siegel">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Situation 9.3.1</span>.</span> We keep Situation <a href="#sit-ip-standing">9.0.1</a>.  In this section \(E\) is an elliptic curve over \(k\)
+with origin \(O\).  When a place \(v \in \Places_k\) is fixed, the \(v\)-adic distance
+\(d_v\) and the notation \(P \to_v Q\) are those of Situation <a href="#sit-ip-distance">9.2.1</a>, for the
+curve \(C = E\).
+</p>
+</div>
+</div>
+
+<div id="outline-container-org42cb1ae" class="outline-3">
+<h3 id="org42cb1ae"><span class="section-number" id="s9.3.1">9.3.1</span> Integral points</h3>
+<div class="outline-text-3" id="text-3-1">
+<p>
+An integer is a rational number with no denominator.  For a rational point of a curve,
+"no denominator" makes sense only after we choose functions to evaluate.
+</p>
+
+<div class="ec-thm ec-definition" id="def-ip-s-integral">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Definition 9.3.2</span>.</span> Let \(C\) be a nice curve over \(k\), and let \(f_1, \dots, f_r \in k(C)\) be non-constant.  A
+rational point \(P \in C(k)\) is <dfn class="ec-cdef" id="gls-s-integral-point" data-gls="s-integral-point">\(S\)-integral</dfn> for
+\((f_1, \dots, f_r)\) if no \(f_i\) has a pole at \(P\) and \(f_i(P) \in \calO_S\) for every
+\(i\).
+</p>
+</div>
+
+<p>
+Let \(D\) be the set of \(\kbar\)-points of \(C\) that are poles of some \(f_i\).  It is
+finite, non-empty and stable under \(\Gal_k\), and the \(S\)-integral points are rational
+points of the open subset \(U \coloneqq C \setminus D\).  We think of the elements of \(D\) as
+the \(\kbar\)-points at infinity of \(U\).  Evaluation at an \(S\)-integral point \(P\) is a
+ring homomorphism \(\calO_S[f_1, \dots, f_r] \to \calO_S\), that is, an \(\calO_S\)-point of
+the scheme \(\Spec \calO_S[f_1, \dots, f_r]\).  When \(k[f_1, \dots, f_r]\) is the ring of
+functions regular on \(U\), as in the examples below, this scheme is a model of the affine
+curve \(U\) over \(\calO_S\), and the \(S\)-integral points are its \(\calO_S\)-points.
+</p>
+
+<p>
+The set of \(S\)-integral points depends on the functions and on \(S\), but only mildly.
+</p>
+
+<div class="ec-thm ec-lemma" id="lem-ip-integral-change">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Lemma 9.3.3</span>.</span> Let \(C\) be a nice curve over \(k\), let \(f_1, \dots, f_r \in k(C)\) be non-constant, and let
+\(g \in k(C)\) be integral over \(k[f_1, \dots, f_r]\).  There is a finite set
+\(S' \supseteq S\) of places such that every rational point that is \(S\)-integral for
+\((f_1, \dots, f_r)\) is \(S'\)-integral for \(g\).  If \(g\) satisfies a monic equation with
+coefficients in \(\calO_S[f_1, \dots, f_r]\), then \(S' = S\) works.
+</p>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+Let \(g^N + a_1 g^{N - 1} + \dots + a_N = 0\) with \(a_j \in k[f_1, \dots, f_r]\).  Each \(a_j\)
+is a polynomial in the \(f_i\) with finitely many coefficients in \(k\).  A non-zero element
+of \(k\) has absolute value \(1\) at all but finitely many places, so there is a finite
+\(S' \supseteq S\) with all these coefficients in \(\calO_{S'}\).  Let \(P\) be
+\(S\)-integral for \((f_1, \dots, f_r)\).  The \(a_j\) are regular at \(P\).  If \(g\) had a
+pole of order \(n \geq 1\) at \(P\), then \(\ord_P(g^N) = -Nn\) would be smaller than
+\(\ord_P(a_jg^{N - j}) \geq -(N - j)n\) for every \(j \geq 1\), which is impossible.  So
+\(g(P) \in k\) is a root of the monic polynomial
+\(T^N + a_1(P)T^{N - 1} + \dots + a_N(P)\), whose coefficients lie in \(\calO_{S'}\).  The ring
+\(\calO_{S'}\) is integrally closed, as the intersection of \(k\) with the valuation rings
+\(\calO_v\) for \(v \notin S'\).  So \(g(P) \in \calO_{S'}\).
+</p>
+</details>
+
+<p>
+In particular, if each of two families of functions is integral over the \(k\)-algebra
+generated by the other, the two families have the same \(S\)-integral points after
+enlarging \(S\).  So the statement "for every \(S\), there are finitely many
+\(S\)-integral points" depends only on that \(k\)-algebra.  The
+examples show what the definition means.
+</p>
+
+<div class="ec-thm ec-example" id="eg-ip-integral-points">
+<p><span class="ec-thm-head"><span class="ec-thm-name">Example 9.3.4</span>.</span> </p>
+<ol class="org-ol">
+<li><a id="it-ip-ip-line"></a> The affine line.  Let \(C = \PP^1\), with affine coordinate \(t\).  The
+\(S\)-integral points for \((t)\) are the elements of \(\calO_S\), and \(U = \Aff^1\).
+For \(v \notin S\), the condition \(\lvert t \rvert_v \leq 1\) says that \([t : 1]\) does not
+reduce to \(\infty = [1 : 0]\) in \(\PP^1(\kappa(v))\).  There are infinitely many.</li>
+<li><a id="it-ip-ip-gm"></a> The multiplicative group.  For \((t, 1/t)\), the \(S\)-integral points are
+the \(t \in \calO_S\) with \(1/t \in \calO_S\), that is, the \(S\)-units, and
+\(U = \PP^1 \setminus \{0, \infty\} = \Gm\).  Here \([t : 1]\) reduces to neither
+\(0\) nor \(\infty\) at any \(v \notin S\).  The group \(\calO_S^\times\) is finitely
+generated of rank \(\# S - 1\) (Theorem <a href="07-galois-cohomology.html#thm-gc-s-units">7.8.4</a>,
+[<a class="ec-cite" href="#bib-Hindry-Silverman00">HS00</a>, Theorem C.3.3]).  So there are infinitely many \(S\)-integral
+points if \(\# S \geq 2\), and finitely many if \(\# S = 1\), that is, if \(k\) is \(\Q\) or
+an imaginary quadratic field and \(S\) consists of its archimedean place.</li>
+<li><a id="it-ip-ip-three"></a> The projective line minus three \(k\)-points.  For
+\((t, 1/t, 1/(1 - t))\), the \(S\)-integral points are the \(t \in k\) with
+\(t \in \calO_S^\times\) and \(1 - t \in \calO_S^\times\), and
+\(U = \PP^1 \setminus \{0, 1, \infty\}\).  For \(v \notin S\), \([t : 1]\) reduces to none
+of \(0\), \(1\), \(\infty\) in \(\PP^1(\kappa(v))\): it reduces to \(1\) exactly when
+\(\lvert 1 - t \rvert_v < 1\).  Writing \(u \coloneqq t\) and \(w \coloneqq 1 - t\), the
+\(S\)-integral points are the solutions of the \(S\)-unit equation \(u + w = 1\) in
+\(S\)-units, which are finitely many by Theorem <a href="#thm-ip-s-unit">9.4.1</a> below.</li>
+<li><a id="it-ip-ip-elliptic"></a> An elliptic curve minus its origin.  Let \(E\) be given by a
+Weierstrass equation with coefficients \(a_1, \dots, a_6 \in \calO_S\).  The equation is
+monic in \(y\), with coefficients in \(\calO_S[x]\), so by Lemma <a href="#lem-ip-integral-change">9.3.3</a> the
+\(S\)-integral points for \((x)\) and for \((x, y)\) coincide, and \(U = E \setminus \{O\}\).
+Let \(v \notin S\) and \(P \in E(k) \setminus \{O\}\).  If
+\(\lvert x(P) \rvert_v \leq 1\), then \(\lvert y(P) \rvert_v \leq 1\), and \(P\) reduces to
+\([\bar x(P) : \bar y(P) : 1] \neq \bar O\) on the Weierstrass model over \(\calO_v\).  If
+\(\lvert x(P) \rvert_v > 1\), comparing the valuations of the terms of the equation
+gives \(2v(y(P)) = 3v(x(P)) < 0\).  This uses only that the coefficients lie in
+\(\calO_v\), as in Example <a href="#eg-ip-distance-elliptic">9.2.10</a>.  Then
+\(P = [x(P)/y(P) : 1 : 1/y(P)]\) reduces to \([0 : 1 : 0] = \bar O\).  So the
+\(S\)-integral points are the rational points that do not meet \(O\) modulo any
+\(v \notin S\).  By Corollary <a href="#cor-ip-siegel-weierstrass">9.3.7</a> below there are finitely many,
+although \(E(k)\) can be infinite.</li>
+</ol>
+<p>
+In each case an \(S\)-integral point is a rational point of \(U\) that does not meet the
+\(\kbar\)-points at infinity modulo any \(v \notin S\).  From the point of view of
+Section <a href="#sec-ip-distance">9.2</a>, it stays \(v\)-adically far from them at every \(v \notin S\), so
+it can only approach them at the finitely many places of \(S\).  That is where Diophantine
+approximation enters.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org02576e3" class="outline-3">
+<h3 id="org02576e3"><span class="section-number" id="s9.3.2">9.3.2</span> The theorem</h3>
+<div class="outline-text-3" id="text-3-2">
+<div class="ec-thm ec-theorem" id="thm-ip-siegel">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Theorem 9.3.5</span> <span class="ec-thm-title">(Siegel)</span>.</span> Let \(v \in \Places_k\), let \(Q \in E(\kbar)\), and let \(f \in k(E)\) be non-constant and
+even, that is, \(f \circ [-1] = f\).  Then
+\[
+\liminf_{P \in E(k),\ P \to_v Q} \frac{\log d_v(P, Q)}{\log H_k(f(P))} = 0,
+\]
+where the \(\liminf\) is taken to be \(0\) if \(Q \notin E(k_v)\), or if \(Q\) is not a
+limit of rational points.
+</p>
+</div>
+
+<p>
+Here \(f(P) \in \PP^1(k)\), and \(H_k(\infty) = H_k([1 : 0]) = 1\).  Each quotient is at most
+\(0\), since \(d_v \leq 1\) and \(H_k \geq 1\), and it is defined for all but finitely many
+\(P\), by Lemma <a href="#lem-ip-siegel-heights">9.3.11</a> below.  Corollary <a href="#cor-ip-roth-distance">9.2.18</a> bounds the
+\(\liminf\) below by \(-2\) for every nice curve.  On an elliptic curve the bound is \(0\): for
+every \(\varepsilon > 0\), all but finitely many rational points satisfy
+\(d_v(P, Q) \geq H_k(f(P))^{-\varepsilon}\).  The proof is in
+Section <a href="#sec-ip-siegel-proof">9.3.3</a>.
+</p>
+
+<div class="ec-thm ec-remark" id="rem-ip-siegel-silverman">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Remark 9.3.6</span>.</span> Silverman [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Theorem IX.3.1] assumes that \(E(k)\) is infinite, lets \(v\) be a place
+of \(k(Q)\), and normalizes heights by \([k : \Q]\), which changes nothing here.  Its
+statement is that for every \(\varepsilon > 0\), the quotient
+\(\log d_v(P, Q)/\log H_k(f(P))\) lies in \((-\varepsilon, 0]\) for all but finitely many
+\(P \in E(k)\).  The two forms are equivalent.  A sequence of distinct rational points has
+\(H_k(f(P)) \to \infty\), by Lemma <a href="#lem-ip-siegel-heights">9.3.11</a>.  If it stays away from \(Q\), then
+\(\log d_v(P, Q)\) is bounded and the quotient tends to \(0\).  If it tends to \(Q\),
+Theorem <a href="#thm-ip-siegel">9.3.5</a> applies.  For a place of \(k(Q)\), apply Theorem <a href="#thm-ip-siegel">9.3.5</a>
+over \(k(Q)\), which contains the rational points of \(E(k)\), and use
+\(H_{k(Q)} = H_k^{[k(Q) : k]}\) on \(k\) and Remark <a href="#rem-ip-base-change">9.2.16</a>.  The hypothesis
+that \(f\) is even is not needed [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Remark IX.3.1.1 and Exercise 9.14(d)].
+</p>
+</div>
+
+<p>
+The main application is the finiteness of integral points.
+</p>
+
+<div class="ec-thm ec-corollary" id="cor-ip-siegel-weierstrass">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Corollary 9.3.7</span> <span class="ec-thm-title">(Siegel)</span>.</span> Let \(E\) be given by a Weierstrass equation, with coordinate functions \(x\) and \(y\).  Then
+the set \(\{P \in E(k) \setminus \{O\} : x(P) \in \calO_S\}\) is finite.
+</p>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+We follow [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Corollary IX.3.2.1].  Suppose there are infinitely many such
+rational points, and let \(P_1, P_2, \dots\) be distinct ones.  We use the distance
+\(d_v(\cdot, O)\) defined by \(t_O \coloneqq 1/x\) at every place, as in
+Example <a href="#eg-ip-distance-elliptic">9.2.10</a>.  As in the proof of Proposition <a href="#prop-ip-height-sum">9.2.15</a>,
+\(-2\log d_v(P, O) = \log\max(1, \lvert x(P) \rvert_v)\) for \(P \neq O\), and
+\[
+\log H_k(x(P_i)) = \sum_{v \in S} n_v \log\max\bigl(1, \lvert x(P_i) \rvert_v\bigr),
+\]
+since \(\lvert x(P_i) \rvert_v \leq 1\) for \(v \notin S\).  For each \(i\), the largest of
+the \(\# S\) terms is at least the average.  As \(S\) is finite, there are \(v \in S\) and a
+subsequence, again written \(P_1, P_2, \dots\), with
+\(n_v \log\max(1, \lvert x(P_i) \rvert_v) \geq \log H_k(x(P_i))/\# S\) for all \(i\).  That is,
+</p>
+\begin{equation}
+\label{eq:ip-siegel-close}
+\frac{\log d_v(P_i, O)}{\log H_k(x(P_i))} \leq -\frac{1}{2\,n_v\, \# S}. \tag{9.3.1}
+\end{equation}
+<p>
+By Lemma <a href="#lem-ip-siegel-heights">9.3.11</a>, \(H_k(x(P_i)) \to \infty\), so \(d_v(P_i, O) \to 0\).  The
+function \(d_v(\cdot, O)\) is continuous on the compact set \(E(k_v)\) and vanishes only at
+\(O\), so \(P_i\) tends \(v\)-adically to \(O\).  The function \(x\) is even, and \(O \in E(k)\).  So
+\eqref{eq:ip-siegel-close} contradicts Theorem <a href="#thm-ip-siegel">9.3.5</a> for \(Q = O\) and \(f = x\).
+</p>
+</details>
+
+<p>
+By part <a href="#it-ip-ip-elliptic">4</a> of Example <a href="#eg-ip-integral-points">9.3.4</a>, the corollary says that
+\(E \setminus \{O\}\) has finitely many \(S\)-integral points for \((x, y)\), when the
+Weierstrass coefficients lie in \(\calO_S\).  Every other function works too, on every
+curve of genus one.
+</p>
+
+<div class="ec-thm ec-corollary" id="cor-ip-siegel-genus-one">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Corollary 9.3.8</span> <span class="ec-thm-title">(Siegel)</span>.</span> Let \(C\) be a nice curve of genus one over \(k\), and let \(f \in k(C)\) be non-constant.
+Then the set \(\{P \in C(k) : f(P) \in \calO_S\}\) is finite.
+</p>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+We follow [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Corollary IX.3.2.2].  Let \(k'\) be a finite extension of \(k\),
+and \(S'\) a finite set of places of \(k'\) containing those above \(S\).  Then \(S'\)
+contains the archimedean places of \(k'\), and \(\calO_S \subseteq \calO_{S'}\): a place
+\(w \notin S'\) lies above a place \(v \notin S\), and \(\lvert a \rvert_w = \lvert a \rvert_v\)
+for \(a \in k\) (Remark <a href="#rem-ip-base-change">9.2.16</a>).  So it suffices to prove the corollary over
+\(k'\) for \(S'\), since \(C(k) \subseteq C(k')\).  Choose \(k'\) so that \(f\) has a pole
+\(Q \in C(k')\).  Then \((C_{k'}, Q)\) is an elliptic curve.  By
+Theorem <a href="04-ec-algebraic.html#thm-ec-weierstrass-model">4.1.6</a> and Proposition <a href="04-ec-algebraic.html#prop-ec-normal-forms">4.1.12</a>, it has a
+Weierstrass equation \(y^2 = x^3 + Ax + B\) over \(k'\), with \(Q\) as origin and
+\(k'(C) = k'(x, y)\).  Renaming, we may assume \(k' = k\) and \(S' = S\).
+</p>
+
+<p>
+As \(k(C)\) has degree \(2\) over \(k(x)\), with basis \(1, y\), we can write
+\(f = (\varphi + \psi y)/\eta\) with \(\varphi, \psi, \eta \in k[x]\) and \(\eta \neq 0\).  We
+have \(\ord_Q(x) = -2\) and \(\ord_Q(y) = -3\), so \(\ord_Q(\varphi(x)) = -2\deg\varphi\) is even
+and \(\ord_Q(\psi(x)y) = -2\deg\psi - 3\) is odd (for \(\psi \neq 0\)).  The two orders differ,
+so \(\ord_Q(\varphi + \psi y) = -\max(2\deg\varphi, 2\deg\psi + 3)\), and \(f\) has a pole at
+\(Q\) exactly when
+\[
+2\deg\eta < M \coloneqq \max(2\deg\varphi, 2\deg\psi + 3).
+\]
+Now \((f\eta - \varphi)^2 = \psi^2 y^2 = \psi^2 (x^3 + Ax + B)\).  Expanded,
+\[
+f^2\eta^2 - 2f\eta\varphi + \varphi^2 - \psi^2(x^3 + Ax + B) = 0
+\]
+is a polynomial equation for \(x\) with coefficients in \(k[f]\).  The degrees in \(x\) of
+the four terms are \(2\deg\eta\), \(\deg\eta + \deg\varphi\), \(2\deg\varphi\) and
+\(2\deg\psi + 3\).  The first two are smaller than \(M\), and the last two are distinct, one
+even and one odd.  So the term of degree \(M\) in \(x\) has a non-zero constant coefficient,
+and \(x\) is integral over \(k[f]\).  By Lemma <a href="#lem-ip-integral-change">9.3.3</a>, after enlarging
+\(S\), every \(P \in C(k)\) with \(f(P) \in \calO_S\) has \(x(P) \in \calO_S\).  These
+rational points are different from \(Q\), a pole of \(f\), so they are finitely many by
+Corollary <a href="#cor-ip-siegel-weierstrass">9.3.7</a>.
+</p>
+</details>
+
+<div class="ec-thm ec-remark" id="rem-ip-siegel-digits">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Remark 9.3.9</span>.</span> Theorem <a href="#thm-ip-siegel">9.3.5</a> says more than Corollary <a href="#cor-ip-siegel-weierstrass">9.3.7</a>.  Let \(E\) be
+given by \(y^2 = x^3 + Ax + B\) over \(\Q\), with \(E(\Q)\) infinite, and let \(\infty\) be the
+archimedean place.  For \(P \in E(\Q)\) with \(x(P) \neq 0\), write \(x(P) = a/b\) in lowest
+terms, so that \(\log H_\Q(x(P)) = \log\max(\lvert a \rvert, \lvert b \rvert)\).  By
+Theorem <a href="#thm-ip-siegel">9.3.5</a> at \(Q = O\), with \(t_O = 1/x\),
+\(\log\max(1, \lvert a/b \rvert)/\log H_\Q(x(P))\) tends to \(0\).  The zeros of \(x\) that lie in
+\(E(\R)\) are the \(Q_j\), with orders \(e_j\).  By the formula after
+Proposition <a href="#prop-ip-local-height">9.2.14</a>,
+\(\log\min(1, \lvert a/b \rvert) = \sum_j e_j \log d_\infty(P, Q_j) + O(1)\), and
+Theorem <a href="#thm-ip-siegel">9.3.5</a> at each \(Q_j\) shows that
+\(\log\min(1, \lvert a/b \rvert)/\log H_\Q(x(P))\) tends to \(0\) as well.  Adding,
+\(\log\lvert a/b \rvert/\log\max(\lvert a \rvert, \lvert b \rvert) \to 0\), so
+\[
+\lim \frac{\log \lvert a \rvert}{\log \lvert b \rvert} = 1
+\]
+over the rational points of \(E(\Q)\), ordered by height.  The numerator and the
+denominator of \(x(P)\) have about the same number of digits.  Corollary <a href="#cor-ip-siegel-weierstrass">9.3.7</a> only
+says that the denominator is \(1\) for finitely many rational points
+[<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Example IX.3.3].
+</p>
+</div>
+
+<div class="ec-thm ec-remark" id="rem-ip-siegel-ineffective">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Remark 9.3.10</span>.</span> The proof uses Roth's theorem, so it is ineffective: it bounds neither the heights of the
+\(S\)-integral points nor the work needed to find them.  It can be made quantitative: it gives an explicitly
+computable bound for their number, in terms of \(k\), \(S\) and the Weierstrass coefficients
+[<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Remark IX.3.4].  Lang
+conjectured a bound of the form \(C^{\# S + \operatorname{rank} E(k)}\) for a quasi-minimal
+Weierstrass equation, with \(C\) depending only on \(k\) [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Conjecture IX.3.5].
+Effective bounds come from linear forms in logarithms, through the \(S\)-unit equation of
+Section <a href="#sec-ip-s-unit">9.4</a> [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Section IX.5].
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-ip-siegel-proof" class="outline-3">
+<h3 id="sec-ip-siegel-proof"><span class="section-number" id="s9.3.3">9.3.3</span> The proof</h3>
+<div class="outline-text-3" id="text-sec-ip-siegel-proof">
+<p>
+The proof compares heights with distances under the map \(P' \mapsto [m]P' + R\).  Heights
+see its degree, \(m^2\), while distances see its ramification, which is trivial
+(Proposition <a href="#prop-ip-distance-ramification">9.2.12</a>).  Write a rational point \(P\) close to \(Q\)
+as \(P = [m]P' + R\), with \(R\) in a finite set.  Then \(P'\) is about as close to a
+\(\kbar\)-point \(Q'\) as \(P\) is to \(Q\), but its height is about \(m^{-2}\) times that of
+\(P\).  Roth's theorem bounds how close \(P'\) can be to \(Q'\) in terms of the height of
+\(P'\), and this bound improves by the factor \(m^2\) when read in terms of the height of
+\(P\).  The heights enter through the following lemma.
+</p>
+
+<div class="ec-thm ec-lemma" id="lem-ip-siegel-heights">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Lemma 9.3.11</span>.</span> Let \(f \in k(E)\) be non-constant, and let \(h_f(P) \coloneqq \log H_k(f(P))\) for
+\(P \in E(k)\).
+</p>
+<ol class="org-ol">
+<li><a id="it-ip-sh-northcott"></a> For every \(c \in \R\), the set \(\{P \in E(k) : h_f(P) \leq c\}\) is
+finite.</li>
+<li><a id="it-ip-sh-descent"></a> Suppose that \(f\) is even.  Let \(m \geq 1\) and \(R \in E(k)\).
+There is a constant \(c \geq 0\) such that
+\(m^2 h_f(P') \leq 2h_f([m]P' + R) + c\) for every \(P' \in E(k)\).</li>
+</ol>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+For part <a href="#it-ip-sh-northcott">1</a>, \(f\) maps \(E(k)\) to \(\PP^1(k)\) with finite fibers, since
+\(f\) is non-constant (Proposition <a href="03-curves.html#prop-crv-zeros-poles">3.1.7</a>).  Apply
+Theorem <a href="08-mordell-weil.html#thm-mw-northcott">8.5.13</a> [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Proposition VIII.6.1].  For
+part <a href="#it-ip-sh-descent">2</a>, \(h_f\) is a quasi-quadratic height on \(E(k)\), in the sense of
+Definition <a href="08-mordell-weil.html#def-mw-quasi-quadratic">8.4.3</a>, by [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Theorem VIII.6.2]: Silverman's
+height \(h_f\) is ours divided by \([k : \Q]\).  It is non-negative.  By
+part <a href="08-mordell-weil.html#it-mw-qq-multiple">1</a> of Lemma <a href="08-mordell-weil.html#lem-mw-quasi-quadratic">8.4.4</a>, there is \(c_1 \geq 0\) with
+\(m^2 h_f(P') \leq h_f([m]P') + c_1\).  By part <a href="08-mordell-weil.html#it-mw-qq-sum">2</a> of that lemma, applied to
+\([m]P' + R\) and \(-R\),
+\(h_f([m]P') \leq 2h_f([m]P' + R) + C(-R)\).  Take \(c \coloneqq c_1 + C(-R)\)
+[<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Corollary VIII.6.4].
+</p>
+</details>
+
+<p>
+We can now prove Theorem <a href="#thm-ip-siegel">9.3.5</a>.
+</p>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+We follow [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, proof of Theorem IX.3.1].  Let \(L\) be the \(\liminf\) in the
+statement.  By the discussion after the statement, \(L \leq 0\).  If \(Q \notin E(k_v)\), or if
+\(Q\) is not a limit of rational points, there is nothing to prove.  Otherwise, there are
+distinct rational points \(P_1, P_2, \dots\), different from \(Q\), tending \(v\)-adically to \(Q\), with
+\[
+\lim_{i \to \infty} \frac{\log d_v(P_i, Q)}{h_f(P_i)} = L \in [-\infty, 0],
+\]
+with \(h_f\) as in Lemma <a href="#lem-ip-siegel-heights">9.3.11</a>.  Fix an integer \(m \geq 2\).  We show that
+\(L \geq -4/m^2\).
+</p>
+
+<p>
+<i>Descent.</i>  By Theorem <a href="08-mordell-weil.html#thm-mw-weak">8.2.1</a>, \(E(k)/mE(k)\) is finite.  So infinitely many \(P_i\)
+lie in one coset, and after passing to a subsequence,
+\(P_i = [m]P'_i + R\) with \(P'_i, R \in E(k)\) and \(R\) independent of \(i\).  The
+\(P'_i\) are distinct, since the \(P_i\) are.  By part <a href="#it-ip-sh-descent">2</a> of
+Lemma <a href="#lem-ip-siegel-heights">9.3.11</a>, there is \(c \geq 0\) with
+</p>
+\begin{equation}
+\label{eq:ip-siegel-heights}
+m^2 h_f(P'_i) \leq 2h_f(P_i) + c \quad \text{for all } i. \tag{9.3.2}
+\end{equation}
+
+<p>
+<i>Distances.</i>  Let \(\varphi\colon E \to E\) be the morphism \(P' \mapsto [m]P' + R\), defined over
+\(k\).  The set \(E(k_v)\) is compact (part <a href="#it-ip-top-curve">2</a> of Lemma <a href="#lem-ip-topology">9.2.4</a>), so
+after passing to a subsequence, \(P'_i\) tends \(v\)-adically to some \(Q' \in E(k_v)\).  As \(\varphi\)
+is continuous, \(\varphi(Q') = \lim \varphi(P'_i) = Q\).  Since
+\(\operatorname{char} k = 0\), \([m]\) is separable (Corollary <a href="04-ec-algebraic.html#cor-ec-mult-omega">4.4.3</a>).  So the
+fiber of \(\varphi\) over \(Q\) has \(m^2\) elements over every algebraically closed field
+containing \(k(Q)\), by part <a href="04-ec-algebraic.html#it-ec-kernel-fibers">1</a> of Theorem <a href="04-ec-algebraic.html#thm-ec-isogeny-kernel">4.3.8</a>.  The
+\(m^2\) elements of the fiber in \(E(\kbar)\) map to distinct elements of the fiber in
+\(E(\overline{k_v})\), so they fill it, and \(Q' \in E(\kbar)\).  The translation by \(R\)
+is an isomorphism, so \(e_\varphi(Q') = e_{[m]}(Q') = 1\), by
+part <a href="04-ec-algebraic.html#it-ec-kernel-separable">2</a> of Theorem <a href="04-ec-algebraic.html#thm-ec-isogeny-kernel">4.3.8</a>.  At most one \(P'_i\)
+equals \(Q'\), so we may assume that none does.  By
+Proposition <a href="#prop-ip-distance-ramification">9.2.12</a>,
+</p>
+\begin{equation}
+\label{eq:ip-siegel-distances}
+\lim_{i \to \infty} \frac{\log d_v(P_i, Q)}{\log d_v(P'_i, Q')} = 1. \tag{9.3.3}
+\end{equation}
+
+<p>
+<i>Approximation.</i>  The \(P'_i\) are distinct rational points tending to the \(\kbar\)-point
+\(Q'\).  By Corollary <a href="#cor-ip-roth-distance">9.2.18</a>,
+</p>
+\begin{equation}
+\label{eq:ip-siegel-roth}
+\liminf_{i \to \infty} \frac{\log d_v(P'_i, Q')}{h_f(P'_i)} \geq -2. \tag{9.3.4}
+\end{equation}
+
+<p>
+<i>Conclusion.</i>  By part <a href="#it-ip-sh-northcott">1</a> of Lemma <a href="#lem-ip-siegel-heights">9.3.11</a>,
+\(h_f(P'_i) \to \infty\).  For large \(i\), \eqref{eq:ip-siegel-heights} gives
+\(h_f(P_i) \geq (m^2 h_f(P'_i) - c)/2 > 0\), and \(\log d_v(P_i, Q) \leq 0\), so
+\[ \begin{aligned}
+\frac{\log d_v(P_i, Q)}{h_f(P_i)} &\geq \frac{2 \log d_v(P_i, Q)}{m^2 h_f(P'_i) - c}\\
+&= \frac{2}{m^2} \cdot \frac{\log d_v(P_i, Q)}{\log d_v(P'_i, Q')} \cdot
+\frac{\log d_v(P'_i, Q')}{h_f(P'_i)} \cdot \frac{h_f(P'_i)}{h_f(P'_i) - c/m^2}.
+\end{aligned} \]
+The second and fourth factors are positive and tend to \(1\), by
+\eqref{eq:ip-siegel-distances} and since \(h_f(P'_i) \to \infty\).  The third is at most \(0\), and its \(\liminf\) is at least
+\(-2\), by \eqref{eq:ip-siegel-roth}.  So \(L \geq -4/m^2\).  As \(m\) is arbitrary,
+\(L \geq 0\).
+</p>
+</details>
+
+<p>
+The constant \(-4[k : \Q]/m^2\) of [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, proof of Theorem IX.3.1] is our
+\(-4/m^2\), written for his normalized height.  The proof uses Theorem <a href="#thm-ip-roth">9.1.10</a> only
+through Corollary <a href="#cor-ip-roth-distance">9.2.18</a>, and only for the \(\kbar\)-points \(Q'\) with
+\([m]Q' = Q - R\).  Their degree over \(k(Q)\) can be as large as \(m^2\), so an exponent
+that grows with the degree must grow more slowly than \(m^2\).  Liouville's exponent
+\(d + \varepsilon\) gives nothing.  Roth's exponent does not depend on the degree at all.  In
+the 1920s Siegel had only his exponent \(2\sqrt d + \varepsilon\), and his original proof was
+more complicated [<a class="ec-cite" href="#bib-Hindry-Silverman00">HS00</a>, Remark D.9.2.1].
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-ip-s-unit" class="outline-2">
+<h2 id="sec-ip-s-unit"><span class="ec-status ec-status-draft"><span class="ec-status-label ec-status-draft">Draft</span><time datetime="2026-11-13">13 Nov 2026</time></span><span class="section-number" id="s9.4">9.4</span> The \(S\)-unit equation</h2>
+<div class="outline-text-2" id="text-sec-ip-s-unit">
+<p>
+This section is [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Section IX.4].  Its subject is the equation
+\(u + w = 1\) in \(S\)-units, Siegel's second route to integral points.  Geometrically, it is
+the simplest curve with finitely many integral points: by part <a href="#it-ip-ip-three">3</a> of
+Example <a href="#eg-ip-integral-points">9.3.4</a>, its solutions are the \(S\)-integral points of
+\(\PP^1 \setminus \{0, 1, \infty\}\).  Another picture explains why it should have finitely
+many solutions.  In the torus \(\Gm^2 = \PP^2 \setminus \{XYZ = 0\}\), with coordinates
+\(u = X/Z\) and \(w = Y/Z\), the \(S\)-integral points for \((u, 1/u, w, 1/w)\) form the
+finitely generated group \(\calO_S^\times \times \calO_S^\times\), by
+part <a href="#it-ip-ip-gm">2</a> of Example <a href="#eg-ip-integral-points">9.3.4</a>.  The line \(X + Y = Z\) is not a
+translate of a subtorus, and it meets the triangle \(XYZ = 0\) in the three \(k\)-points
+\([0 : 1 : 1]\), \([1 : 0 : 1]\) and \([1 : -1 : 0]\).  Its part inside the torus is a copy of
+\(\PP^1 \setminus \{0, 1, \infty\}\), and the \(S\)-unit equation asks for its intersection
+with the group [<a class="ec-cite" href="#bib-Hindry-Silverman00">HS00</a>, Remark D.8.1.2].
+</p>
+
+<div class="ec-thm ec-theorem" id="thm-ip-s-unit">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Theorem 9.4.1</span>.</span> Let \(a, b \in k^\times\).  The equation \(au + bw = 1\) has only finitely many solutions
+\((u, w) \in \calO_S^\times \times \calO_S^\times\).
+</p>
+</div>
+
+<p>
+The equation \(au + bw = 1\) is called the <dfn class="ec-cdef" id="gls-s-unit-equation" data-gls="s-unit-equation">\(S\)-unit equation</dfn>.  For \(a = b = 1\) its
+solutions are the \(S\)-integral points of \(\PP^1 \setminus \{0, 1, \infty\}\).  The
+coefficients change nothing: if \(S' \supseteq S\) is finite and makes \(a\) and \(b\)
+\(S'\)-units, every solution \((u, w)\) gives the solution \((au, bw)\) of \(u + w = 1\) in
+\(S'\)-units.  So the general case is the case \(a = b = 1\) for a larger set of places, as
+in Lemma <a href="#lem-ip-integral-change">9.3.3</a>.
+</p>
+
+<p>
+The proof follows the pattern of Section <a href="#sec-ip-siegel-proof">9.3.3</a>.  The group is
+\(\calO_S^\times \times \calO_S^\times\), Dirichlet's theorem replaces the weak Mordell&#x2013;Weil
+theorem, and the \(m\)-th power map replaces \([m]\).  Heights are divided by \(m\) instead
+of \(m^2\), which is still enough.
+</p>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+We follow [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Theorem IX.4.1], whose proof is a sketch, and fill in the
+details.  Let \(m\) be an integer with \(m > 2[k : \Q]\, \# S\).  By
+Theorem <a href="07-galois-cohomology.html#thm-gc-s-units">7.8.4</a>, \(\calO_S^\times\) is a finitely generated abelian group, so
+\(\calO_S^\times/\calO_S^{\times m}\) is finite.  Let \(c_1, \dots, c_r \in \calO_S^\times\)
+represent its classes.  Every solution \((u, w)\) can be written as
+\(u = c_iX^m\) and \(w = c_jY^m\), with \(X, Y \in \calO_S^\times\), and then
+\[
+\alpha X^m + \beta Y^m = 1, \qquad \alpha \coloneqq ac_i, \quad \beta \coloneqq bc_j.
+\]
+There are finitely many pairs \((i, j)\), and the pair \((X, Y)\) determines \((u, w)\).  So
+it suffices to show that for \(\alpha, \beta \in k^\times\), the set \(\Sigma\) of
+\((X, Y) \in \calO_S \times \calO_S\) with \(\alpha X^m + \beta Y^m = 1\) is finite.
+</p>
+
+<p>
+Suppose that \(\Sigma\) is infinite.  A value of \(Y\) leaves at most \(m\) values of \(X\),
+so \(\Sigma\) contains pairs with infinitely many distinct values of \(Y\).  By
+Theorem <a href="08-mordell-weil.html#thm-mw-northcott">8.5.13</a>, we can choose \((X_i, Y_i) \in \Sigma\) with
+\(H_k(Y_i) \to \infty\) and, discarding the finitely many pairs with \(X_i = 0\) or
+\(Y_i = 0\), with \(X_iY_i \neq 0\).  As \(Y_i \in \calO_S\),
+\(\log H_k(Y_i) = \sum_{v \in S} n_v \log\max(1, \lvert Y_i \rvert_v)\).  As in the proof of
+Corollary <a href="#cor-ip-siegel-weierstrass">9.3.7</a>, after passing to a subsequence there is a single
+\(v \in S\) with
+</p>
+\begin{equation}
+\label{eq:ip-s-unit-large}
+\lvert Y_i \rvert_v \geq H_k(Y_i)^{1/(n_v \# S)} \quad \text{for all } i. \tag{9.4.1}
+\end{equation}
+<p>
+In particular \(\lvert Y_i \rvert_v \to \infty\).
+</p>
+
+<p>
+<i>The solutions approach a \(\kbar\)-point at infinity.</i>  Let \(\gamma \in \kbar\) with
+\(\gamma^m = -\beta/\alpha\).  The \(m\) elements \(\zeta\gamma\), for
+\(\zeta \in \mu_m(\kbar)\), are distinct, and \(\prod_\zeta (T - \zeta\gamma) = T^m - \gamma^m\).
+Let \(r_i \coloneqq X_i/Y_i \in k^\times\).  Then
+\[
+\prod_{\zeta \in \mu_m(\kbar)} (r_i - \zeta\gamma) = r_i^m + \frac{\beta}{\alpha}
+= \frac{\alpha X_i^m + \beta Y_i^m}{\alpha Y_i^m} = \frac{1}{\alpha Y_i^m}.
+\]
+Through the embedding \(\kbar \to \overline{k_v}\), let
+\(\delta \coloneqq \min_{\zeta \neq \zeta'} \lvert \zeta\gamma - \zeta'\gamma \rvert_v > 0\).  For
+each \(i\), choose \(\zeta_i\) that minimizes \(\lvert r_i - \zeta\gamma \rvert_v\).  For
+\(\zeta \neq \zeta_i\), the triangle inequality gives
+\(\delta \leq \lvert r_i - \zeta\gamma \rvert_v + \lvert r_i - \zeta_i\gamma \rvert_v
+\leq 2 \lvert r_i - \zeta\gamma \rvert_v\).  Let
+\(C_1 \coloneqq (2/\delta)^{m - 1}/\lvert \alpha \rvert_v\).  Then
+\[
+\lvert r_i - \zeta_i\gamma \rvert_v \leq \Bigl(\frac{2}{\delta}\Bigr)^{m - 1}
+\frac{1}{\lvert \alpha \rvert_v \lvert Y_i \rvert_v^m} = \frac{C_1}{\lvert Y_i \rvert_v^m}.
+\]
+After passing to a subsequence, \(\zeta_i = \zeta\) for all \(i\).  Let
+\(\gamma' \coloneqq \zeta\gamma \in \kbar\).
+</p>
+
+<p>
+<i>Heights are divided by \(m\).</i>  From \(r_i^m = (Y_i^{-m} - \beta)/\alpha\) and
+Proposition <a href="08-mordell-weil.html#prop-mw-gm-height">8.5.12</a>,
+\[
+m\, h(r_i) = h(r_i^m) \leq h(\alpha) + h(Y_i^{-m} - \beta)
+\leq h(\alpha) + \log 2 + m\, h(Y_i) + h(\beta).
+\]
+Let \(C_2 \coloneqq \exp\bigl([k : \Q](h(\alpha) + h(\beta) + \log 2)/m\bigr)\).  Then
+\(H_k(r_i) \leq C_2 H_k(Y_i)\).
+</p>
+
+<p>
+<i>Approximation.</i>  Let \(\tau \coloneqq m/(n_v \# S)\).  Since \(n_v \leq [k : \Q]\) and
+\(m > 2[k : \Q]\, \# S\), we have \(\tau > 2\).  By \eqref{eq:ip-s-unit-large},
+\[
+\lvert r_i - \gamma' \rvert_v \leq C_1 \lvert Y_i \rvert_v^{-m} \leq C_1 H_k(Y_i)^{-\tau}
+\leq C_1 C_2^{\tau} H_k(r_i)^{-\tau}.
+\]
+By Theorem <a href="#thm-ip-roth">9.1.10</a> with \(\varepsilon \coloneqq \tau - 2\), the \(r_i\) take finitely
+many values.  But \(Y_i^m(\alpha r_i^m + \beta) = 1\), so \(r_i\) determines \(Y_i^m\), and so
+\(Y_i\) up to \(m\) choices.  This contradicts \(H_k(Y_i) \to \infty\).
+</p>
+</details>
+</div>
+
+<div id="outline-container-orgf569a09" class="outline-3">
+<h3 id="orgf569a09"><span class="section-number" id="s9.4.1">9.4.1</span> Covers of the line minus three \(k\)-points</h3>
+<div class="outline-text-3" id="text-4-1">
+<p>
+The proof lifts each solution of \(u + w = 1\) to a rational point of one of finitely many
+curves.  Here is what happens geometrically.
+</p>
+
+<div class="ec-thm ec-remark" id="rem-ip-fermat-cover">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Remark 9.4.2</span>.</span> Let \(m \geq 1\) be an integer, let \(\alpha, \beta \in k^\times\), and let \(F\) be the
+curve \(\alpha X^m + \beta Y^m = Z^m\) in \(\PP^2\).  Its partial derivatives
+\(m\alpha X^{m - 1}\), \(m\beta Y^{m - 1}\) and \(-mZ^{m - 1}\) vanish together only at \(0\),
+so \(F\) is a smooth plane curve, nice of genus \((m - 1)(m - 2)/2\) by
+Corollaries <a href="03-curves.html#cor-crv-smooth-plane-nice">3.7.5</a> and <a href="03-curves.html#cor-crv-plane-genus">3.7.7</a>.  The morphism
+\[
+\pi\colon F \to \PP^1, \qquad [X : Y : Z] \mapsto [\alpha X^m : Z^m],
+\]
+satisfies \(t \circ \pi = \alpha X^m/Z^m\) and \(1 - t \circ \pi = \beta Y^m/Z^m\), for the affine
+coordinate \(t\) of \(\PP^1\).  Over a \(\kbar\)-point
+\(t \notin \{0, 1, \infty\}\) the fiber has \(m^2\) elements, since \(X/Z\) and \(Y/Z\) are
+determined up to independent \(m\)-th roots of unity.  So \(\pi\) has degree \(m^2\).  Over
+each of \(0\), \(1\) and \(\infty\) there are \(m\) \(\kbar\)-points, where \(X\), \(Y\) and
+\(Z\) vanish respectively, each with ramification index \(m\).  Hurwitz's formula
+(Theorem <a href="03-curves.html#thm-crv-hurwitz">3.6.2</a>) checks out:
+\[
+2g(F) - 2 = m^2(-2) + 3m(m - 1) = m^2 - 3m.
+\]
+So \(\pi\) is unramified over \(U \coloneqq \PP^1 \setminus \{0, 1, \infty\}\).  Over \(\kbar\)
+it is a Galois cover with group \(\mu_m(\kbar)^2\), acting by
+\([X : Y : Z] \mapsto [\zeta X : \zeta' Y : Z]\).
+</p>
+
+<p>
+As \((\alpha, \beta)\) varies, the curves \(F\) are twists of one another.  A \(k\)-point
+\(t \in U(k)\) lifts to a rational point of \(F\) exactly when \(t/\alpha\) and
+\((1 - t)/\beta\) are \(m\)-th powers in \(k\).  That is, when the classes of
+\((\alpha, \beta)\) and \((t, 1 - t)\) in \((k^\times/k^{\times m})^2\) agree, a group that
+Kummer theory identifies with \(H^1(k, \mu_m)^2\) (Corollary <a href="07-galois-cohomology.html#cor-gc-kummer">7.4.6</a>).  So each
+\(k\)-point of \(U\) lifts to exactly one twist, and as \(t\) varies over \(U(k)\)
+infinitely many twists occur.  The \(S\)-integral points lift to the finitely many twists
+with \(\alpha, \beta \in \calO_S^\times\), the classes unramified outside \(S\) (if \(S\)
+contains the places above \(m\), by Proposition <a href="07-galois-cohomology.html#prop-gc-kSm">7.8.3</a>).  This is the descent step
+of the proof, the analogue of the weak Mordell&#x2013;Weil theorem.  For a finite unramified morphism
+\(X \to Y\) of projective varieties, the Chevalley&#x2013;Weil theorem says that the fields
+generated by the fibers over the rational points of \(Y\) are unramified outside a fixed
+finite set of places, so that by Hermite's theorem they lie in a fixed finite extension of
+\(k\) [<a class="ec-cite" href="#bib-Hindry-Silverman00">HS00</a>, Remark C.1.6.1 and Exercise C.7].  The proof in
+[<a class="ec-cite" href="#bib-Hindry-Silverman00">HS00</a>, Exercise C.7] goes through the integral points of affine pieces.
+For the affine curve \(U\) the statement holds for the \(S\)-integral points only.  For a
+rational point such as \(t = p\), a prime number not in \(S\), the field
+\(k(t^{1/m})\) can be ramified at \(p\).
+</p>
+
+<p>
+In the proof, the solutions with \(\lvert Y_i \rvert_v \to \infty\) tend \(v\)-adically, on
+\(F\), to one of the \(\kbar\)-points at infinity \([\zeta\gamma : 1 : 0]\), where the
+function \(r = X/Y\) takes the value \(\zeta\gamma\).  Since
+\(\prod_\zeta (X/Y - \zeta\gamma) = Z^m/(\alpha Y^m)\), the function \(X/Y - \zeta\gamma\)
+vanishes to order \(m\) there, the ramification index of \(\pi\).  So, unlike in
+Section <a href="#sec-ip-siegel-proof">9.3.3</a>, the lift divides log-distances by \(m\) as well as
+heights, and their ratio does not change.  On \(\PP^1\) it is about \(-1/(n_v \# S)\), as
+\(u_i\) tends to the rational point \(\infty\), and at a rational point only the product
+formula applies.  It allows ratios down to \(-1/n_v\) (Remark <a href="#rem-ip-roth-rational">9.2.19</a>).  On
+\(F\), the target \([\zeta\gamma : 1 : 0]\) is a \(\kbar\)-point that is not rational in
+general.  There the proof of Corollary <a href="#cor-ip-roth-distance">9.2.18</a>, for the function \(X/Y\) of
+order \(m\) at the target, allows ratios down to \(-2/m\) only.  This is the contradiction
+for \(m > 2n_v \# S\).
+</p>
+</div>
+
+<div class="ec-thm ec-remark" id="rem-ip-two-proofs">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Remark 9.4.3</span>.</span> The proofs of Theorems <a href="#thm-ip-siegel">9.3.5</a> and <a href="#thm-ip-s-unit">9.4.1</a> have the same shape
+[<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Remark IX.4.2.1].
+</p>
+<table>
+
+
+<colgroup>
+<col  class="org-left">
+
+<col  class="org-left">
+
+<col  class="org-left">
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Step</th>
+<th scope="col" class="org-left">Siegel's theorem</th>
+<th scope="col" class="org-left">\(S\)-unit equation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">finitely generated group</td>
+<td class="org-left">\(E(k)\)</td>
+<td class="org-left">\(\calO_S^\times \times \calO_S^\times\)</td>
+</tr>
+
+<tr>
+<td class="org-left">finite quotient</td>
+<td class="org-left">\(E(k)/mE(k)\)</td>
+<td class="org-left">\((\calO_S^\times/\calO_S^{\times m})^2\)</td>
+</tr>
+
+<tr>
+<td class="org-left">cover</td>
+<td class="org-left">\(P' \mapsto [m]P' + R\), unramified</td>
+<td class="org-left">\(F \to \PP^1\), unramified over \(U\)</td>
+</tr>
+
+<tr>
+<td class="org-left">heights</td>
+<td class="org-left">divided by \(m^2\)</td>
+<td class="org-left">divided by \(m\)</td>
+</tr>
+
+<tr>
+<td class="org-left">approximation</td>
+<td class="org-left">Roth's theorem on \(E\)</td>
+<td class="org-left">Roth's theorem on \(\PP^1\)</td>
+</tr>
+</tbody>
+</table>
+<p>
+The finite quotients are Theorems <a href="08-mordell-weil.html#thm-mw-weak">8.2.1</a> and <a href="07-galois-cohomology.html#thm-gc-s-units">7.8.4</a>, and the
+approximation steps are Corollary <a href="#cor-ip-roth-distance">9.2.18</a> and Theorem <a href="#thm-ip-roth">9.1.10</a>.  In
+both cases a solution is pulled back along a cover, unramified over the curve, to a solution
+of smaller height that approximates a \(\kbar\)-point, and Roth's theorem bounds the
+approximation.  On \(E\) the cover is unramified at the target as well, so distances are
+kept and heights drop by \(m^2\).  On \(F\) the target lies over a removed \(k\)-point,
+where the ramification index is \(m\), and the gain comes from replacing a rational target by
+an irrational one (Remark <a href="#rem-ip-fermat-cover">9.4.2</a>).
+</p>
+</div>
+
+<p>
+For \(m = 3\), the curve \(F\) has genus one, and Siegel's theorem gives a second proof.
+</p>
+
+<div class="ec-thm ec-remark" id="rem-ip-s-unit-via-siegel">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Remark 9.4.4</span>.</span> Theorem <a href="#thm-ip-s-unit">9.4.1</a> follows from Corollary <a href="#cor-ip-siegel-genus-one">9.3.8</a>.  The first step
+of the proof above, the reduction to \(\alpha X^m + \beta Y^m = 1\), works for every
+\(m \geq 1\).  Take \(m = 3\).  It remains to show that for \(\alpha, \beta \in k^\times\) the
+equation \(\alpha X^3 + \beta Y^3 = 1\) has finitely many solutions in \(\calO_S\).  By
+Remark <a href="#rem-ip-fermat-cover">9.4.2</a>, the cubic \(F\colon \alpha X^3 + \beta Y^3 = Z^3\) is a nice
+curve of genus one.  A solution \((X, Y)\) is the rational point \([X : Y : 1]\) of \(F\), at
+which the non-constant function \(X/Z\) takes the value \(X \in \calO_S\).  By
+Corollary <a href="#cor-ip-siegel-genus-one">9.3.8</a> there are finitely many such rational points.  So the
+\(S\)-integral points of \(\PP^1 \setminus \{0, 1, \infty\}\) are finite because those of the
+genus one curves \(F \setminus \{XYZ = 0\}\), its unramified covers, are.
+</p>
+</div>
+
+<div class="ec-thm ec-remark" id="rem-ip-s-unit-quantitative">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Remark 9.4.5</span>.</span> The proof of Theorem <a href="#thm-ip-s-unit">9.4.1</a> is ineffective, since it uses Roth's theorem.  The
+number of solutions is nevertheless bounded uniformly: Evertse showed that \(au + bw = 1\)
+has at most \(3 \cdot 7^{[k : \Q] + 2\# S}\) solutions in \(S\)-units
+[<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Remark IX.4.2.2 and Theorem IX.4.2.3],
+[<a class="ec-cite" href="#bib-Hindry-Silverman00">HS00</a>, Theorem D.8.2].  Linear forms in logarithms bound the heights of the solutions, so that
+they can be listed [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Section IX.5].
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgf65cd77" class="outline-3">
+<h3 id="orgf65cd77"><span class="section-number" id="s9.4.2">9.4.2</span> The projective line minus three or more \(\kbar\)-points</h3>
+<div class="outline-text-3" id="text-4-2">
+<p>
+A Möbius transformation moves any three \(\kbar\)-points of \(\PP^1\) to \(0\), \(1\) and
+\(\infty\).  Over \(\calO_S\) this works only when the three do not collide modulo any
+place outside \(S\), which we arrange by enlarging \(S\).
+</p>
+
+<div class="ec-thm ec-theorem" id="thm-ip-genus-zero">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Theorem 9.4.6</span> <span class="ec-thm-title">(Siegel)</span>.</span> Let \(\phi \in k(t)\) have at least three distinct poles in \(\PP^1(\kbar)\).  Then the set
+\(\{T \in \PP^1(k) : \phi(T) \in \calO_S\}\) is finite.
+</p>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+We follow [<a class="ec-cite" href="#bib-Hindry-Silverman00">HS00</a>, Theorem D.8.4].  As in the proof of
+Corollary <a href="#cor-ip-siegel-genus-one">9.3.8</a>, we may replace \(k\) by a finite extension and \(S\) by
+a larger finite set of places.  A Möbius transformation with coefficients in \(k\) permutes
+\(\PP^1(k)\), and \(\PP^1(k)\) is infinite, so we may assume that \(\infty\) is neither a zero
+nor a pole of \(\phi\).  Then \(\phi = c\prod_i (t - \alpha_i)/\prod_j (t - \beta_j)\), with
+the same number of factors above and below, repetitions allowed, and \(\alpha_i \neq \beta_j\).
+Let \(\beta_1, \beta_2, \beta_3\) be three distinct poles among the \(\beta_j\).  Extending \(k\) and enlarging \(S\), we
+may assume that the following hold.
+</p>
+<ol class="org-ol">
+<li><a id="it-ip-gz-split"></a> The \(\alpha_i\) and \(\beta_j\) lie in \(\calO_S\), and
+\(c \in \calO_S^\times\).</li>
+<li><a id="it-ip-gz-distinct"></a> The differences \(\alpha_i - \beta_j\), and \(\beta_j - \beta_l\) for
+\(\beta_j \neq \beta_l\), lie in \(\calO_S^\times\).</li>
+<li><a id="it-ip-gz-pid"></a> The ring \(\calO_S\) is a principal ideal domain.</li>
+</ol>
+<p>
+For the first two, a non-zero element of \(k\) has absolute value \(1\) at all but finitely
+many places.  For the third, \(\Cl(\calO_S)\) is finite (Theorem <a href="07-galois-cohomology.html#thm-gc-s-units">7.8.4</a>), and
+we add to \(S\) the places dividing a set of ideals that represent its classes
+[<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, proof of Proposition VIII.1.6].
+</p>
+
+<p>
+Let \(x \in k\) with \(\phi(x) \in \calO_S\).  By part <a href="#it-ip-gz-pid">3</a>, we can write
+\(x = X/Y\) with \(X, Y \in \calO_S\) coprime.  Then
+\(\phi(x) = c\prod_i (X - \alpha_iY)/\prod_j (X - \beta_jY)\).  Let \(\pi\) be a prime element
+of \(\calO_S\) dividing some \(X - \beta_jY\).  Then \(\pi \nmid Y\), since otherwise
+\(\pi \mid X\).  For each \(i\), \((X - \alpha_iY) - (X - \beta_jY) = (\beta_j - \alpha_i)Y\) is not
+divisible by \(\pi\), by part <a href="#it-ip-gz-distinct">2</a>, so \(\pi \nmid X - \alpha_iY\).  Then \(\pi\)
+divides the denominator of \(\phi(x)\) more often than its numerator, contradicting
+\(\phi(x) \in \calO_S\).  So every \(X - \beta_jY\) is an \(S\)-unit.
+</p>
+
+<p>
+Let
+\[ \begin{gathered}
+u \coloneqq \frac{(\beta_2 - \beta_3)(X - \beta_1Y)}{(\beta_2 - \beta_1)(X - \beta_3Y)},\\
+w \coloneqq \frac{(\beta_3 - \beta_1)(X - \beta_2Y)}{(\beta_2 - \beta_1)(X - \beta_3Y)}.
+\end{gathered} \]
+Expanding shows Siegel's identity \(u + w = 1\), and \(u, w \in \calO_S^\times\) by the
+previous paragraph and part <a href="#it-ip-gz-distinct">2</a>.  By Theorem <a href="#thm-ip-s-unit">9.4.1</a>, \(u\) takes
+finitely many values.  As a function of \(x\), \(u\) is a Möbius transformation, so it is
+injective, and \(x\) takes finitely many values.  Together with \(T = \infty\), this proves
+the theorem.
+</p>
+</details>
+
+<p>
+As a function of \(t\),
+\[
+u = \frac{(\beta_2 - \beta_3)(t - \beta_1)}{(\beta_2 - \beta_1)(t - \beta_3)}
+\]
+is the cross-ratio: the unique Möbius transformation sending \(\beta_1, \beta_2, \beta_3\) to
+\(0, 1, \infty\).  It identifies \(\PP^1 \setminus \{\beta_1, \beta_2, \beta_3\}\) with
+\(\PP^1 \setminus \{0, 1, \infty\}\).  Siegel's identity is the statement \(u + (1 - u) = 1\)
+for this coordinate, and the conditions on \(S\) say that \(\beta_1, \beta_2, \beta_3\) reduce to
+three distinct \(\kappa(v)\)-points for every \(v \notin S\).  Then the cross-ratio extends
+to an isomorphism of models over \(\calO_S\), and the integral points correspond.  Removing more
+than three \(\kbar\)-points only removes more integral points.  In the opposite direction,
+the curves \(\Aff^1\) and \(\Gm\) of Example <a href="#eg-ip-integral-points">9.3.4</a> have one and two
+\(\kbar\)-points at infinity, and can have infinitely many \(S\)-integral points.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org0ed8013" class="outline-3">
+<h3 id="org0ed8013"><span class="section-number" id="s9.4.3">9.4.3</span> The equation \(y^2 = f(x)\)</h3>
+<div class="outline-text-3" id="text-4-3">
+<p>
+Siegel deduced the finiteness of integral points on curves \(y^2 = f(x)\), elliptic curves
+among them, from the \(S\)-unit equation.  Unlike the proof of
+Corollary <a href="#cor-ip-siegel-weierstrass">9.3.7</a>, every step of this reduction is effective.
+</p>
+
+<div class="ec-thm ec-theorem" id="thm-ip-hyperelliptic">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Theorem 9.4.7</span> <span class="ec-thm-title">(Siegel)</span>.</span> Let \(f \in k[T]\) be a polynomial of degree \(d \geq 3\) with distinct roots in \(\kbar\).  Then
+the equation \(y^2 = f(x)\) has only finitely many solutions \(x, y \in \calO_S\).
+</p>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+We follow [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Theorem IX.4.3].  As in the proof of
+Corollary <a href="#cor-ip-siegel-genus-one">9.3.8</a>, we may replace \(k\) by a finite extension and \(S\) by a
+larger finite set of places.  So we may assume that
+\(f = c(T - \alpha_1)\cdots(T - \alpha_d)\) splits over \(k\), and that the following hold.
+</p>
+<ol class="org-ol">
+<li><a id="it-ip-hyp-split"></a> \(c \in \calO_S^\times\), and \(\alpha_1, \dots, \alpha_d \in \calO_S\).</li>
+<li><a id="it-ip-hyp-distinct"></a> \(\alpha_i - \alpha_j \in \calO_S^\times\) for all \(i \neq j\).</li>
+<li><a id="it-ip-hyp-pid"></a> \(\calO_S\) is a principal ideal domain.</li>
+</ol>
+<p>
+These are arranged as in the proof of Theorem <a href="#thm-ip-genus-zero">9.4.6</a>.
+</p>
+
+<p>
+Let \(x, y \in \calO_S\) with \(y^2 = f(x)\), and \(x \neq \alpha_i\) for all \(i\), which
+excludes finitely many solutions.  Let \(\pi\) be a prime element of \(\calO_S\) dividing
+\(x - \alpha_i\).  It divides no \(x - \alpha_j\) with \(j \neq i\), since it would then divide
+the unit \(\alpha_j - \alpha_i\), and it does not divide \(c\).  So its exponent in
+\(x - \alpha_i\) is its exponent in \(y^2\), which is even.  By part <a href="#it-ip-hyp-pid">3</a>, there are
+\(b_i \in \calO_S^\times\) and \(z_i \in \calO_S\) with \(x - \alpha_i = b_iz_i^2\).
+</p>
+
+<p>
+The group \(\calO_S^\times/\calO_S^{\times 2}\) is finite.  Let \(L\) be the finite extension
+of \(k\) generated by square roots of a set of representatives, so that every \(S\)-unit is a
+square in \(L\), and let \(S_L\) be the set of places of \(L\) above \(S\).  Choose
+\(\beta_i \in L\) with \(\beta_i^2 = b_i\), and let \(w_i \coloneqq \beta_iz_i\).  Then
+\(w_i \in \calO_{S_L}\), since \(\lvert \beta_i \rvert_{v'} = 1\) and
+\(\lvert z_i \rvert_{v'} \leq 1\) for places \(v' \notin S_L\) of \(L\), and
+</p>
+\begin{equation}
+\label{eq:ip-hyp-squares}
+w_i^2 = x - \alpha_i, \qquad (w_i - w_j)(w_i + w_j) = \alpha_j - \alpha_i. \tag{9.4.2}
+\end{equation}
+<p>
+The product of the two \(S_L\)-integers \(w_i \pm w_j\) is an \(S_L\)-unit, so both are
+\(S_L\)-units.  Now Siegel's identities
+\[ \begin{gathered}
+\frac{w_1 + w_2}{w_1 - w_3} - \frac{w_2 + w_3}{w_1 - w_3} = 1,\\
+\frac{w_1 - w_2}{w_1 - w_3} + \frac{w_2 - w_3}{w_1 - w_3} = 1
+\end{gathered} \]
+are two solutions of the \(S_L\)-unit equation of \(L\).  By
+Theorem <a href="#thm-ip-s-unit">9.4.1</a> for \(L\) and \(S_L\), the quotients
+\(u_\pm \coloneqq (w_1 \pm w_2)/(w_1 - w_3)\) lie in a finite set that depends only on \(L\)
+and \(S_L\), not on \((x, y)\).  By \eqref{eq:ip-hyp-squares},
+\(u_+u_- = (\alpha_2 - \alpha_1)/\theta^2\) with \(\theta \coloneqq w_1 - w_3\).  So \(\theta\)
+takes finitely many values.  By \eqref{eq:ip-hyp-squares} again,
+\(\theta(w_1 + w_3) = \alpha_3 - \alpha_1\), so
+\[
+w_1 = \frac12\Bigl(\theta + \frac{\alpha_3 - \alpha_1}{\theta}\Bigr), \qquad x = \alpha_1 + w_1^2
+\]
+take finitely many values, and each \(x\) gives at most two values of \(y\).
+</p>
+</details>
+
+<div class="ec-thm ec-remark" id="rem-ip-hyperelliptic-geometry">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Remark 9.4.8</span>.</span> Let \(V\) be the affine curve \(y^2 = f(x)\), with \(f\) split over \(k\) as above.  On \(V\),
+the function \(x - \alpha_i\) has a double zero at \((\alpha_i, 0)\), where \(y\) is a
+uniformizer, and no other zero.  So adjoining square roots \(w_i\) of the \(x - \alpha_i\)
+gives an unramified cover \(V' \to V\), of degree \(2^{d - 1}\) over \(\kbar\), as for the
+cover of Remark <a href="#rem-ip-fermat-cover">9.4.2</a>.  Its twists by the classes \(b_i\) in
+\(\calO_S^\times/\calO_S^{\times 2}\) are finitely many, and every \(S\)-integral point of \(V\)
+lifts to one of them, over the field \(L\).  This is the descent step again.  On \(V'\), Siegel's
+identity is a non-constant morphism \(u_+ = (w_1 + w_2)/(w_1 - w_3)\) to
+\(\PP^1 \setminus \{0, 1, \infty\}\), which sends integral points to integral points.  So
+the proof reads: lift to an unramified cover, then map to the line minus three \(k\)-points.
+For \(d = 3\), \(V\) is an elliptic curve \(E\) minus its origin.  Over \(\kbar\), the cover
+\(V' \to V\) is the restriction of \([2]\colon E \to E\) to \(E \setminus E[2]\), and
+\(P \mapsto (b_i)_i\) is the complete \(2\)-descent map [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Proposition X.1.4].
+</p>
+</div>
+
+<div class="ec-thm ec-remark" id="rem-ip-hyperelliptic-degree">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Remark 9.4.9</span>.</span> For \(d = 3\), Theorem <a href="#thm-ip-hyperelliptic">9.4.7</a> gives a second proof of
+Corollary <a href="#cor-ip-siegel-weierstrass">9.3.7</a>.  In characteristic \(0\), after completing the square, and
+enlarging \(S\) so that it contains the places above \(2\) and the coefficients are
+\(S\)-integers, a Weierstrass equation becomes
+\(y^2 = f(x)\), and \(x(P) \in \calO_S\) then forces \(y(P) \in \calO_S\) as in
+part <a href="#it-ip-ip-elliptic">4</a> of Example <a href="#eg-ip-integral-points">9.3.4</a>
+[<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Corollary IX.4.3.1].  This proof does not use Theorem <a href="#thm-ip-siegel">9.3.5</a>, since
+Theorem <a href="#thm-ip-s-unit">9.4.1</a> was proved directly from Roth's theorem.  With linear forms in
+logarithms in place of Roth's theorem, it becomes effective
+[<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Section IX.5].  For \(d = 2\) the statement is false: \(y^2 = 2x^2 + 1\) has the infinitely many
+integer solutions given by \(y + x\sqrt 2 = (3 + 2\sqrt 2)^n\), \(n \geq 0\).  The proof fails
+because two roots give no Siegel identity, and the curve is a conic minus two
+\(\kbar\)-points at infinity, a twist of \(\Gm\).
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org19676d8" class="outline-3">
+<h3 id="org19676d8"><span class="section-number" id="s9.4.4">9.4.4</span> Siegel's theorem for curves</h3>
+<div class="outline-text-3" id="text-4-4">
+<p>
+The examples of this chapter fit one pattern.  Let \(C\) be a nice curve of genus \(g\) over
+\(k\), and let \(U \subseteq C\) be the complement of \(s \geq 0\) \(\kbar\)-points, the
+\(\kbar\)-points at infinity.  For an embedding \(k \to \C\), \(U(\C)\) is a compact Riemann
+surface of genus \(g\) with \(s\) punctures, of Euler characteristic \(2 - 2g - s\).
+</p>
+
+<table>
+
+
+<colgroup>
+<col  class="org-left">
+
+<col  class="org-left">
+
+<col  class="org-left">
+
+<col  class="org-left">
+
+<col  class="org-left">
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">\(U\)</th>
+<th scope="col" class="org-left">\(g\)</th>
+<th scope="col" class="org-left">\(s\)</th>
+<th scope="col" class="org-left">\(2 - 2g - s\)</th>
+<th scope="col" class="org-left">integral points</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">\(\Aff^1\)</td>
+<td class="org-left">\(0\)</td>
+<td class="org-left">\(1\)</td>
+<td class="org-left">\(1\)</td>
+<td class="org-left">\(\calO_S\), infinite</td>
+</tr>
+
+<tr>
+<td class="org-left">\(\Gm\)</td>
+<td class="org-left">\(0\)</td>
+<td class="org-left">\(2\)</td>
+<td class="org-left">\(0\)</td>
+<td class="org-left">\(\calO_S^\times\), infinite if \(\# S \geq 2\)</td>
+</tr>
+
+<tr>
+<td class="org-left">\(\PP^1 \setminus \{0, 1, \infty\}\)</td>
+<td class="org-left">\(0\)</td>
+<td class="org-left">\(3\)</td>
+<td class="org-left">\(-1\)</td>
+<td class="org-left">finite</td>
+</tr>
+
+<tr>
+<td class="org-left">\(E\)</td>
+<td class="org-left">\(1\)</td>
+<td class="org-left">\(0\)</td>
+<td class="org-left">\(0\)</td>
+<td class="org-left">\(E(k)\), finitely generated, can be infinite</td>
+</tr>
+
+<tr>
+<td class="org-left">\(E \setminus \{O\}\)</td>
+<td class="org-left">\(1\)</td>
+<td class="org-left">\(1\)</td>
+<td class="org-left">\(-1\)</td>
+<td class="org-left">finite</td>
+</tr>
+
+<tr>
+<td class="org-left">\(C\)</td>
+<td class="org-left">\(\geq 2\)</td>
+<td class="org-left">\(0\)</td>
+<td class="org-left">\(< 0\)</td>
+<td class="org-left">finite, Faltings</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+The finiteness statements are Theorem <a href="#thm-ip-s-unit">9.4.1</a>, Corollary <a href="#cor-ip-siegel-weierstrass">9.3.7</a>
+and Faltings's theorem, below.  For \(s = 0\), the integral points are all the rational points, since \(C\) is proper.  The
+line with two \(\kbar\)-points at infinity and the elliptic curve, both of Euler
+characteristic \(0\), are the two cases where the integral points form a finitely generated
+group, the analogy of Remark <a href="08-mordell-weil.html#rem-mw-why-gm-differs">8.3.5</a>.  When the Euler characteristic is
+negative, there are finitely many.
+</p>
+
+<div class="ec-thm ec-theorem" id="thm-ip-siegel-curves">
+<p>
+<span class="ec-thm-head"><span class="ec-thm-name">Theorem 9.4.10</span> <span class="ec-thm-title">(Siegel)</span>.</span> Let \(C\) be a nice curve of genus \(g\) over \(k\), let \(f_1, \dots, f_r \in k(C)\) be
+non-constant, and let \(s\) be the number of \(\kbar\)-points of \(C\) that are poles of some
+\(f_i\).  If \(2g - 2 + s > 0\), then \(C\) has only finitely many \(S\)-integral points for
+\((f_1, \dots, f_r)\).
+</p>
+</div>
+
+<details class="ec-proof">
+<summary><span class="ec-proof-head">Proof.</span></summary>
+<p>
+Not proved in full in these notes.  For \(C = \PP^1\) it follows from
+Theorem <a href="#thm-ip-genus-zero">9.4.6</a>, and for \(g = 1\) from Corollary <a href="#cor-ip-siegel-genus-one">9.3.8</a>,
+applied to a single function \(f \coloneqq \sum_i c_if_i\) with \(c_i \in \Z\).  Indeed
+\(f(P) \in \calO_S\) at every \(S\)-integral point, and for all \(c\) outside finitely many
+hyperplanes of \(\Q^r\), \(f\) has a pole at each of the \(s\) \(\kbar\)-points, since no leading
+coefficient cancels.  A curve of genus \(0\) with a rational point is isomorphic to
+\(\PP^1\), and one without has no \(S\)-integral points.  For \(g \geq 2\), the proof
+embeds \(C\) in its Jacobian and pulls back along multiplication by \(m\) there, to get
+unramified covers of \(C\), as in Section <a href="#sec-ip-siegel-proof">9.3.3</a>
+[<a class="ec-cite" href="#bib-Hindry-Silverman00">HS00</a>, Theorems D.8.4 and D.9.1 and Remark D.9.2.2].
+</p>
+</details>
+
+<p>
+For \(g \geq 2\), Theorem <a href="#thm-ip-siegel-curves">9.4.10</a> is superseded by Faltings's theorem,
+which says that \(C(k)\) itself is finite [<a class="ec-cite" href="#bib-Silverman09">Sil09</a>, Section IX.4],
+[<a class="ec-cite" href="#bib-Hindry-Silverman00">HS00</a>, Remark D.9.2.2].  The negativity of a coarse topological invariant,
+the Euler characteristic of \(U(\C)\), forces a deep arithmetic finiteness property
+[<a class="ec-cite" href="#bib-Hindry-Silverman00">HS00</a>, Remark D.9.2.2].  Conversely, when \(2 - 2g - s \geq 0\) and
+\(s \geq 1\), the curve \(U\) is \(\Aff^1\) or a twist of \(\Gm\) over \(\kbar\), and its
+\(S\)-integral points are infinite once \(k\) and \(S\) are large enough, as for the curve
+\(y^2 = 2x^2 + 1\) of Remark <a href="#rem-ip-hyperelliptic-degree">9.4.9</a>.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org748dcaf" class="outline-2 ec-references">
+<h2 id="org748dcaf">References</h2>
+<div class="outline-text-2" id="text-org748dcaf">
 <dl class="ec-bibliography">
 <dt id="bib-Hindry-Silverman00">[HS00]</dt>
 <dd>Marc Hindry and Joseph H. Silverman. <i>Diophantine geometry</i>. Vol. 201. Graduate Texts in Mathematics. Springer-Verlag, New York, 2000. An introduction. <a href="https://doi.org/10.1007/978-1-4612-1210-2">doi:10.1007/978-1-4612-1210-2</a>.</dd>

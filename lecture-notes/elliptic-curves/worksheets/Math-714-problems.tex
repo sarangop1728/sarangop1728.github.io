@@ -69,6 +69,8 @@ breaklinks=true}
 \usepackage{colonequals} % correct way to write :=
 \usepackage{soul} % to strikethrough words: \st{}
 \usepackage{marvosym} % at work symbol
+\usepackage{manfnt}   % \textdbend: the road sign in Warning headings
+\usepackage{graphicx} % \scalebox (for that road sign) and \includegraphics
 \usepackage{listings} % source-code printing
 \usepackage{upquote}  % straight quotes inside listings (copy-pasteable code)
 
@@ -533,7 +535,16 @@ breaklinks=true}
 %\theoremstyle{remark}
 \newsharedthm{remark}{Remark}
 \newsharedthm{remarks}{Remarks}
-\newsharedthm{warning}{Warning}
+% Warning headings carry Knuth's dangerous-bend road sign (manfnt), shrunk to
+% about cap height and sat on the baseline; at full size it hangs below the
+% line. Change the 0.55 to resize it. manfnt has no bold shape; \mdseries
+% asks for the one it has instead of warning "U/manual/bx/n undefined".
+\newcommand{\smalldbend}{\raisebox{\depth}{\scalebox{0.55}{\mdseries\textdbend}}\,}
+\newsharedthm{warning}{\smalldbend Warning}
+% Without these, cleveref takes the theorem name, road sign included, as the
+% name in \cref{warn:x}, and prints a stray glyph before "Warning".
+\crefname{warning}{Warning}{Warnings}
+\Crefname{warning}{Warning}{Warnings}
 
 \newcommand{\labelpar}[1]{\refstepcounter{subsection}\label{#1}\thesubsection.}
 %% Ending here.
@@ -822,6 +833,52 @@ breaklinks=true}
     +{}  {\SentenceSpace \PrintReviews} {review}
 }
 
+
+%% ======================================================================
+%% References into a companion document
+%% ----------------------------------------------------------------------
+%% \linkedexternaldocument{<aux path, no .aux>}{<pdf to link to>}, in the
+%% preamble, e.g. \linkedexternaldocument{.latex-aux/main}{main.pdf}:
+%% imports the companion's labels with xr, so \ref, \eqref and \cref of its
+%% results print the right numbers. Build the companion first.
+%%
+%% Plain xr leaves each hyperref link pointing at an anchor of the companion
+%% (theorem.4.7, ...) that does not exist in this PDF, so pdfTeX warns
+%% "name{theorem.4.7} has been referenced but does not exist" and the link
+%% goes nowhere. Here the fifth field of each imported label (the file
+%% hyperref and cleveref link into, empty by default) is set to <pdf>, so the
+%% link opens that PDF at the right place. Labels with no anchor, such as
+%% cleveref's @cref entries, are imported unchanged; xr-hyper mangles those
+%% and breaks \cref.
+%%
+%% amsart stores its table-of-contents indents as labels (tocindent-1, ...),
+%% and the imported values would overwrite this document's own; forget them.
+%%
+%% First used in expository-notes/1-Gal-permreps-etale-algebras (data.tex).
+%% ----------------------------------------------------------------------
+\makeatletter
+\newcommand{\linkedexternaldocument}[2]{%
+  \usepackage{xr}%
+  \begingroup
+    \def\XRL@pdf{#2}%
+    \let\XRL@orignewlabel\newlabel
+    \let\newlabel\XRL@newlabel
+    \externaldocument{#1}%
+  \endgroup
+  \@for\XRL@x:=-1,0,1,2,3\do{%
+    \global\expandafter\let\csname r@tocindent\XRL@x\endcsname\relax}}
+\def\XRL@newlabel#1#2{\XRL@split#2{}{}{}{}{}\XRL@end{#1}{#2}}
+% #1..#5: number, page, title, anchor, file.
+\def\XRL@split#1#2#3#4#5#6\XRL@end#7#8{%
+  \let\XRL@next\XRL@keep
+  \ifx\\#4\\\else\ifx\\#5\\\let\XRL@next\XRL@relink\fi\fi
+  \XRL@next{#7}{#8}{{#1}{#2}{#3}{#4}}}
+\def\XRL@keep#1#2#3{\XRL@orignewlabel{#1}{#2}}
+\def\XRL@relink#1#2#3{%
+  \edef\XRL@tmp{\noexpand\XRL@orignewlabel{\unexpanded{#1}}{\unexpanded{#3}{\XRL@pdf}}}%
+  \XRL@tmp}
+\makeatother
+
 \makeatletter\def\toclevel@part{0}\makeatother
 \setcounter{tocdepth}{1}
 
@@ -829,7 +886,7 @@ breaklinks=true}
 \AddToShipoutPictureFG*{%
   \put(\LenToUnit{1.1cm},\LenToUnit{.5\paperheight}){%
     \rotatebox{90}{\makebox[0pt][c]{\small\sffamily\color{black!50}%
-      DRAFT \textemdash{} last edited November 11, 2026}}}}
+      DRAFT \textemdash{} last edited November 17, 2026}}}}
 
 %% ---- shared machinery of the worksheets ----
 
@@ -918,14 +975,7 @@ breaklinks=true}
   {\par\smallskip\small\noindent\textit{Remark.}\enspace\ignorespaces}%
   {\par}
 
-\ifsolutions
-  \newcommand{\hint}[1]{}
-\else
-  \newcommand{\hint}[1]{\footnote{\emph{Hint:} #1}}
-\fi
-
-% Hints stay in the problems file, as in the worksheets.
-\renewcommand{\hint}[1]{\footnote{\emph{Hint:} #1}}
+\newcommand{\hint}[1]{\footnote{\emph{Hint:} #1}}
 
 %% ---- macros of individual worksheets ----
 \newcommand{\Cdbar}{\overline{C}_{d}}
@@ -7215,17 +7265,10 @@ t := Thue(x^3 - 2);                 // the form X^3 - 2*Y^3
 \part[Siegel's theorem]{Siegel's theorem}
 \label{siegel:part}
 \noindent
-This worksheet works through two proofs of \cite{Silverman09}*{\S\S IX.3--IX.4}. An
-elliptic curve over a number field $K$ can have infinitely many rational points, but
-only finitely many of them have an $S$-integral $x$-coordinate. Siegel gave two proofs.
-In the first, a rational point $P$ of large height with $x(P) \in \calO_S$ is very close to
-$O$ at some place of $S$, and Siegel's theorem says that rational points cannot approach
-$O$ that fast. \Cref{siegel:prob:integral} introduces the distance functions that make this precise,
-and carries out the proof. The second proof works for every equation $y^2 = f(x)$, where $f$ is a polynomial of degree at least
-$3$ with distinct roots. It turns an $S$-integral solution into a solution of
-$u + w = 1$ in units, and this equation has only finitely many solutions.
-\Cref{siegel:prob:hyperelliptic} carries it out, and then runs it on $y^2 = x^3 - 36x$ over
-$\Z[1/6]$. Both rest on Roth's theorem, and neither bounds the solutions.
+This worksheet works through Siegel's two proofs, from
+\cite{Silverman09}*{\S\S IX.3--IX.4}, that an elliptic curve over a number field $K$ has
+only finitely many $K$-rational points with coordinates in $\OO_S$, although it can
+have infinitely many rational points. 
 
 
 \subsection*{Standing notation}
@@ -7247,14 +7290,7 @@ $\Z[1/6]$. Both rest on Roth's theorem, and neither bounds the solutions.
 \section{Integral points and Siegel's theorem}
 \label{siegel:sec:integral}
 
-\Cref{siegel:prob:integral} is the proof of \cite{Silverman09}*{Corollary~IX.3.2.1}. It uses the
-distance function $d_v$ of \cref{siegel:def:distance}, for a place $v$ of $K$. The distance
-$d_v(P, Q)$ is small when the $K_v$-point $P$ of a curve is $v$-adically close to the
-$K_v$-point $Q$. It depends on the choice of a function, but the statement of
-\cref{siegel:thm:siegel} does not \cite{Silverman09}*{Remark~IX.2.1}. With the height $h_f$ of
-\cref{siegel:def:height}, Siegel's theorem says that the rational points $P$ of an elliptic curve
-cannot approach $Q$ quickly, compared with their height: for every $\varepsilon > 0$, all but
-finitely many of them satisfy $d_v(P, Q) \geq e^{-\varepsilon h_f(P)}$.
+\Cref{siegel:prob:integral} is the proof of \cite{Silverman09}*{Corollary~IX.3.2.1}.
 
 \begin{wsdefinition}[{The $v$-adic distance \cite{Silverman09}*{\S IX.2}}]
 \label{siegel:def:distance}
@@ -7267,6 +7303,8 @@ d_v(P, Q) \coloneqq \min\bigl(\lvert t_Q(P) \rvert_v^{1/e}, 1\bigr),
 with $d_v(P, Q) \coloneqq 1$ if $P$ is a pole of $t_Q$.
 \end{wsdefinition}
 
+The distance $d_v(P, Q)$ is small when $P, Q \in C(K_v)$ are $v$-adically close.
+
 \begin{wsdefinition}[{Heights on an elliptic curve \cite{Silverman09}*{\S VIII.6}}]
 \label{siegel:def:height}
 Let $E$ be an elliptic curve over $K$, and let $f \in K(E)$ be a nonconstant function. The
@@ -7276,6 +7314,10 @@ pole of $f$. The function $f$ is \defi{even} if
 $f(-P) = f(P)$ for every $P \in E(\Kbar)$.
 \end{wsdefinition}
 
+With the height $h_f$ of \cref{siegel:def:height}, Siegel's theorem says that, when $E(K)$ is
+infinite, the rational points $P$ of an elliptic curve $E$ cannot approach $Q$ quickly,
+compared with their height: for every $\varepsilon > 0$, all but finitely many of them
+satisfy $d_v(P, Q) \geq \exp(-\varepsilon h_f(P))$.
 \begin{wstheorem}[{Siegel \cite{Silverman09}*{Theorem~IX.3.1}}]
 \label{siegel:thm:siegel}
 Let $E$ be an elliptic curve over $K$ such that $E(K)$ is infinite. Let $Q \in E(\Kbar)$, let
@@ -7324,20 +7366,18 @@ functions $x$ and $y$.
 \section{The equation $y^2 = f(x)$ and the $S$-unit equation}
 \label{siegel:sec:hyperelliptic}
 
-\Cref{siegel:prob:hyperelliptic} is the proof of \cite{Silverman09}*{Theorem~IX.4.3}, Siegel's second
-proof of finiteness. It needs no Diophantine approximation on the curve. Over a large enough
-field, and after enlarging $S$, each factor $x - \alpha_i$ of $f(x)$ is a unit times a
-square. Differences of these factors are differences of roots of $f$, which are units, and
-three roots give two units with sum $1$. Silverman reaches this situation with three
-reductions. A fourth is needed, that the roots of $f$ are $S$-integers, since the proof
-treats $x - \alpha_i$ as an element of $\calO_S$.
-
+\Cref{siegel:prob:hyperelliptic} is the proof of \cite{Silverman09}*{Theorem~IX.4.3}.
+It relies on the following theorem.
 
 \begin{wstheorem}[{The $S$-unit equation \cite{Silverman09}*{Theorem~IX.4.1}}]
 \label{siegel:thm:s-unit}
 Let $\lambda, \mu \in K^\times$. Then the equation $\lambda u + \mu w = 1$ has only finitely
 many solutions $(u, w) \in \calO_S^\times \times \calO_S^\times$.
 \end{wstheorem}
+
+\Cref{siegel:def:adapted} collects Silverman's reductions, together with one he omits: the roots of
+the polynomial are $S$-integers.
+
 
 \begin{wsdefinition}[Adapted sets of places]
 \label{siegel:def:adapted}
@@ -7354,19 +7394,33 @@ if the following conditions hold.
 
 \begin{problem}[The equation $y^2 = f(x)$]
 \label{siegel:prob:hyperelliptic}
-Let $f \in K[T]$ be a polynomial of degree $d \geq 3$ with distinct roots in $\Kbar$. A
-\emph{solution} is a pair $(x, y) \in \calO_S \times \calO_S$ with $y^2 = f(x)$. The goal is
-to show that there are only finitely many solutions.
+Let $f \in K[T]$ be a polynomial of degree $d \geq 3$ with distinct roots in $\Kbar$. An
+\emph{$S$-integral solution} is a pair $(x, y) \in \calO_S \times \calO_S$ with
+$y^2 = f(x)$. The goal is to show that there are only finitely many $S$-integral solutions.
 \begin{enumerate}
-  \item\label{siegel:it:hyp-reduce} Show that it is enough to prove this when $S$ is adapted to
-        $f$.\hint{replace $K$ by a finite extension $K'$ and $S$ by a finite set of places
-        of $K'$ containing the places above $S$. This only adds solutions.}
+  \item\label{siegel:it:hyp-reduce} This item reduces the problem to the case where $S$ is adapted
+        to $f$. Let $K'$ be a finite extension of $K$, and $S'$ a finite set of places of
+        $K'$ containing the places above $S$.
+        \begin{enumerate}
+          \item\label{siegel:it:red-inclusion} Show that $S'$ contains the archimedean places of
+                $K'$, and that $\calO_S \subseteq \calO_{S'}$.
 \begin{solution}
 % Write your solution here.
 \end{solution}
+          \item\label{siegel:it:red-adapted} Show that $K'$ and $S'$ can be chosen so that $S'$ is
+                adapted to $f \in K'[T]$.
+\begin{solution}
+% Write your solution here.
+\end{solution}
+          \item\label{siegel:it:red-conclude} Deduce that it is enough to prove that there are only
+                finitely many $S$-integral solutions when $S$ is adapted to $f$.
+\begin{solution}
+% Write your solution here.
+\end{solution}
+        \end{enumerate}
   \item\label{siegel:it:hyp-square} From now on, $S$ is adapted to $f$, with $c$ and $\alpha_i$ as
-        in \cref{siegel:def:adapted}. Let $(x, y)$ be a solution. Show that for each $i$ there are
-        $b_i \in \calO_S^\times$ and $z_i \in \calO_S$ with
+        in \cref{siegel:def:adapted}. Let $(x, y)$ be an $S$-integral solution. Show that for each
+        $i$ there are $b_i \in \calO_S^\times$ and $z_i \in \calO_S$ with
         $x - \alpha_i = b_iz_i^2$.\hint{a prime element of $\calO_S$ divides at most one of
         the $x - \alpha_i$.}
 \begin{solution}
@@ -7392,13 +7446,13 @@ to show that there are only finitely many solutions.
         \frac{\beta_1z_1 - \beta_2z_2}{\theta} + \frac{\beta_2z_2 - \beta_3z_3}{\theta} = 1.
         \]
         Deduce that there is a finite subset of $L$, depending only on $K$, $S$ and $f$,
-        that contains $\theta$ for every solution $(x, y)$ and every choice of the $b_i$,
-        $z_i$ and $\beta_i$.\hint{multiply the first terms of the two identities.}
+        that contains $\theta$ for every $S$-integral solution $(x, y)$ and every choice of
+        the $b_i$, $z_i$ and $\beta_i$.\hint{multiply the first terms of the two identities.}
 \begin{solution}
 % Write your solution here.
 \end{solution}
-  \item\label{siegel:it:hyp-finite} Show that there are only finitely many solutions. Where did
-        the proof use that $d \geq 3$?
+  \item\label{siegel:it:hyp-finite} Show that there are only finitely many $S$-integral solutions.
+        Where did the proof use that $d \geq 3$?
 \begin{solution}
 % Write your solution here.
 \end{solution}
@@ -7411,15 +7465,15 @@ to show that there are only finitely many solutions.
 \begin{solution}
 % Write your solution here.
 \end{solution}
-          \item\label{siegel:it:inst-table} For each of the solutions $(-3, 9)$, $(12, 36)$,
-                $(18, 72)$ and $(294, 5040)$, write $x - \alpha_k = b_kz_k^2$ with
+          \item\label{siegel:it:inst-table} For each of the $S$-integral solutions $(-3, 9)$,
+                $(12, 36)$, $(18, 72)$ and $(294, 5040)$, write $x - \alpha_k = b_kz_k^2$ with
                 $b_k \in \{\pm 1, \pm 2, \pm 3, \pm 6\}$ and $z_k$ a positive integer.
 \begin{solution}
 % Write your solution here.
 \end{solution}
-          \item\label{siegel:it:inst-units} For the solution $(12, 36)$, take $\beta_1 = \sqrt 3$,
-                $\beta_2 = \sqrt 6$ and $\beta_3 = \sqrt 2$. The code below computes the terms
-                $u$ and $w$ of the first of Siegel's identities, and their minimal
+          \item\label{siegel:it:inst-units} For the $S$-integral solution $(12, 36)$, take
+                $\beta_1 = \sqrt 3$, $\beta_2 = \sqrt 6$ and $\beta_3 = \sqrt 2$. The code below
+                computes the terms $u$ and $w$ of the first of Siegel's identities, and their minimal
                 polynomials over $\Q$. Explain how the output shows that
                 $u, w \in \calO_T^\times$.
 \begin{magma}
@@ -7439,7 +7493,6 @@ MinimalPolynomial(w);          // t^4 - 12*t^3 + 32*t^2 - 24*t + 4
                 rational points $P \neq O$ of the elliptic curve $y^2 = x^3 - 36x$ with
                 $x(P) \in \Z[1/6]$, one for each pair $\pm P$. The code below lists their
                 $x$-coordinates. One of them is not an integer. Find its $b_k$ and $z_k$.
-                Could the proof above have produced this list?
 \begin{magma}
 E := EllipticCurve([-36, 0]);
 [ Q[1] : Q in SIntegralPoints(E, [2, 3]) ];
@@ -7449,6 +7502,280 @@ E := EllipticCurve([-36, 0]);
 % Write your solution here.
 \end{solution}
         \end{enumerate}
+\end{enumerate}
+\end{problem}
+
+\bigskip
+
+\part[Baker's theorem]{Baker's theorem and Shafarevich's theorem}
+\label{baker-shafarevich:part}
+\noindent
+Siegel's theorem and the $S$-unit equation give finiteness, but no bound: they rest on Roth's
+theorem. Baker's lower bound for linear forms in logarithms gives a bound
+\cite{Silverman09}*{\S IX.5}. This worksheet uses it to find every elliptic curve over $\Q$
+with all its points of order two rational and with good reduction outside $\{2, 3\}$, an
+explicit instance of Shafarevich's theorem \cite{Silverman09}*{\S IX.6}.
+
+
+\subsection*{Standing notation}
+\begin{itemize}
+  \item The set of places $S \coloneqq \{\infty, 2, 3\}$ of $\Q$, with ring of $S$-integers
+        $\calO_S = \Z[1/6]$ and group of $S$-units $\calO_S^\times = \{\pm 2^a3^b : a, b \in \Z\}$.
+\end{itemize}
+
+\section{From curves to a unit equation}
+\label{baker-shafarevich:sec:curves}
+
+\Cref{baker-shafarevich:prob:curves} reduces Shafarevich's theorem \cite{Silverman09}*{Theorem~IX.6.1}, for
+elliptic curves over $\Q$ with all their points of order two rational and with good reduction
+outside $\{2, 3\}$, to the $S$-unit equation $\lambda + \mu = 1$
+\cite{Silverman09}*{Theorem~IX.4.1}. It uses the following facts.
+
+\begin{wsdefinition}[{Good reduction \cite{Silverman09}*{\S VII.5}}]
+\label{baker-shafarevich:def:good}
+An elliptic curve $E$ over $\Q$ has \defi{good reduction} at a prime $p$ if it has a
+Weierstrass equation whose coefficients are $p$-integral and whose discriminant is a $p$-adic
+unit.
+\end{wsdefinition}
+
+\begin{wsproposition}[{$S$-minimal equations \cite{Silverman09}*{Proposition~VIII.8.7 and proof of Theorem~IX.6.1}}]
+\label{baker-shafarevich:prop:s-minimal}
+Let $E$ be an elliptic curve over $\Q$ with good reduction at every prime $p \geq 5$. Then $E$
+has a Weierstrass equation $y^2 = x^3 + Ax + B$ with $A, B \in \calO_S$ and discriminant
+$\Delta = -16(4A^3 + 27B^2) \in \calO_S^\times$.
+\end{wsproposition}
+
+\begin{wsdefinition}[Legendre curves]
+\label{baker-shafarevich:def:legendre}
+For $\lambda \in \Q \setminus \{0, 1\}$, the elliptic curve
+$E_\lambda\colon y^2 = x(x - 1)(x - \lambda)$ is in \defi{Legendre form}. For
+$d \in \Q^\times$, its quadratic twist by $d$ is
+\[
+E_\lambda^{(d)}\colon y^2 = x(x - d)(x - d\lambda),
+\]
+isomorphic to $dy^2 = x(x - 1)(x - \lambda)$ by $(x, y) \mapsto (x/d, y/d^2)$. Let
+\[
+\Lambda_S \coloneqq \{\lambda \in \Q : \lambda \in \calO_S^\times \text{ and }
+1 - \lambda \in \calO_S^\times\}.
+\]
+\end{wsdefinition}
+
+\begin{problem}[Curves with full two-torsion]
+\label{baker-shafarevich:prob:curves}
+Let $E$ be an elliptic curve over $\Q$ with $E[2](\Q) = E[2](\Qbar)$, that is, with all its
+points of order two rational, and with good reduction at every prime $p \geq 5$.
+\begin{enumerate}
+  \item\label{baker-shafarevich:it:cur-model} Show that $E$ has a Weierstrass equation
+        $y^2 = (x - e_1)(x - e_2)(x - e_3)$ with $e_1, e_2, e_3 \in \calO_S$ and
+        $e_i - e_j \in \calO_S^\times$ for all $i \neq j$.
+\begin{solution}
+% Write your solution here.
+\end{solution}
+  \item\label{baker-shafarevich:it:cur-twist} Show that $E \cong E_\lambda^{(d)}$ for some $\lambda \in \Lambda_S$
+        and some $d \in \{\pm 1, \pm 2, \pm 3, \pm 6\}$. Conversely, show that for every
+        $\lambda \in \Lambda_S$ and $d \in \calO_S^\times$, the curve $E_\lambda^{(d)}$ has
+        all its points of order two rational and good reduction at every prime $p \geq 5$.
+\begin{solution}
+% Write your solution here.
+\end{solution}
+  \item\label{baker-shafarevich:it:cur-reduce} Show that if $\lambda \in \Lambda_S$, then $1 - \lambda$ and
+        $1/\lambda$ lie in $\Lambda_S$, and that one of $\lambda$, $1/\lambda$,
+        $1/(1 - \lambda)$ lies in the interval $(0, 1)$. Show that every $\lambda \in \Lambda_S$ with $0 < \lambda < 1$ is
+        $1/c$ or $1 - 1/c$ for an integer $c \geq 2$ with $\{c - 1, c\} = \{2^i, 3^j\}$ and
+        $i, j \geq 0$. So $\Lambda_S$ is determined by the solutions of
+        \[
+        \lvert 2^i - 3^j \rvert = 1, \qquad i, j \geq 0.
+        \]
+        \hint{write $\lambda = a/c$ in lowest terms, with $0 < a < c$, and compare $a$, $c - a$
+        and $c$.}
+\begin{solution}
+% Write your solution here.
+\end{solution}
+\end{enumerate}
+\end{problem}
+
+
+\section{Linear forms in logarithms}
+\label{baker-shafarevich:sec:baker}
+
+\Cref{baker-shafarevich:prob:baker} solves $\lvert 2^i - 3^j \rvert = 1$ as Baker's method solves the
+$S$-unit equation in the proof of \cite{Silverman09}*{Theorem~IX.5.5}: a solution makes a
+linear form in logarithms very small, Baker's theorem bounds it from below, and the two bounds
+together bound the solution. Here $\log$ is the natural logarithm.
+
+Baker's theorem \cite{Silverman09}*{Theorem~IX.5.2} gives such a lower bound with effectively
+computable, but unspecified, constants. To compute, the constants must be explicit. For two
+logarithms they are small. Laurent \cite{Laurent94}*{Theorem~2} bounds a linear form in the
+logarithms of two real algebraic numbers. The following corollary is the case of $\log 2$ and
+$\log 3$.
+
+\begin{wscorollary}[{Linear forms in $\log 2$ and $\log 3$ \cite{Laurent94}*{Theorem~2}}]
+\label{baker-shafarevich:cor:laurent}
+Let $i, j$ be positive integers, and let $L \coloneqq j\log 3 - i\log 2$ and
+$b' \coloneqq i/\log 3 + j$. If $\log b' \geq 25$, then
+\[
+\log\lvert L \rvert \geq -87\log 3\,\bigl(0.5 + \log b'\bigr)^2.
+\]
+\end{wscorollary}
+
+The bound that \cref{baker-shafarevich:cor:laurent} gives is below $10^{11}$. Continued fractions cut it down.
+
+\begin{wsdefinition}[Continued fractions]
+\label{baker-shafarevich:def:cf}
+For an integer $a_0$ and integers $a_1, \dots, a_n \geq 1$, let
+\[
+[a_0; a_1, \dots, a_n] \coloneqq
+a_0 + \cfrac{1}{a_1 + \cfrac{1}{a_2 + \cfrac{1}{\ddots + \cfrac{1}{a_n}}}}.
+\]
+Let $\theta \in \R \setminus \Q$. Set $\theta_0 \coloneqq \theta$ and, for $k \geq 0$,
+\[
+a_k \coloneqq \lfloor \theta_k \rfloor, \qquad \theta_{k + 1} \coloneqq \frac{1}{\theta_k - a_k}.
+\]
+Then $a_k \geq 1$ for $k \geq 1$. The sequence $[a_0; a_1, a_2, \dots]$ is the
+\defi{continued fraction} of $\theta$. For $n \geq 0$, the $n$-th \defi{convergent} of $\theta$
+is the rational number $p_n/q_n \coloneqq [a_0; a_1, \dots, a_n]$, written in lowest terms
+with $q_n > 0$.
+\end{wsdefinition}
+
+\begin{wstheorem}[{Best approximations \cite{HardyWright08}*{Theorem~182}}]
+\label{baker-shafarevich:thm:best}
+Let $\theta \in \R \setminus \Q$, with convergents $p_n/q_n$ as in \cref{baker-shafarevich:def:cf}. Let $n > 1$,
+and let $p$ and $q$ be integers with $0 < q \leq q_n$ and $p/q \neq p_n/q_n$. Then
+$\lvert q_n\theta - p_n \rvert < \lvert q\theta - p \rvert$.
+\end{wstheorem}
+
+\begin{problem}[The equation $\lvert 2^i - 3^j \rvert = 1$]
+\label{baker-shafarevich:prob:baker}
+The goal is to find all integers $i, j \geq 0$ with $\lvert 2^i - 3^j \rvert = 1$.
+\begin{enumerate}
+  \item\label{baker-shafarevich:it:bak-small} Find the solutions with $i = 0$ or $j = 0$. For a solution with
+        $i, j \geq 1$, let $L \coloneqq j\log 3 - i\log 2$. Show that
+        $0 < \lvert L \rvert \leq 2^{1 - i}$ and that $j \leq i$.\hint{$\lvert\log(1 + t)\rvert \leq
+        \lvert t \rvert/(1 - \lvert t \rvert)$ for $\lvert t \rvert < 1$.}
+\begin{solution}
+% Write your solution here.
+\end{solution}
+  \item\label{baker-shafarevich:it:bak-bound} Apply \cref{baker-shafarevich:cor:laurent} to show that every solution with
+        $i, j \geq 1$ has $i < e^{25}\log 3 < 7.92 \cdot 10^{10}$.\hint{use
+        \ref{baker-shafarevich:it:bak-small} to show that $b' < 2i$. Then show that $\log b' \geq 25$ is
+        impossible.}
+\begin{solution}
+% Write your solution here.
+\end{solution}
+  \item\label{baker-shafarevich:it:bak-reduce} Let $\theta \coloneqq \log 2/\log 3$, with convergents $p_n/q_n$
+        (\cref{baker-shafarevich:def:cf}). Use the code below and \cref{baker-shafarevich:thm:best} to show that every solution
+        with $i, j \geq 1$ has $i \leq 38$.
+\begin{magma}
+R := RealField(50);
+theta := Log(R!2)/Log(R!3);
+a := ContinuedFraction(theta);
+Exp(R!25)*Log(R!3);
+// 79105467256.362348427891811153443536714240577916186
+c := Convergents(a[1..24]);
+c;
+// [ 65470613321   6586818670]
+// [103768467013  10439860591]
+p23 := c[1, 1]; q23 := c[2, 1];
+Exp(R!25)*Log(R!3) lt q23;
+// true
+Abs(q23*theta - p23);
+// 4.1982374241411152657482824065564220066552695184421E-12
+\end{magma}
+        Magma numbers lists from $1$, so \mg{a[1..24]} is $[a_0; a_1, \dots, a_{23}]$, and
+        \mg{Convergents} returns the matrix with columns $(p_{23}, q_{23})$ and
+        $(p_{22}, q_{22})$. So the code says that $e^{25}\log 3 < q_{23}$ and
+        \[
+        \begin{gathered}
+        e^{25}\log 3 = 79105467256.36\ldots, \qquad
+        \frac{p_{23}}{q_{23}} = \frac{65470613321}{103768467013}, \qquad
+        \frac{p_{22}}{q_{22}} = \frac{6586818670}{10439860591},\\
+        \lvert q_{23}\theta - p_{23} \rvert = 4.19823\ldots \cdot 10^{-12}.
+        \end{gathered}
+        \]
+\begin{solution}
+% Write your solution here.
+\end{solution}
+  \item\label{baker-shafarevich:it:bak-search} Find all the solutions. The code below searches the remaining
+        range.
+\begin{magma}
+[ <i, j> : i in [0..38], j in [0..38] | Abs(2^i - 3^j) eq 1 ];
+// [ <1, 0>, <1, 1>, <2, 1>, <3, 2> ]
+\end{magma}
+\begin{solution}
+% Write your solution here.
+\end{solution}
+  \item\label{baker-shafarevich:it:bak-elementary} Find the solutions again, by hand.\hint{for
+        $2^i = 3^j + 1$, work modulo $3$. For $3^j = 2^i + 1$ with $i \geq 3$, work modulo
+        $8$. Then factor a difference of squares.}
+\begin{solution}
+% Write your solution here.
+\end{solution}
+\end{enumerate}
+\end{problem}
+
+
+\section{The curves}
+\label{baker-shafarevich:sec:list}
+
+\Cref{baker-shafarevich:prob:list} puts \cref{baker-shafarevich:prob:curves,baker-shafarevich:prob:baker} together, and checks the answer against
+Cremona's tables of elliptic curves over $\Q$, which \Magma\ includes and which are also in
+the \href{https://www.lmfdb.org}{LMFDB} \cite{lmfdb}. These tables list each isomorphism
+class over $\Q$ once.
+
+\begin{wsproposition}[{Legendre form \cite{Silverman09}*{Proposition~III.1.7(b)}}]
+\label{baker-shafarevich:prop:j-legendre}
+The $j$-invariant of $E_\lambda$ is
+\[
+j(E_\lambda) = 2^8\frac{(\lambda^2 - \lambda + 1)^3}{\lambda^2(\lambda - 1)^2}.
+\]
+\end{wsproposition}
+
+\begin{wstheorem}[{Conductors \cite{Silverman94}*{Theorem~IV.10.4}}]
+\label{baker-shafarevich:thm:conductor}
+An elliptic curve over $\Q$ has good reduction at every prime $p \geq 5$ if and only if its
+conductor divides $2^83^5$.
+\end{wstheorem}
+
+\begin{problem}[Curves with full two-torsion and good reduction outside $\{2, 3\}$]
+\label{baker-shafarevich:prob:list}
+This problem lists the elliptic curves over $\Q$ with all their points of order two rational
+and with good reduction at every prime $p \geq 5$.
+\begin{enumerate}
+  \item\label{baker-shafarevich:it:list-lambda} By \cref{baker-shafarevich:prob:curves}\ref{baker-shafarevich:it:cur-reduce}, every element of
+        $\Lambda_S$ is $\mu$, $1/\mu$ or $1 - 1/\mu$ for some $\mu \in \Lambda_S$ with
+        $0 < \mu < 1$, and every such $\mu$ is $1/c$ or $1 - 1/c$ for an integer $c \geq 2$
+        with $\{c - 1, c\} = \{2^i, 3^j\}$. So each solution $(i, j)$ of
+        $\lvert 2^i - 3^j \rvert = 1$ gives one value of $c = \max\{2^i, 3^j\}$. Use the
+        solutions of \cref{baker-shafarevich:prob:baker}\ref{baker-shafarevich:it:bak-search} to list the elements of
+        $\Lambda_S$. Show that they give four $j$-invariants.
+\begin{solution}
+% Write your solution here.
+\end{solution}
+  \item\label{baker-shafarevich:it:list-count} Show that, up to isomorphism over $\Q$, there are at most $28$
+        such curves.\hint{reduce to $\lambda \in \{-1, -2, -3, -8\}$. Then compare
+        $E_{-1}^{(d)}$ with $E_{-1}^{(-d)}$.}
+\begin{solution}
+% Write your solution here.
+\end{solution}
+  \item\label{baker-shafarevich:it:list-magma} The code below runs through Cremona's tables of elliptic curves
+        over $\Q$ with conductor dividing $2^83^5$, and keeps those with all their points of
+        order two rational. Deduce that there are exactly $28$ curves in
+        \ref{baker-shafarevich:it:list-count}, and compare their $j$-invariants with \ref{baker-shafarevich:it:list-lambda}. How
+        many curves over $\Q$ have good reduction at every prime $p \geq 5$? Compare with the
+        \href{https://www.lmfdb.org/EllipticCurve/Q/?bad_quantifier=subset&bad_primes=2\%2C3}{elliptic
+        curves over $\Q$ with bad primes in $\{2, 3\}$} in the LMFDB.
+\begin{magma}
+D := CremonaDatabase();
+curves := &cat[ EllipticCurves(D, 2^a*3^b) : a in [0..8], b in [0..5] ];
+#curves;                            // 752
+full := [ E : E in curves | #TwoTorsionSubgroup(E) eq 4 ];
+#full;                              // 28
+{* jInvariant(E) : E in full *};
+// {* 1728^^4, 21952/9^^8, 35152/9^^8, 1556068/81^^8 *}
+\end{magma}
+\begin{solution}
+% Write your solution here.
+\end{solution}
 \end{enumerate}
 \end{problem}
 
@@ -7498,6 +7825,17 @@ E := EllipticCurve([-36, 0]);
       review={\MR{1745599}},
 }
 
+\bib{HardyWright08}{book}{
+      author={Hardy, G.~H.},
+      author={Wright, E.~M.},
+       title={An introduction to the theory of numbers},
+     edition={Sixth},
+   publisher={Oxford University Press, Oxford},
+        date={2008},
+        ISBN={978-0-19-921986-5},
+        note={Revised by D. R. Heath-Brown and J. H. Silverman},
+}
+
 \bib{Kubert76}{article}{
       author={Kubert, D.~S.},
        title={Universal bounds on the torsion of elliptic curves},
@@ -7506,6 +7844,16 @@ E := EllipticCurve([-36, 0]);
       volume={33},
       number={2},
        pages={193\ndash 237},
+}
+
+\bib{Laurent94}{article}{
+      author={Laurent, Michel},
+       title={Linear forms in two logarithms and interpolation determinants},
+        date={1994},
+     journal={Acta Arith.},
+      volume={66},
+      number={2},
+       pages={181\ndash 199},
 }
 
 \bib{lmfdb}{misc}{
