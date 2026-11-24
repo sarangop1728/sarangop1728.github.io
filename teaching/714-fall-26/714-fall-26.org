@@ -138,17 +138,17 @@ of the algebraic geometry background, I recommend Chapters I and II in
 | 16  | <2026-10-29 Thu> |                                                           | VIII.9                       |
 |     | <2026-11-03 Tue> | @@html:<span style="color:red">@@No class@@html:</span>@@ | (Election Day)               |
 | 17  | <2026-11-05 Thu> |                                                           | VIII.10, VIII.11             |
-| 18  | <2026-11-10 Tue> | Integral points                                           | IX.1, IX.2                   |
-| 19  | <2026-11-12 Thu> |                                                           | IX.3, IX.4                   |
-| 20  | <2026-11-17 Tue> |                                                           | IX.5, IX.6                   |
-| 21  | <2026-11-19 Thu> |                                                           | IX.7, IX.8                   |
+| 18  | <2026-11-10 Tue> | Twisting, Selmer, and Ш                                   | X.1, X.2                     |
+| 19  | <2026-11-12 Thu> |                                                           | X.3                          |
+| 20  | <2026-11-17 Tue> |                                                           | X.4                          |
+| 21  | <2026-11-19 Thu> |                                                           | X.5, X.6                     |
 |     | <2026-11-24 Tue> | @@html:<span style="color:red">@@No class@@html:</span>@@ | (Wednesday schedule)         |
 |     | <2026-11-26 Thu> | @@html:<span style="color:red">@@No class@@html:</span>@@ | (Thanksgiving)               |
-| 22  | <2026-12-01 Tue> | Twisting, Selmer, and Ш                                   | X.1, X.2                     |
-| 23  | <2026-12-03 Thu> |                                                           | X.3                          |
-| 24  | <2026-12-08 Tue> |                                                           | X.4                          |
-| 25  | <2026-12-10 Thu> |                                                           | X.5                          |
-| 26  | <2026-12-15 Tue> |                                                           | X.6                          |
+| 22  | <2026-12-01 Tue> | Integral points                                           | IX.1, IX.2                   |
+| 23  | <2026-12-03 Thu> |                                                           | IX.3                         |
+| 24  | <2026-12-08 Tue> |                                                           | IX.4                         |
+| 25  | <2026-12-10 Thu> |                                                           | IX.5, IX.6                   |
+| 26  | <2026-12-15 Tue> |                                                           | IX.7, IX.8                   |
 |-----+------------------+-----------------------------------------------------------+------------------------------|
 
 * Reading, participation, collaboration, and engagement

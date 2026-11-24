@@ -22,7 +22,14 @@
 ;;   :image    (:src "images/x.png" :alt "..." :href "...")  :href defaults to :src
 ;; ---------------------------------------------------------------------------
 (defconst sap/papers
-  '((:title "\\(7\\)-adic Galois representations of elliptic curves over the rationals via Kummer descent"
+  '((:title "Counting solutions to Euclidean Fermat equations"
+    :authors (("Niven Achenjang" . "https://people.math.harvard.edu/~achenjang/")
+              ("Sameera Vemulapalli" . "https://sites.google.com/view/sameeravemulapalli/home"))
+    ;; TODO: add :links ((arxiv . "XXXX.XXXXX")) once the paper is posted
+    :image (:src "images/thumbs/intro-torsion.png" :href "images/intro-torsion.png"
+            :alt "Translation by a torsion point on a Euclidean Fermat curve"))
+
+    (:title "\\(7\\)-adic Galois representations of elliptic curves over the rationals via Kummer descent"
     :authors (("David Zureick-Brown" . "https://dmzb.github.io/"))
     :links ((arxiv . "2610.06521")
             (extra "html" "https://sarangop1728.github.io/7-adic-settlers-of-cartan/" "code")
